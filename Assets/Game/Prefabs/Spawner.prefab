@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5021951748397553089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2604145635891042443}
+  - component: {fileID: 7244590003445998877}
+  - component: {fileID: 6937930314702519308}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2604145635891042443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021951748397553089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3499999, y: 4.48, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7244590003445998877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021951748397553089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08aac01b2fe0a284696aedf682d507d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTransform: {fileID: 0}
+  targetAxis: 1
+  lastPos: {x: 0, y: 0, z: 0}
+  currentTargetPos: {x: 0, y: 0, z: 0}
+  active: 1
+  centerOnStart: 1
+--- !u!114 &6937930314702519308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021951748397553089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8d8c01b1b29f24bbd18e29d635cb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followPos: {fileID: 7244590003445998877}
+  goImage: {fileID: 0}
+  defaultDeadzoneWidtht: 0
+  maxDeadzoneWidtht: 2
+  virtualCameraFramingTransposer: {fileID: 0}
+  encounters:
+  - {fileID: 11400000, guid: 27473e79a8c255b44b066969536d5aeb, type: 2}
+  - {fileID: 11400000, guid: 8b6b5061b7934074ebcdb8bfff7519f0, type: 2}
+  - {fileID: 11400000, guid: 4eb5d6ca43dd8494ca6f54013d430275, type: 2}
+  - {fileID: 11400000, guid: cbfd3bd912bbd6e45b9c032ef0f0d18f, type: 2}
+  enemiesToSpawn: []
+  enemiesAlive: []
+  spawnDistance: {x: 10.408577, y: 13.47829}
+  spawnHeight: {x: -4.336011, y: 0.19959974}
+  spawnDelay: {x: 2, y: 4}
+  spawnRegionColor: {r: 1, g: 0.03682762, b: 0, a: 1}
+  encounterPositionGizmosRadius: 0.5
+  encounterPositionGizmosColor: {r: 0, g: 0.32331157, b: 1, a: 1}
+  encounterPositionDebugLineLenght: 12
+  encounterPositionLimitDebugColor: {r: 0, g: 0.9467571, b: 1, a: 1}
+  encounterPositionDebugLineHalfExtent: {x: 0, y: 12, z: 0}

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
+  m_Name: Vaca Left Barrage
+  m_EditorClassIdentifier: 
+  <PlayerActionMap>k__BackingField: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
+  <Animation>k__BackingField: {fileID: 7400000, guid: 6763cf3ae5e16bd429f01fa52204d601, type: 2}
+  <Sound>k__BackingField: {fileID: 8300000, guid: 49b1630bce1ee3d4aaea4a961394b96f, type: 3}
+  <VelocityCurve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0047169924
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.03672926
+    - serializedVersion: 3
+      time: 0.2
+      value: 1
+      inSlope: Infinity
+      outSlope: -17.104599
+      tangentMode: 7
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.061342243
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.125
+      inSlope: -0.057959817
+      outSlope: -0.44650418
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.88917524
+      outWeight: 0.053646777
+    - serializedVersion: 3
+      time: 1
+      value: 0.0023498535
+      inSlope: -0.008403651
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0.48238033
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <MaxVelocity>k__BackingField: 25
+  <Duration>k__BackingField: 0.7
+  <Damage>k__BackingField: 9
+  <StunDuration>k__BackingField: 0.5
+  <KnockbackStrenght>k__BackingField: 5

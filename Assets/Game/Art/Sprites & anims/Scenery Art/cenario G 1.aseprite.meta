@@ -1,0 +1,816 @@
+fileFormatVersion: 2
+guid: 51fee9c8dd1252647a77499c82b1f1b1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 24
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638490593460007541
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: cenario G 1_Frame_0
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3005
+      height: 325
+    spriteID: 61f73c16a4fec0848983786787f2d7a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: cenario G 1_Frame_1
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 337
+      width: 3005
+      height: 325
+    spriteID: 83aa0e12ebc208b41a964b39af138108
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 337}
+  - name: cenario G 1_Frame_2
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 670
+      width: 3005
+      height: 325
+    spriteID: 07a4ca3ad91e4b6469e6d9513b198d45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 670}
+  - name: cenario G 1_Frame_3
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1003
+      width: 3005
+      height: 325
+    spriteID: 0765dcf96ec34fb40973f5d1f4189054
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1003}
+  - name: cenario G 1_Frame_4
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1336
+      width: 3005
+      height: 325
+    spriteID: 29a9680e29f3e9e4194c6ecee479476f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1336}
+  - name: cenario G 1_Frame_5
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1669
+      width: 3005
+      height: 325
+    spriteID: a79c3cf63748f0f4eb1f4c77145ac560
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1669}
+  - name: cenario G 1_Frame_6
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2002
+      width: 3005
+      height: 325
+    spriteID: dd9a289415a60924ea3db66d4f352303
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2002}
+  - name: cenario G 1_Frame_7
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2335
+      width: 3005
+      height: 325
+    spriteID: aba17854084bca34bb3ffca3be63ac9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2335}
+  - name: cenario G 1_Frame_8
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2668
+      width: 3005
+      height: 325
+    spriteID: 98c8788c560327c4b837aec1c4cbf179
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2668}
+  - name: cenario G 1_Frame_9
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3001
+      width: 3005
+      height: 325
+    spriteID: 87f64df606db9d143b280573985d3f16
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3001}
+  - name: cenario G 1_Frame_10
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3334
+      width: 3005
+      height: 325
+    spriteID: ac4c4f4f5ca9cfb409b12d7306db0dd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3334}
+  - name: cenario G 1_Frame_11
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3667
+      width: 3005
+      height: 325
+    spriteID: 82ef3d62b04ce5740bfb7f9eb79c832c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3667}
+  - name: cenario G 1_Frame_12
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4000
+      width: 3005
+      height: 325
+    spriteID: 0fd04d7b6517e1440b3311682706fad1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4000}
+  - name: cenario G 1_Frame_13
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4333
+      width: 3005
+      height: 325
+    spriteID: a1717c624b4b3a146b14c98b4c2adaad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4333}
+  - name: cenario G 1_Frame_14
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4666
+      width: 3005
+      height: 325
+    spriteID: 6964f97bd494a5c47a027900a61b92db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4666}
+  - name: cenario G 1_Frame_15
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4999
+      width: 3005
+      height: 325
+    spriteID: b56be4676c680f046881fd80cb2bbe36
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4999}
+  - name: cenario G 1_Frame_16
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5332
+      width: 3005
+      height: 325
+    spriteID: d7bc82505131b9447b25b4edc537b660
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5332}
+  - name: cenario G 1_Frame_17
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5665
+      width: 3005
+      height: 325
+    spriteID: b4fafcdb472dd6a409f58d26d7315ad5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5665}
+  - name: cenario G 1_Frame_18
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5998
+      width: 3005
+      height: 325
+    spriteID: 6dab5787cfeac2a46becfca812cd3872
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5998}
+  - name: cenario G 1_Frame_19
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6331
+      width: 3005
+      height: 325
+    spriteID: acd709e4bb0843a4a975ad2f8ba21db0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6331}
+  - name: cenario G 1_Frame_20
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6664
+      width: 3005
+      height: 325
+    spriteID: fa320afe75541e14db4c5a76a0e848cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6664}
+  - name: cenario G 1_Frame_21
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6997
+      width: 3005
+      height: 325
+    spriteID: 064e8c498b8ec5e49bdb608398540ea7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6997}
+  - name: cenario G 1_Frame_22
+    originalName: 
+    pivot: {x: 0.5477537, y: 0.024615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7330
+      width: 3005
+      height: 325
+    spriteID: b8d67f442bba4b242bfa38ef61e31394
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7330}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -326300369
+    name: cenario G 1
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: cenario G 1_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 61f73c16a4fec0848983786787f2d7a7
+    - name: cenario G 1_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 83aa0e12ebc208b41a964b39af138108
+    - name: cenario G 1_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 07a4ca3ad91e4b6469e6d9513b198d45
+    - name: cenario G 1_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 0765dcf96ec34fb40973f5d1f4189054
+    - name: cenario G 1_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 29a9680e29f3e9e4194c6ecee479476f
+    - name: cenario G 1_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: a79c3cf63748f0f4eb1f4c77145ac560
+    - name: cenario G 1_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: dd9a289415a60924ea3db66d4f352303
+    - name: cenario G 1_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: aba17854084bca34bb3ffca3be63ac9b
+    - name: cenario G 1_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 98c8788c560327c4b837aec1c4cbf179
+    - name: cenario G 1_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 87f64df606db9d143b280573985d3f16
+    - name: cenario G 1_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: ac4c4f4f5ca9cfb409b12d7306db0dd0
+    - name: cenario G 1_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 82ef3d62b04ce5740bfb7f9eb79c832c
+    - name: cenario G 1_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 0fd04d7b6517e1440b3311682706fad1
+    - name: cenario G 1_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: a1717c624b4b3a146b14c98b4c2adaad
+    - name: cenario G 1_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 6964f97bd494a5c47a027900a61b92db
+    - name: cenario G 1_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: b56be4676c680f046881fd80cb2bbe36
+    - name: cenario G 1_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: d7bc82505131b9447b25b4edc537b660
+    - name: cenario G 1_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: b4fafcdb472dd6a409f58d26d7315ad5
+    - name: cenario G 1_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 6dab5787cfeac2a46becfca812cd3872
+    - name: cenario G 1_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: acd709e4bb0843a4a975ad2f8ba21db0
+    - name: cenario G 1_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: fa320afe75541e14db4c5a76a0e848cc
+    - name: cenario G 1_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: 064e8c498b8ec5e49bdb608398540ea7
+    - name: cenario G 1_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 174
+        y: -8
+        width: 3005
+        height: 325
+      spriteId: b8d67f442bba4b242bfa38ef61e31394
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 3640, y: 298}
