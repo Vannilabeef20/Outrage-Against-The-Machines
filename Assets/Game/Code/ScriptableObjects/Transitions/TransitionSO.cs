@@ -1,4 +1,5 @@
 using UnityEngine;
+using NaughtyAttributes;
 
 namespace Game
 {
@@ -6,6 +7,6 @@ namespace Game
     public class TransitionSO : ScriptableObject
     {
        [field: SerializeField] public float Duration { get; private set; }
-       [field: SerializeField] public Sprite[] Sprites { get; private set; }
+       [field: SerializeField, ShowAssetPreview] public Sprite[] Sprites { get; private set; }
     }
 }

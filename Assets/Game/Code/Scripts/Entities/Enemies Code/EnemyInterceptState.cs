@@ -8,11 +8,12 @@ namespace Game
     {
         public override string Name {get => "Intercept";}
         [Header("TARGET SORTING")]
-        [SerializeField, ReadOnly] private GameObject[] playerGameobjects;
-        [SerializeField, ReadOnly] private GameObject closestPlayer;
+        [SerializeField] private BaseTargeting targeting;
+        [SerializeField, ReadOnly] private GameObject target;
         [SerializeField] private float sortingRepeatInterval;
         [SerializeField, ReadOnly] private float sortingTimer;
         [Header("MOVEMENT")]
+        [SerializeField] private BasePathfinding pathfinding;
         [SerializeField, ReadOnly] private Vector3 movementDirection;
         [SerializeField] private Vector3 speed;
 
@@ -26,10 +27,11 @@ namespace Game
         {
             if (sortingTimer > sortingRepeatInterval)
             {
-                FindNearstPlayer();
+                target = targeting.GetTarget(stateMachine.body.position,
+                    GameManager.Instance.PlayerObjectArray);
                 sortingTimer = 0;
             }
-            if (closestPlayer.transform.position.x < transform.position.x)
+            if (target.transform.position.x < transform.position.x)
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
@@ -37,8 +39,7 @@ namespace Game
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
-            movementDirection = closestPlayer.transform.position - transform.position;
-            movementDirection.Normalize();
+            movementDirection = pathfinding.GetMovementDirection(target.transform.position);
             stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
                 movementDirection.y * speed.y, movementDirection.z * speed.z);
         }
@@ -47,8 +48,8 @@ namespace Game
         {
             stateMachine.animator.Play(StateAnimation.name);
             startTime = Time.time;
-            FindNearstPlayer();
-            InvokeRepeating(nameof(FindNearstPlayer), 0, sortingRepeatInterval);
+            target = targeting.GetTarget(stateMachine.body.position,
+                GameManager.Instance.PlayerObjectArray);
         }
 
         public override void Exit()
@@ -66,14 +67,6 @@ namespace Game
                 IsComplete = true;
                 return;
             }
-        }
-
-        private void FindNearstPlayer()
-        {
-            playerGameobjects = GameManager.Instance.PlayerObjectArray;
-            playerGameobjects = playerGameobjects.OrderBy(player => Vector3.Distance
-            (stateMachine.transform.position, player.transform.position)).ToArray<GameObject>();
-            closestPlayer = playerGameobjects[0];
         }
     }
 }
