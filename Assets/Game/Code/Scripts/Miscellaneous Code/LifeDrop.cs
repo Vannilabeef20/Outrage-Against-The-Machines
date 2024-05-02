@@ -8,7 +8,7 @@ namespace Game
         [SerializeField, Min(0)] private int lifeAmount;
         protected override void ApplyPickupEffect(Collider other)
         {
-            GameManager.Instance.TakeAddLife(lifeAmount);
+            GameplayManager.Instance.TakeAddLife(lifeAmount);
         }
     }
 }

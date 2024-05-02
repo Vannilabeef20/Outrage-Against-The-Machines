@@ -20,11 +20,11 @@ namespace Game
             }
             if(item == MenuId.CharacterSelectionMenu)
             {
-                GameManager.Instance.UnityInputManager.EnableJoining();
+                GameplayManager.Instance.UnityInputManager.EnableJoining();
             }
             else
             {
-                GameManager.Instance.UnityInputManager.DisableJoining();
+                GameplayManager.Instance.UnityInputManager.DisableJoining();
             }
         }
     }

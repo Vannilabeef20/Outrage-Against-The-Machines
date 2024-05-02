@@ -29,7 +29,7 @@ namespace Game
 
         public override void Do()
         {
-            progress = UpTime.Map(playerAttack.Duration, 0, 1, 0, true);
+            progress = UpTime.Map(0, playerAttack.Duration);
             stateMachine.animator.Play(playerAttack.Animation.name, 0, progress);
             ValidateState();
         }

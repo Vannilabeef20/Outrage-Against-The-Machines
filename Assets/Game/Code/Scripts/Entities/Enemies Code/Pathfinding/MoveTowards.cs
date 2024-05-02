@@ -6,7 +6,7 @@ namespace Game
 {
     public class MoveTowards : BasePathfinding
     {
-        public override Vector3 GetMovementDirection(Vector3 targetPosition)
+        public override Vector3 GetMovementDirection(Vector3 targetPosition, bool IsOnScreen)
         {
            return (targetPosition - body.position).normalized;
         }

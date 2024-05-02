@@ -9,6 +9,6 @@ namespace Game
     {
         [SerializeField] protected Rigidbody body;
         [SerializeField, ReadOnly] protected Vector3 targetPosition;
-        public abstract Vector3 GetMovementDirection(Vector3 targetPosition);
+        public abstract Vector3 GetMovementDirection(Vector3 targetPosition ,bool IsOnScreen);
     }
 }

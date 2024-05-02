@@ -17,24 +17,7 @@ namespace Game
 
         public static GameManager Instance;
 
-        #region Players
-        [field: Header("Players"), HorizontalLine(2f, EColor.Red)]
-
-        public PlayerInputManager UnityInputManager;
-
-        [SerializeField] private GameObject[] playerCharacters;
-
-        [SerializeField] private Vector3[] spawnCoordinates;
-
-        public int[] playerIndexes;
-
-        public bool[] playerAlive = new bool[3];
-
-        [field: SerializeField, ReadOnly] public GameObject[] PlayerObjectArray { private set; get; }
-
-        [SerializeField] private GameObject followGroupPrefab;
-
-        #endregion
+        [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         #region Loading & Transitions
         [Header("Loading & Transitions"), HorizontalLine(2f, EColor.Orange)]
@@ -46,9 +29,7 @@ namespace Game
 
         [SerializeField] private MenuIdEvent OnSetMenuVisibility;
 
-        [SerializeField] private IntEvent UpdateLifeCount;
-        [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
-        public int maxLifeAmount;
+       
 
         #endregion
 
@@ -64,10 +45,7 @@ namespace Game
                 Destroy(gameObject);
             }
 
-            PlayerObjectArray = GameObject.FindGameObjectsWithTag("Player");
-
             transitionImage.enabled = false;
-            CurrentLifeAmount = maxLifeAmount;
 #if UNITY_EDITOR
             EditorApplication.quitting += StopRumble;
 #endif
@@ -81,19 +59,11 @@ namespace Game
             }
             else
             {
-                OnSetMenuVisibility.Raise(this, MenuId.None);
-                UpdateLifeCount.Raise(this, CurrentLifeAmount);
+                MainCamera = FindObjectOfType<Camera>();
+                OnSetMenuVisibility.Raise(this, MenuId.None);               
             }
         }
-#if UNITY_EDITOR
-        private void OnDrawGizmosSelected()
-        {
-            foreach(Vector3 coordinate in spawnCoordinates)
-            {
-                Gizmos.DrawSphere(coordinate, 0.2f);
-            }
-        }
-#endif
+
         private void OnLevelWasLoaded(int level)
         {
             if (level == 0)
@@ -102,18 +72,7 @@ namespace Game
             }
             else
             {
-                UpdateLifeCount.Raise(this, CurrentLifeAmount);
-                OnSetMenuVisibility.Raise(this, MenuId.None);
-                List<GameObject> players = new();
-                for (int i = 0; i < playerIndexes.Length; i++)
-                {
-                    if (playerIndexes[i] >= 0)
-                    {
-                        playerAlive[i] = true;
-                        players.Add(Instantiate(playerCharacters[i], spawnCoordinates[i], Quaternion.identity));
-                    }
-                }
-                PlayerObjectArray = players.ToArray();
+                OnSetMenuVisibility.Raise(this, MenuId.None);                
             }           
             StartCoroutine(StartTransitionRoutine());
         }
@@ -214,13 +173,17 @@ namespace Game
             }
             SceneManager.LoadScene(sceneIndex);
             loadRoutine = null;
-        }
-        
-        public void TakeAddLife(int amount)
+        }      
+
+        public Vector3 WorldToViewport3D(Vector3 worldPos)
         {
-            CurrentLifeAmount += amount;
-            UpdateLifeCount.Raise(this, CurrentLifeAmount);
+           return MainCamera.WorldToViewportPoint(worldPos);
         }
+        public Vector2 WorldToViewport2D(Vector3 worldPos)
+        {
+            return MainCamera.WorldToViewportPoint(worldPos);
+        }
+
         #region Testing
         [Button("Test start transition", EButtonEnableMode.Playmode)]
         public void TestRegularTransition()

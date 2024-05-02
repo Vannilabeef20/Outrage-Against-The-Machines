@@ -25,7 +25,7 @@ namespace Game
 
         public override void Do()
         {
-            progress = UpTime.Map(0, Duration, 0, 1, true);
+            progress = UpTime.Map(0, Duration);
             stateMachine.animator.Play(StateAnimation.name, 0, progress);
             ValidateState();
         }
@@ -49,8 +49,8 @@ namespace Game
 
         public override void Exit()
         {
-            GameManager.Instance.TakeAddLife(-1);
-            if(GameManager.Instance.CurrentLifeAmount <= 0)
+            GameplayManager.Instance.TakeAddLife(-1);
+            if(GameplayManager.Instance.CurrentLifeAmount <= 0)
             {
                 GameManager.Instance.LoadScene(0);
             }

@@ -3,12 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
-	public static class StaticHelper
+	public static class Helper
 	{
+		/// <summary>
+		/// Checks if a Vector3 is within a certain range.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <param name="min"></param>
+		/// <param name="max"></param>
+		/// <returns>Returns true if within range.</returns>
+		public static bool InsideRange(this Vector3 value, Vector3 min, Vector3 max)
+        {
+			if(value.x < min.x)
+            {
+				return false;
+            }
+			if(value.y < min.y)
+            {
+				return false;
+            }
+			if(value.z < min.z)
+            {
+				return false;
+			}
+			if (value.x > max.x)
+			{
+				return false;
+			}
+			if (value.y > max.y)
+			{
+				return false;
+			}
+			if (value.z > max.z)
+			{
+				return false;
+			}
+			return true;
+		}
+		/// <summary>
+		/// Checks if a Vector2 is within a certain range.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <param name="min"></param>
+		/// <param name="max"></param>
+		/// <returns></returns>
+		public static bool InsideRange(this Vector2 value, Vector2 min, Vector2 max)
+		{
+			if (value.x < min.x)
+			{
+				return false;
+			}
+			if (value.y < min.y)
+			{
+				return false;
+			}
+			if (value.x > max.x)
+			{
+				return false;
+			}
+			if (value.y > max.y)
+			{
+				return false;
+			}
+			return true;
+		}
+
 		/// <summary>
 		/// Checks if a layer is present in a given mask.
 		/// </summary>
 		/// <returns>True if layer is present.</returns>
+		/// 
+
 		public static bool ContainsLayer(this LayerMask layerMask, int layer)
 		{
 			if ((layerMask.value & (1 << layer)) > 0)
@@ -22,20 +87,28 @@ namespace Game {
 		}
 
 
-		public static float Map(this float value, float minRawValue, float maxRawValue, float minFinalValue, float maxFinalValue, bool clamp = false)
+		public static float Map(this float value, float oldLow, float oldHigh, float newLow = 0f, float newHigh = 1f, bool clamp = true)
 		{
-			float val = minFinalValue + (maxFinalValue - minFinalValue) * ((value - minRawValue) / (maxRawValue - minRawValue));
+			float temp = (value - oldLow) / (oldHigh - oldLow);
+			temp = newLow + (newHigh - newLow) * temp;
+			if (clamp)
+            {
+				temp = Mathf.Clamp(temp, newLow, newHigh);
+            }
+			else
+            {
+				temp = newLow;
+            }
+			return temp;
 
-			return clamp ? Mathf.Clamp(val, Mathf.Min(minFinalValue, maxFinalValue), Mathf.Max(minFinalValue, maxFinalValue)) : val;
 		}
 
-
-		/// <summary>
-		/// Randomly shuffles given list.
-		/// </summary>
-		/// <typeparam name="T">Type</typeparam>
-		/// <param name="targetList">List to be shuffled</param>
-		public static void ShuffleList<T>(this List<T> targetList)
+        /// <summary>
+        /// Randomly shuffles given list.
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="targetList">List to be shuffled</param>
+        public static void ShuffleList<T>(this List<T> targetList)
 		{
 			for (int i = 0; i < targetList.Count - 1; i++)
 			{
@@ -46,8 +119,36 @@ namespace Game {
 			}
 		}
 
+		#region Debug
 
-		//Draws the full box from start of cast to its end distance. Can also pass in hitInfoDistance instead of full distance
+		#region LogFormatting
+
+		public static string EnrichString(string message)
+		{
+			return $"<color=yellow>{message}</color>";
+		}
+		public static string FormatLog(string message, Color color)
+		{
+			string endcolorString = " </color>";
+			string colorString = $"<color={ColorUtility.ToHtmlStringRGB(color)}> ";
+			string finalLog = colorString;
+			finalLog += message;
+			finalLog += endcolorString;
+			return finalLog;
+		}
+
+		#endregion
+
+		#region Box/boxcast
+		/// <summary>
+		/// Draws a Boxcast with its natural parameters.
+		/// </summary>
+		/// <param name="origin">World position the Boxcast originates from.</param>
+		/// <param name="halfExtents">Half the lenght of the box to be cast.</param>
+		/// <param name="orientation">Rotation to be applied to the box before the cast.</param>
+		/// <param name="direction">The direction the cast will travel to.</param>
+		/// <param name="distance">How far the cast will go.</param>
+		/// <param name="color">The color of the cast.</param>
 		public static void DrawBoxCastBox(Vector3 origin, Vector3 halfExtents, Quaternion orientation, Vector3 direction, float distance, Color color)
 		{
 			direction.Normalize();
@@ -67,6 +168,11 @@ namespace Game {
 			DrawBox(topBox, color);
 		}
 
+		/// <summary>
+		/// Draws a Box.
+		/// </summary>
+		/// <param name="box"></param>
+		/// <param name="color"></param>
 		public static void DrawBox(Box box, Color color)
 		{
 			Debug.DrawLine(box.frontTopLeft, box.frontTopRight, color);
@@ -122,7 +228,7 @@ namespace Game {
 			}
 
 
-			public void Rotate(Quaternion orientation)
+			private void Rotate(Quaternion orientation)
 			{
 				localFrontTopLeft = RotatePointAroundPivot(localFrontTopLeft, Vector3.zero, orientation);
 				localFrontTopRight = RotatePointAroundPivot(localFrontTopRight, Vector3.zero, orientation);
@@ -131,10 +237,13 @@ namespace Game {
 			}
 		}
 
-		static Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion rotation)
+        private static Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion rotation)
 		{
 			Vector3 direction = point - pivot;
 			return pivot + rotation * direction;
 		}
+        #endregion
+
+		#endregion
 	}
 }

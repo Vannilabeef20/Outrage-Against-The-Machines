@@ -10,7 +10,7 @@ namespace Game
     {
         [SerializeField] private float maxAvoidanceRadius;
         [SerializeField] private LayerMask ObstacleLayerMask;
-        [SerializeField, Range(4,64)] private int numRays;
+        [SerializeField, Range(8,64)] private int numRays;
         [SerializeField] private float obstacleDetectionRadius;
         [SerializeField, ReadOnly] private Vector3[] rayDirections;
         [SerializeField, ReadOnly] private float[] interestValues;
@@ -30,34 +30,46 @@ namespace Game
                 rayDirections[i].Normalize();
             }
         }
-        public override Vector3 GetMovementDirection(Vector3 targetPosition)
+        public override Vector3 GetMovementDirection(Vector3 targetPosition, bool IsOnScreen)
+        { 
+            return CalculateContextSteering(CalculateTargetDirection(targetPosition), IsOnScreen);
+        }
+
+        public virtual Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             Vector3 targetDirection = targetPosition - body.position;
             targetDirection.Normalize();
+            return targetDirection;
+        }
+
+        private Vector3 CalculateContextSteering(Vector3 targetDirection, bool isOnScreen)
+        {
             for (int i = 0; i < rayDirections.Length; i++)
             {
                 interestValues[i] = Mathf.Clamp01(Vector3.Dot(targetDirection, rayDirections[i]));
-                if (Physics.Raycast(body.position, rayDirections[i], out RaycastHit info, obstacleDetectionRadius, ObstacleLayerMask))
+                if (isOnScreen)
                 {
-                    if (Vector3.Dot(targetDirection, rayDirections[i]) <= 0)
+                    if (Physics.Raycast(body.position, rayDirections[i], out RaycastHit info, obstacleDetectionRadius, ObstacleLayerMask))
                     {
-                        obstacleValues[i] = 0f;
+                        if (Vector3.Dot(targetDirection, rayDirections[i]) <= 0)
+                        {
+                            obstacleValues[i] = 0f;
+                        }
+                        else
+                        {
+                            float temp = Vector3.Distance(info.point, body.position);
+                            obstacleValues[i] = 1 - temp.Map(maxAvoidanceRadius, obstacleDetectionRadius);
+                        }
                     }
                     else
                     {
-                        float distance = Vector3.Distance(info.point, body.position);
-                        distance.Map(maxAvoidanceRadius,obstacleDetectionRadius, 1, 0, true);
-                        obstacleValues[i] = distance;
-                    }                    
-                }
-                else
-                {
-                    obstacleValues[i] = 0f;
+                        obstacleValues[i] = 0f;
+                    }
+                    Debug.DrawLine(body.position + Vector3.down, body.position + Vector3.down +
+                        (rayDirections[i] * obstacleValues[i]), Color.red);
                 }
                 Debug.DrawLine(body.position, body.position +
                     (rayDirections[i] * interestValues[i]), Color.green);
-                Debug.DrawLine(body.position, body.position +
-                    (rayDirections[i] * obstacleValues[i]), Color.red);                
             }
             Vector3 finalDirection = Vector3.zero;
             for (int i = 0; i < rayDirections.Length; i++)
@@ -76,7 +88,7 @@ namespace Game
         {
             Handles.color = Color.red;
             Handles.DrawWireArc(body.position - (normal * maxAvoidanceRadius / 2), normal, Vector3.up, 360, maxAvoidanceRadius);
-            Handles.color = Color.red;
+            Handles.color = Color.yellow;
             Handles.DrawWireArc(body.position - (normal * obstacleDetectionRadius / 2), normal, Vector3.up, 360, obstacleDetectionRadius);
         }
 #endif

@@ -14,6 +14,7 @@ namespace Game
         [SerializeField] private ParticleSystem damageParticles;
 
         #region Enemy Hit Flash
+        [SerializeField, ReadOnly] private Color startingColor;
         [SerializeField] private Color hitFlashColor;
         [SerializeField] private float hitFlashLenght;
         [SerializeField, ReadOnly] private float hitFlashTimer;
@@ -58,17 +59,17 @@ namespace Game
 
         public override void Do()
         {
-            progress = UpTime.Map(stunDuration, 0, 1, 0, true);
+            progress = UpTime.Map(0, stunDuration);
             hitFlashTimer += Time.deltaTime;
             if(hitFlashTimer >= hitFlashLenght)
             {
-                if(stateMachine.spriteRenderer.color == Color.white)
+                if(stateMachine.spriteRenderer.color == startingColor)
                 {
                     stateMachine.spriteRenderer.color = hitFlashColor;
                 }
                 else
                 {
-                    stateMachine.spriteRenderer.color = Color.white;
+                    stateMachine.spriteRenderer.color = startingColor;
                 }
                 hitFlashTimer = 0f;
             }
@@ -85,6 +86,7 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
+            startingColor = stateMachine.spriteRenderer.color;
             startTime = Time.time;
             hitFlashTimer = 0f;
             initialPos = transform.position;

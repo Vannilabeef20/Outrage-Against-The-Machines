@@ -44,6 +44,14 @@ namespace Game
 
         private void Update()
         {
+            if(Input.GetKeyDown(KeyCode.Backspace))
+            {
+                foreach(var enemy in enemiesAlive)
+                {
+                    enemiesAlive.Remove(enemy);
+                    Destroy(enemy);
+                }
+            }
             if (encounters.Count == 0)
             {
                 return;

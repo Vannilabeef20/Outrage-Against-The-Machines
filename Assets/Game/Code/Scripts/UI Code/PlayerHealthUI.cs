@@ -16,9 +16,8 @@ namespace Game
         private Coroutine healthCoroutine;
 
         private void Start()
-        {
-            
-            if (GameManager.Instance.playerIndexes[playerID] < 0)
+        {            
+            if (GameplayManager.Instance.playerIndexes[playerID] < 0)
             {
                 transform.parent.gameObject.SetActive(false);
             }
@@ -29,7 +28,7 @@ namespace Game
             {
                 return;
             }
-            int index = (int)Mathf.Round(playerHitParams.newHealthPercent.Map(1, 0, 0, sprites.Length - 1, true));
+            int index = (int)Mathf.Round(playerHitParams.newHealthPercent.Map(0, 1, 0, sprites.Length - 1));
             foregroundImage.sprite = sprites[index];
             if(healthCoroutine != null)
             {

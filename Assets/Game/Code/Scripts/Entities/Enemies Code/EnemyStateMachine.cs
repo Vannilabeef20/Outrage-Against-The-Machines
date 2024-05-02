@@ -42,6 +42,8 @@ namespace Game
         [field: SerializeField] public Vector3 BoxCastOffset { get; private set; }
         [SerializeField] private Vector3 boxCastDimensions;
         [SerializeField] private float boxCastLenght;
+
+        [field: SerializeField, ReadOnly] public bool IsOnScreen { get; private set; }
         #endregion
 
         #region Debug
@@ -89,6 +91,7 @@ namespace Game
 
         private void Update()
         {
+            IsOnScreen = GameManager.Instance.WorldToViewport2D(body.position).InsideRange(Vector2.zero, Vector2.one);
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);
@@ -132,13 +135,13 @@ namespace Game
         {          
             if(IsAligned)
             {
-                StaticHelper.DrawBoxCastBox(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
+                Helper.DrawBoxCastBox(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                     BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, Quaternion.identity,
                         transform.right, boxCastLenght, boxCastAlignedColor);
             }
             else
             {
-                StaticHelper.DrawBoxCastBox(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
+                Helper.DrawBoxCastBox(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                     BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, Quaternion.identity,
                         transform.right, boxCastLenght, boxCastDefaultColor);
             }

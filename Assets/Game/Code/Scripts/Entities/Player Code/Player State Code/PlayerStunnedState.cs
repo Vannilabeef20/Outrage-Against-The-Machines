@@ -41,7 +41,7 @@ namespace Game
         public override void Do()
         {
             ValidateState();
-            progress = UpTime.Map(0, duration, 0, 1, true);
+            progress = UpTime.Map(0, duration);
             stateMachine.animator.Play(StateAnimation.name, 0, progress);
         }
 
