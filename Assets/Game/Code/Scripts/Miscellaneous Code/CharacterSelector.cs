@@ -13,17 +13,17 @@ namespace Game
         [SerializeField, ReadOnly] private int[] selectionIndexes = new int[3];
         [SerializeField] private Button confirmButton;
 
-        private void OnEnable()
+        private void Start()
         {
-            GameplayManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
-            GameplayManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshImage);
             RefreshImage();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
-            GameplayManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshImage);
-            GameplayManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshImage);
         }
 
         public void SwapCharacter(int characterIndex, int cycleValue)
@@ -43,7 +43,7 @@ namespace Game
 
         public void RefreshImage(int characterIndex)
         {
-            if (GameplayManager.Instance.UnityInputManager.playerCount != 0)
+            if (GameManager.Instance.UnityInputManager.playerCount != 0)
             {
                 confirmButton.interactable = true;
             }
@@ -52,7 +52,7 @@ namespace Game
                 confirmButton.interactable = false;
             }
 
-            if (GameplayManager.Instance.UnityInputManager.playerCount - 1 < characterIndex)
+            if (GameManager.Instance.UnityInputManager.playerCount - 1 < characterIndex)
             {
                 selectionImages[characterIndex].enabled = false;
                 joinTextsObjects[characterIndex].SetActive(true);
@@ -65,7 +65,7 @@ namespace Game
         }
         public void RefreshImage(PlayerInput playerInput)
         {
-            if (GameplayManager.Instance.UnityInputManager.playerCount != 0)
+            if (GameManager.Instance.UnityInputManager.playerCount != 0)
             {
                 confirmButton.interactable = true;
             }
@@ -76,7 +76,7 @@ namespace Game
 
             for (int i = 0; i < 3; i++)
             {
-                if (GameplayManager.Instance.UnityInputManager.playerCount - 1 < i)
+                if (GameManager.Instance.UnityInputManager.playerCount - 1 < i)
                 {
                     selectionImages[i].enabled = false;
                     joinTextsObjects[i].SetActive(true);
@@ -90,7 +90,7 @@ namespace Game
         }
         public void RefreshImage()
         {
-            if (GameplayManager.Instance.UnityInputManager.playerCount != 0)
+            if (GameManager.Instance.UnityInputManager.playerCount != 0)
             {
                 confirmButton.interactable = true;
             }
@@ -101,7 +101,7 @@ namespace Game
 
             for (int i = 0; i < 3; i++)
             {
-                if (GameplayManager.Instance.UnityInputManager.playerCount - 1 < i)
+                if (GameManager.Instance.UnityInputManager.playerCount - 1 < i)
                 {
                     selectionImages[i].enabled = false;
                     joinTextsObjects[i].SetActive(true);
@@ -116,14 +116,14 @@ namespace Game
 
         public void ConfirmSelection()
         {
-            for(int i = 0; i < 3; i++)
+            GameManager.Instance.playerIndexes.Clear();
+            for (int i = 0; i < selectionIndexes.Length; i++)
             {
-                if (GameplayManager.Instance.UnityInputManager.playerCount - 1 < i)
+                if (GameManager.Instance.UnityInputManager.playerCount - 1 >= i)
                 {
-                    selectionIndexes[i] = -1;
+                    GameManager.Instance.playerIndexes.Add(selectionIndexes[i]);
                 }
             }
-            GameplayManager.Instance.playerIndexes = selectionIndexes;
         }
     }
 }

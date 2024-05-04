@@ -16,6 +16,8 @@ namespace Game
 
         [SerializeField] private BoxCollider[] hitboxes;
 
+        public AudioSource attackAudioSource;
+
         [field:SerializeField, ReadOnly] public PlayerAttackState CurrentAttackState { get; private set; }
 
         [ReadOnly] public PlayerAttackState queuedAttackState;
@@ -140,6 +142,7 @@ namespace Game
             {
                 CurrentAttackState = queuedAttackState;
                 queuedAttackState = null;
+                FlipCharacter();
                 CurrentAttackState.Enter();
             }
             else if (CurrentAttackState.IsComplete)
@@ -149,6 +152,7 @@ namespace Game
                 queuedAttackState = null;
                 if(CurrentAttackState != null)
                 {
+                    FlipCharacter();
                     CurrentAttackState.Enter();
                 }
             }
@@ -158,6 +162,18 @@ namespace Game
             foreach (var hitbox in hitboxes)
             {
                 hitbox.enabled = false;
+            }
+        }
+        
+        private void FlipCharacter()
+        {
+            if (stateMachine.InputDirection.x > 0)
+            {
+                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0)); //Flip Right
+            }
+            else if (stateMachine.InputDirection.x < 0)
+            {
+                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0)); //Flip left
             }
         }
     }

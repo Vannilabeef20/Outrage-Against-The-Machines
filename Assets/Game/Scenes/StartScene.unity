@@ -3234,7 +3234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press any key or Start to Join
+  m_text: Press Spacebar or Start to Join
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
   m_sharedMaterial: {fileID: -2103876767430310799, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
@@ -4491,10 +4491,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7458049468490024796, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: DebugTypes
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5479,7 +5475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press any key or Start to Join
+  m_text: Press Spacebar or Start to Join
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
   m_sharedMaterial: {fileID: -2103876767430310799, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
@@ -5974,7 +5970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press any key or Start to Join
+  m_text: Press Spacebar or Start to Join
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
   m_sharedMaterial: {fileID: -2103876767430310799, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}

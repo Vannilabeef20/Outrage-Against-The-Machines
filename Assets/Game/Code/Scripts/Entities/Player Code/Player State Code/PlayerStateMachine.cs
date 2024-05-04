@@ -52,6 +52,14 @@ namespace Game
             playerStateLabel.text = CurrentState.Name;
         }
 
+        private void Start()
+        {
+            if(GameManager.Instance.playerIndexes.Count <= 1)
+            {
+                playerInput.neverAutoSwitchControlSchemes = false;
+            }
+        }
+
 
         private void Update()
         {
@@ -117,6 +125,12 @@ namespace Game
         public void PlayFootstepSound()
         {
             Walking.PlayFootstepSound();
+        }
+
+        public void PlayAttackSound(int attackNumber = 0)
+        {
+            Attacking.attackAudioSource.pitch = Attacking.CurrentAttackState.playerAttack.AudioPitches[attackNumber];
+            Attacking.attackAudioSource.PlayOneShot(Attacking.CurrentAttackState.playerAttack.Sound);
         }
 
         #endregion

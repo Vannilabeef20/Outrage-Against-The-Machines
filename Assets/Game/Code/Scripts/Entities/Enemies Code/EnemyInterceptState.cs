@@ -33,7 +33,7 @@ namespace Game
             if (targetingTimer > targetingRepeatInterval)
             {
                 target = targeting.GetTarget(stateMachine.body.position,
-                    GameplayManager.Instance.PlayerObjectArray);
+                    GameManager.Instance.PlayerObjectArray);
                 targetingTimer = 0;
             }
             if (target.transform.position.x < transform.position.x)
@@ -58,7 +58,7 @@ namespace Game
             stateMachine.animator.Play(StateAnimation.name);
             startTime = Time.time;
             target = targeting.GetTarget(stateMachine.body.position,
-                GameplayManager.Instance.PlayerObjectArray);
+                GameManager.Instance.PlayerObjectArray);
         }
 
         public override void Exit()

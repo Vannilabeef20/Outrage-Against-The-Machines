@@ -19,7 +19,6 @@ namespace Game
             IsComplete = false;
             startTime = Time.time;
             AttackMachine.attackList.Add(playerAttack);
-            stateMachine.audioSource.PlayOneShot(playerAttack.Sound);
         }
 
         public override void Exit()

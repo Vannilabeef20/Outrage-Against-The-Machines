@@ -49,8 +49,8 @@ namespace Game
 
         public override void Exit()
         {
-            GameplayManager.Instance.TakeAddLife(-1);
-            if(GameplayManager.Instance.CurrentLifeAmount <= 0)
+            GameManager.Instance.TakeAddLife(-1);
+            if(GameManager.Instance.CurrentLifeAmount <= 0)
             {
                 GameManager.Instance.LoadScene(0);
             }

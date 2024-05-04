@@ -73,6 +73,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""RunningAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""23b89897-d25c-459a-8f32-4a94bb7f39a8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""MultiTap(tapTime=0.15,tapDelay=0.2,tapCount=3,pressPoint=0.9)"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""OpenCloseMenu"",
                     ""type"": ""Button"",
                     ""id"": ""d0352cad-2198-4c59-82e9-97478d988c5a"",
@@ -337,13 +346,79 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1ed8c845-019d-4d89-b345-74b317baf746"",
-                    ""path"": ""<Keyboard>/anyKey"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Join"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""2d3477bb-70b8-4361-9d7f-d2fbc07d866f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunningAttack"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""e51eeefd-da52-42c9-8d39-bd6e1ae4fe19"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunningAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""c75c83c4-4e47-4383-b757-e482974e2b8b"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RunningAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""64f51d2c-e66d-449f-a5c4-b5662c455da8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunningAttack"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""af06632a-997d-41c3-b2aa-66a9ab690bf1"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RunningAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""06643d4c-3322-4fa8-91b6-33e4b99488c9"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RunningAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -380,6 +455,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Inputs_Kick = m_Inputs.FindAction("Kick", throwIfNotFound: true);
         m_Inputs_Grab = m_Inputs.FindAction("Grab", throwIfNotFound: true);
         m_Inputs_Special = m_Inputs.FindAction("Special", throwIfNotFound: true);
+        m_Inputs_RunningAttack = m_Inputs.FindAction("RunningAttack", throwIfNotFound: true);
         m_Inputs_OpenCloseMenu = m_Inputs.FindAction("OpenCloseMenu", throwIfNotFound: true);
         m_Inputs_Join = m_Inputs.FindAction("Join", throwIfNotFound: true);
     }
@@ -446,6 +522,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Inputs_Kick;
     private readonly InputAction m_Inputs_Grab;
     private readonly InputAction m_Inputs_Special;
+    private readonly InputAction m_Inputs_RunningAttack;
     private readonly InputAction m_Inputs_OpenCloseMenu;
     private readonly InputAction m_Inputs_Join;
     public struct InputsActions
@@ -457,6 +534,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Kick => m_Wrapper.m_Inputs_Kick;
         public InputAction @Grab => m_Wrapper.m_Inputs_Grab;
         public InputAction @Special => m_Wrapper.m_Inputs_Special;
+        public InputAction @RunningAttack => m_Wrapper.m_Inputs_RunningAttack;
         public InputAction @OpenCloseMenu => m_Wrapper.m_Inputs_OpenCloseMenu;
         public InputAction @Join => m_Wrapper.m_Inputs_Join;
         public InputActionMap Get() { return m_Wrapper.m_Inputs; }
@@ -483,6 +561,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Special.started -= m_Wrapper.m_InputsActionsCallbackInterface.OnSpecial;
                 @Special.performed -= m_Wrapper.m_InputsActionsCallbackInterface.OnSpecial;
                 @Special.canceled -= m_Wrapper.m_InputsActionsCallbackInterface.OnSpecial;
+                @RunningAttack.started -= m_Wrapper.m_InputsActionsCallbackInterface.OnRunningAttack;
+                @RunningAttack.performed -= m_Wrapper.m_InputsActionsCallbackInterface.OnRunningAttack;
+                @RunningAttack.canceled -= m_Wrapper.m_InputsActionsCallbackInterface.OnRunningAttack;
                 @OpenCloseMenu.started -= m_Wrapper.m_InputsActionsCallbackInterface.OnOpenCloseMenu;
                 @OpenCloseMenu.performed -= m_Wrapper.m_InputsActionsCallbackInterface.OnOpenCloseMenu;
                 @OpenCloseMenu.canceled -= m_Wrapper.m_InputsActionsCallbackInterface.OnOpenCloseMenu;
@@ -508,6 +589,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Special.started += instance.OnSpecial;
                 @Special.performed += instance.OnSpecial;
                 @Special.canceled += instance.OnSpecial;
+                @RunningAttack.started += instance.OnRunningAttack;
+                @RunningAttack.performed += instance.OnRunningAttack;
+                @RunningAttack.canceled += instance.OnRunningAttack;
                 @OpenCloseMenu.started += instance.OnOpenCloseMenu;
                 @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
                 @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
@@ -543,6 +627,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnKick(InputAction.CallbackContext context);
         void OnGrab(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
+        void OnRunningAttack(InputAction.CallbackContext context);
         void OnOpenCloseMenu(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
     }

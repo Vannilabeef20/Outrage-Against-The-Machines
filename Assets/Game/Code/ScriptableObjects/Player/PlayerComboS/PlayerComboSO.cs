@@ -15,6 +15,7 @@ namespace Game
         Punch,
         Kick,
         Grab,
-        Special
+        Special,
+        RunningAttack
     }
 }

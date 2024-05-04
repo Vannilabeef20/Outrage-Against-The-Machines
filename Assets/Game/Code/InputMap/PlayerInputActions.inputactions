@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "RunningAttack",
+                    "type": "Button",
+                    "id": "23b89897-d25c-459a-8f32-4a94bb7f39a8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap(tapTime=0.15,tapDelay=0.2,tapCount=3,pressPoint=0.9)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "OpenCloseMenu",
                     "type": "Button",
                     "id": "d0352cad-2198-4c59-82e9-97478d988c5a",
@@ -315,13 +324,79 @@
                 {
                     "name": "",
                     "id": "1ed8c845-019d-4d89-b345-74b317baf746",
-                    "path": "<Keyboard>/anyKey",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "2d3477bb-70b8-4361-9d7f-d2fbc07d866f",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunningAttack",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "e51eeefd-da52-42c9-8d39-bd6e1ae4fe19",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunningAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c75c83c4-4e47-4383-b757-e482974e2b8b",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RunningAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "64f51d2c-e66d-449f-a5c4-b5662c455da8",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunningAttack",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "af06632a-997d-41c3-b2aa-66a9ab690bf1",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "RunningAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "06643d4c-3322-4fa8-91b6-33e4b99488c9",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "RunningAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

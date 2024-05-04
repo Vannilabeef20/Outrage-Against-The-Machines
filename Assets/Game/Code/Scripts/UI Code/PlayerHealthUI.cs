@@ -17,7 +17,7 @@ namespace Game
 
         private void Start()
         {            
-            if (GameplayManager.Instance.playerIndexes[playerID] < 0)
+            if (GameManager.Instance.playerIndexes.Count < playerID + 1)
             {
                 transform.parent.gameObject.SetActive(false);
             }
@@ -28,7 +28,7 @@ namespace Game
             {
                 return;
             }
-            int index = (int)Mathf.Round(playerHitParams.newHealthPercent.Map(0, 1, 0, sprites.Length - 1));
+            int index = (int)Mathf.Round(1 - playerHitParams.newHealthPercent.Map(0, 1, 0, sprites.Length - 1));
             foregroundImage.sprite = sprites[index];
             if(healthCoroutine != null)
             {

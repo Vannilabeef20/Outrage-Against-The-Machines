@@ -15,7 +15,7 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
 
-        public static GameManager Instance;
+        public static GameManager Instance{ get; private set; }
 
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
@@ -29,8 +29,32 @@ namespace Game
 
         [SerializeField] private MenuIdEvent OnSetMenuVisibility;
 
-       
 
+
+        #endregion
+
+        #region Players
+        [field: Header("Players"), HorizontalLine(2f, EColor.Red)]
+
+        public PlayerInputManager UnityInputManager;
+
+        [SerializeField] private GameObject[] playerCharacters;
+
+        [SerializeField] private Vector3[] spawnCoordinates;
+
+        public List<int> playerIndexes = new();
+
+        public bool[] playerAlive = new bool[3];
+
+        [field: SerializeField, ReadOnly] public GameObject[] PlayerObjectArray { private set; get; }
+
+        [SerializeField] private GameObject followGroupPrefab;
+        #endregion
+
+        #region Lifes
+        [SerializeField] private IntEvent UpdateLifeCount;
+        [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
+        public int maxLifeAmount;
         #endregion
 
         private void Awake()
@@ -46,6 +70,11 @@ namespace Game
             }
 
             transitionImage.enabled = false;
+            int level = SceneManager.GetActiveScene().buildIndex;
+            if (level != 0)
+            {
+                InitializeLevel();
+            }
 #if UNITY_EDITOR
             EditorApplication.quitting += StopRumble;
 #endif
@@ -72,9 +101,23 @@ namespace Game
             }
             else
             {
-                OnSetMenuVisibility.Raise(this, MenuId.None);                
+                OnSetMenuVisibility.Raise(this, MenuId.None);
+                InitializeLevel();
             }           
             StartCoroutine(StartTransitionRoutine());
+        }
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            foreach (Vector3 coordinate in spawnCoordinates)
+            {
+                Gizmos.DrawSphere(coordinate, 0.2f);
+            }
+        }
+#endif
+        private void OnApplicationQuit()
+        {
+            StopRumble();
         }
 
         public void Rumble(InputDevice device, float lowFrequency, float highFrequency, float duration)
@@ -124,10 +167,6 @@ namespace Game
             {
                 gamepad.SetMotorSpeeds(0f, 0f);
             }
-        }
-        private void OnApplicationQuit()
-        {
-            StopRumble();
         }
 
         public void PauseGame()
@@ -182,6 +221,36 @@ namespace Game
         public Vector2 WorldToViewport2D(Vector3 worldPos)
         {
             return MainCamera.WorldToViewportPoint(worldPos);
+        }
+        public void TakeAddLife(int amount)
+        {
+            CurrentLifeAmount += amount;
+            UpdateLifeCount.Raise(this, CurrentLifeAmount);
+        }
+
+        private void InitializeLevel()
+        {
+            PlayerObjectArray = GameObject.FindGameObjectsWithTag("Player");
+            CurrentLifeAmount = maxLifeAmount;
+            UpdateLifeCount.Raise(this, CurrentLifeAmount);
+            UpdateLifeCount.Raise(this, CurrentLifeAmount);
+            List<GameObject> players = new();
+            if(playerIndexes.Count == 0)
+            {
+                GameObject player = Instantiate(playerCharacters[0], spawnCoordinates[0], Quaternion.identity);
+                playerIndexes.Add(0);
+                players.Add(player);
+            }
+            else
+            {
+                for (int i = 0; i < playerIndexes.Count; i++)
+                {
+                    playerAlive[i] = true;
+                    players.Add(Instantiate(playerCharacters[i], spawnCoordinates[i], Quaternion.identity));
+                }
+            }          
+            PlayerObjectArray = players.ToArray();
+            Instantiate(followGroupPrefab);
         }
 
         #region Testing
