@@ -26,10 +26,10 @@ namespace Game
             GameManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshImage);
         }
 
-        public void SwapCharacter(int characterIndex, int cycleValue)
+        public void SwapCharacter(int characterIndex)
         {
             RefreshImage(characterIndex);
-            selectionIndexes[characterIndex] += cycleValue;
+            selectionIndexes[characterIndex] ++;
             if (selectionIndexes[characterIndex] >= 3)
             {
                 selectionIndexes[characterIndex] = 0;

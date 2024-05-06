@@ -64,9 +64,10 @@ namespace Game
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            else
+            else if (Instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
 
             transitionImage.enabled = false;
@@ -95,6 +96,16 @@ namespace Game
 
         private void OnLevelWasLoaded(int level)
         {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else if(Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
             if (level == 0)
             {
                 OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
@@ -103,6 +114,7 @@ namespace Game
             {
                 OnSetMenuVisibility.Raise(this, MenuId.None);
                 InitializeLevel();
+                Debug.Log("2");
             }           
             StartCoroutine(StartTransitionRoutine());
         }
@@ -230,7 +242,6 @@ namespace Game
 
         private void InitializeLevel()
         {
-            PlayerObjectArray = GameObject.FindGameObjectsWithTag("Player");
             CurrentLifeAmount = maxLifeAmount;
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
@@ -240,13 +251,15 @@ namespace Game
                 GameObject player = Instantiate(playerCharacters[0], spawnCoordinates[0], Quaternion.identity);
                 playerIndexes.Add(0);
                 players.Add(player);
+                Debug.Log("a");
             }
             else
             {
-                for (int i = 0; i < playerIndexes.Count; i++)
+                for (int i = 0; i <= playerIndexes.Count - 1; i++)
                 {
                     playerAlive[i] = true;
                     players.Add(Instantiate(playerCharacters[i], spawnCoordinates[i], Quaternion.identity));
+                    Debug.Log("b");
                 }
             }          
             PlayerObjectArray = players.ToArray();

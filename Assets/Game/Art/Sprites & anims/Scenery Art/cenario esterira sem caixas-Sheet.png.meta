@@ -1,0 +1,564 @@
+fileFormatVersion: 2
+guid: f2973ffaae1a07548aad6fad3901c336
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4752d1aab8fbfcd4e8468cd6e2f6b192
+      internalID: 590958695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 864
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b70a81d560d0143967b67c4ca1ead3
+      internalID: -772571435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 864
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe4bb1b2ec39bf43b111d0c21952eac
+      internalID: 1924954650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 864
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef3fe3bc49c25349b9eaeef91c18dcb
+      internalID: -865693608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 864
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846132a6a06da274eaa1ef42d345f8e3
+      internalID: -738152007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3632fc0c98762e1428ee60602e6548cc
+      internalID: -310968250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 576
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a1b5e4eb9c36a4aa294f37dcef406d
+      internalID: -828339449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 576
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d9a5cd380bf804b9c3fff354a43cee
+      internalID: -1884019461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 576
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4554b4bbd5dd8a499b2b9cd437cc874
+      internalID: -1073000594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 576
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c14997ca54a1a149bbaac72330604fe
+      internalID: 58266967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070bf5ae4f40d5e4eac697a67c2d8cca
+      internalID: -837419307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 288
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6330045bbb72e094ebbb17d2ea0c12af
+      internalID: -642432163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 288
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b219fe92916b0414998b48506e5f211a
+      internalID: 80533533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 288
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4396425010876a84e9a9b1315e88bb4a
+      internalID: 1729590806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 288
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34a699b275f2954b849ac3bbdb7afb0
+      internalID: -1862088492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4bea9f134d6a54f8a04fe3cca889d7
+      internalID: 974803054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 0
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cbb23f6eb1f6a41b6a40941348f0a1
+      internalID: 1792832935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 0
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13210b3afaf6df346b319df5411fd275
+      internalID: -1233519880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 0
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026f1e792cb78dd4dbb19ca345250bf5
+      internalID: 1501953103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cenario esterira sem caixas-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 0
+        width: 953
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b1dc6ba06c232459c24bb713ce6e0e
+      internalID: 102419997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cenario esterira sem caixas-Sheet_6: -828339449
+      cenario esterira sem caixas-Sheet_5: -310968250
+      cenario esterira sem caixas-Sheet_8: -1073000594
+      cenario esterira sem caixas-Sheet_17: -1233519880
+      cenario esterira sem caixas-Sheet_7: -1884019461
+      cenario esterira sem caixas-Sheet_1: -772571435
+      cenario esterira sem caixas-Sheet_19: 102419997
+      cenario esterira sem caixas-Sheet_10: -837419307
+      cenario esterira sem caixas-Sheet_12: 80533533
+      cenario esterira sem caixas-Sheet_18: 1501953103
+      cenario esterira sem caixas-Sheet_14: -1862088492
+      cenario esterira sem caixas-Sheet_9: 58266967
+      cenario esterira sem caixas-Sheet_2: 1924954650
+      cenario esterira sem caixas-Sheet_16: 1792832935
+      cenario esterira sem caixas-Sheet_3: -865693608
+      cenario esterira sem caixas-Sheet_4: -738152007
+      cenario esterira sem caixas-Sheet_13: 1729590806
+      cenario esterira sem caixas-Sheet_0: 590958695
+      cenario esterira sem caixas-Sheet_11: -642432163
+      cenario esterira sem caixas-Sheet_15: 974803054
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

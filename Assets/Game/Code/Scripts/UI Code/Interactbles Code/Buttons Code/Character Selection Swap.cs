@@ -7,11 +7,10 @@ namespace Game
     {
         [SerializeField] private CharacterSelector characterSelector;
         [SerializeField] private int characterIndex;
-        [SerializeField] private int cycleValue;
 
         public void Swap()
         {
-            characterSelector.SwapCharacter(characterIndex, cycleValue);
+            characterSelector.SwapCharacter(characterIndex);
         }
     }
 }
