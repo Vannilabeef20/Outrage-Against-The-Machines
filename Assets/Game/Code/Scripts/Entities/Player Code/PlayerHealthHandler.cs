@@ -11,7 +11,7 @@ namespace Game
         [Header("REFERENCES"), HorizontalLine]
         [SerializeField] private PlayerStateMachine playerStateMachine;
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private CapsuleCollider playerHitbox;
+        public CapsuleCollider playerHitbox;
 
         #region Player Health Params
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
@@ -21,8 +21,7 @@ namespace Game
         [SerializeField] private LayerMask hostileLayers;
 
         [SerializeField] private float maxHeathPoints;
-        [field: SerializeField, ReadOnly] public float CurrentHealthPoints { get; private set; }
-        [field: SerializeField, ReadOnly] public float CurrentHealthPercent { get; private set; }
+        [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
 
         [SerializeField, ReadOnly] private bool isDead;
 
@@ -45,17 +44,7 @@ namespace Game
         #region UI
         [Header("UI"), HorizontalLine(2f, EColor.Yellow)]
 
-        //Lerp
         [SerializeField] private PlayerHitParamsEvent OnHealthChanged;
-
-        [Tooltip("Delay for the start of health lerp, in seconds")]
-        [SerializeField] private float lerpHealthPointsDelay;
-
-        [Tooltip("Duration for the health lerp, in seconds")]
-        [SerializeField] private float lerpHealthPointsDuration;
-
-        [Tooltip("Ease used for the health lerp")]
-        [SerializeField] Ease healthLerpEase;
         #endregion
 
 
@@ -64,16 +53,16 @@ namespace Game
         {
             spriteRenderer = transform.parent.GetComponentInChildren<SpriteRenderer>();
             CurrentHealthPoints = maxHeathPoints;
-            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
         }
 
         public void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
             isDead = false;
             playerHitbox.enabled = false;
-            CurrentHealthPoints -= damage;
-            OnHealthChanged.Raise(this, new PlayerHitParams(playerStateMachine.playerInput.playerIndex, 1f, CurrentHealthPoints / maxHeathPoints,
-            lerpHealthPointsDelay, lerpHealthPointsDuration, healthLerpEase));
+            float formerHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0f, maxHeathPoints);
+            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            OnHealthChanged.Raise(this, new PlayerHitParams(playerStateMachine.playerInput.playerIndex, 1f, CurrentHealthPoints / maxHeathPoints));
 
             if (CurrentHealthPoints <= 0f)
             {
@@ -158,19 +147,19 @@ namespace Game
         public void Heal(float healPercent)
         {
             healParticle.Play();
+            float formerHealthPercent = CurrentHealthPoints / maxHeathPoints;
             CurrentHealthPoints += (maxHeathPoints * healPercent);
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints, 0f, maxHeathPoints);
-            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            OnHealthChanged.Raise(this, new PlayerHitParams(playerStateMachine.playerInput.playerIndex, 1f, CurrentHealthPoints / maxHeathPoints,
-                lerpHealthPointsDelay, lerpHealthPointsDuration, healthLerpEase));
+            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            OnHealthChanged.Raise(this, new PlayerHitParams(playerStateMachine.playerInput.playerIndex, formerHealthPercent, newHealthPercent));
         }
         
         public void Revive()
         {
+            float formerHealthPercent = CurrentHealthPoints / maxHeathPoints;
             CurrentHealthPoints = maxHeathPoints;
-            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            OnHealthChanged.Raise(this, new PlayerHitParams(playerStateMachine.playerInput.playerIndex, 1f, CurrentHealthPoints / maxHeathPoints,
-                lerpHealthPointsDelay, lerpHealthPointsDuration, healthLerpEase));
+            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            OnHealthChanged.Raise(this, new PlayerHitParams(playerStateMachine.playerInput.playerIndex, formerHealthPercent, newHealthPercent));
             playerHitbox.enabled = true;
         }
     }

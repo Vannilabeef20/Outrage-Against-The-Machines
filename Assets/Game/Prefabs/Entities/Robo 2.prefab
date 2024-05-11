@@ -10257,6 +10257,7 @@ MonoBehaviour:
   animator: {fileID: 6508126985700856563}
   hurtBox: {fileID: 6508126987123622498}
   attackhitbox: {fileID: 6508126987276863438}
+  collisionBox: {fileID: 6508126985700856564}
   intercept: {fileID: 6508126985612539012}
   damage: {fileID: 6508126986235999517}
   attack: {fileID: 6508126987276863439}
@@ -10270,7 +10271,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
-  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.5}
+  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.4}
   boxCastLenght: 10
   <IsOnScreen>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}
@@ -10473,7 +10474,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6508126985700856560}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

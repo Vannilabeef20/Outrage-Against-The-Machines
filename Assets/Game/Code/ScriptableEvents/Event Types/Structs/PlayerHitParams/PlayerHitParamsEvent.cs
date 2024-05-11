@@ -13,19 +13,12 @@ namespace Game
         public int playerID;
         public float formerHealthPercent;
         public float newHealthPercent;
-        public float healthLerpDelay;
-        public float healthLerpDuration;
-        public Ease healthLerpEasing;
 
-
-        public PlayerHitParams (int playerID, float FormerHealthPercent, float NewHealthPercent, float HealthLerpDelay, float HealthLerpDuration, Ease HealthLerpEasing)
+        public PlayerHitParams (int playerID, float FormerHealthPercent, float NewHealthPercent)
         {
             this.playerID = playerID;
             this.formerHealthPercent = FormerHealthPercent;
             this.newHealthPercent = NewHealthPercent;
-            this.healthLerpDelay = HealthLerpDelay;
-            this.healthLerpDuration = HealthLerpDuration;
-            this.healthLerpEasing = HealthLerpEasing;
         }
 
     }

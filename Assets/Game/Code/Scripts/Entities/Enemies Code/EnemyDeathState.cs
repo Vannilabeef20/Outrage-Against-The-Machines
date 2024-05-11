@@ -41,7 +41,7 @@ namespace Game
             {
                 Instantiate(drop, stateMachine.transform.position, Quaternion.identity);
             }
-            stateMachine.gameObject.SetActive(false);
+            Destroy(stateMachine.gameObject);
         }
 
         protected override void ValidateState()

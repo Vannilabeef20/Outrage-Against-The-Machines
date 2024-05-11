@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 471917214709005346}
   - component: {fileID: 4748587671952949679}
   - component: {fileID: 8865673821992810355}
+  - component: {fileID: 7188369258136034306}
   - component: {fileID: 7018751217004657233}
   m_Layer: 0
   m_Name: GameManagerPrefab
@@ -135,7 +136,7 @@ Transform:
   m_Children:
   - {fileID: 471917213323893143}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4748587671952949679
 MonoBehaviour:
@@ -163,7 +164,7 @@ MonoBehaviour:
   - {x: -122.39, y: 2, z: 2}
   - {x: -122.39, y: 3, z: 3}
   playerIndexes: 
-  playerAlive: 000000
+  isPlayerActiveArray: 010000
   <PlayerObjectArray>k__BackingField: []
   followGroupPrefab: {fileID: 8956597100830334376, guid: 258c40db9e49b4b4080e801aa4450356, type: 3}
   UpdateLifeCount: {fileID: 11400000, guid: d4584a82d403ab2469f6d59d6047907a, type: 2}
@@ -188,6 +189,34 @@ MonoBehaviour:
       - m_Target: {fileID: 4748587671952949679}
         m_TargetAssemblyTypeName: Game.Singletons.GameManager, Assembly-CSharp
         m_MethodName: LoadScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7188369258136034306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471917214709005344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb1d98d60b39343b6701e4d226d5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4748587671952949679}
+        m_TargetAssemblyTypeName: Game.GameManager, Assembly-CSharp
+        m_MethodName: UpdatePlayerDeathStatus
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

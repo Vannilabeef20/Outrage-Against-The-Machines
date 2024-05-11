@@ -4,6 +4,7 @@ using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+using NaughtyAttributes;
 
 namespace Game
 {
@@ -12,7 +13,7 @@ namespace Game
         public override string Name { get => currentAttack.Name; }
         [SerializeField] private LayerMask playerMask;
         [field: SerializeField] public EnemyAttack[] Attacks { get; private set; }
-        public EnemyAttack currentAttack;
+        [ReadOnly] public EnemyAttack currentAttack;
 #if UNITY_EDITOR
         [Header("DEBUG")]
         [SerializeField] private Color rangeLineColor;

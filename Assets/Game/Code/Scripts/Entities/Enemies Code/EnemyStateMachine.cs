@@ -18,6 +18,7 @@ namespace Game
         public Animator animator;
         public BoxCollider hurtBox;
         public BoxCollider attackhitbox;
+        public BoxCollider collisionBox;
 
         #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
@@ -92,6 +93,7 @@ namespace Game
         private void Update()
         {
             IsOnScreen = GameManager.Instance.WorldToViewport2D(body.position).InsideRange(Vector2.zero, Vector2.one);
+            collisionBox.isTrigger = !IsOnScreen;
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);

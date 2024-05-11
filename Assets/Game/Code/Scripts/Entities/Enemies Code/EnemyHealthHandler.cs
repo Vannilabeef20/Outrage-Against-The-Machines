@@ -19,7 +19,7 @@ namespace Game
         [SerializeField] private float maxHeathPoints;
 
         [Tooltip("This enemy's current health points, a number <= 0 triggers death")]
-        [field: SerializeField, ReadOnly] public float CurrentHealthPoints { get; private set; }
+        [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
         [field: SerializeField, ReadOnly] public float CurrentHealthPercent { get; private set; }
 
         #endregion

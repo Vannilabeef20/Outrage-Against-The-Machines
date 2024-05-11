@@ -19,7 +19,7 @@ namespace Game
 
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
-        #region Loading & Transitions
+        #region Loading & Transitions Params
         [Header("Loading & Transitions"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField, ReadOnly] private Coroutine loadRoutine;
 
@@ -28,12 +28,9 @@ namespace Game
         [SerializeField] private TransitionSO transition;
 
         [SerializeField] private MenuIdEvent OnSetMenuVisibility;
-
-
-
         #endregion
 
-        #region Players
+        #region Players Params
         [field: Header("Players"), HorizontalLine(2f, EColor.Red)]
 
         public PlayerInputManager UnityInputManager;
@@ -44,19 +41,20 @@ namespace Game
 
         public List<int> playerIndexes = new();
 
-        public bool[] playerAlive = new bool[3];
-
+        public bool[] isPlayerActiveArray = new bool[3];
         [field: SerializeField, ReadOnly] public GameObject[] PlayerObjectArray { private set; get; }
 
         [SerializeField] private GameObject followGroupPrefab;
         #endregion
 
-        #region Lifes
+        #region Lifes Params
         [SerializeField] private IntEvent UpdateLifeCount;
         [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
         public int maxLifeAmount;
         #endregion
 
+
+        #region Unity/Application Methods
         private void Awake()
         {
             if (Instance == null)
@@ -89,6 +87,8 @@ namespace Game
             }
             else
             {
+                CurrentLifeAmount = maxLifeAmount;
+                UpdateLifeCount.Raise(this, CurrentLifeAmount);
                 MainCamera = FindObjectOfType<Camera>();
                 OnSetMenuVisibility.Raise(this, MenuId.None);               
             }
@@ -114,9 +114,8 @@ namespace Game
             {
                 OnSetMenuVisibility.Raise(this, MenuId.None);
                 InitializeLevel();
-                Debug.Log("2");
             }           
-            StartCoroutine(StartTransitionRoutine());
+            StartCoroutine(LoadOrTransitionRoutine());
         }
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
@@ -131,7 +130,33 @@ namespace Game
         {
             StopRumble();
         }
+        #endregion
 
+        private void InitializeLevel()
+        {
+            MainCamera = FindObjectOfType<Camera>();
+            CurrentLifeAmount = maxLifeAmount;
+            UpdateLifeCount.Raise(this, CurrentLifeAmount);
+            List<GameObject> players = new();
+            if (playerIndexes.Count == 0)
+            {
+                GameObject player = Instantiate(playerCharacters[0], spawnCoordinates[0], Quaternion.identity);
+                playerIndexes.Add(0);
+                players.Add(player);
+            }
+            else
+            {
+                for (int i = 0; i <= playerIndexes.Count - 1; i++)
+                {
+                    isPlayerActiveArray[i] = true;
+                    players.Add(Instantiate(playerCharacters[i], spawnCoordinates[i], Quaternion.identity));
+                }
+            }
+            PlayerObjectArray = players.ToArray();
+            Instantiate(followGroupPrefab);
+        }
+
+        #region Rumble Methods
         public void Rumble(InputDevice device, float lowFrequency, float highFrequency, float duration)
         {
             Gamepad gamepad;
@@ -180,6 +205,7 @@ namespace Game
                 gamepad.SetMotorSpeeds(0f, 0f);
             }
         }
+        #endregion
 
         public void PauseGame()
         {
@@ -192,91 +218,91 @@ namespace Game
                 OnSetMenuVisibility.Raise(this, MenuId.None);
             }
         }
+        #region Loading Methods
         public void LoadScene(int targetSceneIndex)
         {
             if (loadRoutine == null)
             {
-                loadRoutine = StartCoroutine(SceneLoadRoutine(targetSceneIndex));
+                loadRoutine = StartCoroutine(LoadOrTransitionRoutine(targetSceneIndex));
             }
         }
-
-        private IEnumerator StartTransitionRoutine()
+        
+        private IEnumerator LoadOrTransitionRoutine(int sceneIndex = -1)
         {
             transitionImage.enabled = true;
             float frameTime = transition.Duration / transition.Sprites.Length;
-            for (int i = transition.Sprites.Length - 1; i > 0; i--)
+            if (sceneIndex < 0) //Transition out of load
             {
-                transitionImage.sprite = transition.Sprites[i];
-                yield return new WaitForSecondsRealtime(frameTime);
+                for (int i = transition.Sprites.Length - 1; i > 0; i--)
+                {
+                    transitionImage.sprite = transition.Sprites[i];
+                    yield return new WaitForSecondsRealtime(frameTime);
+                }
+                transitionImage.enabled = false;
             }
-            transitionImage.enabled = false;
-            loadRoutine = null;
-        }
-
-        private IEnumerator SceneLoadRoutine(int sceneIndex)
-        {
-            transitionImage.enabled = true;
-            float frameTime = transition.Duration / transition.Sprites.Length;
-            for (int i = 0; i < transition.Sprites.Length; i++)
+            else //Transition in load
             {
-                transitionImage.sprite = transition.Sprites[i];
-                yield return new WaitForSecondsRealtime(frameTime);
-            }
-            SceneManager.LoadScene(sceneIndex);
-            loadRoutine = null;
-        }      
-
-        public Vector3 WorldToViewport3D(Vector3 worldPos)
-        {
-           return MainCamera.WorldToViewportPoint(worldPos);
+                for (int i = 0; i < transition.Sprites.Length; i++)
+                {
+                    transitionImage.sprite = transition.Sprites[i];
+                    yield return new WaitForSecondsRealtime(frameTime);
+                }
+                SceneManager.LoadScene(sceneIndex);
+                loadRoutine = null;
+            }                    
         }
+        #endregion
         public Vector2 WorldToViewport2D(Vector3 worldPos)
         {
             return MainCamera.WorldToViewportPoint(worldPos);
         }
         public void TakeAddLife(int amount)
         {
-            CurrentLifeAmount += amount;
-            UpdateLifeCount.Raise(this, CurrentLifeAmount);
-        }
-
-        private void InitializeLevel()
-        {
-            CurrentLifeAmount = maxLifeAmount;
-            UpdateLifeCount.Raise(this, CurrentLifeAmount);
-            UpdateLifeCount.Raise(this, CurrentLifeAmount);
-            List<GameObject> players = new();
-            if(playerIndexes.Count == 0)
+            CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
+            for(int i = 0; i < playerIndexes.Count; i++)
             {
-                GameObject player = Instantiate(playerCharacters[0], spawnCoordinates[0], Quaternion.identity);
-                playerIndexes.Add(0);
-                players.Add(player);
-                Debug.Log("a");
-            }
-            else
-            {
-                for (int i = 0; i <= playerIndexes.Count - 1; i++)
+                if (!isPlayerActiveArray[i] && CurrentLifeAmount > 0)
                 {
-                    playerAlive[i] = true;
-                    players.Add(Instantiate(playerCharacters[i], spawnCoordinates[i], Quaternion.identity));
-                    Debug.Log("b");
+                    Debug.Log("Respawn");
+                    PlayerObjectArray[i].transform.position = new Vector3(MainCamera.transform.position.x,
+                        MainCamera.transform.position.y - 1.5f, MainCamera.transform.position.y - 1.5f);
+                    CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
+                    PlayerObjectArray[i].SetActive(true);
+                    PlayerObjectArray[i].GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
+                    isPlayerActiveArray[i] = true;
                 }
-            }          
-            PlayerObjectArray = players.ToArray();
-            Instantiate(followGroupPrefab);
+            }
+            UpdateLifeCount.Raise(this, CurrentLifeAmount);
+        }
+        
+        public void UpdatePlayerDeathStatus(PlayerDeathParams playerDeathParams)
+        {
+            isPlayerActiveArray[playerDeathParams.playerID] = !playerDeathParams.isPlayerDead;
+            int aliveCount = 0;
+            foreach(var active in isPlayerActiveArray)
+            {
+                if(active)
+                {
+                    aliveCount++;
+                }
+            }
+            if(aliveCount == 0)
+            {
+                LoadScene(0);
+            }
         }
 
-        #region Testing
+        #region Testing Methods
         [Button("Test start transition", EButtonEnableMode.Playmode)]
         public void TestRegularTransition()
         {
-            StartCoroutine(StartTransitionRoutine());
+            StartCoroutine(LoadOrTransitionRoutine());
         }
 
         [Button("Test load transition", EButtonEnableMode.Playmode)]
         public void TestReverseTransition()
         {
-            StartCoroutine(SceneLoadRoutine(1));
+            StartCoroutine(LoadOrTransitionRoutine(1));
         }
         #endregion
     }

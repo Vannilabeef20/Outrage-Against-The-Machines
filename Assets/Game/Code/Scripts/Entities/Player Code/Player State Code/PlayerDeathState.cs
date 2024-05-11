@@ -6,21 +6,23 @@ namespace Game
 {
     public class PlayerDeathState : PlayerState
     {
-        public override string Name { get => "Death"; }
-
+        [field: Header("STATE"), HorizontalLine(2f, EColor.Yellow)]
         [field: SerializeField] public float Duration { get; private set; }
         [field: SerializeField] public float Delay { get; private set; }
+        [field: SerializeField] public bool Despawning { get; private set; }
+        public override string Name { get => "Death"; }
+
+
+        [SerializeField] private PlayerDeathParamsEvent playerDeathParamsEvent;
 
         [SerializeField] private CinemachineImpulseSource impulseSource;
         [SerializeField] private AudioClip deathSound;
         [SerializeField] private AnimationCurve knockBackCurve;
         [ReadOnly] public Vector2 knockBackIntensity;
 
-        [Tooltip("Determines how much the lower part of the gamepad will shake.")]
+        [Header("Gamepad Shake"), HorizontalLine]
         [SerializeField, Range(0f, 1f)] private float hitGamepadShakeLowFrequency;
-        [Tooltip("Determines how much the upper part of the gamepad will shake.")]
         [SerializeField, Range(0f, 1f)] private float hitGamepadShakeHighFrequency;
-        [Tooltip("Determines for how long the gamepad will shake.")]
         [SerializeField] private float hitGamepadShakeDuration;
 
         public override void Do()
@@ -37,8 +39,10 @@ namespace Game
 
         public override void Enter()
         {
+            Despawning = false;
             IsComplete = false;
             startTime = Time.time;
+            stateMachine.audioSource.PlayOneShot(deathSound);
             impulseSource.GenerateImpulse();
             foreach(var device in stateMachine.playerInput.devices)
             {
@@ -49,11 +53,7 @@ namespace Game
 
         public override void Exit()
         {
-            GameManager.Instance.TakeAddLife(-1);
-            if(GameManager.Instance.CurrentLifeAmount <= 0)
-            {
-                GameManager.Instance.LoadScene(0);
-            }
+
         }
 
         protected override void ValidateState()
@@ -62,8 +62,19 @@ namespace Game
             {
                 return;
             }
-            stateMachine.nextState = stateMachine.Idle;
+            if(Despawning)
+            {
+                return;
+            }
+            Despawning = true;
             IsComplete = true;
+            GameManager.Instance.TakeAddLife(-1);
+            stateMachine.nextState = stateMachine.Idle;
+            if (GameManager.Instance.CurrentLifeAmount <= 0)
+            {
+                playerDeathParamsEvent.Raise(this, new PlayerDeathParams(stateMachine.playerInput.playerIndex, true));
+                stateMachine.transform.parent.gameObject.SetActive(false);
+            }            
         }
     }
 }

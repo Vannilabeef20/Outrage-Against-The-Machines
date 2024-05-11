@@ -12,11 +12,17 @@ namespace Game
         private void Update()
         {
             Vector3 sum = Vector3.zero;
-            foreach (var obj in GameManager.Instance.PlayerObjectArray)
+            int amount = 0;
+            for(int i = 0; i < GameManager.Instance.PlayerObjectArray.Length; i++)
             {
-                sum += obj.transform.position;
-            }
-            transform.position = sum / GameManager.Instance.PlayerObjectArray.Length;
+                if (!GameManager.Instance.isPlayerActiveArray[i])
+                {
+                    continue;
+                }
+                sum += GameManager.Instance.PlayerObjectArray[i].transform.position;
+                amount++;
+            }       
+            transform.position = sum / amount;
         }
     }
 }

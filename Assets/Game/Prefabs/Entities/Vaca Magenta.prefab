@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1164585176128136736, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 35d0ff0c78a1ff6459f6122f362ff599, type: 3}
     - target: {fileID: 1164585177367800614, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_RootOrder
       value: 0

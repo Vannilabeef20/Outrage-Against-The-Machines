@@ -8,13 +8,19 @@ namespace Game
 {
     public class TargetClosest : BaseTargeting
     {
-        [SerializeField, ReadOnly, ShowAssetPreview] private GameObject[] playerGameobjects;
-        public override GameObject GetTarget(Vector3 currentPosition, GameObject[] players)
+        public override GameObject GetTarget(Vector3 currentPosition)
         {
-            playerGameobjects = players;
-            playerGameobjects = playerGameobjects.OrderBy(player => Vector3.Distance
-            (currentPosition, player.transform.position)).ToArray<GameObject>();
-            return playerGameobjects[0];
+            List<GameObject> playerList = new();
+            for (int i = 0; i < GameManager.Instance.PlayerObjectArray.Length; i++)
+            {
+                if (GameManager.Instance.isPlayerActiveArray[i])
+                {
+                    playerList.Add(GameManager.Instance.PlayerObjectArray[i]);
+                }
+            }
+            playerList = playerList.OrderBy(player => Vector3.Distance
+            (currentPosition, player.transform.position)).ToList<GameObject>();
+            return playerList[0];
         }
     }
 }

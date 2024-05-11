@@ -5,7 +5,7 @@ namespace Game
 {
     public abstract class BaseState : MonoBehaviour
     {
-        [field: Header("BASE STATE INHERITED"), HorizontalLine(2f, EColor.Red)]
+        [field: Header("#BASE STATE# INHERITED"), HorizontalLine(2f, EColor.Red)]
 
         [SerializeField, TextArea] private string Comment;
         [field: SerializeField, ReadOnly] public bool IsComplete { get; protected set; }

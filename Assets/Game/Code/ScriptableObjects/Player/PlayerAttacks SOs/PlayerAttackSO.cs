@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
+using NaughtyAttributes;
 
 namespace Game
 {
     [CreateAssetMenu(fileName = "PlayerAttack", menuName = "Player/Attack")]
     public class PlayerAttackSO : ScriptableObject
     {
-        [field: SerializeField] public InputActionAsset PlayerActionMap { get; private set; }
+        [field: SerializeField] public bool IsSpecial { get; private set; }
+        [field: SerializeField, ShowIf("IsSpecial")] public float SpecialCost { get; private set; }
         [field: SerializeField] public AnimationClip Animation { get; private set; }
         [field: SerializeField] public AudioClip Sound { get; private set; }
         [field: SerializeField] public float[] AudioPitches { get; private set; } = {1};

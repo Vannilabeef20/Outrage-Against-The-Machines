@@ -13,6 +13,7 @@ namespace Game
             Image
         }
 
+        [SerializeField] private Transform mainCam;
         [SerializeField] private EAnimationTarget targetType;
         [SerializeField, ShowIf("targetType", EAnimationTarget.SpriteRenderer)] private SpriteRenderer spriteRenderer;
         [SerializeField, ShowIf("targetType", EAnimationTarget.Image)] private Image image;
@@ -21,10 +22,9 @@ namespace Game
         [SerializeField, ReadOnly] private float timer;
         [SerializeField, ReadOnly] private int currentImageIndex;
 
-
-        private void Start()
+        private void Awake()
         {
-            StartCoroutine(animationRoutine());
+            mainCam = Camera.main.transform;
         }
         private void Update()
         {
@@ -49,27 +49,6 @@ namespace Game
                 spriteRenderer.sprite = sprites[currentImageIndex];
             }
 
-        }
-
-        private IEnumerator animationRoutine()
-        {
-            float frameDuration = animationDuration / sprites.Length;
-            if(targetType == EAnimationTarget.Image)
-            {
-                for (int i = 0; i < sprites.Length; i++)
-                {
-                    yield return new WaitForSeconds(frameDuration);
-                    image.sprite = sprites[i];
-                }
-            }
-            else
-            {
-                for (int i = 0; i < sprites.Length; i++)
-                {
-                    yield return new WaitForSeconds(frameDuration);
-                    spriteRenderer.sprite = sprites[i];
-                }
-            }
         }
     }
 }

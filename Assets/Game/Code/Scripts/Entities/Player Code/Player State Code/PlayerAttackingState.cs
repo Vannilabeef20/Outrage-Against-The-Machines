@@ -22,8 +22,12 @@ namespace Game
 
         [ReadOnly] public PlayerAttackState queuedAttackState;
 
-
         [ReadOnly] public List<PlayerAttackSO> attackList;
+        [field: SerializeField] public float MaxSpecialChargeAmount { get; private set; }
+
+        [ProgressBar("Special Charge Amount","MaxSpecialChargeAmount", EColor.Blue)] public float specialChargeAmount;
+
+        [SerializeField] private PlayerSpecialParamsEvent playerSpecialEvent;
 
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake
         {
@@ -120,17 +124,28 @@ namespace Game
             }
             for (int i = 0; i < PlayerCombos.Length; i++) //check if theres available attack in a combo
             {
-                if (PlayerCombos[i].attacks.Length <= attackList.Count)
+                if (PlayerCombos[i].attacks.Length <= attackList.Count) //Check if attack list is bigger than the [i] combo
                 {
-                    continue;
+                    continue; //Bigger, skip this one
                 }
-                if (PlayerCombos[i].input[attackList.Count].ToString() == context.action.name)
+                if (PlayerCombos[i].input[attackList.Count].ToString() == context.action.name) //Check if the attempeted input is in this combo
                 {
-                    if(stateMachine.CurrentState != this)
+                    if (PlayerCombos[i].attacks[attackList.Count].IsSpecial && specialChargeAmount < PlayerCombos[i].attacks[attackList.Count].SpecialCost) // Check if it is a special attack && there are enough charges
                     {
+                        //It is a special and does not have enough charges, Abort!
+                        return;
+                    }
+                    float formerSpecialChargePercent = specialChargeAmount / MaxSpecialChargeAmount;
+                    specialChargeAmount = Mathf.Clamp(specialChargeAmount - PlayerCombos[i].attacks[attackList.Count].SpecialCost,
+                        0,MaxSpecialChargeAmount);
+                    float newSpecialChargePercent = specialChargeAmount / MaxSpecialChargeAmount;
+                    playerSpecialEvent.Raise(this, new PlayerSpecialParams(stateMachine.playerInput.playerIndex, formerSpecialChargePercent, newSpecialChargePercent));
+                    if(stateMachine.CurrentState != this) //Check if the state machine is already in the attacking state
+                    {
+                        //Its not, transition pls
                         stateMachine.nextState = this;
                         stateMachine.overrideStateCompletion = true;
-                    }
+                    }                   
                     queuedAttackState = PlayerAttackStatesDictionary[PlayerCombos[i].attacks[attackList.Count]];
                     break;
                 }

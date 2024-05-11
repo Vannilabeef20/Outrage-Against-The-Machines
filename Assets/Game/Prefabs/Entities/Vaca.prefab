@@ -372,10 +372,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f087300f1971034ab33969283769f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackingState: {fileID: 1164585177213015470}
+  stateMachine: {fileID: 1164585177420930287}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  specialParamsEvent: {fileID: 11400000, guid: f6ff6b45672f6b84a889b0f83c81372d, type: 2}
 --- !u!1 &1164585176036258599
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,8 +490,10 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   <Duration>k__BackingField: 1
   <Delay>k__BackingField: 3
+  <Despawning>k__BackingField: 0
+  playerDeathParamsEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
   impulseSource: {fileID: 6136750296965723331}
-  deathSound: {fileID: 8300000, guid: c61afe4990de93c4ba0e1c2669e51ff3, type: 3}
+  deathSound: {fileID: 8300000, guid: 35d0ff0c78a1ff6459f6122f362ff599, type: 3}
   knockBackCurve:
     serializedVersion: 2
     m_Curve:
@@ -664,7 +667,6 @@ MonoBehaviour:
     m_Bits: 512
   maxHeathPoints: 100
   <CurrentHealthPoints>k__BackingField: 0
-  <CurrentHealthPercent>k__BackingField: 0
   isDead: 0
   hitFlashLenght: 0.1
   hitFlashColor: {r: 0.6320754, g: 0.31305623, b: 0.31305623, a: 1}
@@ -672,9 +674,6 @@ MonoBehaviour:
   gracePeriodFlashLenght: 0.15
   gracePeriodColor: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
   OnHealthChanged: {fileID: 11400000, guid: f19d38766c1bbb64db2d8cde7bc44538, type: 2}
-  lerpHealthPointsDelay: 0.25
-  lerpHealthPointsDuration: 0.5
-  healthLerpEase: 2
 --- !u!136 &1164585176240065429
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -869,6 +868,9 @@ MonoBehaviour:
   <CurrentAttackState>k__BackingField: {fileID: 0}
   queuedAttackState: {fileID: 0}
   attackList: []
+  <MaxSpecialChargeAmount>k__BackingField: 200
+  specialChargeAmount: 0
+  playerSpecialEvent: {fileID: 11400000, guid: f6ff6b45672f6b84a889b0f83c81372d, type: 2}
 --- !u!82 &3807069788289279069
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1498,10 +1500,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f087300f1971034ab33969283769f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackingState: {fileID: 1164585177213015470}
+  stateMachine: {fileID: 1164585177420930287}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  specialParamsEvent: {fileID: 11400000, guid: f6ff6b45672f6b84a889b0f83c81372d, type: 2}
 --- !u!1 &2651500264015860896
 GameObject:
   m_ObjectHideFlags: 0
