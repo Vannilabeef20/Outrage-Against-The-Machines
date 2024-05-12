@@ -13,7 +13,6 @@ namespace Game
             Image
         }
 
-        [SerializeField] private Transform mainCam;
         [SerializeField] private EAnimationTarget targetType;
         [SerializeField, ShowIf("targetType", EAnimationTarget.SpriteRenderer)] private SpriteRenderer spriteRenderer;
         [SerializeField, ShowIf("targetType", EAnimationTarget.Image)] private Image image;
@@ -22,10 +21,6 @@ namespace Game
         [SerializeField, ReadOnly] private float timer;
         [SerializeField, ReadOnly] private int currentImageIndex;
 
-        private void Awake()
-        {
-            mainCam = Camera.main.transform;
-        }
         private void Update()
         {
             timer += Time.deltaTime;
