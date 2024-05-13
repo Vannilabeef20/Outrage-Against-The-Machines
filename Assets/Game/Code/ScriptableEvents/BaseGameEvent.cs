@@ -19,9 +19,6 @@ namespace Game
             for (int i = eventListeners.Count - 1; i >= 0; i--)
             {
                 eventListeners[i].OnEventRaised(item);
-                DebugManager.instance.Log(new DebugLogStruct(debugFlag,
-                    this, $"Event: </color><color=teal>'{this}'</color><color=lime> was fired!\n" +
-                    $"As per </color><color=lightblue>'{sender}'</color><color=lime> request."));
             }
         }      
 

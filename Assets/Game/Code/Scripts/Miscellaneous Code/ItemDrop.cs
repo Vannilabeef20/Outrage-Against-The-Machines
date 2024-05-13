@@ -25,6 +25,7 @@ namespace Game
             {
                 AudioManager.instance.PlaySfxGlobal(pickupSound);
                 ApplyPickupEffect(other);
+                DOTween.Kill(gameObject.transform);
                 Destroy(gameObject);
             }
         }

@@ -46,11 +46,12 @@ namespace Game
         {
             if(Input.GetKeyDown(KeyCode.Backspace))
             {
-                foreach(var enemy in enemiesAlive)
+                GameObject[] enemyObjects = enemiesAlive.ToArray();
+                foreach(var enemy in enemyObjects)
                 {
-                    enemiesAlive.Remove(enemy);
                     Destroy(enemy);
                 }
+                enemiesAlive.Clear();
             }
             if (encounters.Count == 0)
             {

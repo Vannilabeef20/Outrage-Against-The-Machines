@@ -17,6 +17,7 @@ namespace Game
         [SerializeField, ShowIf("targetType", EAnimationTarget.SpriteRenderer)] private SpriteRenderer spriteRenderer;
         [SerializeField, ShowIf("targetType", EAnimationTarget.Image)] private Image image;
         [SerializeField, Min(0f)] private float animationDuration;
+        [SerializeField] private bool DestroyOnFinish;
         [SerializeField] private Sprite[] sprites;
         [SerializeField, ReadOnly] private float timer;
         [SerializeField, ReadOnly] private int currentImageIndex;
@@ -33,7 +34,15 @@ namespace Game
             currentImageIndex++;
             if(currentImageIndex >= sprites.Length)
             {
-                currentImageIndex = 0;
+                if(DestroyOnFinish)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+                else
+                {
+                    currentImageIndex = 0;
+                }
             }
             if (targetType == EAnimationTarget.Image)
             {

@@ -10119,7 +10119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1dc5702beec4a4ca1df4dbd1a39e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGameobjects: []
 --- !u!114 &5904418692595898079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10534,6 +10533,9 @@ MonoBehaviour:
   poiseRegenValue: 50
   poiseRegenDelay: 3
   impulseSource: {fileID: 6508126986235999516}
+  enviriomentLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &6508126986235999516
 MonoBehaviour:
   m_ObjectHideFlags: 0

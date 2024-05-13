@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
   m_Name: Vaca Right Barrage
   m_EditorClassIdentifier: 
-  <PlayerActionMap>k__BackingField: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
   <Animation>k__BackingField: {fileID: 7400000, guid: decd9afb495080e47b8367f3852755e2, type: 2}
   <Sound>k__BackingField: {fileID: 8300000, guid: 9efd7c9788c9c3649be3aeac72fc4f34, type: 3}
   <AudioPitches>k__BackingField:

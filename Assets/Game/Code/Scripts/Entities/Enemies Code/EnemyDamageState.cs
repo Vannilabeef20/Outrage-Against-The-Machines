@@ -13,6 +13,7 @@ namespace Game
         [SerializeField] private AudioClip damageTakenSound;
         [SerializeField] private ParticleSystem damageParticles;
 
+        [SerializeField] private LayerMask enviriomentLayerMask;
         #region Enemy Hit Flash
         [SerializeField, ReadOnly] private Color startingColor;
         [SerializeField] private Color hitFlashColor;
@@ -57,6 +58,7 @@ namespace Game
         [SerializeField] private CinemachineImpulseSource impulseSource;
         #endregion
 
+
         public override void Do()
         {
             progress = UpTime.Map(0, stunDuration);
@@ -81,6 +83,10 @@ namespace Game
         {
             stateMachine.body.velocity = knockbackCurve.Evaluate(progress) *
                 knockbackStrenght * Mathf.Sign(initialPos.x - damageDealerPos.x) * Vector3.right;
+            if(Physics.Raycast(transform.position, stateMachine.body.velocity.normalized, 0.4f, enviriomentLayerMask))
+            {
+                stateMachine.body.velocity = Vector3.zero;
+            }
         }
 
         public override void Enter()
@@ -95,7 +101,7 @@ namespace Game
 
         public override void Exit()
         {
-            stateMachine.spriteRenderer.color = Color.white;
+            stateMachine.spriteRenderer.color = startingColor;
         }
 
         protected override void ValidateState()

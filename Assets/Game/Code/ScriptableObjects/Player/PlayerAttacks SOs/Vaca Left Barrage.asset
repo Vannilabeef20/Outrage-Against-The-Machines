@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
   m_Name: Vaca Left Barrage
   m_EditorClassIdentifier: 
-  <PlayerActionMap>k__BackingField: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
   <Animation>k__BackingField: {fileID: 7400000, guid: 6763cf3ae5e16bd429f01fa52204d601, type: 2}
   <Sound>k__BackingField: {fileID: 8300000, guid: 264b03f6440394b46abacedf1cd0f3c8, type: 3}
   <AudioPitches>k__BackingField:
@@ -63,7 +64,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   <MaxVelocity>k__BackingField: 25
-  <Duration>k__BackingField: 0.7
-  <Damage>k__BackingField: 9
+  <Duration>k__BackingField: 0.6
+  <Damage>k__BackingField: 10
   <StunDuration>k__BackingField: 0.5
   <KnockbackStrenght>k__BackingField: 5

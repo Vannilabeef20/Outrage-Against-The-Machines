@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488542922225973092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DropSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488542922225973093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3030014, y: 0.050000012, z: 0.050000012}
+  m_LocalPosition: {x: 0.139, y: -0.408, z: -0.408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1488542923154001141}
   - component: {fileID: 1488542923154001147}
   - component: {fileID: 1488542923154001140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BreakableBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 1488542923154001142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -111.7, y: 1, z: 1}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1488542922225973092}
@@ -99,15 +99,10 @@ MonoBehaviour:
   collisionCollider: {fileID: 1488542923154001140}
   spriteRenderer: {fileID: 1488542923154001147}
   animationSprites:
-  - {fileID: -1666743837, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: -547344996, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: -468668398, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: -1842819957, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: 663482612, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: 616862426, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: 434075234, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: 226611731, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
-  - {fileID: 207945362, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
+  - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   animationDuration: 1
   fadeFlickerColor: {r: 1, g: 1, b: 1, a: 0.4}
   fadeFlickerDuration: 1.5
@@ -153,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 722665860, guid: ef8c111a1c007d44d886d136af117d64, type: 3}
+  m_Sprite: {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,5 +178,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2903478, y: 1.879543, z: 0.4}
-  m_Center: {x: -0.3548261, y: 0.4933496, z: 0}
+  m_Size: {x: 1.9821625, y: 3.0411062, z: 0.9174768}
+  m_Center: {x: -0.008918762, y: 0.911854, z: -0.4212616}

@@ -10119,7 +10119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1dc5702beec4a4ca1df4dbd1a39e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGameobjects: []
 --- !u!114 &4424964445140895722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10192,6 +10191,7 @@ MonoBehaviour:
   - 0
   - 0
   normal: {x: 0, y: 1, z: -1}
+  stateMachine: {fileID: 6508126985700856569}
   distanceToKeep: 9
   distanceRange: 2
   distance: 0
@@ -10319,7 +10319,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
-  m_Color: {r: 1, g: 0.6179246, b: 0.9260675, a: 1}
+  m_Color: {r: 0.9811321, g: 0.47668213, b: 0.91876405, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10368,8 +10368,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0423021, y: 1.8536801, z: 0.2}
-  m_Center: {x: 0.07705033, y: 0.037882566, z: 0}
+  m_Size: {x: 2.7215085, y: 1.2122221, z: 0.2}
+  m_Center: {x: 0, y: 0.44399357, z: 0}
 --- !u!82 &6508126985700856566
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10586,6 +10586,9 @@ MonoBehaviour:
   poiseRegenValue: 50
   poiseRegenDelay: 3
   impulseSource: {fileID: 6508126986235999516}
+  enviriomentLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &6508126986235999516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10762,8 +10765,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0926008, y: 3.1474798, z: 1}
-  m_Center: {x: 0.06189263, y: 1.4174992, z: 0}
+  m_Size: {x: 2.6987362, y: 2.4686072, z: 1}
+  m_Center: {x: 0.0012788773, y: 1.0780629, z: 0}
 --- !u!114 &6508126987123622501
 MonoBehaviour:
   m_ObjectHideFlags: 0

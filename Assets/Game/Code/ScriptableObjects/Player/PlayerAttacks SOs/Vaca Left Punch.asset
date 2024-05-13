@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
   m_Name: Vaca Left Punch
   m_EditorClassIdentifier: 
-  <PlayerActionMap>k__BackingField: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
   <Animation>k__BackingField: {fileID: 7400000, guid: e1b6d9d8bfc3cd149bb6f8be3f28e495, type: 2}
   <Sound>k__BackingField: {fileID: 8300000, guid: 5eebc5f835642f441bfa94b79a779290, type: 3}
   <AudioPitches>k__BackingField:
@@ -70,6 +71,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   <MaxVelocity>k__BackingField: 10
   <Duration>k__BackingField: 0.6
-  <Damage>k__BackingField: 25
+  <Damage>k__BackingField: 20
   <StunDuration>k__BackingField: 0.5
   <KnockbackStrenght>k__BackingField: 5

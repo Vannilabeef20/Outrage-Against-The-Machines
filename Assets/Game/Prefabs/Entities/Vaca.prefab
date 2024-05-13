@@ -372,11 +372,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f087300f1971034ab33969283769f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 1164585175999031600}
   stateMachine: {fileID: 1164585177420930287}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
   specialParamsEvent: {fileID: 11400000, guid: f6ff6b45672f6b84a889b0f83c81372d, type: 2}
+  hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
+  hitSound: {fileID: 8300000, guid: 11d22f618a3be394187fa4d85e46b9d2, type: 3}
 --- !u!1 &1164585176036258599
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +864,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e750e1a913b6e2748ba2d54ca053fbbf, type: 2}
   - {fileID: 11400000, guid: 65042dec7b4c97046bf3be0ae1cc118a, type: 2}
   - {fileID: 11400000, guid: 17735e4f55156cf4ead50bf793001c31, type: 2}
+  - {fileID: 11400000, guid: 4be67fcec0c2b1a48bebb148f3e2c735, type: 2}
   hitboxes:
   - {fileID: 1164585177591447843}
   - {fileID: 1164585175999031600}
@@ -1500,11 +1504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f087300f1971034ab33969283769f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 1164585177591447843}
   stateMachine: {fileID: 1164585177420930287}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
   specialParamsEvent: {fileID: 11400000, guid: f6ff6b45672f6b84a889b0f83c81372d, type: 2}
+  hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
+  hitSound: {fileID: 8300000, guid: 11d22f618a3be394187fa4d85e46b9d2, type: 3}
 --- !u!1 &2651500264015860896
 GameObject:
   m_ObjectHideFlags: 0

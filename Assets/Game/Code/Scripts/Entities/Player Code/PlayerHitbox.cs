@@ -7,9 +7,12 @@ namespace Game
 {
     public class PlayerHitbox : MonoBehaviour
     {
+        [SerializeField] private BoxCollider attackCollider;
         [SerializeField] private PlayerStateMachine stateMachine;
         [SerializeField] private LayerMask layerMask;
         [SerializeField] private PlayerSpecialParamsEvent specialParamsEvent;
+        [SerializeField] private GameObject hitEffect;
+        [SerializeField] private AudioClip hitSound;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -21,6 +24,8 @@ namespace Game
             {
                 return;
             }
+            Instantiate(hitEffect, attackCollider.ClosestPoint(other.bounds.center), Quaternion.identity);
+            stateMachine.audioSource.PlayOneShot(hitSound);
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
                 float damage = stateMachine.Attacking.CurrentAttackState.playerAttack.Damage;
@@ -31,6 +36,7 @@ namespace Game
 
                 float newSpecialPercent = stateMachine.Attacking.specialChargeAmount / stateMachine.Attacking.MaxSpecialChargeAmount;
                 specialParamsEvent.Raise(this, new PlayerSpecialParams(stateMachine.playerInput.playerIndex, formerSpecialPercent, newSpecialPercent));
+
                 damageble.TakeDamage(transform.position, damage, stateMachine.Attacking.CurrentAttackState.playerAttack.StunDuration,
                     stateMachine.Attacking.CurrentAttackState.playerAttack.KnockbackStrenght);
             }

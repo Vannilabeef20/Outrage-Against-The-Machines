@@ -5,6 +5,7 @@ namespace Game
 {
 	public class MoveRangedCntxStrg : MoveContextSteering
 	{
+        [SerializeField] private EnemyStateMachine stateMachine;
         [SerializeField] private float distanceToKeep;
         [SerializeField] private float distanceRange;
         [SerializeField, ReadOnly] private float distance;
@@ -12,7 +13,7 @@ namespace Game
         public override Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             distance = Vector3.Distance(body.position, targetPosition);
-            if (distance > distanceToKeep)
+            if (distance > distanceToKeep || !stateMachine.IsOnScreen)
             {
                 //Moving towards
                 direction = targetPosition - body.position;
