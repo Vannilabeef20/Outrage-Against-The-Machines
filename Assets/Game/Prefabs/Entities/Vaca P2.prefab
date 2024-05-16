@@ -58,20 +58,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Name
-      value: Vaca Magenta
+      value: Vaca P2
       objectReference: {fileID: 0}
     - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Color.b
-      value: 0.9393376
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Color.g
-      value: 0.5653702
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Color.r
-      value: 0.990566
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec49ab72aca2e1040bd74a9575cb54f6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
