@@ -92,6 +92,7 @@ MonoBehaviour:
       ProbabilityPercent: 25
       ProbabilityRange: {x: 75, y: 100}
     totalWeight: 100
+  FrameToSpawn: 2
   hostileLayers:
     serializedVersion: 2
     m_Bits: 640
@@ -178,5 +179,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9821625, y: 3.0411062, z: 0.9174768}
-  m_Center: {x: -0.008918762, y: 0.911854, z: -0.4212616}
+  m_Size: {x: 1.9821625, y: 4.225527, z: 0.9174768}
+  m_Center: {x: -0.008918762, y: 0.31964403, z: -0.4212616}

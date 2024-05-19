@@ -9994,7 +9994,8 @@ MonoBehaviour:
   <StateAnimation>k__BackingField: {fileID: 7400000, guid: 21cfc804a2d5bab4dbcfceadc8e9c415, type: 2}
   progress: 0
   stateMachine: {fileID: 0}
-  deathSound: {fileID: 8300000, guid: a552a0607375c7245bbf2fb58c769b74, type: 3}
+  duration: 0
+  frameEvents: []
   lootTable:
     itemDrops:
     - <Name>k__BackingField: Nothing
@@ -10119,7 +10120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1dc5702beec4a4ca1df4dbd1a39e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGameobjects: []
 --- !u!114 &5333574505969501837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10195,6 +10195,7 @@ MonoBehaviour:
   animator: {fileID: 6508126985700856563}
   hurtBox: {fileID: 6508126987123622498}
   attackhitbox: {fileID: 6508126987276863438}
+  collisionBox: {fileID: 0}
   intercept: {fileID: 6508126985612539012}
   damage: {fileID: 6508126986235999517}
   attack: {fileID: 6508126987276863439}
@@ -10210,6 +10211,7 @@ MonoBehaviour:
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
   boxCastDimensions: {x: 0.1, y: 0.55, z: 0.5}
   boxCastLenght: 10
+  <IsOnScreen>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -10255,7 +10257,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10483,6 +10485,9 @@ MonoBehaviour:
   <HealthHandler>k__BackingField: {fileID: 6508126987123622501}
   damageTakenSound: {fileID: 8300000, guid: 68fcab673eaf4a14b9ed7d4ddb6a666b, type: 3}
   damageParticles: {fileID: 153532766851685265}
+  enviriomentLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   startingColor: {r: 0, g: 0, b: 0, a: 0}
   hitFlashColor: {r: 0.7169812, g: 0.3551086, b: 0.3551086, a: 1}
   hitFlashLenght: 0.08
@@ -10826,6 +10831,10 @@ MonoBehaviour:
     <Damage>k__BackingField: 20
     <StunDuration>k__BackingField: 0.7
     <KnockbackStrenght>k__BackingField: 10
+    <HasProjectile>k__BackingField: 0
+    <ProjectilePrefab>k__BackingField: {fileID: 0}
+    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
+    <FrameEvents>k__BackingField: []
   currentAttack:
     <Name>k__BackingField: 
     <Animation>k__BackingField: {fileID: 0}
@@ -10841,6 +10850,11 @@ MonoBehaviour:
     <Damage>k__BackingField: 0
     <StunDuration>k__BackingField: 0
     <KnockbackStrenght>k__BackingField: 0
+    <HasProjectile>k__BackingField: 0
+    <ProjectilePrefab>k__BackingField: {fileID: 0}
+    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
+    <FrameEvents>k__BackingField: []
+  attackUptime: 0
   rangeLineColor: {r: 1, g: 0.15988545, b: 0, a: 1}
   rangePointColor: {r: 1, g: 0, b: 0.77645206, a: 1}
   rangePointRadius: 0.17
