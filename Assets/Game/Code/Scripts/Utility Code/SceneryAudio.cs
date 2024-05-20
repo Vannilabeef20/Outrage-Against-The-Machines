@@ -16,5 +16,14 @@ namespace Game
                 source.Pause();
             }
         }
+        private void Update()
+        {
+            if (source.maxDistance < Vector3.Distance(GameManager.Instance.MainCamera.transform.position, transform.position))
+            {
+                source.Pause();
+                return;
+            }
+            source.UnPause();
+        }
     }
 }

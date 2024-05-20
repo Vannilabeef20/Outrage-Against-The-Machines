@@ -168,6 +168,8 @@ namespace Game
                 Gizmos.DrawSphere(encounter.encounterPosition, encounterPositionGizmosRadius);
                 Debug.DrawLine(encounter.encounterPosition + encounterPositionDebugLineHalfExtent,
                     encounter.encounterPosition - encounterPositionDebugLineHalfExtent, encounterPositionLimitDebugColor);
+                Debug.DrawLine(encounter.encounterPosition + new Vector3(6.1f * Screen.width / Screen.height, 0, 0),
+                    encounter.encounterPosition - new Vector3(6.1f * Screen.width / Screen.height, 0, 0));
             }
 
             #endregion

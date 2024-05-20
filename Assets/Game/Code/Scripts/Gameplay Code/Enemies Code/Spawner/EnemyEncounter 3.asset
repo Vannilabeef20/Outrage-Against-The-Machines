@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyEncounter 3
   m_EditorClassIdentifier: 
   enemies:
-  - enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-    amount: 2
   - enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-    amount: 2
+    amount: 3
+  - enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+    amount: 6
   encounterPosition: {x: 17.4, y: 5.72, z: 0}

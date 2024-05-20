@@ -252,6 +252,18 @@ namespace Game
         {
             return MainCamera.WorldToViewportPoint(worldPos);
         }
+        public bool IsVisible(Vector3 worldPos)
+        {
+            Vector2 viewportPos = MainCamera.WorldToViewportPoint(worldPos);
+            if(viewportPos.InsideRange(Vector2.zero, Vector2.one))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void TakeAddLife(int amount)
         {
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);

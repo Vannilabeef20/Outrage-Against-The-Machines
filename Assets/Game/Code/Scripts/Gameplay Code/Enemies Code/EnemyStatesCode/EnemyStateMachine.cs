@@ -92,7 +92,7 @@ namespace Game
 
         private void Update()
         {
-            IsOnScreen = GameManager.Instance.WorldToViewport2D(body.position).InsideRange(Vector2.zero, Vector2.one);
+            IsOnScreen = GameManager.Instance.IsVisible(body.position);
             collisionBox.isTrigger = !IsOnScreen;
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
