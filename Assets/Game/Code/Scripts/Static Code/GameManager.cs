@@ -34,16 +34,11 @@ namespace Game
 
         public PlayerInputManager UnityInputManager;
 
-        [SerializeField] private GameObject[] playerPrefabs;
+        [field: SerializeField] public GameObject[] PlayerPrefabs { get; private set; }
 
-        [SerializeField] private PlayerCharacter[] characterArray;
+        [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
 
         [SerializeField] private Vector3[] spawnCoordinates;
-
-        public List<int> playerIndexes = new();
-
-        public bool[] isPlayerActiveArray = new bool[3];
-        [field: SerializeField, ReadOnly] public GameObject[] PlayerObjectArray { private set; get; }
 
         [SerializeField] private GameObject followGroupPrefab;
         #endregion
@@ -140,22 +135,20 @@ namespace Game
             MainCamera = FindObjectOfType<Camera>();
             CurrentLifeAmount = initialLifeAmout;
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
-            List<GameObject> players = new();
-            if (playerIndexes.Count == 0)
+            if (PlayerCharacterList.Count == 0)
             {
-                GameObject player = Instantiate(playerPrefabs[0], spawnCoordinates[0], Quaternion.identity);
-                playerIndexes.Add(0);
-                players.Add(player);
+                PlayerCharacterList.Add(new PlayerCharacter(PlayerPrefabs[0], 0, null, null));
+                PlayerCharacterList[0].GameObject = Instantiate(PlayerPrefabs[0], spawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList[0].isPlayerActive = true;
             }
             else
             {
-                for (int i = 0; i <= playerIndexes.Count - 1; i++)
+                for (int i = 0; i < PlayerCharacterList.Count; i++)
                 {
-                    isPlayerActiveArray[i] = true;
-                    players.Add(Instantiate(playerPrefabs[i], spawnCoordinates[i], Quaternion.identity));
+                    PlayerCharacterList[i].isPlayerActive = true;
+                    PlayerCharacterList[i].GameObject = Instantiate(PlayerCharacterList[i].PlayerPrefab, spawnCoordinates[i], Quaternion.identity);
                 }
             }
-            PlayerObjectArray = players.ToArray();
             Instantiate(followGroupPrefab);
         }
 
@@ -262,17 +255,16 @@ namespace Game
         public void TakeAddLife(int amount)
         {
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
-            for(int i = 0; i < playerIndexes.Count; i++)
+            for(int i = 0; i < PlayerCharacterList.Count; i++)
             {
-                if (!isPlayerActiveArray[i] && CurrentLifeAmount > 0)
+                if (!PlayerCharacterList[i].isPlayerActive && CurrentLifeAmount > 0)
                 {
-                    Debug.Log("Respawn");
-                    PlayerObjectArray[i].transform.position = new Vector3(MainCamera.transform.position.x,
+                    PlayerCharacterList[i].GameObject.transform.position = new Vector3(MainCamera.transform.position.x,
                         MainCamera.transform.position.y - 1.5f, MainCamera.transform.position.y - 1.5f);
                     CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
-                    PlayerObjectArray[i].SetActive(true);
-                    PlayerObjectArray[i].GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
-                    isPlayerActiveArray[i] = true;
+                    PlayerCharacterList[i].GameObject.SetActive(true);
+                    PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
+                    PlayerCharacterList[i].isPlayerActive = true;
                 }
             }
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
@@ -280,11 +272,11 @@ namespace Game
         
         public void UpdatePlayerDeathStatus(PlayerDeathParams playerDeathParams)
         {
-            isPlayerActiveArray[playerDeathParams.playerID] = !playerDeathParams.isPlayerDead;
+            PlayerCharacterList[playerDeathParams.playerID].isPlayerActive = !playerDeathParams.isPlayerDead;
             int aliveCount = 0;
-            foreach(var active in isPlayerActiveArray)
+            foreach(var character in PlayerCharacterList)
             {
-                if(active)
+                if(character.isPlayerActive)
                 {
                     aliveCount++;
                 }
@@ -316,14 +308,18 @@ namespace Game
         [field: SerializeField] public GameObject PlayerPrefab { get; private set; }
         [field: SerializeField] public int PlayerIndex { get; private set; }
         [field: SerializeField] public string ControlScheme { get; private set; }
-        [field: SerializeField] public InputDevice Device { get; private set; }
+        [field: SerializeField] public InputDevice[] Devices { get; private set; }
 
-        public PlayerCharacter (GameObject playerPrefab, int playerIndex, string controlScheme, InputDevice device)
+        public bool isPlayerActive;
+
+        public GameObject GameObject;
+
+        public PlayerCharacter (GameObject playerPrefab, int playerIndex, string controlScheme, InputDevice[] devices)
         {
             PlayerPrefab = playerPrefab;
             PlayerIndex = playerIndex;
             ControlScheme = controlScheme;
-            Device = device;
+            Devices = devices;
         }
     }
 }

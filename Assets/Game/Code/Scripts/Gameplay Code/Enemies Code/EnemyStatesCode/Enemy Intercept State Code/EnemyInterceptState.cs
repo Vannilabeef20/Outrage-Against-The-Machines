@@ -30,16 +30,20 @@ namespace Game
 
         public override void FixedDo()
         {
+            if(target == null)
+            {
+                return;
+            }
             if (targetingTimer > targetingRepeatInterval)
             {
                 target = targeting.GetTarget(stateMachine.body.position);
                 targetingTimer = 0;
             }
-            if (target.transform.position.x < transform.position.x)
+            if (target.transform.position.x + 0.1f < transform.position.x)
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
-            else
+            else if (target.transform.position.x - 0.1f > transform.position.x)
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }

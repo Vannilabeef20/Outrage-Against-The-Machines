@@ -13,15 +13,23 @@ namespace Game
         {
             Vector3 sum = Vector3.zero;
             int amount = 0;
-            for(int i = 0; i < GameManager.Instance.PlayerObjectArray.Length; i++)
+            foreach (var player in GameManager.Instance.PlayerCharacterList)
             {
-                if (!GameManager.Instance.isPlayerActiveArray[i])
+                if(player.GameObject == null)
                 {
                     continue;
                 }
-                sum += GameManager.Instance.PlayerObjectArray[i].transform.position;
+                if (!player.isPlayerActive)
+                {
+                    continue;
+                }
+                sum += player.GameObject.transform.position;
                 amount++;
-            }       
+            }
+            if(sum == Vector3.zero || amount == 0)
+            {
+                return;
+            }
             transform.position = sum / amount;
         }
     }

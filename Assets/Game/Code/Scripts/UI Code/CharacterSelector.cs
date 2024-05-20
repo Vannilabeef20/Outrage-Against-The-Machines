@@ -116,13 +116,26 @@ namespace Game
 
         public void ConfirmSelection()
         {
-            GameManager.Instance.playerIndexes.Clear();
-            for (int i = 0; i < selectionIndexes.Length; i++)
+            GameManager.Instance.PlayerCharacterList.Clear();
+            PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+            for (int i = 0; i < playerInputs.Length; i++)
             {
-                if (GameManager.Instance.UnityInputManager.playerCount - 1 >= i)
-                {
-                    GameManager.Instance.playerIndexes.Add(selectionIndexes[i]);
-                }
+                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(GameManager.Instance.PlayerPrefabs[playerInputs[i].playerIndex],
+                    playerInputs[i].playerIndex, playerInputs[playerInputs[i].playerIndex].currentControlScheme, playerInputs[playerInputs[i].playerIndex].devices.ToArray()));
+            }
+        }
+        public void ClearPlayer(MenuId menuId)
+        {
+            switch(menuId)
+            {
+                case MenuId.StartMenu:
+                    PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+                    foreach (PlayerInput playerInput in playerInputs)
+                    {
+                        Destroy(playerInput.gameObject);
+                    }
+                    GameManager.Instance.PlayerCharacterList.Clear();
+                    break;
             }
         }
     }

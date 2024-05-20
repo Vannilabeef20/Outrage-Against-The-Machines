@@ -5228,7 +5228,7 @@ MonoBehaviour:
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
   movementDirection: {x: 0, y: 0, z: 0}
-  speed: {x: 2, y: 2, z: 1.25}
+  speed: {x: 2, y: 1.5, z: 1.5}
 --- !u!114 &4840090045382764047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5258,7 +5258,7 @@ MonoBehaviour:
   maxAvoidanceRadius: 0.75
   ObstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 1344
   numRays: 16
   obstacleDetectionRadius: 2
   rayDirections: []
@@ -5340,7 +5340,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
-  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.4}
+  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.3}
   boxCastLenght: 10
   <IsOnScreen>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}

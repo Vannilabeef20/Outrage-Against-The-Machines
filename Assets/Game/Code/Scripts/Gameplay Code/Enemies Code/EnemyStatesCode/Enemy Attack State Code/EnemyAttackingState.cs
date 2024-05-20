@@ -94,7 +94,7 @@ namespace Game
 
         public EnemyAttack GetAppropriateAttack()
         {          
-            if (stateMachine.Distance < 0)
+            if (stateMachine.Distance <= -1)
             {
                 return null;
             }

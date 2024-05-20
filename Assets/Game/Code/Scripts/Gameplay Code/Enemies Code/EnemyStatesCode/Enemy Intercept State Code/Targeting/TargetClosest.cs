@@ -11,16 +11,23 @@ namespace Game
         public override GameObject GetTarget(Vector3 currentPosition)
         {
             List<GameObject> playerList = new();
-            for (int i = 0; i < GameManager.Instance.PlayerObjectArray.Length; i++)
+            foreach(var player in GameManager.Instance.PlayerCharacterList)
             {
-                if (GameManager.Instance.isPlayerActiveArray[i])
+                if (player.isPlayerActive)
                 {
-                    playerList.Add(GameManager.Instance.PlayerObjectArray[i]);
+                    playerList.Add(player.GameObject);
                 }
             }
-            playerList = playerList.OrderBy(player => Vector3.Distance
-            (currentPosition, player.transform.position)).ToList<GameObject>();
-            return playerList[0];
+            if(playerList.Count > 0)
+            {
+                playerList = playerList.OrderBy(player => Vector3.Distance
+                (currentPosition, player.transform.position)).ToList<GameObject>();
+                return playerList[0];
+            }
+            else
+            {
+                return null;
+            }          
         }
     }
 }

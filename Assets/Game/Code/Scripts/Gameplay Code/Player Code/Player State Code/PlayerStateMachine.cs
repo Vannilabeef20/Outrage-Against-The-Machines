@@ -54,7 +54,7 @@ namespace Game
 
         private void Start()
         {
-            if(GameManager.Instance.playerIndexes.Count <= 1)
+            if(GameManager.Instance.PlayerCharacterList.Count <= 1)
             {
                 playerInput.neverAutoSwitchControlSchemes = false;
             }

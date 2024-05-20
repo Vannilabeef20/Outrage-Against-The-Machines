@@ -5103,7 +5103,7 @@ MonoBehaviour:
   <StateAnimation>k__BackingField: {fileID: 7400000, guid: 8a351dfcadc4f9d458a13d6db7b186cc, type: 2}
   progress: 0
   stateMachine: {fileID: 0}
-  duration: 1.5
+  duration: 2
   frameEvents:
   - <Anim>k__BackingField: {fileID: 0}
     <Ratio>k__BackingField: 0
@@ -5235,7 +5235,7 @@ MonoBehaviour:
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
   movementDirection: {x: 0, y: 0, z: 0}
-  speed: {x: 1.7, y: 1.2, z: 1.2}
+  speed: {x: 1.7, y: 1.1, z: 1.1}
 --- !u!114 &4840090045382764047
 MonoBehaviour:
   m_ObjectHideFlags: 0
