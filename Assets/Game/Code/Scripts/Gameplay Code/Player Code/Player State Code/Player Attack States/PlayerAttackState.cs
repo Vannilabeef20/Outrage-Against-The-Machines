@@ -9,50 +9,71 @@ namespace Game
 
         [field: SerializeField, ReadOnly] protected PlayerAttackingState AttackMachine { get; private set; }
 
-        [field: SerializeField, ReadOnly] public PlayerAttackSO playerAttack { get; private set; }
+        [field: SerializeField, Expandable] public PlayerAttackSO PlayerAttack { get; private set; }
+        [field: SerializeField] public AnimationFrameEvent[] FrameEvents { get; private set; }
 
-        public float TimeLeft  => playerAttack.Duration - UpTime;
+        public float TimeLeft  => PlayerAttack.Duration - UpTime;
 
+        private void Awake()
+        {
+            foreach (var frameEvent in FrameEvents)
+            {
+                frameEvent.Setup(PlayerAttack.Animation, PlayerAttack.Duration);
+            }
+        }
 
         public override void Enter()
         {
             IsComplete = false;
             startTime = Time.time;
-            AttackMachine.attackList.Add(playerAttack);
+            AttackMachine.attackList.Add(PlayerAttack);
+            foreach(var frameEvent in FrameEvents)
+            {
+                frameEvent.Reset();
+            }
         }
 
         public override void Exit()
         {
             AttackMachine.DisableAttackHitboxes();
+            stateMachine.audioSource.pitch = 1;
         }
 
         public override void Do()
         {
-            progress = UpTime.Map(0, playerAttack.Duration);
-            stateMachine.animator.Play(playerAttack.Animation.name, 0, progress);
+            progress = UpTime.Map(0, PlayerAttack.Duration);
+            stateMachine.animator.Play(PlayerAttack.Animation.name, 0, progress);
+            foreach (var frameEvent in FrameEvents)
+            {
+                frameEvent.Update(UpTime);
+            }
             ValidateState();
         }
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = playerAttack.VelocityCurve.Evaluate(progress) *
-                playerAttack.MaxVelocity * transform.right;
+            stateMachine.body.velocity = (PlayerAttack.VelocityCurve.Evaluate(progress) *
+                PlayerAttack.MaxVelocity * transform.right) + stateMachine.ContextVelocity;
         }
 
         protected override void ValidateState()
         {
-            if (UpTime >= playerAttack.Duration)
+            if (UpTime >= PlayerAttack.Duration)
             {
                 IsComplete = true;
             }
         }
 
-        public void Initialize(PlayerStateMachine playerMachine, PlayerAttackingState attackMachine, PlayerAttackSO playerAttack)
+        public override void Setup(PlayerStateMachine playerStateMachine)
         {
-            this.stateMachine = playerMachine;
-            this.AttackMachine = attackMachine;
-            this.playerAttack = playerAttack;
-            this.StateAnimation = playerAttack.Animation;
+            base.Setup(playerStateMachine);
+            AttackMachine = playerStateMachine.Attacking;
+        }
+
+        public void PlayPitchedAttackSound(int attackIndex)
+        {
+            AttackMachine.attackAudioSource.pitch = PlayerAttack.AudioPitches[attackIndex];
+            AttackMachine.attackAudioSource.PlayOneShot(PlayerAttack.Sound);
         }
 
     }

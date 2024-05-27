@@ -26,7 +26,15 @@ namespace Game
         }
         public override void FixedDo()
         {
-            stateMachine.body.velocity *= (1 - dragIntensity) * Time.deltaTime;
+            if(stateMachine.ContextVelocity == Vector3.zero)
+            {
+                stateMachine.body.velocity *= (1 - dragIntensity) * Time.deltaTime;
+            }
+            else
+            {
+                stateMachine.body.velocity = stateMachine.ContextVelocity;
+            }
+
         }
 
         protected override void ValidateState()

@@ -8,6 +8,6 @@ namespace Game
     public class PlayerAttack
     {
         [field: SerializeField] public PlayerAttackSO Parameters { get; private set; }
-        [field: SerializeField] public AnimationFrameEvent[] FrameEvents { get; private set; }
+
     }
 }

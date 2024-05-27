@@ -27,10 +27,10 @@ namespace Game
             stateMachine.audioSource.PlayOneShot(hitSound);
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
-                float damage = stateMachine.Attacking.CurrentAttackState.playerAttack.Damage;
+                float damage = stateMachine.Attacking.CurrentAttackState.PlayerAttack.Damage;
                 stateMachine.Attacking.UpdateSpecialBar(damage);
-                damageble.TakeDamage(transform.position, damage, stateMachine.Attacking.CurrentAttackState.playerAttack.StunDuration,
-                    stateMachine.Attacking.CurrentAttackState.playerAttack.KnockbackStrenght);
+                damageble.TakeDamage(transform.position, damage, stateMachine.Attacking.CurrentAttackState.PlayerAttack.StunDuration,
+                    stateMachine.Attacking.CurrentAttackState.PlayerAttack.KnockbackStrenght);
             }
         }
     }

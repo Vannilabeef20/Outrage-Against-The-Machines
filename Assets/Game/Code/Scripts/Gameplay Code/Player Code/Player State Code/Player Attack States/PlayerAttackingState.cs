@@ -10,9 +10,11 @@ namespace Game
     public class PlayerAttackingState : PlayerState
     {
         public override string Name { get { return CurrentAttackState != null ?
-                    CurrentAttackState.playerAttack.name : null; } }
+                    CurrentAttackState.PlayerAttack.name : null; } }
         public Dictionary<PlayerAttackSO, PlayerAttackState> PlayerAttackStatesDictionary { get; private set; }
             = new Dictionary<PlayerAttackSO, PlayerAttackState>();
+
+        [SerializeField] private PlayerAttackState[] playerAttacks;
         [field:SerializeField, Expandable] public PlayerComboSO[] PlayerCombos { get; private set; }
 
         [SerializeField] private BoxCollider[] hitboxes;
@@ -28,27 +30,18 @@ namespace Game
 
         [ProgressBar("Special Charge Amount","MaxSpecialChargeAmount", EColor.Blue)] public float specialChargeAmount;
 
+        [SerializeField] private Color specialImageColor;
+        [SerializeField] private Color specialImageFilledColor;
+
         [SerializeField] private Image[] specialImages;
 
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake
         {
-            base.Setup(playerStateMachine);
-            HashSet<PlayerAttackSO> playerAttackStates = new();
-            foreach(var combo in PlayerCombos)
+            base.Setup(playerStateMachine);           
+            foreach(var attack in playerAttacks)
             {
-                foreach(PlayerAttackSO attack in combo.attacks)
-                {
-                    playerAttackStates.Add(attack);
-                }
-            }
-            foreach(var attackSO in playerAttackStates)
-            {
-                GameObject stateObject = new GameObject (attackSO.name + " state");
-                stateObject.transform.parent = transform;
-                stateObject.AddComponent<PlayerAttackState>();
-                PlayerAttackState state = stateObject.GetComponent<PlayerAttackState>();
-                state.Initialize(stateMachine, this, attackSO);
-                PlayerAttackStatesDictionary.Add(attackSO, state);
+                attack.Setup(playerStateMachine);
+                PlayerAttackStatesDictionary.Add(attack.PlayerAttack, attack);
             }
             UpdateSpecialBar(0f);
             CurrentAttackState = null;
@@ -137,6 +130,18 @@ namespace Game
                         //It is a special and does not have enough charges, Abort!
                         return;
                     }
+                    int matchNumber = 0; 
+                    for (int j = 0; j < attackList.Count; j++) //Check how many attacks are the same
+                    {
+                        if (PlayerCombos[i].attacks[j] == attackList[j])
+                        {
+                            matchNumber++;
+                        }
+                    }
+                    if(matchNumber != attackList.Count)
+                    {
+                        continue; //Not all attacks are the same, Abort!
+                    }
                     UpdateSpecialBar(-PlayerCombos[i].attacks[attackList.Count].SpecialCost);                   
                     if(stateMachine.CurrentState != this) //Check if the state machine is already in the attacking state
                     {
@@ -206,10 +211,12 @@ namespace Game
                 else if(newSpecialPercent >= high)
                 {
                     specialImages[j-1].fillAmount = 1;
+                    specialImages[j - 1].color = specialImageFilledColor;
                 }
                 else
                 {
                     specialImages[j-1].fillAmount = newSpecialPercent.Map(low, high);
+                    specialImages[j - 1].color = specialImageColor;
                 }
             }
         }

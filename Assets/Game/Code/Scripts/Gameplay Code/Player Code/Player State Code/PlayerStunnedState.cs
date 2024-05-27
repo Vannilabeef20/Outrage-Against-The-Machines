@@ -47,7 +47,7 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = knockBackCurve.Evaluate(progress) * knockBackIntensity;
+            stateMachine.body.velocity = (Vector3)(knockBackCurve.Evaluate(progress) * knockBackIntensity) + stateMachine.ContextVelocity;
         }
 
         public override void Enter()

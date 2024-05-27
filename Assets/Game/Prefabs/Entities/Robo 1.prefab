@@ -5074,11 +5074,7 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   duration: 1
   frameEvents:
-  - <Anim>k__BackingField: {fileID: 0}
-    <Ratio>k__BackingField: 0
-    <TriggerTime>k__BackingField: 0
-    <HasBeenTriggered>k__BackingField: 0
-    <TriggerFrame>k__BackingField: 0
+  - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
@@ -5087,31 +5083,23 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: c23924316841d5844a9bcda780175905, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: 2db5d37dc6f47284697121b9ffa34f86, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - <TriggerFrame>k__BackingField: 6
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
         - m_Target: {fileID: 6508126985700856566}
           m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 484dad1cf3354e34d83b3c84a145ea4f, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 6508126985700856566}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 0daffe2b1508482438c0be0557528427, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: f09b3ea11420782499f49e4d714af6ec, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5334,6 +5322,10 @@ MonoBehaviour:
   currentState: {fileID: 6508126985612539012}
   nextState: {fileID: 6508126985612539012}
   overrideStateCompletion: 0
+  ContextVelocity: {x: 0, y: 0, z: 0}
+  conveyorLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   <IsAligned>k__BackingField: 0
   <Distance>k__BackingField: 0
   boxCastLayerMask:
@@ -5965,7 +5957,23 @@ MonoBehaviour:
     <HasProjectile>k__BackingField: 0
     <ProjectilePrefab>k__BackingField: {fileID: 0}
     <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
-    <FrameEvents>k__BackingField: []
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6508126985700856566}
+            m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+            m_MethodName: PlayOneShot
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 8300000, guid: 30c2441d2d0b5a94caf934ba393b5963, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   currentAttack:
     <Name>k__BackingField: 
     <Animation>k__BackingField: {fileID: 0}

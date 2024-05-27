@@ -65,11 +65,15 @@ namespace Game
                     {
                         obstacleValues[i] = 0f;
                     }
+#if UNITY_EDITOR
                     Debug.DrawLine(body.position + Vector3.down, body.position + Vector3.down +
                         (rayDirections[i] * obstacleValues[i]), Color.red);
+#endif
                 }
+#if UNITY_EDITOR
                 Debug.DrawLine(body.position, body.position +
                     (rayDirections[i] * interestValues[i]), Color.green);
+#endif
             }
             Vector3 finalDirection = Vector3.zero;
             for (int i = 0; i < rayDirections.Length; i++)
@@ -79,7 +83,9 @@ namespace Game
             }
             finalDirection /= rayDirections.Length;
             finalDirection.Normalize();
+#if UNITY_EDITOR
             Debug.DrawLine(body.position, body.position + (finalDirection * 3), Color.magenta);
+#endif
             return finalDirection;
         }
 

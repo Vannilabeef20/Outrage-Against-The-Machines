@@ -52,7 +52,7 @@ namespace Game
                 movementDirection = pathfinding.GetMovementDirection(target.transform.position, stateMachine.IsOnScreen);
             }
             stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
-                movementDirection.y * speed.y, movementDirection.z * speed.z);
+                movementDirection.y * speed.y, movementDirection.z * speed.z) + stateMachine.ContextVelocity;
             Debug.DrawLine(stateMachine.body.position, stateMachine.body.position + (stateMachine.body.velocity.normalized * 2), Color.yellow);
         }
 

@@ -32,7 +32,7 @@ namespace Game
 
         public override void FixedDo()
         {
-
+            stateMachine.body.velocity = stateMachine.ContextVelocity;
         }
 
         public override void Enter()

@@ -25,12 +25,12 @@ namespace Game
             stateMachine.animator.speed = stateMachine.InputDirection.magnitude;
             velocity = new Vector3(stateMachine.InputDirection.x *
                 movementSpeed.x, stateMachine.InputDirection.y * movementSpeed.y, stateMachine.InputDirection.y * movementSpeed.y);
-            Debug.DrawLine(transform.position, transform.position + velocity, Color.green);
+            Helper.DrawDirArrow(transform.position, velocity, Color.yellow, Color.green);
         }
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = velocity;
+            stateMachine.body.velocity = velocity + stateMachine.ContextVelocity;
         }
 
         public override void Enter()

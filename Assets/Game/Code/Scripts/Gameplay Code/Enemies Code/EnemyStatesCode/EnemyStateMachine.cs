@@ -33,6 +33,8 @@ namespace Game
         [SerializeField] private EnemyState currentState;
         public EnemyState nextState;
         [ReadOnly] public bool overrideStateCompletion;
+        [field: SerializeField, ReadOnly] public Vector3 ContextVelocity;
+        [SerializeField] private LayerMask conveyorLayer;
         #endregion
 
         #region Aligment Check
@@ -59,7 +61,7 @@ namespace Game
 
         private void Awake()
         {
-            if(transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
+            if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
             {
                 spawner = spawn;
             }
@@ -77,14 +79,14 @@ namespace Game
         private void Start()
         {
             EnemyState[] states = GetComponentsInChildren<EnemyState>();
-            foreach(EnemyState state in states)
+            foreach (EnemyState state in states)
             {
                 state.Setup(this);
             }
             currentState = intercept;
             nextState = intercept;
             currentState.Enter();
-            if(currentState != null)
+            if (currentState != null)
             {
                 stateLabelTmpro.text = currentState.Name;
             }
@@ -97,7 +99,7 @@ namespace Game
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);
-            if(IsAligned)
+            if (IsAligned)
             {
                 Distance = info.distance;
             }
@@ -108,9 +110,9 @@ namespace Game
             ChangeState();
             currentState.Do();
 
-            if(DebugManager.instance.isDebugModeEnabled)
+            if (DebugManager.instance.isDebugModeEnabled)
             {
-                if(stateLabelTmpro.gameObject.activeInHierarchy == false)
+                if (stateLabelTmpro.gameObject.activeInHierarchy == false)
                 {
                     stateLabelTmpro.gameObject.SetActive(true);
                 }
@@ -127,6 +129,7 @@ namespace Game
 
         private void FixedUpdate()
         {
+            GetContextSpeed();
             currentState.FixedDo();
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
         }
@@ -134,8 +137,8 @@ namespace Game
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
-        {          
-            if(IsAligned)
+        {
+            if (IsAligned)
             {
                 Helper.DrawBoxCastBox(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                     BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, Quaternion.identity,
@@ -175,7 +178,7 @@ namespace Game
             }
         }
 
-        public void TakeDamage(Vector3 _damageDealerPos , float _stunDuration, float _knockbackStrenght)
+        public void TakeDamage(Vector3 _damageDealerPos, float _stunDuration, float _knockbackStrenght)
         {
             attackhitbox.enabled = false;
             damage.stunDuration = _stunDuration;
@@ -185,5 +188,22 @@ namespace Game
             overrideStateCompletion = true;
         }
 
+        private void GetContextSpeed()
+        {
+            Vector3 tempContextSpeed = Vector3.zero;
+            Collider[] colliders = Physics.OverlapBox(transform.position, collisionBox.size / 2);
+            foreach (Collider collider in colliders)
+            {
+                if (conveyorLayer.ContainsLayer(collider.gameObject.layer))
+                {
+                    if (collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt))
+                    {
+                        tempContextSpeed += belt.ContextSpeed;
+                    }
+                }
+            }
+            ContextVelocity = tempContextSpeed;
+
+        }
     }
 }

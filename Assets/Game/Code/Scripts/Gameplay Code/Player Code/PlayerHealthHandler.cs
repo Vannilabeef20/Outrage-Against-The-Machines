@@ -23,7 +23,7 @@ namespace Game
         [SerializeField] private float maxHeathPoints;
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
         [SerializeField, ReadOnly] private bool isDead;
-
+        [SerializeField] private AudioClip reviveSound;
         #endregion
         #region Stagger Params
         [Header("STAGGER PARAMS"), HorizontalLine(2f, EColor.Orange)]
@@ -175,6 +175,7 @@ namespace Game
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
             UpdateHealthBar(newHealthPercent);
             playerHitbox.enabled = true;
+            AudioManager.instance.PlaySfxGlobal(reviveSound);
         }
         
     }

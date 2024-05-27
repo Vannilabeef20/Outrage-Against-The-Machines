@@ -6,6 +6,7 @@ namespace Game
 {
 	public static class Helper
 	{
+
 		/// <summary>
 		/// Checks if a Vector3 is within a certain range.
 		/// </summary>
@@ -243,7 +244,57 @@ namespace Game
 			Vector3 direction = point - pivot;
 			return pivot + rotation * direction;
 		}
-        #endregion
+		#endregion
+
+		#region Arrow
+
+		public static void DrawPointArrow(Vector3 pointFrom, Vector3 pointTo, Color color1, Color color2, float arrowHeadRatio = 1f, float arrowHeadAngle = 20.0f)
+		{
+			if (pointFrom == pointTo)
+			{
+				return;
+			}
+			Debug.DrawLine(pointFrom, pointTo, color1);
+			Vector3 dir = pointTo - pointFrom;
+			Vector3 up = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 down = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 front = Quaternion.LookRotation(dir, Vector3.forward) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 behind = Quaternion.LookRotation(dir, Vector3.forward) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 left = Quaternion.LookRotation(dir, Vector3.right) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 right = Quaternion.LookRotation(dir, Vector3.right) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+
+			Debug.DrawLine(pointTo, pointTo + up.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + down.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + front.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + behind.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + left.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + right.normalized * arrowHeadRatio, color2);
+		}
+
+		public static void DrawDirArrow(Vector3 pointFrom, Vector3 directionTo, Color color, Color color2, float arrowHeadRatio = 1f, float arrowHeadAngle = 20.0f)
+		{
+			if(Vector3.zero == directionTo)
+            {
+				return;
+            }
+			Vector3 pointTo = pointFrom + directionTo;
+			Debug.DrawLine(pointFrom, pointTo, color);
+			Vector3 up = Quaternion.LookRotation(directionTo) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 down = Quaternion.LookRotation(directionTo) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 front = Quaternion.LookRotation(directionTo, Vector3.forward) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 behind = Quaternion.LookRotation(directionTo, Vector3.forward) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 left = Quaternion.LookRotation(directionTo, Vector3.right) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+			Vector3 right = Quaternion.LookRotation(directionTo, Vector3.right) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
+
+			Debug.DrawLine(pointTo, pointTo + up.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + down.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + front.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + behind.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + left.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + right.normalized * arrowHeadRatio, color2);
+		}
+
+		#endregion
 
 		#endregion
 	}

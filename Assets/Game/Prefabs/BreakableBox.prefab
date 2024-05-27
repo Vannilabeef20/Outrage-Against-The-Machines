@@ -83,14 +83,14 @@ MonoBehaviour:
     itemDrops:
     - <Name>k__BackingField: Heal
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 75
-      ProbabilityPercent: 75
-      ProbabilityRange: {x: 0, y: 75}
+      <ProbabilityWeight>k__BackingField: 85
+      ProbabilityPercent: 85
+      ProbabilityRange: {x: 0, y: 85}
     - <Name>k__BackingField: Extra Life
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
-      <ProbabilityWeight>k__BackingField: 25
-      ProbabilityPercent: 25
-      ProbabilityRange: {x: 75, y: 100}
+      <ProbabilityWeight>k__BackingField: 15
+      ProbabilityPercent: 15
+      ProbabilityRange: {x: 85, y: 100}
     totalWeight: 100
   FrameToSpawn: 2
   hostileLayers:

@@ -10,6 +10,7 @@ namespace Game
 {
     public class Spawner : MonoBehaviour
     {
+        [SerializeField] private Camera mainCam;
         private Vector2 point1Pos;
         private Vector2 point2Pos;
         [SerializeField] private FollowPos followPos;
@@ -34,7 +35,7 @@ namespace Game
         [SerializeField] private Color encounterPositionGizmosColor;
         [SerializeField] private float encounterPositionDebugLineLenght;
         [SerializeField] private Color encounterPositionLimitDebugColor;
-        [SerializeField, ReadOnly] private Vector3 encounterPositionDebugLineHalfExtent;
+
 
         private void Awake()
         {
@@ -161,15 +162,44 @@ namespace Game
             {
                 return;
             }
-            encounterPositionDebugLineHalfExtent = Vector3.up * encounterPositionDebugLineLenght;
             foreach (EncounterSO encounter in encounters)
             {
                 Gizmos.color = encounterPositionGizmosColor;
+                if(mainCam != null)
+                {
+                    Vector3 tempPos1 = encounter.encounterPosition; //UP RIGHT
+                    tempPos1.y += mainCam.orthographicSize; 
+                    tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
+                    Vector3 tempPos2 = encounter.encounterPosition; //UP LEFT 
+                    tempPos2.y += mainCam.orthographicSize;
+                    tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
+                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //UP LINE
+
+                    tempPos1 = encounter.encounterPosition; //DOWN RIGHT
+                    tempPos1.y -= mainCam.orthographicSize;
+                    tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
+                    tempPos2 = encounter.encounterPosition;  //DOWN LEFT
+                    tempPos2.y -= mainCam.orthographicSize;
+                    tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
+                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //DOWN LINE
+
+                    tempPos1 = encounter.encounterPosition;
+                    tempPos1.y += mainCam.orthographicSize;
+                    tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
+                    tempPos2 = encounter.encounterPosition;
+                    tempPos2.y -= mainCam.orthographicSize;
+                    tempPos2.x += mainCam.aspect * mainCam.orthographicSize;
+                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //RIGHT LINE
+
+                    tempPos1 = encounter.encounterPosition;
+                    tempPos1.y += mainCam.orthographicSize;
+                    tempPos1.x -= mainCam.aspect * mainCam.orthographicSize;
+                    tempPos2 = encounter.encounterPosition;
+                    tempPos2.y -= mainCam.orthographicSize;
+                    tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
+                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //LEFT LINE
+                }
                 Gizmos.DrawSphere(encounter.encounterPosition, encounterPositionGizmosRadius);
-                Debug.DrawLine(encounter.encounterPosition + encounterPositionDebugLineHalfExtent,
-                    encounter.encounterPosition - encounterPositionDebugLineHalfExtent, encounterPositionLimitDebugColor);
-                Debug.DrawLine(encounter.encounterPosition + new Vector3(6.1f * Screen.width / Screen.height, 0, 0),
-                    encounter.encounterPosition - new Vector3(6.1f * Screen.width / Screen.height, 0, 0));
             }
 
             #endregion

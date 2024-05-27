@@ -17,6 +17,7 @@ namespace Game
         public AudioSource audioSource;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
+        public BoxCollider footCollider;
 
         [field: Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
         [field:SerializeField] public PlayerIdleState Idle { get; private set; }
@@ -32,6 +33,10 @@ namespace Game
         [ReadOnly] public bool overrideStateCompletion;
 
         [field: SerializeField ,ReadOnly] public Vector2 InputDirection { get; private set; } = Vector2.zero;
+
+        [field: SerializeField, ReadOnly] public Vector3 ContextVelocity { get; private set; }
+
+        [SerializeField] private LayerMask conveyorLayer;
 
         [Header("Debug"), HorizontalLine(2F, EColor.Yellow)]
         [SerializeField] private TextMeshProUGUI playerStateLabel;
@@ -59,11 +64,9 @@ namespace Game
                 playerInput.neverAutoSwitchControlSchemes = false;
             }
         }
-
-
         private void Update()
         {
-            //InputDirection = 
+            
             SelectState();
             CurrentState.Do();
             if (DebugManager.instance.isDebugModeEnabled)
@@ -86,8 +89,26 @@ namespace Game
 
         private void FixedUpdate()
         {
+            GetContextSpeed();
             CurrentState.FixedDo();
             transform.parent.transform.position = new Vector3(transform.position.x, transform.position.z, transform.position.z);
+        }
+
+        private void GetContextSpeed()
+        {
+            Vector3 tempContextSpeed = Vector3.zero;
+            Collider[] colliders = Physics.OverlapBox(transform.position, footCollider.size/2);
+            foreach(Collider collider in colliders)
+            {
+                if (conveyorLayer.ContainsLayer(collider.gameObject.layer))
+                {
+                    if (collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt))
+                    {
+                        tempContextSpeed += belt.ContextSpeed;
+                    }
+                }
+            }
+            ContextVelocity = tempContextSpeed;
         }
         private void SelectState()
         {
@@ -129,8 +150,8 @@ namespace Game
 
         public void PlayAttackSound(int attackNumber = 0)
         {
-            Attacking.attackAudioSource.pitch = Attacking.CurrentAttackState.playerAttack.AudioPitches[attackNumber];
-            Attacking.attackAudioSource.PlayOneShot(Attacking.CurrentAttackState.playerAttack.Sound);
+            Attacking.attackAudioSource.pitch = Attacking.CurrentAttackState.PlayerAttack.AudioPitches[attackNumber];
+            Attacking.attackAudioSource.PlayOneShot(Attacking.CurrentAttackState.PlayerAttack.Sound);
         }
 
         #endregion

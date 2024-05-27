@@ -61,7 +61,7 @@ namespace Game
                 return;
             }
             stateMachine.body.velocity = currentAttack.VelocityCurve.Evaluate(progress) *
-                currentAttack.Velocity * transform.right;
+                currentAttack.Velocity * transform.right + stateMachine.ContextVelocity;
         }
 
         public override void Enter()

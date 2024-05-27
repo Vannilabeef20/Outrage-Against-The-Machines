@@ -44,11 +44,13 @@ namespace Game
         #endregion
 
         #region Lifes Params
+        [SerializeField] private AudioClip reviveSound;
         [SerializeField] private IntEvent UpdateLifeCount;
         [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
 
         [SerializeField] private int initialLifeAmout;
         [SerializeField] private int maxLifeAmount;
+
         #endregion
 
 
@@ -277,6 +279,7 @@ namespace Game
                     PlayerCharacterList[i].GameObject.SetActive(true);
                     PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
                     PlayerCharacterList[i].isPlayerActive = true;
+                    AudioManager.instance.PlaySfxGlobal(reviveSound);
                 }
             }
             UpdateLifeCount.Raise(this, CurrentLifeAmount);

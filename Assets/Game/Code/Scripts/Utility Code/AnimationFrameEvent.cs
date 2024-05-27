@@ -8,10 +8,10 @@ namespace Game
     [Serializable]
     public class AnimationFrameEvent
     {
-        [field: SerializeField, ReadOnly, AllowNesting] public AnimationClip Anim { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public float Ratio { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public float TriggerTime { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public bool HasBeenTriggered { get; private set; }
+        public AnimationClip Anim { get; private set; }
+        public float Ratio { get; private set; }
+        public float TriggerTime { get; private set; }
+        public bool HasBeenTriggered { get; private set; }
         [field: SerializeField, Min(0)] public int TriggerFrame { get; private set; }
         [field: SerializeField] public UnityEvent Actions { get; private set; }
 
