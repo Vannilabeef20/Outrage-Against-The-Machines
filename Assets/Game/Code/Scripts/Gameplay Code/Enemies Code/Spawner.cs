@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 using NaughtyAttributes;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Game
 {
@@ -30,12 +33,16 @@ namespace Game
 
         [SerializeField] private Color spawnRegionColor;
 
+        #if UNITY_EDITOR
+
         [Header("GIZMOS"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] private float encounterPositionGizmosRadius;
         [SerializeField] private Color encounterPositionGizmosColor;
         [SerializeField] private float encounterPositionDebugLineLenght;
         [SerializeField] private Color encounterPositionLimitDebugColor;
 
+        [SerializeField] private GUIStyle style;
+#endif
 
         private void Awake()
         {
@@ -199,7 +206,7 @@ namespace Game
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
                     Debug.DrawLine(tempPos1, tempPos2, Color.blue); //LEFT LINE
                 }
-                Gizmos.DrawSphere(encounter.encounterPosition, encounterPositionGizmosRadius);
+                Handles.Label(encounter.encounterPosition, encounter.name, style);
             }
 
             #endregion

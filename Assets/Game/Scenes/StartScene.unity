@@ -1066,154 +1066,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2.5
---- !u!1 &240223189
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 240223190}
-  - component: {fileID: 240223194}
-  - component: {fileID: 240223192}
-  - component: {fileID: 240223191}
-  - component: {fileID: 240223195}
-  m_Layer: 5
-  m_Name: Selection Arrow Up Player_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &240223190
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240223189}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1156262097}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -48.999985}
-  m_SizeDelta: {x: 47.9, y: 100}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &240223191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240223189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0.16342616, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.93470955, b: 0, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 240223192}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 240223195}
-        m_TargetAssemblyTypeName: Game.CharacterSelectionSwap, Assembly-CSharp
-        m_MethodName: Swap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &240223192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240223189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &240223194
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240223189}
-  m_CullTransparentMesh: 1
---- !u!114 &240223195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240223189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterSelector: {fileID: 510971453}
-  characterIndex: 2
 --- !u!1 &297230245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,20 +1624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7d10e94c3644241808e5d44ab1d9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: 67071906, guid: b294cf12994e5b24babec9016384b945, type: 3}
-  - {fileID: 1095934634, guid: c9abf178542740642a37112e2c9017f8, type: 3}
-  selectionImages:
-  - {fileID: 1630243559}
-  - {fileID: 1723714281}
-  - {fileID: 76465016}
-  joinTextsObjects:
-  - {fileID: 1022687496}
-  - {fileID: 1905775344}
-  - {fileID: 2009968132}
-  selectionIndexes: 000000000000000000000000
   confirmButton: {fileID: 99533874}
+  selectionSwaps:
+  - {fileID: 2106557890}
+  - {fileID: 985564490}
+  - {fileID: 1814083689}
 --- !u!224 &550652611 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2700098530835364134, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
@@ -2243,154 +2086,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &655263595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 655263596}
-  - component: {fileID: 655263600}
-  - component: {fileID: 655263598}
-  - component: {fileID: 655263597}
-  - component: {fileID: 655263601}
-  m_Layer: 5
-  m_Name: Selection Arrow Up Player_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &655263596
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655263595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1310733572}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -48.999985}
-  m_SizeDelta: {x: 47.9, y: 100}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &655263597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655263595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0.16342616, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.93470955, b: 0, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 655263598}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 655263601}
-        m_TargetAssemblyTypeName: Game.CharacterSelectionSwap, Assembly-CSharp
-        m_MethodName: Swap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &655263598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655263595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &655263600
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655263595}
-  m_CullTransparentMesh: 1
---- !u!114 &655263601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655263595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterSelector: {fileID: 510971453}
-  characterIndex: 1
 --- !u!1 &715766717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,154 +2473,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92dbe24d99f44cb40bab831720f3f799, type: 3}
---- !u!1 &843591459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 843591460}
-  - component: {fileID: 843591464}
-  - component: {fileID: 843591462}
-  - component: {fileID: 843591461}
-  - component: {fileID: 843591465}
-  m_Layer: 5
-  m_Name: Selection Arrow Up Player_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &843591460
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843591459}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1453307059}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -49}
-  m_SizeDelta: {x: 47.9, y: 100}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &843591461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843591459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0.16342616, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.93470955, b: 0, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 843591462}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 843591465}
-        m_TargetAssemblyTypeName: Game.CharacterSelectionSwap, Assembly-CSharp
-        m_MethodName: Swap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &843591462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843591459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &843591464
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843591459}
-  m_CullTransparentMesh: 1
---- !u!114 &843591465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843591459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterSelector: {fileID: 510971453}
-  characterIndex: 0
 --- !u!1 &904254306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,7 +2622,7 @@ GameObject:
   - component: {fileID: 985564486}
   - component: {fileID: 985564490}
   m_Layer: 5
-  m_Name: Selection Arrow Down Player_2
+  m_Name: Selection Arrow Player_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3207,8 +2754,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSelector: {fileID: 510971453}
-  characterIndex: 1
+  <PlayerIndex>k__BackingField: 1
+  selectionImage: {fileID: 1723714281}
+  swapButton: {fileID: 985564486}
+  joinTextObject: {fileID: 1905775344}
+  selectionSprites:
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  - {fileID: -1982074390, guid: 8fe234692a1477f4f9cb0e0975594872, type: 3}
+  - {fileID: -1016836266, guid: 13986008a7514114a8708e6cedcab065, type: 3}
+  <SelectionPrefabs>k__BackingField:
+  - {fileID: 5108083988809770657, guid: 4e90fab55f6adfd4d925bc2a23d02492, type: 3}
+  - {fileID: 1045553188760467203, guid: 58821ce6334217b4a82e42890d2aed5f, type: 3}
+  - {fileID: 7608286615823554895, guid: 52833a560dc7ed644845d7aa4f71b6e7, type: 3}
+  <SelectionIndex>k__BackingField: 0
 --- !u!1 &1022687496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3069,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1940702585}
-  - {fileID: 240223190}
   - {fileID: 1814083684}
   - {fileID: 2009968133}
   - {fileID: 76465015}
@@ -3826,7 +3383,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 22408472}
-  - {fileID: 655263596}
   - {fileID: 985564485}
   - {fileID: 1905775345}
   - {fileID: 1723714283}
@@ -4121,7 +3677,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1644889970}
-  - {fileID: 843591460}
   - {fileID: 2106557885}
   - {fileID: 1022687497}
   - {fileID: 1630243561}
@@ -5093,7 +4648,7 @@ GameObject:
   - component: {fileID: 1814083685}
   - component: {fileID: 1814083689}
   m_Layer: 5
-  m_Name: Selection Arrow Down Player_3
+  m_Name: Selection Arrow Player_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5225,8 +4780,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSelector: {fileID: 510971453}
-  characterIndex: 2
+  <PlayerIndex>k__BackingField: 2
+  selectionImage: {fileID: 76465016}
+  swapButton: {fileID: 1814083685}
+  joinTextObject: {fileID: 2009968132}
+  selectionSprites:
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  - {fileID: -1982074390, guid: 8fe234692a1477f4f9cb0e0975594872, type: 3}
+  - {fileID: -1016836266, guid: 13986008a7514114a8708e6cedcab065, type: 3}
+  <SelectionPrefabs>k__BackingField:
+  - {fileID: 5108083988809770657, guid: 4e90fab55f6adfd4d925bc2a23d02492, type: 3}
+  - {fileID: 1045553188760467203, guid: 58821ce6334217b4a82e42890d2aed5f, type: 3}
+  - {fileID: 7608286615823554895, guid: 52833a560dc7ed644845d7aa4f71b6e7, type: 3}
+  <SelectionIndex>k__BackingField: 0
 --- !u!1 &1888459057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,7 +6049,7 @@ GameObject:
   - component: {fileID: 2106557886}
   - component: {fileID: 2106557890}
   m_Layer: 5
-  m_Name: Selection Arrow Down Player_1
+  m_Name: Selection Arrow Player_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6615,8 +6181,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSelector: {fileID: 510971453}
-  characterIndex: 0
+  <PlayerIndex>k__BackingField: 0
+  selectionImage: {fileID: 1630243559}
+  swapButton: {fileID: 2106557886}
+  joinTextObject: {fileID: 1022687496}
+  selectionSprites:
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  - {fileID: -1982074390, guid: 8fe234692a1477f4f9cb0e0975594872, type: 3}
+  - {fileID: -1016836266, guid: 13986008a7514114a8708e6cedcab065, type: 3}
+  <SelectionPrefabs>k__BackingField:
+  - {fileID: 5108083988809770657, guid: 4e90fab55f6adfd4d925bc2a23d02492, type: 3}
+  - {fileID: 1045553188760467203, guid: 58821ce6334217b4a82e42890d2aed5f, type: 3}
+  - {fileID: 7608286615823554895, guid: 52833a560dc7ed644845d7aa4f71b6e7, type: 3}
+  <SelectionIndex>k__BackingField: 0
 --- !u!114 &195461811634496748
 MonoBehaviour:
   m_ObjectHideFlags: 0

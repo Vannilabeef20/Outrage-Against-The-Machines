@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
   m_Name: Vaca Kick
   m_EditorClassIdentifier: 
-  <IsSpecial>k__BackingField: 0
-  <SpecialCost>k__BackingField: 0
   <Animation>k__BackingField: {fileID: 7400000, guid: 153e54e046feab440bcc6d04a784b9a2, type: 2}
   <Sound>k__BackingField: {fileID: 8300000, guid: 07aaff9328a339f4885ed6cabb5d16f3, type: 3}
-  <AudioPitches>k__BackingField:
-  - 0.9
+  <Damage>k__BackingField: 15
+  <Duration>k__BackingField: 0.6
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -70,7 +70,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   <MaxVelocity>k__BackingField: 10
-  <Duration>k__BackingField: 0.6
-  <Damage>k__BackingField: 15
   <StunDuration>k__BackingField: 0.6
   <KnockbackStrenght>k__BackingField: 8
+  <AudioPitches>k__BackingField:
+  - 0.9
+  <RumbleLowFrequency>k__BackingField: 0.8
+  <RumbleHighFrequency>k__BackingField: 0.6
+  <RumbleDuration>k__BackingField: 0.3

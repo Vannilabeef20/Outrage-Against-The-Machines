@@ -7,110 +7,31 @@ namespace Game
 {
     public class CharacterSelector : MonoBehaviour
     {
-        [SerializeField, ShowAssetPreview] private Sprite[] selectionSprites;
-        [SerializeField] private Image[] selectionImages;
-        [SerializeField] private GameObject[] joinTextsObjects;
-        [SerializeField, ReadOnly] private int[] selectionIndexes = new int[3];
         [SerializeField] private Button confirmButton;
+        [SerializeField] private CharacterSelectionSwap[] selectionSwaps;
 
-        private void Start()
+        private void OnEnable()
         {
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
-            GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshImage);
-            RefreshImage();
+            confirmButton.interactable = false;
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
+            GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshImage);
-            GameManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshConfirmButton);
+            GameManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshConfirmButton);
         }
 
-        public void SwapCharacter(int characterIndex)
+        public void RefreshConfirmButton(PlayerInput playerInput)
         {
-            RefreshImage(characterIndex);
-            selectionIndexes[characterIndex] ++;
-            if (selectionIndexes[characterIndex] >= 3)
-            {
-                selectionIndexes[characterIndex] = 0;
-            }
-            if (selectionIndexes[characterIndex] < 0)
-            {
-                selectionIndexes[characterIndex] = 2;
-            }
-            selectionImages[characterIndex].sprite = selectionSprites[selectionIndexes[characterIndex]];
-        }
-
-        public void RefreshImage(int characterIndex)
-        {
-            if (GameManager.Instance.UnityInputManager.playerCount != 0)
-            {
-                confirmButton.interactable = true;
-            }
-            else
+            if(GameManager.Instance.UnityInputManager.playerCount < 1)
             {
                 confirmButton.interactable = false;
             }
-
-            if (GameManager.Instance.UnityInputManager.playerCount - 1 < characterIndex)
-            {
-                selectionImages[characterIndex].enabled = false;
-                joinTextsObjects[characterIndex].SetActive(true);
-            }
             else
-            {
-                selectionImages[characterIndex].enabled = true;
-                joinTextsObjects[characterIndex].SetActive(false);
-            }
-        }
-        public void RefreshImage(PlayerInput playerInput)
-        {
-            if (GameManager.Instance.UnityInputManager.playerCount != 0)
             {
                 confirmButton.interactable = true;
-            }
-            else
-            {
-                confirmButton.interactable = false;
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                if (GameManager.Instance.UnityInputManager.playerCount - 1 < i)
-                {
-                    selectionImages[i].enabled = false;
-                    joinTextsObjects[i].SetActive(true);
-                }
-                else
-                {
-                    selectionImages[i].enabled = true;
-                    joinTextsObjects[i].SetActive(false);
-                }
-            }
-        }
-        public void RefreshImage()
-        {
-            if (GameManager.Instance.UnityInputManager.playerCount != 0)
-            {
-                confirmButton.interactable = true;
-            }
-            else
-            {
-                confirmButton.interactable = false;
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                if (GameManager.Instance.UnityInputManager.playerCount - 1 < i)
-                {
-                    selectionImages[i].enabled = false;
-                    joinTextsObjects[i].SetActive(true);
-                }
-                else
-                {
-                    selectionImages[i].enabled = true;
-                    joinTextsObjects[i].SetActive(false);
-                }
             }
         }
 
@@ -118,10 +39,14 @@ namespace Game
         {
             GameManager.Instance.PlayerCharacterList.Clear();
             PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
-            for (int i = 0; i < playerInputs.Length; i++)
+            foreach(var swap in selectionSwaps)
             {
-                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(GameManager.Instance.PlayerPrefabs[playerInputs[i].playerIndex],
-                    playerInputs[i].playerIndex, playerInputs[playerInputs[i].playerIndex].currentControlScheme, playerInputs[playerInputs[i].playerIndex].devices.ToArray()));
+                if(swap.SelectionIndex < 0)
+                {
+                    continue;
+                }
+                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(swap.SelectionPrefabs[swap.SelectionIndex], swap.PlayerIndex,
+                     playerInputs[swap.PlayerIndex].currentControlScheme, playerInputs[swap.PlayerIndex].devices.ToArray()));
             }
         }
         public void ClearPlayer(MenuId menuId)

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
-  m_Name: Vaca Left Punch
+  m_Name: Vaca Right Barrage
   m_EditorClassIdentifier: 
+  <Animation>k__BackingField: {fileID: 7400000, guid: decd9afb495080e47b8367f3852755e2, type: 2}
+  <Sound>k__BackingField: {fileID: 8300000, guid: 9efd7c9788c9c3649be3aeac72fc4f34, type: 3}
+  <Damage>k__BackingField: 9
+  <Duration>k__BackingField: 0.7
   <IsSpecial>k__BackingField: 0
   <SpecialCost>k__BackingField: 0
-  <Animation>k__BackingField: {fileID: 7400000, guid: e1b6d9d8bfc3cd149bb6f8be3f28e495, type: 2}
-  <Sound>k__BackingField: {fileID: 8300000, guid: 5eebc5f835642f441bfa94b79a779290, type: 3}
-  <AudioPitches>k__BackingField:
-  - 1
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -31,46 +31,43 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.03672926
     - serializedVersion: 3
-      time: 0.25
-      value: -0.2
-      inSlope: Infinity
-      outSlope: 2.9946654
-      tangentMode: 7
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.21063794
-    - serializedVersion: 3
-      time: 0.39
-      value: 0
-      inSlope: -0.1734717
-      outSlope: Infinity
-      tangentMode: 97
-      weightedMode: 0
-      inWeight: 0.35221303
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.4
+      time: 0.2
       value: 1
       inSlope: Infinity
-      outSlope: -4.7982354
+      outSlope: -17.104599
       tangentMode: 7
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.040967215
+      outWeight: 0.061342243
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.125
+      inSlope: -0.057959817
+      outSlope: -0.44650418
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.88917524
+      outWeight: 0.053646777
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: -0.05331756
-      outSlope: -0.05331756
-      tangentMode: 0
+      value: 0.0023498535
+      inSlope: -0.008403651
+      outSlope: Infinity
+      tangentMode: 97
       weightedMode: 0
-      inWeight: 0.10369998
+      inWeight: 0.48238033
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <MaxVelocity>k__BackingField: 10
-  <Duration>k__BackingField: 0.6
-  <Damage>k__BackingField: 20
+  <MaxVelocity>k__BackingField: 25
   <StunDuration>k__BackingField: 0.5
   <KnockbackStrenght>k__BackingField: 5
+  <AudioPitches>k__BackingField:
+  - 0.69
+  - 0.7
+  - 0.71
+  - 0.72
+  <RumbleLowFrequency>k__BackingField: 0.7
+  <RumbleHighFrequency>k__BackingField: 0.7
+  <RumbleDuration>k__BackingField: 0.15

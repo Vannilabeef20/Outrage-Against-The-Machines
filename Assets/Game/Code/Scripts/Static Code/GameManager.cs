@@ -34,7 +34,7 @@ namespace Game
 
         public PlayerInputManager UnityInputManager;
 
-        [field: SerializeField] public GameObject[] PlayerPrefabs { get; private set; }
+        [field: SerializeField] public GameObject DefaultPrefab { get; private set; }
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
 
@@ -139,8 +139,8 @@ namespace Game
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
             if (PlayerCharacterList.Count == 0)
             {
-                PlayerCharacterList.Add(new PlayerCharacter(PlayerPrefabs[0], 0, null, null));
-                PlayerCharacterList[0].GameObject = Instantiate(PlayerPrefabs[0], spawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList.Add(new PlayerCharacter(DefaultPrefab, 0, null, null));
+                PlayerCharacterList[0].GameObject = Instantiate(DefaultPrefab, spawnCoordinates[0], Quaternion.identity);
                 PlayerCharacterList[0].isPlayerActive = true;
             }
             else
@@ -274,7 +274,7 @@ namespace Game
                 if (!PlayerCharacterList[i].isPlayerActive && CurrentLifeAmount > 0)
                 {
                     PlayerCharacterList[i].GameObject.transform.position = new Vector3(MainCamera.transform.position.x,
-                        MainCamera.transform.position.y - 1.5f, MainCamera.transform.position.y - 1.5f);
+                        MainCamera.transform.position.y - 1.5f, MainCamera.transform.position.y - 1.5f);// HardCoded
                     CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
                     PlayerCharacterList[i].GameObject.SetActive(true);
                     PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;

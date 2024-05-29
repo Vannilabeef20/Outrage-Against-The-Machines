@@ -176,6 +176,10 @@ namespace Game
             UpdateHealthBar(newHealthPercent);
             playerHitbox.enabled = true;
             AudioManager.instance.PlaySfxGlobal(reviveSound);
+            foreach (var device in playerStateMachine.playerInput.devices)
+            {
+                GameManager.Instance.Rumble(device, 0.5f, 0.5f, 0.5f); //Hard coded
+            }
         }
         
     }

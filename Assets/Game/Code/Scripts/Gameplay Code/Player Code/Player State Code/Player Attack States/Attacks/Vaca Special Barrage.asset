@@ -12,21 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
   m_Name: Vaca Special Barrage
   m_EditorClassIdentifier: 
-  <IsSpecial>k__BackingField: 1
-  <SpecialCost>k__BackingField: 133.4
   <Animation>k__BackingField: {fileID: 7400000, guid: 49ad6f2a2fd5e1541bc1ef2a593580bc, type: 2}
   <Sound>k__BackingField: {fileID: 8300000, guid: 264b03f6440394b46abacedf1cd0f3c8, type: 3}
-  <AudioPitches>k__BackingField:
-  - 1
-  - 0.99
-  - 0.98
-  - 0.97
-  - 0.96
-  - 0.95
-  - 0.94
-  - 0.93
-  - 0.92
-  - 0.91
+  <Damage>k__BackingField: 10
+  <Duration>k__BackingField: 1.2
+  <IsSpecial>k__BackingField: 1
+  <SpecialCost>k__BackingField: 133.4
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -61,7 +52,19 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   <MaxVelocity>k__BackingField: 10
-  <Duration>k__BackingField: 1.2
-  <Damage>k__BackingField: 10
   <StunDuration>k__BackingField: 0.5
   <KnockbackStrenght>k__BackingField: 3
+  <AudioPitches>k__BackingField:
+  - 1
+  - 0.99
+  - 0.98
+  - 0.97
+  - 0.96
+  - 0.95
+  - 0.94
+  - 0.93
+  - 0.92
+  - 0.91
+  <RumbleLowFrequency>k__BackingField: 1
+  <RumbleHighFrequency>k__BackingField: 1
+  <RumbleDuration>k__BackingField: 0.15

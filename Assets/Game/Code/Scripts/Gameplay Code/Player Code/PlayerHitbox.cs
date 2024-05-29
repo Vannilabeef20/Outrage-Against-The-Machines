@@ -25,6 +25,12 @@ namespace Game
             }
             Instantiate(hitEffect, attackCollider.ClosestPoint(other.bounds.center), Quaternion.identity);
             stateMachine.audioSource.PlayOneShot(hitSound);
+            foreach (var device in stateMachine.playerInput.devices)
+            {
+                GameManager.Instance.Rumble(device, stateMachine.Attacking.CurrentAttackState.PlayerAttack.RumbleLowFrequency,
+                    stateMachine.Attacking.CurrentAttackState.PlayerAttack.RumbleHighFrequency,
+                    stateMachine.Attacking.CurrentAttackState.PlayerAttack.RumbleDuration);
+            }
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
                 float damage = stateMachine.Attacking.CurrentAttackState.PlayerAttack.Damage;
