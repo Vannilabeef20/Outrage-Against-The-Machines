@@ -54,8 +54,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Name
-      value: Vaca Blue
+      value: Vaca P1
       objectReference: {fileID: 0}
+    - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -485859895, guid: 13986008a7514114a8708e6cedcab065, type: 3}
     - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

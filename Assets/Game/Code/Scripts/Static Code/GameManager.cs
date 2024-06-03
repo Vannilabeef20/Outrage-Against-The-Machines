@@ -53,7 +53,6 @@ namespace Game
 
         #endregion
 
-
         #region Unity/Application Methods
         private void Awake()
         {

@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a92c842001b6894f8d616bc5e2305a5, type: 3}
-  m_Name: KickPunchPunchPunch Combo
+  m_Name: GaloDashCombo
   m_EditorClassIdentifier: 
   attacks:
-  - {fileID: 11400000, guid: 62cd11d3f5d820f47b0db7ce5069fdbd, type: 2}
-  - {fileID: 11400000, guid: 6c871f21dbe7a0341b956fdc27888ae0, type: 2}
-  - {fileID: 11400000, guid: 03fa910405505234985027a159ca2b0f, type: 2}
-  - {fileID: 11400000, guid: cfc5e7f31ee9e8c4e98a48f9efa9aa17, type: 2}
-  input: 01000000000000000000000000000000
+  - {fileID: 11400000, guid: 187eb8c99133dd142bea2a2acd0bdbb9, type: 2}
+  input: 04000000

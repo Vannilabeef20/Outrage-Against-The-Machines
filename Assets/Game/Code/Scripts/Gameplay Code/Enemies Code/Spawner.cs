@@ -60,6 +60,7 @@ namespace Game
                     Destroy(enemy);
                 }
                 enemiesAlive.Clear();
+                enemiesToSpawn.Clear();
             }
             if (encounters.Count == 0)
             {
@@ -106,6 +107,10 @@ namespace Game
         {
             Vector3 tempPosition = new Vector3(transform.position.x, transform.position.y, transform.position.y);
             float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
+            if(enemiesToSpawn.Count < 1)
+            {
+                return;
+            }
             if (UnityEngine.Random.Range(0, 2) == 0)
             {
                 Instantiate(enemiesToSpawn[0], tempPosition + new Vector3(UnityEngine.Random.Range(spawnDistance.x, spawnDistance.y),

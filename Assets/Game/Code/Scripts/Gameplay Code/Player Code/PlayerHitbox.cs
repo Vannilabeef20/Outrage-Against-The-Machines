@@ -34,7 +34,10 @@ namespace Game
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
                 float damage = stateMachine.Attacking.CurrentAttackState.PlayerAttack.Damage;
-                stateMachine.Attacking.UpdateSpecialBar(damage);
+                if(!stateMachine.Attacking.CurrentAttackState.PlayerAttack.IsSpecial)
+                {
+                    stateMachine.Attacking.UpdateSpecialBar(damage);
+                }
                 damageble.TakeDamage(transform.position, damage, stateMachine.Attacking.CurrentAttackState.PlayerAttack.StunDuration,
                     stateMachine.Attacking.CurrentAttackState.PlayerAttack.KnockbackStrenght);
             }

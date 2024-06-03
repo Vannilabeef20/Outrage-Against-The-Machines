@@ -103,6 +103,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -111,9 +123,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 127
-        width: 183
-        height: 127
+        y: 101
+        width: 266
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a984204d42bcaa47bbb7c108ee578b8
-      internalID: -1118589724
+      spriteID: 77c29290390df864d83e26a40863963f
+      internalID: -1285727183
       vertices: []
       indices: 
       edges: []
@@ -131,10 +143,10 @@ TextureImporter:
       name: galo hit_1
       rect:
         serializedVersion: 2
-        x: 183
-        y: 127
-        width: 183
-        height: 127
+        x: 266
+        y: 101
+        width: 266
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 348d18e0234499946974389dc7079ede
-      internalID: -362300697
+      spriteID: 5b93a2c0a6d6d5d489000b4adf7da293
+      internalID: 967083558
       vertices: []
       indices: 
       edges: []
@@ -154,8 +166,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 183
-        height: 127
+        width: 266
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157c9cda56f098d4cbaa2807478605d3
-      internalID: -1269945184
+      spriteID: d78e9b7d5f36d134f958c6d228cc2fcb
+      internalID: -1336275131
       vertices: []
       indices: 
       edges: []
@@ -180,9 +192,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      galo hit_0: -1118589724
-      galo hit_2: -1269945184
-      galo hit_1: -362300697
+      galo hit_0: -1285727183
+      galo hit_2: -1336275131
+      galo hit_1: 967083558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

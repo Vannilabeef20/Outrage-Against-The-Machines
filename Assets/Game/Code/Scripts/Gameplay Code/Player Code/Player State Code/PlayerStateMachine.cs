@@ -148,12 +148,6 @@ namespace Game
             Walking.PlayFootstepSound();
         }
 
-        public void PlayAttackSound(int attackNumber = 0)
-        {
-            Attacking.attackAudioSource.pitch = Attacking.CurrentAttackState.PlayerAttack.AudioPitches[attackNumber];
-            Attacking.attackAudioSource.PlayOneShot(Attacking.CurrentAttackState.PlayerAttack.Sound);
-        }
-
         #endregion
         public void ValidateAttack(InputAction.CallbackContext context)
         {

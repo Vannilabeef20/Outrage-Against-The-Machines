@@ -103,9 +103,336 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: galo soco 3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7541ae12f29283842af2b23024f51350
+      internalID: 1370969372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_1
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 303
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dee1f96055bd834bb867b6e6d03489c
+      internalID: 419429410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_2
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 303
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c2bc949b55bbc4d94d52b64d2569a0
+      internalID: -786539809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 303
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c9fccb7f321c6438b72e94c623d688
+      internalID: -1085937611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 202
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31327ea42f2acc64bb3bef63a4d32095
+      internalID: 1337302008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 202
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10281e1766416c74fb2c11fcfc084a97
+      internalID: 131222367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_6
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 202
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ce0bec94fb5e04da07b015babe250c
+      internalID: -1537108608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_7
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 202
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523b8e7388cb2e84a95787d9743bad82
+      internalID: 1811751492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3040f51037106443992e33eb25f5bf3
+      internalID: -98893384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_9
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 101
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb84854ba5d632e429683fd134dcc928
+      internalID: 1065411999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_10
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 101
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171e00b274b572049aaffe34ace50b18
+      internalID: -1655409515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_11
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 101
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffac5ab7c933084cac38f679e60d989
+      internalID: 1548844545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e08ad099c6c58a41b29d46460649238
+      internalID: 1378034077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_13
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7750a783a5dcc0a4fa962ffb7cbaac2a
+      internalID: 1293683405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galo soco 3_14
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 266
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504fb9c1b7cbbcf48a7584bb4c080ea0
+      internalID: 837222102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +443,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      galo soco 3_7: 1811751492
+      galo soco 3_0: 1370969372
+      galo soco 3_1: 419429410
+      galo soco 3_3: -1085937611
+      galo soco 3_11: 1548844545
+      galo soco 3_2: -786539809
+      galo soco 3_14: 837222102
+      galo soco 3_5: 131222367
+      galo soco 3_6: -1537108608
+      galo soco 3_8: -98893384
+      galo soco 3_13: 1293683405
+      galo soco 3_12: 1378034077
+      galo soco 3_9: 1065411999
+      galo soco 3_4: 1337302008
+      galo soco 3_10: -1655409515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

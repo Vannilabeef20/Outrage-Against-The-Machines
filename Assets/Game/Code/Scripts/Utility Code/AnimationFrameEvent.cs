@@ -9,6 +9,7 @@ namespace Game
     public class AnimationFrameEvent
     {
         public AnimationClip Anim { get; private set; }
+        public float Duration { get; private set; }
         public float Ratio { get; private set; }
         public float TriggerTime { get; private set; }
         public bool HasBeenTriggered { get; private set; }
@@ -18,7 +19,8 @@ namespace Game
         public void Setup(AnimationClip clip, float animationDuration)
         {
             Anim = clip;
-            Ratio = animationDuration / Anim.length;
+            Duration = animationDuration;
+            Ratio = Duration / Anim.length;
             TriggerTime = TriggerFrame / Anim.frameRate * Ratio;
             HasBeenTriggered = false;
         }

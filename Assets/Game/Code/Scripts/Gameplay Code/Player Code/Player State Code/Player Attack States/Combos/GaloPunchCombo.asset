@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a92c842001b6894f8d616bc5e2305a5, type: 3}
-  m_Name: RunningCombo
+  m_Name: GaloPunchCombo
   m_EditorClassIdentifier: 
   attacks:
-  - {fileID: 11400000, guid: 200fe47429a40464b820d92dc02eb56f, type: 2}
-  input: 04000000
+  - {fileID: 11400000, guid: 98a06d34c2648b04aa5961a18ca3f910, type: 2}
+  - {fileID: 11400000, guid: 7bb44ef7693db514a8a1c30c2eccc45b, type: 2}
+  - {fileID: 11400000, guid: 16436e303fb1fc646b670a7c5296b2be, type: 2}
+  input: 000000000000000000000000

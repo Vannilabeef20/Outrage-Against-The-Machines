@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a92c842001b6894f8d616bc5e2305a5, type: 3}
+  m_Name: VacaPunchPunchKick Combo
+  m_EditorClassIdentifier: 
+  attacks:
+  - {fileID: 11400000, guid: 03fa910405505234985027a159ca2b0f, type: 2}
+  - {fileID: 11400000, guid: 6c871f21dbe7a0341b956fdc27888ae0, type: 2}
+  - {fileID: 11400000, guid: af7c7b8ba246bd5449f92b0bd4673d76, type: 2}
+  input: 000000000000000001000000

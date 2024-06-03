@@ -61,20 +61,33 @@ namespace Game
 
         private void Awake()
         {
-            if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
+            try
             {
-                spawner = spawn;
+                if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
+                {
+                    spawner = spawn;
+                }
+            }
+            catch
+            {
+
             }
         }
 
         private void OnEnable()
         {
-            spawner.enemiesAlive.Add(gameObject);
+            if(spawner != null)
+            {
+                spawner.enemiesAlive.Add(gameObject);
+            }
             hurtBox.enabled = true;
         }
         private void OnDisable()
         {
-            spawner.enemiesAlive.Remove(gameObject);
+            if (spawner != null)
+            {
+                spawner.enemiesAlive.Remove(gameObject);
+            }
         }
         private void Start()
         {

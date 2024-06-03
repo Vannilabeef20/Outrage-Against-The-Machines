@@ -15,6 +15,7 @@ namespace Game
             if(playerLayerMask.ContainsLayer(other.gameObject.layer))
             {
                 LoadSceneEvent.Raise(this, nextScene);
+                PlayerPrefs.SetInt("IsTutorialCompleted", 1);
             }
         }
     }

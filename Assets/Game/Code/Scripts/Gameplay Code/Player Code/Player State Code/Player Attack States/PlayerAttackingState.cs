@@ -183,7 +183,7 @@ namespace Game
             }
         }
         
-        private void FlipCharacter()
+        public void FlipCharacter()
         {
             if (stateMachine.InputDirection.x > 0)
             {

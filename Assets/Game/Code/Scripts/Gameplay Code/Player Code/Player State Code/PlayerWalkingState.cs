@@ -7,10 +7,13 @@ namespace Game
     {
         public override string Name { get => "Walking"; }
         [Header("STATE LOCAL"), HorizontalLine(2f, EColor.Green)]
+        [SerializeField] private AudioSource footstepSource;
         [SerializeField] private Vector2 movementSpeed;
         [SerializeField] private AudioClip[] footstepSoundClips;
+        [SerializeField] private float[] footstepSoundsPicthes;
         [SerializeField, ReadOnly] private int currentFootstepSoundIndex;
         [SerializeField, ReadOnly] private Vector3 velocity;
+
         public override void Do()
         {
             ValidateState();
@@ -61,7 +64,8 @@ namespace Game
             {
                 currentFootstepSoundIndex = 0;
             }
-            stateMachine.audioSource.PlayOneShot(footstepSoundClips[currentFootstepSoundIndex]);
+            footstepSource.pitch = footstepSoundsPicthes[currentFootstepSoundIndex];
+            footstepSource.PlayOneShot(footstepSoundClips[currentFootstepSoundIndex]);
         }
     }
 }

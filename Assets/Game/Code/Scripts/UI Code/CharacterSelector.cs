@@ -8,11 +8,13 @@ namespace Game
     public class CharacterSelector : MonoBehaviour
     {
         [SerializeField] private Button confirmButton;
+        [SerializeField] private Button confirmTutorialButton;
         [SerializeField] private CharacterSelectionSwap[] selectionSwaps;
 
         private void OnEnable()
         {
             confirmButton.interactable = false;
+            confirmTutorialButton.interactable = false;
             GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
             GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
         }
@@ -28,10 +30,15 @@ namespace Game
             if(GameManager.Instance.UnityInputManager.playerCount < 1)
             {
                 confirmButton.interactable = false;
+                confirmTutorialButton.interactable = false;
             }
             else
             {
-                confirmButton.interactable = true;
+                confirmTutorialButton.interactable = true;
+                if(PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
+                {
+                    confirmButton.interactable = true;
+                }
             }
         }
 
