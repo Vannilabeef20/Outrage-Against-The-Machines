@@ -663,6 +663,7 @@ MonoBehaviour:
   <PlayerCombos>k__BackingField:
   - {fileID: 11400000, guid: 9c0eec58d101bd845ac0490ea1ec49f9, type: 2}
   - {fileID: 11400000, guid: 99acf27903f483f41b2d01282461e337, type: 2}
+  - {fileID: 11400000, guid: 35b243a72390a3e49b7b2d1ca9be3f7e, type: 2}
   hitboxes:
   - {fileID: 588689491137243526}
   - {fileID: 588689491655393685}
@@ -1912,12 +1913,12 @@ GameObject:
   - component: {fileID: 5034449286919347782}
   - component: {fileID: 6528778914432810070}
   m_Layer: 6
-  m_Name: Vaca_Special_Barrage_AttackState
+  m_Name: Galo_Special_Scream_AttackState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5034449286919347782
 Transform:
   m_ObjectHideFlags: 0
@@ -1952,7 +1953,7 @@ MonoBehaviour:
   progress: 0
   stateMachine: {fileID: 0}
   <AttackMachine>k__BackingField: {fileID: 588689491524074763}
-  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 3217c383ee0838845bf5f8df7cdb03a5, type: 2}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 56ffa50c653b6af448700f5e9b0bff32, type: 2}
   <FrameEvents>k__BackingField:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
@@ -1966,150 +1967,6 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 3
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 4
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 5
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 6
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 7
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 5
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 8
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 6
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 9
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 7
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 10
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 8
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - <TriggerFrame>k__BackingField: 11
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6528778914432810070}
-          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
-          m_MethodName: PlayPitchedAttackSound
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 9
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0

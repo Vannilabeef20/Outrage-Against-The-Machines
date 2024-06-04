@@ -946,7 +946,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -967,7 +967,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -988,7 +988,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -996,6 +996,69 @@ TextureImporter:
       bones: []
       spriteID: a599019664d35fb4f8651245d839bcf5
       internalID: -117613374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esc_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7048d75e187317449143f4578b5a9c3
+      internalID: -185883889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esc_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f05c1e92d2be64fa7eea462f9bcc06
+      internalID: -1422422754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Esc_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f524b62d6b8c8bf438387ea677228ee9
+      internalID: -1632947123
       vertices: []
       indices: 
       edges: []
@@ -1011,47 +1074,50 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      I_1: 1315854436
       W_2: -1072151476
-      ArrowRight_1: -1401815128
       X_1: -1700590228
-      ArrowDown_3: -1020273666
       ArrowLeft_2: 1980689604
       P_3: 615984872
-      C_1: 1389600591
-      P_2: -2048964551
       S_2: 603057909
-      I_2: 1334108554
       ArrowUp_2: 1135213703
-      X_2: 911797389
       ArrowRight_2: 342084925
-      W_1: -575172135
-      ArrowUp_3: -220013143
-      S_3: 1209785475
       A_1: 18783731
-      D_2: -1262041605
-      I_3: 633641871
-      ArrowRight_3: -389642502
-      X_3: -293182326
       S_1: 1884865904
-      O_1: 1239402278
-      D_1: -793466029
-      P_1: -1057477559
-      W_3: 1205953023
-      A_2: 1157839640
-      D_3: -205918206
       ArrowUp_1: -1648594634
-      O_2: -1869755765
-      ArrowLef_1: 1749695901
-      ArrowLeft_3: -1337217471
-      0_3: 2035820263
-      Z_3: 1104097780
-      ArrowDown_1: -549419998
+      D_1: -793466029
+      W_3: 1205953023
       C_3: -117613374
+      0_3: 2035820263
       Z_2: -1475089834
       A_3: 1341857451
       ArrowDown_2: 1686820586
+      I_1: 1315854436
+      ArrowRight_1: -1401815128
+      ArrowDown_3: -1020273666
+      Esc_1: -185883889
+      Esc_3: -1632947123
+      C_1: 1389600591
+      P_2: -2048964551
+      I_2: 1334108554
+      X_2: 911797389
+      W_1: -575172135
+      ArrowUp_3: -220013143
+      S_3: 1209785475
+      D_2: -1262041605
+      I_3: 633641871
+      X_3: -293182326
+      ArrowRight_3: -389642502
+      O_1: 1239402278
+      ArrowLef_1: 1749695901
+      P_1: -1057477559
+      Esc_2: -1422422754
+      A_2: 1157839640
+      D_3: -205918206
+      O_2: -1869755765
+      Z_3: 1104097780
+      ArrowLeft_3: -1337217471
       C_2: 68126094
+      ArrowDown_1: -549419998
       Z_1: 1262260887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
