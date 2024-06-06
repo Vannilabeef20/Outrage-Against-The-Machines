@@ -19,8 +19,7 @@ namespace Game
         [SerializeField] private Color fadeFlickerColor;
         [SerializeField] private float fadeFlickerDuration;
         [SerializeField] private float fadeFlickerLenght;
-
-
+        
         private void Awake()
         {
             lootTable.ValidateTable();

@@ -9,7 +9,7 @@ namespace Game
     public class MoveContextSteering : BasePathfinding
     {
         [SerializeField] private float maxAvoidanceRadius;
-        [SerializeField] private LayerMask ObstacleLayerMask;
+        [field: SerializeField] public LayerMask ObstacleLayerMask { get; private set; }
         [SerializeField, Range(8,64)] private int numRays;
         [SerializeField] private float obstacleDetectionRadius;
         [SerializeField, ReadOnly] private Vector3[] rayDirections;
@@ -30,24 +30,27 @@ namespace Game
                 rayDirections[i].Normalize();
             }
         }
-        public override Vector3 GetMovementDirection(Vector3 targetPosition, bool IsOnScreen)
+        public override Vector3 GetMovementDirection(Vector3 targetPosition, bool IsInsidePlayZone)
         { 
-            return CalculateContextSteering(CalculateTargetDirection(targetPosition), IsOnScreen);
+            return CalculateContextSteering(CalculateTargetDirection(targetPosition), IsInsidePlayZone);
         }
 
         public virtual Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             Vector3 targetDirection = targetPosition - body.position;
             targetDirection.Normalize();
+            Helper.DrawDirArrow(body.position, targetDirection, Color.yellow, Color.green);
             return targetDirection;
         }
 
-        private Vector3 CalculateContextSteering(Vector3 targetDirection, bool isOnScreen)
+        private Vector3 CalculateContextSteering(Vector3 targetDirection, bool IsInsidePlayZone)
         {
             for (int i = 0; i < rayDirections.Length; i++)
             {
+                interestValues[i] = 0f;
+                obstacleValues[i] = 0f;
                 interestValues[i] = Mathf.Clamp01(Vector3.Dot(targetDirection, rayDirections[i]));
-                if (isOnScreen)
+                if (IsInsidePlayZone)
                 {
                     if (Physics.Raycast(body.position, rayDirections[i], out RaycastHit info, obstacleDetectionRadius, ObstacleLayerMask))
                     {
@@ -83,6 +86,13 @@ namespace Game
             }
             finalDirection /= rayDirections.Length;
             finalDirection.Normalize();
+            if (IsInsidePlayZone)
+            {
+                if (Physics.Raycast(body.position, finalDirection, out RaycastHit info, 0.1f, ObstacleLayerMask))
+                {
+                    finalDirection = Vector3.zero;
+                }
+            }
 #if UNITY_EDITOR
             Debug.DrawLine(body.position, body.position + (finalDirection * 3), Color.magenta);
 #endif

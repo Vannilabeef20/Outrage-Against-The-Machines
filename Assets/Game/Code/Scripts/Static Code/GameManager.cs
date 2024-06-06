@@ -16,7 +16,7 @@ namespace Game
     {
         public static GameManager Instance{ get; private set; }
 
-        [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
+        [field: SerializeField] public Camera MainCamera { private set; get; }
 
         #region Loading & Transitions Params
         [Header("Loading & Transitions"), HorizontalLine(2f, EColor.Orange)]
@@ -52,6 +52,13 @@ namespace Game
         [SerializeField] private int maxLifeAmount;
 
         #endregion
+
+#if UNITY_EDITOR
+        [SerializeField, MinMaxSlider(-7f,7f)] private Vector2 playZoneHeight;
+        [SerializeField, Min(0)] private float playZoneWidth;
+        [SerializeField] private Color playZoneColor;
+        [SerializeField, ReadOnly] private Vector3 point1Pos, point2Pos;
+#endif
 
         #region Unity/Application Methods
         private void Awake()
@@ -117,12 +124,37 @@ namespace Game
             StartCoroutine(LoadOrTransitionRoutine());
         }
 #if UNITY_EDITOR
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
-            foreach (Vector3 coordinate in spawnCoordinates)
-            {
-                Gizmos.DrawSphere(coordinate, 0.2f);
-            }
+            #region Draw debug playzone box
+            //Bottom Line
+            point1Pos.x = MainCamera.transform.position.x + playZoneWidth;
+            point1Pos.y = playZoneHeight.x;
+            point2Pos.x = MainCamera.transform.position.x - playZoneWidth;
+            point2Pos.y = playZoneHeight.x;
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
+
+            //Upper Line
+            point1Pos.x = MainCamera.transform.position.x + playZoneWidth;
+            point1Pos.y = playZoneHeight.y;
+            point2Pos.x = MainCamera.transform.position.x - playZoneWidth;
+            point2Pos.y = playZoneHeight.y;
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
+
+            //Left Line
+            point1Pos.x = MainCamera.transform.position.x - playZoneWidth;
+            point1Pos.y = playZoneHeight.x;
+            point2Pos.x = MainCamera.transform.position.x - playZoneWidth;
+            point2Pos.y = playZoneHeight.y;
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
+
+            //Right Line
+            point1Pos.x = MainCamera.transform.position.x + playZoneWidth;
+            point1Pos.y = playZoneHeight.x;
+            point2Pos.x = MainCamera.transform.position.x + playZoneWidth;
+            point2Pos.y = playZoneHeight.y;
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
+            #endregion
         }
 #endif
         private void OnApplicationQuit()
@@ -265,6 +297,36 @@ namespace Game
                 return false;
             }
         }
+        public bool IsInsidePlayZone(Vector3 vector)
+        {
+            vector.x -= MainCamera.transform.position.x;
+
+            if (vector.x < -playZoneWidth)
+            {
+                return false;
+            }
+            if (vector.x > playZoneWidth)
+            {
+                return false;
+            }
+            if (vector.y < playZoneHeight.x)
+            {
+                return false;
+            }
+            if (vector.y > playZoneHeight.y)
+            {
+                return false;
+            }
+            if (vector.z < playZoneHeight.x)
+            {
+                return false;
+            }
+            if (vector.z > playZoneHeight.y)
+            {
+                return false;
+            }
+            return true;
+        }
         public void TakeAddLife(int amount)
         {
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
@@ -300,7 +362,7 @@ namespace Game
                 LoadScene(0);
             }
         }
-
+#if UNITY_EDITOR
         #region Testing Methods
         [Button("Test start transition", EButtonEnableMode.Playmode)]
         public void TestRegularTransition()
@@ -314,6 +376,7 @@ namespace Game
             StartCoroutine(LoadOrTransitionRoutine(1));
         }
         #endregion
+#endif
     }
 
     [Serializable]

@@ -63,7 +63,7 @@ namespace Game
 
             Debug.DrawLine(right + maxDephtLowerHeight, right + minDephtLowerHeight, Color.red); // Lower right line
 
-            Helper.DrawPointArrow(transform.position, new Vector3(transform.position.x, transform.position.z, transform.position.z),
+            Helper.DrawPointArrow(transform.position, transform.position.ToZ2D(),
                 Color.yellow, Color.red);
         }
 #endif

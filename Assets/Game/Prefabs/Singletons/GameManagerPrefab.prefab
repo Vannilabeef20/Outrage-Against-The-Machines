@@ -52,7 +52,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -167,6 +167,11 @@ MonoBehaviour:
   <CurrentLifeAmount>k__BackingField: 0
   initialLifeAmout: 3
   maxLifeAmount: 9
+  playZoneHeight: {x: 0, y: 0}
+  playZoneWidth: 0
+  playZoneColor: {r: 0, g: 0, b: 0, a: 0}
+  point1Pos: {x: 0, y: 0, z: 0}
+  point2Pos: {x: 0, y: 0, z: 0}
 --- !u!114 &8865673821992810355
 MonoBehaviour:
   m_ObjectHideFlags: 0

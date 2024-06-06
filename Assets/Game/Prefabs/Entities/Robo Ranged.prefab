@@ -5227,7 +5227,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetingRepeatInterval: 0.25
   targetingTimer: 0
-  pathfinding: {fileID: 4424964445140895722}
+  <Pathfinding>k__BackingField: {fileID: 4424964445140895722}
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
   movementDirection: {x: 0, y: 0, z: 0}
@@ -5259,62 +5259,14 @@ MonoBehaviour:
   body: {fileID: 6508126985700856567}
   targetPosition: {x: 0, y: 0, z: 0}
   maxAvoidanceRadius: 0.75
-  ObstacleLayerMask:
+  <ObstacleLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 1280
   numRays: 16
   obstacleDetectionRadius: 2
-  rayDirections:
-  - {x: 0, y: 0.70710677, z: 0.70710677}
-  - {x: -0.28108466, y: 0.67859834, z: 0.67859834}
-  - {x: -0.5773503, y: 0.57735026, z: 0.57735026}
-  - {x: -0.8628562, y: 0.3574067, z: 0.3574067}
-  - {x: -1, y: 0.00000005960465, z: 0.00000005960465}
-  - {x: -0.8628562, y: -0.3574067, z: -0.3574067}
-  - {x: -0.5773503, y: -0.57735026, z: -0.57735026}
-  - {x: -0.28108472, y: -0.67859834, z: -0.67859834}
-  - {x: 0.00000006181724, y: -0.70710677, z: -0.70710677}
-  - {x: 0.28108448, y: -0.6785984, z: -0.6785984}
-  - {x: 0.57735014, y: -0.5773503, z: -0.5773503}
-  - {x: 0.8628562, y: -0.35740682, z: -0.35740682}
-  - {x: 1, y: 0.00000005960465, z: 0.00000005960465}
-  - {x: 0.8628562, y: 0.35740682, z: 0.35740682}
-  - {x: 0.5773503, y: 0.57735026, z: 0.57735026}
-  - {x: 0.28108498, y: 0.6785983, z: 0.6785983}
-  interestValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0.00423071
-  - 0.006834236
-  - 0.0080327345
-  - 0.0083701955
-  - 0.0080327345
-  - 0.0068342364
-  - 0.0042307116
-  - 0
-  - 0
-  - 0
-  - 0
-  obstacleValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  rayDirections: []
+  interestValues: []
+  obstacleValues: []
   normal: {x: 0, y: 1, z: -1}
   stateMachine: {fileID: 6508126985700856569}
   distanceToKeep: 11
@@ -5402,7 +5354,7 @@ MonoBehaviour:
   <BoxCastOffset>k__BackingField: {x: 0, y: 1.9, z: 0}
   boxCastDimensions: {x: 0.1, y: 0.55, z: 0.2}
   boxCastLenght: 11
-  <IsOnScreen>k__BackingField: 0
+  <IsInsidePlayZone>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -5621,7 +5573,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1 &6508126986235999515
 GameObject:
   m_ObjectHideFlags: 0

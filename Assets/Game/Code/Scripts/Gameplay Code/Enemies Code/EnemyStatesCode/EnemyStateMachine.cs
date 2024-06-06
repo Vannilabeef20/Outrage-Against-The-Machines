@@ -46,7 +46,7 @@ namespace Game
         [SerializeField] private Vector3 boxCastDimensions;
         [SerializeField] private float boxCastLenght;
 
-        [field: SerializeField, ReadOnly] public bool IsOnScreen { get; private set; }
+        [field: SerializeField, ReadOnly] public bool IsInsidePlayZone { get; private set; }
         #endregion
 
         #region Debug
@@ -107,8 +107,8 @@ namespace Game
 
         private void Update()
         {
-            IsOnScreen = GameManager.Instance.IsVisible(body.position);
-            collisionBox.isTrigger = !IsOnScreen;
+            IsInsidePlayZone = GameManager.Instance.IsInsidePlayZone(body.position);
+            collisionBox.isTrigger = !IsInsidePlayZone;
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);
@@ -144,7 +144,7 @@ namespace Game
         {
             GetContextSpeed();
             currentState.FixedDo();
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+            body.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
         }
 
 

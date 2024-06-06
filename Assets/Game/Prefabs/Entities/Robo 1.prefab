@@ -5212,7 +5212,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetingRepeatInterval: 0.5
   targetingTimer: 0
-  pathfinding: {fileID: 5904418692595898079}
+  <Pathfinding>k__BackingField: {fileID: 5904418692595898079}
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
   movementDirection: {x: 0, y: 0, z: 0}
@@ -5244,9 +5244,9 @@ MonoBehaviour:
   body: {fileID: 6508126985700856567}
   targetPosition: {x: 0, y: 0, z: 0}
   maxAvoidanceRadius: 0.75
-  ObstacleLayerMask:
+  <ObstacleLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 1344
+    m_Bits: 1280
   numRays: 16
   obstacleDetectionRadius: 2
   rayDirections: []
@@ -5334,7 +5334,7 @@ MonoBehaviour:
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
   boxCastDimensions: {x: 0.1, y: 0.55, z: 0.3}
   boxCastLenght: 10
-  <IsOnScreen>k__BackingField: 0
+  <IsInsidePlayZone>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -5553,7 +5553,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1 &6508126986235999515
 GameObject:
   m_ObjectHideFlags: 0

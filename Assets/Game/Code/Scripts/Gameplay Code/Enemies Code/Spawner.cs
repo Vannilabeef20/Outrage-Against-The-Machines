@@ -14,9 +14,6 @@ namespace Game
     public class Spawner : MonoBehaviour
     {
         [SerializeField] private Camera mainCam;
-        private Vector2 point1Pos;
-        private Vector2 point2Pos;
-        [SerializeField] private FollowPos followPos;
         [SerializeField] private Image goImage;
 
         [SerializeField, ReadOnly] private float defaultDeadzoneWidtht = 0f;
@@ -33,7 +30,8 @@ namespace Game
 
         [SerializeField] private Color spawnRegionColor;
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
+        [SerializeField] private GameObject testSpawnEnemy;
 
         [Header("GIZMOS"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] private float encounterPositionGizmosRadius;
@@ -42,6 +40,9 @@ namespace Game
         [SerializeField] private Color encounterPositionLimitDebugColor;
 
         [SerializeField] private GUIStyle style;
+
+        private Vector3 point1Pos;
+        private Vector3 point2Pos;
 #endif
 
         private void Awake()
@@ -83,7 +84,6 @@ namespace Game
 
         private IEnumerator EncounterRoutine()
         {
-            followPos.active = false;
             goImage.enabled = false;
             virtualCameraFramingTransposer.m_DeadZoneWidth = maxDeadzoneWidtht;
             SpawnEnemy();
@@ -96,8 +96,6 @@ namespace Game
             {
                 yield return null;
             }
-            followPos.CenterOnTarget();
-            followPos.active = true;
            virtualCameraFramingTransposer.m_DeadZoneWidth = defaultDeadzoneWidtht;
             goImage.enabled = true;
         }
@@ -105,12 +103,12 @@ namespace Game
 
         public void SpawnEnemy()
         {
-            Vector3 tempPosition = new Vector3(transform.position.x, transform.position.y, transform.position.y);
-            float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
             if(enemiesToSpawn.Count < 1)
             {
                 return;
             }
+            Vector3 tempPosition = transform.position.ToY2D();
+            float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
             if (UnityEngine.Random.Range(0, 2) == 0)
             {
                 Instantiate(enemiesToSpawn[0], tempPosition + new Vector3(UnityEngine.Random.Range(spawnDistance.x, spawnDistance.y),
@@ -127,47 +125,79 @@ namespace Game
 
 
 #if UNITY_EDITOR
+        [Button("Spawn test enemy")]
+        public void SpawnTest()
+        {
+            Vector3 tempPosition = transform.position.ToY2D();
+            float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
+            if (UnityEngine.Random.Range(0, 2) == 0)
+            {
+                Instantiate(testSpawnEnemy, tempPosition + new Vector3(UnityEngine.Random.Range(spawnDistance.x, spawnDistance.y),
+                   tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
+            }
+            else
+            {
+                Instantiate(testSpawnEnemy, tempPosition + new Vector3(UnityEngine.Random.Range(-spawnDistance.x, -spawnDistance.y),
+                   tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
+            }
+        }
         private void OnDrawGizmos()
         {
            
             #region Draw debug spawn boxes
             //Furthest = Max distance .y, Closest = Min distance .x, Upper = MaxHeight .y, Lower = MinHeight .x, Left Blue, Right Magenta                                           
             //Furtherst upper right 
-            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            //Furtherst lower right                                                                                                    
-            point2Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
-            //In betweem furthest and closest upper right upper                                                                        
-            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
-            //In betweem furthest and closest lower right lower                                                                        
-            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
-            //Closest upper right                                                                                                      
-            point1Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            //Closest lower right                                                                                                      
-            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
-            //Furtherst upper left                                                                                                     
-            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            //Furtherst lower left                                                                                                     
-            point2Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
-            //Closest upper left                                                                                                       
-            point1Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            //Closest lower left,                                                                                                      
-            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
+            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y,0);
+
+            //Furtherst lower right                                                                              
+            point2Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            //In betweem furthest and closest upper right upper                                                  
+            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x,0);
+
+            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            //In betweem furthest and closest lower right lower                                                  
+            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y,0);
+
+            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            //Closest upper right                                                                                
+            point1Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y,0);
+
+            //Closest lower right                                                                                
+            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            //Furtherst upper left                                                                               
+            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y,0);
+
+            //Furtherst lower left                                                                               
+            point2Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            //Closest upper left                                                                                 
+            point1Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y,0);
+
+            //Closest lower left,                                                                                
+            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
             //In betweem furthest and closest Left upper
-            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y, transform.position.z - spawnHeight.y);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
+            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y,0);
+
+            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
             //In betweem furthest and closest Left lower
-            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x, transform.position.z - spawnHeight.x);
-            Debug.DrawLine(point1Pos, point2Pos, spawnRegionColor);
+            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x,0);
+
+            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x,0);
+
+            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
             #endregion
             #region Draw debug enconter regions limit
             if (encounters.Count == 0)

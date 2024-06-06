@@ -13,7 +13,7 @@ namespace Game
         public override Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             distance = Vector3.Distance(body.position, targetPosition);
-            if (distance > distanceToKeep || !stateMachine.IsOnScreen)
+            if (distance > distanceToKeep || !stateMachine.IsInsidePlayZone)
             {
                 //Moving towards
                 direction = targetPosition - body.position;

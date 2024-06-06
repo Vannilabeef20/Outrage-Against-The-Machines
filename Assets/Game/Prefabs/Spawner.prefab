@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2604145635891042443}
-  - component: {fileID: 7244590003445998877}
   - component: {fileID: 6937930314702519308}
   m_Layer: 0
   m_Name: Spawner
@@ -31,26 +30,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7244590003445998877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021951748397553089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08aac01b2fe0a284696aedf682d507d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followTransform: {fileID: 0}
-  targetAxis: 1
-  lastPos: {x: 0, y: 0, z: 0}
-  currentTargetPos: {x: 0, y: 0, z: 0}
-  active: 1
-  centerOnStart: 1
 --- !u!114 &6937930314702519308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
-  followPos: {fileID: 7244590003445998877}
   goImage: {fileID: 0}
   defaultDeadzoneWidtht: 0
   maxDeadzoneWidtht: 2
@@ -80,9 +60,10 @@ MonoBehaviour:
   enemiesToSpawn: []
   enemiesAlive: []
   spawnDistance: {x: 13.008181, y: 15.512762}
-  spawnHeight: {x: -4.336011, y: 0}
+  spawnHeight: {x: -4.336011, y: -1.2977436}
   spawnDelay: {x: 1, y: 3.5}
-  spawnRegionColor: {r: 1, g: 0.03682762, b: 0, a: 1}
+  spawnRegionColor: {r: 0, g: 1, b: 0.8542311, a: 1}
+  testSpawnEnemy: {fileID: 3354316711582608263, guid: b3ea355dac9064e479646b66c84f0357, type: 3}
   encounterPositionGizmosRadius: 0.5
   encounterPositionGizmosColor: {r: 0, g: 0.32331157, b: 1, a: 1}
   encounterPositionDebugLineLenght: 12

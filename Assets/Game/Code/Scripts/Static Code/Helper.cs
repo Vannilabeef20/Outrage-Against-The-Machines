@@ -6,37 +6,44 @@ namespace Game
 {
 	public static class Helper
 	{
-
+		public static Vector3 ToY2D(this Vector3 vector)
+        {
+			return new Vector3(vector.x, vector.y, vector.y);
+        }
+		public static Vector3 ToZ2D(this Vector3 vector)
+		{
+			return new Vector3(vector.x, vector.z, vector.z);
+		}
 		/// <summary>
 		/// Checks if a Vector3 is within a certain range.
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="vector"></param>
 		/// <param name="min"></param>
 		/// <param name="max"></param>
 		/// <returns>Returns true if within range.</returns>
-		public static bool InsideRange(this Vector3 value, Vector3 min, Vector3 max)
+		public static bool InsideRange(this Vector3 vector, Vector3 min, Vector3 max)
         {
-			if(value.x < min.x)
+			if(vector.x < min.x)
             {
 				return false;
             }
-			if(value.y < min.y)
+			if(vector.y < min.y)
             {
 				return false;
             }
-			if(value.z < min.z)
+			if(vector.z < min.z)
             {
 				return false;
 			}
-			if (value.x > max.x)
+			if (vector.x > max.x)
 			{
 				return false;
 			}
-			if (value.y > max.y)
+			if (vector.y > max.y)
 			{
 				return false;
 			}
-			if (value.z > max.z)
+			if (vector.z > max.z)
 			{
 				return false;
 			}
@@ -45,25 +52,25 @@ namespace Game
 		/// <summary>
 		/// Checks if a Vector2 is within a certain range.
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="vector"></param>
 		/// <param name="min"></param>
 		/// <param name="max"></param>
 		/// <returns></returns>
-		public static bool InsideRange(this Vector2 value, Vector2 min, Vector2 max)
+		public static bool InsideRange(this Vector2 vector, Vector2 min, Vector2 max)
 		{
-			if (value.x < min.x)
+			if (vector.x < min.x)
 			{
 				return false;
 			}
-			if (value.y < min.y)
+			if (vector.y < min.y)
 			{
 				return false;
 			}
-			if (value.x > max.x)
+			if (vector.x > max.x)
 			{
 				return false;
 			}
-			if (value.y > max.y)
+			if (vector.y > max.y)
 			{
 				return false;
 			}

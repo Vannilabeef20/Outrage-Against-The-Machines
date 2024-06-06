@@ -13,8 +13,8 @@ namespace Game
         [SerializeField, ReadOnly] private GameObject target;
         [SerializeField, Min(0f)] private float targetingRepeatInterval;
         [SerializeField, ReadOnly] private float targetingTimer;
-        [Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
-        [SerializeField] private BasePathfinding pathfinding;
+        [field: Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
+        [field: SerializeField] public BasePathfinding Pathfinding { get; private set; }
         [SerializeField, Min(0f)] private float pathfindingRepeatInterval;
         [SerializeField, ReadOnly] private float pathfindingTimer;
         [Header("MOVEMENT"), HorizontalLine(2f, EColor.Indigo)]
@@ -49,7 +49,7 @@ namespace Game
             }
             if(pathfindingTimer >= pathfindingRepeatInterval)
             {
-                movementDirection = pathfinding.GetMovementDirection(target.transform.position, stateMachine.IsOnScreen);
+                movementDirection = Pathfinding.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayZone);
             }
             stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
                 movementDirection.y * speed.y, movementDirection.z * speed.z) + stateMachine.ContextVelocity;
@@ -70,7 +70,7 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if(!stateMachine.IsOnScreen)
+            if(!stateMachine.IsInsidePlayZone)
             {
                 return;
             }
