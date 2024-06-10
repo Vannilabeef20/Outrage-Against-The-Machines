@@ -4,14 +4,15 @@ using DG.Tweening;
 
 namespace Game
 {
-    public abstract class ItemDrop : MonoBehaviour
+    public class ItemDrop : MonoBehaviour
     {
-        [SerializeField] private LayerMask playerMask;
+        [SerializeField, Tag] private string playerTag;
         [SerializeField] private AudioClip pickupSound;
         [SerializeField] private Transform itemSpriteTransform;
-        private Vector3 floatRange = new Vector3 (0f,0.2f,0f);
-        private float floatDuration = 1.5f;
-        private Ease floatEase = Ease.InOutSine;
+        [SerializeField] private BaseItemDropEffect[] pickupEffects;
+        readonly private Vector3 floatRange = new Vector3 (0f,0.2f,0f);
+        readonly private float floatDuration = 1.5f;
+        readonly private Ease floatEase = Ease.InOutSine;
 
         private void Start()
         {
@@ -21,15 +22,16 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (playerMask.ContainsLayer(other.gameObject.layer))
+            if (other.gameObject.CompareTag(playerTag))
             {
                 AudioManager.instance.PlaySfxGlobal(pickupSound);
-                ApplyPickupEffect(other);
+                foreach(var effect in pickupEffects)
+                {
+                    effect.ApplyEffect(other.gameObject);
+                }
                 DOTween.Kill(gameObject.transform);
                 Destroy(gameObject);
             }
         }
-
-        protected abstract void ApplyPickupEffect(Collider other);
     }
 }

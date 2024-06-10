@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Game
 {
@@ -10,13 +13,15 @@ namespace Game
         [SerializeField] private Vector2 spawnZoneDimensions;
         [SerializeField] private GameObject fallingBoxObject;
         [SerializeField, Range(0.5f, 5)] private float spawnInterval = 0.5f;
-        [SerializeField] private float spawnTimer;
+        [SerializeField, ReadOnly] private float spawnTimer;
         [SerializeField] private float activationRange;
+        [SerializeField, Expandable] private FallingBoxSpeedSO boxFallingSpeed;
+        [SerializeField, ReadOnly] private float fallTime;
 
         private void Update()
         {
-            if(!GameManager.Instance.WorldToViewport2D(new Vector3(transform.position.x,
-                transform.position.z, transform.position.z)).InsideRange(Vector3.zero, activationRange * Vector3.one))
+            if((Mathf.Abs(GameManager.Instance.MainCamera.transform.position.x - 
+                transform.position.x) > activationRange))
             {
                 return;
             }
@@ -65,6 +70,29 @@ namespace Game
 
             Helper.DrawPointArrow(transform.position, transform.position.ToZ2D(),
                 Color.yellow, Color.red);
+            if(boxFallingSpeed != null)
+            {
+                fallTime = (transform.position.y - transform.position.z) / boxFallingSpeed.FallingSpeed;
+            }
+            Vector3 point1Pos = Vector3.zero;
+            Vector3 point2Pos = Vector3.zero;
+
+            point1Pos.x = transform.position.x - activationRange;
+            point2Pos.x = transform.position.x - activationRange;
+            point1Pos.y = transform.position.y;
+            point2Pos.y = transform.position.z;
+            point1Pos.z = transform.position.z;
+            point2Pos.z = transform.position.z;
+            Debug.DrawLine(point1Pos, point2Pos, Color.yellow);
+
+
+            point1Pos.x = transform.position.x + activationRange;
+            point2Pos.x = transform.position.x + activationRange;
+            point1Pos.y = transform.position.y;
+            point2Pos.y = transform.position.z;
+            point1Pos.z = transform.position.z;
+            point2Pos.z = transform.position.z;
+            Debug.DrawLine(point1Pos, point2Pos, Color.yellow);
         }
 #endif
     } 

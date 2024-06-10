@@ -53,13 +53,11 @@ namespace Game
 
         #endregion
 
-#if UNITY_EDITOR
+
         [SerializeField, MinMaxSlider(-7f,7f)] private Vector2 playZoneHeight;
         [SerializeField, Min(0)] private float playZoneWidth;
         [SerializeField] private Color playZoneColor;
         [SerializeField, ReadOnly] private Vector3 point1Pos, point2Pos;
-#endif
-
         #region Unity/Application Methods
         private void Awake()
         {
@@ -326,6 +324,16 @@ namespace Game
                 return false;
             }
             return true;
+        }
+
+        public Vector3 ClampInsidePlayZone(Vector3 pos)
+        {
+            Vector3 clampedPos = Vector3.zero;
+            Vector3 cameraPos = MainCamera.transform.position;
+            clampedPos.x = Mathf.Clamp(pos.x, cameraPos.x - playZoneWidth, cameraPos.x + playZoneWidth);
+            clampedPos.y = Mathf.Clamp(pos.y, playZoneHeight.x, playZoneHeight.y);
+            clampedPos.z = Mathf.Clamp(pos.z, playZoneHeight.x, playZoneHeight.y);
+            return clampedPos;
         }
         public void TakeAddLife(int amount)
         {

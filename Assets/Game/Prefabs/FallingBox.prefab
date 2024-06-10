@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5976830372341641370}
   - component: {fileID: 5976830372341641371}
   - component: {fileID: 5976830372341641374}
+  - component: {fileID: 65135353779175711}
   m_Layer: 0
   m_Name: FallingBox_Collider
   m_TagString: Untagged
@@ -240,6 +241,102 @@ MonoBehaviour:
   stunDuration: 0.4
   knockbackStrenght: 8
   enemyMultiplier: 1
+--- !u!82 &65135353779175711
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976830372341641364}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5976830373177192143
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +388,11 @@ MonoBehaviour:
   shadowTransform: {fileID: 5976830372177959084}
   animateImage: {fileID: 5976830372341641369}
   boxCollider: {fileID: 5976830372341641371}
-  fallingSpeed: 30
+  fallingSpeedSO: {fileID: 11400000, guid: 104c92e905e234140b1418f648d5cc72, type: 2}
   falling: 1
   startPos: {x: 0, y: 0, z: 0}
   finalPos: {x: 0, y: 0, z: 0}
   sortOrder: -2
+  source: {fileID: 65135353779175711}
+  impactSound: {fileID: 8300000, guid: b1213962f29373244a1cd87bceecd9b1, type: 3}
+  fallingSound: {fileID: 8300000, guid: c64adb6a0931f3c40bf2145aff4f043e, type: 3}

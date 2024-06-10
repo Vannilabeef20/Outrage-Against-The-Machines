@@ -69,7 +69,7 @@ namespace Game
             Despawning = true;
             IsComplete = true;
             GameManager.Instance.TakeAddLife(-1);
-            stateMachine.Attacking.UpdateSpecialBar(-stateMachine.Attacking.specialChargeAmount);
+            stateMachine.Attacking.SetSpecialCharges(0f);
             stateMachine.nextState = stateMachine.Idle;
             if (GameManager.Instance.CurrentLifeAmount <= 0)
             {

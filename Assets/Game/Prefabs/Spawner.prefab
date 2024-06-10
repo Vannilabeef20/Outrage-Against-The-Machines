@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2604145635891042443}
   - component: {fileID: 6937930314702519308}
+  - component: {fileID: 5545050163789521022}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MonoBehaviour:
   enemiesToSpawn: []
   enemiesAlive: []
   spawnDistance: {x: 13.008181, y: 15.512762}
-  spawnHeight: {x: -4.336011, y: -1.2977436}
+  spawnHeight: {x: -5.0045877, y: -1.9663203}
   spawnDelay: {x: 1, y: 3.5}
   spawnRegionColor: {r: 0, g: 1, b: 0.8542311, a: 1}
   testSpawnEnemy: {fileID: 3354316711582608263, guid: b3ea355dac9064e479646b66c84f0357, type: 3}
@@ -135,3 +136,21 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 0
     m_StretchHeight: 0
+--- !u!114 &5545050163789521022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021951748397553089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08aac01b2fe0a284696aedf682d507d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTransform: {fileID: 0}
+  targetAxis: 1
+  lastPos: {x: 0, y: 0, z: 0}
+  currentTargetPos: {x: 0, y: 0, z: 0}
+  active: 1
+  centerOnStart: 1

@@ -16,6 +16,7 @@ namespace Game
         [SerializeField] private Image InstantHealthBar;
         [SerializeField] private Image LerpHealthBar;
         [SerializeField] private ParticleSystem healParticle;
+        [SerializeField] private ParticleSystem damageParticle;
 
         #region Player Health Params
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
@@ -58,6 +59,7 @@ namespace Game
         {
             isDead = false;
             playerHitbox.enabled = false;
+            damageParticle.Play();
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0f, maxHeathPoints);
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
             UpdateHealthBar(newHealthPercent);
@@ -160,10 +162,10 @@ namespace Game
             healthCoroutine = null;
         }
 
-        public void Heal(float healPercent)
+        public void Heal(float healPercent, float healFlat = 0f)
         {
             healParticle.Play();
-            CurrentHealthPoints += (maxHeathPoints * healPercent);
+            CurrentHealthPoints += (maxHeathPoints * healPercent/100) + healFlat;
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints, 0f, maxHeathPoints);
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
             UpdateHealthBar(newHealthPercent);

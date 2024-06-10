@@ -10,11 +10,14 @@ namespace Game
         [SerializeField] private Transform shadowTransform;
 		[SerializeField] private AnimateImage animateImage;
         [SerializeField] private BoxCollider boxCollider;
-		[SerializeField] private float fallingSpeed;
-        [SerializeField] private bool falling = true;
+		[SerializeField] private FallingBoxSpeedSO fallingSpeedSO;
+        [SerializeField] private bool fell;
         [SerializeField] private Vector3 startPos;
         [SerializeField] private Vector3 finalPos;
         [SerializeField] private int sortOrder = -2;
+        [SerializeField] private AudioSource source;
+        [SerializeField] private AudioClip impactSound;
+        [SerializeField] private AudioClip fallingSound;
         private void Awake()
         {
             startPos = boxTransform.position;
@@ -22,22 +25,29 @@ namespace Game
             shadowTransform.position = finalPos;
             animateImage.pause = true;
         }
+        private void Start()
+        {
+            source.PlayOneShot(fallingSound);
+        }
         private void Update()
         {
-            if (falling)
+            if (!fell)
             {
                 shadowTransform.localScale = boxTransform.position.magnitude.Map(startPos.magnitude, finalPos.magnitude) * Vector3.one;
-                boxTransform.position += Vector3.down * fallingSpeed * Time.deltaTime;
+                boxTransform.position += Vector3.down * fallingSpeedSO.FallingSpeed * Time.deltaTime;
             }
-            if (boxTransform.position.y < boxTransform.position.z)
+            if (boxTransform.position.y < boxTransform.position.z && fell == false)
             {
                 boxCollider.enabled = false;
                 animateImage.pause = false;
                 boxTransform.position = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
-                falling = false;
+                fell = false;
+                source.Stop();
+                source.PlayOneShot(impactSound);
                 shadowTransform.localScale = Vector3.zero;
                 render.sortingOrder = sortOrder;
                 Destroy(gameObject, 2f);
+                fell = true;
             }
         }
     }

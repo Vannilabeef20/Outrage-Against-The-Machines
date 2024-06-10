@@ -83,14 +83,24 @@ MonoBehaviour:
     itemDrops:
     - <Name>k__BackingField: Heal
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 85
-      ProbabilityPercent: 85
-      ProbabilityRange: {x: 0, y: 85}
+      <ProbabilityWeight>k__BackingField: 33
+      ProbabilityPercent: 33
+      ProbabilityRange: {x: 0, y: 33}
+    - <Name>k__BackingField: Heal & Energy
+      <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
+      <ProbabilityWeight>k__BackingField: 33
+      ProbabilityPercent: 33
+      ProbabilityRange: {x: 33, y: 66}
+    - <Name>k__BackingField: Energy
+      <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
+      <ProbabilityWeight>k__BackingField: 22
+      ProbabilityPercent: 22
+      ProbabilityRange: {x: 66, y: 88}
     - <Name>k__BackingField: Extra Life
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
-      <ProbabilityWeight>k__BackingField: 15
-      ProbabilityPercent: 15
-      ProbabilityRange: {x: 85, y: 100}
+      <ProbabilityWeight>k__BackingField: 12
+      ProbabilityPercent: 12
+      ProbabilityRange: {x: 88, y: 100}
     totalWeight: 100
   FrameToSpawn: 2
   hostileLayers:

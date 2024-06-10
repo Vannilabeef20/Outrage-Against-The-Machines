@@ -86,15 +86,8 @@ namespace Game
             }
             finalDirection /= rayDirections.Length;
             finalDirection.Normalize();
-            if (IsInsidePlayZone)
-            {
-                if (Physics.Raycast(body.position, finalDirection, out RaycastHit info, 0.1f, ObstacleLayerMask))
-                {
-                    finalDirection = Vector3.zero;
-                }
-            }
 #if UNITY_EDITOR
-            Debug.DrawLine(body.position, body.position + (finalDirection * 3), Color.magenta);
+            Helper.DrawDirArrow(body.position, finalDirection * 2, Color.blue, Color.magenta, 0.5f);
 #endif
             return finalDirection;
         }

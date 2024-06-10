@@ -38,6 +38,8 @@ namespace Game
 
         [SerializeField] private LayerMask conveyorLayer;
 
+        [SerializeField] private TextMeshProUGUI playerNumberLabel;
+
         [Header("Debug"), HorizontalLine(2F, EColor.Yellow)]
         [SerializeField] private TextMeshProUGUI playerStateLabel;
 
@@ -66,7 +68,7 @@ namespace Game
         }
         private void Update()
         {
-            
+            playerNumberLabel.text = $"P{playerInput.playerIndex + 1}";
             SelectState();
             CurrentState.Do();
             if (DebugManager.instance.isDebugModeEnabled)

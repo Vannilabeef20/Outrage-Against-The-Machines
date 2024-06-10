@@ -36,7 +36,7 @@ namespace Game
                 float damage = stateMachine.Attacking.CurrentAttackState.PlayerAttack.Damage;
                 if(!stateMachine.Attacking.CurrentAttackState.PlayerAttack.IsSpecial)
                 {
-                    stateMachine.Attacking.UpdateSpecialBar(damage);
+                    stateMachine.Attacking.AddSpecialCharges(damage);
                 }
                 damageble.TakeDamage(transform.position, damage, stateMachine.Attacking.CurrentAttackState.PlayerAttack.StunDuration,
                     stateMachine.Attacking.CurrentAttackState.PlayerAttack.KnockbackStrenght);

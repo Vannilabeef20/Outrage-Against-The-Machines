@@ -47,6 +47,7 @@ namespace Game
         [SerializeField] private float boxCastLenght;
 
         [field: SerializeField, ReadOnly] public bool IsInsidePlayZone { get; private set; }
+        [field: SerializeField, ReadOnly] public bool HasBeenInsidePlayZone { get; private set; }
         #endregion
 
         #region Debug
@@ -144,7 +145,18 @@ namespace Game
         {
             GetContextSpeed();
             currentState.FixedDo();
-            body.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+            if(IsInsidePlayZone)
+            {
+                HasBeenInsidePlayZone = true;
+            }
+            if(HasBeenInsidePlayZone)
+            {
+                body.position = GameManager.Instance.ClampInsidePlayZone(body.position).ToY2D();
+            }
+            else
+            {
+                body.position = body.position.ToY2D();
+            }
         }
 
 

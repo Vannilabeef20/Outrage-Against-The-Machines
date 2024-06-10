@@ -40,7 +40,7 @@ namespace Game
         public void Swap()
         {
             SelectionIndex++;
-            if (SelectionIndex >= 3)
+            if (SelectionIndex >= 2) //Hard coded
             {
                 SelectionIndex = 0;
             }

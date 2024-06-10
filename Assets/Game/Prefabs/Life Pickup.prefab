@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7408936161416407087}
-  - component: {fileID: 2445443282457108875}
+  - component: {fileID: 7769482995465523671}
+  - component: {fileID: 1172605891571519142}
   - component: {fileID: 2653733460075298157}
   - component: {fileID: 6198700910182495813}
   m_Layer: 0
@@ -35,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2445443282457108875
+--- !u!114 &7769482995465523671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,14 +45,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2934445200580362204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dff96e2ee489824dad51487a254feaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 34a36d2616cca3244b0aee8dcf4518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  playerTag: Player
   pickupSound: {fileID: 8300000, guid: 2223131f2a0534c459747567fad5d926, type: 3}
   itemSpriteTransform: {fileID: 2183815718027779629}
+  pickupEffects:
+  - {fileID: 1172605891571519142}
+--- !u!114 &1172605891571519142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934445200580362204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc8829b7ed65f042865782ba6a0daa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   lifeAmount: 1
 --- !u!65 &2653733460075298157
 BoxCollider:
@@ -226,6 +239,7 @@ MonoBehaviour:
   targetType: 0
   spriteRenderer: {fileID: 7566147657915830309}
   image: {fileID: 0}
+  loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
   sprites:
@@ -258,3 +272,4 @@ MonoBehaviour:
   - {fileID: -1715732249, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   timer: 0
   currentImageIndex: 0
+  pause: 0

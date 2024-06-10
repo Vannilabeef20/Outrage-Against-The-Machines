@@ -33,6 +33,10 @@ namespace Game
 
         public virtual void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
+            if(CurrentHealthPoints <= 0)
+            {
+                return;
+            }
             CurrentHealthPoints -= damage;
             CurrentHealthPercent =  CurrentHealthPoints / maxHeathPoints;
             healthImage.fillAmount = CurrentHealthPercent;

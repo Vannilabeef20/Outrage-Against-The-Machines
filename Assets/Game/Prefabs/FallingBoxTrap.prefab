@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4450cd981af03fb4e83170cdb1c1d45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnZoneDimensions: {x: 3.58, y: 1.67}
+  spawnZoneDimensions: {x: 10.57, y: 2.3}
   fallingBoxObject: {fileID: 5976830373177192143, guid: 8e8841b0d15e08d45b5429ead6945b73, type: 3}
   spawnInterval: 1
   spawnTimer: 0
   activationRange: 1.1
+  boxFallingSpeed: {fileID: 11400000, guid: 104c92e905e234140b1418f648d5cc72, type: 2}
+  fallTime: 0

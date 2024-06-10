@@ -35,6 +35,8 @@ namespace Game
 
         [SerializeField] private Image[] specialImages;
 
+        [SerializeField] private ParticleSystem specialParticleSystem;
+
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake
         {
             base.Setup(playerStateMachine);           
@@ -43,7 +45,7 @@ namespace Game
                 attack.Setup(playerStateMachine);
                 PlayerAttackStatesDictionary.Add(attack.PlayerAttack, attack);
             }
-            UpdateSpecialBar(0f);
+            UpdateSpecialBar();
             CurrentAttackState = null;
             queuedAttackState = null;
         }
@@ -113,6 +115,7 @@ namespace Game
 
         public void ValidateAttack(InputAction.CallbackContext context)
         {
+
             if (queuedAttackState != null) //return if attack already queued
             {
                 return;
@@ -127,8 +130,8 @@ namespace Game
                 {
                     if (PlayerCombos[i].attacks[attackList.Count].IsSpecial && specialChargeAmount < PlayerCombos[i].attacks[attackList.Count].SpecialCost) // Check if it is a special attack && there are enough charges
                     {
-                        //It is a special and does not have enough charges, Abort!
-                        return;
+                        //It is a special and does not have enough charges, Skip!
+                        continue;
                     }
                     int matchNumber = 0; 
                     for (int j = 0; j < attackList.Count; j++) //Check how many attacks are the same
@@ -142,7 +145,7 @@ namespace Game
                     {
                         continue; //Not all attacks are the same, Abort!
                     }
-                    UpdateSpecialBar(-PlayerCombos[i].attacks[attackList.Count].SpecialCost);                   
+                    AddSpecialCharges(-PlayerCombos[i].attacks[attackList.Count].SpecialCost);                   
                     if(stateMachine.CurrentState != this) //Check if the state machine is already in the attacking state
                     {
                         //Its not, transition pls
@@ -195,9 +198,28 @@ namespace Game
             }
         }
 
-        public void UpdateSpecialBar(float damageCharges)
+        public void SetSpecialCharges(float newChargeAmount, bool pickUp = false)
         {
-            specialChargeAmount = Mathf.Clamp(specialChargeAmount + damageCharges, stateMachine.playerInput.playerIndex, MaxSpecialChargeAmount);
+            specialChargeAmount = Mathf.Clamp(newChargeAmount, stateMachine.playerInput.playerIndex, MaxSpecialChargeAmount);
+            if (pickUp)
+            {
+                specialParticleSystem.Play();
+            }
+            UpdateSpecialBar();
+        }
+
+        public void AddSpecialCharges(float chargeAmount, bool pickUp = false)
+        {
+            specialChargeAmount = Mathf.Clamp(specialChargeAmount + chargeAmount, stateMachine.playerInput.playerIndex, MaxSpecialChargeAmount);
+            if(pickUp)
+            {
+                specialParticleSystem.Play();
+            }
+            UpdateSpecialBar();
+        }
+
+        public void UpdateSpecialBar()
+        {
             float newSpecialPercent = specialChargeAmount / MaxSpecialChargeAmount;
             float perChargePercent = MaxSpecialChargeAmount / specialImages.Length / MaxSpecialChargeAmount;
             for (int j = 1; j < specialImages.Length + 1; j++)
