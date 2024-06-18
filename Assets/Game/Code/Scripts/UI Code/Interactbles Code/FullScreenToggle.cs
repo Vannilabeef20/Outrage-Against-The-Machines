@@ -7,26 +7,39 @@ namespace Game
 {
     public class FullScreenToggle : MenuButton
     {
-        [SerializeField, ReadOnly] Image toggleImage;
+        [SerializeField] Image toggleImage;
         [SerializeField, ReadOnly] const string PlayerPrefsFullScreen = "FullscreenValue";
         [SerializeField, ReadOnly] private bool active;
-        [SerializeField] private Sprite[] toggleSprites;
+        [SerializeField, ShowAssetPreview] private Sprite[] toggleSprites;
 
-        private void Awake()
+        private void Start()
         {
-            toggleImage = GetComponent<Image>();
-        }
-        private void OnEnable()
-        {
-            if (active)
+            if (PlayerPrefs.GetInt(PlayerPrefsFullScreen) == 1) // 1 means true, 0 false
             {
-                toggleImage.sprite = toggleSprites[0];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
+                active = true;
+                toggleImage.sprite = toggleSprites[1];
+                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
             }
             else
             {
+                active = false;
+                toggleImage.sprite = toggleSprites[0];
+                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
+            }
+        }
+        private void OnEnable()
+        {
+            if (PlayerPrefs.GetInt(PlayerPrefsFullScreen) == 1)
+            {
+                active = true;
                 toggleImage.sprite = toggleSprites[1];
                 PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
+            }
+            else
+            {
+                active = false;
+                toggleImage.sprite = toggleSprites[0];
+                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
             }
         }
         public void SetFullScreen()
@@ -37,13 +50,13 @@ namespace Game
             Screen.fullScreen = active;
             if (active)
             {
-                toggleImage.sprite = toggleSprites[0];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
+                toggleImage.sprite = toggleSprites[1];
+                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
             }
             else
             {
-                toggleImage.sprite = toggleSprites[1];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
+                toggleImage.sprite = toggleSprites[0];
+                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
             }
         }
     }

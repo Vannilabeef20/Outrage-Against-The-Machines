@@ -9,9 +9,13 @@ namespace Game
     {
         [field: SerializeField] public int PlayerIndex { get; private set; }
         [SerializeField] private Image selectionImage;
+        [SerializeField] private Image defenseArrowImage;
+        [SerializeField] private Image speedArrowImage;
         [SerializeField] private Button swapButton;
         [SerializeField] private GameObject joinTextObject;
         [SerializeField, ShowAssetPreview] private Sprite[] selectionSprites;
+        [SerializeField, ShowAssetPreview] private Sprite[] selectionDefenseSprites;
+        [SerializeField, ShowAssetPreview] private Sprite[] selectionSpeedSprites;
         [field: SerializeField, ShowAssetPreview] public GameObject[] SelectionPrefabs { get; private set; }
         [field: SerializeField, ReadOnly] public int SelectionIndex { get; private set; }
 
@@ -21,6 +25,8 @@ namespace Game
             {
                 SelectionIndex = -1;
                 selectionImage.enabled = false;
+                defenseArrowImage.enabled = false;
+                speedArrowImage.enabled = false;
                 joinTextObject.SetActive(true);
                 swapButton.interactable = false;
             }
@@ -28,8 +34,13 @@ namespace Game
             {
                 SelectionIndex = 0;
                 selectionImage.enabled = true;
+                defenseArrowImage.enabled = true;
+                speedArrowImage.enabled = true;
                 joinTextObject.SetActive(false);
                 swapButton.interactable = true;
+                selectionImage.sprite = selectionSprites[SelectionIndex];
+                defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
+                speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
             }
             GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
         }
@@ -49,6 +60,8 @@ namespace Game
                 SelectionIndex = 2;
             }
             selectionImage.sprite = selectionSprites[SelectionIndex];
+            defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
+            speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
         }
 
         public void RefreshImage(PlayerInput playerInput)
@@ -61,6 +74,8 @@ namespace Game
             {
                 SelectionIndex = -1;
                 selectionImage.enabled = false;
+                defenseArrowImage.enabled = false;
+                speedArrowImage.enabled = false;
                 joinTextObject.SetActive(true);
                 swapButton.interactable = false;
             }
@@ -68,8 +83,13 @@ namespace Game
             {
                 SelectionIndex = 0;
                 selectionImage.enabled = true;
+                defenseArrowImage.enabled = true;
+                speedArrowImage.enabled = true;
                 joinTextObject.SetActive(false);
                 swapButton.interactable = true;
+                selectionImage.sprite = selectionSprites[SelectionIndex];
+                defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
+                speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
             }
         }
     }

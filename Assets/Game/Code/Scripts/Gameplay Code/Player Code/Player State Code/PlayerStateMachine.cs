@@ -38,7 +38,11 @@ namespace Game
 
         [SerializeField] private LayerMask conveyorLayer;
 
+        private Color player1Color = Color.cyan;
+        private Color player2Color = Color.green;
+        private Color player3Color = Color.yellow;
         [SerializeField] private TextMeshProUGUI playerNumberLabel;
+        [SerializeField, ReadOnly] private Color playerColor;
 
         [Header("Debug"), HorizontalLine(2F, EColor.Yellow)]
         [SerializeField] private TextMeshProUGUI playerStateLabel;
@@ -65,10 +69,23 @@ namespace Game
             {
                 playerInput.neverAutoSwitchControlSchemes = false;
             }
+            switch (playerInput.playerIndex)
+            {
+                case 0:
+                    playerColor = player1Color;
+                    break;
+                case 1:
+                    playerColor = player2Color;
+                    break;
+                case 2:
+                    playerColor = player3Color;
+                    break;
+            }
+            playerNumberLabel.text = $"P{playerInput.playerIndex + 1}";
+            playerNumberLabel.color = playerColor;
         }
         private void Update()
         {
-            playerNumberLabel.text = $"P{playerInput.playerIndex + 1}";
             SelectState();
             CurrentState.Do();
             if (DebugManager.instance.isDebugModeEnabled)
@@ -95,7 +112,6 @@ namespace Game
             CurrentState.FixedDo();
             transform.parent.transform.position = new Vector3(transform.position.x, transform.position.z, transform.position.z);
         }
-
         private void GetContextSpeed()
         {
             Vector3 tempContextSpeed = Vector3.zero;

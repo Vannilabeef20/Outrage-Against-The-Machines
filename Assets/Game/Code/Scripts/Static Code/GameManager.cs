@@ -53,11 +53,6 @@ namespace Game
 
         #endregion
 
-
-        [SerializeField, MinMaxSlider(-7f,7f)] private Vector2 playZoneHeight;
-        [SerializeField, Min(0)] private float playZoneWidth;
-        [SerializeField] private Color playZoneColor;
-        [SerializeField, ReadOnly] private Vector3 point1Pos, point2Pos;
         #region Unity/Application Methods
         private void Awake()
         {
@@ -121,40 +116,7 @@ namespace Game
             }           
             StartCoroutine(LoadOrTransitionRoutine());
         }
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            #region Draw debug playzone box
-            //Bottom Line
-            point1Pos.x = MainCamera.transform.position.x + playZoneWidth;
-            point1Pos.y = playZoneHeight.x;
-            point2Pos.x = MainCamera.transform.position.x - playZoneWidth;
-            point2Pos.y = playZoneHeight.x;
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
 
-            //Upper Line
-            point1Pos.x = MainCamera.transform.position.x + playZoneWidth;
-            point1Pos.y = playZoneHeight.y;
-            point2Pos.x = MainCamera.transform.position.x - playZoneWidth;
-            point2Pos.y = playZoneHeight.y;
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
-
-            //Left Line
-            point1Pos.x = MainCamera.transform.position.x - playZoneWidth;
-            point1Pos.y = playZoneHeight.x;
-            point2Pos.x = MainCamera.transform.position.x - playZoneWidth;
-            point2Pos.y = playZoneHeight.y;
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
-
-            //Right Line
-            point1Pos.x = MainCamera.transform.position.x + playZoneWidth;
-            point1Pos.y = playZoneHeight.x;
-            point2Pos.x = MainCamera.transform.position.x + playZoneWidth;
-            point2Pos.y = playZoneHeight.y;
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), playZoneColor);
-            #endregion
-        }
-#endif
         private void OnApplicationQuit()
         {
             StopRumble();
@@ -176,8 +138,10 @@ namespace Game
             {
                 for (int i = 0; i < PlayerCharacterList.Count; i++)
                 {
+                    UnityInputManager.playerPrefab = PlayerCharacterList[i].PlayerPrefab;
+                    PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1, PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
+                    PlayerCharacterList[i].GameObject.transform.position = spawnCoordinates[i];
                     PlayerCharacterList[i].isPlayerActive = true;
-                    PlayerCharacterList[i].GameObject = Instantiate(PlayerCharacterList[i].PlayerPrefab, spawnCoordinates[i], Quaternion.identity);
                 }
             }
             Instantiate(followGroupPrefab);
@@ -295,46 +259,7 @@ namespace Game
                 return false;
             }
         }
-        public bool IsInsidePlayZone(Vector3 vector)
-        {
-            vector.x -= MainCamera.transform.position.x;
 
-            if (vector.x < -playZoneWidth)
-            {
-                return false;
-            }
-            if (vector.x > playZoneWidth)
-            {
-                return false;
-            }
-            if (vector.y < playZoneHeight.x)
-            {
-                return false;
-            }
-            if (vector.y > playZoneHeight.y)
-            {
-                return false;
-            }
-            if (vector.z < playZoneHeight.x)
-            {
-                return false;
-            }
-            if (vector.z > playZoneHeight.y)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public Vector3 ClampInsidePlayZone(Vector3 pos)
-        {
-            Vector3 clampedPos = Vector3.zero;
-            Vector3 cameraPos = MainCamera.transform.position;
-            clampedPos.x = Mathf.Clamp(pos.x, cameraPos.x - playZoneWidth, cameraPos.x + playZoneWidth);
-            clampedPos.y = Mathf.Clamp(pos.y, playZoneHeight.x, playZoneHeight.y);
-            clampedPos.z = Mathf.Clamp(pos.z, playZoneHeight.x, playZoneHeight.y);
-            return clampedPos;
-        }
         public void TakeAddLife(int amount)
         {
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
@@ -348,7 +273,10 @@ namespace Game
                     PlayerCharacterList[i].GameObject.SetActive(true);
                     PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
                     PlayerCharacterList[i].isPlayerActive = true;
-                    AudioManager.instance.PlaySfxGlobal(reviveSound);
+                    if(CurrentLifeAmount > 0)
+                    {
+                        AudioManager.instance.PlaySfxGlobal(reviveSound);
+                    }
                 }
             }
             UpdateLifeCount.Raise(this, CurrentLifeAmount);

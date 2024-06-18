@@ -196,6 +196,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   playerNumberLabel: {fileID: 5423075719016978790}
+  playerColor: {r: 0, g: 0, b: 0, a: 0}
   playerStateLabel: {fileID: 588689492027473394}
 --- !u!212 &588689491332936776
 SpriteRenderer:
@@ -671,7 +672,7 @@ MonoBehaviour:
   <CurrentAttackState>k__BackingField: {fileID: 0}
   queuedAttackState: {fileID: 0}
   attackList: []
-  <MaxSpecialChargeAmount>k__BackingField: 200
+  <MaxSpecialChargeAmount>k__BackingField: 300
   specialChargeAmount: 0
   specialImageColor: {r: 0.7529412, g: 0.64720136, b: 0, a: 1}
   specialImageFilledColor: {r: 0.9265326, g: 1, b: 0, a: 1}
@@ -828,7 +829,7 @@ MonoBehaviour:
   progress: 0
   stateMachine: {fileID: 0}
   footstepSource: {fileID: 5925357198986120973}
-  movementSpeed: {x: 6, y: 3.6}
+  movementSpeed: {x: 5.5, y: 3.5}
   footstepSoundClips:
   - {fileID: 8300000, guid: 7ad6cb82d7bbf5441b16b7e4edc9deee, type: 3}
   - {fileID: 8300000, guid: 04666b9008d955c44856f4760cafe449, type: 3}
@@ -1084,6 +1085,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   damageTakenSound: {fileID: 8300000, guid: 44f1ea6919bb7ec4895c3085b5d412bf, type: 3}
+  boundsMask:
+    serializedVersion: 2
+    m_Bits: 1280
   impulseSource: {fileID: 588689491912295410}
   hitGamepadShakeLowFrequency: 0.5
   hitGamepadShakeHighFrequency: 0.5

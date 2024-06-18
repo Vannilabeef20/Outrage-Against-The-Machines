@@ -5,6 +5,7 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    [SelectionBase]
     public class SpikeTrap : MonoBehaviour
     {
         [SerializeField] private Animator[] animators;

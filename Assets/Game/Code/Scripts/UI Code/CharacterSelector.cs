@@ -2,13 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
+using System.Linq;
 
 namespace Game
 {
     public class CharacterSelector : MonoBehaviour
     {
+        [SerializeField, ReadOnly] private bool wasTutorialCompleted;
         [SerializeField] private Button confirmButton;
         [SerializeField] private Button confirmTutorialButton;
+        [SerializeField] private LoadSceneButton tutorialButtonScript;
         [SerializeField] private CharacterSelectionSwap[] selectionSwaps;
 
         private void OnEnable()
@@ -17,6 +20,14 @@ namespace Game
             confirmTutorialButton.interactable = false;
             GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
             GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
+            if (PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
+            {
+                wasTutorialCompleted = true;
+            }
+            else
+            {
+                wasTutorialCompleted = false;
+            }
         }
 
         private void OnDisable()
@@ -35,9 +46,13 @@ namespace Game
             else
             {
                 confirmTutorialButton.interactable = true;
-                if(PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
+                if(wasTutorialCompleted)
                 {
                     confirmButton.interactable = true;
+                }
+                else
+                {
+                    tutorialButtonScript.AnimateInteractible(0.1f, 10f, true, false);
                 }
             }
         }
@@ -46,14 +61,16 @@ namespace Game
         {
             GameManager.Instance.PlayerCharacterList.Clear();
             PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
-            foreach(var swap in selectionSwaps)
+            playerInputs = playerInputs.OrderBy(input => input.playerIndex).ToArray();
+            for(int i = 0; i < selectionSwaps.Length; i++)
             {
-                if(swap.SelectionIndex < 0)
+                if (selectionSwaps[i].SelectionIndex < 0)
                 {
                     continue;
                 }
-                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(swap.SelectionPrefabs[swap.SelectionIndex], swap.PlayerIndex,
-                     playerInputs[swap.PlayerIndex].currentControlScheme, playerInputs[swap.PlayerIndex].devices.ToArray()));
+                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(selectionSwaps[i].SelectionPrefabs[selectionSwaps[i].SelectionIndex],
+                    selectionSwaps[i].PlayerIndex, playerInputs[selectionSwaps[i].PlayerIndex].currentControlScheme,
+                    playerInputs[selectionSwaps[i].PlayerIndex].devices.ToArray()));
             }
         }
         public void ClearPlayer(MenuId menuId)
@@ -69,6 +86,12 @@ namespace Game
                     GameManager.Instance.PlayerCharacterList.Clear();
                     break;
             }
+        }
+
+        [Button("Reset tutorial prefs")]
+        public void ResetTutorialPrefs()
+        {
+            PlayerPrefs.SetInt("IsTutorialCompleted", 0);
         }
     }
 }

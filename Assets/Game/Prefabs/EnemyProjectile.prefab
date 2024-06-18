@@ -51,10 +51,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShadowObject: {fileID: 6642416121123632161}
   body: {fileID: 6441294458678317460}
-  hostileLayers:
+  playerLayers:
     serializedVersion: 2
     m_Bits: 64
+  playerAttackLayers:
+    serializedVersion: 2
+    m_Bits: 128
   destroyDelay: 3
+  reversible: 0
+  wasReverted: 0
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  initialPos: {x: 0, y: 0, z: 0}
   damage: 15
   knockBackstrength: 6
   stunDuration: 0.5
@@ -74,6 +83,7 @@ MonoBehaviour:
   targetType: 0
   spriteRenderer: {fileID: 4642329591781492599}
   image: {fileID: 0}
+  loop: 1
   animationDuration: 0.3
   DestroyOnFinish: 0
   sprites:
@@ -82,6 +92,7 @@ MonoBehaviour:
   - {fileID: -1601020217, guid: 65204a1b4fec6884fb2ecc49c5bb3ec5, type: 3}
   timer: 0
   currentImageIndex: 0
+  pause: 0
 --- !u!212 &4642329591781492599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -230,6 +241,7 @@ MonoBehaviour:
   targetType: 0
   spriteRenderer: {fileID: 4005590202335818597}
   image: {fileID: 0}
+  loop: 1
   animationDuration: 0.3
   DestroyOnFinish: 0
   sprites:
@@ -238,6 +250,7 @@ MonoBehaviour:
   - {fileID: -1601020217, guid: 65204a1b4fec6884fb2ecc49c5bb3ec5, type: 3}
   timer: 0
   currentImageIndex: 0
+  pause: 0
 --- !u!212 &4005590202335818597
 SpriteRenderer:
   m_ObjectHideFlags: 0

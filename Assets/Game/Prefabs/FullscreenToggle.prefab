@@ -52,16 +52,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3f615e3b9a00428a80118d4c5de20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 0}
   selectScalePercentage: 0.05
   selectActivateDelay: 0.3
   clickScalePercentage: 0.1
   clickActivateDelay: 0.1
-  toggleImage: {fileID: 0}
+  toggleImage: {fileID: 2700098530088419315}
   active: 0
   toggleSprites:
-  - {fileID: -950845166, guid: 61eed10ce865f9248a6b3bd00bd64929, type: 3}
   - {fileID: 1433122489, guid: 61eed10ce865f9248a6b3bd00bd64929, type: 3}
+  - {fileID: -950845166, guid: 61eed10ce865f9248a6b3bd00bd64929, type: 3}
 --- !u!114 &2700098530088419316
 MonoBehaviour:
   m_ObjectHideFlags: 0

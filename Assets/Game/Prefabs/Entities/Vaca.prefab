@@ -1307,8 +1307,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7ad6cb82d7bbf5441b16b7e4edc9deee, type: 3}
   - {fileID: 8300000, guid: 04666b9008d955c44856f4760cafe449, type: 3}
   footstepSoundsPicthes:
-  - 0.9
-  - 0.9
+  - 1
+  - 1
   currentFootstepSoundIndex: 0
   velocity: {x: 0, y: 0, z: 0}
 --- !u!82 &5956952720080748831
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   <CurrentAttackState>k__BackingField: {fileID: 0}
   queuedAttackState: {fileID: 0}
   attackList: []
-  <MaxSpecialChargeAmount>k__BackingField: 200
+  <MaxSpecialChargeAmount>k__BackingField: 300
   specialChargeAmount: 0
   specialImageColor: {r: 0.7529412, g: 0.64705884, b: 0, a: 1}
   specialImageFilledColor: {r: 0.9747988, g: 1, b: 0, a: 1}
@@ -1992,6 +1992,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   playerNumberLabel: {fileID: 7204142264954917609}
+  playerColor: {r: 0, g: 0, b: 0, a: 0}
   playerStateLabel: {fileID: 1164585175635907927}
 --- !u!212 &1164585177420930285
 SpriteRenderer:

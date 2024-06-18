@@ -48,6 +48,7 @@ namespace Game
         public override void FixedDo()
         {
             stateMachine.body.velocity = (Vector3)(knockBackCurve.Evaluate(progress) * knockBackIntensity) + stateMachine.ContextVelocity;
+            stateMachine.body.position = LevelManager.Instance.ClampInsidePlayZone(stateMachine.body.position);
         }
 
         public override void Enter()

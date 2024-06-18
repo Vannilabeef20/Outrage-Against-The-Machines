@@ -10,6 +10,11 @@ namespace Game
         [SerializeField] private LayerMask playerLayerMask;
         [SerializeField] private IntEvent LoadSceneEvent;
         [SerializeField, Scene] private int nextScene;
+
+        private void Start()
+        {
+            PlayerPrefs.SetInt("IsTutorialCompleted", 1);
+        }
         private void OnTriggerEnter(Collider other)
         {
             if(playerLayerMask.ContainsLayer(other.gameObject.layer))

@@ -4,6 +4,7 @@ using DG.Tweening;
 
 namespace Game
 {
+    [SelectionBase]
     public class ItemDrop : MonoBehaviour
     {
         [SerializeField, Tag] private string playerTag;

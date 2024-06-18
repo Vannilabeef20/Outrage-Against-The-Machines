@@ -12,34 +12,41 @@ namespace Game
         [SerializeField] private float clickScalePercentage = 0.25f;
         [SerializeField] private float clickActivateDelay = 0.25f;
 
-        public void AnimateInteractible(bool ScaleUp, float changePercentage, float totalDuration)
+        public void AnimateInteractible(float changePercentage, float totalDuration, bool Loop = false, bool ScaleUp = true)
         {
-            if (ScaleUp)
+            switch (Loop, ScaleUp)
             {
-                transform.DOScale(1f + changePercentage, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true).OnComplete(() =>
-                transform.DOScale(1f, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true));
-            }
-            else
-            {
-                transform.DOScale(1f - changePercentage, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true).OnComplete(() =>
-                transform.DOScale(1f, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true));
+                case (false, false):
+                    transform.DOScale(1f - changePercentage, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true).OnComplete(() => {
+                        transform.DOScale(1f, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true);
+                    });
+                    break;
+                case (false, true):
+                    transform.DOScale(1f + changePercentage, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true).OnComplete(() => {
+                        transform.DOScale(1f, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true);
+                    });
+                    break;
+                default:
+
+
+                    break;
             }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            AnimateInteractible(true, 0.15f, 0.3f);
+            AnimateInteractible(0.15f, 0.3f);
         }
 
         public void OnSelect(BaseEventData eventData)
         {
             AudioManager.instance.PlayUiSelectSfx();
-            AnimateInteractible(true, 0.15f, 0.3f);
+            AnimateInteractible(0.15f, 0.3f);
         }
 
         protected void PlayInteractionAnimation()
         {
-            AnimateInteractible(false, clickScalePercentage, clickActivateDelay);
+            AnimateInteractible(clickScalePercentage, clickActivateDelay, ScaleUp: false);
         }
     }
 

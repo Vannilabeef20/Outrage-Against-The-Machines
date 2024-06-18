@@ -5115,24 +5115,24 @@ MonoBehaviour:
       ProbabilityRange: {x: 0, y: 80}
     - <Name>k__BackingField: Health
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 8
-      ProbabilityPercent: 8
-      ProbabilityRange: {x: 80, y: 88}
+      <ProbabilityWeight>k__BackingField: 6
+      ProbabilityPercent: 6
+      ProbabilityRange: {x: 80, y: 86}
     - <Name>k__BackingField: Heal & Energy
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
       <ProbabilityWeight>k__BackingField: 6
       ProbabilityPercent: 6
-      ProbabilityRange: {x: 88, y: 94}
+      ProbabilityRange: {x: 86, y: 92}
     - <Name>k__BackingField: Energy
       <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
-      <ProbabilityWeight>k__BackingField: 4
-      ProbabilityPercent: 4
-      ProbabilityRange: {x: 94, y: 98}
+      <ProbabilityWeight>k__BackingField: 4.5
+      ProbabilityPercent: 4.5
+      ProbabilityRange: {x: 92, y: 96.5}
     - <Name>k__BackingField: Life
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
-      <ProbabilityWeight>k__BackingField: 2
-      ProbabilityPercent: 2
-      ProbabilityRange: {x: 98, y: 100}
+      <ProbabilityWeight>k__BackingField: 3.5
+      ProbabilityPercent: 3.5
+      ProbabilityRange: {x: 96.5, y: 100}
     totalWeight: 100
 --- !u!1 &4733453237061180675
 GameObject:
@@ -5342,7 +5342,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
-  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.3}
+  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.35}
   boxCastLenght: 10
   <IsInsidePlayZone>k__BackingField: 0
   <HasBeenInsidePlayZone>k__BackingField: 0

@@ -5125,19 +5125,29 @@ MonoBehaviour:
     itemDrops:
     - <Name>k__BackingField: Nothing
       <Item>k__BackingField: {fileID: 0}
-      <ProbabilityWeight>k__BackingField: 80
-      ProbabilityPercent: 80
-      ProbabilityRange: {x: 0, y: 80}
+      <ProbabilityWeight>k__BackingField: 70
+      ProbabilityPercent: 70
+      ProbabilityRange: {x: 0, y: 70}
     - <Name>k__BackingField: Health
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 15
-      ProbabilityPercent: 15
-      ProbabilityRange: {x: 80, y: 95}
+      <ProbabilityWeight>k__BackingField: 9
+      ProbabilityPercent: 9
+      ProbabilityRange: {x: 70, y: 79}
+    - <Name>k__BackingField: Heal & Energy
+      <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
+      <ProbabilityWeight>k__BackingField: 9
+      ProbabilityPercent: 9
+      ProbabilityRange: {x: 79, y: 88}
+    - <Name>k__BackingField: Energy
+      <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
+      <ProbabilityWeight>k__BackingField: 8
+      ProbabilityPercent: 8
+      ProbabilityRange: {x: 88, y: 96}
     - <Name>k__BackingField: Life
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
-      <ProbabilityWeight>k__BackingField: 5
-      ProbabilityPercent: 5
-      ProbabilityRange: {x: 95, y: 100}
+      <ProbabilityWeight>k__BackingField: 4
+      ProbabilityPercent: 4
+      ProbabilityRange: {x: 96, y: 100}
     totalWeight: 100
 --- !u!1 &4733453237061180675
 GameObject:
@@ -5352,9 +5362,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <BoxCastOffset>k__BackingField: {x: 0, y: 1.9, z: 0}
-  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.2}
+  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.15}
   boxCastLenght: 11
   <IsInsidePlayZone>k__BackingField: 0
+  <HasBeenInsidePlayZone>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}

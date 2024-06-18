@@ -108,7 +108,7 @@ namespace Game
 
         private void Update()
         {
-            IsInsidePlayZone = GameManager.Instance.IsInsidePlayZone(body.position);
+            IsInsidePlayZone = LevelManager.Instance.IsInsidePlayZone(body.position);
             collisionBox.isTrigger = !IsInsidePlayZone;
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
@@ -151,7 +151,7 @@ namespace Game
             }
             if(HasBeenInsidePlayZone)
             {
-                body.position = GameManager.Instance.ClampInsidePlayZone(body.position).ToY2D();
+                body.position = LevelManager.Instance.ClampInsidePlayZone(body.position).ToY2D();
             }
             else
             {

@@ -18,6 +18,8 @@ namespace Game
         [SerializeField, Expandable] private FallingBoxSpeedSO boxFallingSpeed;
         [SerializeField, ReadOnly] private float fallTime;
 
+        [SerializeField] private float targetFallTime;
+
         private void Update()
         {
             if((Mathf.Abs(GameManager.Instance.MainCamera.transform.position.x - 
@@ -40,6 +42,12 @@ namespace Game
             randomPos.y = transform.position.y + depth;
             randomPos.z = transform.position.z + depth;
             Instantiate(fallingBoxObject, randomPos, Quaternion.identity, transform);
+        }
+
+        [Button("Set Height")]
+        public void SetHeight()
+        {
+            transform.position = new Vector3(transform.position.x, (targetFallTime * boxFallingSpeed.FallingSpeed) + transform.position.z, transform.position.z);
         }
 #if UNITY_EDITOR
         private void OnDrawGizmos()
@@ -80,19 +88,19 @@ namespace Game
             point1Pos.x = transform.position.x - activationRange;
             point2Pos.x = transform.position.x - activationRange;
             point1Pos.y = transform.position.y;
-            point2Pos.y = transform.position.z;
+            point2Pos.y = transform.position.z - spawnZoneDimensions.y;
             point1Pos.z = transform.position.z;
             point2Pos.z = transform.position.z;
-            Debug.DrawLine(point1Pos, point2Pos, Color.yellow);
+            Debug.DrawLine(point1Pos, point2Pos, Color.green);
 
 
             point1Pos.x = transform.position.x + activationRange;
             point2Pos.x = transform.position.x + activationRange;
             point1Pos.y = transform.position.y;
-            point2Pos.y = transform.position.z;
+            point2Pos.y = transform.position.z - spawnZoneDimensions.y;
             point1Pos.z = transform.position.z;
             point2Pos.z = transform.position.z;
-            Debug.DrawLine(point1Pos, point2Pos, Color.yellow);
+            Debug.DrawLine(point1Pos, point2Pos, Color.green);
         }
 #endif
     } 
