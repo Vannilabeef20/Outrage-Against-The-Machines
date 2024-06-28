@@ -7,26 +7,27 @@ using NaughtyAttributes;
 namespace Game
 {
     /// <summary>
-    /// 
+    /// Listens for Event "E" of Type "T" and invokes Unity Event Response "UER".
     /// </summary>
-    /// <typeparam name="T">Type</typeparam>
-    /// <typeparam name="E">Event</typeparam>
-    /// <typeparam name="UER">Unity Event Response</typeparam>
-    public abstract class BaseGameEventListener<T,E,UER> : MonoBehaviour,
+    /// <typeparam name="T">Data "Type".</typeparam>
+    /// <typeparam name="E">Event ScriptableObject of Type "T".</typeparam>
+    /// <typeparam name="UER">Unity Event Response.</typeparam>
+    public abstract class BaseGameEventListener<T, E, UER> : MonoBehaviour,
         IGameEventListener<T> where E : BaseGameEvent<T> where UER : UnityEvent<T>
     {
-       [SerializeField] private E gameEvent;
-        public E GameEvent { get { return gameEvent; } set{ gameEvent = value; } }
+        [Tooltip("Event to Listen To.")]
+        [SerializeField] E gameEvent;
+        public E GameEvent { get { return gameEvent; } set { gameEvent = value; } }
 
-        [SerializeField] private UER unityEventResponse;
+        [Tooltip("The Unity Events that will be invoked in response.")]
+        [SerializeField] UER unityEventResponse;
 
         private void OnEnable()
         {
-            if(gameEvent == null)
+            if (gameEvent == null)
             {
                 return;
             }
-
             GameEvent.RegisterListener(this);
         }
         private void OnDisable()
@@ -38,6 +39,10 @@ namespace Game
             GameEvent.UnregisterListener(this);
         }
 
+        /// <summary>
+        /// Invokes "UER" once "E" is raised.
+        /// </summary>
+        /// <param name="item"></param>
         public void OnEventRaised(T item)
         {
             unityEventResponse?.Invoke(item);

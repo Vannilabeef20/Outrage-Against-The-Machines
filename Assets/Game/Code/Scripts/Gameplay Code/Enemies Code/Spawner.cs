@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,33 +12,36 @@ namespace Game
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private Camera mainCam;
-        [SerializeField] private Image goImage;
-
-        [SerializeField, ReadOnly] private float defaultDeadzoneWidtht = 0f;
-        [SerializeField, ReadOnly] private float maxDeadzoneWidtht = 2f;
-        [SerializeField, ReadOnly] private CinemachineFramingTransposer virtualCameraFramingTransposer;
-
-        [Header("SPAWN PARAMETERS"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField, Expandable] private List<EncounterSO> encounters;
-        [SerializeField, ReadOnly] private List<GameObject> enemiesToSpawn;
-        [ReadOnly] public List<GameObject> enemiesAlive;
-        [MinMaxSlider(-20f, 20f), SerializeField] private Vector2 spawnDistance;
-        [MinMaxSlider(-20f, 20f), SerializeField] private Vector2 spawnHeight;
-        [MinMaxSlider(0.5f, 10f), SerializeField] private Vector2 spawnDelay;
-
-        [SerializeField] private Color spawnRegionColor;
-
+        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [SerializeField] Camera mainCam;
+        [SerializeField, ReadOnly] CinemachineFramingTransposer virtualCameraFramingTransposer;
+        [SerializeField] Image goImage;
 #if UNITY_EDITOR
         [SerializeField] private GameObject testSpawnEnemy;
+#endif
 
-        [Header("GIZMOS"), HorizontalLine(2f, EColor.Orange)]
-        [SerializeField] private float encounterPositionGizmosRadius;
-        [SerializeField] private Color encounterPositionGizmosColor;
-        [SerializeField] private float encounterPositionDebugLineLenght;
-        [SerializeField] private Color encounterPositionLimitDebugColor;
+        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+        [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnDistance;
+        [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnHeight;
+        [MinMaxSlider(0.5f, 10f), SerializeField] Vector2 spawnDelay;
+        [SerializeField] private Color spawnRegionColor;
+        [SerializeField, Expandable] List<EncounterSO> encounters;
 
-        [SerializeField] private GUIStyle style;
+
+        [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField, ReadOnly] float defaultDeadzoneWidtht = 0f;
+        [SerializeField, ReadOnly] float maxDeadzoneWidtht = 2f;
+        [SerializeField, ReadOnly] List<GameObject> enemiesToSpawn;
+        [ReadOnly] public List<GameObject> enemiesAlive;
+
+#if UNITY_EDITOR
+        [Header("GIZMOS (EDITOR ONLY)"), HorizontalLine(2f, EColor.Green)]
+        [SerializeField] float encounterPositionGizmosRadius;
+        [SerializeField] Color encounterPositionGizmosColor;
+        [SerializeField] float encounterPositionDebugLineLenght;
+        [SerializeField] Color encounterPositionLimitDebugColor;
+
+        [SerializeField] GUIStyle style;
 
         private Vector3 point1Pos;
         private Vector3 point2Pos;
@@ -53,16 +55,12 @@ namespace Game
 
         private void Update()
         {
+#if UNITY_EDITOR
             if(Input.GetKeyDown(KeyCode.Backspace))
             {
-                GameObject[] enemyObjects = enemiesAlive.ToArray();
-                foreach(var enemy in enemyObjects)
-                {
-                    Destroy(enemy);
-                }
-                enemiesAlive.Clear();
-                enemiesToSpawn.Clear();
+                DestroyAll();
             }
+#endif
             if (encounters.Count == 0)
             {
                 return;
@@ -107,7 +105,7 @@ namespace Game
             {
                 return;
             }
-            Vector3 tempPosition = transform.position.ToY2D();
+            Vector3 tempPosition = transform.position.ToXYY();
             float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
             if (UnityEngine.Random.Range(0, 2) == 0)
             {
@@ -123,12 +121,15 @@ namespace Game
             }
         }
 
-
 #if UNITY_EDITOR
-        [Button("Spawn test enemy")]
+        #region DEBUG & GIZMOS
+        /// <summary>
+        /// Spawns a cube inside the spawn zone to test its acurracy.
+        /// </summary>
+        [Button("Spawn test enemy cube")]
         public void SpawnTest()
         {
-            Vector3 tempPosition = transform.position.ToY2D();
+            Vector3 tempPosition = transform.position.ToXYY();
             float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
             if (UnityEngine.Random.Range(0, 2) == 0)
             {
@@ -141,10 +142,24 @@ namespace Game
                    tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
             }
         }
-        private void OnDrawGizmos()
+
+        /// <summary>
+        /// Destroys all enemies in "enemiesAlive" and "enemiesToSpawn".
+        /// </summary>
+        [Button("Destroy all enemies")]
+        public void DestroyAll()
         {
-           
-            #region Draw debug spawn boxes
+            GameObject[] enemyObjects = enemiesAlive.ToArray();
+            foreach (var enemy in enemyObjects)
+            {
+                Destroy(enemy);
+            }
+            enemiesAlive.Clear();
+            enemiesToSpawn.Clear();
+        }
+        private void OnDrawGizmos()
+        {          
+            #region DRAW SPAWN BOXES
             //Furthest = Max distance .y, Closest = Min distance .x, Upper = MaxHeight .y, Lower = MinHeight .x, Left Blue, Right Magenta                                           
             //Furtherst upper right 
             point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y,0);
@@ -152,54 +167,55 @@ namespace Game
             //Furtherst lower right                                                                              
             point2Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //In betweem furthest and closest upper right upper                                                  
             point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x,0);
 
             point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //In betweem furthest and closest lower right lower                                                  
             point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y,0);
 
             point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //Closest upper right                                                                                
             point1Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y,0);
 
             //Closest lower right                                                                                
             point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //Furtherst upper left                                                                               
             point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y,0);
 
             //Furtherst lower left                                                                               
             point2Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //Closest upper left                                                                                 
             point1Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y,0);
 
             //Closest lower left,                                                                                
             point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //In betweem furthest and closest Left upper
             point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y,0);
 
             point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             //In betweem furthest and closest Left lower
             point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x,0);
 
             point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x,0);
 
-            Debug.DrawLine(point1Pos.ToY2D(), point2Pos.ToY2D(), spawnRegionColor);
+            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), spawnRegionColor);
             #endregion
-            #region Draw debug enconter regions limit
+
+            #region DRAW ENCOUNTER ZONE
             if (encounters.Count == 0)
             {
                 return;
@@ -246,6 +262,7 @@ namespace Game
 
             #endregion
         }
+        #endregion
 #endif
     }
 }

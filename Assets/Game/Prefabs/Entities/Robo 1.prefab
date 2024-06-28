@@ -5066,11 +5066,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3daf840d139d6d4197e7068b2ee4b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
-  <IsComplete>k__BackingField: 0
+  StateAnimation: {fileID: 7400000, guid: dfb20a8e3cd6a384bbaec4c5aa93bb99, type: 2}
   startTime: 0
-  <StateAnimation>k__BackingField: {fileID: 7400000, guid: dfb20a8e3cd6a384bbaec4c5aa93bb99, type: 2}
   progress: 0
+  <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
   duration: 1
   frameEvents:
@@ -5176,8 +5175,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6508126985612539013}
   - component: {fileID: 6508126985612539012}
-  - component: {fileID: 4840090045382764047}
-  - component: {fileID: 5904418692595898079}
   m_Layer: 8
   m_Name: Intercept
   m_TagString: Untagged
@@ -5212,57 +5209,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af5a3a5e0e120c459290c253396ac28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
-  <IsComplete>k__BackingField: 0
+  StateAnimation: {fileID: 7400000, guid: 7755f446f3601994c9215f904f8ede8a, type: 2}
   startTime: 0
-  <StateAnimation>k__BackingField: {fileID: 7400000, guid: 7755f446f3601994c9215f904f8ede8a, type: 2}
   progress: 0
+  <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  targeting: {fileID: 4840090045382764047}
+  targetingBehaviour:
+    rid: 3689197334475046918
   target: {fileID: 0}
   targetingRepeatInterval: 0.5
   targetingTimer: 0
-  <Pathfinding>k__BackingField: {fileID: 5904418692595898079}
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
-  movementDirection: {x: 0, y: 0, z: 0}
+  <PathfindingBehaviour>k__BackingField:
+    rid: 3689197334475046914
   speed: {x: 2, y: 1.5, z: 1.5}
---- !u!114 &4840090045382764047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508126985612539010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1dc5702beec4a4ca1df4dbd1a39e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5904418692595898079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508126985612539010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a77d72941ada6469a0ce9efdd965ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 6508126985700856567}
-  targetPosition: {x: 0, y: 0, z: 0}
-  maxAvoidanceRadius: 0.75
-  <ObstacleLayerMask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 1280
-  numRays: 16
-  obstacleDetectionRadius: 2
-  rayDirections: []
-  interestValues: []
-  obstacleValues: []
-  normal: {x: 0, y: 1, z: -1}
+  movementDirection: {x: 0, y: 0, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 3689197334475046914
+      type: {class: MoveContextSteering, ns: Game, asm: Assembly-CSharp}
+      data:
+        body: {fileID: 6508126985700856567}
+        targetPosition: {x: 0, y: 0, z: 0}
+        maxAvoidanceRadius: 0.75
+        <ObstacleLayerMask>k__BackingField:
+          serializedVersion: 2
+          m_Bits: 1280
+        numRays: 16
+        obstacleDetectionRadius: 2
+        normal: {x: 0, y: 1, z: -1}
+    - rid: 3689197334475046918
+      type: {class: TargetClosest, ns: Game, asm: Assembly-CSharp}
 --- !u!1 &6508126985700856560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,11 +5589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d444f022deeb78f41b43e724c3984855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
-  <IsComplete>k__BackingField: 0
+  StateAnimation: {fileID: 7400000, guid: a79eb55a8b32a0d459e53391bb882924, type: 2}
   startTime: 0
-  <StateAnimation>k__BackingField: {fileID: 7400000, guid: a79eb55a8b32a0d459e53391bb882924, type: 2}
   progress: 0
+  <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
   <HealthHandler>k__BackingField: {fileID: 6508126987123622501}
   damageTakenSound: {fileID: 8300000, guid: 199d9c909f2d1f8439824208fd486592, type: 3}
@@ -5654,12 +5632,6 @@ MonoBehaviour:
   initialPos: {x: 0, y: 0, z: 0}
   stunDuration: 0
   knockbackStrenght: 0
-  poisePoints: []
-  maxPoise: 100
-  currentPoise: 0
-  poiseRatio: 0
-  poiseRegenValue: 50
-  poiseRegenDelay: 3
   impulseSource: {fileID: 6508126986235999516}
 --- !u!114 &6508126986235999516
 MonoBehaviour:
@@ -5851,15 +5823,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ce4df9ac0dec4ebc0f960fa92d0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
-  healthImage: {fileID: 1343746180273577799}
   stateMachine: {fileID: 0}
-  hostileLayers:
-    serializedVersion: 2
-    m_Bits: 128
+  DEBUGHealthImage: {fileID: 1343746180273577799}
   maxHeathPoints: 100
-  <CurrentHealthPoints>k__BackingField: 0
   <CurrentHealthPercent>k__BackingField: 0
+  <CurrentHealthPoints>k__BackingField: 0
 --- !u!1 &6508126987276863437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5905,11 +5873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114425a82f155254d8a22df705b0289d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
-  <IsComplete>k__BackingField: 0
+  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
   startTime: 0
-  <StateAnimation>k__BackingField: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
   progress: 0
+  <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
   playerMask:
     serializedVersion: 2

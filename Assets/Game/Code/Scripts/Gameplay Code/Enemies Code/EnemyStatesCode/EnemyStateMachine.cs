@@ -151,11 +151,11 @@ namespace Game
             }
             if(HasBeenInsidePlayZone)
             {
-                body.position = LevelManager.Instance.ClampInsidePlayZone(body.position).ToY2D();
+                body.position = LevelManager.Instance.ClampInsidePlayZone(body.position).ToXYY();
             }
             else
             {
-                body.position = body.position.ToY2D();
+                body.position = body.position.ToXYY();
             }
         }
 

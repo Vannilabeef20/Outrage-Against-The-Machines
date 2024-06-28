@@ -6,6 +6,10 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// Gets the closest available player.
+    /// </summary>
+    [System.Serializable]
     public class TargetClosest : BaseTargeting
     {
         public override GameObject GetTarget(Vector3 currentPosition)

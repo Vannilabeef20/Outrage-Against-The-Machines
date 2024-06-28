@@ -28,16 +28,18 @@ namespace Game
                 defenseArrowImage.enabled = false;
                 speedArrowImage.enabled = false;
                 joinTextObject.SetActive(true);
-                swapButton.interactable = false;
+                swapButton.image.enabled = false;
+                swapButton.enabled = false;
             }
             else
             {
+                swapButton.image.enabled = true;
+                swapButton.enabled = true;
                 SelectionIndex = 0;
                 selectionImage.enabled = true;
                 defenseArrowImage.enabled = true;
                 speedArrowImage.enabled = true;
                 joinTextObject.SetActive(false);
-                swapButton.interactable = true;
                 selectionImage.sprite = selectionSprites[SelectionIndex];
                 defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
                 speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
@@ -77,16 +79,18 @@ namespace Game
                 defenseArrowImage.enabled = false;
                 speedArrowImage.enabled = false;
                 joinTextObject.SetActive(true);
-                swapButton.interactable = false;
+                swapButton.image.enabled = false;
+                swapButton.enabled = false;
             }
             else
             {
+                swapButton.enabled = true;
+                swapButton.image.enabled = true;
                 SelectionIndex = 0;
                 selectionImage.enabled = true;
                 defenseArrowImage.enabled = true;
                 speedArrowImage.enabled = true;
                 joinTextObject.SetActive(false);
-                swapButton.interactable = true;
                 selectionImage.sprite = selectionSprites[SelectionIndex];
                 defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
                 speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];

@@ -9,18 +9,42 @@ namespace Game
         [field: Header("INTERCEPT STATE"), HorizontalLine(2f, EColor.Yellow)]
         public override string Name {get => "Intercept";}
         [Header("TARGETING"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] private BaseTargeting targeting;
-        [SerializeField, ReadOnly] private GameObject target;
-        [SerializeField, Min(0f)] private float targetingRepeatInterval;
-        [SerializeField, ReadOnly] private float targetingTimer;
-        [field: Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
-        [field: SerializeField] public BasePathfinding Pathfinding { get; private set; }
-        [SerializeField, Min(0f)] private float pathfindingRepeatInterval;
-        [SerializeField, ReadOnly] private float pathfindingTimer;
-        [Header("MOVEMENT"), HorizontalLine(2f, EColor.Indigo)]
-        [SerializeField, ReadOnly] private Vector3 movementDirection;
-        [SerializeField] private Vector3 speed;
+        [SerializeReference, SubclassSelector] BaseTargeting targetingBehaviour;
+        [SerializeField, ReadOnly] GameObject target;
+        [SerializeField, Min(0f)] float targetingRepeatInterval;
+        [SerializeField, ReadOnly] float targetingTimer;
 
+        [field: Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
+        [SerializeField, Min(0f)] float pathfindingRepeatInterval;
+        [SerializeField, ReadOnly] float pathfindingTimer;
+        [field: SerializeReference, SubclassSelector] public BasePathfinding PathfindingBehaviour { get; private set; }
+
+        [Header("MOVEMENT"), HorizontalLine(2f, EColor.Indigo)]
+        [SerializeField] Vector3 speed;
+        [SerializeField, ReadOnly] Vector3 movementDirection;
+
+        private void Awake()
+        {
+            if(PathfindingBehaviour != null)
+            {
+                PathfindingBehaviour.Setup();
+            }
+        }
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            if (PathfindingBehaviour != null)
+            {
+                PathfindingBehaviour.OnGizmo();
+            }
+        }
+#endif
+        public override void Enter()
+        {
+            stateMachine.animator.Play(StateAnimation.name);
+            startTime = Time.time;
+            target = targetingBehaviour.GetTarget(stateMachine.body.position);
+        }
         public override void Do()
         {
             ValidateState();
@@ -36,7 +60,7 @@ namespace Game
             }
             if (targetingTimer > targetingRepeatInterval)
             {
-                target = targeting.GetTarget(stateMachine.body.position);
+                target = targetingBehaviour.GetTarget(stateMachine.body.position);
                 targetingTimer = 0;
             }
             if (target.transform.position.x + 0.1f < transform.position.x)
@@ -49,18 +73,11 @@ namespace Game
             }
             if(pathfindingTimer >= pathfindingRepeatInterval)
             {
-                movementDirection = Pathfinding.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayZone);
+                movementDirection = PathfindingBehaviour.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayZone);
             }
             stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
                 movementDirection.y * speed.y, movementDirection.z * speed.z) + stateMachine.ContextVelocity;
             Debug.DrawLine(stateMachine.body.position, stateMachine.body.position + (stateMachine.body.velocity.normalized * 2), Color.yellow);
-        }
-
-        public override void Enter()
-        {
-            stateMachine.animator.Play(StateAnimation.name);
-            startTime = Time.time;
-            target = targeting.GetTarget(stateMachine.body.position);
         }
 
         public override void Exit()

@@ -49,25 +49,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c09d29965127f4b935c09a91d86f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShadowObject: {fileID: 6642416121123632161}
   body: {fileID: 6441294458678317460}
-  playerLayers:
+  ShadowObject: {fileID: 6642416121123632161}
+  damagebleLayers:
     serializedVersion: 2
     m_Bits: 64
-  playerAttackLayers:
-    serializedVersion: 2
-    m_Bits: 128
   destroyDelay: 3
-  reversible: 0
-  wasReverted: 0
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  initialPos: {x: 0, y: 0, z: 0}
   damage: 15
   knockBackstrength: 6
   stunDuration: 0.5
   velocity: 40
+  reflectable: 0
+  reflectionLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  reflectionDamagebleLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  initialPos: {x: 0, y: 0, z: 0}
+  wasReflected: 0
 --- !u!114 &4642329591781492596
 MonoBehaviour:
   m_ObjectHideFlags: 0

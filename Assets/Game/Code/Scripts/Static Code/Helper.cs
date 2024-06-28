@@ -1,27 +1,75 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game 
 {
+	/// <summary>
+	/// Static class for Utility stuff that does not require instancing.
+	/// </summary>
 	public static class Helper
 	{
-		public static Vector3 ToY2D(this Vector3 vector)
+		#region MAPPING METHODS
+		/// <summary>
+		/// Maps a certial float value from a range to another.
+		/// </summary>
+		/// <param name="value">The</param>
+		/// <param name="oldLow">Lowest value in the current range.</param>
+		/// <param name="oldHigh">Highest value in the current range.</param>
+		/// <param name="newLow">Lowest value in the new range.</param>
+		/// <param name="newHigh">Highest value in the new range.</param>
+		/// <param name="clamp">Whether to clamp "value" between the "newLow" and "newHigh".</param>
+		/// <returns>The mapped value.<br/>
+		/// Corresponds to the equivalent value of "value" in the new range
+		/// </returns>
+		public static float Map(this float value, float oldLow, float oldHigh, float newLow = 0f, float newHigh = 1f, bool clamp = true)
+		{
+			float temp = (value - oldLow) / (oldHigh - oldLow);
+			temp = newLow + (newHigh - newLow) * temp;
+			if (clamp)
+			{
+				temp = Mathf.Clamp(temp, newLow, newHigh);
+			}
+			else
+			{
+				temp = newLow;
+			}
+			return temp;
+
+		}
+
+		/// <summary>
+		/// Swizzles the given Vector3 from XYZ to XYY.<br/>
+		/// AKA Copies the Y value of this Vector3 to the Z value.
+		/// </summary>
+		/// <param name="vector">The given Vector3.</param>
+		/// <returns>Given Vector3 swizzled to XYY.</returns>
+		public static Vector3 ToXYY(this Vector3 vector)
         {
 			return new Vector3(vector.x, vector.y, vector.y);
         }
-		public static Vector3 ToZ2D(this Vector3 vector)
+		/// <summary>
+		/// Swizzles the given Vector3 from XYZ to XZZ.<br/>
+		/// AKA Copies the Z value of this Vector3 to the Y value.
+		/// </summary>
+		/// <param name="vector">The given Vector3.</param>
+		/// <returns>Given Vector3 swizzled to XZZ.</returns>
+		public static Vector3 ToXZZ(this Vector3 vector)
 		{
 			return new Vector3(vector.x, vector.z, vector.z);
 		}
-		/// <summary>
-		/// Checks if a Vector3 is within a certain range.
-		/// </summary>
-		/// <param name="vector"></param>
-		/// <param name="min"></param>
-		/// <param name="max"></param>
-		/// <returns>Returns true if within range.</returns>
-		public static bool InsideRange(this Vector3 vector, Vector3 min, Vector3 max)
+        #endregion
+
+        /// <summary>
+        /// Checks if a Vector3 has its values between a "min" and a "max" Vector3.
+        /// </summary>
+        /// <param name="vector">The given Vector3.</param>
+        /// <param name="min">Minimum Vector3 inside the range.</param>
+        /// <param name="max">Maximum Vector3 inside the range.</param>
+        /// <returns> Returns "False" if any of the "vector" x,y or z values is
+        /// below its counterpart in "min", or higher than "max".</returns>
+        public static bool InsideRange(this Vector3 vector, Vector3 min, Vector3 max)
         {
 			if(vector.x < min.x)
             {
@@ -49,13 +97,15 @@ namespace Game
 			}
 			return true;
 		}
+
 		/// <summary>
-		/// Checks if a Vector2 is within a certain range.
+		/// Checks if a Vector2 has its values between a "min" and a "max" Vector2.
 		/// </summary>
-		/// <param name="vector"></param>
-		/// <param name="min"></param>
-		/// <param name="max"></param>
-		/// <returns></returns>
+		/// <param name="vector">The given Vector2.</param>
+		/// <param name="min">Minimum Vector2 inside the range.</param>
+		/// <param name="max">Maximum Vector2 inside the range.</param>
+		/// <returns> Returns "False" if any of the "vector" x or y values is
+		/// below its counterpart in "min", or higher than "max".</returns>
 		public static bool InsideRange(this Vector2 vector, Vector2 min, Vector2 max)
 		{
 			if (vector.x < min.x)
@@ -76,13 +126,22 @@ namespace Game
 			}
 			return true;
 		}
+		public static bool HasAnyFlag<TEnum>(this TEnum e, TEnum flag) where TEnum : IConvertible
+        {
+			if (e.GetType() != flag.GetType())
+            {
+				Debug.LogError("enum types should be the same type.");
+				return false;
+            }
+			return (e.ToInt32(null) & flag.ToInt32(null)) != 0;
+		}
 
 		/// <summary>
-		/// Checks if a layer is present in a given mask.
+		/// Checks if a given layer is present in a given LayerMask.
 		/// </summary>
+		/// <param name="layerMask">The given LayerMask.</param>
+		/// <param name="layer">The given Layer.</param>
 		/// <returns>True if layer is present.</returns>
-		/// 
-
 		public static bool ContainsLayer(this LayerMask layerMask, int layer)
 		{
 			if ((layerMask.value & (1 << layer)) > 0)
@@ -95,28 +154,11 @@ namespace Game
 			}
 		}
 
-
-		public static float Map(this float value, float oldLow, float oldHigh, float newLow = 0f, float newHigh = 1f, bool clamp = true)
-		{
-			float temp = (value - oldLow) / (oldHigh - oldLow);
-			temp = newLow + (newHigh - newLow) * temp;
-			if (clamp)
-            {
-				temp = Mathf.Clamp(temp, newLow, newHigh);
-            }
-			else
-            {
-				temp = newLow;
-            }
-			return temp;
-
-		}
-
         /// <summary>
         /// Randomly shuffles given list.
         /// </summary>
-        /// <typeparam name="T">Type</typeparam>
-        /// <param name="targetList">List to be shuffled</param>
+        /// <typeparam name="T">Data "Type".</typeparam>
+        /// <param name="targetList">List to be shuffled.</param>
         public static void ShuffleList<T>(this List<T> targetList)
 		{
 			for (int i = 0; i < targetList.Count - 1; i++)
@@ -128,15 +170,37 @@ namespace Game
 			}
 		}
 
-		#region Debug
+		/// <summary>
+		/// Creates a new color based on another with the same RGB values and a new Alpha.
+		/// </summary>
+		/// <param name="color">The color that will be changed.</param>
+		/// <param name="newAlpha">The new alpha value for the color.</param>
+		/// <returns>The same given color with a new Alpha.</returns>
+		public static Color ChangeAlpha(this Color color, float newAlpha)
+        {
+			return new Color(color.r, color.g, color.b, newAlpha);
+        }
 
-		#region LogFormatting
+		#region DEBUG
 
+		#region LOGFORMATTING
+
+		/// <summary>
+		/// Colors this "message" string Yellow using rich Text.
+		/// </summary>
+		/// <param name="message">The given string to be colored.</param>
+		/// <returns>"message" colored Yellow.</returns>
 		public static string EnrichString(string message)
 		{
 			return $"<color=yellow>{message}</color>";
 		}
-		public static string FormatLog(string message, Color color)
+		/// <summary>
+		/// Colors this "message" string with "color" using rich Text.
+		/// </summary>
+		/// <param name="message">The given string to be colored.</param>
+		/// <param name="color">The given color.</param>
+		/// <returns>"message" colored "color".</returns>
+		public static string EnrichString(string message, Color color)
 		{
 			string endcolorString = " </color>";
 			string colorString = $"<color={ColorUtility.ToHtmlStringRGB(color)}> ";
@@ -164,63 +228,66 @@ namespace Game
 			Box bottomBox = new Box(origin, halfExtents, orientation);
 			Box topBox = new Box(origin + (direction * distance), halfExtents, orientation);
 
-			Debug.DrawLine(bottomBox.backBottomLeft, topBox.backBottomLeft, color);
-			Debug.DrawLine(bottomBox.backBottomRight, topBox.backBottomRight, color);
-			Debug.DrawLine(bottomBox.backTopLeft, topBox.backTopLeft, color);
-			Debug.DrawLine(bottomBox.backTopRight, topBox.backTopRight, color);
-			Debug.DrawLine(bottomBox.frontTopLeft, topBox.frontTopLeft, color);
-			Debug.DrawLine(bottomBox.frontTopRight, topBox.frontTopRight, color);
-			Debug.DrawLine(bottomBox.frontBottomLeft, topBox.frontBottomLeft, color);
-			Debug.DrawLine(bottomBox.frontBottomRight, topBox.frontBottomRight, color);
+			Debug.DrawLine(bottomBox.BackBottomLeft, topBox.BackBottomLeft, color);
+			Debug.DrawLine(bottomBox.BackBottomRight, topBox.BackBottomRight, color);
+			Debug.DrawLine(bottomBox.BackTopLeft, topBox.BackTopLeft, color);
+			Debug.DrawLine(bottomBox.BackTopRight, topBox.BackTopRight, color);
+			Debug.DrawLine(bottomBox.FrontTopLeft, topBox.FrontTopLeft, color);
+			Debug.DrawLine(bottomBox.FrontTopRight, topBox.FrontTopRight, color);
+			Debug.DrawLine(bottomBox.FrontBottomLeft, topBox.FrontBottomLeft, color);
+			Debug.DrawLine(bottomBox.FrontBottomRight, topBox.FrontBottomRight, color);
 
 			DrawBox(bottomBox, color);
 			DrawBox(topBox, color);
 		}
 
 		/// <summary>
-		/// Draws a Box.
+		/// Draws a Box via Debug.Drawline().
 		/// </summary>
-		/// <param name="box"></param>
-		/// <param name="color"></param>
+		/// <param name="box">The struct representation of a box.</param>
+		/// <param name="color">The color of the box made of Debug.DrawLine().</param>
 		public static void DrawBox(Box box, Color color)
 		{
-			Debug.DrawLine(box.frontTopLeft, box.frontTopRight, color);
-			Debug.DrawLine(box.frontTopRight, box.frontBottomRight, color);
-			Debug.DrawLine(box.frontBottomRight, box.frontBottomLeft, color);
-			Debug.DrawLine(box.frontBottomLeft, box.frontTopLeft, color);
+			Debug.DrawLine(box.FrontTopLeft, box.FrontTopRight, color);
+			Debug.DrawLine(box.FrontTopRight, box.FrontBottomRight, color);
+			Debug.DrawLine(box.FrontBottomRight, box.FrontBottomLeft, color);
+			Debug.DrawLine(box.FrontBottomLeft, box.FrontTopLeft, color);
 
-			Debug.DrawLine(box.backTopLeft, box.backTopRight, color);
-			Debug.DrawLine(box.backTopRight, box.backBottomRight, color);
-			Debug.DrawLine(box.backBottomRight, box.backBottomLeft, color);
-			Debug.DrawLine(box.backBottomLeft, box.backTopLeft, color);
+			Debug.DrawLine(box.BackTopLeft, box.BackTopRight, color);
+			Debug.DrawLine(box.BackTopRight, box.BackBottomRight, color);
+			Debug.DrawLine(box.BackBottomRight, box.BackBottomLeft, color);
+			Debug.DrawLine(box.BackBottomLeft, box.BackTopLeft, color);
 
-			Debug.DrawLine(box.frontTopLeft, box.backTopLeft, color);
-			Debug.DrawLine(box.frontTopRight, box.backTopRight, color);
-			Debug.DrawLine(box.frontBottomRight, box.backBottomRight, color);
-			Debug.DrawLine(box.frontBottomLeft, box.backBottomLeft, color);
+			Debug.DrawLine(box.FrontTopLeft, box.BackTopLeft, color);
+			Debug.DrawLine(box.FrontTopRight, box.BackTopRight, color);
+			Debug.DrawLine(box.FrontBottomRight, box.BackBottomRight, color);
+			Debug.DrawLine(box.FrontBottomLeft, box.BackBottomLeft, color);
 		}
 
+		/// <summary>
+		/// Represents a wireframe box for easier debugging.
+		/// </summary>
 		public struct Box
 		{
-			public Vector3 localFrontTopLeft { get; private set; }
-			public Vector3 localFrontTopRight { get; private set; }
-			public Vector3 localFrontBottomLeft { get; private set; }
-			public Vector3 localFrontBottomRight { get; private set; }
-			public Vector3 localBackTopLeft { get { return -localFrontBottomRight; } }
-			public Vector3 localBackTopRight { get { return -localFrontBottomLeft; } }
-			public Vector3 localBackBottomLeft { get { return -localFrontTopRight; } }
-			public Vector3 localBackBottomRight { get { return -localFrontTopLeft; } }
+			public Vector3 LocalFrontTopLeft { get; private set; }
+			public Vector3 LocalFrontTopRight { get; private set; }
+			public Vector3 LocalFrontBottomLeft { get; private set; }
+			public Vector3 LocalFrontBottomRight { get; private set; }
+			public Vector3 LocalBackTopLeft { get { return -LocalFrontBottomRight; } }
+			public Vector3 LocalBackTopRight { get { return -LocalFrontBottomLeft; } }
+			public Vector3 LocalBackBottomLeft { get { return -LocalFrontTopRight; } }
+			public Vector3 LocalBackBottomRight { get { return -LocalFrontTopLeft; } }
 
-			public Vector3 frontTopLeft { get { return localFrontTopLeft + origin; } }
-			public Vector3 frontTopRight { get { return localFrontTopRight + origin; } }
-			public Vector3 frontBottomLeft { get { return localFrontBottomLeft + origin; } }
-			public Vector3 frontBottomRight { get { return localFrontBottomRight + origin; } }
-			public Vector3 backTopLeft { get { return localBackTopLeft + origin; } }
-			public Vector3 backTopRight { get { return localBackTopRight + origin; } }
-			public Vector3 backBottomLeft { get { return localBackBottomLeft + origin; } }
-			public Vector3 backBottomRight { get { return localBackBottomRight + origin; } }
+			public Vector3 FrontTopLeft { get { return LocalFrontTopLeft + Origin; } }
+			public Vector3 FrontTopRight { get { return LocalFrontTopRight + Origin; } }
+			public Vector3 FrontBottomLeft { get { return LocalFrontBottomLeft + Origin; } }
+			public Vector3 FrontBottomRight { get { return LocalFrontBottomRight + Origin; } }
+			public Vector3 BackTopLeft { get { return LocalBackTopLeft + Origin; } }
+			public Vector3 BackTopRight { get { return LocalBackTopRight + Origin; } }
+			public Vector3 BackBottomLeft { get { return LocalBackBottomLeft + Origin; } }
+			public Vector3 BackBottomRight { get { return LocalBackBottomRight + Origin; } }
 
-			public Vector3 origin { get; private set; }
+			public Vector3 Origin { get; private set; }
 
 			public Box(Vector3 origin, Vector3 halfExtents, Quaternion orientation) : this(origin, halfExtents)
 			{
@@ -228,21 +295,21 @@ namespace Game
 			}
 			public Box(Vector3 origin, Vector3 halfExtents)
 			{
-				this.localFrontTopLeft = new Vector3(-halfExtents.x, halfExtents.y, -halfExtents.z);
-				this.localFrontTopRight = new Vector3(halfExtents.x, halfExtents.y, -halfExtents.z);
-				this.localFrontBottomLeft = new Vector3(-halfExtents.x, -halfExtents.y, -halfExtents.z);
-				this.localFrontBottomRight = new Vector3(halfExtents.x, -halfExtents.y, -halfExtents.z);
+				this.LocalFrontTopLeft = new Vector3(-halfExtents.x, halfExtents.y, -halfExtents.z);
+				this.LocalFrontTopRight = new Vector3(halfExtents.x, halfExtents.y, -halfExtents.z);
+				this.LocalFrontBottomLeft = new Vector3(-halfExtents.x, -halfExtents.y, -halfExtents.z);
+				this.LocalFrontBottomRight = new Vector3(halfExtents.x, -halfExtents.y, -halfExtents.z);
 
-				this.origin = origin;
+				this.Origin = origin;
 			}
 
 
 			private void Rotate(Quaternion orientation)
 			{
-				localFrontTopLeft = RotatePointAroundPivot(localFrontTopLeft, Vector3.zero, orientation);
-				localFrontTopRight = RotatePointAroundPivot(localFrontTopRight, Vector3.zero, orientation);
-				localFrontBottomLeft = RotatePointAroundPivot(localFrontBottomLeft, Vector3.zero, orientation);
-				localFrontBottomRight = RotatePointAroundPivot(localFrontBottomRight, Vector3.zero, orientation);
+				LocalFrontTopLeft = RotatePointAroundPivot(LocalFrontTopLeft, Vector3.zero, orientation);
+				LocalFrontTopRight = RotatePointAroundPivot(LocalFrontTopRight, Vector3.zero, orientation);
+				LocalFrontBottomLeft = RotatePointAroundPivot(LocalFrontBottomLeft, Vector3.zero, orientation);
+				LocalFrontBottomRight = RotatePointAroundPivot(LocalFrontBottomRight, Vector3.zero, orientation);
 			}
 		}
 
@@ -253,15 +320,23 @@ namespace Game
 		}
 		#endregion
 
-		#region Arrow
-
-		public static void DrawPointArrow(Vector3 pointFrom, Vector3 pointTo, Color color1, Color color2, float arrowHeadRatio = 1f, float arrowHeadAngle = 20.0f)
+		#region Arrows
+		/// <summary>
+		/// Draws an arrow via Debug.Drawline() from "pointFrom" to "pointTo".
+		/// </summary>
+		/// <param name="pointFrom">Where the arrow originates from.</param>
+		/// <param name="pointTo">Where the arrow ends at.</param>
+		/// <param name="arrowBodyColor">Color for the body of the arrow.</param>
+		/// <param name="arrowHeadColor">Color for the head of the arrow.</param>
+		/// <param name="arrowHeadSize">The size of the head of the arrow.</param>
+		/// <param name="arrowHeadAngle">The angle that the arrowHead lines are rotated away from the body.</param>
+		public static void DrawPointArrow(Vector3 pointFrom, Vector3 pointTo, Color arrowBodyColor, Color arrowHeadColor, float arrowHeadSize = 1f, float arrowHeadAngle = 20.0f)
 		{
 			if (pointFrom == pointTo)
 			{
 				return;
 			}
-			Debug.DrawLine(pointFrom, pointTo, color1);
+			Debug.DrawLine(pointFrom, pointTo, arrowBodyColor);
 			Vector3 dir = pointTo - pointFrom;
 			Vector3 up = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 			Vector3 down = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
@@ -270,22 +345,31 @@ namespace Game
 			Vector3 left = Quaternion.LookRotation(dir, Vector3.right) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 			Vector3 right = Quaternion.LookRotation(dir, Vector3.right) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 
-			Debug.DrawLine(pointTo, pointTo + up.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + down.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + front.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + behind.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + left.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + right.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + up.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + down.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + front.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + behind.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + left.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + right.normalized * arrowHeadSize, arrowHeadColor);
 		}
 
-		public static void DrawDirArrow(Vector3 pointFrom, Vector3 directionTo, Color color, Color color2, float arrowHeadRatio = 1f, float arrowHeadAngle = 20.0f)
+		/// <summary>
+		/// Draws an arrow via Debug.Drawline() from "pointFrom" towards "directionTo".
+		/// </summary>
+		/// <param name="pointFrom">Where the arrow originates from.</param>
+		/// <param name="directionTo">The direction that the arrow will point to.</param>
+		/// <param name="arrowBodyColor">Color for the body of the arrow.</param>
+		/// <param name="arrowHeadColor">Color for the head of the arrow.</param>
+		/// <param name="arrowHeadSize">The size of the head of the arrow.</param>
+		/// <param name="arrowHeadAngle">The angle that the arrowHead lines are rotated away from the body.</param>
+		public static void DrawDirArrow(Vector3 pointFrom, Vector3 directionTo, Color arrowBodyColor, Color arrowHeadColor, float arrowHeadSize = 1f, float arrowHeadAngle = 20.0f)
 		{
 			if(Vector3.zero == directionTo)
             {
 				return;
             }
 			Vector3 pointTo = pointFrom + directionTo;
-			Debug.DrawLine(pointFrom, pointTo, color);
+			Debug.DrawLine(pointFrom, pointTo, arrowBodyColor);
 			Vector3 up = Quaternion.LookRotation(directionTo) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 			Vector3 down = Quaternion.LookRotation(directionTo) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 			Vector3 front = Quaternion.LookRotation(directionTo, Vector3.forward) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
@@ -293,12 +377,12 @@ namespace Game
 			Vector3 left = Quaternion.LookRotation(directionTo, Vector3.right) * Quaternion.Euler(0, 180 + arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 			Vector3 right = Quaternion.LookRotation(directionTo, Vector3.right) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
 
-			Debug.DrawLine(pointTo, pointTo + up.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + down.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + front.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + behind.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + left.normalized * arrowHeadRatio, color2);
-			Debug.DrawLine(pointTo, pointTo + right.normalized * arrowHeadRatio, color2);
+			Debug.DrawLine(pointTo, pointTo + up.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + down.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + front.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + behind.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + left.normalized * arrowHeadSize, arrowHeadColor);
+			Debug.DrawLine(pointTo, pointTo + right.normalized * arrowHeadSize, arrowHeadColor);
 		}
 
 		#endregion

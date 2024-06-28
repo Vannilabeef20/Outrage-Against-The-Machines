@@ -88,7 +88,7 @@ namespace Game
             }
         }
 
-        [Button("Reset tutorial prefs")]
+        [Button("RESET TUTORIAL PREFS")]
         public void ResetTutorialPrefs()
         {
             PlayerPrefs.SetInt("IsTutorialCompleted", 0);

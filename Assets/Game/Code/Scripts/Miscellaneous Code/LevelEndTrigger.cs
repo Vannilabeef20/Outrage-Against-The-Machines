@@ -5,11 +5,16 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// OnTriggerEnter Triggers a loading transition.
+    /// </summary>
     public class LevelEndTrigger : MonoBehaviour
     {
-        [SerializeField] private LayerMask playerLayerMask;
-        [SerializeField] private IntEvent LoadSceneEvent;
-        [SerializeField, Scene] private int nextScene;
+        [Tooltip("Layers that will be able to trigger the transition." +
+            "\nAKA just the player physical collider layer.")]
+        [SerializeField] LayerMask playerLayerMask;
+        [Tooltip("The name of the next scene.")]
+        [SerializeField, Scene] int nextScene;
 
         private void Start()
         {
@@ -19,7 +24,7 @@ namespace Game
         {
             if(playerLayerMask.ContainsLayer(other.gameObject.layer))
             {
-                LoadSceneEvent.Raise(this, nextScene);
+                GameManager.Instance.LoadScene(nextScene);
                 PlayerPrefs.SetInt("IsTutorialCompleted", 1);
             }
         }

@@ -6,35 +6,26 @@ using UnityEditor;
 
 namespace Game
 {
+    [System.Serializable]
     public class MoveContextSteering : BasePathfinding
     {
-        [SerializeField] private float maxAvoidanceRadius;
+        [field: Header("PATHFINDING PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
         [field: SerializeField] public LayerMask ObstacleLayerMask { get; private set; }
-        [SerializeField, Range(8,64)] private int numRays;
-        [SerializeField] private float obstacleDetectionRadius;
-        [SerializeField, ReadOnly] private Vector3[] rayDirections;
-        [SerializeField, ReadOnly] private float[] interestValues;
-        [SerializeField, ReadOnly] private float[] obstacleValues;
-        [SerializeField, ReadOnly] private Vector3 normal = new Vector3(0,1,-1);
-        private void Awake()
-        {
-            rayDirections = new Vector3[numRays];
-            interestValues = new float[numRays];
-            obstacleValues = new float[numRays];
-            for (int i = 0; i < numRays; i++)
-            {
-                float angle = 2 * Mathf.PI/ numRays * i;
-                angle *= 180 / Mathf.PI;
-                rayDirections[i] = Quaternion.Euler(0,0,angle) * Vector3.up;
-                rayDirections[i] = new Vector3(rayDirections[i].x,rayDirections[i].y, rayDirections[i].y);
-                rayDirections[i].Normalize();
-            }
-        }
+        [SerializeField, Range(8,64)] int numberOfRays = 16;
+        [SerializeField] float obstacleDetectionRadius = 2;
+        [SerializeField] float maxAvoidanceRadius = 0.75f;
+
+
+        [Header("PATHFINDING VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField, AllowNesting, ReadOnly] Vector3 normal = new Vector3(0, 1, -1);
+        Vector3[] rayDirections;
+        float[] interestValues;
+        float[] obstacleValues;
+
         public override Vector3 GetMovementDirection(Vector3 targetPosition, bool IsInsidePlayZone)
         { 
             return CalculateContextSteering(CalculateTargetDirection(targetPosition), IsInsidePlayZone);
         }
-
         public virtual Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             Vector3 targetDirection = targetPosition - body.position;
@@ -92,14 +83,34 @@ namespace Game
             return finalDirection;
         }
 
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
+        public override void Setup()
         {
+            rayDirections = new Vector3[numberOfRays];
+            interestValues = new float[numberOfRays];
+            obstacleValues = new float[numberOfRays];
+            for (int i = 0; i < numberOfRays; i++)
+            {
+                float angle = 2 * Mathf.PI / numberOfRays * i;
+                angle *= 180 / Mathf.PI;
+                rayDirections[i] = Quaternion.Euler(0, 0, angle) * Vector3.up;
+                rayDirections[i] = new Vector3(rayDirections[i].x, rayDirections[i].y, rayDirections[i].y);
+                rayDirections[i].Normalize();
+            }
+        }
+
+        public override void OnGizmo()
+        {
+#if UNITY_EDITOR
+            if(body == null)
+            {
+                return;
+            }
             Handles.color = Color.red;
             Handles.DrawWireArc(body.position - (normal * maxAvoidanceRadius / 2), normal, Vector3.up, 360, maxAvoidanceRadius);
             Handles.color = Color.yellow;
             Handles.DrawWireArc(body.position - (normal * obstacleDetectionRadius / 2), normal, Vector3.up, 360, obstacleDetectionRadius);
-        }
 #endif
+        }
+
     }
 }

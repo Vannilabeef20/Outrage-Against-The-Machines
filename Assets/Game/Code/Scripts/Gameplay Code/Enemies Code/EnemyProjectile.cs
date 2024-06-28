@@ -1,26 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// Creates a projectile behaviour on the applied object.
+    /// </summary>
     [SelectionBase]
+    [DisallowMultipleComponent]
     public class EnemyProjectile : MonoBehaviour
     {
-        [SerializeField, ShowAssetPreview] private GameObject ShadowObject;
-        [SerializeField] private Rigidbody body;
-        [SerializeField] private LayerMask playerLayers;
-        [SerializeField] private LayerMask playerAttackLayers;
-        [SerializeField] private float destroyDelay;
-        [SerializeField] private bool reversible;
-        [SerializeField, ReadOnly, ShowIf("reversible")] private bool wasReverted;
-        [SerializeField, ShowIf("reversible")] private LayerMask enemyLayers;
-        [SerializeField] private Vector3 initialPos;
-        [Min(0)] public float damage;
-        [Min(0)] public float knockBackstrength;
-        [Min(0)] public float stunDuration;
-        [Min(0)] public float velocity;
+        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [Tooltip("The Rigidbody of the projectile.")]
+        [SerializeField] Rigidbody body;
+
+        [Tooltip("The gameobject that will follow the projectile as a shadow.")]
+        [SerializeField, ShowAssetPreview] GameObject ShadowObject;
+
+        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+        [Tooltip("Layers for applying damage to a player.")]
+        [SerializeField] LayerMask damagebleLayers;
+
+        [Tooltip("How long the projectile will take to destroy itself after spawning.")]
+        [SerializeField] float destroyDelay;
+
+        [Tooltip("How much damage this projectile will do.")]
+        [SerializeField, Min(0)] float damage;
+
+        [Tooltip("How strong the hit knockback will be.")]
+        [SerializeField, Min(0)] float knockBackstrength;
+
+        [Tooltip("How long(seconds) the hit stun will be.")]
+        [SerializeField, Min(0)] float stunDuration;
+
+        [Tooltip("How fast the projectile will move.")]
+        [SerializeField, Min(0)] float velocity;
+
+        [Tooltip("Whether the projectile can be reflected.")]
+        [SerializeField] bool reflectable;
+
+        [Tooltip("Layers for reversing the projectile trajectory.")]
+        [SerializeField, ShowIf("reflectable")] LayerMask reflectionLayers;
+
+        [Tooltip("Extra layers added for damage after reflection.")]
+        [SerializeField, ShowIf("reflectable")] LayerMask reflectionDamagebleLayers;
+
+        [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
+        [Tooltip("Spawn position.")]
+        [SerializeField, ReadOnly] Vector3 initialPos;
+
+        [Tooltip("Whether the projectile has been reflected already.")]
+        [SerializeField, ReadOnly, ShowIf("reflectable")] bool wasReflected;
+
         private void Awake()
         {
             initialPos = transform.position;
@@ -31,9 +62,9 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (reversible)
+            if (reflectable)
             {
-                if (playerAttackLayers.ContainsLayer(other.gameObject.layer))
+                if (reflectionLayers.ContainsLayer(other.gameObject.layer))
                 {
                     if(initialPos.x - transform.position.x > 0)
                     {
@@ -45,12 +76,12 @@ namespace Game
                         transform.right = Vector3.left;
                         body.velocity = velocity * Vector3.left;
                     }
-                    wasReverted = true;
+                    wasReflected = true;
                 }
             }
-            if(wasReverted)
+            if(wasReflected)
             {
-                if (enemyLayers.ContainsLayer(other.gameObject.layer))
+                if (reflectionDamagebleLayers.ContainsLayer(other.gameObject.layer))
                 {
                     if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
                     {
@@ -60,7 +91,7 @@ namespace Game
             }
             else
             {
-                if (playerLayers.ContainsLayer(other.gameObject.layer))
+                if (damagebleLayers.ContainsLayer(other.gameObject.layer))
                 {
                     if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
                     {

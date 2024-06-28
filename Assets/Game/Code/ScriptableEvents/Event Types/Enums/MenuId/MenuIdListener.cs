@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace Game
 {
-    public class MenuIdListener : BaseGameEventListener<MenuId,MenuIdEvent,UnityMenuIdEvent> { }
+    /// <summary>
+    /// Listens for Event "MenuIdEvent" of Type "MenuId" and invokes Unity Event Response "UnityMenuIdEvent".
+    /// </summary>
+    public class MenuIdListener : BaseGameEventListener<MenuId, MenuIdEvent, UnityMenuIdEvent> { }
 }
-    
-

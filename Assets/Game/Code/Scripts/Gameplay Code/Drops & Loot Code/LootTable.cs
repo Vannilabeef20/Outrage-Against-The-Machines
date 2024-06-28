@@ -6,12 +6,13 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    [DisallowMultipleComponent]
     [Serializable]
     public class LootTable 
     {
-        [SerializeField] private ItemLoot[] itemDrops;
+        [SerializeField] ItemLoot[] itemDrops;
 
-        [SerializeField ,ReadOnly, AllowNesting] private float totalWeight;
+        [SerializeField ,ReadOnly, AllowNesting] float totalWeight;
 
         public void ValidateTable()
         {

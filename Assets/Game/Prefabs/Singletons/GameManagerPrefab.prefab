@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 471917213323893137}
   - component: {fileID: 471917213323893136}
   m_Layer: 5
-  m_Name: TransitionCanvas
+  m_Name: Transition Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,10 +111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471917214709005346}
-  - component: {fileID: 4748587671952949679}
-  - component: {fileID: 8865673821992810355}
-  - component: {fileID: 7188369258136034306}
   - component: {fileID: 7018751217004657233}
+  - component: {fileID: 4748587671952949679}
+  - component: {fileID: 7188369258136034306}
   m_Layer: 0
   m_Name: GameManagerPrefab
   m_TagString: Untagged
@@ -136,98 +135,8 @@ Transform:
   m_Children:
   - {fileID: 471917213323893143}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4748587671952949679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471917214709005344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2484d2fbc48cd429010778bd42267f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MainCamera>k__BackingField: {fileID: 0}
-  transitionImage: {fileID: 471917215048368266}
-  transition: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
-  OnSetMenuVisibility: {fileID: 11400000, guid: 1f4faa85e6affaf4b8776147ea1e6f13, type: 2}
-  UnityInputManager: {fileID: 7018751217004657233}
-  <DefaultPrefab>k__BackingField: {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
-  <PlayerCharacterList>k__BackingField: []
-  spawnCoordinates:
-  - {x: -122.39, y: 1, z: 1}
-  - {x: -122.39, y: 2, z: 2}
-  - {x: -122.39, y: 3, z: 3}
-  followGroupPrefab: {fileID: 8956597100830334376, guid: 258c40db9e49b4b4080e801aa4450356, type: 3}
-  reviveSound: {fileID: 8300000, guid: e4f70c83c238a474fa04ed2f8d4850fc, type: 3}
-  UpdateLifeCount: {fileID: 11400000, guid: d4584a82d403ab2469f6d59d6047907a, type: 2}
-  <CurrentLifeAmount>k__BackingField: 0
-  initialLifeAmout: 3
-  maxLifeAmount: 9
-  playZoneHeight: {x: 0.34350562, y: 5.109646}
-  playZoneWidth: 10.26
-  playZoneColor: {r: 0.06140983, g: 1, b: 0, a: 1}
-  point1Pos: {x: 0, y: 0, z: 0}
-  point2Pos: {x: 0, y: 0, z: 0}
---- !u!114 &8865673821992810355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471917214709005344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059d3524124b58c4fb415039e715ce7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: aee956e9917fe5e4a9d400db78ef7c60, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4748587671952949679}
-        m_TargetAssemblyTypeName: Game.Singletons.GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &7188369258136034306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471917214709005344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0cb1d98d60b39343b6701e4d226d5d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4748587671952949679}
-        m_TargetAssemblyTypeName: Game.GameManager, Assembly-CSharp
-        m_MethodName: UpdatePlayerDeathStatus
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7018751217004657233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +181,63 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &4748587671952949679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471917214709005344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2484d2fbc48cd429010778bd42267f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MainCamera>k__BackingField: {fileID: 0}
+  transitionImage: {fileID: 471917215048368266}
+  transition: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
+  OnSetMenuVisibility: {fileID: 11400000, guid: 1f4faa85e6affaf4b8776147ea1e6f13, type: 2}
+  UnityInputManager: {fileID: 7018751217004657233}
+  <DefaultPrefab>k__BackingField: {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
+  <PlayerCharacterList>k__BackingField: []
+  spawnCoordinates:
+  - {x: -122.39, y: 1, z: 1}
+  - {x: -122.39, y: 2, z: 2}
+  - {x: -122.39, y: 3, z: 3}
+  followGroupPrefab: {fileID: 8956597100830334376, guid: 258c40db9e49b4b4080e801aa4450356, type: 3}
+  reviveSound: {fileID: 8300000, guid: e4f70c83c238a474fa04ed2f8d4850fc, type: 3}
+  UpdateLifeCount: {fileID: 11400000, guid: d4584a82d403ab2469f6d59d6047907a, type: 2}
+  <CurrentLifeAmount>k__BackingField: 0
+  initialLifeAmout: 3
+  maxLifeAmount: 9
+--- !u!114 &7188369258136034306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471917214709005344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb1d98d60b39343b6701e4d226d5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4748587671952949679}
+        m_TargetAssemblyTypeName: Game.GameManager, Assembly-CSharp
+        m_MethodName: UpdatePlayerDeathStatus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &471917215048368265
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +250,7 @@ GameObject:
   - component: {fileID: 471917215048368267}
   - component: {fileID: 471917215048368266}
   m_Layer: 5
-  m_Name: TransitionImage
+  m_Name: Transition Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

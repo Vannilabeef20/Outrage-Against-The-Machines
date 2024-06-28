@@ -8,13 +8,12 @@ namespace Game
     [SelectionBase]
     public class SpikeTrap : MonoBehaviour
     {
-        [SerializeField] private Animator[] animators;
-        [SerializeField] private AnimationClip spikeAnimation;
-        [SerializeField] private float animationDuration;
-        [SerializeField, ReadOnly] private float timer;
-        [SerializeField] private AnimationFrameEvent[] frameEvents;
-        private readonly Vector2 minRange = new Vector2(-0.1f, -0.1f);
-        private readonly Vector2 maxRange = new Vector2(1.1f, 1.1f);
+        [SerializeField] Animator[] animators;
+        [SerializeField] AnimationClip spikeAnimation;
+        [SerializeField] float animationDuration;
+        [SerializeField, ReadOnly] float timer;
+        [SerializeField] AnimationFrameEvent[] frameEvents;
+        [SerializeField] float activationRange;
 
         private void Awake()
         {
@@ -25,7 +24,8 @@ namespace Game
         }
         private void Update()
         {
-            if (!GameManager.Instance.WorldToViewport2D(transform.position).InsideRange(minRange, maxRange))
+            //Return and pause animation if not within the activation range
+            if (Mathf.Abs(GameManager.Instance.MainCamera.transform.position.x - transform.position.x) > activationRange)
             {
                 foreach (var animator in animators)
                 {
@@ -59,5 +59,38 @@ namespace Game
             }
         }
 
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            #region DRAW ACTIVATION RANGE ZONE
+            Vector3 point1Pos = Vector3.zero;
+            Vector3 point2Pos = Vector3.zero;
+
+            point1Pos.x = transform.position.x - activationRange;
+            point2Pos.x = transform.position.x - activationRange;
+            point1Pos.y = transform.position.y + 7;
+            point2Pos.y = transform.position.y - 7;
+            point1Pos.z = transform.position.z;
+            point2Pos.z = transform.position.z;
+            Debug.DrawLine(point1Pos, point2Pos, Color.yellow); //Activation range Left Line
+
+
+            point1Pos.x = transform.position.x + activationRange;
+            point2Pos.x = transform.position.x + activationRange;
+            point1Pos.y = transform.position.y + 7;
+            point2Pos.y = transform.position.y - 7;
+            point1Pos.z = transform.position.z;
+            point2Pos.z = transform.position.z;
+            Debug.DrawLine(point1Pos, point2Pos, Color.yellow); //Activation range RightLine
+
+            point1Pos = transform.position;
+            point2Pos = transform.position;
+            point1Pos.x = transform.position.x + activationRange;
+            point2Pos.x = transform.position.x - activationRange;
+            Debug.DrawLine(point1Pos, point2Pos, Color.green); //Activation range MiddleLine
+            #endregion
+        }
+#endif
     }
 }
+

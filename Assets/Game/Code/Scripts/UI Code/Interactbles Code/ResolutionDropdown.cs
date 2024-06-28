@@ -6,12 +6,15 @@ using TMPro;
 
 namespace Game
 {
+    /// <summary>
+    /// Creates a dropdown 
+    /// </summary>
     public class ResolutionDropdown : MenuButton
     {
-        [SerializeField, ReadOnly] private TMP_Dropdown dropdown;
-        [SerializeField, ReadOnly] private Resolution[] unityResolutions;
-        [SerializeField, ReadOnly] private int currentResolutionIndex;
-        [SerializeField, ReadOnly] private const string playerPrefsFullScreen = "FullscreenValue";
+        [SerializeField, ReadOnly] TMP_Dropdown dropdown;
+        [SerializeField, ReadOnly] Resolution[] unityResolutions;
+        [SerializeField, ReadOnly] int currentResolutionIndex;
+        [SerializeField, ReadOnly] const string playerPrefsFullScreen = "FullscreenValue";
 
         private void Awake()
         {

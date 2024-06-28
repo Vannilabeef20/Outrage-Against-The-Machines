@@ -3,12 +3,20 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// Can be added to a ItemDrop to apply a heal effect on pickup.
+    /// </summary>
+    [System.Serializable]
     public class HealDropEffect : BaseItemDropEffect
     {
-        [SerializeField] private bool percent;
-        [SerializeField] private bool flat;
-        [SerializeField, Range(0f, 100f), ShowIf("percent")] private float healPercent;
-        [SerializeField, Min(0), ShowIf("flat")] private float healFlat;
+        [Tooltip("Whether the heal effect will have a percentage component.")]
+        [SerializeField] bool percent;
+        [Tooltip("Whether the heal effect will have a flat(absoulte value) component.")]
+        [SerializeField] bool flat;
+        [Tooltip("How much percent healing will be applied.")]
+        [SerializeField, AllowNesting, Range(0f, 100f), ShowIf("percent")] float healPercent;
+        [Tooltip("How many flat healing points will be applied.")]
+        [SerializeField, AllowNesting, Min(0), ShowIf("flat")] float healFlat;
         public override void ApplyEffect(GameObject targetPlayer)
         {
             PlayerHealthHandler health = targetPlayer.GetComponentInChildren<PlayerHealthHandler>();
@@ -16,7 +24,7 @@ namespace Game
             {
                 return;
             }
-            switch (percent, flat)
+            switch (percent, flat) //Ensures that percent and flat effects will only be applied when true
             {
                 case (true, true):
                     health.Heal(healPercent, healFlat);

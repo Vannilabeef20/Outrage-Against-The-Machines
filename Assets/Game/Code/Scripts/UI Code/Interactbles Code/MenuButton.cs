@@ -49,18 +49,4 @@ namespace Game
             AnimateInteractible(clickScalePercentage, clickActivateDelay, ScaleUp: false);
         }
     }
-
-
-}
-
-[System.Flags]
-public enum MenuId
-{
-    None = 0,
-    StartMenu = 2,
-    StartMenuOptions = 4,
-    PauseMenu = 8,
-    PauseOptionsMenu = 16,
-    CharacterSelectionMenu = 32
-
 }

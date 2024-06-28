@@ -16,7 +16,7 @@ namespace Game
 
         public void SetVisibility(MenuId eventMenuIds)
         {
-            if (eventMenuIds.HasFlag(menuId))
+            if (eventMenuIds.HasAnyFlag(menuId))
             {
                 gameObject.SetActive(true);
                 eventSystem.SetSelectedGameObject(defaultSelectableObject);

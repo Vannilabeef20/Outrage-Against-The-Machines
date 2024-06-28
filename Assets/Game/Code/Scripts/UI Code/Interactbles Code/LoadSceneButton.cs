@@ -4,16 +4,18 @@ using UnityEngine.SceneManagement;
 
 namespace Game
 {
+    /// <summary>
+    /// Creates a button that OnClick, tell Gamemanager to load a new scene.
+    /// </summary>
     public class LoadSceneButton : MenuButton 
     {
-        [Scene,SerializeField] private int targetScene;
-        [SerializeField] private IntEvent loadSceneEvent;
+        [Scene,SerializeField] int targetScene;
 
         public void LoadScene()
         {
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
-            loadSceneEvent.Raise(this, targetScene);
+            GameManager.Instance.LoadScene(targetScene);
         }
     }
 }
