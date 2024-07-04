@@ -84,7 +84,7 @@ namespace Game
                 }
                 enemiesToSpawn.ShuffleList();
                 StartCoroutine(EncounterRoutine());
-                currentEncounterIndex++;
+                currentEncounterIndex = Mathf.Clamp(currentEncounterIndex + 1, 0, encSO.Encounters.Length);
             }
         }
 

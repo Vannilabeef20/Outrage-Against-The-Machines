@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5756627512438387515}
   - component: {fileID: 7122389631957895726}
   m_Layer: 0
-  m_Name: Set de espinhos
+  m_Name: Spike Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,10 +30,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 267136478527206573}
-  - {fileID: 267136478541998533}
-  - {fileID: 267136478592462366}
   - {fileID: 267136478536311539}
+  - {fileID: 267136478592462366}
+  - {fileID: 267136478541998533}
+  - {fileID: 267136478527206573}
   - {fileID: 3756636807473261671}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,11 +59,7 @@ MonoBehaviour:
   animationDuration: 3
   timer: 0
   frameEvents:
-  - <Anim>k__BackingField: {fileID: 0}
-    <Ratio>k__BackingField: 0
-    <TriggerTime>k__BackingField: 0
-    <HasBeenTriggered>k__BackingField: 0
-    <TriggerFrame>k__BackingField: 162
+  - <TriggerFrame>k__BackingField: 162
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
@@ -79,6 +75,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  activationRange: 0
 --- !u!82 &7122389631957895726
 AudioSource:
   m_ObjectHideFlags: 0
@@ -189,7 +186,7 @@ GameObject:
   - component: {fileID: 267136478527206575}
   - component: {fileID: 267136478527206574}
   m_Layer: 0
-  m_Name: Espi_2
+  m_Name: Spike_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +248,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -303883193, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
+  m_Sprite: {fileID: 433219504, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -339,7 +336,7 @@ GameObject:
   - component: {fileID: 267136478536311541}
   - component: {fileID: 267136478536311540}
   m_Layer: 0
-  m_Name: Espi_5
+  m_Name: Spike_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +398,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -303883193, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
+  m_Sprite: {fileID: 433219504, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -489,7 +486,7 @@ GameObject:
   - component: {fileID: 267136478541998535}
   - component: {fileID: 267136478541998534}
   m_Layer: 0
-  m_Name: Espi_3
+  m_Name: Spike_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +548,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -303883193, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
+  m_Sprite: {fileID: 433219504, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -639,7 +636,7 @@ GameObject:
   - component: {fileID: 267136478592462368}
   - component: {fileID: 267136478592462367}
   m_Layer: 0
-  m_Name: Espi_4
+  m_Name: Spike_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +698,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -303883193, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
+  m_Sprite: {fileID: 433219504, guid: aab49311fa7eb3a439c9c5fbd217b90f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -786,7 +783,7 @@ GameObject:
   - component: {fileID: 3756636807473261671}
   - component: {fileID: 7894032972681209402}
   m_Layer: 0
-  m_Name: Base espi
+  m_Name: Spike_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +797,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209989558670933645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -101,19 +101,18 @@ namespace Game
             CurrentState.FixedDo();
             transform.parent.position = transform.parent.position.ToXZZ();
         }
+        /// <summary>
+        /// Calculates the combined force of all context speed triggers in contact with the player.
+        /// </summary>
         void GetContextSpeed()
         {
             Vector3 tempContextSpeed = Vector3.zero;
             Collider[] cntxSpdColliders = Physics.OverlapBox(transform.position, footCollider.size/2);
             foreach(Collider collider in cntxSpdColliders)
             {
-                if (conveyorLayer.ContainsLayer(collider.gameObject.layer))
-                {
-                    if (collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt))
-                    {
-                        tempContextSpeed += belt.ContextSpeed;
-                    }
-                }
+                if (!conveyorLayer.ContainsLayer(collider.gameObject.layer)) continue;
+                if (!collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt)) continue;                   
+                tempContextSpeed += belt.ContextSpeed;          
             }
             ContextVelocity = tempContextSpeed;
         }

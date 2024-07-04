@@ -865,7 +865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 1164585175999031600}
   stateMachine: {fileID: 1164585177420930287}
-  layerMask:
+  collisionMask:
     serializedVersion: 2
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 1164585177591447843}
   stateMachine: {fileID: 1164585177420930287}
-  layerMask:
+  collisionMask:
     serializedVersion: 2
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}

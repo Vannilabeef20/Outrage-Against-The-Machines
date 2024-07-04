@@ -27,10 +27,9 @@ namespace Game
         float AtkKnockbackStrenght => stateMachine.Attacking.CurrentAttackState.PlayerAttack.KnockbackStrenght;
         bool AtkIsSpecial => stateMachine.Attacking.CurrentAttackState.PlayerAttack.IsSpecial;
         #endregion
-        private void OnTriggerEnter(Collider other)
+        void OnTriggerEnter(Collider other)
         {
             if (!collisionMask.ContainsLayer(other.gameObject.layer)) return;
-
             //if (prevHitColliders.Contains(other)) return;
 
             if (stateMachine.Attacking.CurrentAttackState == null) return;
@@ -40,7 +39,7 @@ namespace Game
             DealDamage(other);
         }
 
-        private void PlayHitFeedback(Vector3 hitObjectPos)
+        void PlayHitFeedback(Vector3 hitObjectPos)
         {
             //Hit Particle
             Instantiate(hitEffect, attackCollider.ClosestPoint(hitObjectPos), Quaternion.identity);
@@ -53,12 +52,11 @@ namespace Game
             }
         }
 
-        private void DealDamage(Collider hitObjectCollider)
+        void DealDamage(Collider hitObjectCollider)
         {
             if (hitObjectCollider.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
                 //prevHitColliders.Add(hitObjectCollider);
-
                 if (!AtkIsSpecial) stateMachine.Attacking.AddSpecialCharges(AtkDamage);
 
                 damageble.TakeDamage(transform.position, AtkDamage, AtkStunDuration, AtkKnockbackStrenght);
