@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1532007892134315233}
   - component: {fileID: 7596611648689693519}
   m_Layer: 0
-  m_Name: StartMenu Main Visibility
+  m_Name: StartMenu Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,7 +809,7 @@ RectTransform:
   m_Children:
   - {fileID: 5307918888006796544}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -13,11 +13,8 @@ MonoBehaviour:
   m_Name: Vaca RunningAttack
   m_EditorClassIdentifier: 
   <Animation>k__BackingField: {fileID: 7400000, guid: 5a933a82b996f93468c6d2a975e5e086, type: 2}
-  <Sound>k__BackingField: {fileID: 8300000, guid: 25b790e30babd8547b5ef310c190d17e, type: 3}
   <Damage>k__BackingField: 8
   <Duration>k__BackingField: 1.25
-  <IsSpecial>k__BackingField: 1
-  <SpecialCost>k__BackingField: 100
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -63,6 +60,9 @@ MonoBehaviour:
   <MaxVelocity>k__BackingField: 15
   <StunDuration>k__BackingField: 0.4
   <KnockbackStrenght>k__BackingField: 7
+  <IsSpecial>k__BackingField: 1
+  <SpecialCost>k__BackingField: 100
+  <Sound>k__BackingField: {fileID: 8300000, guid: 25b790e30babd8547b5ef310c190d17e, type: 3}
   <AudioPitches>k__BackingField:
   - 1.2
   <RumbleLowFrequency>k__BackingField: 1

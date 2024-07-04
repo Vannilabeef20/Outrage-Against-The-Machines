@@ -7,7 +7,7 @@ namespace Game
 {
     public class EnemyDamageState : EnemyState
     {
-        public override string Name { get => "Damage"; }
+        public override string Name { get => "AtkDamage"; }
         [field: Header("DAMAGE STATE"), HorizontalLine(2f, EColor.Yellow)]
         [field: SerializeField] public EnemyHealthHandler HealthHandler { get; private set; }
         [SerializeField] private AudioClip damageTakenSound;

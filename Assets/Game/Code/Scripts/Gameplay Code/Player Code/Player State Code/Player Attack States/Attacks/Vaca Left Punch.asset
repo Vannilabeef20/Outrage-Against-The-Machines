@@ -13,11 +13,8 @@ MonoBehaviour:
   m_Name: Vaca Left Punch
   m_EditorClassIdentifier: 
   <Animation>k__BackingField: {fileID: 7400000, guid: e1b6d9d8bfc3cd149bb6f8be3f28e495, type: 2}
-  <Sound>k__BackingField: {fileID: 8300000, guid: 5eebc5f835642f441bfa94b79a779290, type: 3}
   <Damage>k__BackingField: 20
   <Duration>k__BackingField: 0.6
-  <IsSpecial>k__BackingField: 0
-  <SpecialCost>k__BackingField: 0
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -72,6 +69,9 @@ MonoBehaviour:
   <MaxVelocity>k__BackingField: 10
   <StunDuration>k__BackingField: 0.5
   <KnockbackStrenght>k__BackingField: 5
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
+  <Sound>k__BackingField: {fileID: 8300000, guid: 5eebc5f835642f441bfa94b79a779290, type: 3}
   <AudioPitches>k__BackingField:
   - 1
   <RumbleLowFrequency>k__BackingField: 0.75

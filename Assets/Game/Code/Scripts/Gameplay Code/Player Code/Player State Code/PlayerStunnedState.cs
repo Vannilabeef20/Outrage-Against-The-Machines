@@ -5,10 +5,14 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// Defines the stun triggers when a player takes a hit.
+    /// <para>WARNING!!<br/>
+    /// Detecting the hit, applying both stun and invulnerability effects and<br/>
+    /// requesting feedbacks wont be handled here, but in the health handler.</para>
+    /// </summary>
     public class PlayerStunnedState : PlayerState
     {
-        //Detecting the hit, applying both stun and invulnerability effects
-        //and requesting feedbacks wont be handled here, but in the health handler
         public override string Name { get => "Stunned"; }
 
         [Header("STATE LOCAL"), HorizontalLine(2f, EColor.Yellow)]
@@ -48,7 +52,6 @@ namespace Game
         public override void FixedDo()
         {
             stateMachine.body.velocity = (Vector3)(knockBackCurve.Evaluate(progress) * knockBackIntensity) + stateMachine.ContextVelocity;
-            stateMachine.body.position = LevelManager.Instance.ClampInsidePlayZone(stateMachine.body.position);
         }
 
         public override void Enter()

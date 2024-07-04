@@ -98,6 +98,7 @@ namespace Game
 			return true;
 		}
 
+
 		/// <summary>
 		/// Checks if a Vector2 has its values between a "min" and a "max" Vector2.
 		/// </summary>
@@ -126,6 +127,7 @@ namespace Game
 			}
 			return true;
 		}
+
 		public static bool HasAnyFlag<TEnum>(this TEnum e, TEnum flag) where TEnum : IConvertible
         {
 			if (e.GetType() != flag.GetType())
@@ -154,6 +156,7 @@ namespace Game
 			}
 		}
 
+
         /// <summary>
         /// Randomly shuffles given list.
         /// </summary>
@@ -170,6 +173,7 @@ namespace Game
 			}
 		}
 
+
 		/// <summary>
 		/// Creates a new color based on another with the same RGB values and a new Alpha.
 		/// </summary>
@@ -180,6 +184,7 @@ namespace Game
         {
 			return new Color(color.r, color.g, color.b, newAlpha);
         }
+
 
 		#region DEBUG
 
@@ -194,6 +199,7 @@ namespace Game
 		{
 			return $"<color=yellow>{message}</color>";
 		}
+
 		/// <summary>
 		/// Colors this "message" string with "color" using rich Text.
 		/// </summary>

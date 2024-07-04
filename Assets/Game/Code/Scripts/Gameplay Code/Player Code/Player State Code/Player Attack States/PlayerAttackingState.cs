@@ -7,14 +7,24 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// Player State/StateMachine, Handles Player Attacks.
+    /// </summary>
     public class PlayerAttackingState : PlayerState
     {
+        /// <summary>
+        /// #override# The name of the current attack state.
+        /// </summary>
         public override string Name { get { return CurrentAttackState != null ?
                     CurrentAttackState.PlayerAttack.name : null; } }
         public Dictionary<PlayerAttackSO, PlayerAttackState> PlayerAttackStatesDictionary { get; private set; }
             = new Dictionary<PlayerAttackSO, PlayerAttackState>();
 
-        [SerializeField] private PlayerAttackState[] playerAttacks;
+        [SerializeField] private GameObject attackStatesParent;
+
+        /// <summary>
+        /// Array for all available combos.
+        /// </summary>
         [field:SerializeField, Expandable] public PlayerComboSO[] PlayerCombos { get; private set; }
 
         [SerializeField] private BoxCollider[] hitboxes;
@@ -28,7 +38,7 @@ namespace Game
         [ReadOnly] public List<PlayerAttackSO> attackList;
         [field: SerializeField] public float MaxSpecialChargeAmount { get; private set; }
 
-        [ProgressBar("Special Charge Amount","MaxSpecialChargeAmount", EColor.Blue)] public float specialChargeAmount;
+        [ProgressBar("Special Charge amount","MaxSpecialChargeAmount", EColor.Blue)] public float specialChargeAmount;
 
         [SerializeField] private Color specialImageColor;
         [SerializeField] private Color specialImageFilledColor;
@@ -39,7 +49,8 @@ namespace Game
 
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake
         {
-            base.Setup(playerStateMachine);           
+            base.Setup(playerStateMachine);
+            PlayerAttackState[] playerAttacks = attackStatesParent.GetComponentsInChildren<PlayerAttackState>();
             foreach(var attack in playerAttacks)
             {
                 attack.Setup(playerStateMachine);

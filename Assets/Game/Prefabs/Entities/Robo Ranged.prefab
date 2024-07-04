@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1604430520209244804}
   - component: {fileID: 153532766851685265}
   - component: {fileID: 1261041874321265908}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,7 +4928,7 @@ GameObject:
   - component: {fileID: 8883528859182901352}
   - component: {fileID: 733431233960413440}
   - component: {fileID: 8756836406728866656}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyStateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5063,7 +5063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3276738502215876370}
   - component: {fileID: 5666314022147243997}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5157,7 +5157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8564418458721151003}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ParticleEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5190,7 +5190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6508126985612539013}
   - component: {fileID: 6508126985612539012}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Intercept
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5249,7 +5249,7 @@ MonoBehaviour:
         body: {fileID: 6508126985700856567}
         targetPosition: {x: 0, y: 0, z: 0}
         stateMachine: {fileID: 6508126985700856569}
-        numRays: 16
+        numberOfRays: 16
         distanceToKeep: 11
         distanceRange: 4
         <ObstacleLayerMask>k__BackingField:
@@ -5315,7 +5315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970765ad22247e64c8199c9f88d6f522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
   spawner: {fileID: 0}
   spriteRenderer: {fileID: 6508126985700856562}
   body: {fileID: 6508126985700856567}
@@ -5344,7 +5343,6 @@ MonoBehaviour:
   boxCastDimensions: {x: 0.1, y: 0.55, z: 0.15}
   boxCastLenght: 11
   <IsInsidePlayZone>k__BackingField: 0
-  <HasBeenInsidePlayZone>k__BackingField: 0
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -5575,7 +5573,7 @@ GameObject:
   - component: {fileID: 6508126986235999514}
   - component: {fileID: 6508126986235999517}
   - component: {fileID: 6508126986235999516}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5751,7 +5749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6508126986923127504}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: States_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5788,7 +5786,7 @@ GameObject:
   - component: {fileID: 6508126987123622499}
   - component: {fileID: 6508126987123622498}
   - component: {fileID: 6508126987123622501}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5859,7 +5857,7 @@ GameObject:
   - component: {fileID: 6508126987276863436}
   - component: {fileID: 6508126987276863439}
   - component: {fileID: 6508126987276863438}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6040,7 +6038,7 @@ GameObject:
   - component: {fileID: 316341803165815299}
   - component: {fileID: 3192089042170291630}
   - component: {fileID: 6051397500415324033}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6141,7 +6139,7 @@ GameObject:
   - component: {fileID: 66843696545343778}
   - component: {fileID: 756499718895060544}
   - component: {fileID: 1343746180273577799}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

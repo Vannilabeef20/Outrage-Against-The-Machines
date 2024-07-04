@@ -9,8 +9,6 @@ namespace Game
     [SelectionBase]
     public class EnemyStateMachine : MonoBehaviour
     {
-        [SerializeField, TextArea] private string Comment;
-
         public Spawner spawner;
         public SpriteRenderer spriteRenderer;
         public Rigidbody body;
@@ -47,7 +45,7 @@ namespace Game
         [SerializeField] private float boxCastLenght;
 
         [field: SerializeField, ReadOnly] public bool IsInsidePlayZone { get; private set; }
-        [field: SerializeField, ReadOnly] public bool HasBeenInsidePlayZone { get; private set; }
+
         #endregion
 
         #region Debug
@@ -109,7 +107,6 @@ namespace Game
         private void Update()
         {
             IsInsidePlayZone = LevelManager.Instance.IsInsidePlayZone(body.position);
-            collisionBox.isTrigger = !IsInsidePlayZone;
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);
@@ -145,18 +142,7 @@ namespace Game
         {
             GetContextSpeed();
             currentState.FixedDo();
-            if(IsInsidePlayZone)
-            {
-                HasBeenInsidePlayZone = true;
-            }
-            if(HasBeenInsidePlayZone)
-            {
-                body.position = LevelManager.Instance.ClampInsidePlayZone(body.position).ToXYY();
-            }
-            else
-            {
-                body.position = body.position.ToXYY();
-            }
+            body.position = body.position.ToXYY();
         }
 
 

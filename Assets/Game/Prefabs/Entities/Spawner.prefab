@@ -54,16 +54,10 @@ MonoBehaviour:
   spawnHeight: {x: -5.0045877, y: -1.9663203}
   spawnDelay: {x: 1, y: 3.5}
   spawnRegionColor: {r: 0, g: 1, b: 0.8542311, a: 1}
-  encounters:
-  - {fileID: 11400000, guid: 27473e79a8c255b44b066969536d5aeb, type: 2}
-  - {fileID: 11400000, guid: 8b6b5061b7934074ebcdb8bfff7519f0, type: 2}
-  - {fileID: 11400000, guid: 4eb5d6ca43dd8494ca6f54013d430275, type: 2}
-  - {fileID: 11400000, guid: cbfd3bd912bbd6e45b9c032ef0f0d18f, type: 2}
-  - {fileID: 11400000, guid: 96befecb0d9884f4ca66928ebc764cd2, type: 2}
-  - {fileID: 11400000, guid: d7f880afb5a263e4bac5a8a7ca623ae8, type: 2}
-  - {fileID: 11400000, guid: b96b7279d2aaf9f4f8f4b1904e101d6d, type: 2}
+  encSO: {fileID: 11400000, guid: 718594e921a97de42b3d4317fa28588a, type: 2}
   defaultDeadzoneWidtht: 0
   maxDeadzoneWidtht: 2
+  currentEncounterIndex: 0
   enemiesToSpawn: []
   enemiesAlive: []
   encounterPositionGizmosRadius: 0.5
@@ -125,7 +119,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 12800000, guid: b2acfb73667aff5489321b3c26f9132f, type: 3}
-    m_FontSize: 0
+    m_FontSize: 26
     m_FontStyle: 0
     m_Alignment: 4
     m_WordWrap: 0

@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5e23e977a777f94099d30357906b083, type: 3}
-  m_Name: EnemyEncounter 0
+  m_Script: {fileID: 11500000, guid: a499bb20afe78cc4dbf75c44aaa9aea6, type: 3}
+  m_Name: Tutorial Level Encounters
   m_EditorClassIdentifier: 
-  enemies:
-  - enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-    amount: 3
-  encounterPosition: {x: -106.98, y: 6, z: 0}
+  <Encounters>k__BackingField: []

@@ -9,6 +9,9 @@ using NaughtyAttributes;
 
 namespace Game
 {
+    /// <summary>
+    /// Handles all player states, its transitions and common parameters.
+    /// </summary>
     public class PlayerStateMachine : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine]
@@ -36,20 +39,20 @@ namespace Game
 
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocity { get; private set; }
 
-        [SerializeField] private LayerMask conveyorLayer;
+        [SerializeField] LayerMask conveyorLayer;
 
-        private Color player1Color = Color.cyan;
-        private Color player2Color = Color.green;
-        private Color player3Color = Color.yellow;
         [SerializeField] private TextMeshProUGUI playerNumberLabel;
-        [SerializeField, ReadOnly] private Color playerColor;
+        [SerializeField, ReadOnly] Color playerColor;
+        Color player1Color = Color.cyan;
+        Color player2Color = Color.green;
+        Color player3Color = Color.yellow;
+
 
         [Header("Debug"), HorizontalLine(2F, EColor.Yellow)]
         [SerializeField] private TextMeshProUGUI playerStateLabel;
 
-        private void Awake()
+        void Awake()
         {
-            spriteRenderer.material.SetFloat("PlayerID", (float)playerInput.user.id);
             //Setup all states
             PlayerState[] childStates = GetComponentsInChildren<PlayerState>();
             foreach(var child in childStates)
@@ -63,12 +66,13 @@ namespace Game
             playerStateLabel.text = CurrentState.Name;
         }
 
-        private void Start()
+        void Start()
         {
+            //Dont allow input device switch on multiplayer
             if(GameManager.Instance.PlayerCharacterList.Count <= 1)
-            {
                 playerInput.neverAutoSwitchControlSchemes = false;
-            }
+
+            //Assign player color & number
             switch (playerInput.playerIndex)
             {
                 case 0:
@@ -84,39 +88,24 @@ namespace Game
             playerNumberLabel.text = $"P{playerInput.playerIndex + 1}";
             playerNumberLabel.color = playerColor;
         }
-        private void Update()
+        void Update()
         {
             SelectState();
             CurrentState.Do();
-            if (DebugManager.instance.isDebugModeEnabled)
-            {
-                if (playerStateLabel.gameObject.activeInHierarchy == false)
-                {
-                    playerStateLabel.gameObject.SetActive(true);
-                }
-                playerStateLabel.transform.rotation = Quaternion.identity;
-                playerStateLabel.text = CurrentState.Name;
-            }
-            else
-            {
-                if (playerStateLabel.gameObject.activeInHierarchy == true)
-                {
-                    playerStateLabel.gameObject.SetActive(false);
-                }
-            }
+            RunDebug();
         }
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
             GetContextSpeed();
             CurrentState.FixedDo();
-            transform.parent.transform.position = new Vector3(transform.position.x, transform.position.z, transform.position.z);
+            transform.parent.position = transform.parent.position.ToXZZ();
         }
-        private void GetContextSpeed()
+        void GetContextSpeed()
         {
             Vector3 tempContextSpeed = Vector3.zero;
-            Collider[] colliders = Physics.OverlapBox(transform.position, footCollider.size/2);
-            foreach(Collider collider in colliders)
+            Collider[] cntxSpdColliders = Physics.OverlapBox(transform.position, footCollider.size/2);
+            foreach(Collider collider in cntxSpdColliders)
             {
                 if (conveyorLayer.ContainsLayer(collider.gameObject.layer))
                 {
@@ -128,7 +117,7 @@ namespace Game
             }
             ContextVelocity = tempContextSpeed;
         }
-        private void SelectState()
+        void SelectState()
         {
             if (CurrentState.IsComplete)
             {
@@ -209,5 +198,24 @@ namespace Game
             InputDirection = context.ReadValue<Vector2>();
         }
 
+        void RunDebug()
+        {
+            if (DebugManager.instance.isDebugModeEnabled)
+            {
+                if (playerStateLabel.gameObject.activeInHierarchy == false)
+                {
+                    playerStateLabel.gameObject.SetActive(true);
+                }
+                playerStateLabel.transform.rotation = Quaternion.identity;
+                playerStateLabel.text = CurrentState.Name;
+            }
+            else
+            {
+                if (playerStateLabel.gameObject.activeInHierarchy == true)
+                {
+                    playerStateLabel.gameObject.SetActive(false);
+                }
+            }
+        }
     }
 }

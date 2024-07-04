@@ -9,7 +9,10 @@ using UnityEditor;
 #endif
 
 namespace Game
-{
+{ 
+/// <summary>
+/// Manages enemy spawning.
+/// </summary>
     public class Spawner : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
@@ -21,16 +24,21 @@ namespace Game
 #endif
 
         [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+        [Tooltip("The distance range from the mainCam the enemy can spawn.")]
         [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnDistance;
+        [Tooltip("The absolute height range the enemy can spawn.")]
         [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnHeight;
+        [Tooltip("The time range between spawns.")]
         [MinMaxSlider(0.5f, 10f), SerializeField] Vector2 spawnDelay;
         [SerializeField] private Color spawnRegionColor;
-        [SerializeField, Expandable] List<EncounterSO> encounters;
+        [Tooltip("Defines all encounters on this level.")]
+        [SerializeField, Expandable] LevelEncountersSO encSO;
 
 
         [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
         [SerializeField, ReadOnly] float defaultDeadzoneWidtht = 0f;
         [SerializeField, ReadOnly] float maxDeadzoneWidtht = 2f;
+        [SerializeField, ReadOnly] int currentEncounterIndex; 
         [SerializeField, ReadOnly] List<GameObject> enemiesToSpawn;
         [ReadOnly] public List<GameObject> enemiesAlive;
 
@@ -61,13 +69,13 @@ namespace Game
                 DestroyAll();
             }
 #endif
-            if (encounters.Count == 0)
+            if (encSO.Encounters.Length == 0)
             {
                 return;
             }
-            if (transform.position.x > encounters[0].encounterPosition.x)
+            if (transform.position.x > encSO.Encounters[currentEncounterIndex].position.x)
             {
-                foreach (SpawnableEnemy _enemy in encounters[0].enemies)
+                foreach (SpawnableEnemy _enemy in encSO.Encounters[currentEncounterIndex].enemies)
                 {
                     for (int i = 0; i < _enemy.amount; i++)
                     {
@@ -76,7 +84,7 @@ namespace Game
                 }
                 enemiesToSpawn.ShuffleList();
                 StartCoroutine(EncounterRoutine());
-                encounters.RemoveAt(0);
+                currentEncounterIndex++;
             }
         }
 
@@ -216,48 +224,48 @@ namespace Game
             #endregion
 
             #region DRAW ENCOUNTER ZONE
-            if (encounters.Count == 0)
+            if (encSO.Encounters.Length == 0)
             {
                 return;
             }
-            foreach (EncounterSO encounter in encounters)
+            foreach (Encounter encounter in encSO.Encounters)
             {
                 Gizmos.color = encounterPositionGizmosColor;
                 if(mainCam != null)
                 {
-                    Vector3 tempPos1 = encounter.encounterPosition; //UP RIGHT
+                    Vector3 tempPos1 = encounter.position; //UP RIGHT
                     tempPos1.y += mainCam.orthographicSize; 
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
-                    Vector3 tempPos2 = encounter.encounterPosition; //UP LEFT 
+                    Vector3 tempPos2 = encounter.position; //UP LEFT 
                     tempPos2.y += mainCam.orthographicSize;
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
                     Debug.DrawLine(tempPos1, tempPos2, Color.blue); //UP LINE
 
-                    tempPos1 = encounter.encounterPosition; //DOWN RIGHT
+                    tempPos1 = encounter.position; //DOWN RIGHT
                     tempPos1.y -= mainCam.orthographicSize;
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
-                    tempPos2 = encounter.encounterPosition;  //DOWN LEFT
+                    tempPos2 = encounter.position;  //DOWN LEFT
                     tempPos2.y -= mainCam.orthographicSize;
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
                     Debug.DrawLine(tempPos1, tempPos2, Color.blue); //DOWN LINE
 
-                    tempPos1 = encounter.encounterPosition;
+                    tempPos1 = encounter.position;
                     tempPos1.y += mainCam.orthographicSize;
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
-                    tempPos2 = encounter.encounterPosition;
+                    tempPos2 = encounter.position;
                     tempPos2.y -= mainCam.orthographicSize;
                     tempPos2.x += mainCam.aspect * mainCam.orthographicSize;
                     Debug.DrawLine(tempPos1, tempPos2, Color.blue); //RIGHT LINE
 
-                    tempPos1 = encounter.encounterPosition;
+                    tempPos1 = encounter.position;
                     tempPos1.y += mainCam.orthographicSize;
                     tempPos1.x -= mainCam.aspect * mainCam.orthographicSize;
-                    tempPos2 = encounter.encounterPosition;
+                    tempPos2 = encounter.position;
                     tempPos2.y -= mainCam.orthographicSize;
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
                     Debug.DrawLine(tempPos1, tempPos2, Color.blue); //LEFT LINE
                 }
-                Handles.Label(encounter.encounterPosition, encounter.name, style);
+                Handles.Label(encounter.position, encounter.Name, style);
             }
 
             #endregion

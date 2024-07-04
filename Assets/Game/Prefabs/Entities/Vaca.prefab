@@ -180,7 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: e1b6d9d8bfc3cd149bb6f8be3f28e495, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -249,7 +248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 49ad6f2a2fd5e1541bc1ef2a593580bc, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -675,7 +673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 9d7f482e61fca9148aaf8dc17dce990c, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -981,7 +978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 5d781a7932fde654f8cb784daeff31cf, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -1244,7 +1240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: f5dd1daf45a6d954e962534b77f3e140, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -1296,7 +1291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 75a9a8d8323ceaf4e910d2b7ca95aa6b, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -1456,22 +1450,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 0}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  playerAttacks:
-  - {fileID: 6926427790244436336}
-  - {fileID: 5236634259104585496}
-  - {fileID: 4357719688462648913}
-  - {fileID: 5121934551644627643}
-  - {fileID: 1786877352615061114}
-  - {fileID: 4798831838336931059}
-  - {fileID: 5676003039482721637}
-  - {fileID: 1548049289102645040}
-  - {fileID: 348348679057622053}
-  - {fileID: 5457059440745166116}
+  attackStatesParent: {fileID: 3722334530221503623}
   <PlayerCombos>k__BackingField:
   - {fileID: 11400000, guid: e750e1a913b6e2748ba2d54ca053fbbf, type: 2}
   - {fileID: 11400000, guid: 65042dec7b4c97046bf3be0ae1cc118a, type: 2}
@@ -1625,8 +1608,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8600547790814723448}
-  - {fileID: 1164585177420930284}
   - {fileID: 1164585176036258598}
+  - {fileID: 1164585177420930284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1951,12 +1934,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1164585176240065430}
   - {fileID: 1164585177014023339}
   - {fileID: 1164585177164256759}
   - {fileID: 1164585175750519656}
   - {fileID: 1164585176128136737}
   - {fileID: 1164585177213015471}
-  - {fileID: 1164585176240065430}
   m_Father: {fileID: 1164585177367800614}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2184,7 +2167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 5a933a82b996f93468c6d2a975e5e086, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -2313,7 +2295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: c29d3a102836b62438c9e0d0daa77c3e, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -2537,7 +2518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: decd9afb495080e47b8367f3852755e2, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -7576,7 +7556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 6763cf3ae5e16bd429f01fa52204d601, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -17581,7 +17560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 221010278686458232}
   m_Layer: 0
-  m_Name: Attacks
+  m_Name: Attacks Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17657,7 +17636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: f62a2056f2ccf5442847dcddc510dd11, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -17818,7 +17796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 77ac1eb0f6dbe0a4f886b12f7031ae0d, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -17964,7 +17941,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 28dc35369fc4056479dd157ab85c1d1c, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -18144,7 +18120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateAnimation: {fileID: 7400000, guid: 153e54e046feab440bcc6d04a784b9a2, type: 2}
-  stateName: 
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0

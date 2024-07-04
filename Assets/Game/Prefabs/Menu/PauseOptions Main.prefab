@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8085580426493337123}
   - component: {fileID: 8085580426493337120}
   m_Layer: 0
-  m_Name: SfxVolumeSlider
+  m_Name: SfxVolume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixer: {fileID: 0}
   mixerGroupName: SfxVolume
   mixerGroupNames:
   - MasterVolume
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 8085580426646467835}
   - component: {fileID: 8085580426646467834}
   m_Layer: 0
-  m_Name: MusicVolumeTitle
+  m_Name: MusicVolume Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 8085580426997786834}
   - component: {fileID: 8085580426997786835}
   m_Layer: 0
-  m_Name: PauseOptions
+  m_Name: PauseOptions Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 8085580427020493785}
   - component: {fileID: 8085580427020493784}
   m_Layer: 0
-  m_Name: VisualTitle
+  m_Name: Visual Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 8085580427145530320}
   - component: {fileID: 8085580427145530323}
   m_Layer: 0
-  m_Name: AudioTitle
+  m_Name: Audio Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 8085580427240858843}
   - component: {fileID: 8085580427240858842}
   m_Layer: 0
-  m_Name: PauseOptions_Background_Image
+  m_Name: PauseOptions Background Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 8085580427479732472}
   - component: {fileID: 8085580427479732473}
   m_Layer: 0
-  m_Name: MusicVolumeSlider
+  m_Name: MusicVolume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,8 +1333,8 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixer: {fileID: 0}
   mixerGroupName: MusicVolume
   mixerGroupNames:
   - MasterVolume
@@ -1352,7 +1352,7 @@ GameObject:
   - component: {fileID: 8085580427582928327}
   - component: {fileID: 8085580427582928326}
   m_Layer: 0
-  m_Name: BackButtonText
+  m_Name: Back Button Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1639,7 +1639,7 @@ GameObject:
   - component: {fileID: 8085580427681448365}
   - component: {fileID: 8085580427681448362}
   m_Layer: 0
-  m_Name: MasterVolumeSlider
+  m_Name: MasterVolume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1747,8 +1747,8 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixer: {fileID: 0}
   mixerGroupName: MasterVolume
   mixerGroupNames:
   - MasterVolume
@@ -1768,7 +1768,7 @@ GameObject:
   - component: {fileID: 8085580427710845320}
   - component: {fileID: 8085580427710845323}
   m_Layer: 0
-  m_Name: BackButton
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 8085580428068540265}
   - component: {fileID: 8085580428068540264}
   m_Layer: 0
-  m_Name: MasterVolumeTitle
+  m_Name: MasterVolume Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 8085580428081347723}
   - component: {fileID: 8085580428081347722}
   m_Layer: 0
-  m_Name: SfxVolumeTitle
+  m_Name: SfxVolume Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 8085580428432773038}
   - component: {fileID: 8085580428432773073}
   m_Layer: 0
-  m_Name: PauseOptionsTitle
+  m_Name: PauseOptions Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2620,6 +2620,10 @@ PrefabInstance:
       propertyPath: intereactibleSprites.Array.data[1]
       value: 
       objectReference: {fileID: 1433122489, guid: 61eed10ce865f9248a6b3bd00bd64929, type: 3}
+    - target: {fileID: 2700098530088419319, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: m_Name
+      value: FullscreenToggle Button
+      objectReference: {fileID: 0}
     - target: {fileID: 2700098530088419319, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
       propertyPath: m_Layer
       value: 0

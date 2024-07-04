@@ -411,8 +411,8 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixer: {fileID: 0}
   mixerGroupName: SfxVolume
   mixerGroupNames:
   - MasterVolume
@@ -960,8 +960,8 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixer: {fileID: 0}
   mixerGroupName: MasterVolume
   mixerGroupNames:
   - MasterVolume
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 7281520080628757090}
   - component: {fileID: 7281520080628757089}
   m_Layer: 0
-  m_Name: StartOptions Main Visibility
+  m_Name: StartOptions Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,8 +1470,8 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixer: {fileID: 0}
   mixerGroupName: MusicVolume
   mixerGroupNames:
   - MasterVolume
@@ -1700,7 +1700,7 @@ RectTransform:
   m_Children:
   - {fileID: 7281520080628757088}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

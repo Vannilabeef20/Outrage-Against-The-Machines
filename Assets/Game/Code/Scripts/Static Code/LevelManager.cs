@@ -79,21 +79,6 @@ namespace Game
             return true;
         }
 
-        /// <summary>
-        /// Clamps the given position value inside the "PlayZone" range.
-        /// </summary>
-        /// <param name="pos">The position to be clamped.</param>
-        /// <returns>The given position, now clamped.</returns>
-        public Vector3 ClampInsidePlayZone(Vector3 pos)
-        {
-            Vector3 clampedPos = Vector3.zero;
-            Vector3 cameraPos = mainCamera.transform.position;
-            clampedPos.x = Mathf.Clamp(pos.x, cameraPos.x - playZoneHalfWidth, cameraPos.x + playZoneHalfWidth);
-            clampedPos.y = Mathf.Clamp(pos.y, playZoneHeight.x, playZoneHeight.y);
-            clampedPos.z = Mathf.Clamp(pos.z, playZoneHeight.x, playZoneHeight.y);
-            return clampedPos;
-        }
-
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {

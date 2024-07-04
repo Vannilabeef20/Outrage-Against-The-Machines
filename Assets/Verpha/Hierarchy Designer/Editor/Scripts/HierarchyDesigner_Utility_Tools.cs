@@ -545,11 +545,11 @@ namespace Verpha.HierarchyDesigner
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Sorting)]
         public static void SortAlphabeticallyDescending() => SortSelectedGameObjectChildren((a, b) => -AlphanumericComparison(a, b), "sort its children alphabetically descending");
 
-        [MenuItem(MenuPath + "Sorting/Sort By Components Amount Ascending", false, priorityBase)]
+        [MenuItem(MenuPath + "Sorting/Sort By Components amount Ascending", false, priorityBase)]
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Sorting)]
         public static void SortByComponentsAmountAscending() => SortSelectedGameObjectChildren((a, b) => a.GetComponents<Component>().Length.CompareTo(b.GetComponents<Component>().Length), "sort its children by components amount ascending");
 
-        [MenuItem(MenuPath + "Sorting/Sort By Components Amount Descending", false, priorityBase)]
+        [MenuItem(MenuPath + "Sorting/Sort By Components amount Descending", false, priorityBase)]
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Sorting)]
         public static void SortByComponentsAmountDescending() => SortSelectedGameObjectChildren((a, b) => b.GetComponents<Component>().Length.CompareTo(a.GetComponents<Component>().Length), "sort its children by components amount descending");
 

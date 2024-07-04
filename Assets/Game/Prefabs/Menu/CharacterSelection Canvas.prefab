@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4596487123465284044}
   - component: {fileID: 4596487123465284035}
   m_Layer: 5
-  m_Name: Select Player_2 Defense Arrow Image
+  m_Name: Player_2 Defense Arrow Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4596487123534875921}
   - component: {fileID: 4596487123534875920}
   m_Layer: 5
-  m_Name: Select Player_1 Defense Arrow Image
+  m_Name: Player_1 Defense Arrow Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 4596487123755900863}
   - component: {fileID: 4596487123755900862}
   m_Layer: 5
-  m_Name: Select Player_1 Connect Text
+  m_Name: Player_1 Connect Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 4596487123794322418}
   - component: {fileID: 4596487123794322430}
   m_Layer: 5
-  m_Name: Select Player_2 Swap Arrow Button Image
+  m_Name: Player_2 Selection Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 4596487124162356685}
   - component: {fileID: 4596487124162356684}
   m_Layer: 5
-  m_Name: Selection Image Player_3
+  m_Name: Player_3 Character Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 4596487124177035909}
   - component: {fileID: 4596487124177035908}
   m_Layer: 5
-  m_Name: CharacterSelection Play Button Image
+  m_Name: 'CharacterSelection Play Button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 4596487124248791982}
   - component: {fileID: 4596487124248791981}
   m_Layer: 5
-  m_Name: Select Player_2 Title Text
+  m_Name: Player_2 Title Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 4596487124403533614}
   - component: {fileID: 4596487124403533615}
   m_Layer: 5
-  m_Name: Speed Arrow Image Player_3
+  m_Name: Player_3 Speed Arrow Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1540,7 +1540,7 @@ GameObject:
   - component: {fileID: 4596487124575117009}
   - component: {fileID: 4596487124575117021}
   m_Layer: 5
-  m_Name: Selection Arrow Player_3
+  m_Name: Player_3 Selection Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 4596487124666657886}
   - component: {fileID: 4596487124666657885}
   m_Layer: 5
-  m_Name: Select Player_2 Character Image
+  m_Name: Player_2 Character Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 4596487124741480896}
   - component: {fileID: 4596487124741480903}
   m_Layer: 5
-  m_Name: Select Player_1 Title Text
+  m_Name: Player_1 Title Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1918,7 +1918,7 @@ GameObject:
   - component: {fileID: 4596487124791864841}
   - component: {fileID: 4596487124791864840}
   m_Layer: 5
-  m_Name: Select Player_1 Speed Arrow Image
+  m_Name: Player_1 Speed Arrow Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1994,7 +1994,7 @@ GameObject:
   - component: {fileID: 4596487124793945180}
   - component: {fileID: 4596487124793945171}
   m_Layer: 5
-  m_Name: Select Player_1 Character Image
+  m_Name: Player_1 Character Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2070,7 @@ GameObject:
   - component: {fileID: 4596487124833558008}
   - component: {fileID: 4596487124833558015}
   m_Layer: 5
-  m_Name: Select Player_1 Speed Icon Image
+  m_Name: Player_1 Speed Icon Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 4596487124850303754}
   - component: {fileID: 4596487124850303862}
   m_Layer: 5
-  m_Name: Select Player_1 Swap Arrow Button Image
+  m_Name: Player_1 Selection Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2317,7 +2317,7 @@ GameObject:
   - component: {fileID: 4596487124860275110}
   - component: {fileID: 4596487124860275109}
   m_Layer: 5
-  m_Name: CharacterSelection Tutorial Button Image
+  m_Name: CharacterSelection Tutorial Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2501,7 +2501,7 @@ RectTransform:
   m_Children:
   - {fileID: 4596487124267608207}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2622,7 +2622,7 @@ GameObject:
   - component: {fileID: 4596487124911536028}
   - component: {fileID: 4596487124911536019}
   m_Layer: 5
-  m_Name: Select Player_2 Speed Arrow Image
+  m_Name: Player_2 Speed Arrow Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2698,7 +2698,7 @@ GameObject:
   - component: {fileID: 4596487124946634931}
   - component: {fileID: 4596487124946634930}
   m_Layer: 5
-  m_Name: Connect Text Player_3
+  m_Name: Player_3 Connect Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2833,7 +2833,7 @@ GameObject:
   - component: {fileID: 4596487125019960271}
   - component: {fileID: 4596487125019960270}
   m_Layer: 5
-  m_Name: Selection Title Player_3
+  m_Name: Player_3 Title Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2970,7 +2970,7 @@ GameObject:
   - component: {fileID: 4596487125034860423}
   - component: {fileID: 4596487125034860422}
   m_Layer: 5
-  m_Name: CharacterSelection Back Button Image
+  m_Name: CharacterSelection Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3121,7 +3121,7 @@ GameObject:
   - component: {fileID: 4596487125050045511}
   - component: {fileID: 4596487125050045510}
   m_Layer: 5
-  m_Name: Select Player_2 Connect Text
+  m_Name: Player_2 Connect Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3256,7 +3256,7 @@ GameObject:
   - component: {fileID: 4596487125058850503}
   - component: {fileID: 4596487125058850502}
   m_Layer: 5
-  m_Name: Speed Image Player_3
+  m_Name: Player_3 Speed Icon Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3416,7 +3416,7 @@ GameObject:
   - component: {fileID: 4596487125098374755}
   - component: {fileID: 4596487125098374754}
   m_Layer: 5
-  m_Name: Defense Image Player_3
+  m_Name: Player_3 Defense Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3492,7 +3492,7 @@ GameObject:
   - component: {fileID: 4596487125166849905}
   - component: {fileID: 4596487125166849904}
   m_Layer: 5
-  m_Name: Select Player_2 Defense Icon Image
+  m_Name: Player_2 Defense Icon Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3652,7 +3652,7 @@ GameObject:
   - component: {fileID: 4596487125253720174}
   - component: {fileID: 4596487125253720173}
   m_Layer: 5
-  m_Name: Select Player_1 Defense Icon Image
+  m_Name: Player_1 Defense Icon Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3812,7 +3812,7 @@ GameObject:
   - component: {fileID: 4596487125471957342}
   - component: {fileID: 4596487125471957341}
   m_Layer: 5
-  m_Name: Select Player_2 Speed Icon Image
+  m_Name: Player_2 Speed Icon Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3888,7 +3888,7 @@ GameObject:
   - component: {fileID: 4596487125515912375}
   - component: {fileID: 4596487125515912368}
   m_Layer: 5
-  m_Name: Defense Arrow Image Player_3
+  m_Name: ' Player_3 Defense Arrow Image'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -650,14 +650,7 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  playerAttacks:
-  - {fileID: 8655246225875038677}
-  - {fileID: 5813657735323615165}
-  - {fileID: 2628900427763117812}
-  - {fileID: 6528778914432810070}
-  - {fileID: 6253027374155963840}
-  - {fileID: 971026363584216981}
-  - {fileID: 2078293247260585088}
+  attackStatesParent: {fileID: 3146435582142340130}
   <PlayerCombos>k__BackingField:
   - {fileID: 11400000, guid: 9c0eec58d101bd845ac0490ea1ec49f9, type: 2}
   - {fileID: 11400000, guid: 99acf27903f483f41b2d01282461e337, type: 2}

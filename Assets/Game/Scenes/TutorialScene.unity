@@ -14399,7 +14399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316229216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -121.91728, y: 5.6188097, z: -18.74}
+  m_LocalPosition: {x: -121.9276, y: 5.6188097, z: -18.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18346,7 +18346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970765ad22247e64c8199c9f88d6f522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
   spawner: {fileID: 0}
   spriteRenderer: {fileID: 1895840676}
   body: {fileID: 1895840672}
@@ -19513,8 +19512,8 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0996323, y: 3.7860274}
   playZoneHalfWidth: 65
   playZoneColor: {r: 0, g: 1, b: 0, a: 0.9019608}
-  point1Pos: {x: -56.917282, y: 0.0996323, z: 0}
-  point2Pos: {x: -56.917282, y: 3.7860274, z: 0}
+  point1Pos: {x: -56.927597, y: 0.0996323, z: 0}
+  point2Pos: {x: -56.927597, y: 3.7860274, z: 0}
 --- !u!4 &1996890125
 Transform:
   m_ObjectHideFlags: 0
@@ -19910,6 +19909,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585919202}
     - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
+      propertyPath: encSO
+      value: 
+      objectReference: {fileID: 11400000, guid: c7b9742886514294eb94b1a5ede2e927, type: 2}
+    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: goImage
       value: 
       objectReference: {fileID: 992674080}
@@ -19917,18 +19920,6 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1316229217}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: style.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: b2acfb73667aff5489321b3c26f9132f, type: 3}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: style.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: style.m_StretchWidth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: encounters.Array.size
       value: 0
@@ -21115,7 +21106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970765ad22247e64c8199c9f88d6f522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 
   spawner: {fileID: 0}
   spriteRenderer: {fileID: 4068858833681538859}
   body: {fileID: 4068858833681538862}

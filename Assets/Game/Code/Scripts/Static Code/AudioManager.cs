@@ -1,37 +1,34 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using NaughtyAttributes;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
     public class AudioManager : MonoBehaviour
     {
         public static AudioManager instance;
-        [Header("REFERENCES"), HorizontalLine(2f, EColor.White)]
-        [SerializeField, ReadOnly] private AudioMixer Mixer;
-        [SerializeField, ReadOnly] private AudioSource SFXSource;
-
-
-        [SerializeField, ReadOnly, Foldout("Sounds")] private AudioClip[] uiClickPositiveSounds;
-        [SerializeField, ReadOnly, Foldout("Sounds")] private int uiClickPositiveSoundIndex;
-        [SerializeField, ReadOnly, Foldout("Sounds")] private AudioClip[] uiClickNegativeSounds;
-        [SerializeField, ReadOnly, Foldout("Sounds")] private int uiClickNegativeSoundIndex;
-        [SerializeField, ReadOnly, Foldout("Sounds")] private AudioClip[] uiSelectSounds;
-        [SerializeField, ReadOnly, Foldout("Sounds")] private int uiSelectSoundIndex;
-
-
-        private string _audioMixerPath = "AudioResources/Mixer";
-
-        private string _uiSelectSoundsPath = "AudioResources/UI_SelectMenuSounds";
-
-        private string _uiClickPositiveSoundsPath = "AudioResources/UI_ClickPositiveMenuSounds";
-        [SerializeField, ReadOnly, Foldout("Mixer names")]
+        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [SerializeField] AudioMixer Mixer;
+        [SerializeField] AudioSource MusicSource;
+        [SerializeField] AudioSource SFXSource;
+        [SerializeField, ReadOnly]
         private string MasterVolumeName = "MasterVolume";
-        [SerializeField, ReadOnly, Foldout("Mixer names")]
+        [SerializeField, ReadOnly]
         private string SfxVolumeName = "SfxVolume";
-        [SerializeField, ReadOnly, Foldout("Mixer names")]
+        [SerializeField, ReadOnly]
         private string MusicVolumeName = "MusicVolume";
 
+        [Header("MUSIC"), HorizontalLine(2f, EColor.Orange)]
+        [SerializeField] AudioClip[] sceneMusics;
+
+        [Header("SFX"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] AudioClip[] uiClickPositiveSounds;
+        [SerializeField] AudioClip[] uiClickNegativeSounds;
+        [SerializeField] AudioClip[] uiSelectSounds;
+        [SerializeField, ReadOnly] int uiClickPositiveSoundIndex;
+        [SerializeField, ReadOnly] int uiClickNegativeSoundIndex;
+        [SerializeField, ReadOnly] int uiSelectSoundIndex;
 
         private void Awake()
         {
@@ -39,21 +36,27 @@ namespace Game
             {
                 instance = this;
                 DontDestroyOnLoad(gameObject);
+                SceneManager.sceneLoaded += PlaySceneMusic;
+                MusicSource.clip = sceneMusics[SceneManager.GetActiveScene().buildIndex];
+                MusicSource.Play();
             }
             else
             {
                 Destroy(gameObject);
             }
-            Mixer = Resources.Load<AudioMixer>(_audioMixerPath);
-            uiSelectSounds = Resources.LoadAll<AudioClip>(_uiSelectSoundsPath);
-            uiClickPositiveSounds = Resources.LoadAll<AudioClip>(_uiClickPositiveSoundsPath);
-            SFXSource = GetComponentInChildren<AudioSource>();
         }
         private void Start()
         {
             InitiateVolume(MasterVolumeName, PlayerPrefs.GetFloat(MasterVolumeName, 0.5f));
             InitiateVolume(SfxVolumeName, PlayerPrefs.GetFloat(SfxVolumeName, 0.5f));
             InitiateVolume(MusicVolumeName, PlayerPrefs.GetFloat(MusicVolumeName, 0.5f));
+        }
+
+        private void PlaySceneMusic(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            MusicSource.Stop();
+            MusicSource.clip = sceneMusics[scene.buildIndex];
+            MusicSource.Play();
         }
      
         public void PlayUiClickSfx()
