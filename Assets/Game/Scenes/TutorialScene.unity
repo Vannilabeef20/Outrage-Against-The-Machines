@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &26357245
 GameObject:
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 26357246}
   - component: {fileID: 26357247}
   - component: {fileID: 26357248}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71109932}
   - component: {fileID: 71109935}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Intercept
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2404,7 +2404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 297439170}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: States_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3269,7 +3269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471917214709005346, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 471917214709005346, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3716,7 +3716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517040239}
   - component: {fileID: 517040238}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4136,7 +4136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576280681}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ParticleEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4509,7 +4509,7 @@ GameObject:
   - component: {fileID: 621317240}
   - component: {fileID: 621317239}
   - component: {fileID: 621317238}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4943,7 +4943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050968111071795927, guid: 815a99025a5044d4ab152592e3db72d9, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5050968111071795927, guid: 815a99025a5044d4ab152592e3db72d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5004,7 +5004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9096132990795520413, guid: 92dbe24d99f44cb40bab831720f3f799, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9096132990795520413, guid: 92dbe24d99f44cb40bab831720f3f799, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6225,7 +6225,7 @@ GameObject:
   - component: {fileID: 842298905}
   - component: {fileID: 842298903}
   - component: {fileID: 842298904}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13167,7 +13167,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136353431
 GameObject:
@@ -14399,7 +14399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316229216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -121.9276, y: 5.6188097, z: -18.74}
+  m_LocalPosition: {x: -121.92214, y: 5.6188097, z: -18.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15963,7 +15963,7 @@ GameObject:
   - component: {fileID: 1612215975}
   - component: {fileID: 1612215977}
   - component: {fileID: 1612215976}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17103,7 +17103,7 @@ GameObject:
   - component: {fileID: 1772282542}
   - component: {fileID: 1772282541}
   - component: {fileID: 1772282540}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyStateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17506,67 +17506,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1824087237
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6405273632275796027, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_Name
-      value: DebugManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121337385470161579, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b37f8d2937ed8c449a84cd27e880b49b, type: 3}
 --- !u!1 &1829272441
 GameObject:
   m_ObjectHideFlags: 8
@@ -17614,7 +17553,7 @@ GameObject:
   - component: {fileID: 1862105839}
   - component: {fileID: 1862105841}
   - component: {fileID: 1862105840}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18374,7 +18313,7 @@ MonoBehaviour:
   boxCastDimensions: {x: 0, y: 0, z: 0}
   boxCastLenght: 0
   <IsInsidePlayZone>k__BackingField: 0
-  <HasBeenInsidePlayZone>k__BackingField: 0
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
   stateLabelTmpro: {fileID: 1772282540}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -18395,7 +18334,7 @@ Transform:
   - {fileID: 621317237}
   - {fileID: 576280681}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1903885726
 GameObject:
@@ -19510,10 +19449,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1316229217}
   playZoneHeight: {x: 0.0996323, y: 3.7860274}
-  playZoneHalfWidth: 65
+  playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0, a: 0.9019608}
-  point1Pos: {x: -56.927597, y: 0.0996323, z: 0}
-  point2Pos: {x: -56.927597, y: 3.7860274, z: 0}
+  point1Pos: {x: -111.28214, y: 0.0996323, z: 0}
+  point2Pos: {x: -111.28214, y: 3.7860274, z: 0}
 --- !u!4 &1996890125
 Transform:
   m_ObjectHideFlags: 0
@@ -19527,7 +19466,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2006885915
 GameObject:
@@ -19854,7 +19793,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2604145635891042443, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2604145635891042443, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20569,7 +20508,7 @@ GameObject:
   - component: {fileID: 7369333471704457178}
   - component: {fileID: 5650445902496868471}
   - component: {fileID: 3592781207955841624}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20587,7 +20526,7 @@ GameObject:
   - component: {fileID: 7118932562991785211}
   - component: {fileID: 7519145447830932377}
   - component: {fileID: 8107337524640715422}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20730,7 +20669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5719482194384466635}
   - component: {fileID: 3207746124274184708}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20746,7 +20685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1512105257541723586}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ParticleEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20850,7 +20789,7 @@ GameObject:
   - component: {fileID: 4068858833142020291}
   - component: {fileID: 4068858833142020292}
   - component: {fileID: 4068858833142020293}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21027,7 +20966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4068858833626773852}
   - component: {fileID: 4068858833626773853}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Intercept
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21134,7 +21073,7 @@ MonoBehaviour:
   boxCastDimensions: {x: 0, y: 0, z: 0}
   boxCastLenght: 0
   <IsInsidePlayZone>k__BackingField: 0
-  <HasBeenInsidePlayZone>k__BackingField: 0
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
   stateLabelTmpro: {fileID: 1990721734681114297}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -21249,7 +21188,7 @@ Transform:
   - {fileID: 6566511242040638091}
   - {fileID: 1512105257541723586}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4068858833681538861
 BoxCollider:
@@ -21477,7 +21416,7 @@ GameObject:
   - component: {fileID: 4068858834185898517}
   - component: {fileID: 4068858834185898518}
   - component: {fileID: 4068858834185898519}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21644,7 +21583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4068858834938412809}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: States_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21825,7 +21764,7 @@ GameObject:
   - component: {fileID: 1832504215841154481}
   - component: {fileID: 7497179860032947417}
   - component: {fileID: 1990721734681114297}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyStateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26665,7 +26604,7 @@ GameObject:
   - component: {fileID: 8386524393635254109}
   - component: {fileID: 6919652952530146888}
   - component: {fileID: 8333594903763671341}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

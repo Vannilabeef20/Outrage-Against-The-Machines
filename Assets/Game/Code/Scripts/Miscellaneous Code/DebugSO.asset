@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2fb1dd690e50a4094bb42d8c3eb1fb, type: 3}
+  m_Name: DebugSO
+  m_EditorClassIdentifier: 
+  <IsDebugModeEnabled>k__BackingField: 0
+  playerInputActions: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
+  activateDebugModeActionName: DebugMode
+  debugModeAction:
+    m_Name: DebugMode
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 5a473a82-8a3c-4485-aee9-60ed15101b8d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  DebugSubjects: -1
+  DebugTypes: -1

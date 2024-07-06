@@ -51,6 +51,7 @@ namespace Game
         #region Debug
 
         [Header("DEBUG"), HorizontalLine(2F, EColor.Green)]
+        [SerializeField, Expandable] DebugSO debugSO;
         [SerializeField] private TextMeshProUGUI stateLabelTmpro;
 #if UNITY_EDITOR
         [SerializeField] private Color boxCastDefaultColor;
@@ -121,7 +122,7 @@ namespace Game
             ChangeState();
             currentState.Do();
 
-            if (DebugManager.instance.isDebugModeEnabled)
+            if (debugSO.IsDebugModeEnabled)
             {
                 if (stateLabelTmpro.gameObject.activeInHierarchy == false)
                 {

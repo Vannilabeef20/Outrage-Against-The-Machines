@@ -49,7 +49,6 @@ namespace Game
             bool fullScreen = PlayerPrefs.GetInt(playerPrefsFullScreen) == 0;
             Screen.SetResolution(unityResolutions[ResolutionIndex].width, unityResolutions[ResolutionIndex].height, fullScreen);
             Screen.fullScreen = (fullScreen);
-            DebugManager.instance.Log(new DebugLogStruct(EDebugSubjectFlags.UI, this, $"Screen resolution was set to '{unityResolutions[ResolutionIndex]}'"));
         }
     }
 }

@@ -19,18 +19,19 @@ namespace Game
         [field: SerializeField] public Camera MainCamera { private set; get; }
 
         #region Loading & Transitions Params
-        [Header("Loading & Transitions"), HorizontalLine(2f, EColor.Orange)]
-        [SerializeField, ReadOnly] private Coroutine loadRoutine;
+        [Header("LOADING & TRANSITIONS"), HorizontalLine(2f, EColor.Red)]
+        [SerializeField] Image transitionImage;
 
-        [SerializeField] private Image transitionImage;
+        [SerializeField, ReadOnly] Coroutine loadRoutine;
 
-        [SerializeField] private TransitionSO transition;
 
-        [SerializeField] private MenuIdEvent OnSetMenuVisibility;
+        [SerializeField] TransitionSO transition;
+
+        [SerializeField] MenuIdEvent OnSetMenuVisibility;
         #endregion
 
         #region Players Params
-        [field: Header("Players"), HorizontalLine(2f, EColor.Red)]
+        [field: Header("PLAYERS"), HorizontalLine(2f, EColor.Orange)]
 
         public PlayerInputManager UnityInputManager;
 
@@ -44,13 +45,21 @@ namespace Game
         #endregion
 
         #region Lifes Params
-        [SerializeField] private AudioClip reviveSound;
-        [SerializeField] private IntEvent UpdateLifeCount;
+        [Header("REVIVE & LIVES"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] AudioClip reviveSound;
+        [SerializeField, Min(0), MaxValue(1f)] Vector2 spawnViewportPostion;
+        [SerializeField] IntEvent UpdateLifeCount;
         [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
 
-        [SerializeField] private int initialLifeAmout;
-        [SerializeField] private int maxLifeAmount;
+        [SerializeField] int initialLifeAmout;
+        [SerializeField] int maxLifeAmount;
 
+        #endregion
+
+        #region Debug
+        [Header("DEBUG"), HorizontalLine(2f, EColor.Green)]
+        [SerializeField] GUIStyle SpawnLabelStyle;
+        [SerializeField] GUIStyle RespawnLabelStyle;
         #endregion
 
         #region Unity/Application Methods
@@ -106,9 +115,7 @@ namespace Game
                 return;
             }
             if (level == 0)
-            {
                 OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
-            }
             else
             {
                 OnSetMenuVisibility.Raise(this, MenuId.None);
@@ -200,14 +207,9 @@ namespace Game
 
         public void PauseGame()
         {
-            if(Time.timeScale > 0)
-            {
-                OnSetMenuVisibility.Raise(this, MenuId.PauseMenu);
-            }
-            else
-            {
-                OnSetMenuVisibility.Raise(this, MenuId.None);
-            }
+            if (Time.timeScale > 0) OnSetMenuVisibility.Raise(this, MenuId.PauseMenu);
+
+            else OnSetMenuVisibility.Raise(this, MenuId.None);
         }
         #region Loading Methods
         public void LoadScene(int targetSceneIndex)
@@ -267,8 +269,9 @@ namespace Game
             {
                 if (!PlayerCharacterList[i].isPlayerActive && CurrentLifeAmount > 0)
                 {
-                    PlayerCharacterList[i].GameObject.transform.position = new Vector3(MainCamera.transform.position.x,
-                        MainCamera.transform.position.y - 1.5f, MainCamera.transform.position.y - 1.5f);// HardCoded
+                    PlayerCharacterList[i].GameObject.transform.position = 
+                        MainCamera.ViewportToWorldPoint(spawnViewportPostion).ToXYY();
+
                     CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
                     PlayerCharacterList[i].GameObject.SetActive(true);
                     PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
@@ -312,6 +315,36 @@ namespace Game
             StartCoroutine(LoadOrTransitionRoutine(1));
         }
         #endregion
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = RespawnLabelStyle.normal.textColor;
+            Vector3 respawnPos = MainCamera.ViewportToWorldPoint(spawnViewportPostion).ToXYY();
+            Vector3 centerPos = MainCamera.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
+            Vector3 xPos = MainCamera.ViewportToWorldPoint(new Vector3(spawnViewportPostion.x, 0f, 0f).ToXYY());
+            Vector3 yPos = MainCamera.ViewportToWorldPoint(new Vector3(0f, spawnViewportPostion.y, 0f).ToXYY());
+
+            Handles.Label(respawnPos, $"Respawn point", RespawnLabelStyle);
+            Gizmos.DrawSphere(respawnPos, 0.1f);
+
+            Handles.DrawDottedLine(new Vector3(respawnPos.x, respawnPos.y, centerPos.z), xPos, 0.2f);
+            xPos.y -= 0.3F;
+            Handles.Label(xPos,"X");
+
+            Handles.DrawDottedLine(new Vector3(respawnPos.x, respawnPos.y, centerPos.z), yPos, 0.2f);
+            yPos.x -= 0.3f;
+            Handles.Label(yPos, "Y");
+
+        }
+        private void OnDrawGizmos()
+        {
+            for (int i = 0; i < spawnCoordinates.Length; i++)
+            {
+                Gizmos.color = SpawnLabelStyle.normal.textColor;
+                Gizmos.DrawSphere(spawnCoordinates[i], 0.1f);
+                Handles.Label(spawnCoordinates[i], $"Spawn P{i + 1}", SpawnLabelStyle);
+            }
+        }
 #endif
     }
 

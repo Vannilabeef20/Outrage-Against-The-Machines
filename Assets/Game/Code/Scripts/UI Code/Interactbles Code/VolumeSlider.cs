@@ -15,11 +15,6 @@ namespace Game
         private void Awake()
         {
             slider = GetComponent<Slider>();
-            if (mixer == null)
-            {
-                DebugManager.instance.LogError(new DebugLogStruct(EDebugSubjectFlags.Test, this, "could not find appropiate mixer," +
-                    " please check if current path is valid."));
-            }
             slider.value = PlayerPrefs.GetFloat(mixerGroupName, 0.5f);
             mixer.SetFloat(mixerGroupName, Mathf.Log10(slider.value) * 20);
         }

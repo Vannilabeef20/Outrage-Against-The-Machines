@@ -14,7 +14,7 @@ namespace Game
     /// </summary>
     public class PlayerStateMachine : MonoBehaviour
     {
-        [Header("REFERENCES"), HorizontalLine]
+        [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
         public PlayerInput playerInput;
         public Rigidbody body;
         public AudioSource audioSource;
@@ -22,7 +22,7 @@ namespace Game
         public SpriteRenderer spriteRenderer;
         public BoxCollider footCollider;
 
-        [field: Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
+        [field: Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Orange)]
         [field:SerializeField] public PlayerIdleState Idle { get; private set; }
         [field: SerializeField] public PlayerWalkingState Walking { get; private set; }
         [field: SerializeField] public PlayerStunnedState Stunned { get; private set; }
@@ -30,7 +30,7 @@ namespace Game
         [field: SerializeField] public PlayerAttackingState Attacking { get; private set; }
 
 
-        [field: Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Orange)]
+        [field: Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Yellow)]
         [field: SerializeField, ReadOnly] public PlayerState CurrentState { get; private set; }
         [ReadOnly] public PlayerState nextState;
         [ReadOnly] public bool overrideStateCompletion;
@@ -48,11 +48,13 @@ namespace Game
         Color player3Color = Color.yellow;
 
 
-        [Header("Debug"), HorizontalLine(2F, EColor.Yellow)]
-        [SerializeField] private TextMeshProUGUI playerStateLabel;
+        [Header("Debug"), HorizontalLine(2F, EColor.Green)]
+        [SerializeField, Expandable] DebugSO debugSO;
+        [SerializeField] TextMeshProUGUI playerStateLabel;
 
         void Awake()
         {
+            debugSO.Log(this.name, "a", EDebugSubjectFlags.Test);
             //Setup all states
             PlayerState[] childStates = GetComponentsInChildren<PlayerState>();
             foreach(var child in childStates)
@@ -199,7 +201,7 @@ namespace Game
 
         void RunDebug()
         {
-            if (DebugManager.instance.isDebugModeEnabled)
+            if (debugSO.IsDebugModeEnabled)
             {
                 if (playerStateLabel.gameObject.activeInHierarchy == false)
                 {
