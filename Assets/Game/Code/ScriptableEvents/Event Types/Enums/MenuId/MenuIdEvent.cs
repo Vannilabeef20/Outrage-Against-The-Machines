@@ -13,7 +13,7 @@ namespace Game
     /// If "MenuId" sent is part of a pause menu TimeScale will be set to 0.<br/>
     /// If "MenuId" sent is part of a character selection menu joining will be enabled, else disabled.
     /// </summary>
-    [CreateAssetMenu(fileName = "New MenuId Event", menuName = "Game Events/MenuId Event")]
+    [CreateAssetMenu(fileName = "New MenuId Event", menuName = "Game CustomEvents/MenuId Event")]
     public class MenuIdEvent : BaseGameEvent<MenuId>
     {
         /// <summary>

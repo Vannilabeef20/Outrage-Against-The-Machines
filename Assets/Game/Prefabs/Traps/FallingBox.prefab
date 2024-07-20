@@ -447,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5976830373177192143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.9, y: 50, z: 2.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -477,7 +477,7 @@ MonoBehaviour:
   source: {fileID: 65135353779175711}
   impactSound: {fileID: 8300000, guid: 715a03688a07f1242842752251e734c6, type: 3}
   fallingSpeedSO: {fileID: 11400000, guid: 104c92e905e234140b1418f648d5cc72, type: 2}
-  postImpactSortOrder: -2
+  postImpactSortOrder: -3
   highlightColor1: {r: 0, g: 0, b: 0, a: 0}
   highlightColor2: {r: 1, g: 0, b: 0, a: 1}
   highlightLenght: 0.15

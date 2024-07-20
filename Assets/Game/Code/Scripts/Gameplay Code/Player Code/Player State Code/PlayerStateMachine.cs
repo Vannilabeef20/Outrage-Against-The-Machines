@@ -49,12 +49,11 @@ namespace Game
 
 
         [Header("Debug"), HorizontalLine(2F, EColor.Green)]
-        [SerializeField, Expandable] DebugSO debugSO;
         [SerializeField] TextMeshProUGUI playerStateLabel;
+        [Expandable] public DebugSO debugSO;
 
         void Awake()
         {
-            debugSO.Log(this.name, "a", EDebugSubjectFlags.Test);
             //Setup all states
             PlayerState[] childStates = GetComponentsInChildren<PlayerState>();
             foreach(var child in childStates)
@@ -70,7 +69,7 @@ namespace Game
 
         void Start()
         {
-            //Dont allow input device switch on multiplayer
+            //Dont allow Inputs device switch on multiplayer
             if(GameManager.Instance.PlayerCharacterList.Count <= 1)
                 playerInput.neverAutoSwitchControlSchemes = false;
 

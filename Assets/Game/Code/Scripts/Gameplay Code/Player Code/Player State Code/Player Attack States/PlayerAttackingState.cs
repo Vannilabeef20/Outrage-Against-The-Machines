@@ -47,6 +47,7 @@ namespace Game
 
         [SerializeField] private ParticleSystem specialParticleSystem;
 
+
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake
         {
             base.Setup(playerStateMachine);
@@ -133,37 +134,41 @@ namespace Game
             }
             for (int i = 0; i < PlayerCombos.Length; i++) //check if theres available attack in a combo
             {
-                if (PlayerCombos[i].attacks.Length <= attackList.Count) //Check if attack list is bigger than the [i] combo
+                if (PlayerCombos[i].ComboAttacks.Length <= attackList.Count) //Check if attack list is bigger than the [i] combo
                 {
                     continue; //Bigger, skip this one
                 }
-                if (PlayerCombos[i].input[attackList.Count].ToString() == context.action.name) //Check if the attempeted input is in this combo
+                if (PlayerCombos[i].ComboAttacks[attackList.Count].Input.ToString() == context.action.name) //Check if the attempeted Inputs is in this combo
                 {
-                    if (PlayerCombos[i].attacks[attackList.Count].IsSpecial && specialChargeAmount < PlayerCombos[i].attacks[attackList.Count].SpecialCost) // Check if it is a special attack && there are enough charges
+                    if (PlayerCombos[i].ComboAttacks[attackList.Count].Attack.IsSpecial && specialChargeAmount < PlayerCombos[i].ComboAttacks[attackList.Count].Attack.SpecialCost) // Check if it is a special attack && there are enough charges
                     {
                         //It is a special and does not have enough charges, Skip!
                         continue;
                     }
                     int matchNumber = 0; 
-                    for (int j = 0; j < attackList.Count; j++) //Check how many attacks are the same
+                    for (int j = 0; j < attackList.Count; j++) //Check how many Attacks are the same
                     {
-                        if (PlayerCombos[i].attacks[j] == attackList[j])
+                        if (PlayerCombos[i].ComboAttacks[j].Attack == attackList[j])
                         {
                             matchNumber++;
                         }
                     }
                     if(matchNumber != attackList.Count)
                     {
-                        continue; //Not all attacks are the same, Abort!
+                        continue; //Not all Attacks are the same, Abort!
                     }
-                    AddSpecialCharges(-PlayerCombos[i].attacks[attackList.Count].SpecialCost);                   
+
+                    //From this point on the attack is validated
+
+
+                    AddSpecialCharges(-PlayerCombos[i].ComboAttacks[attackList.Count].Attack.SpecialCost);                   
                     if(stateMachine.CurrentState != this) //Check if the state machine is already in the attacking state
                     {
                         //Its not, transition pls
                         stateMachine.nextState = this;
                         stateMachine.overrideStateCompletion = true;
                     }                   
-                    queuedAttackState = PlayerAttackStatesDictionary[PlayerCombos[i].attacks[attackList.Count]];
+                    queuedAttackState = PlayerAttackStatesDictionary[PlayerCombos[i].ComboAttacks[attackList.Count].Attack];
                     break;
                 }
             }
@@ -251,6 +256,33 @@ namespace Game
                     specialImages[j-1].fillAmount = newSpecialPercent.Map(low, high);
                     specialImages[j - 1].color = specialImageColor;
                 }
+            }
+        }
+
+        //[Button("Generate/Regenerate attack states", EButtonEnableMode.Editor)]
+        private void GenerateAttackStates()
+        {
+            GameObject[] children = attackStatesParent.GetComponentsInChildren<GameObject>();
+            foreach (GameObject child in children)
+            {
+                Destroy(child);
+            }
+
+            HashSet<PlayerAttackSO> attackSOs = new();
+            foreach(PlayerComboSO combo in PlayerCombos)
+            {
+                for(int i = 0; i < combo.ComboAttacks.Length; i++)
+                {
+                    attackSOs.Add(combo.ComboAttacks[i].Attack);
+                }
+            }
+
+            foreach(PlayerAttackSO attackSO in attackSOs)
+            {
+                GameObject attackStateObject = Instantiate(new GameObject(), attackStatesParent.transform);
+                PlayerAttackState state = attackStateObject.AddComponent<PlayerAttackState>();
+                //state.PlayerAttack = attackSO; make it readonly
+                attackStateObject.name = attackSO.name;
             }
         }
     }

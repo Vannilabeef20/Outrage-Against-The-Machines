@@ -23,22 +23,10 @@ namespace Game
         [Tooltip("Value to be multiplied to damage value if an enemy is damaged instead of a player.")]
         [SerializeField] float enemyMultiplier;
 
+
         private void OnTriggerEnter(Collider other)
         {
-            if (playerMask.ContainsLayer(other.gameObject.layer))
-            {
-                if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
-                {
-                    damageble.TakeDamage(transform.position, damage, stunDuration, knockbackStrenght);
-                }
-            }
-            else if(enemyMask.ContainsLayer(other.gameObject.layer))
-            {
-                if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
-                {
-                    damageble.TakeDamage(transform.position, damage * enemyMultiplier, stunDuration, knockbackStrenght);
-                }
-            }
+            
         }
     }
 }

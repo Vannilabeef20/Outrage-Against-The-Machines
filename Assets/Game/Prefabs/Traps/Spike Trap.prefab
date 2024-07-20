@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267136477588233203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -119.76, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56,9 +56,25 @@ MonoBehaviour:
   - {fileID: 267136478592462369}
   - {fileID: 267136478536311542}
   spikeAnimation: {fileID: 7400000, guid: c96eaef0923ac2941a1360fc64dfaa1c, type: 2}
+  activationRange: 13
   animationDuration: 3
-  timer: 0
   frameEvents:
+  - <TriggerFrame>k__BackingField: 0
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5756627512438387515}
+          m_TargetAssemblyTypeName: Game.SpikeTrap, Assembly-CSharp
+          m_MethodName: ClearHitArray
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - <TriggerFrame>k__BackingField: 162
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -75,7 +91,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  activationRange: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  damage: 20
+  stunDuration: 0.4
+  knockbackStrenght: 4
+  enemyMultiplier: 1
+  timer: 0
+  hitList: []
 --- !u!82 &7122389631957895726
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,7 +211,7 @@ GameObject:
   - component: {fileID: 267136478527206577}
   - component: {fileID: 267136478527206576}
   - component: {fileID: 267136478527206575}
-  - component: {fileID: 267136478527206574}
+  - component: {fileID: 8432586227492696560}
   m_Layer: 0
   m_Name: Spike_4
   m_TagString: Untagged
@@ -298,9 +325,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0.6666667, z: 0}
---- !u!114 &267136478527206574
+  m_Size: {x: 0.6395105, y: 0.7178433, z: 0.4}
+  m_Center: {x: -0.08475524, y: 0.36676538, z: 0}
+--- !u!114 &8432586227492696560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -309,19 +336,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 267136478527206572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894c6bc6f3a4614478a6dcf3ef5bf3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 551959b5c8b2c2c4990de0cd77f9b696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
-  damage: 20
-  stunDuration: 0.4
-  knockbackStrenght: 4
-  enemyMultiplier: 0.33
+  trap: {fileID: 0}
 --- !u!1 &267136478536311538
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +352,7 @@ GameObject:
   - component: {fileID: 267136478536311543}
   - component: {fileID: 267136478536311542}
   - component: {fileID: 267136478536311541}
-  - component: {fileID: 267136478536311540}
+  - component: {fileID: 2908350580388337776}
   m_Layer: 0
   m_Name: Spike_1
   m_TagString: Untagged
@@ -448,9 +466,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0.6666667, z: 0}
---- !u!114 &267136478536311540
+  m_Size: {x: 0.6395105, y: 0.7178433, z: 0.4}
+  m_Center: {x: -0.08475524, y: 0.36676538, z: 0}
+--- !u!114 &2908350580388337776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,19 +477,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 267136478536311538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894c6bc6f3a4614478a6dcf3ef5bf3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 551959b5c8b2c2c4990de0cd77f9b696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
-  damage: 20
-  stunDuration: 0.4
-  knockbackStrenght: 4
-  enemyMultiplier: 0.33
+  trap: {fileID: 0}
 --- !u!1 &267136478541998532
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +493,7 @@ GameObject:
   - component: {fileID: 267136478541998537}
   - component: {fileID: 267136478541998536}
   - component: {fileID: 267136478541998535}
-  - component: {fileID: 267136478541998534}
+  - component: {fileID: 7742013662536738798}
   m_Layer: 0
   m_Name: Spike_3
   m_TagString: Untagged
@@ -598,9 +607,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0.6666667, z: 0}
---- !u!114 &267136478541998534
+  m_Size: {x: 0.6395105, y: 0.7178433, z: 0.4}
+  m_Center: {x: -0.08475524, y: 0.36676538, z: 0}
+--- !u!114 &7742013662536738798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -609,19 +618,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 267136478541998532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894c6bc6f3a4614478a6dcf3ef5bf3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 551959b5c8b2c2c4990de0cd77f9b696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
-  damage: 20
-  stunDuration: 0.4
-  knockbackStrenght: 4
-  enemyMultiplier: 0.33
+  trap: {fileID: 0}
 --- !u!1 &267136478592462365
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 267136478592462370}
   - component: {fileID: 267136478592462369}
   - component: {fileID: 267136478592462368}
-  - component: {fileID: 267136478592462367}
+  - component: {fileID: 3435239247725607677}
   m_Layer: 0
   m_Name: Spike_2
   m_TagString: Untagged
@@ -748,9 +748,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0.6666667, z: 0}
---- !u!114 &267136478592462367
+  m_Size: {x: 0.6395105, y: 0.7178433, z: 0.4}
+  m_Center: {x: -0.08475524, y: 0.36676538, z: 0}
+--- !u!114 &3435239247725607677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -759,19 +759,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 267136478592462365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894c6bc6f3a4614478a6dcf3ef5bf3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 551959b5c8b2c2c4990de0cd77f9b696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
-  damage: 20
-  stunDuration: 0.4
-  knockbackStrenght: 4
-  enemyMultiplier: 0.33
+  trap: {fileID: 0}
 --- !u!1 &1209989558670933645
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +835,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 34a0cc000d97730418c1c654b494c87e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

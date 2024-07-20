@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c599c2966d598b3439b58d027a84243c, type: 3}
   m_Name: SetMenuVisibilityEvent
   m_EditorClassIdentifier: 
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
   isTimeScaleIndependent: 1
-  debugFlag: 256
+  listenerNames: []
+  testValue: 0

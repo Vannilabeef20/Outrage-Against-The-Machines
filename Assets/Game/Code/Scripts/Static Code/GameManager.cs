@@ -16,7 +16,7 @@ namespace Game
     {
         public static GameManager Instance{ get; private set; }
 
-        [field: SerializeField] public Camera MainCamera { private set; get; }
+        [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         #region Loading & Transitions Params
         [Header("LOADING & TRANSITIONS"), HorizontalLine(2f, EColor.Red)]
@@ -104,6 +104,8 @@ namespace Game
 
         private void OnLevelWasLoaded(int level)
         {
+            if (MainCamera == null) MainCamera = Camera.main;
+
             if (Instance == null)
             {
                 Instance = this;
@@ -114,8 +116,8 @@ namespace Game
                 Destroy(gameObject);
                 return;
             }
-            if (level == 0)
-                OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
+
+            if (level == 0) OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
             else
             {
                 OnSetMenuVisibility.Raise(this, MenuId.None);
@@ -318,6 +320,7 @@ namespace Game
 
         private void OnDrawGizmosSelected()
         {
+            if (MainCamera == null) return;
             Gizmos.color = RespawnLabelStyle.normal.textColor;
             Vector3 respawnPos = MainCamera.ViewportToWorldPoint(spawnViewportPostion).ToXYY();
             Vector3 centerPos = MainCamera.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
@@ -334,7 +337,6 @@ namespace Game
             Handles.DrawDottedLine(new Vector3(respawnPos.x, respawnPos.y, centerPos.z), yPos, 0.2f);
             yPos.x -= 0.3f;
             Handles.Label(yPos, "Y");
-
         }
         private void OnDrawGizmos()
         {

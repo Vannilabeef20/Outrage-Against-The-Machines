@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
+  m_Name: Cow Strong Punch
+  m_EditorClassIdentifier: 
+  preview: {fileID: -107094630, guid: 644c1063895df4f458a04a0169713945, type: 3}
+  <Animation>k__BackingField: {fileID: 7400000, guid: 77ac1eb0f6dbe0a4f886b12f7031ae0d, type: 2}
+  <Damage>k__BackingField: 30
+  <Duration>k__BackingField: 0.9
+  <VelocityCurve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -3.3977752
+      outSlope: -3.3977752
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13032424
+    - serializedVersion: 3
+      time: 0.075
+      value: -0.07
+      inSlope: -0.14204742
+      outSlope: 0.75838876
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.45536312
+      outWeight: 0.41341755
+    - serializedVersion: 3
+      time: 0.076
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.15
+      value: 0.0023498535
+      inSlope: Infinity
+      outSlope: 2.406913
+      tangentMode: 7
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.38578418
+    - serializedVersion: 3
+      time: 0.3
+      value: 1.0023575
+      inSlope: 10.910345
+      outSlope: -17.959522
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.06646474
+      outWeight: 0.0596863
+    - serializedVersion: 3
+      time: 0.35
+      value: 0
+      inSlope: 0.13073753
+      outSlope: 1.0555023
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.4821978
+      outWeight: 0.27707458
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <MaxVelocity>k__BackingField: 22
+  <StunDuration>k__BackingField: 0.75
+  <KnockbackStrenght>k__BackingField: 12
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
+  <Sound>k__BackingField: {fileID: 8300000, guid: 5eebc5f835642f441bfa94b79a779290, type: 3}
+  <AudioPitches>k__BackingField:
+  - 0.8
+  <RumbleLowFrequency>k__BackingField: 0.85
+  <RumbleHighFrequency>k__BackingField: 0.85
+  <RumbleDuration>k__BackingField: 0.25

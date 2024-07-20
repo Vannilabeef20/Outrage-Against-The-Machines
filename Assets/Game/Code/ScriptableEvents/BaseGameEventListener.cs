@@ -19,7 +19,7 @@ namespace Game
         [SerializeField] E gameEvent;
         public E GameEvent { get { return gameEvent; } set { gameEvent = value; } }
 
-        [Tooltip("The Unity Events that will be invoked in response.")]
+        [Tooltip("The Unity CustomEvents that will be invoked in response.")]
         [SerializeField] UER unityEventResponse;
 
         private void OnEnable()

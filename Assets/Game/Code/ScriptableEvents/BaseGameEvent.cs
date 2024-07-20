@@ -11,8 +11,16 @@ namespace Game
     /// <typeparam name="T">Data "Type".</typeparam>
     public class BaseGameEvent<T> : ScriptableObject
     {
+        [SerializeField, Expandable] DebugSO debugSO;
         [SerializeField] bool isTimeScaleIndependent;
+        [SerializeField, ReadOnly] List<string> listenerNames = new();
         List<IGameEventListener<T>> eventListeners = new();
+        [SerializeField] T testValue;
+
+        private void OnDisable()
+        {
+            listenerNames.Clear();
+        }
 
         /// <summary>
         /// Sends "sender" and "data" to all listeners.
@@ -21,18 +29,15 @@ namespace Game
         /// <param name="data">The data of Type "T" to be sent to all listeners on Raise.</param>
         public virtual void Raise(object sender, T data)
         {
-            if(eventListeners.Count < 1)
-            {
-                return;
-            }
-            if (Time.timeScale == 0 && !isTimeScaleIndependent)
-            {
-                return;
-            }
+            if (eventListeners.Count < 1) return;
+
+            if (Time.timeScale == 0 && !isTimeScaleIndependent) return;
+
             for (int i = eventListeners.Count - 1; i >= 0; i--)
             {
                 eventListeners[i].OnEventRaised(data);
             }
+            EventLog(sender, data);
         }
 
         /// <summary>
@@ -44,6 +49,7 @@ namespace Game
             if (!HasListener(listener))
             {
                 eventListeners.Add(listener);
+                listenerNames.Add(listener.ToString());
             }
         }
 
@@ -56,7 +62,13 @@ namespace Game
             if (HasListener(listener))
             {
                 eventListeners.Remove(listener);
+                listenerNames.Remove(listener.ToString());
             }
+        }
+
+        private void EventLog(object sender, T data)
+        {
+            debugSO.Log(sender, $"<color=#8c53c6>{name} </color><color=white>was raised!</color> Data: {data.ToString()}", EDebugSubjectFlags.CustomEvents);
         }
 
         public bool HasListener(IGameEventListener<T> listener)
@@ -64,13 +76,16 @@ namespace Game
             return eventListeners.Contains(listener);
         }
 
-        [Button("Log all listeners", EButtonEnableMode.Playmode)]
-        public void LogListeners()
+        [Button("TEST DEFAULT RAISE LOG", EButtonEnableMode.Always)]
+        public void TestDefaultLog()
         {
-            foreach(IGameEventListener<T> listener in eventListeners)
-            {
-                Debug.Log(listener);
-            }
+            EventLog(this, default);
+        }
+
+        [Button("RAISE TEST VALUE", EButtonEnableMode.Playmode)]
+        public void TestRaise()
+        {
+            Raise(this, testValue);
         }
     }
 }

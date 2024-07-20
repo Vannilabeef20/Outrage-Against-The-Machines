@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5c9fc39bcf1c049a739025bbb5d85c, type: 3}
   m_Name: PlayerDeathParams Event
   m_EditorClassIdentifier: 
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
   isTimeScaleIndependent: 0
-  debugFlag: 2
+  listenerNames: []

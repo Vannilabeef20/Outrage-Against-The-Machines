@@ -432,9 +432,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4596487123794322417}
   - component: {fileID: 4596487123794322429}
+  - component: {fileID: 4596487123794322430}
   - component: {fileID: 4596487123794322419}
   - component: {fileID: 4596487123794322418}
-  - component: {fileID: 4596487123794322430}
   m_Layer: 5
   m_Name: Player_2 Selection Arrow
   m_TagString: Untagged
@@ -470,6 +470,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4596487123794322416}
   m_CullTransparentMesh: 1
+--- !u!114 &4596487123794322430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487123794322416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PlayerIndex>k__BackingField: 1
+  selectionImage: {fileID: 4596487124666657885}
+  defenseArrowImage: {fileID: 4596487123465284035}
+  speedArrowImage: {fileID: 4596487124911536019}
+  swapButton: {fileID: 4596487123794322418}
+  joinTextObject: {fileID: 4596487125050045508}
+  selectionSprites:
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  selectionDefenseSprites:
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  selectionSpeedSprites:
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  <SelectionPrefabs>k__BackingField:
+  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+  - {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
+  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+  <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487123794322419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,41 +591,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4596487123794322430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4596487123794322416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PlayerIndex>k__BackingField: 1
-  selectionImage: {fileID: 4596487124666657885}
-  defenseArrowImage: {fileID: 4596487123465284035}
-  speedArrowImage: {fileID: 4596487124911536019}
-  swapButton: {fileID: 4596487123794322418}
-  joinTextObject: {fileID: 4596487125050045508}
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  selectionDefenseSprites:
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  selectionSpeedSprites:
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  <SelectionPrefabs>k__BackingField:
-  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
-  - {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
-  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
-  <SelectionIndex>k__BackingField: 0
 --- !u!1 &4596487123898438335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,9 +1536,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4596487124575117008}
   - component: {fileID: 4596487124575117020}
+  - component: {fileID: 4596487124575117021}
   - component: {fileID: 4596487124575117010}
   - component: {fileID: 4596487124575117009}
-  - component: {fileID: 4596487124575117021}
   m_Layer: 5
   m_Name: Player_3 Selection Arrow
   m_TagString: Untagged
@@ -1574,6 +1574,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4596487124575117015}
   m_CullTransparentMesh: 1
+--- !u!114 &4596487124575117021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124575117015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PlayerIndex>k__BackingField: 2
+  selectionImage: {fileID: 4596487124162356684}
+  defenseArrowImage: {fileID: 4596487125515912368}
+  speedArrowImage: {fileID: 4596487124403533615}
+  swapButton: {fileID: 4596487124575117009}
+  joinTextObject: {fileID: 4596487124946634928}
+  selectionSprites:
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  selectionDefenseSprites:
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  selectionSpeedSprites:
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  <SelectionPrefabs>k__BackingField:
+  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+  - {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
+  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+  <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487124575117010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,41 +1695,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4596487124575117021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4596487124575117015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PlayerIndex>k__BackingField: 2
-  selectionImage: {fileID: 4596487124162356684}
-  defenseArrowImage: {fileID: 4596487125515912368}
-  speedArrowImage: {fileID: 4596487124403533615}
-  swapButton: {fileID: 4596487124575117009}
-  joinTextObject: {fileID: 4596487124946634928}
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  selectionDefenseSprites:
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  selectionSpeedSprites:
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  <SelectionPrefabs>k__BackingField:
-  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
-  - {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
-  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
-  <SelectionIndex>k__BackingField: 0
 --- !u!1 &4596487124666657884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,9 +2144,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4596487124850303753}
   - component: {fileID: 4596487124850303861}
+  - component: {fileID: 4596487124850303862}
   - component: {fileID: 4596487124850303755}
   - component: {fileID: 4596487124850303754}
-  - component: {fileID: 4596487124850303862}
   m_Layer: 5
   m_Name: Player_1 Selection Arrow
   m_TagString: Untagged
@@ -2182,6 +2182,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4596487124850303752}
   m_CullTransparentMesh: 1
+--- !u!114 &4596487124850303862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124850303752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PlayerIndex>k__BackingField: 0
+  selectionImage: {fileID: 4596487124793945171}
+  defenseArrowImage: {fileID: 4596487123534875920}
+  speedArrowImage: {fileID: 4596487124791864840}
+  swapButton: {fileID: 4596487124850303754}
+  joinTextObject: {fileID: 4596487123755900860}
+  selectionSprites:
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  selectionDefenseSprites:
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  selectionSpeedSprites:
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  <SelectionPrefabs>k__BackingField:
+  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+  - {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
+  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+  <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487124850303755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2268,41 +2303,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4596487124850303862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4596487124850303752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8074a730b5a55459ffc14ee92c70ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PlayerIndex>k__BackingField: 0
-  selectionImage: {fileID: 4596487124793945171}
-  defenseArrowImage: {fileID: 4596487123534875920}
-  speedArrowImage: {fileID: 4596487124791864840}
-  swapButton: {fileID: 4596487124850303754}
-  joinTextObject: {fileID: 4596487123755900860}
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  selectionDefenseSprites:
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  selectionSpeedSprites:
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  <SelectionPrefabs>k__BackingField:
-  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
-  - {fileID: 588689491377177503, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
-  - {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
-  <SelectionIndex>k__BackingField: 0
 --- !u!1 &4596487124860275131
 GameObject:
   m_ObjectHideFlags: 0

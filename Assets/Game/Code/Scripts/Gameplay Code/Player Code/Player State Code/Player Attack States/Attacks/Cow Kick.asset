@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
+  m_Name: Cow Kick
+  m_EditorClassIdentifier: 
+  preview: {fileID: -1906920501, guid: 96dad8e684aff234ca1795cfd79a009a, type: 3}
+  <Animation>k__BackingField: {fileID: 7400000, guid: 153e54e046feab440bcc6d04a784b9a2, type: 2}
+  <Damage>k__BackingField: 15
+  <Duration>k__BackingField: 0.6
+  <VelocityCurve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0014076233
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2514038
+      value: 0
+      inSlope: Infinity
+      outSlope: 3.0574508
+      tangentMode: 7
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.5151391
+    - serializedVersion: 3
+      time: 0.4
+      value: 1.0023575
+      inSlope: 10.144142
+      outSlope: -9.144818
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.07371089
+      outWeight: 0.03643206
+    - serializedVersion: 3
+      time: 0.6
+      value: 0
+      inSlope: -0.035869244
+      outSlope: 1.0555023
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.18786414
+      outWeight: 0.27707458
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <MaxVelocity>k__BackingField: 10
+  <StunDuration>k__BackingField: 0.6
+  <KnockbackStrenght>k__BackingField: 8
+  <IsSpecial>k__BackingField: 0
+  <SpecialCost>k__BackingField: 0
+  <Sound>k__BackingField: {fileID: 8300000, guid: 07aaff9328a339f4885ed6cabb5d16f3, type: 3}
+  <AudioPitches>k__BackingField:
+  - 0.9
+  <RumbleLowFrequency>k__BackingField: 0.8
+  <RumbleHighFrequency>k__BackingField: 0.6
+  <RumbleDuration>k__BackingField: 0.3

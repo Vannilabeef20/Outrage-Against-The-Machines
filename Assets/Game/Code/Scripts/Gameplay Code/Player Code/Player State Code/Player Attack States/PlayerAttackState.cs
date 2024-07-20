@@ -9,7 +9,7 @@ namespace Game
 
         [field: SerializeField, ReadOnly] protected PlayerAttackingState AttackMachine { get; private set; }
 
-        [field: SerializeField, Expandable] public PlayerAttackSO PlayerAttack { get; private set; }
+        [field: SerializeField, Expandable] public PlayerAttackSO PlayerAttack { get; set; }
         [field: SerializeField] public AnimationFrameEvent[] FrameEvents { get; private set; }
 
         public float TimeLeft  => PlayerAttack.Duration - UpTime;

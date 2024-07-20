@@ -3886,7 +3886,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &523117589
 Canvas:
   m_ObjectHideFlags: 0
@@ -4576,7 +4576,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &621317240
 Canvas:
   m_ObjectHideFlags: 0
@@ -14399,7 +14399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316229216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -121.92214, y: 5.6188097, z: -18.74}
+  m_LocalPosition: {x: -121.91772, y: 5.6188097, z: -18.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18051,7 +18051,7 @@ GameObject:
   - component: {fileID: 1895840673}
   - component: {fileID: 1895840672}
   m_Layer: 8
-  m_Name: Robo Dummy_1
+  m_Name: Robot Dummy_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19451,8 +19451,8 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0996323, y: 3.7860274}
   playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0, a: 0.9019608}
-  point1Pos: {x: -111.28214, y: 0.0996323, z: 0}
-  point2Pos: {x: -111.28214, y: 3.7860274, z: 0}
+  point1Pos: {x: -111.27772, y: 0.0996323, z: 0}
+  point2Pos: {x: -111.27772, y: 3.7860274, z: 0}
 --- !u!4 &1996890125
 Transform:
   m_ObjectHideFlags: 0
@@ -21093,7 +21093,7 @@ GameObject:
   - component: {fileID: 4068858833681538863}
   - component: {fileID: 4068858833681538862}
   m_Layer: 8
-  m_Name: Robo Dummy
+  m_Name: Robot Dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21737,7 +21737,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!4 &5719482194384466635
 Transform:
   m_ObjectHideFlags: 0

@@ -134,7 +134,7 @@ namespace Game
         /// <summary>
         /// Spawns a cube inside the spawn zone to test its acurracy.
         /// </summary>
-        [Button("Spawn test enemy cube")]
+        [Button("Spawn testValue enemy cube")]
         public void SpawnTest()
         {
             Vector3 tempPosition = transform.position.ToXYY();

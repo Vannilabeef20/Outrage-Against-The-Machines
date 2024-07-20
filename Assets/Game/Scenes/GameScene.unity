@@ -754,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144774165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: 5, z: 0.47999996}
+  m_LocalPosition: {x: 15, y: 5, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -985,7 +985,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: e9c97b6a76dbb6f40a630851613bd56a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1022,7 +1022,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1488542923154001142, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_Name
-      value: BreakableBox_4
+      value: BreakableBox_3
       objectReference: {fileID: 0}
     - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_RootOrder
@@ -1190,7 +1190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_4
+      value: Spike Trap_0
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -1234,14 +1234,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1303,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456419365028409629, guid: 26b5868882269904da595ca3507136d6, type: 3}
       propertyPath: fallTime
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1456419365028409630, guid: 26b5868882269904da595ca3507136d6, type: 3}
       propertyPath: m_Name
@@ -1324,7 +1316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_6
+      value: Spike Trap_4
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -1368,14 +1360,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2028,7 +2012,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_5
+      value: Spike Trap_3
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -2074,14 +2058,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2102,7 +2078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1488542923154001142, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_Name
-      value: BreakableBox_5
+      value: BreakableBox_2
       objectReference: {fileID: 0}
     - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_RootOrder
@@ -2366,7 +2342,7 @@ GameObject:
   - component: {fileID: 774443397}
   - component: {fileID: 774443396}
   - component: {fileID: 774443395}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LifeCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2622,7 +2598,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_7
+      value: Spike Trap_7
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -2666,14 +2642,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3883,7 +3851,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_2
+      value: Spike Trap_6
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -3927,14 +3895,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4180,7 +4140,7 @@ GameObject:
   - component: {fileID: 1223165240}
   - component: {fileID: 1223165241}
   - component: {fileID: 1223165239}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Go Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4672,7 +4632,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1488542923154001142, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_Name
-      value: BreakableBox_2
+      value: BreakableBox_0
       objectReference: {fileID: 0}
     - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_RootOrder
@@ -5048,8 +5008,8 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0648555, y: 4.782351}
   playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0.1493411, a: 0.9019608}
-  point1Pos: {x: -113.50998, y: 0.0648555, z: 0}
-  point2Pos: {x: -113.50998, y: 4.782351, z: 0}
+  point1Pos: {x: -113.509964, y: 0.0648555, z: 0}
+  point2Pos: {x: -113.509964, y: 4.782351, z: 0}
 --- !u!4 &1520381731
 Transform:
   m_ObjectHideFlags: 0
@@ -5255,7 +5215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544677358}
   m_Layer: 0
-  m_Name: PROPS
+  m_Name: TRAPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5273,10 +5233,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1284562268}
   - {fileID: 2142951280}
-  - {fileID: 456188219}
+  - {fileID: 1284562268}
   - {fileID: 1416041087}
+  - {fileID: 456188219}
   - {fileID: 1884188148}
   - {fileID: 1471902252}
   - {fileID: 594302449}
@@ -5300,7 +5260,7 @@ GameObject:
   - component: {fileID: 1545679837}
   - component: {fileID: 1545679839}
   - component: {fileID: 1545679838}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player Lifes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5522,7 +5482,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 06991ed5b10a3054daf719733f3107e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5954,7 +5914,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_3
+      value: Spike Trap_5
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -5998,14 +5958,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6185,7 +6137,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos_1
+      value: Spike Trap_2
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -6231,14 +6183,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6254,7 +6198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1893487894}
   m_Layer: 0
-  m_Name: PHYSCAL BOUNDRIES
+  m_Name: PHYSICAL BOUNDRIES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6540,7 +6484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1488542923154001142, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_Name
-      value: BreakableBox_3
+      value: BreakableBox_1
       objectReference: {fileID: 0}
     - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_RootOrder
@@ -7050,7 +6994,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267136477588233203, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_Name
-      value: Set de espinhos
+      value: Spike Trap_1
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_RootOrder
@@ -7094,14 +7038,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 267136477588233204, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756627512438387515, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: activationRange
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894032972681209402, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
-      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7439,7 +7375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373763728649602869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -124.14998, y: 6.18881, z: -18.74}
+  m_LocalPosition: {x: -124.14996, y: 6.18881, z: -18.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8086,7 +8022,7 @@ GameObject:
   - component: {fileID: 186020196838688577}
   - component: {fileID: 6620328512417386477}
   - component: {fileID: 4025645006994500881}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8105,7 +8041,7 @@ GameObject:
   - component: {fileID: 4817939066347666269}
   - component: {fileID: 399467069620617038}
   - component: {fileID: 4622865799472678297}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

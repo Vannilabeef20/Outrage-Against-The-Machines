@@ -8,12 +8,36 @@ namespace Game
     [SelectionBase]
     public class SpikeTrap : MonoBehaviour
     {
+        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [SerializeField] Animator[] animators;
         [SerializeField] AnimationClip spikeAnimation;
-        [SerializeField] float animationDuration;
-        [SerializeField, ReadOnly] float timer;
-        [SerializeField] AnimationFrameEvent[] frameEvents;
+
+
+        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+
         [SerializeField] float activationRange;
+        [SerializeField] float animationDuration;
+        [SerializeField] AnimationFrameEvent[] frameEvents;
+
+        [Header("DAMAGE")]
+        [SerializeField] LayerMask playerMask;
+        [SerializeField] LayerMask enemyMask;
+
+        [SerializeField] float damage;
+
+        [Tooltip("How long (seconds) the entity will be stunned after taking damage.")]
+        [SerializeField] float stunDuration;
+
+        [Tooltip("How strong the force applied to the entity will be.")]
+        [SerializeField] float knockbackStrenght;
+
+        [Tooltip("Value to be multiplied to damage value if an enemy is damaged instead of a player.")]
+        [SerializeField] float enemyMultiplier;
+
+
+        [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField, ReadOnly] float timer;
+        [SerializeField, ReadOnly] List<Collider> hitList;
 
         private void Awake()
         {
@@ -57,6 +81,33 @@ namespace Game
             {
                 animator.Play(spikeAnimation.name, 0, timer.Map(0, animationDuration));
             }
+        }
+
+        public void DealDamage(Collider hitCollider)
+        {
+            if (hitList.Contains(hitCollider)) return;
+
+            hitList.Add(hitCollider);
+
+            if (playerMask.ContainsLayer(hitCollider.gameObject.layer))
+            {
+                if (hitCollider.TryGetComponent<IDamageble>(out IDamageble damageble))
+                {
+                    damageble.TakeDamage(transform.position, damage, stunDuration, knockbackStrenght);
+                }
+            }
+            else if (enemyMask.ContainsLayer(hitCollider.gameObject.layer))
+            {
+                if (hitCollider.TryGetComponent<IDamageble>(out IDamageble damageble))
+                {
+                    damageble.TakeDamage(transform.position, damage * enemyMultiplier, stunDuration, knockbackStrenght);
+                }
+            }
+        }
+
+        public void ClearHitArray()
+        {
+            hitList.Clear();
         }
 
 #if UNITY_EDITOR
