@@ -13,15 +13,15 @@ namespace Game
             Image
         }
 
-        [SerializeField] private EAnimationTarget targetType;
         [SerializeField, ShowIf("targetType", EAnimationTarget.SpriteRenderer)] private SpriteRenderer spriteRenderer;
         [SerializeField, ShowIf("targetType", EAnimationTarget.Image)] private Image image;
+        [SerializeField] private EAnimationTarget targetType;
         [SerializeField] private bool loop = true;
         [SerializeField, Min(0f)] private float animationDuration;
         [SerializeField] private bool DestroyOnFinish;
         [SerializeField, ShowAssetPreview] private Sprite[] sprites;
         [SerializeField, ReadOnly] private float timer;
-        [SerializeField, ReadOnly] private int currentImageIndex;
+        [SerializeField, ReadOnly] private int currentSpriteIndex;
         public bool pause;
 
         private void Update()
@@ -37,8 +37,8 @@ namespace Game
                 return;
             }
             timer = 0;
-            currentImageIndex++;
-            if(currentImageIndex >= sprites.Length)
+            currentSpriteIndex++;
+            if(currentSpriteIndex >= sprites.Length)
             {
                 if(DestroyOnFinish)
                 {
@@ -49,22 +49,22 @@ namespace Game
                 {
                     if(loop)
                     {
-                        currentImageIndex = 0;
+                        currentSpriteIndex = 0;
                     }
                     else
                     {
-                        currentImageIndex = sprites.Length - 1; 
+                        currentSpriteIndex = sprites.Length - 1; 
                         pause = true;
                     }
                 }
             }
             if (targetType == EAnimationTarget.Image)
             {
-                image.sprite = sprites[currentImageIndex];
+                image.sprite = sprites[currentSpriteIndex];
             }
             else
             {
-                spriteRenderer.sprite = sprites[currentImageIndex];
+                spriteRenderer.sprite = sprites[currentSpriteIndex];
             }
 
         }

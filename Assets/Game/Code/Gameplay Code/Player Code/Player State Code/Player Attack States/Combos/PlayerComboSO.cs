@@ -31,5 +31,7 @@ namespace Game
         [HideInInspector] public string Name;
         [field: SerializeField] public EPlayerInput Input { get; private set; }
         [field: SerializeField, Expandable] public PlayerAttackSO Attack { get; private set; }
+
+        [SerializeField] PlayerState permittedPreviousState;
     }
 }

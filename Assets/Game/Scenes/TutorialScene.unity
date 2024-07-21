@@ -552,9 +552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 89029353}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   - {fileID: -487618328, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   - {fileID: -1674098441, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &89029353
 SpriteRenderer:
@@ -769,9 +769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 108241983}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &108241983
 SpriteRenderer:
@@ -916,9 +916,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 121579586}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.7
   DestroyOnFinish: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
   - {fileID: -1632947123, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1422422754, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &121579586
 SpriteRenderer:
@@ -1041,9 +1041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 150128329}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &150128329
 SpriteRenderer:
@@ -1272,9 +1272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 166581666}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   - {fileID: 2109474921, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &166581666
 SpriteRenderer:
@@ -1546,9 +1546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 225177644}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -1584,7 +1584,7 @@ MonoBehaviour:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!222 &225177643
 CanvasRenderer:
@@ -1789,9 +1789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 235402939}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   - {fileID: 1198637488, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -593386762, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &235402939
 SpriteRenderer:
@@ -2013,9 +2013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 258015373}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -2034,7 +2034,7 @@ MonoBehaviour:
   - {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   - {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &258015373
 SpriteRenderer:
@@ -2860,9 +2860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 370293833}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -2885,7 +2885,7 @@ MonoBehaviour:
   - {fileID: -1246178574, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   - {fileID: 2046906829, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &392059584
 GameObject:
@@ -2941,9 +2941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 392059588}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -2957,7 +2957,7 @@ MonoBehaviour:
   - {fileID: 840750341, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -51659355, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &392059588
 SpriteRenderer:
@@ -3061,9 +3061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 394127110}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   - {fileID: -1748341184, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -120289962, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &394127110
 SpriteRenderer:
@@ -3383,9 +3383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 456471762}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1.2
   DestroyOnFinish: 0
@@ -3399,7 +3399,7 @@ MonoBehaviour:
   - {fileID: 145039634, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   - {fileID: -2046792758, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &456471762
 SpriteRenderer:
@@ -3631,9 +3631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 480109015}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -3652,7 +3652,7 @@ MonoBehaviour:
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &480109015
 SpriteRenderer:
@@ -4653,9 +4653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 623312781}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -4667,7 +4667,7 @@ MonoBehaviour:
   - {fileID: 1299744703, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -689011474, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &623312781
 SpriteRenderer:
@@ -4818,9 +4818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 638762241}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -4857,7 +4857,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &644787756
 GameObject:
@@ -5209,9 +5209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 708032169}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -5248,7 +5248,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &734087561
 GameObject:
@@ -5427,9 +5427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 741176550}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -5452,7 +5452,7 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &751346235
 GameObject:
@@ -5580,9 +5580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 775699911}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -5601,7 +5601,7 @@ MonoBehaviour:
   - {fileID: -1648594634, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1648594634, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &775699911
 SpriteRenderer:
@@ -5705,9 +5705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 786151411}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -5730,7 +5730,7 @@ MonoBehaviour:
   - {fileID: -487618328, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   - {fileID: -1674098441, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &786151411
 SpriteRenderer:
@@ -5986,9 +5986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 808899326}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -6025,7 +6025,7 @@ MonoBehaviour:
   - {fileID: 1354300532, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
   - {fileID: -850761730, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &808899326
 SpriteRenderer:
@@ -11294,9 +11294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 909951492}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.7
   DestroyOnFinish: 0
@@ -11308,7 +11308,7 @@ MonoBehaviour:
   - {fileID: -1889795296, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: 149407963, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &909951492
 SpriteRenderer:
@@ -11416,9 +11416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 913425332}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -11428,7 +11428,7 @@ MonoBehaviour:
   - {fileID: 1104097780, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1475089834, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &913425332
 SpriteRenderer:
@@ -11809,9 +11809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 950615704}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -11821,7 +11821,7 @@ MonoBehaviour:
   - {fileID: 615984872, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -2048964551, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &950615704
 SpriteRenderer:
@@ -11970,9 +11970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 971093227}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -11982,7 +11982,7 @@ MonoBehaviour:
   - {fileID: -293182326, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 911797389, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &971093227
 SpriteRenderer:
@@ -12097,9 +12097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 1
   spriteRenderer: {fileID: 0}
   image: {fileID: 992674080}
+  targetType: 1
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -12112,7 +12112,7 @@ MonoBehaviour:
   - {fileID: 512561230, guid: 5b243ac75d565a64f881b0ca8b9598b3, type: 3}
   - {fileID: -957711612, guid: 5b243ac75d565a64f881b0ca8b9598b3, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!222 &992674082
 CanvasRenderer:
@@ -12854,9 +12854,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1082170301}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -12879,7 +12879,7 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &1084538532
 GameObject:
@@ -12931,9 +12931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1084538535}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -12951,7 +12951,7 @@ MonoBehaviour:
   - {fileID: -1582427895, guid: ec2c53ead96aace4bbd0d9d19344dc3c, type: 3}
   - {fileID: -1053149886, guid: ec2c53ead96aace4bbd0d9d19344dc3c, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1084538535
 SpriteRenderer:
@@ -13502,9 +13502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1194727339}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -13540,7 +13540,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1001 &1195103105
 PrefabInstance:
@@ -13657,9 +13657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1197053356}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -13695,7 +13695,7 @@ MonoBehaviour:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1197053356
 SpriteRenderer:
@@ -14176,9 +14176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1252175387}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -14190,7 +14190,7 @@ MonoBehaviour:
   - {fileID: -1168005865, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1472615998, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1252175387
 SpriteRenderer:
@@ -14770,9 +14770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1404990811}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -14793,7 +14793,7 @@ MonoBehaviour:
   - {fileID: 1767241300, guid: 27a94abc28b32714d8c0208270bdfe81, type: 3}
   - {fileID: 767648687, guid: 27a94abc28b32714d8c0208270bdfe81, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1404990811
 SpriteRenderer:
@@ -14941,9 +14941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1489063745}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -14979,7 +14979,7 @@ MonoBehaviour:
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1489063745
 SpriteRenderer:
@@ -15566,9 +15566,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1572054337}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -15605,7 +15605,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &1578151232
 GameObject:
@@ -15750,9 +15750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1580350896}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -15771,7 +15771,7 @@ MonoBehaviour:
   - {fileID: 342084925, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1580350896
 SpriteRenderer:
@@ -15879,9 +15879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1580984932}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -15893,7 +15893,7 @@ MonoBehaviour:
   - {fileID: -315825960, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -833016315, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1580984932
 SpriteRenderer:
@@ -16481,9 +16481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1678917195}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -16520,7 +16520,7 @@ MonoBehaviour:
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1678917195
 SpriteRenderer:
@@ -16680,9 +16680,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1689247136}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -16718,7 +16718,7 @@ MonoBehaviour:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &1689804705
 GameObject:
@@ -17017,9 +17017,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1750655453}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -17038,7 +17038,7 @@ MonoBehaviour:
   - {fileID: -1262041605, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1750655453
 SpriteRenderer:
@@ -17724,9 +17724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1865445252}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -17762,7 +17762,7 @@ MonoBehaviour:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &1876620545
 GameObject:
@@ -17814,9 +17814,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1876620548}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -17835,7 +17835,7 @@ MonoBehaviour:
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1876620548
 SpriteRenderer:
@@ -17943,9 +17943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1887506429}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -17981,7 +17981,7 @@ MonoBehaviour:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1887506429
 SpriteRenderer:
@@ -18390,9 +18390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1903885730}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -18403,7 +18403,7 @@ MonoBehaviour:
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1903885730
 SpriteRenderer:
@@ -18600,9 +18600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1923649337}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.7
   DestroyOnFinish: 0
@@ -18614,7 +18614,7 @@ MonoBehaviour:
   - {fileID: -284597231, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -930084285, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1923649337
 SpriteRenderer:
@@ -18722,9 +18722,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1935952018}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -18735,7 +18735,7 @@ MonoBehaviour:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1935952018
 SpriteRenderer:
@@ -18881,9 +18881,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1939288779}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -18902,7 +18902,7 @@ MonoBehaviour:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1939288779
 SpriteRenderer:
@@ -19010,9 +19010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1948766229}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -19031,7 +19031,7 @@ MonoBehaviour:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &1948766229
 SpriteRenderer:
@@ -19261,9 +19261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 1961093706}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
@@ -19286,7 +19286,7 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!1 &1962117673
 GameObject:
@@ -19607,9 +19607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 2028263432}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
@@ -19645,7 +19645,7 @@ MonoBehaviour:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &2028263432
 SpriteRenderer:
@@ -20011,9 +20011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 2073489729}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -20024,7 +20024,7 @@ MonoBehaviour:
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &2073489729
 SpriteRenderer:
@@ -20132,9 +20132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 2088247918}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
@@ -20144,7 +20144,7 @@ MonoBehaviour:
   - {fileID: 2035820263, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1869755765, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &2088247918
 SpriteRenderer:
@@ -20252,9 +20252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 2123245674}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -20273,7 +20273,7 @@ MonoBehaviour:
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!212 &2123245674
 SpriteRenderer:
@@ -20373,9 +20373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 2125892423}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -20394,7 +20394,7 @@ MonoBehaviour:
   - {fileID: -575172135, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -575172135, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0
 --- !u!222 &2125892422
 CanvasRenderer:

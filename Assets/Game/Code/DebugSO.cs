@@ -116,7 +116,7 @@ namespace Game
         }
 
         [Button("Test All Logs")]
-        public void TestAllLogs()
+        private void TestAllLogs()
         {
             Log(this, "This is how the custom Log looks!", EDebugSubjectFlags.Test);
             LogWarning( this, "This is how the custom LogWarning looks!", EDebugSubjectFlags.Test);
