@@ -54,10 +54,8 @@ namespace Game
 
         public override void FixedDo()
         {
-            if(target == null)
-            {
-                return;
-            }
+            if (target == null) return;
+
             if (targetingTimer > targetingRepeatInterval)
             {
                 target = targetingBehaviour.GetTarget(stateMachine.body.position);
@@ -87,18 +85,13 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if(!stateMachine.IsInsidePlayZone)
-            {
-                return;
-            }
-            EnemyAttack enemyAttack = stateMachine.attack.GetAppropriateAttack();
-            if (enemyAttack != null)
-            {
-                stateMachine.attack.currentAttack = enemyAttack;
-                stateMachine.nextState = stateMachine.attack;
-                IsComplete = true;
-                return;
-            }
+            if (!stateMachine.IsInsidePlayZone) return;
+
+            if (!stateMachine.attack.CheckForAttacks()) return;
+
+            stateMachine.nextState = stateMachine.attack;
+            IsComplete = true;
+            return;
         }
     }
 }

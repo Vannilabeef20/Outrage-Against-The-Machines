@@ -9,7 +9,7 @@ namespace Game
 	public class LevelManager : MonoBehaviour
 	{
         /// <summary>
-        /// Static instance.
+        /// Static EventInstance.
         /// </summary>
 		public static LevelManager Instance { get; private set; }
 

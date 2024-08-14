@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -46,7 +47,7 @@ namespace Game
 
         #region Lifes Params
         [Header("REVIVE & LIVES"), HorizontalLine(2f, EColor.Yellow)]
-        [SerializeField] AudioClip reviveSound;
+        [SerializeField] StudioEventEmitter reviveEmitter;
         [SerializeField, Min(0), MaxValue(1f)] Vector2 spawnViewportPostion;
         [SerializeField] IntEvent UpdateLifeCount;
         [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
@@ -280,7 +281,7 @@ namespace Game
                     PlayerCharacterList[i].isPlayerActive = true;
                     if(CurrentLifeAmount > 0)
                     {
-                        AudioManager.instance.PlaySfxGlobal(reviveSound);
+                        reviveEmitter.Play();
                     }
                 }
             }

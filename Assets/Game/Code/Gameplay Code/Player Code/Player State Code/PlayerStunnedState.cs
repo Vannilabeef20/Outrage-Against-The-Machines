@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Cinemachine;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -16,12 +17,12 @@ namespace Game
         public override string Name { get => "Stunned"; }
 
         [Header("STATE LOCAL"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] StudioEventEmitter soundEmitter;
         [ReadOnly] public float duration;
 
         [ReadOnly] public Vector2 knockBackIntensity;
         [Header("PARAMS"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] private AnimationCurve knockBackCurve;
-        [SerializeField] private AudioClip damageTakenSound;
         #region CAMERA SHAKE
 
         //Camera Shake
@@ -59,7 +60,7 @@ namespace Game
             IsComplete = false;
             stateMachine.animator.speed = 0;
             startTime = Time.time;
-            stateMachine.audioSource.PlayOneShot(damageTakenSound);
+            soundEmitter.Play();
             foreach (var device in stateMachine.playerInput.devices)
             {
                 GameManager.Instance.Rumble(device, hitGamepadShakeLowFrequency,

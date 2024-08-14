@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
 using Cinemachine;
+using FMODUnity;
 
 namespace Game
 {
@@ -10,19 +11,19 @@ namespace Game
         public override string Name { get => "AtkDamage"; }
         [field: Header("DAMAGE STATE"), HorizontalLine(2f, EColor.Yellow)]
         [field: SerializeField] public EnemyHealthHandler HealthHandler { get; private set; }
-        [SerializeField] private AudioClip damageTakenSound;
-        [SerializeField] private ParticleSystem damageParticles;
+        [SerializeField] StudioEventEmitter damageTakenEmitter;
+        [SerializeField] ParticleSystem damageParticles;
 
-        [SerializeField] private LayerMask enviriomentLayerMask;
+        [SerializeField] LayerMask enviriomentLayerMask;
         #region Enemy Hit Flash
-        [SerializeField, ReadOnly] private Color startingColor;
-        [SerializeField] private Color hitFlashColor;
-        [SerializeField] private float hitFlashLenght;
-        [SerializeField, ReadOnly] private float hitFlashTimer;
+        [SerializeField, ReadOnly] Color startingColor;
+        [SerializeField] Color hitFlashColor;
+        [SerializeField] float hitFlashLenght;
+        [SerializeField, ReadOnly] float hitFlashTimer;
         #endregion
         #region Enemy Knockback
         [Header("KNOCKBACK"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] private AnimationCurve knockbackCurve;
+        [SerializeField] AnimationCurve knockbackCurve;
         [ReadOnly] public Vector3 damageDealerPos;
         [ReadOnly] public Vector3 initialPos;
         [ReadOnly] public float stunDuration;
@@ -126,7 +127,7 @@ namespace Game
         private void ExecuteFeedbacks()
         {
             damageParticles.Play();
-            stateMachine.audioSource.PlayOneShot(damageTakenSound);
+            damageTakenEmitter.Play();
             impulseSource.GenerateImpulse();
         }
 

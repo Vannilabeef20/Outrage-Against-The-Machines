@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 4229650732507883439}
   image: {fileID: 0}
+  targetType: 0
+  loop: 1
   animationDuration: 0.4
   DestroyOnFinish: 1
   sprites:
@@ -110,4 +111,5 @@ MonoBehaviour:
   - {fileID: -200186321, guid: 81575d58482c1f1429e043346c61a838, type: 3}
   - {fileID: 1158303382, guid: 81575d58482c1f1429e043346c61a838, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
+  pause: 0

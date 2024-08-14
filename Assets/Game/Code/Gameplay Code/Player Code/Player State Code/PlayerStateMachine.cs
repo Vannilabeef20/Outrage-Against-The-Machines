@@ -17,7 +17,6 @@ namespace Game
         [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
         public PlayerInput playerInput;
         public Rigidbody body;
-        public AudioSource audioSource;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public BoxCollider footCollider;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -20,16 +21,16 @@ namespace Game
         public Dictionary<PlayerAttackSO, PlayerAttackState> PlayerAttackStatesDictionary { get; private set; }
             = new Dictionary<PlayerAttackSO, PlayerAttackState>();
 
-        [SerializeField] private GameObject attackStatesParent;
+        [SerializeField] GameObject attackStatesParent;
 
         /// <summary>
         /// Array for all available combos.
         /// </summary>
         [field:SerializeField, Expandable] public PlayerComboSO[] PlayerCombos { get; private set; }
 
-        [SerializeField] private BoxCollider[] hitboxes;
+        [SerializeField] BoxCollider[] hitboxes;
 
-        public AudioSource attackAudioSource;
+        public StudioEventEmitter attackEmitter;
 
         [field:SerializeField, ReadOnly] public PlayerAttackState CurrentAttackState { get; private set; }
 
@@ -40,12 +41,12 @@ namespace Game
 
         [ProgressBar("Special Charge amount","MaxSpecialChargeAmount", EColor.Blue)] public float specialChargeAmount;
 
-        [SerializeField] private Color specialImageColor;
-        [SerializeField] private Color specialImageFilledColor;
+        [SerializeField] Color specialImageColor;
+        [SerializeField] Color specialImageFilledColor;
 
-        [SerializeField] private Image[] specialImages;
+        [SerializeField] Image[] specialImages;
 
-        [SerializeField] private ParticleSystem specialParticleSystem;
+        [SerializeField] ParticleSystem specialParticleSystem;
 
 
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake

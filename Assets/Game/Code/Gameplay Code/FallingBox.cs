@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -11,14 +12,14 @@ namespace Game
         #region REFERENCES
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
-        [SerializeField] private AnimateImage animateImage;
-        [SerializeField] private SpriteRenderer boxRenderer;
-        [SerializeField] private SpriteRenderer highlightRenderer;
-        [SerializeField] private BoxCollider boxCollider;
-        [SerializeField] private Transform boxTransform;
-        [SerializeField] private Transform shadowTransform;
-        [SerializeField] private AudioSource source;
-        [SerializeField] private AudioClip impactSound;
+        [SerializeField] AnimateImage animateImage;
+        [SerializeField] SpriteRenderer boxRenderer;
+        [SerializeField] SpriteRenderer highlightRenderer;
+        [SerializeField] BoxCollider boxCollider;
+        [SerializeField] Transform boxTransform;
+        [SerializeField] Transform shadowTransform;
+        [SerializeField] StudioEventEmitter impactEmitter;
+        [SerializeField] StudioEventEmitter fallEmitter;
 
         #endregion
 
@@ -75,7 +76,6 @@ namespace Game
         }
         private void Update()
         {
-            ManageFallingSound();
             ManageShadowHighlight();
             ManageBoxFade();
             ManageShadowSize();
@@ -85,20 +85,7 @@ namespace Game
 
         #region METHODS
 
-        /// <summary>
-        /// Stops the falling sound if it already fell or the game is paused.
-        /// </summary>
-        private void ManageFallingSound()
-        {
-            if (Time.deltaTime == 0 || fell)
-            {
-                source.Pause();
-            }
-            else
-            {
-                source.UnPause();
-            }
-        }
+
 
         /// <summary>
         /// Switches the "highlightRenderer" color every "highlightLenght" seconds.
@@ -132,6 +119,8 @@ namespace Game
             }
             if(fadeTimer > fadeDelay + fadeLenght)
             {
+                fallEmitter.EventInstance.release();
+                impactEmitter.EventInstance.release();
                 Destroy(gameObject);
             }
         }
@@ -158,8 +147,8 @@ namespace Game
                 boxCollider.enabled = false;
                 animateImage.pause = false;
                 boxTransform.position = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
-                source.Stop();
-                source.PlayOneShot(impactSound);
+                fallEmitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                impactEmitter.Play();
                 shadowTransform.localScale = Vector3.zero;
                 boxRenderer.sortingOrder = postImpactSortOrder;
                 fell = true;

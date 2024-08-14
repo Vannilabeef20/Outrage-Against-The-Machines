@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7408936161416407087}
   - component: {fileID: 7769482995465523671}
+  - component: {fileID: 898268237691745521}
   - component: {fileID: 2653733460075298157}
   - component: {fileID: 6198700910182495813}
   m_Layer: 0
@@ -47,11 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a36d2616cca3244b0aee8dcf4518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
-  pickupSound: {fileID: 8300000, guid: 2223131f2a0534c459747567fad5d926, type: 3}
   itemSpriteTransform: {fileID: 2183815718027779629}
+  pickupEmitter: {fileID: 898268237691745521}
+  playerTag: Player
   pickupEffects:
   - rid: 3689197286202802176
+  floatRange: {x: 0, y: 0.2, z: 0}
+  floatDuration: 1.5
+  floatEase: 4
   references:
     version: 2
     RefIds:
@@ -59,6 +63,37 @@ MonoBehaviour:
       type: {class: LifeDropEffect, ns: Game, asm: Assembly-CSharp}
       data:
         lifeAmount: 1
+--- !u!114 &898268237691745521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934445200580362204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1870379187
+      Data2: 1243067160
+      Data3: -390738499
+      Data4: 1360849410
+    Path: event:/SFX/Player/Common Sounds/Player Life_Get SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!65 &2653733460075298157
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -229,9 +264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 7566147657915830309}
   image: {fileID: 0}
+  targetType: 0
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
@@ -264,5 +299,5 @@ MonoBehaviour:
   - {fileID: -2140478518, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   - {fileID: -1715732249, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 0

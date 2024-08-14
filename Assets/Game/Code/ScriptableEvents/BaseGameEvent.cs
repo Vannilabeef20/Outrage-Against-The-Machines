@@ -11,11 +11,15 @@ namespace Game
     /// <typeparam name="T">Data "Type".</typeparam>
     public class BaseGameEvent<T> : ScriptableObject
     {
-        [SerializeField, Expandable] DebugSO debugSO;
-        [SerializeField] bool isTimeScaleIndependent;
-        [SerializeField, ReadOnly] List<string> listenerNames = new();
         List<IGameEventListener<T>> eventListeners = new();
+
+        [Header("PARAMS"), HorizontalLine(2f, EColor.Red)]
+        [SerializeField] bool isTimeScaleIndependent;
+
+        [Header("DEBUG"), HorizontalLine(2f, EColor.Orange)]
+        [SerializeField, Expandable] DebugSO debugSO;
         [SerializeField] T testValue;
+        [SerializeField, ReadOnly] List<string> listenerNames = new();
 
         private void OnDisable()
         {
@@ -29,6 +33,8 @@ namespace Game
         /// <param name="data">The data of Type "T" to be sent to all listeners on Raise.</param>
         public virtual void Raise(object sender, T data)
         {
+            EventLog(sender, data);
+
             if (eventListeners.Count < 1) return;
 
             if (Time.timeScale == 0 && !isTimeScaleIndependent) return;
@@ -37,7 +43,6 @@ namespace Game
             {
                 eventListeners[i].OnEventRaised(data);
             }
-            EventLog(sender, data);
         }
 
         /// <summary>
@@ -76,13 +81,13 @@ namespace Game
             return eventListeners.Contains(listener);
         }
 
-        [Button("TEST DEFAULT RAISE LOG", EButtonEnableMode.Always)]
+        [Button("TEST LOG", EButtonEnableMode.Always)]
         public void TestDefaultLog()
         {
             EventLog(this, default);
-        }
+        }   
 
-        [Button("RAISE TEST VALUE", EButtonEnableMode.Playmode)]
+        [Button("RAISE 'TEST VALUE'", EButtonEnableMode.Playmode)]
         public void TestRaise()
         {
             Raise(this, testValue);

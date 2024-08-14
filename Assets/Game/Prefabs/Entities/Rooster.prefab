@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 588689491137243520}
   - component: {fileID: 588689491137243526}
   - component: {fileID: 588689491137243521}
+  - component: {fileID: 6152690061924828299}
   m_Layer: 7
   m_Name: Rooster Hitbox_1
   m_TagString: Untagged
@@ -122,7 +123,38 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
-  hitSound: {fileID: 8300000, guid: 11d22f618a3be394187fa4d85e46b9d2, type: 3}
+  emitter: {fileID: 6152690061924828299}
+--- !u!114 &6152690061924828299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588689491137243523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 491571851
+      Data2: 1133097393
+      Data3: -1420818001
+      Data4: -1516925861
+    Path: event:/SFX/Player/Common Sounds/Player Hit SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &588689491332936773
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 588689491377177472}
   body: {fileID: 588689491377177501}
-  audioSource: {fileID: 588689491377177474}
   animator: {fileID: 588689491332936779}
   spriteRenderer: {fileID: 588689491332936776}
   footCollider: {fileID: 588689491377177500}
@@ -280,7 +311,6 @@ GameObject:
   m_Component:
   - component: {fileID: 588689491377177475}
   - component: {fileID: 588689491377177472}
-  - component: {fileID: 588689491377177474}
   - component: {fileID: 588689491377177501}
   - component: {fileID: 588689491377177500}
   m_Layer: 6
@@ -462,102 +492,6 @@ MonoBehaviour:
   m_DefaultActionMap: Inputs
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!82 &588689491377177474
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588689491377177503}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!54 &588689491377177501
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -616,7 +550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588689491524074762}
   - component: {fileID: 588689491524074763}
-  - component: {fileID: 3231170247065144568}
+  - component: {fileID: 6963635846129947844}
   m_Layer: 0
   m_Name: Rooster_AttackState
   m_TagString: Untagged
@@ -669,7 +603,7 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 588689491137243526}
   - {fileID: 588689491655393685}
-  attackAudioSource: {fileID: 3231170247065144568}
+  attackEmitter: {fileID: 6963635846129947844}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   queuedAttackState: {fileID: 0}
   attackList: []
@@ -682,102 +616,37 @@ MonoBehaviour:
   - {fileID: 154915326237016354}
   - {fileID: 2449476087249084159}
   specialParticleSystem: {fileID: 595156852432145935}
---- !u!82 &3231170247065144568
-AudioSource:
+--- !u!114 &6963635846129947844
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588689491524074757}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1113362979
+      Data2: 1073942707
+      Data3: -931830092
+      Data4: 26591399
+    Path: event:/SFX/Player/Rooster/Rooster Attack
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &588689491581222189
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +657,6 @@ GameObject:
   m_Component:
   - component: {fileID: 588689491581222226}
   - component: {fileID: 588689491581222227}
-  - component: {fileID: 5925357198986120973}
   m_Layer: 0
   m_Name: Rooster_WalkingState
   m_TagString: Untagged
@@ -807,7 +675,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5210078800950791175}
+  - {fileID: 8802676812941143029}
   m_Father: {fileID: 588689491332936777}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -828,112 +698,11 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  footstepSource: {fileID: 5925357198986120973}
+  EmitterFootstep_0: {fileID: 4236045769007033465}
+  EmitterFootstep_1: {fileID: 8051900768256601238}
   movementSpeed: {x: 5.5, y: 3.5}
-  footstepSoundClips:
-  - {fileID: 8300000, guid: 7ad6cb82d7bbf5441b16b7e4edc9deee, type: 3}
-  - {fileID: 8300000, guid: 04666b9008d955c44856f4760cafe449, type: 3}
-  footstepSoundsPicthes:
-  - 1.5
-  - 1.5
   currentFootstepSoundIndex: 0
   velocity: {x: 0, y: 0, z: 0}
---- !u!82 &5925357198986120973
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588689491581222189}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &588689491655393686
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +714,7 @@ GameObject:
   - component: {fileID: 588689491655393687}
   - component: {fileID: 588689491655393685}
   - component: {fileID: 588689491655393684}
+  - component: {fileID: 1317043801534713281}
   m_Layer: 7
   m_Name: Rooster Hitbox_2
   m_TagString: Untagged
@@ -1006,7 +776,38 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
-  hitSound: {fileID: 8300000, guid: 11d22f618a3be394187fa4d85e46b9d2, type: 3}
+  emitter: {fileID: 1317043801534713281}
+--- !u!114 &1317043801534713281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588689491655393686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 491571851
+      Data2: 1133097393
+      Data3: -1420818001
+      Data4: -1516925861
+    Path: event:/SFX/Player/Common Sounds/Player Hit SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &588689491912295375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588689491912295373}
   - component: {fileID: 588689491912295372}
+  - component: {fileID: 475060844669776045}
   - component: {fileID: 588689491912295410}
   m_Layer: 0
   m_Name: Rooster_StunnedState
@@ -1057,6 +859,7 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
+  soundEmitter: {fileID: 475060844669776045}
   duration: 0
   knockBackIntensity: {x: 0, y: 0}
   knockBackCurve:
@@ -1083,11 +886,41 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damageTakenSound: {fileID: 8300000, guid: 44f1ea6919bb7ec4895c3085b5d412bf, type: 3}
   impulseSource: {fileID: 588689491912295410}
   hitGamepadShakeLowFrequency: 0.5
   hitGamepadShakeHighFrequency: 0.5
   hitGamepadShakeDuration: 0.5
+--- !u!114 &475060844669776045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588689491912295375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1609775203
+      Data2: 1325175163
+      Data3: 61354687
+      Data4: -204017293
+    Path: event:/SFX/Player/Common Sounds/Player Damage SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &588689491912295410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,6 +1155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588689492496491315}
   - component: {fileID: 588689492496491313}
+  - component: {fileID: 8246436470385335672}
   - component: {fileID: 588689492496491312}
   m_Layer: 6
   m_Name: Rooster Health
@@ -1366,19 +1200,50 @@ MonoBehaviour:
   LerpHealthBar: {fileID: 2243961339801077043}
   healParticle: {fileID: 4312322646744729240}
   damageParticle: {fileID: 7176538989363412186}
+  reviveEmitter: {fileID: 8246436470385335672}
   hostileLayers:
     serializedVersion: 2
     m_Bits: 512
   maxHeathPoints: 75
   <CurrentHealthPoints>k__BackingField: 0
   isDead: 0
-  reviveSound: {fileID: 8300000, guid: e4f70c83c238a474fa04ed2f8d4850fc, type: 3}
   hitFlashLenght: 0.1
   hitFlashColor: {r: 0.6320754, g: 0.31305623, b: 0.31305623, a: 1}
   staggerGracePeriod: 2
   gracePeriodFlashLenght: 0.15
   gracePeriodColor: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
   healthConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
+--- !u!114 &8246436470385335672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588689492496491314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2065492774
+      Data2: 1305645347
+      Data3: 29979012
+      Data4: -441888325
+    Path: event:/SFX/Player/Common Sounds/Player Revive SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!136 &588689492496491312
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1413,6 +1278,7 @@ GameObject:
   - component: {fileID: 588689492625723012}
   - component: {fileID: 588689492625723013}
   - component: {fileID: 5559724615616535654}
+  - component: {fileID: 5703471010113306776}
   m_Layer: 0
   m_Name: Rooster_DeathState
   m_TagString: Untagged
@@ -1455,9 +1321,9 @@ MonoBehaviour:
   <Duration>k__BackingField: 1
   <Delay>k__BackingField: 3
   <Despawning>k__BackingField: 0
+  soundEmitter: {fileID: 5703471010113306776}
   playerDeathParamsEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
   impulseSource: {fileID: 5559724615616535654}
-  deathSound: {fileID: 8300000, guid: 35d0ff0c78a1ff6459f6122f362ff599, type: 3}
   knockBackCurve:
     serializedVersion: 2
     m_Curve:
@@ -1575,6 +1441,37 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &5703471010113306776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588689492625723015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1531046930
+      Data2: 1329664016
+      Data3: 848565167
+      Data4: -1862711575
+    Path: event:/SFX/Player/Common Sounds/Player Death SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &588689492700306306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,9 +1583,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 187eb8c99133dd142bea2a2acd0bdbb9, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -1814,9 +1711,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 7bb44ef7693db514a8a1c30c2eccc45b, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -1833,6 +1730,69 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1034521339960177197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8802676812941143029}
+  - component: {fileID: 8051900768256601238}
+  m_Layer: 0
+  m_Name: Emitter Footstep_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8802676812941143029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034521339960177197}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588689491581222226}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8051900768256601238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034521339960177197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1934030261
+      Data2: 1113379652
+      Data3: 819867327
+      Data4: -1219506749
+    Path: event:/SFX/Player/Common Sounds/Player Footstep_1 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1314110488730295047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,9 +1842,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 98a06d34c2648b04aa5961a18ca3f910, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 4
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -1950,9 +1910,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 56ffa50c653b6af448700f5e9b0bff32, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -12422,9 +12382,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 16436e303fb1fc646b670a7c5296b2be, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 3
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -12556,9 +12516,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 4dfa6b8b5743cf44b8ed3f6a04b172d0, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -12701,9 +12661,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 588689491524074763}
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 9835081fdc1c2814ea111b1a4611e17e, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -12949,6 +12909,69 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8097346485734887783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5210078800950791175}
+  - component: {fileID: 4236045769007033465}
+  m_Layer: 0
+  m_Name: Emitter Footstep_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5210078800950791175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097346485734887783}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588689491581222226}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4236045769007033465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097346485734887783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1402359779
+      Data2: 1256147999
+      Data3: -1069120834
+      Data4: 1807950656
+    Path: event:/SFX/Player/Common Sounds/Player Footstep_0 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8926157055823504498
 GameObject:
   m_ObjectHideFlags: 0

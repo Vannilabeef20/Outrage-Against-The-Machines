@@ -30,7 +30,7 @@ namespace Game
         [SerializeField] Vector2 spawnZoneDimensions;
 
         [Tooltip("How often (seconds) the trap will spawn boxes.")]
-        [SerializeField, Range(0.5f, 5)] float spawnInterval = 0.5f;
+        [SerializeField, Range(0.1f, 5)] float spawnInterval = 0.5f;
 
         [Space]
 

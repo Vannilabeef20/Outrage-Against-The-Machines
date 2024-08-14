@@ -84,6 +84,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5923551799313481963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2261120977035917308}
+  - component: {fileID: 2643639614410144134}
+  m_Layer: 0
+  m_Name: FallingEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2261120977035917308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5923551799313481963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5976830372341641375}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2643639614410144134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5923551799313481963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1364112442
+      Data2: 1081034619
+      Data3: 679587215
+      Data4: -1459076827
+    Path: event:/SFX/Trap/Trap Box_Falling SFX
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 40
+  OverrideMaxDistance: 80
 --- !u!1 &5976830372177959085
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +245,6 @@ GameObject:
   - component: {fileID: 5976830372341641370}
   - component: {fileID: 5976830372341641371}
   - component: {fileID: 5976830372341641374}
-  - component: {fileID: 65135353779175711}
   m_Layer: 0
   m_Name: FallingBox_Collider
   m_TagString: Untagged
@@ -201,7 +263,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2261120977035917308}
+  - {fileID: 7382684045571054588}
   m_Father: {fileID: 5976830373177192142}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,9 +281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
   spriteRenderer: {fileID: 5976830372341641370}
   image: {fileID: 0}
+  targetType: 0
   loop: 0
   animationDuration: 0.3
   DestroyOnFinish: 0
@@ -229,7 +293,7 @@ MonoBehaviour:
   - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   timer: 0
-  currentImageIndex: 0
+  currentSpriteIndex: 0
   pause: 1
 --- !u!212 &5976830372341641370
 SpriteRenderer:
@@ -326,102 +390,6 @@ MonoBehaviour:
   stunDuration: 0.4
   knockbackStrenght: 8
   enemyMultiplier: 1
---- !u!82 &65135353779175711
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976830372341641364}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 110ae873728adc04882b00fcee880e86, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &5976830373177192143
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +400,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5976830373177192142}
   - component: {fileID: 5976830373177192141}
+  - component: {fileID: 313465147392035095}
+  - component: {fileID: 5282035924060421400}
   m_Layer: 0
   m_Name: FallingBox
   m_TagString: Untagged
@@ -474,8 +444,8 @@ MonoBehaviour:
   boxCollider: {fileID: 5976830372341641371}
   boxTransform: {fileID: 5976830372341641375}
   shadowTransform: {fileID: 5976830372177959084}
-  source: {fileID: 65135353779175711}
-  impactSound: {fileID: 8300000, guid: 715a03688a07f1242842752251e734c6, type: 3}
+  impactEmitter: {fileID: 6911375306902518787}
+  fallEmitter: {fileID: 2643639614410144134}
   fallingSpeedSO: {fileID: 11400000, guid: 104c92e905e234140b1418f648d5cc72, type: 2}
   postImpactSortOrder: -3
   highlightColor1: {r: 0, g: 0, b: 0, a: 0}
@@ -489,3 +459,109 @@ MonoBehaviour:
   defaultBoxColor: {r: 0, g: 0, b: 0, a: 0}
   highlightTimer: 0
   fadeTimer: 0
+--- !u!114 &313465147392035095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976830373177192143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5282035924060421400}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5282035924060421400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976830373177192143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEmitters:
+  - {fileID: 6911375306902518787}
+  - {fileID: 2643639614410144134}
+--- !u!1 &7566582990820352031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7382684045571054588}
+  - component: {fileID: 6911375306902518787}
+  m_Layer: 0
+  m_Name: ImpactEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7382684045571054588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566582990820352031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5976830372341641375}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6911375306902518787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566582990820352031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1441392983
+      Data2: 1087917203
+      Data3: -869230715
+      Data4: 855534315
+    Path: event:/SFX/Trap/Trap Falling_Box_Impact SFX
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 40
+  OverrideMaxDistance: 40

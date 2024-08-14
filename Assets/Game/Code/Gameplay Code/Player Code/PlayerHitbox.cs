@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using DG.Tweening;
+using FMODUnity;
 
 namespace Game 
 {
@@ -15,7 +13,7 @@ namespace Game
         [SerializeField] PlayerStateMachine stateMachine;
         [SerializeField] LayerMask collisionMask;
         [SerializeField] GameObject hitEffect;
-        [SerializeField] AudioClip hitSound;
+        [SerializeField] StudioEventEmitter emitter;
         //[SerializeField, ReadOnly] private List<Collider> prevHitColliders;
 
         #region Shorthand lambdas
@@ -43,7 +41,7 @@ namespace Game
         {
             //Hit Particle
             Instantiate(hitEffect, attackCollider.ClosestPoint(hitObjectPos), Quaternion.identity);
-            stateMachine.audioSource.PlayOneShot(hitSound);
+            emitter.Play();
 
             //Rumble
             foreach (var device in stateMachine.playerInput.devices)

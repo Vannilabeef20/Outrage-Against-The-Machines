@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 using DG.Tweening;
+using FMODUnity;
 
 namespace Game
 {
@@ -10,21 +11,22 @@ namespace Game
     {
         [SerializeField, TextArea] private string Comment;
         [Header("REFERENCES"), HorizontalLine]
-        [SerializeField] private PlayerStateMachine playerStateMachine;
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] PlayerStateMachine playerStateMachine;
+        [SerializeField] SpriteRenderer spriteRenderer;
         public CapsuleCollider playerHitbox;
-        [SerializeField] private Image InstantHealthBar;
-        [SerializeField] private Image LerpHealthBar;
-        [SerializeField] private ParticleSystem healParticle;
-        [SerializeField] private ParticleSystem damageParticle;
+        [SerializeField] Image InstantHealthBar;
+        [SerializeField] Image LerpHealthBar;
+        [SerializeField] ParticleSystem healParticle;
+        [SerializeField] ParticleSystem damageParticle;
+        [SerializeField] StudioEventEmitter reviveEmitter;
 
         #region Player Health Params
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField] private LayerMask hostileLayers;
-        [SerializeField] private float maxHeathPoints;
+        [SerializeField] LayerMask hostileLayers;
+        [SerializeField] float maxHeathPoints;
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
-        [SerializeField, ReadOnly] private bool isDead;
-        [SerializeField] private AudioClip reviveSound;
+        [SerializeField, ReadOnly] bool isDead;
+
         #endregion
         #region Stagger Params
         [Header("STAGGER PARAMS"), HorizontalLine(2f, EColor.Orange)]
@@ -177,7 +179,7 @@ namespace Game
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
             UpdateHealthBar(newHealthPercent);
             playerHitbox.enabled = true;
-            AudioManager.instance.PlaySfxGlobal(reviveSound);
+            reviveEmitter.Play();
             foreach (var device in playerStateMachine.playerInput.devices)
             {
                 GameManager.Instance.Rumble(device, 0.5f, 0.5f, 0.5f); //Hard coded

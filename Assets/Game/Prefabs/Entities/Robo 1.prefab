@@ -4886,6 +4886,69 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &1702680308892565086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6583466318875226752}
+  - component: {fileID: 7053810417088285791}
+  m_Layer: 0
+  m_Name: ExplosionEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6583466318875226752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702680308892565086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3276738502215876370}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7053810417088285791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702680308892565086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1864464792
+      Data2: 1234312530
+      Data3: 987117228
+      Data4: 1407165510
+    Path: event:/SFX/Enemy/Robo 1/Enemy Explosion_Multiple SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3648327314913495207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5050,7 +5113,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 76732158715113603}
+  - {fileID: 6583466318875226752}
   m_Father: {fileID: 6508126986923127504}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5070,20 +5135,20 @@ MonoBehaviour:
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 6508126985700856569}
   duration: 1
   frameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6508126985700856566}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 7053810417088285791}
+          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 2db5d37dc6f47284697121b9ffa34f86, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5093,13 +5158,13 @@ MonoBehaviour:
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6508126985700856566}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 4196484976454017962}
+          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: f09b3ea11420782499f49e4d714af6ec, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5255,7 +5320,6 @@ GameObject:
   - component: {fileID: 6508126985700856562}
   - component: {fileID: 6508126985700856563}
   - component: {fileID: 6508126985700856564}
-  - component: {fileID: 6508126985700856566}
   - component: {fileID: 6508126985700856567}
   m_Layer: 8
   m_Name: Robo 1
@@ -5298,7 +5362,6 @@ MonoBehaviour:
   spawner: {fileID: 0}
   spriteRenderer: {fileID: 6508126985700856562}
   body: {fileID: 6508126985700856567}
-  audioSource: {fileID: 6508126985700856566}
   animator: {fileID: 6508126985700856563}
   hurtBox: {fileID: 6508126987123622498}
   attackhitbox: {fileID: 6508126987276863438}
@@ -5420,102 +5483,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0423021, y: 1.8536801, z: 0.2929786}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &6508126985700856566
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508126985700856560}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.9
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!54 &6508126985700856567
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5554,6 +5521,7 @@ GameObject:
   - component: {fileID: 6508126986235999514}
   - component: {fileID: 6508126986235999517}
   - component: {fileID: 6508126986235999516}
+  - component: {fileID: 2724931672148368358}
   m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
@@ -5594,7 +5562,7 @@ MonoBehaviour:
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
   <HealthHandler>k__BackingField: {fileID: 6508126987123622501}
-  damageTakenSound: {fileID: 8300000, guid: 199d9c909f2d1f8439824208fd486592, type: 3}
+  damageTakenEmitter: {fileID: 2724931672148368358}
   damageParticles: {fileID: 153532766851685265}
   enviriomentLayerMask:
     serializedVersion: 2
@@ -5721,6 +5689,37 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &2724931672148368358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508126986235999515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1228860824
+      Data2: 1154642478
+      Data3: 279930787
+      Data4: -307053796
+    Path: event:/SFX/Enemy/Robo 1/Enemy Damage SFX - Robo 1
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6508126986923127086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5856,7 +5855,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8872166234325332231}
   m_Father: {fileID: 6508126986923127504}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5876,81 +5876,12 @@ MonoBehaviour:
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 6508126985700856569}
   playerMask:
     serializedVersion: 2
     m_Bits: 64
   <Attacks>k__BackingField:
-  - <Name>k__BackingField: Basic attack
-    <Animation>k__BackingField: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
-    <TriggerRange>k__BackingField: 3.5
-    <VelocityCurve>k__BackingField:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.15
-        value: 0
-        inSlope: Infinity
-        outSlope: -693.74133
-        tangentMode: 7
-        weightedMode: 2
-        inWeight: 0.33333334
-        outWeight: 0.003901422
-      - serializedVersion: 3
-        time: 0.35
-        value: 0
-        inSlope: -0.0036302826
-        outSlope: 244.93909
-        tangentMode: 1
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0.01400645
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0.0040974817
-        outSlope: 0.0040974817
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    <Velocity>k__BackingField: 10
-    <Duration>k__BackingField: 0.9
-    <Damage>k__BackingField: 20
-    <StunDuration>k__BackingField: 0.7
-    <KnockbackStrenght>k__BackingField: 10
-    <HasProjectile>k__BackingField: 0
-    <ProjectilePrefab>k__BackingField: {fileID: 0}
-    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
-    <FrameEvents>k__BackingField:
-    - <TriggerFrame>k__BackingField: 3
-      <Actions>k__BackingField:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 6508126985700856566}
-            m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-            m_MethodName: PlayOneShot
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 8300000, guid: 30c2441d2d0b5a94caf934ba393b5963, type: 3}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+  - {fileID: 3898736811605107368}
   currentAttack:
     <Name>k__BackingField: 
     <Animation>k__BackingField: {fileID: 0}
@@ -5971,10 +5902,6 @@ MonoBehaviour:
     <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
     <FrameEvents>k__BackingField: []
   attackUptime: 0
-  rangeLineColor: {r: 1, g: 0.15988545, b: 0, a: 1}
-  rangePointColor: {r: 1, g: 0, b: 0.77645206, a: 1}
-  rangePointRadius: 0.17
-  rangePointLabelOffest: {x: 0, y: 0, z: 0}
 --- !u!65 &6508126987276863438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5996,6 +5923,69 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6871900109820166026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76732158715113603}
+  - component: {fileID: 4196484976454017962}
+  m_Layer: 0
+  m_Name: PowerDownEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &76732158715113603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871900109820166026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3276738502215876370}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4196484976454017962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871900109820166026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 911215268
+      Data2: 1328605632
+      Data3: -770586441
+      Data4: 341314630
+    Path: event:/SFX/Enemy/Robo 1/Enemy Powering_Down SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7145437615092115823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6023,7 +6013,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7145437615092115823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6174,3 +6164,156 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8712117938039699443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8872166234325332231}
+  - component: {fileID: 3898736811605107368}
+  - component: {fileID: 3344898223652118149}
+  m_Layer: 0
+  m_Name: LungeAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8872166234325332231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712117938039699443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6508126987276863436}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3898736811605107368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712117938039699443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 6508126985700856569}
+  AttackMachine: {fileID: 6508126987276863439}
+  <attack>k__BackingField:
+    <Name>k__BackingField: Lunge
+    <Animation>k__BackingField: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
+    <TriggerRange>k__BackingField: 3.5
+    <VelocityCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.15
+        value: 0
+        inSlope: Infinity
+        outSlope: -693.74133
+        tangentMode: 7
+        weightedMode: 2
+        inWeight: 0.33333334
+        outWeight: 0.003901422
+      - serializedVersion: 3
+        time: 0.35
+        value: 0
+        inSlope: -0.0036302826
+        outSlope: 244.93909
+        tangentMode: 1
+        weightedMode: 3
+        inWeight: 1
+        outWeight: 0.01400645
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0.0040974817
+        outSlope: 0.0040974817
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 1
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <Velocity>k__BackingField: 10
+    <Duration>k__BackingField: 0.9
+    <Damage>k__BackingField: 20
+    <StunDuration>k__BackingField: 0.7
+    <KnockbackStrenght>k__BackingField: 10
+    <HasProjectile>k__BackingField: 0
+    <ProjectilePrefab>k__BackingField: {fileID: 0}
+    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 3344898223652118149}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+--- !u!114 &3344898223652118149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712117938039699443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1149990983
+      Data2: 1135421292
+      Data3: 1763585961
+      Data4: 1432621355
+    Path: event:/SFX/Enemy/Robo 1/Enemy Drill SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

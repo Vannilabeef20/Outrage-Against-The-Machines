@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -7,13 +8,15 @@ namespace Game
     {
         [field: Header("PLAYER ATTACK INHERITED"), HorizontalLine(2f, EColor.Yellow)]
 
-        [field: SerializeField, ReadOnly] protected PlayerAttackingState AttackMachine { get; private set; }
+        [SerializeField, ReadOnly] PlayerAttackingState AttackMachine;
 
         [field: SerializeField, Expandable] public PlayerAttackSO PlayerAttack { get; private set; }
 
-        [field: SerializeField] public AnimationFrameEvent[] FrameEvents { get; private set; }
+        [SerializeField] AnimationFrameEvent[] FrameEvents;
 
         public float TimeLeft  => PlayerAttack.Duration - UpTime;
+
+        [SerializeField] StudioEventEmitter eventEmitter => AttackMachine.attackEmitter;
 
         private void Awake()
         {
@@ -37,7 +40,6 @@ namespace Game
         public override void Exit()
         {
             AttackMachine.DisableAttackHitboxes();
-            stateMachine.audioSource.pitch = 1;
         }
 
         public override void Do()
@@ -73,8 +75,10 @@ namespace Game
 
         public void PlayPitchedAttackSound(int attackIndex)
         {
-            AttackMachine.attackAudioSource.pitch = PlayerAttack.AudioPitches[attackIndex];
-            AttackMachine.attackAudioSource.PlayOneShot(PlayerAttack.Sound);
+            eventEmitter.Play();
+            eventEmitter.EventInstance.setPitch(PlayerAttack.AudioPitches[attackIndex]);
+            eventEmitter.EventInstance.setParameterByNameWithLabel(
+            PlayerAttack.EventParameter, PlayerAttack.EventLabel);
         }
 
     }

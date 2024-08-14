@@ -44,8 +44,9 @@ namespace Game
 
 
         [field: Header("AUDIO"), HorizontalLine(2f, EColor.Yellow)]
-        [field: SerializeField] public AudioClip Sound { get; private set; }
         [field: SerializeField] public float[] AudioPitches { get; private set; } = { 1 };
+        [field: SerializeField] public string EventParameter { get; private set; }
+        [field: SerializeField] public string EventLabel { get; private set; }
 
 
         [field: Header("RUMBLE"), HorizontalLine(2f, EColor.Green)]

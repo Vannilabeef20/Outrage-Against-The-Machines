@@ -13,35 +13,16 @@ namespace Game
     {
         public override string Name { get => currentAttack.Name; }
         [SerializeField] private LayerMask playerMask;
-        [field: SerializeField] public EnemyAttack[] Attacks { get; private set; }
+        [field: SerializeField] public EnemyAttackState[] Attacks { get; private set; }
         [ReadOnly] public EnemyAttack currentAttack;
         [SerializeField, ReadOnly] private float attackUptime;
 #if UNITY_EDITOR
-        [Header("DEBUG")]
-        [SerializeField] private Color rangeLineColor;
-        [SerializeField] private Color rangePointColor;
-        [SerializeField] private float rangePointRadius;
-        [SerializeField] private Vector3 rangePointLabelOffest;
+        [field: Header("DEBUG")]
+        [SerializeField] public Color RangeLineColor { get; private set; }
+        [SerializeField] public Vector3 RangeLineHeight { get; private set; }
+        [SerializeField] public Vector3 RangeLabelOffest { get; private set; }
 #endif
-        private void Awake()
-        {
-            foreach(EnemyAttack attack in Attacks)
-            {
-                attack.SetupFrameEvents(attack.Animation);
-            }
-        }
-        private void OnTriggerEnter(Collider other)
-        {
-            if (!playerMask.ContainsLayer(other.gameObject.layer))
-            {
-                return;
-            }
-            if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
-            {
-                damageble.TakeDamage(stateMachine.transform.position, currentAttack.Damage,
-                    currentAttack.StunDuration, currentAttack.KnockbackStrenght);
-            }
-        }
+
         public override void Do()
         {           
             attackUptime += Time.deltaTime;
@@ -92,22 +73,27 @@ namespace Game
 
 
 
-        public EnemyAttack GetAppropriateAttack()
-        {          
+        public bool CheckForAttacks()
+        {
+            bool ret = false;
             if (stateMachine.Distance <= -1)
             {
-                return null;
+                return ret;
             }
-            EnemyAttack atk = null;           
+            int atkIndex = -1;
             for (int i = 0; i < Attacks.Length; i++)
             {
-                if (Attacks[i].TriggerRange >= stateMachine.Distance)
+                if (Attacks[i].attack.TriggerRange >= stateMachine.Distance)
                 {
-                    atk = Attacks[i];
+                    atkIndex = i;
+                    ret = true;
                     break;
                 }
             }
-            return atk;
+            
+            if(atkIndex != -1) currentAttack = Attacks[atkIndex].attack;
+
+            return ret;
         }
 
         public void SpawnProjectile()
@@ -115,29 +101,17 @@ namespace Game
             Instantiate(currentAttack.ProjectilePrefab, currentAttack.ProjectileSpawnTransform.position, transform.rotation);
         }
 
-#if UNITY_EDITOR
-        private void OnDrawGizmosSelected()
+        private void OnTriggerEnter(Collider other)
         {
-            if(stateMachine == null)
+            if (!playerMask.ContainsLayer(other.gameObject.layer))
             {
                 return;
             }
-            Debug.DrawLine(stateMachine.transform.position + stateMachine.BoxCastOffset,
-                stateMachine.transform.position + stateMachine.BoxCastOffset + (transform.right *
-                Attacks[Attacks.Length - 1].TriggerRange), rangeLineColor);
-            Gizmos.color = rangePointColor;
-            foreach (EnemyAttack attack in Attacks)
+            if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
-                Vector3 attackPoint = transform.position + stateMachine.BoxCastOffset + (transform.right * attack.TriggerRange);
-                Handles.Label(attackPoint + rangePointLabelOffest, $" <---{attack.Name} range");
-                Gizmos.DrawSphere(attackPoint, rangePointRadius);
+                damageble.TakeDamage(stateMachine.transform.position, currentAttack.Damage,
+                    currentAttack.StunDuration, currentAttack.KnockbackStrenght);
             }
         }
-        private void OnValidate()
-        {
-            stateMachine = GetComponentInParent<EnemyStateMachine>();
-           Attacks = Attacks.OrderBy(attack => attack.TriggerRange).ToArray();
-        }
-#endif
     }
 }

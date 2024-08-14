@@ -6,7 +6,7 @@ namespace Game
     /// Scriptable Object Event of Type "PlayerDeathParams."<br/>
     /// Relays the received "PlayerDeathParams" value to all "PlayerDeathParamsListener" scripts with this reference.<br/>
     /// </summary>
-    [CreateAssetMenu(fileName = "New PlayerDeathParams Event", menuName = "Game CustomEvents/PlayerDeathParams Event")]
+    [CreateAssetMenu(fileName = "New PlayerDeathParams Event", menuName = "SO Events/PlayerDeathParams Event")]
     public class PlayerDeathParamsEvent : BaseGameEvent<PlayerDeathParams> { }
 
     [System.Serializable]

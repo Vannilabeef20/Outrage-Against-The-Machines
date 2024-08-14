@@ -1,6 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 using Cinemachine;
+using FMODUnity;
 
 namespace Game
 {
@@ -12,18 +13,17 @@ namespace Game
         [field: SerializeField] public bool Despawning { get; private set; }
         public override string Name { get => "Death"; }
 
+        [SerializeField] StudioEventEmitter soundEmitter;
+        [SerializeField] PlayerDeathParamsEvent playerDeathParamsEvent;
 
-        [SerializeField] private PlayerDeathParamsEvent playerDeathParamsEvent;
-
-        [SerializeField] private CinemachineImpulseSource impulseSource;
-        [SerializeField] private AudioClip deathSound;
-        [SerializeField] private AnimationCurve knockBackCurve;
+        [SerializeField] CinemachineImpulseSource impulseSource;
+        [SerializeField] AnimationCurve knockBackCurve;
         [ReadOnly] public Vector2 knockBackIntensity;
 
         [Header("Gamepad Shake"), HorizontalLine]
-        [SerializeField, Range(0f, 1f)] private float hitGamepadShakeLowFrequency;
-        [SerializeField, Range(0f, 1f)] private float hitGamepadShakeHighFrequency;
-        [SerializeField] private float hitGamepadShakeDuration;
+        [SerializeField, Range(0f, 1f)] float hitGamepadShakeLowFrequency;
+        [SerializeField, Range(0f, 1f)] float hitGamepadShakeHighFrequency;
+        [SerializeField] float hitGamepadShakeDuration;
 
         public override void Do()
         {
@@ -42,7 +42,7 @@ namespace Game
             Despawning = false;
             IsComplete = false;
             startTime = Time.time;
-            stateMachine.audioSource.PlayOneShot(deathSound);
+            soundEmitter.Play();
             impulseSource.GenerateImpulse();
             foreach(var device in stateMachine.playerInput.devices)
             {
