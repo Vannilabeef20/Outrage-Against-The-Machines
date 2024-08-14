@@ -2,27 +2,40 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 using UnityEngine.Audio;
+using FMODUnity;
+using FMOD.Studio;
 
 namespace Game
 {
     public class VolumeSlider : MenuButton
     {
-        [SerializeField] private AudioMixer mixer;
         [SerializeField, ReadOnly] private Slider slider;
-        [SerializeField, Dropdown("mixerGroupNames")] private string mixerGroupName;
-        [SerializeField, ReadOnly] private string[] mixerGroupNames = new string[] {"MasterVolume", "MusicVolume", "SfxVolume" };
-        private string _audioMixerPath ="AudioResources/Mixer";
+        [SerializeField, Dropdown("busNames")] string busGroup;
+        [SerializeField, ReadOnly] string[] busNames = new string[] {"Master","Music","SFX"};
+        Bus bus;
+
         private void Awake()
         {
+            
+            if(busGroup == busNames[0])
+            {
+                bus = RuntimeManager.GetBus("bus:/Master");
+            }
+            else
+            {
+                bus = RuntimeManager.GetBus($"bus:/Master/{busGroup}");
+            }
+
             slider = GetComponent<Slider>();
-            slider.value = PlayerPrefs.GetFloat(mixerGroupName, 0.5f);
-            mixer.SetFloat(mixerGroupName, Mathf.Log10(slider.value) * 20);
+            slider.value = PlayerPrefs.GetFloat(busGroup, 0.5f);
+            _SetVolume();
         }
 
         public void _SetVolume()
         {
-            mixer.SetFloat(mixerGroupName, Mathf.Log10(slider.value) * 20);
-            PlayerPrefs.SetFloat(mixerGroupName, slider.value);
+            float volume = Mathf.Pow(10f, slider.value.Map(0f, 1f, -80f, 10f) / 20f);
+            bus.setVolume(volume);
+            PlayerPrefs.SetFloat(busGroup, slider.value);
         }
     }
 }

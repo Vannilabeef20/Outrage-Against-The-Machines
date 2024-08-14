@@ -411,13 +411,12 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
-  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixerGroupName: SfxVolume
-  mixerGroupNames:
-  - MasterVolume
-  - MusicVolume
-  - SfxVolume
+  busGroup: SFX
+  busNames:
+  - Master
+  - Music
+  - SFX
 --- !u!1 &7281520080275546137
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,13 +959,12 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
-  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixerGroupName: MasterVolume
-  mixerGroupNames:
-  - MasterVolume
-  - MusicVolume
-  - SfxVolume
+  busGroup: Master
+  busNames:
+  - Master
+  - Music
+  - SFX
 --- !u!1 &7281520080628757087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,13 +1468,12 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
-  mixer: {fileID: 24100000, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
   slider: {fileID: 0}
-  mixerGroupName: MusicVolume
-  mixerGroupNames:
-  - MasterVolume
-  - MusicVolume
-  - SfxVolume
+  busGroup: Music
+  busNames:
+  - Master
+  - Music
+  - SFX
 --- !u!1 &7281520081143206648
 GameObject:
   m_ObjectHideFlags: 0
