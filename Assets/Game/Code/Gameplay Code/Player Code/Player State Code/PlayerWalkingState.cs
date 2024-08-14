@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -7,12 +8,12 @@ namespace Game
     {
         public override string Name { get => "Walking"; }
         [Header("STATE LOCAL"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] private AudioSource footstepSource;
-        [SerializeField] private Vector2 movementSpeed;
-        [SerializeField] private AudioClip[] footstepSoundClips;
-        [SerializeField] private float[] footstepSoundsPicthes;
-        [SerializeField, ReadOnly] private int currentFootstepSoundIndex;
-        [SerializeField, ReadOnly] private Vector3 velocity;
+
+        [SerializeField] StudioEventEmitter EmitterFootstep_0;
+        [SerializeField] StudioEventEmitter EmitterFootstep_1;
+        [SerializeField] Vector2 movementSpeed;
+        [SerializeField, ReadOnly] int currentFootstepSoundIndex;
+        [SerializeField, ReadOnly] Vector3 velocity;
 
         public override void Do()
         {
@@ -60,12 +61,19 @@ namespace Game
         public void PlayFootstepSound()
         {
             currentFootstepSoundIndex++;
-            if(currentFootstepSoundIndex >= footstepSoundClips.Length)
+            switch(currentFootstepSoundIndex)
             {
-                currentFootstepSoundIndex = 0;
+                case 0: 
+                    EmitterFootstep_0.Play();
+                    break;
+                case 1: 
+                    EmitterFootstep_1.Play();
+                    break;
+                default:
+                    EmitterFootstep_0.Play();
+                    currentFootstepSoundIndex = 0;
+                    break;
             }
-            footstepSource.pitch = footstepSoundsPicthes[currentFootstepSoundIndex];
-            footstepSource.PlayOneShot(footstepSoundClips[currentFootstepSoundIndex]);
         }
     }
 }

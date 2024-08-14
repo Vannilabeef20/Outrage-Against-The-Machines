@@ -5,10 +5,10 @@ namespace Game
 {
     public abstract class EnemyState : BaseState
     {
-        [Header("ENEMY STATE INHERITED"), HorizontalLine(2f,EColor.Orange)]
-        [SerializeField, ReadOnly] protected EnemyStateMachine stateMachine;
+        [Header("ENEMY_STATE INHERITED"), HorizontalLine(2f,EColor.Orange)]
+        [SerializeField] protected EnemyStateMachine stateMachine;
 
-        public void Setup(EnemyStateMachine _enemyStateMachine)
+        public virtual void Setup(EnemyStateMachine _enemyStateMachine)
         {
             stateMachine = _enemyStateMachine;
         }

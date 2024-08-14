@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7479726675734475958}
   - component: {fileID: 7696150908614659406}
+  - component: {fileID: 7194169049714867281}
   - component: {fileID: 2724523166955528692}
   - component: {fileID: 6276525043216198364}
   m_Layer: 0
@@ -47,11 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a36d2616cca3244b0aee8dcf4518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
-  pickupSound: {fileID: 8300000, guid: c7068925512b86a49acb0a5bc985fa3c, type: 3}
   itemSpriteTransform: {fileID: 2257146963060982452}
+  pickupEmitter: {fileID: 7194169049714867281}
+  playerTag: Player
   pickupEffects:
   - rid: 3689197286202802177
+  floatRange: {x: 0, y: 0.2, z: 0}
+  floatDuration: 1.5
+  floatEase: 4
   references:
     version: 2
     RefIds:
@@ -59,6 +63,37 @@ MonoBehaviour:
       type: {class: EnergyDropEffect, ns: Game, asm: Assembly-CSharp}
       data:
         specialCharge: 300
+--- !u!114 &7194169049714867281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001008943106286405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1622920023
+      Data2: 1174937856
+      Data3: 1844589706
+      Data4: 616610602
+    Path: event:/SFX/Player/Common Sounds/Player Energy_Get SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!65 &2724523166955528692
 BoxCollider:
   m_ObjectHideFlags: 0

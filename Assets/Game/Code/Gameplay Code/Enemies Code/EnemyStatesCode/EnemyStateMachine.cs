@@ -12,7 +12,6 @@ namespace Game
         public Spawner spawner;
         public SpriteRenderer spriteRenderer;
         public Rigidbody body;
-        public AudioSource audioSource;
         public Animator animator;
         public BoxCollider hurtBox;
         public BoxCollider attackhitbox;

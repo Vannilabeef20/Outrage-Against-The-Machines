@@ -184,11 +184,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 03fa910405505234985027a159ca2b0f, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -254,11 +252,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 3217c383ee0838845bf5f8df7cdb03a5, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -642,6 +638,7 @@ GameObject:
   - component: {fileID: 1164585175750519656}
   - component: {fileID: 1164585175750519657}
   - component: {fileID: 1164585175750519639}
+  - component: {fileID: 2271633649483397582}
   m_Layer: 0
   m_Name: Cow_StunnedState
   m_TagString: Untagged
@@ -681,6 +678,7 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
+  soundEmitter: {fileID: 2271633649483397582}
   duration: 0
   knockBackIntensity: {x: 0, y: 0}
   knockBackCurve:
@@ -707,7 +705,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damageTakenSound: {fileID: 8300000, guid: 44f1ea6919bb7ec4895c3085b5d412bf, type: 3}
   impulseSource: {fileID: 1164585175750519639}
   hitGamepadShakeLowFrequency: 0.5
   hitGamepadShakeHighFrequency: 0.5
@@ -801,6 +798,37 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &2271633649483397582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585175750519658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1609775203
+      Data2: 1325175163
+      Data3: 61354687
+      Data4: -204017293
+    Path: event:/SFX/Player/Common Sounds/Player Damage SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1164585175999031603
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +840,7 @@ GameObject:
   - component: {fileID: 1164585175999031602}
   - component: {fileID: 1164585175999031600}
   - component: {fileID: 1164585175999031601}
+  - component: {fileID: 3611961179346149728}
   m_Layer: 7
   m_Name: Cow_Hitbox_2
   m_TagString: Untagged
@@ -873,7 +902,38 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
-  hitSound: {fileID: 8300000, guid: 11d22f618a3be394187fa4d85e46b9d2, type: 3}
+  emitter: {fileID: 3611961179346149728}
+--- !u!114 &3611961179346149728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585175999031603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 491571851
+      Data2: 1133097393
+      Data3: -1420818001
+      Data4: -1516925861
+    Path: event:/SFX/Player/Common Sounds/Player Hit SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1164585176036258599
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +1007,7 @@ GameObject:
   - component: {fileID: 1164585176128136737}
   - component: {fileID: 1164585176128136736}
   - component: {fileID: 6136750296965723331}
+  - component: {fileID: 2309935132991091179}
   m_Layer: 0
   m_Name: Cow_DeathState
   m_TagString: Untagged
@@ -989,9 +1050,9 @@ MonoBehaviour:
   <Duration>k__BackingField: 1
   <Delay>k__BackingField: 3
   <Despawning>k__BackingField: 0
+  soundEmitter: {fileID: 2309935132991091179}
   playerDeathParamsEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
   impulseSource: {fileID: 6136750296965723331}
-  deathSound: {fileID: 8300000, guid: 35d0ff0c78a1ff6459f6122f362ff599, type: 3}
   knockBackCurve:
     serializedVersion: 2
     m_Curve:
@@ -1109,6 +1170,37 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &2309935132991091179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585176128136738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1531046930
+      Data2: 1329664016
+      Data3: 848565167
+      Data4: -1862711575
+    Path: event:/SFX/Player/Common Sounds/Player Death SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1164585176240065431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164585176240065430}
   - component: {fileID: 1164585176240065428}
+  - component: {fileID: 5785947858171866375}
   - component: {fileID: 1164585176240065429}
   m_Layer: 6
   m_Name: Cow_Health
@@ -1161,21 +1254,52 @@ MonoBehaviour:
   playerHitbox: {fileID: 1164585176240065429}
   InstantHealthBar: {fileID: 6320572699832204143}
   LerpHealthBar: {fileID: 515142115374017942}
-  healParticle: {fileID: 0}
+  healParticle: {fileID: 7457534750952423207}
   damageParticle: {fileID: 5174236904199335510}
+  reviveEmitter: {fileID: 5785947858171866375}
   hostileLayers:
     serializedVersion: 2
     m_Bits: 512
   maxHeathPoints: 100
   <CurrentHealthPoints>k__BackingField: 0
   isDead: 0
-  reviveSound: {fileID: 8300000, guid: e4f70c83c238a474fa04ed2f8d4850fc, type: 3}
   hitFlashLenght: 0.1
   hitFlashColor: {r: 0.6320754, g: 0.31305623, b: 0.31305623, a: 1}
   staggerGracePeriod: 2
   gracePeriodFlashLenght: 0.15
   gracePeriodColor: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
   healthConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
+--- !u!114 &5785947858171866375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585176240065431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2065492774
+      Data2: 1305645347
+      Data3: 29979012
+      Data4: -441888325
+    Path: event:/SFX/Player/Common Sounds/Player Revive SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!136 &1164585176240065429
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1259,7 +1383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1164585177164256759}
   - component: {fileID: 1164585177164256758}
-  - component: {fileID: 5956952720080748831}
   m_Layer: 0
   m_Name: Cow_WalkingState
   m_TagString: Untagged
@@ -1278,7 +1401,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8616708365920972299}
+  - {fileID: 6523204857100791403}
   m_Father: {fileID: 1164585177420930284}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1299,112 +1424,11 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  footstepSource: {fileID: 5956952720080748831}
+  EmitterFootstep_0: {fileID: 6965143477049175930}
+  EmitterFootstep_1: {fileID: 3302186660440243489}
   movementSpeed: {x: 4, y: 2.4}
-  footstepSoundClips:
-  - {fileID: 8300000, guid: 7ad6cb82d7bbf5441b16b7e4edc9deee, type: 3}
-  - {fileID: 8300000, guid: 04666b9008d955c44856f4760cafe449, type: 3}
-  footstepSoundsPicthes:
-  - 1
-  - 1
   currentFootstepSoundIndex: 0
   velocity: {x: 0, y: 0, z: 0}
---- !u!82 &5956952720080748831
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164585177164256648}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1164585177213015456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,7 +1439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164585177213015471}
   - component: {fileID: 1164585177213015470}
-  - component: {fileID: 3807069788289279069}
+  - component: {fileID: 6012565050126121000}
   m_Layer: 0
   m_Name: Cow_AttackState
   m_TagString: Untagged
@@ -1471,7 +1495,7 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 1164585177591447843}
   - {fileID: 1164585175999031600}
-  attackAudioSource: {fileID: 3807069788289279069}
+  attackEmitter: {fileID: 6012565050126121000}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   queuedAttackState: {fileID: 0}
   attackList: []
@@ -1483,103 +1507,38 @@ MonoBehaviour:
   - {fileID: 5991806351874631203}
   - {fileID: 1883735402580584839}
   - {fileID: 4178294214619051610}
-  specialParticleSystem: {fileID: 0}
---- !u!82 &3807069788289279069
-AudioSource:
+  specialParticleSystem: {fileID: 5057762400636101967}
+--- !u!114 &6012565050126121000
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164585177213015456}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1088261616
+      Data2: 1207779979
+      Data3: -1285207914
+      Data4: 1124042816
+    Path: event:/SFX/Player/Cow/Cow Attack
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1164585177367800634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,9 +1549,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1164585177367800614}
   - component: {fileID: 1164585177367800613}
-  - component: {fileID: 1164585177367800615}
   - component: {fileID: 1164585177367800632}
   - component: {fileID: 1164585177367800633}
+  - component: {fileID: 3359556994554866377}
+  - component: {fileID: 1358034836643674851}
   m_Layer: 6
   m_Name: Cow
   m_TagString: Player
@@ -1772,102 +1732,6 @@ MonoBehaviour:
   m_DefaultActionMap: Inputs
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!82 &1164585177367800615
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164585177367800634}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8909811810331285860, guid: 030da8e1655f07d439b948cd4eb3d2df, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!54 &1164585177367800632
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1916,6 +1780,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4334737, y: 0.48933256, z: 0.4}
   m_Center: {x: -0.16329485, y: 0.28502375, z: 0}
+--- !u!114 &3359556994554866377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585177367800634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1358034836643674851}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1358034836643674851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585177367800634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEmitters:
+  - {fileID: 5785947858171866375}
+  - {fileID: 6965143477049175930}
+  - {fileID: 3302186660440243489}
+  - {fileID: 2271633649483397582}
+  - {fileID: 2309935132991091179}
+  - {fileID: 6012565050126121000}
+  - {fileID: 718159735169308942}
+  - {fileID: 3611961179346149728}
+  - {fileID: 3871646613880046710}
 --- !u!1 &1164585177420930272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,7 +1884,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1164585177367800613}
   body: {fileID: 1164585177367800632}
-  audioSource: {fileID: 1164585177367800615}
   animator: {fileID: 1164585177420930286}
   spriteRenderer: {fileID: 1164585177420930285}
   footCollider: {fileID: 1164585177367800633}
@@ -2074,6 +1987,7 @@ GameObject:
   - component: {fileID: 1164585177591447845}
   - component: {fileID: 1164585177591447843}
   - component: {fileID: 1164585177591447844}
+  - component: {fileID: 718159735169308942}
   m_Layer: 7
   m_Name: Cow_Hitbox_1
   m_TagString: Untagged
@@ -2135,7 +2049,38 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
-  hitSound: {fileID: 8300000, guid: 11d22f618a3be394187fa4d85e46b9d2, type: 3}
+  emitter: {fileID: 718159735169308942}
+--- !u!114 &718159735169308942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585177591447846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 491571851
+      Data2: 1133097393
+      Data3: -1420818001
+      Data4: -1516925861
+    Path: event:/SFX/Player/Common Sounds/Player Hit SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1359580176891530337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,11 +2130,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 200fe47429a40464b820d92dc02eb56f, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -2222,10 +2165,10 @@ MonoBehaviour:
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1164585177420930287}
-          m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
-          m_MethodName: PlayFootstepSound
-          m_Mode: 1
+        - m_Target: {fileID: 5676003039482721637}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2315,11 +2258,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 6c871f21dbe7a0341b956fdc27888ae0, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -2540,11 +2481,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: e390239f71bcec5449d94b5f9a92c3b7, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -2609,6 +2548,69 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &2503830835451940635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4600453674323674697}
+  - component: {fileID: 3871646613880046710}
+  m_Layer: 0
+  m_Name: ImpactEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4600453674323674697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503830835451940635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5824036517221662595}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3871646613880046710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503830835451940635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 31400210
+      Data2: 1228090953
+      Data3: 125518506
+      Data4: -883929559
+    Path: event:/SFX/Player/Cow/Player Cow_Aoe_Impact SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2651500264015860896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7580,11 +7582,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 6b4644573292c0b4790c16857c3b78c2, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 1
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -17641,7 +17641,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4600453674323674697}
   m_Father: {fileID: 221010278686458232}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17662,11 +17663,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: a29a03c082eda604495e5abd815e0159, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -17687,13 +17686,13 @@ MonoBehaviour:
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3807069788289279069}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 3871646613880046710}
+          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 2c930f2853ad7d548a01e15499b30ed3, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -17824,11 +17823,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: cfc5e7f31ee9e8c4e98a48f9efa9aa17, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 1
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -17971,11 +17968,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: af7c7b8ba246bd5449f92b0bd4673d76, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -17992,6 +17987,69 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &6821207384512421854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8616708365920972299}
+  - component: {fileID: 6965143477049175930}
+  m_Layer: 0
+  m_Name: Emitter Footstep_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8616708365920972299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821207384512421854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1164585177164256759}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6965143477049175930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821207384512421854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1402359779
+      Data2: 1256147999
+      Data3: -1069120834
+      Data4: 1807950656
+    Path: event:/SFX/Player/Common Sounds/Player Footstep_0 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6868173594272702251
 GameObject:
   m_ObjectHideFlags: 0
@@ -18026,6 +18084,69 @@ Transform:
   m_Father: {fileID: 1164585177367800614}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7329113238283655906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6523204857100791403}
+  - component: {fileID: 3302186660440243489}
+  m_Layer: 0
+  m_Name: Emitter Footstep_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6523204857100791403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329113238283655906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1164585177164256759}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3302186660440243489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329113238283655906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1934030261
+      Data2: 1113379652
+      Data3: 819867327
+      Data4: -1219506749
+    Path: event:/SFX/Player/Common Sounds/Player Footstep_1 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8344319545134075581
 GameObject:
   m_ObjectHideFlags: 0
@@ -18152,11 +18273,9 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
-  <AttackMachine>k__BackingField: {fileID: 1164585177213015470}
-  LimitTransition: 0
-  <PermittedPreviousAttacks>k__BackingField: []
+  AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 62cd11d3f5d820f47b0db7ce5069fdbd, type: 2}
-  <FrameEvents>k__BackingField:
+  FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:

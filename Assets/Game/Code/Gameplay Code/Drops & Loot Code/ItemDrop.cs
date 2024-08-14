@@ -1,6 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 using DG.Tweening;
+using FMODUnity;
 
 namespace Game
 {
@@ -17,8 +18,7 @@ namespace Game
             "Used for making the item float.")]
         [SerializeField] Transform itemSpriteTransform;
 
-        [Tooltip("The sound that plays when the item is picked up.")]
-        [SerializeField] AudioClip pickupSound;
+        [SerializeField] StudioEventEmitter pickupEmitter;
         #endregion
 
         #region PARAMETERS & VARIABLES
@@ -49,8 +49,9 @@ namespace Game
         {
             if (other.gameObject.CompareTag(playerTag))
             {
-                AudioManager.instance.PlaySfxGlobal(pickupSound);
-                for(int i = 0; i < pickupEffects.Length; i++)
+
+                pickupEmitter.Play();
+                for (int i = 0; i < pickupEffects.Length; i++)
                 {
                     pickupEffects[i].ApplyEffect(other.gameObject);
                 }
