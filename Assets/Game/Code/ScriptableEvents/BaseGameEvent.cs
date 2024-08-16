@@ -71,9 +71,13 @@ namespace Game
             }
         }
 
-        private void EventLog(object sender, T data)
+        private void EventLog(object sender, T data, bool isTest = false)
         {
+            if(!isTest)
             debugSO.Log(sender, $"<color=#8c53c6>{name} </color><color=white>was raised!</color> Data: {data.ToString()}", EDebugSubjectFlags.CustomEvents);
+
+                else
+                debugSO.Log(sender, $"<color=#8c53c6>{name} </color><color=white>was raised!</color> Data: {data.ToString()}", EDebugSubjectFlags.Test);
         }
 
         public bool HasListener(IGameEventListener<T> listener)
@@ -84,7 +88,7 @@ namespace Game
         [Button("TEST LOG", EButtonEnableMode.Always)]
         public void TestDefaultLog()
         {
-            EventLog(this, default);
+            EventLog(this, default, true);
         }   
 
         [Button("RAISE 'TEST VALUE'", EButtonEnableMode.Playmode)]

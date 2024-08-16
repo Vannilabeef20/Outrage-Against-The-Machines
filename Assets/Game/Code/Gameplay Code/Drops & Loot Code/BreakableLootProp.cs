@@ -49,6 +49,7 @@ namespace Game
 
         [Tooltip("Manages the chances for loot drops.")]
         [SerializeField] LootTable lootTable;
+        [SerializeField] ScrapDropper moneyDrop;
 
         #endregion
 
@@ -80,6 +81,7 @@ namespace Game
                 if (i == FrameToSpawn) //Spawn loot at the right frame
                 {
                     Instantiate(lootTable.PickRandomDrop(), lootSpawnPoint.position, Quaternion.identity);
+                    moneyDrop.SpawnRandomScrapAmount();
                 }
             }
             float time = Time.time;

@@ -1,0 +1,88 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using NaughtyAttributes;
+using FMODUnity;
+
+
+namespace Game 
+{
+    public class ScrapDrop : MonoBehaviour
+    {
+        #region REFERENCES
+        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+
+        [SerializeField] Transform shadowTransform;
+        [SerializeField] Rigidbody rb;
+        [SerializeField] StudioEventEmitter pickEmitter;
+        
+        #endregion
+
+        #region PARAMETERS
+        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+
+        [SerializeField, Min(0)] int scrapValue;
+
+        [SerializeField, Tag] string playerTag;
+
+        [SerializeField] float gravity = -0.1f;
+
+        [SerializeField, Min(0)] int bounces = 2;
+
+        [SerializeField, Min(0)] float bounceDecay; 
+
+        [SerializeField, MinMaxSlider(0f, 99f)] Vector2 forceRange;
+        #endregion
+
+        #region VARIABLES
+        [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
+
+        [SerializeField,ReadOnly] float force;
+
+        [SerializeField,ReadOnly] int bounceCount;
+
+        #endregion
+        private void Update()
+        {
+            shadowTransform.position = transform.position.ToXZZ();
+
+            if(transform.position.y > transform.position.z)
+            {
+                rb.velocity += gravity * Vector3.up;
+            }
+
+            if(transform.position.y < transform.position.z)
+            {
+                if(bounceCount >= bounces)
+                {
+                    rb.velocity = Vector3.zero;
+                    transform.position = transform.position.ToXYY();
+                }
+                else
+                {
+                    bounceCount++;
+                    float aaa = force / ((bounceCount + 1)  *  bounceDecay);
+                    rb.velocity = Vector3.zero;
+                    rb.AddForce( aaa * Vector3.up, ForceMode.Impulse);
+                }
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag(playerTag))
+            {
+                pickEmitter.Play();
+                Debug.Log(scrapValue);
+                Destroy(transform.parent.gameObject);
+            }
+        }
+
+        public void ApplyForce(Vector3 dir)
+        {
+            force = Random.Range(forceRange.x, forceRange.y);
+            rb.AddForce(force * dir, ForceMode.Impulse);
+        }
+    }
+    
+}

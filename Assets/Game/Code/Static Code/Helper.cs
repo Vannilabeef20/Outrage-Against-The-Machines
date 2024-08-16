@@ -128,6 +128,36 @@ namespace Game
 			return true;
 		}
 
+		public static Vector3 Absolute(this Vector3 vector)
+        {
+			if(vector.x < 0)
+            {
+				vector.x *= -1;
+            }
+			if (vector.y < 0)
+			{
+				vector.y *= -1;
+			}
+			if (vector.z < 0)
+			{
+				vector.z *= -1;
+			}
+			return vector;
+		}
+
+		public static Vector2 Absolute(this Vector2 vector)
+		{
+			if (vector.x < 0)
+			{
+				vector.x *= -1;
+			}
+			if (vector.y < 0)
+			{
+				vector.y *= -1;
+			}
+			return vector;
+		}
+
 		public static bool HasAnyFlag<TEnum>(this TEnum e, TEnum flag) where TEnum : IConvertible
         {
 			if (e.GetType() != flag.GetType())

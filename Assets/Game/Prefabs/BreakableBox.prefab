@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488542923154001146}
   - component: {fileID: 1488542923154001141}
+  - component: {fileID: 4574465553870493326}
   - component: {fileID: 1488542923154001147}
   - component: {fileID: 1488542923154001140}
   m_Layer: 8
@@ -78,7 +79,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7d9318bcf6e4248b90b8398fbdf2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootSpawnPoint: {fileID: 1488542922225973092}
+  collisionCollider: {fileID: 1488542923154001140}
+  spriteRenderer: {fileID: 1488542923154001147}
   hasBeenBroken: 0
+  hostileLayers:
+    serializedVersion: 2
+    m_Bits: 640
+  animationSprites:
+  - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  animationDuration: 1
+  fadeFlickerColor: {r: 1, g: 1, b: 1, a: 0.4}
+  fadeFlickerDuration: 1.5
+  fadeFlickerLenght: 0.1
+  FrameToSpawn: 2
   lootTable:
     itemDrops:
     - <Name>k__BackingField: Heal
@@ -102,22 +119,24 @@ MonoBehaviour:
       ProbabilityPercent: 19
       ProbabilityRange: {x: 81, y: 100}
     totalWeight: 100
-  FrameToSpawn: 2
-  hostileLayers:
-    serializedVersion: 2
-    m_Bits: 640
-  lootSpawnPoint: {fileID: 1488542922225973092}
-  collisionCollider: {fileID: 1488542923154001140}
-  spriteRenderer: {fileID: 1488542923154001147}
-  animationSprites:
-  - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  animationDuration: 1
-  fadeFlickerColor: {r: 1, g: 1, b: 1, a: 0.4}
-  fadeFlickerDuration: 1.5
-  fadeFlickerLenght: 0.1
+  moneyDrop: {fileID: 4574465553870493326}
+--- !u!114 &4574465553870493326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488542923154001142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70f634181bf2ed428df59b1bfe451b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrapUnit: {fileID: 4225638560684016975, guid: 49fe93000a37d1c408f41c6093e83f86, type: 3}
+  scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
+  scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
+  minScapDrop: 1
+  maxScapDrop: 1
 --- !u!212 &1488542923154001147
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ namespace Game
             
             if(busGroup == busNames[0])
             {
-                bus = RuntimeManager.GetBus("bus:/Master");
+                bus = RuntimeManager.GetBus("bus:/");
             }
             else
             {

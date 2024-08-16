@@ -186,6 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3452743421080466887}
   - {fileID: 588689492496491315}
   - {fileID: 588689490657188878}
   - {fileID: 588689491581222226}
@@ -413,9 +414,9 @@ MonoBehaviour:
     m_ActionName: Inputs/Kick[/Keyboard/o]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 588689491332936778}
-        m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
-        m_MethodName: ValidateAttack
+      - m_Target: {fileID: 8539864669960981698}
+        m_TargetAssemblyTypeName: Game.InteractionHandler, Assembly-CSharp
+        m_MethodName: RequestInteraction
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12333,6 +12334,80 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4558630880113539148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3452743421080466887}
+  - component: {fileID: 8539864669960981698}
+  - component: {fileID: 3042656164699801808}
+  m_Layer: 0
+  m_Name: Rooster_InteractionHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3452743421080466887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558630880113539148}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2909546, y: 0.20785093, z: 0.081212044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588689491332936777}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8539864669960981698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558630880113539148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fa2fb44c78ae545a201e0358228995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 588689491377177472}
+  detectionShape: {fileID: 3042656164699801808}
+  interactionMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  interactblesCollidersInRange: []
+  closestInteractbleCollider: {fileID: 0}
+  closestInteractble: {fileID: 0}
+--- !u!65 &3042656164699801808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558630880113539148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7418747, y: 0.72541, z: 1}
+  m_Center: {x: 0.37093735, y: 0.36371088, z: 0}
 --- !u!1 &4593853631211083319
 GameObject:
   m_ObjectHideFlags: 0
