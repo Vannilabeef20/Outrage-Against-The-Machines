@@ -4,7 +4,7 @@ using DG.Tweening;
 
 namespace Game
 {
-    public class MenuButton : MonoBehaviour, ISelectHandler, IPointerEnterHandler
+    public class BaseUIInteractive : MonoBehaviour, ISelectHandler, IPointerEnterHandler
     {
         [SerializeField] protected float selectScalePercentage = 0.15f;
         [SerializeField] protected float selectActivateDelay = 0.3f;

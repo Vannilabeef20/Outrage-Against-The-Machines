@@ -5,59 +5,62 @@ using NaughtyAttributes;
 
 namespace Game
 {
-    public class FullScreenToggle : BaseUIInteractive
+    public class RumbleToggle : BaseUIInteractive
     {
         [SerializeField] Image toggleImage;
-        [SerializeField, ReadOnly] const string PlayerPrefsFullScreen = "FullscreenValue";
-        [SerializeField, ReadOnly] private bool active;
-        [SerializeField, ShowAssetPreview] private Sprite[] toggleSprites;
+        [SerializeField] BoolEvent rumbleToggleEvent;
+        [SerializeField, ReadOnly] const string PlayerPrefsScreenShake = "Rumble";
+        [SerializeField, ReadOnly] bool active;
+        [SerializeField, ShowAssetPreview] Sprite[] toggleSprites;
 
         private void Awake()
         {
-            if (PlayerPrefs.GetInt(PlayerPrefsFullScreen) == 1) // 1 means true, 0 false
+            if (PlayerPrefs.GetInt(PlayerPrefsScreenShake) == 1) // 1 means true, 0 false
             {
                 active = true;
                 toggleImage.sprite = toggleSprites[1];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
+                PlayerPrefs.SetInt(PlayerPrefsScreenShake, 1);
             }
             else
             {
                 active = false;
                 toggleImage.sprite = toggleSprites[0];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
+                PlayerPrefs.SetInt(PlayerPrefsScreenShake, 0);
             }
+            rumbleToggleEvent.Raise(this, active);
         }
         private void OnEnable()
         {
-            if (PlayerPrefs.GetInt(PlayerPrefsFullScreen) == 1)
+            if (PlayerPrefs.GetInt(PlayerPrefsScreenShake) == 1)
             {
                 active = true;
                 toggleImage.sprite = toggleSprites[1];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
+                PlayerPrefs.SetInt(PlayerPrefsScreenShake, 1);
             }
             else
             {
                 active = false;
                 toggleImage.sprite = toggleSprites[0];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
+                PlayerPrefs.SetInt(PlayerPrefsScreenShake, 0);
             }
+            rumbleToggleEvent.Raise(this, active);
         }
-        public void SetFullScreen()
+        public void _SetRumble()
         {
             PlayInteractionAnimation();
             AudioManager.instance.PlayUiClickSfx();
             active = !active;
-            Screen.fullScreen = active;
             if (active)
             {
                 toggleImage.sprite = toggleSprites[1];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 1);
+                PlayerPrefs.SetInt(PlayerPrefsScreenShake, 1);
             }
             else
             {
                 toggleImage.sprite = toggleSprites[0];
-                PlayerPrefs.SetInt(PlayerPrefsFullScreen, 0);
+                PlayerPrefs.SetInt(PlayerPrefsScreenShake, 0);
             }
+            rumbleToggleEvent.Raise(this, active);
         }
     }
 }

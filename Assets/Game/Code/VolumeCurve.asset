@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863a66fb267c37544a9003fcabbe1752, type: 3}
+  m_Name: VolumeCurve
+  m_EditorClassIdentifier: 
+  <Curve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -80
+      inSlope: 24.262226
+      outSlope: 24.262226
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13248111
+    - serializedVersion: 3
+      time: 1
+      value: 5
+      inSlope: -9.603806
+      outSlope: -9.603806
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.037187696
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

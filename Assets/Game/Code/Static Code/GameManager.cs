@@ -47,7 +47,6 @@ namespace Game
 
         #region Lifes Params
         [Header("REVIVE & LIVES"), HorizontalLine(2f, EColor.Yellow)]
-        [SerializeField] StudioEventEmitter reviveEmitter;
         [SerializeField, Min(0), MaxValue(1f)] Vector2 spawnViewportPostion;
         [SerializeField] IntEvent UpdateLifeCount;
         [field: SerializeField, ReadOnly] public int CurrentLifeAmount { get; private set; }
@@ -57,8 +56,11 @@ namespace Game
 
         #endregion
 
+        [Header("RUMBLE"), HorizontalLine(2f, EColor.Green)]
+        [SerializeField] bool rumbleEnabled;
+
         #region Debug
-        [Header("DEBUG"), HorizontalLine(2f, EColor.Green)]
+        [Header("DEBUG"), HorizontalLine(2f, EColor.Blue)]
         [SerializeField] GUIStyle SpawnLabelStyle;
         [SerializeField] GUIStyle RespawnLabelStyle;
         #endregion
@@ -76,7 +78,6 @@ namespace Game
                 Destroy(gameObject);
                 return;
             }
-
             transitionImage.enabled = false;
             int level = SceneManager.GetActiveScene().buildIndex;
             if (level != 0)
@@ -160,6 +161,8 @@ namespace Game
         #region Rumble Methods
         public void Rumble(InputDevice device, float lowFrequency, float highFrequency, float duration)
         {
+            if (!rumbleEnabled) return;
+
             Gamepad gamepad;
             try
             {
@@ -173,8 +176,9 @@ namespace Game
             StartCoroutine(PulseRumble(gamepad, lowFrequency, highFrequency, duration));
         }
         public void Rumble(float lowFrequency, float highFrequency, float duration)
-        {   
-            foreach(Gamepad gamepad in Gamepad.all)
+        {
+            if (!rumbleEnabled) return;
+            foreach (Gamepad gamepad in Gamepad.all)
             {
                 StartCoroutine(PulseRumble(gamepad, lowFrequency, highFrequency, duration));
             }
@@ -205,6 +209,19 @@ namespace Game
             {
                 gamepad.SetMotorSpeeds(0f, 0f);
             }
+        }
+
+        public void ToggleRumble(bool enabled)
+        {
+            if (enabled)
+            {
+                PlayerPrefs.GetInt("Rumble", 1);
+            }
+            else
+            {
+                PlayerPrefs.GetInt("Rumble", 0);
+            }
+            rumbleEnabled = enabled;
         }
         #endregion
 
@@ -279,10 +296,6 @@ namespace Game
                     PlayerCharacterList[i].GameObject.SetActive(true);
                     PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
                     PlayerCharacterList[i].isPlayerActive = true;
-                    if(CurrentLifeAmount > 0)
-                    {
-                        reviveEmitter.Play();
-                    }
                 }
             }
             UpdateLifeCount.Raise(this, CurrentLifeAmount);

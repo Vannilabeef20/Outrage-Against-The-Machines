@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d18d85837bf6cbc4f978a29968fcbc7f, type: 3}
-  m_Name: EnableScreenShake
+  m_Name: ToggleRumbleEvent
   m_EditorClassIdentifier: 
   isTimeScaleIndependent: 1
   debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
-  testValue: 0
+  testValue: 1
   listenerNames: []

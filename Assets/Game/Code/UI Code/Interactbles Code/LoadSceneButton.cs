@@ -7,7 +7,7 @@ namespace Game
     /// <summary>
     /// Creates a button that OnClick, tell Gamemanager to load a new scene.
     /// </summary>
-    public class LoadSceneButton : MenuButton 
+    public class LoadSceneButton : BaseUIInteractive 
     {
         [Scene,SerializeField] int targetScene;
 

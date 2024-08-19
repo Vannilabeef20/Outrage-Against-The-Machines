@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 7018751217004657233}
   - component: {fileID: 4748587671952949679}
   - component: {fileID: 7188369258136034306}
+  - component: {fileID: 3840617235644226617}
   m_Layer: 0
   m_Name: GameManagerPrefab
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Transform:
   m_Children:
   - {fileID: 471917213323893143}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7018751217004657233
 MonoBehaviour:
@@ -205,12 +206,12 @@ MonoBehaviour:
   - {x: -123.7, y: 2, z: 2}
   - {x: -124.7, y: 3, z: 3}
   followGroupPrefab: {fileID: 8956597100830334376, guid: 258c40db9e49b4b4080e801aa4450356, type: 3}
-  reviveSound: {fileID: 8300000, guid: e4f70c83c238a474fa04ed2f8d4850fc, type: 3}
   spawnViewportPostion: {x: 0.49999997, y: 0.15}
   UpdateLifeCount: {fileID: 11400000, guid: d4584a82d403ab2469f6d59d6047907a, type: 2}
   <CurrentLifeAmount>k__BackingField: 0
   initialLifeAmout: 3
   maxLifeAmount: 9
+  rumbleEnabled: 1
   SpawnLabelStyle:
     m_Name: 
     m_Normal:
@@ -364,6 +365,34 @@ MonoBehaviour:
       - m_Target: {fileID: 4748587671952949679}
         m_TargetAssemblyTypeName: Game.GameManager, Assembly-CSharp
         m_MethodName: UpdatePlayerDeathStatus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3840617235644226617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471917214709005344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933abe47ad4e9ec48957dcc881ae19f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 503eb9c1977daff4586a51bc4a9c175b, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4748587671952949679}
+        m_TargetAssemblyTypeName: Game.GameManager, Assembly-CSharp
+        m_MethodName: ToggleRumble
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
