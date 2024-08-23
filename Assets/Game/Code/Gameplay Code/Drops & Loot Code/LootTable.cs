@@ -10,9 +10,10 @@ namespace Game
     [Serializable]
     public class LootTable 
     {
-        [SerializeField] ItemLoot[] itemDrops;
 
-        [SerializeField ,ReadOnly, AllowNesting] float totalWeight;
+        [SerializeField, ReadOnly, AllowNesting] float totalWeight;
+
+        [SerializeField] ItemLoot[] itemDrops;
 
         public void ValidateTable()
         {
@@ -29,6 +30,9 @@ namespace Game
                 foreach(var drop in itemDrops)
                 {
                     drop.ProbabilityPercent = (drop.ProbabilityWeight / totalWeight) * 100;
+
+                    drop.Name = $"{drop.ProbabilityPercent}% -> |{drop.Item.name}|" ??
+                                $"{drop.ProbabilityPercent}% -> |Nothing|";
                 }
             }
         }

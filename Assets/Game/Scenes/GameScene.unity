@@ -2857,8 +2857,6 @@ GameObject:
   m_Component:
   - component: {fileID: 874066634}
   - component: {fileID: 874066637}
-  - component: {fileID: 874066636}
-  - component: {fileID: 874066635}
   m_Layer: 0
   m_Name: Sound Gear Packaging
   m_TagString: Untagged
@@ -2881,48 +2879,6 @@ Transform:
   m_Father: {fileID: 1651784758}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &874066635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874066632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEmitters:
-  - {fileID: 874066637}
---- !u!114 &874066636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874066632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 874066635}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &874066637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3054,8 +3010,6 @@ GameObject:
   m_Component:
   - component: {fileID: 955067350}
   - component: {fileID: 955067353}
-  - component: {fileID: 955067352}
-  - component: {fileID: 955067351}
   m_Layer: 0
   m_Name: Sound Industry Ambience
   m_TagString: Untagged
@@ -3078,48 +3032,6 @@ Transform:
   m_Father: {fileID: 1651784758}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &955067351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955067349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEmitters:
-  - {fileID: 955067353}
---- !u!114 &955067352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955067349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 955067351}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &955067353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4780,8 +4692,8 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0648555, y: 4.782351}
   playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0.1493411, a: 0.9019608}
-  point1Pos: {x: -113.50998, y: 0.0648555, z: 0}
-  point2Pos: {x: -113.50998, y: 4.782351, z: 0}
+  point1Pos: {x: -113.509964, y: 0.0648555, z: 0}
+  point2Pos: {x: -113.509964, y: 4.782351, z: 0}
 --- !u!4 &1520381731
 Transform:
   m_ObjectHideFlags: 0
@@ -4807,8 +4719,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1531952446}
   - component: {fileID: 1531952449}
-  - component: {fileID: 1531952448}
-  - component: {fileID: 1531952447}
   m_Layer: 0
   m_Name: Sound Gears Rotating
   m_TagString: Untagged
@@ -4831,48 +4741,6 @@ Transform:
   m_Father: {fileID: 1651784758}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1531952447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531952444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEmitters:
-  - {fileID: 1531952449}
---- !u!114 &1531952448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531952444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1531952447}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1531952449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5486,10 +5354,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1651784758}
+  - component: {fileID: 1651784760}
+  - component: {fileID: 1651784759}
   m_Layer: 0
   m_Name: SOUND_OBJECTS
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: 3e9aae350934e02449e499ffc79ca0f3, type: 3}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5515,6 +5385,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1651784759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651784756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEmitters:
+  - {fileID: 874066637}
+  - {fileID: 1531952449}
+  - {fileID: 100761516}
+  - {fileID: 2028496061}
+  - {fileID: 2006564063}
+  - {fileID: 955067353}
+  - {fileID: 506251439}
+--- !u!114 &1651784760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651784756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1651784759}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1657048423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5715,14 +5633,6 @@ PrefabInstance:
     - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574465553870493326, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
-      propertyPath: maxScapDrop
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574465553870493326, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
-      propertyPath: minScapDrop
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6037,8 +5947,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2006564060}
   - component: {fileID: 2006564063}
-  - component: {fileID: 2006564062}
-  - component: {fileID: 2006564061}
   m_Layer: 0
   m_Name: Sound Street Ambience
   m_TagString: Untagged
@@ -6061,48 +5969,6 @@ Transform:
   m_Father: {fileID: 1651784758}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2006564061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006564059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEmitters:
-  - {fileID: 2006564063}
---- !u!114 &2006564062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006564059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2006564061}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2006564063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6417,8 +6283,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2028496058}
   - component: {fileID: 2028496061}
-  - component: {fileID: 2028496060}
-  - component: {fileID: 2028496059}
   m_Layer: 0
   m_Name: Sound Press Hit
   m_TagString: Untagged
@@ -6441,48 +6305,6 @@ Transform:
   m_Father: {fileID: 1651784758}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2028496059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028496056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEmitters:
-  - {fileID: 2028496061}
---- !u!114 &2028496060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028496056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2028496059}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2028496061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6731,7 +6553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471917214709005346, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.64
       objectReference: {fileID: 0}
     - target: {fileID: 471917214709005346, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6980,7 +6802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373763728649602869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -124.14998, y: 6.18881, z: -18.74}
+  m_LocalPosition: {x: -124.14996, y: 6.18881, z: -18.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7709,15 +7531,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.436924
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.794794
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.38794
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
       propertyPath: m_LocalRotation.w

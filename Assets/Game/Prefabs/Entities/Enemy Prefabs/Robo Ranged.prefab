@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.07
       minScalar: 0.05
       maxCurve:
         serializedVersion: 2
@@ -4886,7 +4886,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &1702680308892565086
+--- !u!1 &1645566201782571030
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4894,8 +4894,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6583466318875226752}
-  - component: {fileID: 7053810417088285791}
+  - component: {fileID: 8253260622896015125}
+  - component: {fileID: 412156143871746986}
   m_Layer: 0
   m_Name: ExplosionEmitter
   m_TagString: Untagged
@@ -4903,13 +4903,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6583466318875226752
+--- !u!4 &8253260622896015125
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702680308892565086}
+  m_GameObject: {fileID: 1645566201782571030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4918,13 +4918,13 @@ Transform:
   m_Father: {fileID: 3276738502215876370}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7053810417088285791
+--- !u!114 &412156143871746986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702680308892565086}
+  m_GameObject: {fileID: 1645566201782571030}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
@@ -4933,14 +4933,14 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1864464792
-      Data2: 1234312530
-      Data3: 987117228
-      Data4: 1407165510
-    Path: event:/SFX/Enemy/Robo 1/Enemy Explosion_Multiple SFX
+      Data1: -1832890584
+      Data2: 1250610809
+      Data3: -1334630756
+      Data4: 155240955
+    Path: event:/SFX/Enemy/Robo Ranged/Enemy Explosion_Double SFX
   Event: 
   PlayEvent: 0
-  StopEvent: 2
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -4949,6 +4949,37 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!1 &2983444488673148728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427946075056308811}
+  m_Layer: 0
+  m_Name: Projectile SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &427946075056308811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983444488673148728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6669998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4483290455034505136}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3648327314913495207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,8 +5145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 76732158715113603}
-  - {fileID: 6583466318875226752}
+  - {fileID: 8253260622896015125}
   m_Father: {fileID: 6508126986923127504}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5131,18 +5161,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3daf840d139d6d4197e7068b2ee4b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: dfb20a8e3cd6a384bbaec4c5aa93bb99, type: 2}
+  StateAnimation: {fileID: 7400000, guid: 8a351dfcadc4f9d458a13d6db7b186cc, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 6508126985700856569}
-  duration: 1
+  duration: 2
   frameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7053810417088285791}
+        - m_Target: {fileID: 412156143871746986}
           m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
           m_MethodName: Play
           m_Mode: 1
@@ -5154,13 +5184,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - <TriggerFrame>k__BackingField: 6
-    <Actions>k__BackingField:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4196484976454017962}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
+        - m_Target: {fileID: 3662556871071707376}
+          m_TargetAssemblyTypeName: Game.ScrapDropper, Assembly-CSharp
+          m_MethodName: SpawnAllScrap
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5174,29 +5200,29 @@ MonoBehaviour:
     itemDrops:
     - <Name>k__BackingField: Nothing
       <Item>k__BackingField: {fileID: 0}
-      <ProbabilityWeight>k__BackingField: 80
-      ProbabilityPercent: 80
-      ProbabilityRange: {x: 0, y: 80}
+      <ProbabilityWeight>k__BackingField: 70
+      ProbabilityPercent: 70
+      ProbabilityRange: {x: 0, y: 70}
     - <Name>k__BackingField: Health
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 6
-      ProbabilityPercent: 6
-      ProbabilityRange: {x: 80, y: 86}
+      <ProbabilityWeight>k__BackingField: 9
+      ProbabilityPercent: 9
+      ProbabilityRange: {x: 70, y: 79}
     - <Name>k__BackingField: Heal & Energy
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
-      <ProbabilityWeight>k__BackingField: 6
-      ProbabilityPercent: 6
-      ProbabilityRange: {x: 86, y: 92}
+      <ProbabilityWeight>k__BackingField: 9
+      ProbabilityPercent: 9
+      ProbabilityRange: {x: 79, y: 88}
     - <Name>k__BackingField: Energy
       <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
-      <ProbabilityWeight>k__BackingField: 4.5
-      ProbabilityPercent: 4.5
-      ProbabilityRange: {x: 92, y: 96.5}
+      <ProbabilityWeight>k__BackingField: 8
+      ProbabilityPercent: 8
+      ProbabilityRange: {x: 88, y: 96}
     - <Name>k__BackingField: Life
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
-      <ProbabilityWeight>k__BackingField: 3.5
-      ProbabilityPercent: 3.5
-      ProbabilityRange: {x: 96.5, y: 100}
+      <ProbabilityWeight>k__BackingField: 4
+      ProbabilityPercent: 4
+      ProbabilityRange: {x: 96, y: 100}
     totalWeight: 100
 --- !u!1 &4733453237061180675
 GameObject:
@@ -5230,6 +5256,158 @@ Transform:
   m_Father: {fileID: 6508126985700856565}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5412929980522036603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4483290455034505136}
+  - component: {fileID: 4865190315941957882}
+  m_Layer: 0
+  m_Name: ShootAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4483290455034505136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412929980522036603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 427946075056308811}
+  - {fileID: 8331330774712803337}
+  - {fileID: 2089619407755395044}
+  m_Father: {fileID: 6508126987276863436}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4865190315941957882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412929980522036603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 668cea85d3540f446b5c4eff959ebd80, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 6508126985700856569}
+  AttackMachine: {fileID: 6508126987276863439}
+  <attack>k__BackingField:
+    <Name>k__BackingField: Shoot
+    <Animation>k__BackingField: {fileID: 7400000, guid: 668cea85d3540f446b5c4eff959ebd80, type: 2}
+    <TriggerRange>k__BackingField: 11
+    <VelocityCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.2222223
+        outSlope: 2.2222223
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.45
+        value: 1
+        inSlope: Infinity
+        outSlope: -15.041986
+        tangentMode: 7
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.06331482
+      - serializedVersion: 3
+        time: 0.6
+        value: 0
+        inSlope: -0.1365995
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.8715083
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <Velocity>k__BackingField: -10
+    <Duration>k__BackingField: 2
+    <Damage>k__BackingField: 20
+    <StunDuration>k__BackingField: 0.7
+    <KnockbackStrenght>k__BackingField: 10
+    <HasProjectile>k__BackingField: 1
+    <ProjectilePrefab>k__BackingField: {fileID: 4642329591781492597, guid: ac5b0c83a8896644c9037d038e0a648d, type: 3}
+    <ProjectileSpawnTransform>k__BackingField: {fileID: 427946075056308811}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 0
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5365647295470403560}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - <TriggerFrame>k__BackingField: 5
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6309578431116359177}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6508126987276863439}
+            m_TargetAssemblyTypeName: Game.EnemyAttackingState, Assembly-CSharp
+            m_MethodName: SpawnProjectile
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!1 &6508126985612539010
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,38 +5452,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af5a3a5e0e120c459290c253396ac28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 7755f446f3601994c9215f904f8ede8a, type: 2}
+  StateAnimation: {fileID: 7400000, guid: 0aa4568ec31f6d84bbce0758b801957f, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 6508126985700856569}
   targetingBehaviour:
-    rid: 3689197334475046918
+    rid: 3689197334475046919
   target: {fileID: 0}
-  targetingRepeatInterval: 0.5
+  targetingRepeatInterval: 0.25
   targetingTimer: 0
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
   <PathfindingBehaviour>k__BackingField:
-    rid: 3689197334475046914
+    rid: 3689197334475046915
   speed: {x: 2, y: 1.5, z: 1.5}
   movementDirection: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
-    - rid: 3689197334475046914
-      type: {class: MoveContextSteering, ns: Game, asm: Assembly-CSharp}
+    - rid: 3689197334475046915
+      type: {class: MoveRangedCntxStrg, ns: Game, asm: Assembly-CSharp}
       data:
         body: {fileID: 6508126985700856567}
         targetPosition: {x: 0, y: 0, z: 0}
+        stateMachine: {fileID: 6508126985700856569}
+        numberOfRays: 16
+        distanceToKeep: 11
+        distanceRange: 4
         <ObstacleLayerMask>k__BackingField:
           serializedVersion: 2
           m_Bits: 1280
-        numberOfRays: 16
         obstacleDetectionRadius: 2
         maxAvoidanceRadius: 0.75
+        distance: 0
+        direction: {x: 0, y: 0, z: 0}
         normal: {x: 0, y: 1, z: -1}
-    - rid: 3689197334475046918
+    - rid: 3689197334475046919
       type: {class: TargetClosest, ns: Game, asm: Assembly-CSharp}
 --- !u!1 &6508126985700856560
 GameObject:
@@ -5322,7 +5505,7 @@ GameObject:
   - component: {fileID: 6508126985700856564}
   - component: {fileID: 6508126985700856567}
   m_Layer: 8
-  m_Name: Robo 1
+  m_Name: Robo Ranged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5342,6 +5525,7 @@ Transform:
   m_Children:
   - {fileID: 6508126987123622499}
   - {fileID: 6508126986923127504}
+  - {fileID: 3071208308496549039}
   - {fileID: 4108991093921150802}
   - {fileID: 8564418458721151003}
   m_Father: {fileID: 0}
@@ -5382,9 +5566,9 @@ MonoBehaviour:
   boxCastLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
-  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.35}
-  boxCastLenght: 10
+  <BoxCastOffset>k__BackingField: {x: 0, y: 1.9, z: 0}
+  boxCastDimensions: {x: 0.1, y: 0.55, z: 0.15}
+  boxCastLenght: 11
   <IsInsidePlayZone>k__BackingField: 0
   debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
   stateLabelTmpro: {fileID: 8756836406728866656}
@@ -5431,7 +5615,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
+  m_Sprite: {fileID: 665948532, guid: 5d0a6078d5e75ab49b1bf8d39ff32abd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5452,7 +5636,7 @@ Animator:
   m_GameObject: {fileID: 6508126985700856560}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29abd0ad6000c884e9cb28b12fa4fc1c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 546f577eb0b06204c91e75c21301aed4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5481,8 +5665,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0423021, y: 1.8536801, z: 0.2929786}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.7215085, y: 1.2122221, z: 0.2}
+  m_Center: {x: 0, y: 0.44399357, z: 0}
 --- !u!54 &6508126985700856567
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5521,7 +5705,9 @@ GameObject:
   - component: {fileID: 6508126986235999514}
   - component: {fileID: 6508126986235999517}
   - component: {fileID: 6508126986235999516}
-  - component: {fileID: 2724931672148368358}
+  - component: {fileID: 203993633665008939}
+  - component: {fileID: 5832524600095957740}
+  - component: {fileID: 9050277077127260480}
   m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
@@ -5556,14 +5742,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d444f022deeb78f41b43e724c3984855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: a79eb55a8b32a0d459e53391bb882924, type: 2}
+  StateAnimation: {fileID: 7400000, guid: 62eb9cb282c8cba4dbd6006e509058bf, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 6508126985700856569}
   <HealthHandler>k__BackingField: {fileID: 6508126987123622501}
-  damageTakenEmitter: {fileID: 2724931672148368358}
+  damageTakenEmitter: {fileID: 203993633665008939}
   damageParticles: {fileID: 153532766851685265}
+  scrapDropper: {fileID: 3662556871071707376}
   enviriomentLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -5689,7 +5876,7 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
---- !u!114 &2724931672148368358
+--- !u!114 &203993633665008939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5704,11 +5891,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1228860824
-      Data2: 1154642478
-      Data3: 279930787
-      Data4: -307053796
-    Path: event:/SFX/Enemy/Robo 1/Enemy Damage SFX - Robo 1
+      Data1: -1918809196
+      Data2: 1291955745
+      Data3: 1074679724
+      Data4: 1488918419
+    Path: event:/SFX/Enemy/Robo Ranged/Enemy Damage SFX - Ranged
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -5720,6 +5907,48 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &5832524600095957740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508126986235999515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9050277077127260480}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9050277077127260480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508126986235999515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEmitters:
+  - {fileID: 203993633665008939}
 --- !u!1 &6508126986923127086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5807,8 +6036,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0926008, y: 3.1474798, z: 1}
-  m_Center: {x: 0.06189263, y: 1.4174992, z: 0}
+  m_Size: {x: 2.6987362, y: 2.4686072, z: 1}
+  m_Center: {x: 0.0012788773, y: 1.0780629, z: 0}
 --- !u!114 &6508126987123622501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5838,7 +6067,7 @@ GameObject:
   - component: {fileID: 6508126987276863439}
   - component: {fileID: 6508126987276863438}
   m_Layer: 0
-  m_Name: Attacks
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5856,7 +6085,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8872166234325332231}
+  - {fileID: 4483290455034505136}
   m_Father: {fileID: 6508126986923127504}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5872,7 +6101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114425a82f155254d8a22df705b0289d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
+  StateAnimation: {fileID: 0}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -5881,7 +6110,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <Attacks>k__BackingField:
-  - {fileID: 3898736811605107368}
+  - {fileID: 4865190315941957882}
   currentAttack:
     <Name>k__BackingField: 
     <Animation>k__BackingField: {fileID: 0}
@@ -5922,8 +6151,8 @@ BoxCollider:
   m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &6871900109820166026
+  m_Center: {x: 1.7723541, y: 1.82, z: 0}
+--- !u!1 &6585084348806475374
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5931,37 +6160,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 76732158715113603}
-  - component: {fileID: 4196484976454017962}
+  - component: {fileID: 8331330774712803337}
+  - component: {fileID: 5365647295470403560}
   m_Layer: 0
-  m_Name: PowerDownEmitter
+  m_Name: ChargingEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &76732158715113603
+--- !u!4 &8331330774712803337
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6871900109820166026}
+  m_GameObject: {fileID: 6585084348806475374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3276738502215876370}
+  m_Father: {fileID: 4483290455034505136}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4196484976454017962
+--- !u!114 &5365647295470403560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6871900109820166026}
+  m_GameObject: {fileID: 6585084348806475374}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
@@ -5970,14 +6199,14 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 911215268
-      Data2: 1328605632
-      Data3: -770586441
-      Data4: 341314630
-    Path: event:/SFX/Enemy/Robo 1/Enemy Powering_Down SFX
+      Data1: 76710793
+      Data2: 1203567733
+      Data3: -739810127
+      Data4: 1892678505
+    Path: event:/SFX/Enemy/Robo Ranged/Enemy Ranged_Charging SFX
   Event: 
   PlayEvent: 0
-  StopEvent: 2
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -6013,7 +6242,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7145437615092115823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6164,7 +6393,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &8712117938039699443
+--- !u!1 &7796759670987910319
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6172,127 +6401,92 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8872166234325332231}
-  - component: {fileID: 3898736811605107368}
-  - component: {fileID: 3344898223652118149}
+  - component: {fileID: 3071208308496549039}
+  - component: {fileID: 3662556871071707376}
   m_Layer: 0
-  m_Name: LungeAttack
+  m_Name: ScrapDropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8872166234325332231
+--- !u!4 &3071208308496549039
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712117938039699443}
+  m_GameObject: {fileID: 7796759670987910319}
+  m_LocalRotation: {x: -0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6508126985700856565}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+--- !u!114 &3662556871071707376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796759670987910319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70f634181bf2ed428df59b1bfe451b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referencePoint: {fileID: 3071208308496549039}
+  scrapUnit: {fileID: 4225638560684016975, guid: 49fe93000a37d1c408f41c6093e83f86, type: 3}
+  scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
+  scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
+  rotAngle: 45
+  minScapDrop: 9
+  maxScapDrop: 9
+  hasReserveScrap: 1
+  reserveAmount: 3
+  randomAmount: 0
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
+--- !u!1 &9039604454823931490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089619407755395044}
+  - component: {fileID: 6309578431116359177}
+  m_Layer: 0
+  m_Name: ShotEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2089619407755395044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039604454823931490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6508126987276863436}
+  m_Father: {fileID: 4483290455034505136}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3898736811605107368
+--- !u!114 &6309578431116359177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712117938039699443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
-  startTime: 0
-  progress: 0
-  <IsComplete>k__BackingField: 0
-  stateMachine: {fileID: 6508126985700856569}
-  AttackMachine: {fileID: 6508126987276863439}
-  <attack>k__BackingField:
-    <Name>k__BackingField: Lunge
-    <Animation>k__BackingField: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
-    <TriggerRange>k__BackingField: 3.5
-    <VelocityCurve>k__BackingField:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.15
-        value: 0
-        inSlope: Infinity
-        outSlope: -693.74133
-        tangentMode: 7
-        weightedMode: 2
-        inWeight: 0.33333334
-        outWeight: 0.003901422
-      - serializedVersion: 3
-        time: 0.35
-        value: 0
-        inSlope: -0.0036302826
-        outSlope: 244.93909
-        tangentMode: 1
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0.01400645
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0.0040974817
-        outSlope: 0.0040974817
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    <Velocity>k__BackingField: 10
-    <Duration>k__BackingField: 0.9
-    <Damage>k__BackingField: 20
-    <StunDuration>k__BackingField: 0.7
-    <KnockbackStrenght>k__BackingField: 10
-    <HasProjectile>k__BackingField: 0
-    <ProjectilePrefab>k__BackingField: {fileID: 0}
-    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
-    <FrameEvents>k__BackingField:
-    - <TriggerFrame>k__BackingField: 3
-      <Actions>k__BackingField:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 3344898223652118149}
-            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-            m_MethodName: Play
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
---- !u!114 &3344898223652118149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712117938039699443}
+  m_GameObject: {fileID: 9039604454823931490}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
@@ -6301,11 +6495,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1149990983
-      Data2: 1135421292
-      Data3: 1763585961
-      Data4: 1432621355
-    Path: event:/SFX/Enemy/Robo 1/Enemy Drill SFX
+      Data1: -1453517455
+      Data2: 1336594513
+      Data3: 1101045930
+      Data4: -208656000
+    Path: event:/SFX/Enemy/Robo Ranged/Enemy Ranged_Shot SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0

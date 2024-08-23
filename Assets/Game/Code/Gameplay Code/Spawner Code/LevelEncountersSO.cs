@@ -7,7 +7,7 @@ namespace Game
     /// <summary>
     /// Defines all encounters in this level and its parameters.
     /// </summary>
-    [CreateAssetMenu(fileName = "LevelEncounter", menuName = "LevelEncounters")]
+    [CreateAssetMenu(fileName = "LevelEncounter", menuName = "Misc/New LevelEncounterSO")]
     public class LevelEncountersSO : ScriptableObject
 	{
         [field: SerializeField] public Encounter[] Encounters { get; private set; }

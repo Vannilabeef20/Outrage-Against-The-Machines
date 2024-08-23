@@ -6,7 +6,7 @@ namespace Game
 	/// Tells a "fallingBox" and its trap how fast it will fall.<br/>
 	/// Workaround meant to eliminate the necessity to change the speed value in both the box prefab and trap.
 	/// </summary>
-	[CreateAssetMenu(fileName = "FallingBoxSpeedSO", menuName = "New FallingBoxSpeedSO")]
+	[CreateAssetMenu(fileName = "FallingBoxSpeedSO", menuName = "Misc/New FallingBoxSpeedSO")]
 	public class FallingBoxSpeedSO : ScriptableObject
 	{
 		/// <summary>

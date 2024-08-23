@@ -5,17 +5,18 @@ using NaughtyAttributes;
 using FMODUnity;
 
 
-namespace Game 
+namespace Game
 {
     public class ScrapDrop : MonoBehaviour
     {
+
         #region REFERENCES
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
         [SerializeField] Transform shadowTransform;
         [SerializeField] Rigidbody rb;
         [SerializeField] StudioEventEmitter pickEmitter;
-        
+
         #endregion
 
         #region PARAMETERS
@@ -27,9 +28,11 @@ namespace Game
 
         [SerializeField] float gravity = -0.1f;
 
+        [SerializeField, Range(0, 360)] float gravRot;
+
         [SerializeField, Min(0)] int bounces = 2;
 
-        [SerializeField, Min(0)] float bounceDecay; 
+        [SerializeField, Min(0)] float bounceDecay;
 
         [SerializeField, MinMaxSlider(0f, 99f)] Vector2 forceRange;
         #endregion
@@ -37,23 +40,23 @@ namespace Game
         #region VARIABLES
         [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
 
-        [SerializeField,ReadOnly] float force;
+        [SerializeField, ReadOnly] float force;
 
-        [SerializeField,ReadOnly] int bounceCount;
+        [SerializeField, ReadOnly] int bounceCount;
 
         #endregion
         private void Update()
         {
             shadowTransform.position = transform.position.ToXZZ();
 
-            if(transform.position.y > transform.position.z)
+            if (transform.position.y > transform.position.z)
             {
-                rb.velocity += gravity * Vector3.up;
+                rb.velocity += gravity * (Quaternion.AngleAxis(gravRot, Vector3.right) * Vector3.up);
             }
 
-            if(transform.position.y < transform.position.z)
+            if (transform.position.y < transform.position.z)
             {
-                if(bounceCount >= bounces)
+                if (bounceCount >= bounces)
                 {
                     rb.velocity = Vector3.zero;
                     transform.position = transform.position.ToXYY();
@@ -61,9 +64,9 @@ namespace Game
                 else
                 {
                     bounceCount++;
-                    float aaa = force / ((bounceCount + 1)  *  bounceDecay);
+                    float aaa = force / ((bounceCount + 1) * bounceDecay);
                     rb.velocity = Vector3.zero;
-                    rb.AddForce( aaa * Vector3.up, ForceMode.Impulse);
+                    rb.AddForce(aaa * Vector3.up, ForceMode.Impulse);
                 }
             }
         }
@@ -83,6 +86,12 @@ namespace Game
             force = Random.Range(forceRange.x, forceRange.y);
             rb.AddForce(force * dir, ForceMode.Impulse);
         }
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawRay(transform.position, gravity * (Quaternion.AngleAxis(gravRot, Vector3.right) * Vector3.up) * 5);
+        }
+#endif
     }
-    
+
 }

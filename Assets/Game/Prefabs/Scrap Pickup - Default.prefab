@@ -54,9 +54,10 @@ MonoBehaviour:
   scrapValue: 0
   playerTag: Player
   gravity: -0.1
+  gravRot: 345
   bounces: 0
   bounceDecay: 1.5
-  forceRange: {x: 2, y: 3}
+  forceRange: {x: 3, y: 4}
   force: 0
   bounceCount: 0
 --- !u!114 &8847909780515325543
@@ -188,8 +189,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6666667, y: 0.6666667, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.6, y: 0.9274833, z: 0.28225052}
+  m_Center: {x: 0, y: 0.27774012, z: -0.26075578}
 --- !u!1 &6147500841506922477
 GameObject:
   m_ObjectHideFlags: 0

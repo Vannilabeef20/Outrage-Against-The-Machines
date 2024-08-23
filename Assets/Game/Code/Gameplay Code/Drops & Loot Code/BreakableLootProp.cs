@@ -81,7 +81,7 @@ namespace Game
                 if (i == FrameToSpawn) //Spawn loot at the right frame
                 {
                     Instantiate(lootTable.PickRandomDrop(), lootSpawnPoint.position, Quaternion.identity);
-                    moneyDrop.SpawnRandomScrapAmount();
+                    moneyDrop.SpawnAllScrap();
                 }
             }
             float time = Time.time;

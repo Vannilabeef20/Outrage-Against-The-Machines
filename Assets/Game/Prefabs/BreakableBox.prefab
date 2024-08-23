@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488542922225973093}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.139, y: -0.408, z: -0.408}
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0.139, y: -0.28, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1488542923154001146}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!1 &1488542923154001142
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,11 +132,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70f634181bf2ed428df59b1bfe451b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referencePoint: {fileID: 1488542922225973092}
   scrapUnit: {fileID: 4225638560684016975, guid: 49fe93000a37d1c408f41c6093e83f86, type: 3}
   scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
   scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
-  minScapDrop: 1
-  maxScapDrop: 1
+  rotAngle: 45
+  minScapDrop: 9
+  maxScapDrop: 9
+  hasReserveScrap: 0
+  reserveAmount: 0
+  randomAmount: 0
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
 --- !u!212 &1488542923154001147
 SpriteRenderer:
   m_ObjectHideFlags: 0

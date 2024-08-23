@@ -10,7 +10,7 @@ namespace Game
     /// <summary>
     /// Scriptable object that manages debug
     /// </summary>
-	[CreateAssetMenu(fileName = "DebugSO", menuName = "New DebugSO")]
+	//[CreateAssetMenu(fileName = "DebugSO", menuName = "New DebugSO")]
 	public class DebugSO : ScriptableObject
 	{
         [field: Header("DEBUG MODE"), HorizontalLine(2f, EColor.Red)]
