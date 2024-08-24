@@ -31,8 +31,14 @@ namespace Game
                 {
                     drop.ProbabilityPercent = (drop.ProbabilityWeight / totalWeight) * 100;
 
-                    drop.Name = $"{drop.ProbabilityPercent}% -> |{drop.Item.name}|" ??
-                                $"{drop.ProbabilityPercent}% -> |Nothing|";
+                    if (drop.Item == null)
+                    {
+                        drop.Name = $"{drop.ProbabilityPercent}% -> Nothing";
+                    }
+                    else
+                    {
+                        drop.Name = $"{drop.ProbabilityPercent}% -> {drop.Item.name}";
+                    }
                 }
             }
         }

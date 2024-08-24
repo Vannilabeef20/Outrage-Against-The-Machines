@@ -26,11 +26,6 @@ namespace Game
         [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
         [SerializeField, ReadOnly] int randomAmount;
         [SerializeField, ReadOnly] List<GameObject> scrapList = new();
-#if UNITY_EDITOR
-
-        [Header("DEBUG"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] DebugSO debugSO;
-#endif
 
         private void Awake()
         {

@@ -21,7 +21,7 @@ namespace Game
 
         [Header("VOLUME INIT"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] AudioVolumeCurveSO volumeCurve;
-        [SerializeField, ReadOnly] string[] busNames = new string[] { "Master", "Music", "SFX" };
+        [SerializeField, ReadOnly] string[] busNames = new string[] { "Master", "Music", "SFX" }; //Place Master first
 
         private void Awake()
         {
@@ -35,12 +35,13 @@ namespace Game
                 Destroy(gameObject);
             }
 
+            //Setup all bus volumes
             Bus tempBus;
             foreach (var busName in busNames)
             {
                 if (busName == busNames[0])
                 {
-                    tempBus = RuntimeManager.GetBus("bus:/");
+                    tempBus = RuntimeManager.GetBus($"bus:/{busName}");
                 }
                 else
                 {
@@ -70,12 +71,5 @@ namespace Game
             uiClickNegativeEmitters[uiClickNegativeSoundIndex].Play();
             uiSelectSoundIndex++;
         }
-
-        /*
-        public void InitiateVolume(string mixerParamName, float value)
-        {
-            Mixer.SetFloat(mixerParamName, Mathf.Log10(value) * 20);
-        }
-        */
     }
 }

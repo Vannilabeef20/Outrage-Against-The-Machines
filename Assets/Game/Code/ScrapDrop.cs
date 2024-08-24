@@ -76,7 +76,7 @@ namespace Game
             if (other.gameObject.CompareTag(playerTag))
             {
                 pickEmitter.Play();
-                Debug.Log(scrapValue);
+                this.Log(scrapValue);
                 Destroy(transform.parent.gameObject);
             }
         }

@@ -10,8 +10,6 @@ namespace Game
     /// </summary>
     public class FollowGroup : MonoBehaviour
     {
-        [SerializeField, ReadOnly, TextArea] string DESCRIPTION =
-            "Creates a central point between all *player* marked active in the *GameManager* for easier camera follow.";
         [SerializeField, ReadOnly] List<GameObject> playerList;
         private void Awake()
         {

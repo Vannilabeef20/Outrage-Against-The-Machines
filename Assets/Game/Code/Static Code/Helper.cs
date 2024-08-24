@@ -12,9 +12,9 @@ namespace Game
 	{
 		#region MAPPING METHODS
 		/// <summary>
-		/// Maps a certial float value from a range to another.
+		/// Maps this float value from a range to another one.
 		/// </summary>
-		/// <param name="value">The</param>
+		/// <param name="value">The given float.</param>
 		/// <param name="oldLow">Lowest value in the current range.</param>
 		/// <param name="oldHigh">Highest value in the current range.</param>
 		/// <param name="newLow">Lowest value in the new range.</param>
@@ -40,8 +40,8 @@ namespace Game
 		}
 
 		/// <summary>
-		/// Swizzles the given Vector3 from XYZ to XYY.<br/>
-		/// AKA Copies the Y value of this Vector3 to the Z value.
+		/// Swizzles this Vector3 from XYZ to XYY.<br/>
+		/// (AKA Copies the Y value of this Vector3 to the Z value).
 		/// </summary>
 		/// <param name="vector">The given Vector3.</param>
 		/// <returns>Given Vector3 swizzled to XYY.</returns>
@@ -50,7 +50,7 @@ namespace Game
 			return new Vector3(vector.x, vector.y, vector.y);
         }
 		/// <summary>
-		/// Swizzles the given Vector3 from XYZ to XZZ.<br/>
+		/// Swizzles this Vector3 from XYZ to XZZ.<br/>
 		/// AKA Copies the Z value of this Vector3 to the Y value.
 		/// </summary>
 		/// <param name="vector">The given Vector3.</param>
@@ -62,7 +62,7 @@ namespace Game
         #endregion
 
         /// <summary>
-        /// Checks if a Vector3 has its values between a "min" and a "max" Vector3.
+        /// Checks if this Vector3 has its values between a "min" and a "max" Vector3.
         /// </summary>
         /// <param name="vector">The given Vector3.</param>
         /// <param name="min">Minimum Vector3 inside the range.</param>
@@ -100,12 +100,12 @@ namespace Game
 
 
 		/// <summary>
-		/// Checks if a Vector2 has its values between a "min" and a "max" Vector2.
+		/// Checks if this Vector2 has its values between a "min" and a "max" Vector2.
 		/// </summary>
 		/// <param name="vector">The given Vector2.</param>
 		/// <param name="min">Minimum Vector2 inside the range.</param>
 		/// <param name="max">Maximum Vector2 inside the range.</param>
-		/// <returns> Returns "False" if any of the "vector" x or y values is
+		/// <returns> Returns "False" if any of the "vector" x or y values are
 		/// below its counterpart in "min", or higher than "max".</returns>
 		public static bool InsideRange(this Vector2 vector, Vector2 min, Vector2 max)
 		{
@@ -128,48 +128,52 @@ namespace Game
 			return true;
 		}
 
-		public static Vector3 Absolute(this Vector3 vector)
+		/// <summary>
+		/// Absolutes all values in this Vector3.
+		/// </summary>
+		/// <param name="vector3">The given Vector3.</param>
+		/// <returns>The given Vector3 Absoluted<br/>
+		/// (AKA only positive values).</returns>
+		public static Vector3 Absolute(this Vector3 vector3)
         {
-			if(vector.x < 0)
-            {
-				vector.x *= -1;
-            }
-			if (vector.y < 0)
-			{
-				vector.y *= -1;
-			}
-			if (vector.z < 0)
-			{
-				vector.z *= -1;
-			}
-			return vector;
+			Math.Abs(vector3.x);
+			Math.Abs(vector3.y);
+			Math.Abs(vector3.z);
+			return vector3;
 		}
 
-		public static Vector2 Absolute(this Vector2 vector)
+		/// <summary>
+		/// Absoultes all values in this Vector2.
+		/// </summary>
+		/// <param name="vector2">The given Vector2.</param>
+		/// <returns>The given Vector3 Absoluted<br/>
+		/// (AKA only positive values).</returns>
+		public static Vector2 Absolute(this Vector2 vector2)
 		{
-			if (vector.x < 0)
-			{
-				vector.x *= -1;
-			}
-			if (vector.y < 0)
-			{
-				vector.y *= -1;
-			}
-			return vector;
+			Math.Abs(vector2.x);
+			Math.Abs(vector2.y);
+			return vector2;
 		}
 
+		/// <summary>
+		/// Checks if this enum has a given flag.
+		/// </summary>
+		/// <typeparam name="TEnum"></typeparam>
+		/// <param name="e"></param>
+		/// <param name="flag"></param>
+		/// <returns></returns>
 		public static bool HasAnyFlag<TEnum>(this TEnum e, TEnum flag) where TEnum : IConvertible
         {
 			if (e.GetType() != flag.GetType())
             {
-				Debug.LogError("enum types should be the same type.");
+				CustomLogger.LogError(Sender:"Helper",Message:"enum types should be the same type.");
 				return false;
             }
 			return (e.ToInt32(null) & flag.ToInt32(null)) != 0;
 		}
 
 		/// <summary>
-		/// Checks if a given layer is present in a given LayerMask.
+		/// Checks if a given layer is present in this LayerMask.
 		/// </summary>
 		/// <param name="layerMask">The given LayerMask.</param>
 		/// <param name="layer">The given Layer.</param>
@@ -188,7 +192,7 @@ namespace Game
 
 
         /// <summary>
-        /// Randomly shuffles given list.
+        /// Randomly shuffles this list.
         /// </summary>
         /// <typeparam name="T">Data "Type".</typeparam>
         /// <param name="targetList">List to be shuffled.</param>
@@ -205,7 +209,7 @@ namespace Game
 
 
 		/// <summary>
-		/// Creates a new color based on another with the same RGB values and a new Alpha.
+		/// Creates a new color based on another one with the same RGB values and a new Alpha.
 		/// </summary>
 		/// <param name="color">The color that will be changed.</param>
 		/// <param name="newAlpha">The new alpha value for the color.</param>
@@ -217,36 +221,6 @@ namespace Game
 
 
 		#region DEBUG
-
-		#region LOGFORMATTING
-
-		/// <summary>
-		/// Colors this "message" string Yellow using rich Text.
-		/// </summary>
-		/// <param name="message">The given string to be colored.</param>
-		/// <returns>"message" colored Yellow.</returns>
-		public static string EnrichString(string message)
-		{
-			return $"<color=yellow>{message}</color>";
-		}
-
-		/// <summary>
-		/// Colors this "message" string with "color" using rich Text.
-		/// </summary>
-		/// <param name="message">The given string to be colored.</param>
-		/// <param name="color">The given color.</param>
-		/// <returns>"message" colored "color".</returns>
-		public static string EnrichString(string message, Color color)
-		{
-			string endcolorString = " </color>";
-			string colorString = $"<color={ColorUtility.ToHtmlStringRGB(color)}> ";
-			string finalLog = colorString;
-			finalLog += message;
-			finalLog += endcolorString;
-			return finalLog;
-		}
-
-		#endregion
 
 		#region Box/boxcast
 		/// <summary>

@@ -29,18 +29,21 @@ namespace Game
         {
             RefreshInputKeys();
 			reference.action.performed += EnableDisableDebugMode;
+            RefreshLoggerInfo();
         }
 
         private void OnDisable()
         {
             reference.action.performed -= EnableDisableDebugMode;
             reference.action.Reset();
-		}
+            RefreshLoggerInfo();
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
             RefreshInputKeys();
+            RefreshLoggerInfo();
         }
 #endif
         [Button("Refresh Input Keys")]
@@ -58,91 +61,27 @@ namespace Game
             }
         }
 
+        [Button("Test All CustomLogger Logs")]
+        private void TestAllLogs()
+        {
+            this.Log("This is how the custom Log looks!");
+            this.LogWarning("This is how the custom LogWarning looks!");
+            this.LogError("This is how the custom LogError looks!");
+        }
+
         private void EnableDisableDebugMode(InputAction.CallbackContext context)
 		{
 			if (!context.performed) return;
 
 			IsDebugModeEnabled = !IsDebugModeEnabled;
-		}
-
-        #region Debug Logs
-
-        /// <summary>
-        /// Logs a message to the console.
-        /// </summary>
-        /// <param name="Sender">The object that sent the log request.</param>
-        /// <param name="Message">The information to be displayed on the log.</param>
-        /// <param name="EDebugSubject">EFlag for filtering.</param>
-        public void Log(object Sender, object Message,
-            EDebugSubjectFlags EDebugSubject = EDebugSubjectFlags.Test)
-        {
-            if (DebugTypes.HasAnyFlag(EDebugTypeFlags.Log) && DebugSubjects.HasAnyFlag(EDebugSubject))
-            {
-                Debug.Log($"<color=lime>{Message}</color>\n" +
-                    $" <color=magenta>{EDebugSubject}</color><color=aqua> Sender: {Sender}</color>");
-            }
+            RefreshLoggerInfo();
         }
-
-        /// <summary>
-        /// Logs a warning message to the console.
-        /// </summary>
-        /// <param name="Sender">The object that sent the log request.</param>
-        /// <param name="Message">The information to be displayed on the log.</param>
-        /// <param name="EDebugSubject">EFlag for filtering.</param>
-        public void LogWarning(object Sender, string Message,
-            EDebugSubjectFlags EDebugSubject = EDebugSubjectFlags.Test)
+        
+        void RefreshLoggerInfo()
         {
-            if (DebugTypes.HasAnyFlag(EDebugTypeFlags.LogWarning) && DebugSubjects.HasAnyFlag(EDebugSubject))
-            {
-                Debug.LogWarning($"<color=yellow>{Message}</color>\n" +
-                    $" <color=magenta>{EDebugSubject}</color><color=aqua> Sender: {Sender}</color>");
-            }
+            CustomLogger.IsDebugModeEnabled = IsDebugModeEnabled;
+            CustomLogger.DebugSubjects = DebugSubjects;
+            CustomLogger.DebugTypes = DebugTypes;
         }
-
-        /// <summary>
-        /// Logs an error message to the console.
-        /// </summary>
-        /// <param name="Sender">The object that sent the log request.</param>
-        /// <param name="Message">The information to be displayed on the log.</param>
-        /// <param name="EDebugSubject">EFlag for filtering.</param>
-        public void LogError(object Sender, string Message, 
-            EDebugSubjectFlags EDebugSubject = EDebugSubjectFlags.Test)
-        {
-            if (DebugTypes.HasAnyFlag(EDebugTypeFlags.LogError) && DebugSubjects.HasAnyFlag(EDebugSubject))
-            {
-                Debug.LogError($"<color=red>{Message}</color>\n" +
-                    $" <color=magenta>{EDebugSubject}</color><color=aqua> Sender: {Sender}</color>");
-            }
-        }
-
-        [Button("Test All Logs")]
-        private void TestAllLogs()
-        {
-            Log(this, "This is how the custom Log looks!", EDebugSubjectFlags.Test);
-            LogWarning( this, "This is how the custom LogWarning looks!", EDebugSubjectFlags.Test);
-            LogError(this, "This is how the custom LogError looks!", EDebugSubjectFlags.Test);
-        }
-        #endregion
-    }
-
-    /// <summary>
-    /// EFlags for the subject of the debug operation.
-    /// </summary>
-    [System.Flags]
-    public enum EDebugSubjectFlags
-    {
-        Test = 1,
-        CustomEvents = 2,
-    }
-
-    /// <summary>
-    /// EFlags for filtering the type of debug operation.
-    /// </summary>
-    [System.Flags]
-    public enum EDebugTypeFlags
-    {
-        Log = 1,
-        LogWarning = 2,
-        LogError = 4,
     }
 }
