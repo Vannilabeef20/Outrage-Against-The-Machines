@@ -207,7 +207,6 @@ namespace Game
 			}
 		}
 
-
 		/// <summary>
 		/// Creates a new color based on another one with the same RGB values and a new Alpha.
 		/// </summary>
@@ -219,6 +218,18 @@ namespace Game
 			return new Color(color.r, color.g, color.b, newAlpha);
         }
 
+		public static bool IsVisible(this Camera cam, Vector3 worldPos)
+		{
+			Vector2 viewportPos = cam.WorldToViewportPoint(worldPos);
+			if (viewportPos.InsideRange(Vector2.zero, Vector2.one))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 
 		#region DEBUG
 

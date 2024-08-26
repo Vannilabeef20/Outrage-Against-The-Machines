@@ -80,13 +80,13 @@ namespace Game
             if (scrapList.Count <= 0 && !hasReserveScrap) return;
 
             //Return if theres nothing but the reserve to spawn
-            if(scrapList.Count <= reserveAmount && hasReserveScrap) return;
+            if (scrapList.Count <= reserveAmount && hasReserveScrap) return;
 
             // Get the angle and the impulse will be applied to the scrap
             Vector3 dir;
             int randomIndex;
 
-            randomIndex = UnityEngine.Random.Range(0, scrapList.Count);            
+            randomIndex = UnityEngine.Random.Range(0, scrapList.Count);
             float angle = 2 * Mathf.PI / scrapList.Count * randomIndex;
             angle *= 180 / Mathf.PI;
             dir = Quaternion.AngleAxis(angle, referencePoint.up) * referencePoint.right;
@@ -97,7 +97,7 @@ namespace Game
             ScrapDrop scrapDrop = Instantiate(scrapList[randomIndex], transform.position,
                 Quaternion.identity).GetComponentInChildren<ScrapDrop>();
             scrapDrop.ApplyForce(dir);
-            
+
             scrapList.RemoveAt(randomIndex);
         }
 #if UNITY_EDITOR

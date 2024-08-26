@@ -16,6 +16,6 @@ namespace Game
         /// </summary>
         /// <param name="currentPosition">This entity's current position.</param>
         /// <returns>A target GameObject.</returns>
-        public abstract GameObject GetTarget(Vector3 currentPosition);
+        public abstract Transform GetTarget(Vector3 currentPosition);
     }
 }

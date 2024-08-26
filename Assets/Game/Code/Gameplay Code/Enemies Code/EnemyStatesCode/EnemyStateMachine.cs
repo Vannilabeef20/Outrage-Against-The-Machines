@@ -59,16 +59,11 @@ namespace Game
 
         private void Awake()
         {
-            try
-            {
-                if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
-                {
-                    spawner = spawn;
-                }
-            }
-            catch
-            {
+            if (transform.parent == null) return;
 
+            if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
+            {
+                spawner = spawn;
             }
         }
 

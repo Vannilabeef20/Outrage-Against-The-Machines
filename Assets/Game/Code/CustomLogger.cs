@@ -11,13 +11,13 @@ namespace Game
     /// allowing for filtering and better readability.<br/>
     /// [TEMPORARY] also holds IsDebugModeEnabled.
     /// </summary>
-	public static class CustomLogger 
-	{
-		public static bool IsDebugModeEnabled;
+	public static class CustomLogger
+    {
+        public static bool IsDebugModeEnabled;
 
-		//Debug filters
-		public static EDebugSubjectFlags DebugSubjects;
-		public static EDebugTypeFlags DebugTypes;
+        //Debug filters
+        public static EDebugSubjectFlags DebugSubjects;
+        public static EDebugTypeFlags DebugTypes;
 
         #region Debug Logs
 

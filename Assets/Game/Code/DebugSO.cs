@@ -10,31 +10,36 @@ namespace Game
     /// <summary>
     /// Scriptable object that manages debug
     /// </summary>
-	//[CreateAssetMenu(fileName = "DebugSO", menuName = "New DebugSO")]
-	public class DebugSO : ScriptableObject
-	{
+    //[CreateAssetMenu(fileName = "DebugSO", menuName = "New DebugSO")]
+    public class DebugSO : ScriptableObject
+    {
         [field: Header("DEBUG MODE"), HorizontalLine(2f, EColor.Red)]
         [field: SerializeField] public bool IsDebugModeEnabled { get; private set; }
 
+        [Tooltip("Reference that defines the 'input_keys'.")]
         [SerializeField] InputActionReference reference;
 
+        [Tooltip("Input paths for toggling the debug mode.")]
         [SerializeField, ReadOnly] string input_keys;
 
 
-		[Header("DEBUG FILTERS"), HorizontalLine(2f, EColor.Orange)]
-		[SerializeField] EDebugSubjectFlags DebugSubjects;
-		[SerializeField] EDebugTypeFlags DebugTypes;
+        [Header("DEBUG FILTERS"), HorizontalLine(2f, EColor.Orange)]
+
+        [Tooltip("Enum flag filter, regards the subject of the debug operation.")]
+        [SerializeField] EDebugSubjectFlags DebugSubjects;
+        [Tooltip("Enum flag filter, regards the type of debug operation.")]
+        [SerializeField] EDebugTypeFlags DebugTypes;
 
         private void OnEnable()
         {
             RefreshInputKeys();
-			reference.action.performed += EnableDisableDebugMode;
+            reference.action.performed += ToggleDebugMode;
             RefreshLoggerInfo();
         }
 
         private void OnDisable()
         {
-            reference.action.performed -= EnableDisableDebugMode;
+            reference.action.performed -= ToggleDebugMode;
             reference.action.Reset();
             RefreshLoggerInfo();
         }
@@ -46,7 +51,9 @@ namespace Game
             RefreshLoggerInfo();
         }
 #endif
-        [Button("Refresh Input Keys")]
+        /// <summary>
+        /// Refreshes the "input_keys" string to match the input action reference.
+        /// </summary>
         private void RefreshInputKeys()
         {
             input_keys = default;
@@ -61,6 +68,9 @@ namespace Game
             }
         }
 
+        /// <summary>
+        /// Logs all available kinds of logs in the "CustomLogger".
+        /// </summary>
         [Button("Test All CustomLogger Logs")]
         private void TestAllLogs()
         {
@@ -69,14 +79,21 @@ namespace Game
             this.LogError("This is how the custom LogError looks!");
         }
 
-        private void EnableDisableDebugMode(InputAction.CallbackContext context)
-		{
-			if (!context.performed) return;
+        /// <summary>
+        /// Toggles the debug mode on or off when the input action is performed.
+        /// </summary>
+        /// <param name="context"></param>
+        private void ToggleDebugMode(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
 
-			IsDebugModeEnabled = !IsDebugModeEnabled;
+            IsDebugModeEnabled = !IsDebugModeEnabled;
             RefreshLoggerInfo();
         }
-        
+
+        /// <summary>
+        /// Updates the customLogger to match this SO.
+        /// </summary>
         void RefreshLoggerInfo()
         {
             CustomLogger.IsDebugModeEnabled = IsDebugModeEnabled;

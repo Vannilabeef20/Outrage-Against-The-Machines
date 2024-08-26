@@ -19,17 +19,7 @@ namespace Game
 
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
-        #region Loading & Transitions Params
-        [Header("LOADING & TRANSITIONS"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField] Image transitionImage;
-
-        [SerializeField, ReadOnly] Coroutine loadRoutine;
-
-
-        [SerializeField] TransitionSO transition;
-
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
-        #endregion
 
         #region Players Params
         [field: Header("PLAYERS"), HorizontalLine(2f, EColor.Orange)]
@@ -40,9 +30,7 @@ namespace Game
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
 
-        [SerializeField] private Vector3[] spawnCoordinates;
-
-        [SerializeField] private GameObject followGroupPrefab;
+        [SerializeField] GameObject followGroupPrefab;
         #endregion
 
         #region Lifes Params
@@ -57,11 +45,10 @@ namespace Game
         #endregion
 
         [Header("RUMBLE"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] bool rumbleEnabled;
+        [SerializeField] bool isRumbleEnabled;
 
         #region Debug
         [Header("DEBUG"), HorizontalLine(2f, EColor.Blue)]
-        [SerializeField] GUIStyle SpawnLabelStyle;
         [SerializeField] GUIStyle RespawnLabelStyle;
         #endregion
 
@@ -78,18 +65,13 @@ namespace Game
                 Destroy(gameObject);
                 return;
             }
-            transitionImage.enabled = false;
-            int level = SceneManager.GetActiveScene().buildIndex;
-            if (level != 0)
-            {
-                InitializeLevel();
-            }
 #if UNITY_EDITOR
             EditorApplication.quitting += StopRumble;
 #endif
         }
         private void Start()
         {
+            MainCamera = Camera.main;
             int level = SceneManager.GetActiveScene().buildIndex;
             if (level == 0)
             {
@@ -97,9 +79,9 @@ namespace Game
             }
             else
             {
+                InitializeLevel();
                 CurrentLifeAmount = initialLifeAmout;
                 UpdateLifeCount.Raise(this, CurrentLifeAmount);
-                MainCamera = FindObjectOfType<Camera>();
                 OnSetMenuVisibility.Raise(this, MenuId.None);               
             }
         }
@@ -125,7 +107,6 @@ namespace Game
                 OnSetMenuVisibility.Raise(this, MenuId.None);
                 InitializeLevel();
             }           
-            StartCoroutine(LoadOrTransitionRoutine());
         }
 
         private void OnApplicationQuit()
@@ -139,19 +120,24 @@ namespace Game
             MainCamera = FindObjectOfType<Camera>();
             CurrentLifeAmount = initialLifeAmout;
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
-            if (PlayerCharacterList.Count == 0)
+
+            if (PlayerCharacterList.Count == 0) //Starting the game at a gameplay scene
             {
                 PlayerCharacterList.Add(new PlayerCharacter(DefaultPrefab, 0, null, null));
-                PlayerCharacterList[0].GameObject = Instantiate(DefaultPrefab, spawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList[0].GameObject = Instantiate(DefaultPrefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList[0].Transform = PlayerCharacterList[0].Transform;
                 PlayerCharacterList[0].isPlayerActive = true;
             }
-            else
+            else //Starting the game via main menu like normal
             {
-                for (int i = 0; i < PlayerCharacterList.Count; i++)
+                for (int i = 0; i < PlayerCharacterList.Count; i++) 
                 {
                     UnityInputManager.playerPrefab = PlayerCharacterList[i].PlayerPrefab;
-                    PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1, PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
-                    PlayerCharacterList[i].GameObject.transform.position = spawnCoordinates[i];
+
+                    PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1,
+                        PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
+                    PlayerCharacterList[i].Transform = PlayerCharacterList[i].Transform;
+                    PlayerCharacterList[i].Transform.position = LevelManager.Instance.SpawnCoordinates[i];
                     PlayerCharacterList[i].isPlayerActive = true;
                 }
             }
@@ -161,7 +147,7 @@ namespace Game
         #region Rumble Methods
         public void Rumble(InputDevice device, float lowFrequency, float highFrequency, float duration)
         {
-            if (!rumbleEnabled) return;
+            if (!isRumbleEnabled) return;
 
             Gamepad gamepad;
             try
@@ -177,7 +163,7 @@ namespace Game
         }
         public void Rumble(float lowFrequency, float highFrequency, float duration)
         {
-            if (!rumbleEnabled) return;
+            if (!isRumbleEnabled) return;
             foreach (Gamepad gamepad in Gamepad.all)
             {
                 StartCoroutine(PulseRumble(gamepad, lowFrequency, highFrequency, duration));
@@ -221,7 +207,7 @@ namespace Game
             {
                 PlayerPrefs.GetInt("Rumble", 0);
             }
-            rumbleEnabled = enabled;
+            isRumbleEnabled = enabled;
         }
         #endregion
 
@@ -231,57 +217,8 @@ namespace Game
 
             else OnSetMenuVisibility.Raise(this, MenuId.None);
         }
-        #region Loading Methods
-        public void LoadScene(int targetSceneIndex)
-        {
-            if (loadRoutine == null)
-            {
-                loadRoutine = StartCoroutine(LoadOrTransitionRoutine(targetSceneIndex));
-            }
-        }
         
-        private IEnumerator LoadOrTransitionRoutine(int sceneIndex = -1)
-        {
-            transitionImage.enabled = true;
-            float frameTime = transition.Duration / transition.Sprites.Length;
-            if (sceneIndex < 0) //Transition out of load
-            {
-                for (int i = transition.Sprites.Length - 1; i > 0; i--)
-                {
-                    transitionImage.sprite = transition.Sprites[i];
-                    yield return new WaitForSecondsRealtime(frameTime);
-                }
-                transitionImage.enabled = false;
-            }
-            else //Transition in load
-            {
-                for (int i = 0; i < transition.Sprites.Length; i++)
-                {
-                    transitionImage.sprite = transition.Sprites[i];
-                    yield return new WaitForSecondsRealtime(frameTime);
-                }
-                SceneManager.LoadScene(sceneIndex);
-                loadRoutine = null;
-            }                    
-        }
-        #endregion
-        public Vector2 WorldToViewport2D(Vector3 worldPos)
-        {
-            return MainCamera.WorldToViewportPoint(worldPos);
-        }
-        public bool IsVisible(Vector3 worldPos)
-        {
-            Vector2 viewportPos = MainCamera.WorldToViewportPoint(worldPos);
-            if(viewportPos.InsideRange(Vector2.zero, Vector2.one))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
+        
         public void TakeAddLife(int amount)
         {
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
@@ -289,7 +226,7 @@ namespace Game
             {
                 if (!PlayerCharacterList[i].isPlayerActive && CurrentLifeAmount > 0)
                 {
-                    PlayerCharacterList[i].GameObject.transform.position = 
+                    PlayerCharacterList[i].Transform.position = 
                         MainCamera.ViewportToWorldPoint(spawnViewportPostion).ToXYY();
 
                     CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
@@ -314,24 +251,10 @@ namespace Game
             }
             if(aliveCount == 0)
             {
-                LoadScene(0);
+                LevelManager.Instance.LoadScene(0);
             }
         }
 #if UNITY_EDITOR
-        #region Testing Methods
-        [Button("Test start transition", EButtonEnableMode.Playmode)]
-        public void TestRegularTransition()
-        {
-            StartCoroutine(LoadOrTransitionRoutine());
-        }
-
-        [Button("Test load transition", EButtonEnableMode.Playmode)]
-        public void TestReverseTransition()
-        {
-            StartCoroutine(LoadOrTransitionRoutine(1));
-        }
-        #endregion
-
         private void OnDrawGizmosSelected()
         {
             if (MainCamera == null) return;
@@ -352,15 +275,6 @@ namespace Game
             yPos.x -= 0.3f;
             Handles.Label(yPos, "Y");
         }
-        private void OnDrawGizmos()
-        {
-            for (int i = 0; i < spawnCoordinates.Length; i++)
-            {
-                Gizmos.color = SpawnLabelStyle.normal.textColor;
-                Gizmos.DrawSphere(spawnCoordinates[i], 0.1f);
-                Handles.Label(spawnCoordinates[i], $"Spawn P{i + 1}", SpawnLabelStyle);
-            }
-        }
 #endif
     }
 
@@ -375,6 +289,8 @@ namespace Game
         public bool isPlayerActive;
 
         public GameObject GameObject;
+        public Transform Transform;
+        public PlayerHealthHandler Health;
 
         public PlayerCharacter (GameObject playerPrefab, int playerIndex, string controlScheme, InputDevice[] devices)
         {
