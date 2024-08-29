@@ -10,10 +10,7 @@ namespace Game
     [Serializable]
     public class ItemLoot
     {
-        /// <summary>
-        /// The name of the loot item.
-        /// </summary>
-        [field: SerializeField] public string Name { get; private set; }
+        [HideInInspector] public string Name;
 
         /// <summary>
         /// The prefab of the loot item.

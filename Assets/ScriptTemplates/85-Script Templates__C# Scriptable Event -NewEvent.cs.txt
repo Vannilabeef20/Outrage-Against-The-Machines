@@ -1,7 +1,10 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
 {
-    //[CreateAssetMenu(fileName = "New ? Event", menuName = "Game Events/? Event")]
-   // public class ?Event : BaseGameEvent<Insert Data Type> { }
+    //[CreateAssetMenu(fileName = "New #SCRIPTNAME# Event", menuName = "SO Events/#SCRIPTNAME# Event")]
+   // public class #SCRIPTNAME#Event : BaseGameEvent<Data> { }
 }

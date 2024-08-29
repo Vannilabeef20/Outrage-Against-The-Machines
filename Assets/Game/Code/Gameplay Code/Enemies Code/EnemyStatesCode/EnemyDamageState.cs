@@ -13,6 +13,7 @@ namespace Game
         [field: SerializeField] public EnemyHealthHandler HealthHandler { get; private set; }
         [SerializeField] StudioEventEmitter damageTakenEmitter;
         [SerializeField] ParticleSystem damageParticles;
+        [SerializeField] ScrapDropper scrapDropper;
 
         [SerializeField] LayerMask enviriomentLayerMask;
         #region Enemy Hit Flash
@@ -98,6 +99,7 @@ namespace Game
             hitFlashTimer = 0f;
             initialPos = transform.position;
             ExecuteFeedbacks();
+            scrapDropper.SpawnRandomScrap();
         }
 
         public override void Exit()

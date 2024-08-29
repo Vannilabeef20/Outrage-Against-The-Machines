@@ -10,40 +10,50 @@ namespace Game
     /// <summary>
     /// Scriptable object that manages debug
     /// </summary>
-	[CreateAssetMenu(fileName = "DebugSO", menuName = "New DebugSO")]
-	public class DebugSO : ScriptableObject
-	{
+    //[CreateAssetMenu(fileName = "DebugSO", menuName = "New DebugSO")]
+    public class DebugSO : ScriptableObject
+    {
         [field: Header("DEBUG MODE"), HorizontalLine(2f, EColor.Red)]
         [field: SerializeField] public bool IsDebugModeEnabled { get; private set; }
 
+        [Tooltip("Reference that defines the 'input_keys'.")]
         [SerializeField] InputActionReference reference;
 
+        [Tooltip("Input paths for toggling the debug mode.")]
         [SerializeField, ReadOnly] string input_keys;
 
 
-		[Header("DEBUG FILTERS"), HorizontalLine(2f, EColor.Orange)]
-		[SerializeField] EDebugSubjectFlags DebugSubjects;
-		[SerializeField] EDebugTypeFlags DebugTypes;
+        [Header("DEBUG FILTERS"), HorizontalLine(2f, EColor.Orange)]
+
+        [Tooltip("Enum flag filter, regards the subject of the debug operation.")]
+        [SerializeField] EDebugSubjectFlags DebugSubjects;
+        [Tooltip("Enum flag filter, regards the type of debug operation.")]
+        [SerializeField] EDebugTypeFlags DebugTypes;
 
         private void OnEnable()
         {
             RefreshInputKeys();
-			reference.action.performed += EnableDisableDebugMode;
+            reference.action.performed += ToggleDebugMode;
+            RefreshLoggerInfo();
         }
 
         private void OnDisable()
         {
-            reference.action.performed -= EnableDisableDebugMode;
+            reference.action.performed -= ToggleDebugMode;
             reference.action.Reset();
-		}
+            RefreshLoggerInfo();
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
             RefreshInputKeys();
+            RefreshLoggerInfo();
         }
 #endif
-        [Button("Refresh Input Keys")]
+        /// <summary>
+        /// Refreshes the "input_keys" string to match the input action reference.
+        /// </summary>
         private void RefreshInputKeys()
         {
             input_keys = default;
@@ -58,91 +68,37 @@ namespace Game
             }
         }
 
-        private void EnableDisableDebugMode(InputAction.CallbackContext context)
-		{
-			if (!context.performed) return;
-
-			IsDebugModeEnabled = !IsDebugModeEnabled;
-		}
-
-        #region Debug Logs
-
         /// <summary>
-        /// Logs a message to the console.
+        /// Logs all available kinds of logs in the "CustomLogger".
         /// </summary>
-        /// <param name="Sender">The object that sent the log request.</param>
-        /// <param name="Message">The information to be displayed on the log.</param>
-        /// <param name="EDebugSubject">EFlag for filtering.</param>
-        public void Log(object Sender, object Message,
-            EDebugSubjectFlags EDebugSubject = EDebugSubjectFlags.Test)
-        {
-            if (DebugTypes.HasAnyFlag(EDebugTypeFlags.Log) && DebugSubjects.HasAnyFlag(EDebugSubject))
-            {
-                Debug.Log($"<color=lime>{Message}</color>\n" +
-                    $" <color=magenta>{EDebugSubject}</color><color=aqua> Sender: {Sender}</color>");
-            }
-        }
-
-        /// <summary>
-        /// Logs a warning message to the console.
-        /// </summary>
-        /// <param name="Sender">The object that sent the log request.</param>
-        /// <param name="Message">The information to be displayed on the log.</param>
-        /// <param name="EDebugSubject">EFlag for filtering.</param>
-        public void LogWarning(object Sender, string Message,
-            EDebugSubjectFlags EDebugSubject = EDebugSubjectFlags.Test)
-        {
-            if (DebugTypes.HasAnyFlag(EDebugTypeFlags.LogWarning) && DebugSubjects.HasAnyFlag(EDebugSubject))
-            {
-                Debug.LogWarning($"<color=yellow>{Message}</color>\n" +
-                    $" <color=magenta>{EDebugSubject}</color><color=aqua> Sender: {Sender}</color>");
-            }
-        }
-
-        /// <summary>
-        /// Logs an error message to the console.
-        /// </summary>
-        /// <param name="Sender">The object that sent the log request.</param>
-        /// <param name="Message">The information to be displayed on the log.</param>
-        /// <param name="EDebugSubject">EFlag for filtering.</param>
-        public void LogError(object Sender, string Message, 
-            EDebugSubjectFlags EDebugSubject = EDebugSubjectFlags.Test)
-        {
-            if (DebugTypes.HasAnyFlag(EDebugTypeFlags.LogError) && DebugSubjects.HasAnyFlag(EDebugSubject))
-            {
-                Debug.LogError($"<color=red>{Message}</color>\n" +
-                    $" <color=magenta>{EDebugSubject}</color><color=aqua> Sender: {Sender}</color>");
-            }
-        }
-
-        [Button("Test All Logs")]
+        [Button("Test All CustomLogger Logs")]
         private void TestAllLogs()
         {
-            Log(this, "This is how the custom Log looks!", EDebugSubjectFlags.Test);
-            LogWarning( this, "This is how the custom LogWarning looks!", EDebugSubjectFlags.Test);
-            LogError(this, "This is how the custom LogError looks!", EDebugSubjectFlags.Test);
+            this.Log("This is how the custom Log looks!");
+            this.LogWarning("This is how the custom LogWarning looks!");
+            this.LogError("This is how the custom LogError looks!");
         }
-        #endregion
-    }
 
-    /// <summary>
-    /// EFlags for the subject of the debug operation.
-    /// </summary>
-    [System.Flags]
-    public enum EDebugSubjectFlags
-    {
-        Test = 1,
-        CustomEvents = 2,
-    }
+        /// <summary>
+        /// Toggles the debug mode on or off when the input action is performed.
+        /// </summary>
+        /// <param name="context"></param>
+        private void ToggleDebugMode(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
 
-    /// <summary>
-    /// EFlags for filtering the type of debug operation.
-    /// </summary>
-    [System.Flags]
-    public enum EDebugTypeFlags
-    {
-        Log = 1,
-        LogWarning = 2,
-        LogError = 4,
+            IsDebugModeEnabled = !IsDebugModeEnabled;
+            RefreshLoggerInfo();
+        }
+
+        /// <summary>
+        /// Updates the customLogger to match this SO.
+        /// </summary>
+        void RefreshLoggerInfo()
+        {
+            CustomLogger.IsDebugModeEnabled = IsDebugModeEnabled;
+            CustomLogger.DebugSubjects = DebugSubjects;
+            CustomLogger.DebugTypes = DebugTypes;
+        }
     }
 }

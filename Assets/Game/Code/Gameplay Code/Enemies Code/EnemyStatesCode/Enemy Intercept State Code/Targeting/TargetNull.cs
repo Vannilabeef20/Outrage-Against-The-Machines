@@ -7,7 +7,7 @@ namespace Game
     [Serializable]
     public class TargetNull : BaseTargeting
     {
-        public override GameObject GetTarget(Vector3 currentPosition)
+        public override Transform GetTarget(Vector3 currentPosition)
         {
             return null;
         }

@@ -16,6 +16,7 @@ namespace Game
     {
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
+        [SerializeField] Camera mainCam;
         [Tooltip("How fast the spawned boxes will fall.")]
         [SerializeField, Expandable] FallingBoxSpeedSO boxFallingSpeed;
         [Tooltip("The prefab for the falling box.")]
@@ -45,9 +46,14 @@ namespace Game
         [Tooltip("How many seconds have passed since the last box was spawned.")]
         [SerializeField, ReadOnly] float spawnTimer;
 
+        private void Awake()
+        {
+            mainCam = Camera.main;
+        }
+
         private void Update()
         {
-            if (Mathf.Abs(GameManager.Instance.MainCamera.transform.position.x -
+            if (Mathf.Abs(mainCam.transform.position.x -
                 transform.position.x) > activationRange) //Return if not within the activation range
             {
                 return;

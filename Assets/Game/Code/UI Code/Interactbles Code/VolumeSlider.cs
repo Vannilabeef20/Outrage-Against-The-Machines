@@ -7,9 +7,10 @@ using FMOD.Studio;
 
 namespace Game
 {
-    public class VolumeSlider : MenuButton
+    public class VolumeSlider : BaseUIInteractive
     {
-        [SerializeField, ReadOnly] private Slider slider;
+        [SerializeField, ReadOnly] Slider slider;
+        [SerializeField, Expandable] AudioVolumeCurveSO volumeCurve;
         [SerializeField, Dropdown("busNames")] string busGroup;
         [SerializeField, ReadOnly] string[] busNames = new string[] {"Master","Music","SFX"};
         Bus bus;
@@ -19,7 +20,7 @@ namespace Game
             
             if(busGroup == busNames[0])
             {
-                bus = RuntimeManager.GetBus("bus:/Master");
+                bus = RuntimeManager.GetBus("bus:/");
             }
             else
             {
@@ -28,12 +29,13 @@ namespace Game
 
             slider = GetComponent<Slider>();
             slider.value = PlayerPrefs.GetFloat(busGroup, 0.5f);
-            _SetVolume();
         }
 
         public void _SetVolume()
         {
-            float volume = Mathf.Pow(10f, slider.value.Map(0f, 1f, -80f, 10f) / 20f);
+            //  CURVA DB PARA LINEAR (o valor Y da curva é o valor dos decibéis)
+            float db = volumeCurve.Curve.Evaluate(slider.value);
+            float volume = Mathf.Pow(10f, db / 20f);
             bus.setVolume(volume);
             PlayerPrefs.SetFloat(busGroup, slider.value);
         }

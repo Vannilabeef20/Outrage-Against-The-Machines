@@ -14,7 +14,7 @@ namespace Game
         public override string Name { get => "Death"; }
 
         [SerializeField] StudioEventEmitter soundEmitter;
-        [SerializeField] PlayerDeathParamsEvent playerDeathParamsEvent;
+        [SerializeField] PlayerDeathParamsEvent playerDeathEvent;
 
         [SerializeField] CinemachineImpulseSource impulseSource;
         [SerializeField] AnimationCurve knockBackCurve;
@@ -73,7 +73,7 @@ namespace Game
             stateMachine.nextState = stateMachine.Idle;
             if (GameManager.Instance.CurrentLifeAmount <= 0)
             {
-                playerDeathParamsEvent.Raise(this, new PlayerDeathParams(stateMachine.playerInput.playerIndex, true));
+                playerDeathEvent.Raise(this, new PlayerDeathParams(stateMachine.playerInput.playerIndex, true));
                 stateMachine.transform.parent.gameObject.SetActive(false);
             }            
         }

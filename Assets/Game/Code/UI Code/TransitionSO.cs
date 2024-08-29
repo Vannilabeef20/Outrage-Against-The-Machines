@@ -3,7 +3,7 @@ using NaughtyAttributes;
 
 namespace Game
 {
-    [CreateAssetMenu(fileName = "Transition", menuName = "New Transtion")]
+    [CreateAssetMenu(fileName = "Transition", menuName = "Misc/New Transtion")]
     public class TransitionSO : ScriptableObject
     {
        [field: SerializeField] public float Duration { get; private set; }

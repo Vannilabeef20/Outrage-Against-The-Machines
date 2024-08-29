@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PauseMenuOptionsButton : MenuButton
+    public class PauseMenuOptionsButton : BaseUIInteractive
     {
         [SerializeField] private MenuIdEvent OnShowPauseMenuOptions;
         [SerializeField] private MenuId targetMenuIds;

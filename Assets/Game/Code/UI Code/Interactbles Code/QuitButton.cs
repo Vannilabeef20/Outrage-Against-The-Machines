@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class QuitButton : MenuButton
+    public class QuitButton : BaseUIInteractive
     {
         public void CallQuitGame()
         {

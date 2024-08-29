@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class ResumeButton : MenuButton
+    public class ResumeButton : BaseUIInteractive
     {
         [SerializeField] private MenuIdEvent OnSetMenuVisibility;
         [SerializeField] private MenuId TargetMenuIds;
