@@ -41,10 +41,7 @@ namespace Game
 
         [ProgressBar("Special Charge amount","MaxSpecialChargeAmount", EColor.Blue)] public float specialChargeAmount;
 
-        [SerializeField] Color specialImageColor;
-        [SerializeField] Color specialImageFilledColor;
-
-        [SerializeField] Image[] specialImages;
+        [SerializeField] IntFloatEvent specialChargeEvent;
 
         [SerializeField] ParticleSystem specialParticleSystem;
 
@@ -238,26 +235,7 @@ namespace Game
         public void UpdateSpecialBar()
         {
             float newSpecialPercent = specialChargeAmount / MaxSpecialChargeAmount;
-            float perChargePercent = MaxSpecialChargeAmount / specialImages.Length / MaxSpecialChargeAmount;
-            for (int j = 1; j < specialImages.Length + 1; j++)
-            {
-                float low = (j - 1) * perChargePercent;
-                float high = j * perChargePercent;
-                if(newSpecialPercent <= low)
-                {
-                    specialImages[j-1].fillAmount = 0;
-                }
-                else if(newSpecialPercent >= high)
-                {
-                    specialImages[j-1].fillAmount = 1;
-                    specialImages[j - 1].color = specialImageFilledColor;
-                }
-                else
-                {
-                    specialImages[j-1].fillAmount = newSpecialPercent.Map(low, high);
-                    specialImages[j - 1].color = specialImageColor;
-                }
-            }
+            specialChargeEvent.Raise(this, new IntFloat(stateMachine.playerInput.playerIndex, newSpecialPercent));
         }
 
         //[Button("Generate/Regenerate attack states", EButtonEnableMode.Editor)]

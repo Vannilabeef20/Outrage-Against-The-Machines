@@ -17,7 +17,6 @@ namespace Game
         [SerializeField] bool isTimeScaleIndependent;
 
         [Header("DEBUG"), HorizontalLine(2f, EColor.Orange)]
-        [SerializeField, Expandable] DebugSO debugSO;
         [SerializeField] T testValue;
         [SerializeField, ReadOnly] List<string> listenerNames = new();
 
@@ -71,9 +70,19 @@ namespace Game
             }
         }
 
-        private void EventLog(object sender, T data)
+        private void EventLog(object sender, T data, bool isTest = false)
         {
-            debugSO.Log(sender, $"<color=#8c53c6>{name} </color><color=white>was raised!</color> Data: {data.ToString()}", EDebugSubjectFlags.CustomEvents);
+            if (!isTest)
+            {
+                this.Log($"<color=#8c53c6>{name} </color><color=white>was raised!</color>" +
+                    $" Data: {data.ToString()}", EDebugSubjectFlags.CustomEvents);
+            }
+
+            else
+            {
+                this.Log($"<color=#8c53c6>{name} </color><color=white>was raised!</color>" +
+                    $" Data: {data.ToString()}", EDebugSubjectFlags.Testing);
+            }
         }
 
         public bool HasListener(IGameEventListener<T> listener)
@@ -84,7 +93,7 @@ namespace Game
         [Button("TEST LOG", EButtonEnableMode.Always)]
         public void TestDefaultLog()
         {
-            EventLog(this, default);
+            EventLog(this, default, true);
         }   
 
         [Button("RAISE 'TEST VALUE'", EButtonEnableMode.Playmode)]

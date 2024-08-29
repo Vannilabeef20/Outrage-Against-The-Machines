@@ -6,11 +6,13 @@ namespace Game
 {
     public class EnemyInterceptState : EnemyState
     {
+#pragma warning disable
         [field: Header("INTERCEPT STATE"), HorizontalLine(2f, EColor.Yellow)]
+#pragma warning restore
         public override string Name {get => "Intercept";}
         [Header("TARGETING"), HorizontalLine(2f, EColor.Green)]
         [SerializeReference, SubclassSelector] BaseTargeting targetingBehaviour;
-        [SerializeField, ReadOnly] GameObject target;
+        [SerializeField, ReadOnly] Transform target;
         [SerializeField, Min(0f)] float targetingRepeatInterval;
         [SerializeField, ReadOnly] float targetingTimer;
 

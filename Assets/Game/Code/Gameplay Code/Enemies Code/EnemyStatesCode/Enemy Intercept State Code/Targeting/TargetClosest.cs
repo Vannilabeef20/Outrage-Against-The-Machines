@@ -12,21 +12,21 @@ namespace Game
     [System.Serializable]
     public class TargetClosest : BaseTargeting
     {
-        public override GameObject GetTarget(Vector3 currentPosition)
+        public override Transform GetTarget(Vector3 currentPosition)
         {
-            List<GameObject> playerList = new();
+            List<Transform> playerTransformList = new();
             foreach(var player in GameManager.Instance.PlayerCharacterList)
             {
                 if (player.isPlayerActive)
                 {
-                    playerList.Add(player.GameObject);
+                    playerTransformList.Add(player.Transform);
                 }
             }
-            if(playerList.Count > 0)
+            if(playerTransformList.Count > 0)
             {
-                playerList = playerList.OrderBy(player => Vector3.Distance
-                (currentPosition, player.transform.position)).ToList<GameObject>();
-                return playerList[0];
+                playerTransformList = playerTransformList.OrderBy(player => Vector3.Distance
+                (currentPosition, player.position)).ToList<Transform>();
+                return playerTransformList[0];
             }
             else
             {

@@ -1,5 +1,13 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using NaughtyAttributes;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Game
 {
@@ -7,17 +15,12 @@ namespace Game
     /// Singleton that manages Level specific information.
     /// </summary>
 	public class LevelManager : MonoBehaviour
-	{
-        /// <summary>
-        /// Static EventInstance.
-        /// </summary>
-		public static LevelManager Instance { get; private set; }
+    {
+        public static LevelManager Instance { get; private set; }
 
-        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [SerializeField, ReadOnly] private Camera mainCamera;
 
-
-        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+        [Header("PLAYZONE"), HorizontalLine(2f, EColor.Orange)]
         [Tooltip("Absoulte MinMax World Height(Y) coordinates for the *Play Zone*")]
         [SerializeField, MinMaxSlider(-7f, 7f)] private Vector2 playZoneHeight;
 
@@ -25,10 +28,13 @@ namespace Game
         [SerializeField, Min(0)] private float playZoneHalfWidth = 10.64f;
         [SerializeField] private Color playZoneColor;
 
-
-        [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
-        [SerializeField, ReadOnly] private Vector3 point1Pos;
-        [SerializeField, ReadOnly] private Vector3 point2Pos;
+        [field: Header("SPAWN"), HorizontalLine(2f, EColor.Yellow)]
+        [field: SerializeField] public Vector3[] SpawnCoordinates { private set; get; }
+#if UNITY_EDITOR
+        [SerializeField] GUIStyle SpawnLabelStyle;
+#endif
+        Vector3 point1Pos;
+        Vector3 point2Pos;
 
         private void Awake()
         {
@@ -79,9 +85,10 @@ namespace Game
             return true;
         }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR      
         private void OnDrawGizmos()
         {
+            if (mainCamera == null) mainCamera = Camera.main;
             #region Draw debug playzone box
             //Bottom Line
             point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
@@ -111,6 +118,13 @@ namespace Game
             point2Pos.y = playZoneHeight.y;
             Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneColor);
             #endregion
+
+            Gizmos.color = Color.yellow;
+            for (int i = 0; i < SpawnCoordinates.Length; i++)
+            {
+                Gizmos.DrawSphere(SpawnCoordinates[i], 0.1f);
+                Handles.Label(SpawnCoordinates[i], $"Spawn P{i + 1}", SpawnLabelStyle);
+            }
         }
 #endif
     }

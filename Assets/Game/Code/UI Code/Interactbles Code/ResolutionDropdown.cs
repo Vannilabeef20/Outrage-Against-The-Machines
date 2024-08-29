@@ -9,7 +9,7 @@ namespace Game
     /// <summary>
     /// Creates a dropdown 
     /// </summary>
-    public class ResolutionDropdown : MenuButton
+    public class ResolutionDropdown : BaseUIInteractive
     {
         [SerializeField, ReadOnly] TMP_Dropdown dropdown;
         [SerializeField, ReadOnly] Resolution[] unityResolutions;

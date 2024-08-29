@@ -49,7 +49,6 @@ namespace Game
 
         [Header("Debug"), HorizontalLine(2F, EColor.Green)]
         [SerializeField] TextMeshProUGUI playerStateLabel;
-        [Expandable] public DebugSO debugSO;
 
         void Awake()
         {
@@ -199,7 +198,7 @@ namespace Game
 
         void RunDebug()
         {
-            if (debugSO.IsDebugModeEnabled)
+            if (CustomLogger.IsDebugModeEnabled)
             {
                 if (playerStateLabel.gameObject.activeInHierarchy == false)
                 {

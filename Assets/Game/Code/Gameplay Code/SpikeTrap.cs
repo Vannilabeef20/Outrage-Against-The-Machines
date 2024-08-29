@@ -9,6 +9,7 @@ namespace Game
     public class SpikeTrap : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [SerializeField] Transform mainCamTransform;
         [SerializeField] Animator[] animators;
         [SerializeField] AnimationClip spikeAnimation;
 
@@ -41,6 +42,7 @@ namespace Game
 
         private void Awake()
         {
+            mainCamTransform = Camera.main.transform;
             foreach(var frameEvent in frameEvents)
             {
                 frameEvent.Setup(spikeAnimation, animationDuration);
@@ -49,7 +51,7 @@ namespace Game
         private void Update()
         {
             //Return and pause animation if not within the activation range
-            if (Mathf.Abs(GameManager.Instance.MainCamera.transform.position.x - transform.position.x) > activationRange)
+            if (Mathf.Abs(mainCamTransform.position.x - transform.position.x) > activationRange)
             {
                 foreach (var animator in animators)
                 {

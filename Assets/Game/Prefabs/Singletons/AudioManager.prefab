@@ -96,7 +96,7 @@ Transform:
   - {fileID: 3299603745136610062}
   - {fileID: 6651514353467692836}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4379175018988669479
 MonoBehaviour:
@@ -119,6 +119,11 @@ MonoBehaviour:
   uiClickPositiveSoundIndex: 0
   uiClickNegativeSoundIndex: 0
   uiSelectSoundIndex: 0
+  volumeCurve: {fileID: 11400000, guid: 38b7c2868b2e9d84b8de04da9c6a32b8, type: 2}
+  busNames:
+  - Master
+  - Music
+  - SFX
 --- !u!1 &5470787724611859833
 GameObject:
   m_ObjectHideFlags: 0

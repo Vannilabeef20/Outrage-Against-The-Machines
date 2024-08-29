@@ -5,14 +5,14 @@ using NaughtyAttributes;
 
 namespace Game
 {
-    public class FullScreenToggle : MenuButton
+    public class FullScreenToggle : BaseUIInteractive
     {
         [SerializeField] Image toggleImage;
         [SerializeField, ReadOnly] const string PlayerPrefsFullScreen = "FullscreenValue";
         [SerializeField, ReadOnly] private bool active;
         [SerializeField, ShowAssetPreview] private Sprite[] toggleSprites;
 
-        private void Start()
+        private void Awake()
         {
             if (PlayerPrefs.GetInt(PlayerPrefsFullScreen) == 1) // 1 means true, 0 false
             {

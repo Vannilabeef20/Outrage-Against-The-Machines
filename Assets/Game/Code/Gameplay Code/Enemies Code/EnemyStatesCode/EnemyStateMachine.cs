@@ -50,7 +50,6 @@ namespace Game
         #region Debug
 
         [Header("DEBUG"), HorizontalLine(2F, EColor.Green)]
-        [SerializeField, Expandable] DebugSO debugSO;
         [SerializeField] private TextMeshProUGUI stateLabelTmpro;
 #if UNITY_EDITOR
         [SerializeField] private Color boxCastDefaultColor;
@@ -60,16 +59,11 @@ namespace Game
 
         private void Awake()
         {
-            try
-            {
-                if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
-                {
-                    spawner = spawn;
-                }
-            }
-            catch
-            {
+            if (transform.parent == null) return;
 
+            if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
+            {
+                spawner = spawn;
             }
         }
 
@@ -121,7 +115,7 @@ namespace Game
             ChangeState();
             currentState.Do();
 
-            if (debugSO.IsDebugModeEnabled)
+            if (CustomLogger.IsDebugModeEnabled)
             {
                 if (stateLabelTmpro.gameObject.activeInHierarchy == false)
                 {
