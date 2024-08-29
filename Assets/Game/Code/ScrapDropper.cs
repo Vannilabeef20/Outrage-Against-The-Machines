@@ -31,7 +31,7 @@ namespace Game
         {
             randomAmount = UnityEngine.Random.Range(minScapDrop, maxScapDrop + 1);
 
-            // Divide drop amount in hundreds tens and units
+            // Decompose drop amount in hundreds tens and units
             int hundreds = (int)(randomAmount / 100f);
             int tempRemainder = randomAmount % 100;
 

@@ -20,16 +20,6 @@ namespace Game
 
         [SerializeField, ReadOnly] private Camera mainCamera;
 
-        #region Loading & Transitions Params
-        [Header("LOADING & TRANSITIONS"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField] Image transitionImage;
-
-        Coroutine loadRoutine;
-
-        [SerializeField] TransitionSO transitionIn;
-        [SerializeField] TransitionSO transitionOut;
-        #endregion
-
         [Header("PLAYZONE"), HorizontalLine(2f, EColor.Orange)]
         [Tooltip("Absoulte MinMax World Height(Y) coordinates for the *Play Zone*")]
         [SerializeField, MinMaxSlider(-7f, 7f)] private Vector2 playZoneHeight;
@@ -52,14 +42,11 @@ namespace Game
             {
                 Instance = this;
                 mainCamera = Camera.main;
-                transitionImage.enabled = false;
-                StartCoroutine(LoadOrTransitionRoutine());
             }
             else
             {
                 Destroy(gameObject);
             }
-
         }
 
         /// <summary>
@@ -98,57 +85,7 @@ namespace Game
             return true;
         }
 
-        #region Loading Methods
-        public void LoadScene(int targetSceneIndex)
-        {
-            if (loadRoutine == null)
-            {
-                loadRoutine = StartCoroutine(LoadOrTransitionRoutine(targetSceneIndex));
-            }
-        }
-
-        private IEnumerator LoadOrTransitionRoutine(int sceneIndex = -1)
-        {
-            float frameTime;
-
-            frameTime = transitionIn.Duration / transitionIn.Sprites.Length;
-            transitionImage.enabled = true;
-            if (sceneIndex < 0) //Transition out of load
-            {
-                for (int i = transitionIn.Sprites.Length - 1; i > 0; i--)
-                {
-                    transitionImage.sprite = transitionIn.Sprites[i];
-                    yield return new WaitForSecondsRealtime(frameTime);
-                }
-                transitionImage.enabled = false;
-            }
-            else //Transition in load
-            {
-                for (int i = 0; i < transitionIn.Sprites.Length; i++)
-                {
-                    transitionImage.sprite = transitionIn.Sprites[i];
-                    yield return new WaitForSecondsRealtime(frameTime);
-                }
-                SceneManager.LoadScene(sceneIndex);
-                loadRoutine = null;
-            }
-        }
-        #endregion
-
-#if UNITY_EDITOR
-        #region Testing Methods
-        [Button("Test start transition", EButtonEnableMode.Playmode)]
-        public void TestRegularTransition()
-        {
-            StartCoroutine(LoadOrTransitionRoutine());
-        }
-
-        [Button("Test load transition", EButtonEnableMode.Playmode)]
-        public void TestReverseTransition()
-        {
-            StartCoroutine(LoadOrTransitionRoutine(1));
-        }
-        #endregion
+#if UNITY_EDITOR      
         private void OnDrawGizmos()
         {
             if (mainCamera == null) mainCamera = Camera.main;

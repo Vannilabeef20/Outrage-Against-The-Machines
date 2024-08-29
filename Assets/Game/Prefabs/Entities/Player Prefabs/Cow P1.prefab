@@ -57,6 +57,10 @@ PrefabInstance:
       value: Cow P1
       objectReference: {fileID: 0}
     - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1906920501, guid: 96dad8e684aff234ca1795cfd79a009a, type: 3}
+    - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d9b356201c7af7c47b55d8685ce3d87f, type: 2}

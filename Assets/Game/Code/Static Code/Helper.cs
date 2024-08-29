@@ -231,6 +231,20 @@ namespace Game
 			}
 		}
 
+		public static (int hundreds, int tens, int units) DecomposeDecimal(int totalUnits)
+        {
+			// Decompose drop amount in hundreds tens and units
+			int temp_hundreds = (int)(totalUnits / 100f);
+			int tempRemainder = totalUnits % 100;
+
+			int temp_tens = (int)(tempRemainder / 10f);
+			tempRemainder %= 10;
+
+			int temp_units = tempRemainder;
+
+			return (temp_hundreds, temp_tens, temp_units);
+		}
+
 		#region DEBUG
 
 		#region Box/boxcast

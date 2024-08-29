@@ -8,8 +8,8 @@ namespace Game
 	public class InteractionHandler : MonoBehaviour
 	{
         #region REFERENCES
-        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField] PlayerInput playerInput;
+        [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [field: SerializeField] public PlayerInput playerInput { get; private set; }
         [SerializeField] BoxCollider detectionShape;
         #endregion
 

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 982049024884097514, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: scrapValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3077224343119834583, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -55,6 +59,18 @@ PrefabInstance:
     - target: {fileID: 4505198733571588735, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: scrapValue
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580588795062235885, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580588795062235885, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580588795062235885, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6727501122179452608, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: m_Name

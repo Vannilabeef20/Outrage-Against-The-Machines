@@ -13,20 +13,19 @@ namespace Game
     /// <summary>
     /// Encapsules death info from player "playerID".
     /// </summary>
-    public struct PlayerDeathParams
+    public class PlayerDeathParams
     {
-        [Tooltip("Player Inputs index identification")]
-        public int playerID;
+        public int playerIndex;
         public bool isPlayerDead;
 
         /// <summary>
         /// Builds a new PlayerDeathParams Struct with "_playerID" and "_isPlayerDead."
         /// </summary>
-        /// <param name="_playerID">Target player Inputs index identification.</param>
+        /// <param name="playerIndex">Target player Inputs index identification.</param>
         /// <param name="_isPlayerDead">Target player death info.</param>
-        public PlayerDeathParams(int _playerID, bool _isPlayerDead)
+        public PlayerDeathParams(int playerIndex, bool _isPlayerDead)
         {
-            this.playerID = _playerID;
+            this.playerIndex = playerIndex;
             this.isPlayerDead = _isPlayerDead;
         }
     }

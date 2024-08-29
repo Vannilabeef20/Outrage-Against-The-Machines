@@ -37,6 +37,14 @@ namespace Game
                 Destroy(gameObject);
             }
         }
+        private void OnLevelWasLoaded(int level)
+        {
+            if (loadRoutine != null)
+            {
+                loadRoutine = null;
+                loadRoutine = StartCoroutine(TransitionInRoutine(level));
+            }
+        }
 
         private void OnValidate()
         {
@@ -46,51 +54,23 @@ namespace Game
             }
         }
 
-        public void LoadScene(int targetSceneIndex, TransitionType transitionType)
+        public void LoadScene(int targetSceneIndex)
         {
             if (loadRoutine != null) return;
 
-            switch (transitionType)
-            {
-                case TransitionType.In :
-                    loadRoutine = StartCoroutine(TransitionInRoutine(targetSceneIndex));
-                    break;
-                case TransitionType.Out:
-                    loadRoutine = StartCoroutine(TransitionOutRoutine(targetSceneIndex));
-                    break;
-            }
-        }
-
-        private IEnumerator TransitionInRoutine(int targetSceneIndex)
-        {
-            int currentLevelIndex;
-            float frameTime;
-            TransitionSO transition;
-
-            currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-
-            transition = levelTransitions[currentLevelIndex].TransitionOut;
-
-            frameTime = transition.Duration / transition.Sprites.Length;
-            for (int i = transition.Sprites.Length - 1; i > 0; i--)
-            {
-                transitionImage.sprite = transition.Sprites[i];
-                yield return new WaitForSecondsRealtime(frameTime);
-            }
-            SceneManager.LoadScene(targetSceneIndex);
+            loadRoutine = StartCoroutine(TransitionOutRoutine(targetSceneIndex));
         }
 
         private IEnumerator TransitionOutRoutine(int targetSceneIndex)
         {
-            int currentLevelIndex;
             float frameTime;
             TransitionSO transition;
 
-            currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-
-            transition = levelTransitions[currentLevelIndex].TransitionIn;
+            transition = levelTransitions[targetSceneIndex].TransitionIn;
 
             frameTime = transition.Duration / transition.Sprites.Length;
+
+            transitionImage.enabled = true;
             for (int i = 0; i < transition.Sprites.Length; i++)
             {
                 transitionImage.sprite = transition.Sprites[i];
@@ -99,6 +79,39 @@ namespace Game
             SceneManager.LoadScene(targetSceneIndex);
         }
 
+        private IEnumerator TransitionInRoutine(int targetSceneIndex)
+        {
+            float frameTime;
+            TransitionSO transition;
+
+            transition = levelTransitions[targetSceneIndex].TransitionOut;
+
+            frameTime = transition.Duration / transition.Sprites.Length;
+
+            transitionImage.enabled = true;
+            for (int i = transition.Sprites.Length - 1; i > 0; i--)
+            {
+                transitionImage.sprite = transition.Sprites[i];
+                yield return new WaitForSecondsRealtime(frameTime);
+            }
+            transitionImage.enabled = false;
+            loadRoutine = null;
+        }
+        /*
+        #region Testing Methods
+        [Button("Test start transition", EButtonEnableMode.Playmode)]
+        public void TestRegularTransition()
+        {
+
+        }
+
+        [Button("Test load transition", EButtonEnableMode.Playmode)]
+        public void TestReverseTransition()
+        {
+
+        }
+        #endregion
+        */
         [Serializable]
         class LevelTransition
         {
@@ -106,11 +119,5 @@ namespace Game
             [field: SerializeField, Expandable] public TransitionSO TransitionIn;
             [field: SerializeField, Expandable] public TransitionSO TransitionOut;
         }
-    }
-    public enum TransitionType
-    {
-        In,
-        Out,
-        None
     }
 }

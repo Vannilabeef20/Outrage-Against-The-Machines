@@ -125,7 +125,9 @@ namespace Game
             {
                 PlayerCharacterList.Add(new PlayerCharacter(DefaultPrefab, 0, null, null));
                 PlayerCharacterList[0].GameObject = Instantiate(DefaultPrefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
-                PlayerCharacterList[0].Transform = PlayerCharacterList[0].Transform;
+                PlayerCharacterList[0].Transform = PlayerCharacterList[0].GameObject.transform;
+                PlayerCharacterList[0].Transform.position = LevelManager.Instance.SpawnCoordinates[0];
+                PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                 PlayerCharacterList[0].isPlayerActive = true;
             }
             else //Starting the game via main menu like normal
@@ -136,8 +138,10 @@ namespace Game
 
                     PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1,
                         PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
-                    PlayerCharacterList[i].Transform = PlayerCharacterList[i].Transform;
-                    PlayerCharacterList[i].Transform.position = LevelManager.Instance.SpawnCoordinates[i];
+                    PlayerCharacterList[i].Transform = PlayerCharacterList[i].GameObject.transform;
+                    Rigidbody rb = PlayerCharacterList[i].GameObject.GetComponent<Rigidbody>();
+                    rb.position = LevelManager.Instance.SpawnCoordinates[PlayerCharacterList[i].PlayerIndex];
+                    PlayerCharacterList[i].HealthHandler = PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                     PlayerCharacterList[i].isPlayerActive = true;
                 }
             }
@@ -231,7 +235,7 @@ namespace Game
 
                     CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
                     PlayerCharacterList[i].GameObject.SetActive(true);
-                    PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().playerHitbox.enabled = true;
+                    PlayerCharacterList[i].HealthHandler.playerHitbox.enabled = true;
                     PlayerCharacterList[i].isPlayerActive = true;
                 }
             }
@@ -240,7 +244,7 @@ namespace Game
         
         public void UpdatePlayerDeathStatus(PlayerDeathParams playerDeathParams)
         {
-            PlayerCharacterList[playerDeathParams.playerID].isPlayerActive = !playerDeathParams.isPlayerDead;
+            PlayerCharacterList[playerDeathParams.playerIndex].isPlayerActive = !playerDeathParams.isPlayerDead;
             int aliveCount = 0;
             foreach(var character in PlayerCharacterList)
             {
@@ -251,7 +255,7 @@ namespace Game
             }
             if(aliveCount == 0)
             {
-                LevelManager.Instance.LoadScene(0);
+                TransitionManager.Instance.LoadScene(0);
             }
         }
 #if UNITY_EDITOR
@@ -290,7 +294,9 @@ namespace Game
 
         public GameObject GameObject;
         public Transform Transform;
-        public PlayerHealthHandler Health;
+        public PlayerHealthHandler HealthHandler;
+
+        public int scrapAmount;
 
         public PlayerCharacter (GameObject playerPrefab, int playerIndex, string controlScheme, InputDevice[] devices)
         {

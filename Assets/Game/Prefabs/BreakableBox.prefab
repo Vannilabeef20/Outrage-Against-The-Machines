@@ -97,28 +97,28 @@ MonoBehaviour:
   fadeFlickerLenght: 0.1
   FrameToSpawn: 2
   lootTable:
+    totalWeight: 100
     itemDrops:
-    - <Name>k__BackingField: Heal
+    - Name: 27% -> Heal Pickup
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
       <ProbabilityWeight>k__BackingField: 27
       ProbabilityPercent: 27
       ProbabilityRange: {x: 0, y: 27}
-    - <Name>k__BackingField: Heal & Energy
+    - Name: 27% -> Heal & Energy Pickup
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
       <ProbabilityWeight>k__BackingField: 27
       ProbabilityPercent: 27
       ProbabilityRange: {x: 27, y: 54}
-    - <Name>k__BackingField: Energy
+    - Name: 27% -> Energy Pickup
       <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
       <ProbabilityWeight>k__BackingField: 27
       ProbabilityPercent: 27
       ProbabilityRange: {x: 54, y: 81}
-    - <Name>k__BackingField: Extra Life
+    - Name: 19% -> Life Pickup
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
       <ProbabilityWeight>k__BackingField: 19
       ProbabilityPercent: 19
       ProbabilityRange: {x: 81, y: 100}
-    totalWeight: 100
   moneyDrop: {fileID: 4574465553870493326}
 --- !u!114 &4574465553870493326
 MonoBehaviour:
@@ -137,12 +137,12 @@ MonoBehaviour:
   scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
   scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
   rotAngle: 45
-  minScapDrop: 9
-  maxScapDrop: 9
+  minScapDrop: 20
+  maxScapDrop: 30
   hasReserveScrap: 0
   reserveAmount: 0
   randomAmount: 0
-  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
+  scrapList: []
 --- !u!212 &1488542923154001147
 SpriteRenderer:
   m_ObjectHideFlags: 0

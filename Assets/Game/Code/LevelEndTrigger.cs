@@ -25,7 +25,7 @@ namespace Game
         {
             if (playerLayerMask.ContainsLayer(other.gameObject.layer))
             {
-                LevelManager.Instance.LoadScene(nextScene);
+                TransitionManager.Instance.LoadScene(nextScene);
                 PlayerPrefs.SetInt("IsTutorialCompleted", 1);
             }
         }

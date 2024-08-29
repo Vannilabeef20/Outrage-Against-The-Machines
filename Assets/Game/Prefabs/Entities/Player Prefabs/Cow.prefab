@@ -964,8 +964,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1164585175635907944}
-  - {fileID: 2129837357335221025}
   - {fileID: 4074148079311783034}
+  - {fileID: 6170485617881787923}
   m_Father: {fileID: 1164585177367800614}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   <Delay>k__BackingField: 3
   <Despawning>k__BackingField: 0
   soundEmitter: {fileID: 2309935132991091179}
-  playerDeathParamsEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
+  playerDeathEvent: {fileID: 0}
   impulseSource: {fileID: 6136750296965723331}
   knockBackCurve:
     serializedVersion: 2
@@ -1252,8 +1252,7 @@ MonoBehaviour:
   playerStateMachine: {fileID: 1164585177420930287}
   spriteRenderer: {fileID: 1164585177420930285}
   playerHitbox: {fileID: 1164585176240065429}
-  InstantHealthBar: {fileID: 6320572699832204143}
-  LerpHealthBar: {fileID: 515142115374017942}
+  healthEvent: {fileID: 11400000, guid: e13e72cb19c3216488f8041b4ab2a55c, type: 2}
   healParticle: {fileID: 7457534750952423207}
   damageParticle: {fileID: 5174236904199335510}
   reviveEmitter: {fileID: 5785947858171866375}
@@ -1268,7 +1267,9 @@ MonoBehaviour:
   staggerGracePeriod: 2
   gracePeriodFlashLenght: 0.15
   gracePeriodColor: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
-  healthConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
+  reviveRumbleDuration: 0.5
+  reviveRumble_lowFreq: 0.5
+  reviveRumble_highFreq: 0.5
 --- !u!114 &5785947858171866375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,12 +1502,7 @@ MonoBehaviour:
   attackList: []
   <MaxSpecialChargeAmount>k__BackingField: 300
   specialChargeAmount: 0
-  specialImageColor: {r: 0.7529412, g: 0.64705884, b: 0, a: 1}
-  specialImageFilledColor: {r: 0.9747988, g: 1, b: 0, a: 1}
-  specialImages:
-  - {fileID: 5991806351874631203}
-  - {fileID: 1883735402580584839}
-  - {fileID: 4178294214619051610}
+  specialChargeEvent: {fileID: 11400000, guid: 9ef4ea5556773904594c628af80c47d1, type: 2}
   specialParticleSystem: {fileID: 5057762400636101967}
 --- !u!114 &6012565050126121000
 MonoBehaviour:
@@ -1904,7 +1900,6 @@ MonoBehaviour:
   playerNumberLabel: {fileID: 7204142264954917609}
   playerColor: {r: 0, g: 0, b: 0, a: 0}
   playerStateLabel: {fileID: 1164585175635907927}
-  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
 --- !u!212 &1164585177420930285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2278,161 +2273,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &2307699152675705674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2129837357335221025}
-  - component: {fileID: 6701898909991046053}
-  - component: {fileID: 171389533390550313}
-  m_Layer: 0
-  m_Name: CowHealthBarBackground
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2129837357335221025
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2307699152675705674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8452573745241773618}
-  - {fileID: 3507064876166719335}
-  - {fileID: 6170485617881787923}
-  m_Father: {fileID: 1164585176036258598}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -39}
-  m_SizeDelta: {x: 166.66667, y: 20.833334}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6701898909991046053
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2307699152675705674}
-  m_CullTransparentMesh: 1
---- !u!114 &171389533390550313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2307699152675705674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -753702272, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!1 &2447423606240861153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8452573745241773618}
-  - component: {fileID: 3817737691951933977}
-  - component: {fileID: 515142115374017942}
-  m_Layer: 0
-  m_Name: CowHealthBarLerp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8452573745241773618
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447423606240861153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2129837357335221025}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 133.33334, y: 12.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3817737691951933977
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447423606240861153}
-  m_CullTransparentMesh: 1
---- !u!114 &515142115374017942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447423606240861153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5367357, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -1129030050, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2461191302754293950
 GameObject:
   m_ObjectHideFlags: 0
@@ -17557,7 +17397,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3605271574649253704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17565,12 +17405,12 @@ RectTransform:
   - {fileID: 1739843112324427532}
   - {fileID: 9064780373214693446}
   - {fileID: 148450604488080757}
-  m_Father: {fileID: 2129837357335221025}
+  m_Father: {fileID: 1164585176036258598}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 34}
+  m_AnchoredPosition: {x: 0, y: -5.0000343}
   m_SizeDelta: {x: 147.17, y: 41.66671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3722334530221503623
@@ -17699,82 +17539,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &4370670012210168876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3507064876166719335}
-  - component: {fileID: 8495366315148033043}
-  - component: {fileID: 6320572699832204143}
-  m_Layer: 0
-  m_Name: CowHealthBarInstant
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3507064876166719335
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370670012210168876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2129837357335221025}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 133.33334, y: 12.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8495366315148033043
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370670012210168876}
-  m_CullTransparentMesh: 1
---- !u!114 &6320572699832204143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370670012210168876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -1129030050, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4839948769117422489
 GameObject:
   m_ObjectHideFlags: 0
@@ -18048,7 +17812,7 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
+  OverrideAttenuation: 1
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!1 &6868173594272702251
@@ -18338,7 +18102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fa2fb44c78ae545a201e0358228995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 1164585177367800613}
+  <playerInput>k__BackingField: {fileID: 1164585177367800613}
   detectionShape: {fileID: 7229345821387617932}
   interactionMask:
     serializedVersion: 2

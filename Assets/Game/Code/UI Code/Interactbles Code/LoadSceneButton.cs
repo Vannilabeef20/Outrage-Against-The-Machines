@@ -15,7 +15,7 @@ namespace Game
         {
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
-            LevelManager.Instance.LoadScene(targetScene);
+            TransitionManager.Instance.LoadScene(targetScene);
         }
     }
 }
