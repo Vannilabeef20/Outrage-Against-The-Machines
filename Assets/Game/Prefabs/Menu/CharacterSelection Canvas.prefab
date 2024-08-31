@@ -994,6 +994,7 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  but: {fileID: 4596487124177035910}
   targetScene: 1
 --- !u!114 &4596487124177035910
 MonoBehaviour:
@@ -1253,7 +1254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4596487124267608207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1295,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuId: 32
-  defaultSelectableObject: {fileID: 4596487125034860421}
+  selection: 1
+  allowMultipleSelection: 1
+  singlePlayerSelectableObject: {fileID: 4596487124850303752}
+  P1_SelectableObject: {fileID: 4596487124850303752}
+  P2_SelectableObject: {fileID: 4596487123794322416}
+  P3_SelectableObject: {fileID: 4596487124575117015}
+  singlePlayerRoot: {fileID: 4596487125470007814}
+  P1_root: {fileID: 4596487125470007814}
+  P2_root: {fileID: 4596487125078397879}
+  P3_root: {fileID: 4596487125234306660}
 --- !u!114 &4596487124267608201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,9 +1318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasTutorialCompleted: 0
-  confirmButton: {fileID: 4596487124177035910}
-  confirmTutorialButton: {fileID: 4596487124860275111}
-  tutorialButtonScript: {fileID: 4596487124860275104}
   selectionSwaps:
   - {fileID: 4596487124850303862}
   - {fileID: 4596487123794322430}
@@ -2360,6 +2367,7 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  but: {fileID: 0}
   targetScene: 2
 --- !u!114 &4596487124860275111
 MonoBehaviour:

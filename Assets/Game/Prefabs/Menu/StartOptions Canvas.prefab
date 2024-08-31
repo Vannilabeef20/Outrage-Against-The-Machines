@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 7281520080628757090}
   - component: {fileID: 7281520080628757089}
   m_Layer: 0
-  m_Name: StartOptions Main
+  m_Name: StartOptions Main Visibility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1019,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuId: 4
-  defaultSelectableObject: {fileID: 7281520080072508365}
+  allowMultipleSelection: 0
+  singlePlayerSelectableObject: {fileID: 7281520080072508365}
+  P1_SelectableObject: {fileID: 0}
+  P2_SelectableObject: {fileID: 0}
+  P3_SelectableObject: {fileID: 0}
+  singlePlayerRoot: {fileID: 7281520080628757087}
+  P1_root: {fileID: 0}
+  P2_root: {fileID: 0}
+  P3_root: {fileID: 0}
 --- !u!222 &7281520080628757089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1700,7 +1708,7 @@ RectTransform:
   m_Children:
   - {fileID: 7281520080628757088}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

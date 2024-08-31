@@ -76,6 +76,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scrap Pickup - Unit Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7111907758493135288, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.48735
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111907758493135288, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14005221
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111907758493135288, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.48735
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1054719603, guid: cdb3967b1219f5c419826ef180061eb2, type: 3}
+    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589515128286402395, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589515128286402395, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.37
+      objectReference: {fileID: 0}
     - target: {fileID: 8861467702481428731, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: m_Color.b
       value: 0.1509434

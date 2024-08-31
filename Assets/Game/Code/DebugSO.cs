@@ -30,6 +30,11 @@ namespace Game
         [Tooltip("Enum flag filter, regards the type of debug operation.")]
         [SerializeField] EDebugTypeFlags DebugTypes;
 
+        private void Awake()
+        {
+            RefreshLoggerInfo();
+            RefreshInputKeys();
+        }
         private void OnEnable()
         {
             RefreshInputKeys();

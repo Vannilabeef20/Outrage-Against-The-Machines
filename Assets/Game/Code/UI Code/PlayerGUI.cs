@@ -41,7 +41,7 @@ namespace Game
 
                 return;
             }
-            scrapCountText.text = $"${Player.scrapAmount}";
+            scrapCountText.text = Player.scrapAmount.ToString("D3");
         }
 
         public void UpdateHealthBar(IntFloat playerHealthParams)

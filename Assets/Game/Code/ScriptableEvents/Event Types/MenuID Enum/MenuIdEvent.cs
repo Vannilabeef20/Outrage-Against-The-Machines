@@ -58,6 +58,7 @@ namespace Game
         StartMenuOptions = 4,
         PauseMenu = 8,
         PauseOptionsMenu = 16,
-        CharacterSelectionMenu = 32
+        CharacterSelectionMenu = 32,
+        LevelSelectionMenu = 64,
     }
 }

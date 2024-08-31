@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.EventSystems;
 using FMODUnity;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -19,13 +21,20 @@ namespace Game
 
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
+        [SerializeField, ReadOnly] List<PlayerInput> playerRoots; 
+
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
 
         #region Players Params
         [field: Header("PLAYERS"), HorizontalLine(2f, EColor.Orange)]
 
         public PlayerInputManager UnityInputManager;
-
+        [Space]
+        public EventSystem singlePlayerEventSystem;
+        public MultiplayerEventSystem player1EventSystem;
+        public MultiplayerEventSystem player2EventSystem;
+        public MultiplayerEventSystem player3EventSystem;
+        [field: Space]
         [field: SerializeField] public GameObject DefaultPrefab { get; private set; }
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
@@ -146,6 +155,71 @@ namespace Game
                 }
             }
             Instantiate(followGroupPrefab);
+        }
+
+        public void LeaveSetPlayerEventSystem(PlayerInput playerInput)
+        {
+            if (UnityInputManager.playerCount <= 1)
+            {
+                singlePlayerEventSystem.enabled = true;
+                playerRoots[0].uiInputModule = singlePlayerEventSystem.GetComponent<InputSystemUIInputModule>();
+                player1EventSystem.enabled = false;
+                player2EventSystem.enabled = false;
+                player3EventSystem.enabled = false;
+            }
+            else
+            {
+                singlePlayerEventSystem.enabled = false;
+                player1EventSystem.enabled = true;
+                player2EventSystem.enabled = true;
+                player3EventSystem.enabled = true;
+            }
+
+            playerRoots.Remove(playerInput);
+        }
+
+        public void JoinSetPlayerEventSystem(PlayerInput playerInput)
+        {
+            playerInput.camera = Camera.main;
+            playerRoots.Add(playerInput);
+
+            if (UnityInputManager.playerCount <= 1)
+            {
+                singlePlayerEventSystem.enabled = true;
+                player1EventSystem.enabled = false;
+                player2EventSystem.enabled = false;
+                player3EventSystem.enabled = false;
+            }
+            else
+            {
+                singlePlayerEventSystem.enabled = false;
+                player1EventSystem.enabled = true;
+                player2EventSystem.enabled = true;
+                player3EventSystem.enabled = true;
+            }
+
+            if(UnityInputManager.playerCount <= 1)
+            {
+                playerInput.uiInputModule = singlePlayerEventSystem.GetComponent<InputSystemUIInputModule>();
+                return;
+            }
+
+            foreach(var player in playerRoots)
+            {
+                switch (player.playerIndex)
+                {
+                    case 0:
+                        player.uiInputModule = player1EventSystem.GetComponent<InputSystemUIInputModule>();
+                        break;
+                    case 1:
+                        player.uiInputModule = player2EventSystem.GetComponent<InputSystemUIInputModule>();
+                        break;
+                    case 2:
+                        player.uiInputModule = player3EventSystem.GetComponent<InputSystemUIInputModule>();
+                        break;
+                }
+            }
+            
         }
 
         #region Rumble Methods

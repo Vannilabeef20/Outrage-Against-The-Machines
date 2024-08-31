@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1532007892134315233}
   - component: {fileID: 7596611648689693519}
   m_Layer: 0
-  m_Name: StartMenu Main
+  m_Name: StartMenu Main Visibility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5307918888006796544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55,7 +55,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuId: 2
-  defaultSelectableObject: {fileID: 2142516251440017314}
+  allowMultipleSelection: 0
+  singlePlayerSelectableObject: {fileID: 2142516251440017314}
+  P1_SelectableObject: {fileID: 0}
+  P2_SelectableObject: {fileID: 0}
+  P3_SelectableObject: {fileID: 0}
+  singlePlayerRoot: {fileID: 819568335281760641}
+  P1_root: {fileID: 0}
+  P2_root: {fileID: 0}
+  P3_root: {fileID: 0}
 --- !u!222 &7596611648689693519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -809,7 +817,7 @@ RectTransform:
   m_Children:
   - {fileID: 5307918888006796544}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -941,8 +949,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 88.99988}
-  m_SizeDelta: {x: 850, y: 850}
+  m_AnchoredPosition: {x: 0, y: -81}
+  m_SizeDelta: {x: 1024, y: 512}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1037860324042905976
 CanvasRenderer:
@@ -972,7 +980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce1c94388d13c454da5426aabfc8429f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64c1270055945d345b190d36b65ca10c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

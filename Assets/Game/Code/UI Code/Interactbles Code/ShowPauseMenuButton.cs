@@ -10,7 +10,7 @@ namespace Game
         {
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
-            OnSetMenuVisibility?.Raise(this,TargetMenuIds);
+            OnSetMenuVisibility.Raise(this,TargetMenuIds);
         } 
     }
 }

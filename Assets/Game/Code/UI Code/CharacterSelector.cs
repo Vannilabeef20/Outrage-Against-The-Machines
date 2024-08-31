@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using NaughtyAttributes;
+using UnityEngine.InputSystem.UI;
 using System.Linq;
 
 namespace Game
@@ -9,15 +11,11 @@ namespace Game
     public class CharacterSelector : MonoBehaviour
     {
         [SerializeField, ReadOnly] private bool wasTutorialCompleted;
-        [SerializeField] private Button confirmButton;
-        [SerializeField] private Button confirmTutorialButton;
-        [SerializeField] private LoadSceneButton tutorialButtonScript;
-        [SerializeField] private CharacterSelectionSwap[] selectionSwaps;
+
+        [SerializeField] CharacterSelectionSwap[] selectionSwaps;
 
         private void OnEnable()
         {
-            confirmButton.interactable = false;
-            confirmTutorialButton.interactable = false;
             GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
             GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
             if (PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
@@ -38,6 +36,7 @@ namespace Game
 
         public void RefreshConfirmButton(PlayerInput playerInput)
         {
+            /*
             if(GameManager.Instance.UnityInputManager.playerCount < 1)
             {
                 confirmButton.interactable = false;
@@ -55,6 +54,7 @@ namespace Game
                     tutorialButtonScript.AnimateInteractible(0.1f, 10f, true, false);
                 }
             }
+            */
         }
 
         public void ConfirmSelection()
