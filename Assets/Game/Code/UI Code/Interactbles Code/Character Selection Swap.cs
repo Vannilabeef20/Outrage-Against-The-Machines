@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using NaughtyAttributes;
-using UnityEngine.InputSystem.UI;
 
 namespace Game
 {
@@ -15,16 +14,25 @@ namespace Game
         [SerializeField] Image speedArrowImage;
         [SerializeField] Button swapButton;
         [SerializeField] GameObject joinTextObject;
-        [SerializeField, ShowAssetPreview] Sprite[] selectionSprites;
-        [SerializeField, ShowAssetPreview] Sprite[] selectionDefenseSprites;
-        [SerializeField, ShowAssetPreview] Sprite[] selectionSpeedSprites;
-        [field: SerializeField, ShowAssetPreview] public GameObject[] SelectionPrefabs { get; private set; }
+
+        public CharacterOption[] characterOptions;
+
+        public CharacterOption SelectedCharacter => characterOptions[SelectionIndex];
+
         [field: SerializeField, ReadOnly] public int SelectionIndex { get; private set; }
 
-        private void OnEnable()
+        private void Start()
         {
             GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
             GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshImage);
+        }
+        private void OnEnable()
+        {
+            if(GameManager.Instance != null)
+            {
+                GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
+                GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshImage);
+            }
 
             if (GameManager.Instance.UnityInputManager.playerCount - 1 < PlayerIndex)
             {
@@ -50,9 +58,9 @@ namespace Game
                 defenseArrowImage.enabled = true;
                 speedArrowImage.enabled = true;
 
-                selectionImage.sprite = selectionSprites[SelectionIndex];
-                defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-                speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
+                selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+                defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
+                speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
             }
         }
         private void OnDisable()
@@ -63,17 +71,17 @@ namespace Game
         public void Swap()
         {
             SelectionIndex++;
-            if (SelectionIndex >= 2) 
+            if (SelectionIndex >= characterOptions.Length) 
             {
                 SelectionIndex = 0;
             }
             if (SelectionIndex < 0)
             {
-                SelectionIndex = 2;
+                SelectionIndex = characterOptions.Length;
             }
-            selectionImage.sprite = selectionSprites[SelectionIndex];
-            defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-            speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
+            selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+            defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
+            speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
         }
 
         public void RefreshImage(PlayerInput playerInput)
@@ -84,7 +92,7 @@ namespace Game
             }
             if (GameManager.Instance.UnityInputManager.playerCount - 1 < PlayerIndex)
             {
-                //SinglePlayer
+                //Player not active
 
                 SelectionIndex = -1;
 
@@ -96,34 +104,10 @@ namespace Game
                 swapButton.image.enabled = false;
                 swapButton.enabled = false;
 
-                if (playerInput.playerIndex != 0) return;
-
-                GameManager.Instance.singlePlayerEventSystem.SetSelectedGameObject(swapButton.gameObject);
-
                 return;
             }
 
-            //Multiplayer
-
-            MultiplayerEventSystem eventSystem;
-            switch(playerInput.playerIndex)
-            {
-                case 0:
-                    eventSystem = GameManager.Instance.player1EventSystem;
-                    break;
-                case 1:
-                    eventSystem = GameManager.Instance.player2EventSystem;
-                    break;
-                case 2:
-                    eventSystem = GameManager.Instance.player3EventSystem;
-                    break;
-                default:
-                    eventSystem = GameManager.Instance.player1EventSystem;
-                    break;
-            }
-
-            eventSystem.SetSelectedGameObject(swapButton.gameObject);
-            eventSystem.playerRoot = selectionImage.gameObject;
+            //Player Active
 
             SelectionIndex = 0;
 
@@ -135,10 +119,36 @@ namespace Game
             defenseArrowImage.enabled = true;
             speedArrowImage.enabled = true;
 
-            selectionImage.sprite = selectionSprites[SelectionIndex];
-            defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-            speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
-            
+            selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+            defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
+            speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
+
         }
+
+        private void OnValidate()
+        {
+            foreach(var option in characterOptions)
+            {
+                if (option.prefab == null) option.Name = "Null";
+
+                else option.Name = option.prefab.name;
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class CharacterOption
+    {
+        [HideInInspector] public string Name;
+
+        [ShowAssetPreview] public GameObject prefab;
+
+        [ShowAssetPreview] public Sprite characterSprite;
+
+        [ShowAssetPreview] public Sprite characterIcon;
+
+        [ShowAssetPreview] public Sprite defenseSprite;
+
+        [ShowAssetPreview] public Sprite speedSprite;
     }
 }

@@ -488,22 +488,7 @@ MonoBehaviour:
   speedArrowImage: {fileID: 4596487124911536019}
   swapButton: {fileID: 4596487123794322418}
   joinTextObject: {fileID: 4596487125050045508}
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  selectionDefenseSprites:
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  selectionSpeedSprites:
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  <SelectionPrefabs>k__BackingField:
-  - {fileID: 6756082609593835265, guid: 04359ec8c1a34d14ca4ad4ad32b49fd7, type: 3}
-  - {fileID: 6838143541679345078, guid: 08d352f9beb28524cb9bde8f487a072d, type: 3}
-  - {fileID: 6756082609593835265, guid: 04359ec8c1a34d14ca4ad4ad32b49fd7, type: 3}
+  characterOptions: []
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487123794322419
 MonoBehaviour:
@@ -1254,7 +1239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4596487124267608207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1295,16 +1280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuId: 32
-  selection: 1
-  allowMultipleSelection: 1
-  singlePlayerSelectableObject: {fileID: 4596487124850303752}
-  P1_SelectableObject: {fileID: 4596487124850303752}
-  P2_SelectableObject: {fileID: 4596487123794322416}
-  P3_SelectableObject: {fileID: 4596487124575117015}
-  singlePlayerRoot: {fileID: 4596487125470007814}
-  P1_root: {fileID: 4596487125470007814}
-  P2_root: {fileID: 4596487125078397879}
-  P3_root: {fileID: 4596487125234306660}
+  selection: 0
+  selectableObject: {fileID: 0}
 --- !u!114 &4596487124267608201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1599,22 +1576,7 @@ MonoBehaviour:
   speedArrowImage: {fileID: 4596487124403533615}
   swapButton: {fileID: 4596487124575117009}
   joinTextObject: {fileID: 4596487124946634928}
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  selectionDefenseSprites:
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  selectionSpeedSprites:
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  <SelectionPrefabs>k__BackingField:
-  - {fileID: 6756082609593835265, guid: 0ac64eb03afdd4844b1a501d5f839870, type: 3}
-  - {fileID: 6838143541679345078, guid: 2322a93191cf4fa4485c42d0b5fbce89, type: 3}
-  - {fileID: 6756082609593835265, guid: 0ac64eb03afdd4844b1a501d5f839870, type: 3}
+  characterOptions: []
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487124575117010
 MonoBehaviour:
@@ -2207,22 +2169,17 @@ MonoBehaviour:
   speedArrowImage: {fileID: 4596487124791864840}
   swapButton: {fileID: 4596487124850303754}
   joinTextObject: {fileID: 4596487123755900860}
-  selectionSprites:
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  - {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-  - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  selectionDefenseSprites:
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  selectionSpeedSprites:
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  - {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
-  - {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
-  <SelectionPrefabs>k__BackingField:
-  - {fileID: 6756082609593835265, guid: 539e64dd56f81d049bec0cc3526aea59, type: 3}
-  - {fileID: 6838143541679345078, guid: a6cfaf2811a024b4caf3ccf66fe8ab4f, type: 3}
-  - {fileID: 6756082609593835265, guid: 539e64dd56f81d049bec0cc3526aea59, type: 3}
+  characterOptions:
+  - Name: Cow P1
+    prefab: {fileID: 6756082609593835265, guid: 539e64dd56f81d049bec0cc3526aea59, type: 3}
+    characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+    defenseSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+    speedSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - Name: Rooster P1
+    prefab: {fileID: 6838143541679345078, guid: a6cfaf2811a024b4caf3ccf66fe8ab4f, type: 3}
+    characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+    defenseSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+    speedSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487124850303755
 MonoBehaviour:

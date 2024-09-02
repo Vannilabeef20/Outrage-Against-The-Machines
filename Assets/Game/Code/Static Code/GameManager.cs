@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem.UI;
 using UnityEngine.EventSystems;
 using FMODUnity;
 #if UNITY_EDITOR
@@ -21,21 +20,15 @@ namespace Game
 
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
-        [SerializeField, ReadOnly] List<PlayerInput> playerRoots; 
-
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
 
         #region Players Params
         [field: Header("PLAYERS"), HorizontalLine(2f, EColor.Orange)]
 
         public PlayerInputManager UnityInputManager;
-        [Space]
-        public EventSystem singlePlayerEventSystem;
-        public MultiplayerEventSystem player1EventSystem;
-        public MultiplayerEventSystem player2EventSystem;
-        public MultiplayerEventSystem player3EventSystem;
+
         [field: Space]
-        [field: SerializeField] public GameObject DefaultPrefab { get; private set; }
+        [field: SerializeField] public PlayerCharacter DefaultPlayer { get; private set; }
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
 
@@ -88,7 +81,7 @@ namespace Game
             }
             else
             {
-                InitializeLevel();
+                 InitializeLevel();
                 CurrentLifeAmount = initialLifeAmout;
                 UpdateLifeCount.Raise(this, CurrentLifeAmount);
                 OnSetMenuVisibility.Raise(this, MenuId.None);               
@@ -132,8 +125,8 @@ namespace Game
 
             if (PlayerCharacterList.Count == 0) //Starting the game at a gameplay scene
             {
-                PlayerCharacterList.Add(new PlayerCharacter(DefaultPrefab, 0, null, null));
-                PlayerCharacterList[0].GameObject = Instantiate(DefaultPrefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList.Add(DefaultPlayer);
+                PlayerCharacterList[0].GameObject = Instantiate(PlayerCharacterList[0].Prefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
                 PlayerCharacterList[0].Transform = PlayerCharacterList[0].GameObject.transform;
                 PlayerCharacterList[0].Transform.position = LevelManager.Instance.SpawnCoordinates[0];
                 PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
@@ -143,83 +136,18 @@ namespace Game
             {
                 for (int i = 0; i < PlayerCharacterList.Count; i++) 
                 {
-                    UnityInputManager.playerPrefab = PlayerCharacterList[i].PlayerPrefab;
+                    UnityInputManager.playerPrefab = PlayerCharacterList[i].Prefab;
 
                     PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1,
                         PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
                     PlayerCharacterList[i].Transform = PlayerCharacterList[i].GameObject.transform;
                     Rigidbody rb = PlayerCharacterList[i].GameObject.GetComponent<Rigidbody>();
-                    rb.position = LevelManager.Instance.SpawnCoordinates[PlayerCharacterList[i].PlayerIndex];
+                    rb.position = LevelManager.Instance.SpawnCoordinates[PlayerCharacterList[i].Index];
                     PlayerCharacterList[i].HealthHandler = PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                     PlayerCharacterList[i].isPlayerActive = true;
                 }
             }
             Instantiate(followGroupPrefab);
-        }
-
-        public void LeaveSetPlayerEventSystem(PlayerInput playerInput)
-        {
-            if (UnityInputManager.playerCount <= 1)
-            {
-                singlePlayerEventSystem.enabled = true;
-                playerRoots[0].uiInputModule = singlePlayerEventSystem.GetComponent<InputSystemUIInputModule>();
-                player1EventSystem.enabled = false;
-                player2EventSystem.enabled = false;
-                player3EventSystem.enabled = false;
-            }
-            else
-            {
-                singlePlayerEventSystem.enabled = false;
-                player1EventSystem.enabled = true;
-                player2EventSystem.enabled = true;
-                player3EventSystem.enabled = true;
-            }
-
-            playerRoots.Remove(playerInput);
-        }
-
-        public void JoinSetPlayerEventSystem(PlayerInput playerInput)
-        {
-            playerInput.camera = Camera.main;
-            playerRoots.Add(playerInput);
-
-            if (UnityInputManager.playerCount <= 1)
-            {
-                singlePlayerEventSystem.enabled = true;
-                player1EventSystem.enabled = false;
-                player2EventSystem.enabled = false;
-                player3EventSystem.enabled = false;
-            }
-            else
-            {
-                singlePlayerEventSystem.enabled = false;
-                player1EventSystem.enabled = true;
-                player2EventSystem.enabled = true;
-                player3EventSystem.enabled = true;
-            }
-
-            if(UnityInputManager.playerCount <= 1)
-            {
-                playerInput.uiInputModule = singlePlayerEventSystem.GetComponent<InputSystemUIInputModule>();
-                return;
-            }
-
-            foreach(var player in playerRoots)
-            {
-                switch (player.playerIndex)
-                {
-                    case 0:
-                        player.uiInputModule = player1EventSystem.GetComponent<InputSystemUIInputModule>();
-                        break;
-                    case 1:
-                        player.uiInputModule = player2EventSystem.GetComponent<InputSystemUIInputModule>();
-                        break;
-                    case 2:
-                        player.uiInputModule = player3EventSystem.GetComponent<InputSystemUIInputModule>();
-                        break;
-                }
-            }
-            
         }
 
         #region Rumble Methods
@@ -359,23 +287,26 @@ namespace Game
     [Serializable]
     public class PlayerCharacter
     {
-        [field: SerializeField] public GameObject PlayerPrefab { get; private set; }
-        [field: SerializeField] public int PlayerIndex { get; private set; }
-        [field: SerializeField] public string ControlScheme { get; private set; }
-        [field: SerializeField] public InputDevice[] Devices { get; private set; }
+        [field: SerializeField] public GameObject Prefab { get; private set; }
+        [field: SerializeField, ShowAssetPreview] public Sprite Icon { get; private set; }
+        [field: Space]
+        [field: SerializeField, ReadOnly, AllowNesting] public int Index { get; private set; }
+        [field: SerializeField, ReadOnly, AllowNesting] public string ControlScheme { get; private set; }
+        [field: SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices { get; private set; }
+        [Space]
+        [ReadOnly, AllowNesting] public bool isPlayerActive;
+        [ReadOnly, AllowNesting] public int scrapAmount;
+        [Space]
+        [ReadOnly, AllowNesting] public GameObject GameObject;
+        [ReadOnly, AllowNesting] public Transform Transform;
+        [ReadOnly, AllowNesting] public PlayerHealthHandler HealthHandler;
 
-        public bool isPlayerActive;
 
-        public GameObject GameObject;
-        public Transform Transform;
-        public PlayerHealthHandler HealthHandler;
-
-        public int scrapAmount;
-
-        public PlayerCharacter (GameObject playerPrefab, int playerIndex, string controlScheme, InputDevice[] devices)
+        public PlayerCharacter (GameObject playerPrefab, int playerIndex, Sprite playerIcon, string controlScheme, InputDevice[] devices)
         {
-            PlayerPrefab = playerPrefab;
-            PlayerIndex = playerIndex;
+            Prefab = playerPrefab;
+            Index = playerIndex;
+            Icon = playerIcon;
             ControlScheme = controlScheme;
             Devices = devices;
         }

@@ -1018,16 +1018,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d19692ad5e22c4aba484b26d2f3837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 0}
   menuId: 4
-  allowMultipleSelection: 0
-  singlePlayerSelectableObject: {fileID: 7281520080072508365}
-  P1_SelectableObject: {fileID: 0}
-  P2_SelectableObject: {fileID: 0}
-  P3_SelectableObject: {fileID: 0}
-  singlePlayerRoot: {fileID: 7281520080628757087}
-  P1_root: {fileID: 0}
-  P2_root: {fileID: 0}
-  P3_root: {fileID: 0}
+  selection: 1
+  playerNumber: 1
+  selectableObject: {fileID: 7281520080072508365}
+  root: {fileID: 7281520081364548255}
 --- !u!222 &7281520080628757089
 CanvasRenderer:
   m_ObjectHideFlags: 0

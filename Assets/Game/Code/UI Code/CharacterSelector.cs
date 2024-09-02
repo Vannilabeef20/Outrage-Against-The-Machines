@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using NaughtyAttributes;
-using UnityEngine.InputSystem.UI;
 using System.Linq;
 
 namespace Game
@@ -14,10 +13,27 @@ namespace Game
 
         [SerializeField] CharacterSelectionSwap[] selectionSwaps;
 
+        private void Start()
+        {
+            GameManager.Instance.UnityInputManager?.playerJoinedEvent.AddListener(RefreshConfirmButton);
+            GameManager.Instance.UnityInputManager?.playerLeftEvent.AddListener(RefreshConfirmButton);
+            if (PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
+            {
+                wasTutorialCompleted = true;
+            }
+            else
+            {
+                wasTutorialCompleted = false;
+            }
+        }
+
         private void OnEnable()
         {
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
-            GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
+            if(GameManager.Instance != null)
+            {
+                GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
+                GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
+            }
             if (PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
             {
                 wasTutorialCompleted = true;
@@ -62,15 +78,21 @@ namespace Game
             GameManager.Instance.PlayerCharacterList.Clear();
             PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
             playerInputs = playerInputs.OrderBy(input => input.playerIndex).ToArray();
-            for(int i = 0; i < selectionSwaps.Length; i++)
+
+            foreach(var swap in selectionSwaps)
             {
-                if (selectionSwaps[i].SelectionIndex < 0)
+                if (swap.SelectionIndex < 0)
                 {
                     continue;
                 }
-                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(selectionSwaps[i].SelectionPrefabs[selectionSwaps[i].SelectionIndex],
-                    selectionSwaps[i].PlayerIndex, playerInputs[selectionSwaps[i].PlayerIndex].currentControlScheme,
-                    playerInputs[selectionSwaps[i].PlayerIndex].devices.ToArray()));
+                PlayerCharacter newPlayer = new PlayerCharacter(
+                    swap.SelectedCharacter.prefab,
+                    swap.PlayerIndex,
+                    swap.SelectedCharacter.characterIcon,
+                    playerInputs[swap.PlayerIndex].currentControlScheme,
+                    playerInputs[swap.PlayerIndex].devices.ToArray());
+
+                GameManager.Instance.PlayerCharacterList.Add(newPlayer);
             }
         }
         public void ClearPlayer(MenuId menuId)

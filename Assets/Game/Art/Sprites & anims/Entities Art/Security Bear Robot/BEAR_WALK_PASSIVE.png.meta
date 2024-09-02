@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b975596152200124da311b9efe16f6fc
+guid: 5f67cd9a94c85a74c89531e0206503cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,11 +103,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BEAR_DAMAGE_0
+      name: BEAR_WALK_PASSIVE_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9677095c36656b74f8259fad8795aa01
-      internalID: 2102261765
+      spriteID: 70b4bdd8356c0754aabc108a1a4670de
+      internalID: -1257875205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_1
+      name: BEAR_WALK_PASSIVE_1
       rect:
         serializedVersion: 2
         x: 96
@@ -142,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80ba4c863162fa14ca981606c6d98692
-      internalID: 561438235
+      spriteID: 6bec70b7aae846b4da53c2ce10ba901f
+      internalID: -633229676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_2
+      name: BEAR_WALK_PASSIVE_2
       rect:
         serializedVersion: 2
         x: 192
@@ -163,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2577332b3453a54686c41b34a617d87
-      internalID: 1739929282
+      spriteID: 828cab1c60b8079409a66fc5422e7c7a
+      internalID: -1433371446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_3
+      name: BEAR_WALK_PASSIVE_3
       rect:
         serializedVersion: 2
         x: 0
@@ -184,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 244d831451a0a564e8e0d8969f341246
-      internalID: -1739957296
+      spriteID: b48f8cee76450584ca60a2dfed94d4e8
+      internalID: -165566582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_4
+      name: BEAR_WALK_PASSIVE_4
       rect:
         serializedVersion: 2
         x: 96
@@ -205,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e19b820b915690a418b59728a3f19f53
-      internalID: -1777704496
+      spriteID: fa55e1c7bfbaa6b4681cf37bc35ef7db
+      internalID: 311982618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_5
+      name: BEAR_WALK_PASSIVE_5
       rect:
         serializedVersion: 2
         x: 192
@@ -226,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bc96343c46669f4aa09bf7eef3e90ad
-      internalID: -82272747
+      spriteID: 8aaa193a11851c74ab332ea830313be6
+      internalID: -329516944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_6
+      name: BEAR_WALK_PASSIVE_6
       rect:
         serializedVersion: 2
         x: 0
@@ -247,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 684a9c6f4ad1b164cbbabac78e120673
-      internalID: -1077943122
+      spriteID: a9aed7ff3d6316b41b123cf0dfadcc89
+      internalID: -286897679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_7
+      name: BEAR_WALK_PASSIVE_7
       rect:
         serializedVersion: 2
         x: 96
@@ -268,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6ed153b840d0804e9c3410253798453
-      internalID: -224136775
+      spriteID: 1771d46c57fbf71489dc3e8d678666d1
+      internalID: -2132743418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_DAMAGE_8
+      name: BEAR_WALK_PASSIVE_8
       rect:
         serializedVersion: 2
         x: 192
@@ -289,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcfa78a7b3b3d884aacc37cc7f08ecca
-      internalID: -1152136969
+      spriteID: 1db9fd76a8108944890195a60d794cf9
+      internalID: -1681248697
       vertices: []
       indices: 
       edges: []
@@ -306,15 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BEAR_DAMAGE_5: -82272747
-      BEAR_DAMAGE_3: -1739957296
-      BEAR_DAMAGE_0: 2102261765
-      BEAR_DAMAGE_6: -1077943122
-      BEAR_DAMAGE_8: -1152136969
-      BEAR_DAMAGE_4: -1777704496
-      BEAR_DAMAGE_2: 1739929282
-      BEAR_DAMAGE_1: 561438235
-      BEAR_DAMAGE_7: -224136775
+      BEAR_WALK_PASSIVE_4: 311982618
+      BEAR_WALK_PASSIVE_1: -633229676
+      BEAR_WALK_PASSIVE_8: -1681248697
+      BEAR_WALK_PASSIVE_2: -1433371446
+      BEAR_WALK_PASSIVE_3: -165566582
+      BEAR_WALK_PASSIVE_7: -2132743418
+      BEAR_WALK_PASSIVE_0: -1257875205
+      BEAR_WALK_PASSIVE_6: -286897679
+      BEAR_WALK_PASSIVE_5: -329516944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
