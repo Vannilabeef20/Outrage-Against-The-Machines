@@ -435,6 +435,8 @@ GameObject:
   - component: {fileID: 4596487123794322430}
   - component: {fileID: 4596487123794322419}
   - component: {fileID: 4596487123794322418}
+  - component: {fileID: 6790970806538577171}
+  - component: {fileID: 2418540348200393947}
   m_Layer: 5
   m_Name: Player_2 Selection Arrow
   m_TagString: Untagged
@@ -488,7 +490,19 @@ MonoBehaviour:
   speedArrowImage: {fileID: 4596487124911536019}
   swapButton: {fileID: 4596487123794322418}
   joinTextObject: {fileID: 4596487125050045508}
-  characterOptions: []
+  characterOptions:
+  - Name: Cow P2
+    prefab: {fileID: 6756082609593835265, guid: 04359ec8c1a34d14ca4ad4ad32b49fd7, type: 3}
+    characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+    characterIcon: {fileID: 21300000, guid: 89b1b1ad94314e9459989e0e9450e854, type: 3}
+    defenseSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+    speedSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - Name: Rooster P2
+    prefab: {fileID: 6838143541679345078, guid: 08d352f9beb28524cb9bde8f487a072d, type: 3}
+    characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+    characterIcon: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
+    defenseSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+    speedSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487123794322419
 MonoBehaviour:
@@ -576,6 +590,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6790970806538577171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487123794322416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f78199bf046dec458eb91e77bb1baa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d63b1c40ff1f61848b2d63596da48304, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2418540348200393947}
+        m_TargetAssemblyTypeName: Game.PlayerInputReaction, Assembly-CSharp
+        m_MethodName: React
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2418540348200393947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487123794322416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ee8ec6c10a66847a14a20894c4ca98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4596487123794322418}
+  playerInput: 7
+  PlayerExclusive: 1
+  playerIndex: 1
 --- !u!1 &4596487123898438335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4596487124267608207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1523,6 +1581,8 @@ GameObject:
   - component: {fileID: 4596487124575117021}
   - component: {fileID: 4596487124575117010}
   - component: {fileID: 4596487124575117009}
+  - component: {fileID: 6125500115151748456}
+  - component: {fileID: 2415083643212677352}
   m_Layer: 5
   m_Name: Player_3 Selection Arrow
   m_TagString: Untagged
@@ -1576,7 +1636,19 @@ MonoBehaviour:
   speedArrowImage: {fileID: 4596487124403533615}
   swapButton: {fileID: 4596487124575117009}
   joinTextObject: {fileID: 4596487124946634928}
-  characterOptions: []
+  characterOptions:
+  - Name: Cow P3
+    prefab: {fileID: 6756082609593835265, guid: 0ac64eb03afdd4844b1a501d5f839870, type: 3}
+    characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+    characterIcon: {fileID: 21300000, guid: 89b1b1ad94314e9459989e0e9450e854, type: 3}
+    defenseSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
+    speedSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+  - Name: Rooster P3
+    prefab: {fileID: 6838143541679345078, guid: 2322a93191cf4fa4485c42d0b5fbce89, type: 3}
+    characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+    characterIcon: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
+    defenseSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
+    speedSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &4596487124575117010
 MonoBehaviour:
@@ -1664,6 +1736,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6125500115151748456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124575117015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f78199bf046dec458eb91e77bb1baa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d63b1c40ff1f61848b2d63596da48304, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2415083643212677352}
+        m_TargetAssemblyTypeName: Game.PlayerInputReaction, Assembly-CSharp
+        m_MethodName: React
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2415083643212677352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124575117015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ee8ec6c10a66847a14a20894c4ca98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4596487124575117009}
+  playerInput: 7
+  PlayerExclusive: 1
+  playerIndex: 2
 --- !u!1 &4596487124666657884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,6 +2232,8 @@ GameObject:
   - component: {fileID: 4596487124850303862}
   - component: {fileID: 4596487124850303755}
   - component: {fileID: 4596487124850303754}
+  - component: {fileID: 5628089782990032286}
+  - component: {fileID: 2863642913644215942}
   m_Layer: 5
   m_Name: Player_1 Selection Arrow
   m_TagString: Untagged
@@ -2173,11 +2291,13 @@ MonoBehaviour:
   - Name: Cow P1
     prefab: {fileID: 6756082609593835265, guid: 539e64dd56f81d049bec0cc3526aea59, type: 3}
     characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+    characterIcon: {fileID: 21300000, guid: 89b1b1ad94314e9459989e0e9450e854, type: 3}
     defenseSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
     speedSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
   - Name: Rooster P1
     prefab: {fileID: 6838143541679345078, guid: a6cfaf2811a024b4caf3ccf66fe8ab4f, type: 3}
     characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
+    characterIcon: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
     defenseSprite: {fileID: 21300000, guid: 17cb9a60b5372d540aae929e126679c7, type: 3}
     speedSprite: {fileID: 21300000, guid: b76f82f5b2084884aa6040796cb3c7da, type: 3}
   <SelectionIndex>k__BackingField: 0
@@ -2267,6 +2387,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5628089782990032286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124850303752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f78199bf046dec458eb91e77bb1baa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d63b1c40ff1f61848b2d63596da48304, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2863642913644215942}
+        m_TargetAssemblyTypeName: Game.PlayerInputReaction, Assembly-CSharp
+        m_MethodName: React
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2863642913644215942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124850303752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ee8ec6c10a66847a14a20894c4ca98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4596487124850303754}
+  playerInput: 7
+  PlayerExclusive: 1
+  playerIndex: 0
 --- !u!1 &4596487124860275131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,7 +2630,7 @@ RectTransform:
   m_Children:
   - {fileID: 4596487124267608207}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

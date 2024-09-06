@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -56,7 +56,87 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8714e2f-c4d9-4427-a5e0-b250b18c303f
+    m_ActionName: Inputs/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20091476-0251-4615-b4bf-b3698933d512
+    m_ActionName: Inputs/Punch[/XInputControllerWindows/buttonWest,/Keyboard/p,/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c615223-f831-4d45-9d7f-c32bcf63ea6b
+    m_ActionName: Inputs/Kick[/Keyboard/o,/XInputControllerWindows/buttonEast,/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d04de752-e0c0-42ac-9711-ba0c0143c150
+    m_ActionName: Inputs/Interact[/XInputControllerWindows/buttonNorth,/Keyboard/u,/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef492ce5-af38-43cc-8ddb-74f6756c441c
+    m_ActionName: Inputs/Special[/XInputControllerWindows/rightShoulder,/Keyboard/i,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23b89897-d25c-459a-8f32-4a94bb7f39a8
+    m_ActionName: Inputs/RunningAttack_L[/XInputControllerWindows/leftStick/left,/Keyboard/a,/Keyboard/leftArrow,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e816a13-ca52-4956-bcd1-16a3b970b52e
+    m_ActionName: Inputs/RunningAttack_R[/XInputControllerWindows/leftStick/right,/Keyboard/d,/Keyboard/rightArrow,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d0352cad-2198-4c59-82e9-97478d988c5a
+    m_ActionName: Inputs/OpenCloseMenu[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1b2fc2b0-4dce-41ff-b9ce-48fd3e71f0b5
+    m_ActionName: Inputs/Join[/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a473a82-8a3c-4485-aee9-60ed15101b8d
+    m_ActionName: Inputs/DebugMode[/XInputControllerWindows/select,/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f920cd5f-6812-4be7-aec7-9ba9bd092cdd
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 71ee069b-fb8d-4d71-a133-d3174a87b13b
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78fc2eb6-bc23-47b3-985d-e98919290016
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd1420c6-c3b4-4167-8e32-76b71accbde1
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 830f314b-ddc0-4fea-827c-77deeecb9f55
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7aa20fa1-57d5-4dd0-a05d-9a60dcb81f93
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba10f3e5-bafc-4bab-8a9a-ed47ec6f21f5
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dd449ceb-94c3-47b0-bd85-f7bc60fdde5e
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 461afc6a-f9df-40d7-98f2-5e6bb6f0f368
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1d9f9c14-4a80-479e-9237-e4008d4be8fa
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI

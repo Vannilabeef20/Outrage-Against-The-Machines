@@ -1140,15 +1140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuId: 16
   selection: 1
-  allowMultipleSelection: 0
-  singlePlayerSelectableObject: {fileID: 8085580427710845322}
-  P1_SelectableObject: {fileID: 0}
-  P2_SelectableObject: {fileID: 0}
-  P3_SelectableObject: {fileID: 0}
-  singlePlayerRoot: {fileID: 8085580427240858847}
-  P1_root: {fileID: 0}
-  P2_root: {fileID: 0}
-  P3_root: {fileID: 0}
+  selectableObject: {fileID: 8085580427710845322}
 --- !u!114 &8085580427240858843
 MonoBehaviour:
   m_ObjectHideFlags: 0
