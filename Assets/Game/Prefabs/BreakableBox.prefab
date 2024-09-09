@@ -44,6 +44,9 @@ GameObject:
   - component: {fileID: 4574465553870493326}
   - component: {fileID: 1488542923154001147}
   - component: {fileID: 1488542923154001140}
+  - component: {fileID: 4942430763238729706}
+  - component: {fileID: 6852360633322229470}
+  - component: {fileID: 4051650251682079433}
   m_Layer: 8
   m_Name: BreakableBox
   m_TagString: Untagged
@@ -133,12 +136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referencePoint: {fileID: 1488542922225973092}
+  dropEmitter: {fileID: 4942430763238729706}
   scrapUnit: {fileID: 4225638560684016975, guid: 49fe93000a37d1c408f41c6093e83f86, type: 3}
   scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
   scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
   rotAngle: 45
-  minScapDrop: 20
-  maxScapDrop: 30
+  minScapDrop: 10
+  maxScapDrop: 15
   hasReserveScrap: 0
   reserveAmount: 0
   randomAmount: 0
@@ -216,3 +220,77 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9821625, y: 4.225527, z: 0.9174768}
   m_Center: {x: -0.008918762, y: 0.31964403, z: -0.4212616}
+--- !u!114 &4942430763238729706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488542923154001142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1872307531
+      Data2: 1075664795
+      Data3: -690426948
+      Data4: -263032870
+    Path: event:/SFX/Coins/Coin Drop
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6852360633322229470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488542923154001142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4051650251682079433}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4051650251682079433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488542923154001142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reversed: 0
+  audioEmitters:
+  - {fileID: 4942430763238729706}
