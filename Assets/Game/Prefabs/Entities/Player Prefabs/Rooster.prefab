@@ -353,7 +353,19 @@ MonoBehaviour:
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 588689491332936778}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DeviceRegainedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -487,36 +499,28 @@ MonoBehaviour:
     m_ActionName: Inputs/RunningAttack_R[/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 2978f8cf-0de2-4df0-a5e1-e4f7f8d7e57a
-    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionId: 71ee069b-fb8d-4d71-a133-d3174a87b13b
+    m_ActionName: UI/Confirm[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 6ea34a45-4817-4916-b74b-d8fa14882552
-    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5db705d3-11e8-41e8-9120-6c0ac41cc52f
+    m_ActionId: 78fc2eb6-bc23-47b3-985d-e98919290016
     m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: ef1bd3ff-78cf-4ba4-852a-d2bbd6128dad
-    m_ActionName: UI/Point[/Mouse/position]
+    m_ActionId: 202af3aa-c9af-445d-9810-4395b64409e2
+    m_ActionName: UI/Navigate_Up[/XInputControllerWindows/dpad/up,/XInputControllerWindows/leftStick/up,/Keyboard/w,/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 8d86cd72-eeae-43de-91f4-c053204b6fc7
-    m_ActionName: UI/Click[/Mouse/leftButton]
+    m_ActionId: 0088229d-9bb8-46a5-b629-6f5cd590626b
+    m_ActionName: UI/Navigate_Down[/Keyboard/downArrow,/Keyboard/s,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/dpad/down]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 868acdbd-524c-4f2a-ba33-a469439d0b27
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+    m_ActionId: a38f4e8d-0308-4389-8f0f-c8da883350bb
+    m_ActionName: UI/Navigate_Left[/XInputControllerWindows/dpad/left,/XInputControllerWindows/leftStick/left,/Keyboard/a,/Keyboard/leftArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 9da21fe7-01c2-4354-b6bb-c2443cfc3634
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 02453df9-24ed-4b27-9aa7-1834eeeeaee3
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
+    m_ActionId: 61467c11-a2d4-42d3-a2ff-48faa02424a3
+    m_ActionName: UI/Navigate_Right[/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/right,/Keyboard/d,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Inputs

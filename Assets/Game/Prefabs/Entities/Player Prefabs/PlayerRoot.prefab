@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6643640326699574186}
   - component: {fileID: 5628649476368703307}
+  - component: {fileID: 7185033564131998189}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Untagged
@@ -98,47 +99,117 @@ MonoBehaviour:
     m_ActionId: 5a473a82-8a3c-4485-aee9-60ed15101b8d
     m_ActionName: Inputs/DebugMode[/XInputControllerWindows/select,/Keyboard/tab]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f920cd5f-6812-4be7-aec7-9ba9bd092cdd
-    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 71ee069b-fb8d-4d71-a133-d3174a87b13b
     m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 78fc2eb6-bc23-47b3-985d-e98919290016
     m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bd1420c6-c3b4-4167-8e32-76b71accbde1
-    m_ActionName: UI/Point[/Mouse/position]
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 202af3aa-c9af-445d-9810-4395b64409e2
+    m_ActionName: UI/Navigate_Up[/Keyboard/w,/Keyboard/upArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 830f314b-ddc0-4fea-827c-77deeecb9f55
-    m_ActionName: UI/Click[/Mouse/leftButton]
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0088229d-9bb8-46a5-b629-6f5cd590626b
+    m_ActionName: UI/Navigate_Down[/Keyboard/downArrow,/Keyboard/s]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7aa20fa1-57d5-4dd0-a05d-9a60dcb81f93
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a38f4e8d-0308-4389-8f0f-c8da883350bb
+    m_ActionName: UI/Navigate_Left[/Keyboard/a,/Keyboard/leftArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ba10f3e5-bafc-4bab-8a9a-ed47ec6f21f5
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dd449ceb-94c3-47b0-bd85-f7bc60fdde5e
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 461afc6a-f9df-40d7-98f2-5e6bb6f0f368
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1d9f9c14-4a80-479e-9237-e4008d4be8fa
-    m_ActionName: UI/TrackedDeviceOrientation
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61467c11-a2d4-42d3-a2ff-48faa02424a3
+    m_ActionName: UI/Navigate_Right[/Keyboard/d,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7185033564131998189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211313260985814815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9814ffd8ca6b56540b912aa145c2a6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5628649476368703307}
+  inputEvent: {fileID: 11400000, guid: d63b1c40ff1f61848b2d63596da48304, type: 2}

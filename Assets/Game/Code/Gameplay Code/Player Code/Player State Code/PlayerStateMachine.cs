@@ -150,14 +150,19 @@ namespace Game
 
         public void PauseGame(InputAction.CallbackContext context)
         {
-            if(SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                return;
-            }
-            if (!context.performed)
-            {
-                return;
-            }
+            if (!context.performed) return;
+
+            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+
+            GameManager.Instance.PauseGame();
+        }
+
+        public void PauseGame(PlayerInput input)
+        {
+            if (input != playerInput) return;
+
+            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+
             GameManager.Instance.PauseGame();
         }
 

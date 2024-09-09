@@ -566,7 +566,7 @@
             "id": "da40fa19-362c-4d5a-87c5-f19ff6130cce",
             "actions": [
                 {
-                    "name": "Submit",
+                    "name": "Confirm",
                     "type": "Button",
                     "id": "71ee069b-fb8d-4d71-a133-d3174a87b13b",
                     "expectedControlType": "Button",
@@ -628,7 +628,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR;Keyboard",
-                    "action": "Submit",
+                    "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

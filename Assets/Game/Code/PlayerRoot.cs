@@ -22,7 +22,7 @@ namespace Game
 
 			EPlayerInput input = (EPlayerInput)Enum.Parse(typeof(EPlayerInput), context.action.name);
 
-			inputEvent.Raise(this, new PlayerGameInput(playerInput.playerIndex, input));
+			inputEvent.Raise(this, new PlayerGameInput((int)playerInput.user.index, input));
 		}
 	}
 }

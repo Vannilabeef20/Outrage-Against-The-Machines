@@ -18,6 +18,8 @@ namespace Game
     {
         public static GameManager Instance{ get; private set; }
 
+        [SerializeField] GameObject root;
+
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
@@ -81,7 +83,7 @@ namespace Game
             }
             else
             {
-                 InitializeLevel();
+                InitializeLevel();
                 CurrentLifeAmount = initialLifeAmout;
                 UpdateLifeCount.Raise(this, CurrentLifeAmount);
                 OnSetMenuVisibility.Raise(this, MenuId.None);               
@@ -108,6 +110,7 @@ namespace Game
             {
                 OnSetMenuVisibility.Raise(this, MenuId.None);
                 InitializeLevel();
+                UnityInputManager.playerPrefab = root;
             }           
         }
 
