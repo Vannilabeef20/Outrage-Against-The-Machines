@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36ada5efa756a8e4482bcf92db6bd89f
+guid: 917a913db21055b4fbe45c0ec0152b9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,17 +103,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_0
+      name: UI_MONEY Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 96
-        height: 96
+        x: 12
+        y: 32
+        width: 9
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4def9691f08d1ea49a15ed6598918960
-      internalID: 362998439
+      spriteID: 4b3d3cf3b034c70408a86ffa6cd2f243
+      internalID: 1219622209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_1
+      name: UI_MONEY Sheet_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 96
-        height: 96
+        x: 31
+        y: 32
+        width: 17
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79a5c1005a34bb40b6d9d0a94208741
-      internalID: -1729464258
+      spriteID: 03f9990e0bd168a43b98aad2c3a1f0c4
+      internalID: -1192916885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_2
+      name: UI_MONEY Sheet_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 96
-        height: 96
+        x: 53
+        y: 32
+        width: 23
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d97fe470574495e44b32682b7241b085
-      internalID: -1457640145
+      spriteID: fe9ad535ad7d8a7439ab0099ef403e63
+      internalID: -1027566528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_3
+      name: UI_MONEY Sheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 96
-        height: 96
+        x: 92
+        y: 32
+        width: 9
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1c7035ed1927494482f41bf6dca4c35
-      internalID: 1186331996
+      spriteID: f0a3510bbe3c81b4c9b1c56c4d82e2ed
+      internalID: 349663440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_4
+      name: UI_MONEY Sheet_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
+        x: 113
+        y: 32
+        width: 14
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412cb10879f1df0448d96deeeb4568c1
-      internalID: -440263959
+      spriteID: e4726ae421ed5d24387eabab90ea6782
+      internalID: 197698210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_5
+      name: UI_MONEY Sheet_5
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
-        width: 96
-        height: 96
+        x: 133
+        y: 32
+        width: 23
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +238,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2229ff79ac0cc164db89110cac5dd97b
-      internalID: -724085021
+      spriteID: 429aef83eee3d784ab5d544d0c9ff5bb
+      internalID: 471012456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_6
+      name: UI_MONEY Sheet_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 171
+        y: 32
+        width: 11
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05adec2200cbe240a9da721393b4ba3
+      internalID: 570653082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MONEY Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 32
+        width: 12
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3c0f4fd2a9c3341ba68e4e02cc1a7f
+      internalID: 435279495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MONEY Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 32
+        width: 22
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb496661ef6f22f40a922b714ebfb4bf
+      internalID: 230089937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MONEY Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 10
         y: 0
-        width: 96
-        height: 96
+        width: 13
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78868f91309233c47aad16ae3f887fb5
-      internalID: -1744069856
+      spriteID: 92eb4b372c653a5449d3aa20193e05f5
+      internalID: 1043302242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_7
+      name: UI_MONEY Sheet_10
       rect:
         serializedVersion: 2
-        x: 96
+        x: 26
         y: 0
-        width: 96
-        height: 96
+        width: 27
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7075325f9e536e04b96fae66664b57fc
-      internalID: -940970693
+      spriteID: 9eaf4ccd1332f434db2d7e7a72c575b7
+      internalID: 705949490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_8
+      name: UI_MONEY Sheet_11
       rect:
         serializedVersion: 2
-        x: 192
+        x: 54
         y: 0
-        width: 96
-        height: 96
+        width: 21
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,8 +364,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35322a0eef3134c42a98cc18a859a9ef
-      internalID: -1015356511
+      spriteID: f3493485a6288bf40a4f4bccc014451f
+      internalID: 501017965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MONEY Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 10
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff1a4f0e17712d4aa2e0f00500ffa41
+      internalID: 791939704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MONEY Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 0
+        width: 9
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8781dd4997e3e14689f430994e19a88
+      internalID: 1361703921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MONEY Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 17
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2973cd5791f46b4488d830a89bde65af
+      internalID: 884042602
       vertices: []
       indices: 
       edges: []
@@ -306,15 +444,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BEAR_IDLE_PASSIVE_0: 362998439
-      BEAR_IDLE_PASSIVE_4: -440263959
-      BEAR_IDLE_PASSIVE_6: -1744069856
-      BEAR_IDLE_PASSIVE_7: -940970693
-      BEAR_IDLE_PASSIVE_3: 1186331996
-      BEAR_IDLE_PASSIVE_1: -1729464258
-      BEAR_IDLE_PASSIVE_5: -724085021
-      BEAR_IDLE_PASSIVE_8: -1015356511
-      BEAR_IDLE_PASSIVE_2: -1457640145
+      UI_MONEY Sheet_1: -1192916885
+      UI_MONEY Sheet_0: 1219622209
+      UI_MONEY Sheet_9: 1043302242
+      UI_MONEY Sheet_14: 884042602
+      UI_MONEY Sheet_12: 791939704
+      UI_MONEY Sheet_10: 705949490
+      UI_MONEY Sheet_8: 230089937
+      UI_MONEY Sheet_3: 349663440
+      UI_MONEY Sheet_7: 435279495
+      UI_MONEY Sheet_11: 501017965
+      UI_MONEY Sheet_5: 471012456
+      UI_MONEY Sheet_13: 1361703921
+      UI_MONEY Sheet_6: 570653082
+      UI_MONEY Sheet_2: -1027566528
+      UI_MONEY Sheet_4: 197698210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

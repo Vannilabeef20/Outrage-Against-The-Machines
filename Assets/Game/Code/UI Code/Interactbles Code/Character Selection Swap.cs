@@ -1,93 +1,104 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using NaughtyAttributes;
-using UnityEngine.InputSystem.UI;
 
 namespace Game
 {
     public class CharacterSelectionSwap : MonoBehaviour
     {
-        [field: SerializeField] public int PlayerIndex { get; private set; }
+        [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
+        [SerializeField] Button swapButton;
+        [Space]
         [SerializeField] Image selectionImage;
         [SerializeField] Image defenseArrowImage;
         [SerializeField] Image speedArrowImage;
-        [SerializeField] Button swapButton;
+        [Space]
         [SerializeField] GameObject joinTextObject;
-        [SerializeField, ShowAssetPreview] Sprite[] selectionSprites;
-        [SerializeField, ShowAssetPreview] Sprite[] selectionDefenseSprites;
-        [SerializeField, ShowAssetPreview] Sprite[] selectionSpeedSprites;
-        [field: SerializeField, ShowAssetPreview] public GameObject[] SelectionPrefabs { get; private set; }
+        [SerializeField] GameObject readyObject;
+
+        [field: Header("PARAMETERS"), HorizontalLine(2F, EColor.Orange)]
+        [field: SerializeField] public bool IsReady { get; private set; }
+        [field: SerializeField] public int PlayerIndex { get; private set; }
+
+        public CharacterOption[] characterOptions;
+
         [field: SerializeField, ReadOnly] public int SelectionIndex { get; private set; }
 
+
+        public CharacterOption SelectedCharacter => characterOptions[SelectionIndex];
+
+        private void Start()
+        {
+            if(GameManager.Instance == null) 
+            this.LogError($"Character selection cant be active at the start.", EDebugSubjectFlags.Debug);
+        }
         private void OnEnable()
         {
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
-            GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshJoin);
 
-            if (GameManager.Instance.UnityInputManager.playerCount - 1 < PlayerIndex)
-            {
-                SelectionIndex = -1;
-
-                joinTextObject.SetActive(true);
-
-                selectionImage.enabled = false;
-                defenseArrowImage.enabled = false;
-                speedArrowImage.enabled = false;
-                swapButton.image.enabled = false;
-                swapButton.enabled = false;
-            }
-            else
-            {
-                SelectionIndex = 0;
-
-                joinTextObject.SetActive(false);
-
-                swapButton.image.enabled = true;
-                swapButton.enabled = true;
-                selectionImage.enabled = true;
-                defenseArrowImage.enabled = true;
-                speedArrowImage.enabled = true;
-
-                selectionImage.sprite = selectionSprites[SelectionIndex];
-                defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-                speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
-            }
+            SelectionIndex = -1;
+            RefreshSelection();
         }
         private void OnDisable()
         {
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshImage);
-            GameManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshImage);
+            SelectionIndex = -1;
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshJoin);
         }
         public void Swap()
         {
+            if (IsReady) return;
+
+            if (TransitionManager.Instance.IsTransitioning) return;
+
             SelectionIndex++;
-            if (SelectionIndex >= 2) 
+            if (SelectionIndex >= characterOptions.Length) 
             {
                 SelectionIndex = 0;
             }
             if (SelectionIndex < 0)
             {
-                SelectionIndex = 2;
+                SelectionIndex = characterOptions.Length;
             }
-            selectionImage.sprite = selectionSprites[SelectionIndex];
-            defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-            speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
+            selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+            defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
+            speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
         }
 
-        public void RefreshImage(PlayerInput playerInput)
+        public void SetSelection(int selectIndex)
         {
-            if(playerInput.playerIndex != PlayerIndex)
-            {
-                return;
-            }
-            if (GameManager.Instance.UnityInputManager.playerCount - 1 < PlayerIndex)
-            {
-                //SinglePlayer
+            IsReady = false;
+            SelectionIndex = selectIndex;
 
-                SelectionIndex = -1;
+            RefreshSelection();
+        }
 
+        public void RefreshJoin(PlayerInput playerInput) //Called on join
+        {
+            if (playerInput.user.index != PlayerIndex) return;
+
+            IsReady = false;
+            SelectionIndex = 0;
+            RefreshSelection();
+        }
+
+        public void ToggleReady()
+        {
+            IsReady = !IsReady;
+            readyObject.SetActive(IsReady);
+        }
+
+
+        public void RefreshSelection()
+        {
+            readyObject.SetActive(IsReady);
+
+            if (SelectionIndex == -1) //Respective player not joined
+            {
                 joinTextObject.SetActive(true);
 
                 selectionImage.enabled = false;
@@ -96,36 +107,10 @@ namespace Game
                 swapButton.image.enabled = false;
                 swapButton.enabled = false;
 
-                if (playerInput.playerIndex != 0) return;
-
-                GameManager.Instance.singlePlayerEventSystem.SetSelectedGameObject(swapButton.gameObject);
-
                 return;
             }
 
-            //Multiplayer
-
-            MultiplayerEventSystem eventSystem;
-            switch(playerInput.playerIndex)
-            {
-                case 0:
-                    eventSystem = GameManager.Instance.player1EventSystem;
-                    break;
-                case 1:
-                    eventSystem = GameManager.Instance.player2EventSystem;
-                    break;
-                case 2:
-                    eventSystem = GameManager.Instance.player3EventSystem;
-                    break;
-                default:
-                    eventSystem = GameManager.Instance.player1EventSystem;
-                    break;
-            }
-
-            eventSystem.SetSelectedGameObject(swapButton.gameObject);
-            eventSystem.playerRoot = selectionImage.gameObject;
-
-            SelectionIndex = 0;
+            //Respective player joined
 
             joinTextObject.SetActive(false);
 
@@ -135,10 +120,35 @@ namespace Game
             defenseArrowImage.enabled = true;
             speedArrowImage.enabled = true;
 
-            selectionImage.sprite = selectionSprites[SelectionIndex];
-            defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-            speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
-            
+            selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+            defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
+            speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
         }
+
+        private void OnValidate()
+        {
+            foreach(var option in characterOptions)
+            {
+                if (option.prefab == null) option.Name = "Null";
+
+                else option.Name = option.prefab.name;
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class CharacterOption
+    {
+        [HideInInspector] public string Name;
+
+        [ShowAssetPreview] public GameObject prefab;
+
+        [ShowAssetPreview] public Sprite characterSprite;
+
+        [ShowAssetPreview] public Sprite characterIcon;
+
+        [ShowAssetPreview] public Sprite defenseSprite;
+
+        [ShowAssetPreview] public Sprite speedSprite;
     }
 }

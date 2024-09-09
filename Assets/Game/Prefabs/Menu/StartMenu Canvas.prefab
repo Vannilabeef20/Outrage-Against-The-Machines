@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5307918888006796544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54,16 +54,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d19692ad5e22c4aba484b26d2f3837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 0}
   menuId: 2
-  allowMultipleSelection: 0
-  singlePlayerSelectableObject: {fileID: 2142516251440017314}
-  P1_SelectableObject: {fileID: 0}
-  P2_SelectableObject: {fileID: 0}
-  P3_SelectableObject: {fileID: 0}
-  singlePlayerRoot: {fileID: 819568335281760641}
-  P1_root: {fileID: 0}
-  P2_root: {fileID: 0}
-  P3_root: {fileID: 0}
+  selection: 1
+  playerNumber: 1
+  selectableObject: {fileID: 2142516251440017314}
+  root: {fileID: 3170806879194045771}
 --- !u!222 &7596611648689693519
 CanvasRenderer:
   m_ObjectHideFlags: 0

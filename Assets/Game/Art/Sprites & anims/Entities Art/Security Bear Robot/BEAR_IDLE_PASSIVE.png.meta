@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdb3967b1219f5c419826ef180061eb2
+guid: 36ada5efa756a8e4482bcf92db6bd89f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,13 +119,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_MONEY1_0
+      name: BEAR_IDLE_PASSIVE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4def9691f08d1ea49a15ed6598918960
+      internalID: 362998439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_IDLE_PASSIVE_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79a5c1005a34bb40b6d9d0a94208741
+      internalID: -1729464258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_IDLE_PASSIVE_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97fe470574495e44b32682b7241b085
+      internalID: -1457640145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_IDLE_PASSIVE_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c7035ed1927494482f41bf6dca4c35
+      internalID: 1186331996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_IDLE_PASSIVE_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412cb10879f1df0448d96deeeb4568c1
+      internalID: -440263959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_IDLE_PASSIVE_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2229ff79ac0cc164db89110cac5dd97b
+      internalID: -724085021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_IDLE_PASSIVE_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
-        height: 32
+        width: 96
+        height: 96
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f6412fd79d9acc42836fa6c7589692c
-      internalID: -1054719603
+      spriteID: 78868f91309233c47aad16ae3f887fb5
+      internalID: -1744069856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_MONEY1_1
+      name: BEAR_IDLE_PASSIVE_7
       rect:
         serializedVersion: 2
-        x: 26
+        x: 96
         y: 0
-        width: 26
-        height: 32
+        width: 96
+        height: 96
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 338b240e5ad1f4b4eb9ec57cfa844ccd
-      internalID: -129338741
+      spriteID: 7075325f9e536e04b96fae66664b57fc
+      internalID: -940970693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_MONEY1_2
+      name: BEAR_IDLE_PASSIVE_8
       rect:
         serializedVersion: 2
-        x: 52
+        x: 192
         y: 0
-        width: 28
-        height: 32
+        width: 96
+        height: 96
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ca3f14617a2bf34f97f62034515ff4f
-      internalID: -244930770
+      spriteID: 35322a0eef3134c42a98cc18a859a9ef
+      internalID: -1015356511
       vertices: []
       indices: 
       edges: []
@@ -192,9 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_MONEY1_0: -1054719603
-      UI_MONEY1_1: -129338741
-      UI_MONEY1_2: -244930770
+      BEAR_IDLE_PASSIVE_0: 362998439
+      BEAR_IDLE_PASSIVE_4: -440263959
+      BEAR_IDLE_PASSIVE_6: -1744069856
+      BEAR_IDLE_PASSIVE_7: -940970693
+      BEAR_IDLE_PASSIVE_3: 1186331996
+      BEAR_IDLE_PASSIVE_1: -1729464258
+      BEAR_IDLE_PASSIVE_5: -724085021
+      BEAR_IDLE_PASSIVE_8: -1015356511
+      BEAR_IDLE_PASSIVE_2: -1457640145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

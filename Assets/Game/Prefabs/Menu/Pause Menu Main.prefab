@@ -393,6 +393,7 @@ MonoBehaviour:
   selectActivateDelay: 0.3
   clickScalePercentage: 0.25
   clickActivateDelay: 0.25
+  but: {fileID: 0}
   targetScene: 0
 --- !u!114 &7972981373868848875
 MonoBehaviour:
@@ -1282,15 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuId: 8
   selection: 1
-  allowMultipleSelection: 0
-  singlePlayerSelectableObject: {fileID: 7972981374587181286}
-  P1_SelectableObject: {fileID: 0}
-  P2_SelectableObject: {fileID: 0}
-  P3_SelectableObject: {fileID: 0}
-  singlePlayerRoot: {fileID: 7972981374693264126}
-  P1_root: {fileID: 0}
-  P2_root: {fileID: 0}
-  P3_root: {fileID: 0}
+  selectableObject: {fileID: 7972981374587181286}
 --- !u!114 &7972981374693264099
 MonoBehaviour:
   m_ObjectHideFlags: 0
