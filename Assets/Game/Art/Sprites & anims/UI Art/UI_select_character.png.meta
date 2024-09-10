@@ -153,7 +153,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 209
-        y: 750
+        y: 751
         width: 129
         height: 183
       alignment: 0
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_select_character_4
+      name: UI_arrow_L
       rect:
         serializedVersion: 2
         x: 46
@@ -233,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_select_character_6
+      name: UI_arrow_R
       rect:
         serializedVersion: 2
         x: 169
@@ -337,6 +337,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_select_character_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 511
+        width: 133
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312b3e988d508684698762aae836a0db
+      internalID: 1337957247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_grey
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 987
+        width: 88
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57561192d8c3e7540827e500327dcc9e
+      internalID: -2029612801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_orange
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 961
+        width: 88
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff509f1cbab27148a993468079da6cf
+      internalID: -1631405551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_yellow
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 935
+        width: 88
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814cfabcfc42e4e4684af7216a4713b7
+      internalID: -161279473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -348,15 +432,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      UI_arrow_L: -1065004502
       UI_select_player_1: 774126624
-      UI_select_character_4: -1065004502
-      UI_select_character_6: 192657988
       UI_join_player_3: -2123557095
       UI_select_character_0: -1723150965
       UI_select_player_2: -1846608607
+      UI_button_grey: -2029612801
       UI_stats_player_1: 213354074
+      UI_button_orange: -1631405551
+      UI_arrow_R: 192657988
       UI_stats_player_3: -1701749794
+      UI_select_character_1: 1337957247
       UI_select_player_3: 2049633862
+      UI_button_yellow: -161279473
       UI_join_player_2: 1744764160
       UI_stats_player_2: 1043075323
   mipmapLimitGroupName: 
