@@ -6,13 +6,13 @@ namespace Game
 {
     public class MenuVisibilityHandler : MonoBehaviour
     {
-        [SerializeField] MenuId menuId;
+        [SerializeField] EMenuId menuId;
         [Space]
         [SerializeField] bool selection = true;
 
         [SerializeField, ShowIf("selection")] GameObject selectableObject;
 
-        public void SetVisibility(MenuId eventMenuIds)
+        public void SetVisibility(EMenuId eventMenuIds)
         {
             if (!eventMenuIds.HasAnyFlag(menuId))
             {

@@ -7,57 +7,96 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a499bb20afe78cc4dbf75c44aaa9aea6, type: 3}
   m_Name: Level 1 Encounters
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
-  - Name: 'Enc: 0'
+  - Name: '0 | Waves: 2 || Enemies: 2'
     position: {x: -102.17, y: 6.02, z: 0}
-    enemies:
-    - Name: Robo 1 | 1 Units
-      enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-      amount: 1
-  - Name: 'Enc: 1'
+    waves:
+    - Name: '0 | Enemies: 1'
+      enemies:
+      - Name: Robo 1 | 1 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 2
+    - Name: '1 | Enemies: 1'
+      enemies:
+      - Name: Robo 1 | 1 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 2
+  - Name: '1 | Waves: 1 || Enemies: 5'
     position: {x: -70.56, y: 6.02, z: 0}
-    enemies:
-    - Name: Robo 1 | 5 Units
-      enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-      amount: 5
-  - Name: 'Enc: 2'
+    waves:
+    - Name: '0 | Enemies: 5'
+      enemies:
+      - Name: Robo 1 | 5 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 5
+        multiplayerOnly: 0
+        playersRequired: 2
+  - Name: '2 | Waves: 1 || Enemies: 6'
     position: {x: -31.3, y: 6.02, z: 0}
-    enemies:
-    - Name: Robo 1 | 4 Units
-      enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-      amount: 4
-    - Name: Robo Ranged | 2 Units
-      enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-      amount: 2
-  - Name: 'Enc: 3'
+    waves:
+    - Name: '0 | Enemies: 6'
+      enemies:
+      - Name: Robo 1 | 4 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 4
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Robo Ranged | 2 Units
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 2
+        multiplayerOnly: 0
+        playersRequired: 2
+  - Name: '3 | Waves: 1 || Enemies: 7'
     position: {x: 17.6, y: 6.02, z: 0}
-    enemies:
-    - Name: Robo 1 | 5 Units
-      enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-      amount: 5
-    - Name: Robo Ranged | 2 Units
-      enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-      amount: 2
-  - Name: 'Enc: 4'
+    waves:
+    - Name: '0 | Enemies: 7'
+      enemies:
+      - Name: Robo 1 | 5 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 5
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Robo Ranged | 2 Units
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 2
+        multiplayerOnly: 0
+        playersRequired: 2
+  - Name: '4 | Waves: 1 || Enemies: 7'
     position: {x: 46.4, y: 6.02, z: 0}
-    enemies:
-    - Name: Robo 1 | 5 Units
-      enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-      amount: 5
-    - Name: Robo Ranged | 2 Units
-      enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-      amount: 2
-  - Name: 'Enc: 5'
+    waves:
+    - Name: '0 | Enemies: 7'
+      enemies:
+      - Name: Robo 1 | 5 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 5
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Robo Ranged | 2 Units
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 2
+        multiplayerOnly: 0
+        playersRequired: 2
+  - Name: '5 | Waves: 1 || Enemies: 9'
     position: {x: 112.6, y: 6.02, z: 0}
-    enemies:
-    - Name: Robo 1 | 6 Units
-      enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
-      amount: 6
-    - Name: Robo Ranged | 3 Units
-      enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-      amount: 3
+    waves:
+    - Name: '0 | Enemies: 9'
+      enemies:
+      - Name: Robo 1 | 6 Units
+        enemy: {fileID: 6508126985700856560, guid: e5481fc89860b074bbf086af910b3aa5, type: 3}
+        amount: 6
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Robo Ranged | 3 Units
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 3
+        multiplayerOnly: 0
+        playersRequired: 2

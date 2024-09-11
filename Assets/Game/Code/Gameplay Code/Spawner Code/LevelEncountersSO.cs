@@ -41,32 +41,79 @@ namespace Game
             if (Encounters == null) return;
             for (int i = 0; i < Encounters.Length; i++)
             {
-                Encounters[i].Name =$"Enc: {i}";
-                for (int j = 0; j < Encounters[i].enemies.Length; j++)
+                int enemyCount = 0;
+                int waveCount = 0;
+
+                foreach (var wave in Encounters[i].waves)
                 {
-                    if (Encounters[i].enemies[j].enemy == null)
+                    if (wave == null) continue;
+
+                    waveCount++;
+
+                    foreach (var enemy in wave.enemies)
                     {
-                        Encounters[i].enemies[j].Name = "None";
-                        continue;
+                        if (enemy != null) enemyCount += enemy.amount;
                     }
-                    Encounters[i].enemies[j].Name =  $"{Encounters[i].enemies[j].enemy.name} | {Encounters[i].enemies[j].amount} Units";
                 }
+
+                Encounters[i].Name = $"{i} | Waves: {waveCount} || Enemies: {enemyCount}";
+
+                Encounters[i].UpdateNames();
             }
         }
     }
 
     /// <summary>
     /// Defines an enemy encounter and its parameters.<br/>
-    /// Position, and enemies.
+    /// Position, and Waves.
     /// </summary>
     [System.Serializable]
     public class Encounter
     {
         [HideInInspector] public string Name;
 
-        [SerializeField, HorizontalLine(2f, EColor.Red)] public Vector3 position;
+        [SerializeField] public Vector3 position;
+        [SerializeField] public EnemyWave[] waves;
+
+        public void UpdateNames()
+        {
+            if (waves == null) return;
+
+            for (int i = 0; i < waves.Length; i++)
+            {
+                if (waves[i] == null) continue;
+
+                int enemyCount = 0;
+                foreach (var enemy in waves[i].enemies)
+                {
+                    if(enemy != null) enemyCount += enemy.amount;
+                }
+                waves[i].Name = $"{i} | Enemies: {enemyCount}";
+                waves[i].UpdateNames();
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class EnemyWave
+    {
+        [HideInInspector] public string Name;
         [SerializeField] public SpawnableEnemy[] enemies;
 
+        public void UpdateNames()
+        {
+            if(enemies == null) return;
+
+            for (int j = 0; j < enemies.Length; j++)
+            {
+                if (enemies[j].enemy == null)
+                {
+                    enemies[j].Name = "None";
+                    continue;
+                }
+                enemies[j].Name = $"{enemies[j].enemy.name} | {enemies[j].amount} Units";
+            }
+        }
     }
 
     /// <summary>
@@ -77,8 +124,12 @@ namespace Game
     public class SpawnableEnemy
     {
         [HideInInspector] public string Name;
-        [SerializeField, ShowAssetPreview] public GameObject enemy;
-        [SerializeField] public int amount;
+        [ShowAssetPreview] public GameObject enemy;
+        public int amount;
+        [Space]
+        public bool multiplayerOnly;
+        [AllowNesting, ShowIf("multiplayerOnly"), Range(2, 3)] public int playersRequired = 2;
+
     }
-    
+
 }

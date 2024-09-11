@@ -79,14 +79,14 @@ namespace Game
             int level = SceneManager.GetActiveScene().buildIndex;
             if (level == 0)
             {
-                OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
+                OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
             }
             else
             {
                 InitializeLevel();
                 CurrentLifeAmount = initialLifeAmout;
                 UpdateLifeCount.Raise(this, CurrentLifeAmount);
-                OnSetMenuVisibility.Raise(this, MenuId.None);               
+                OnSetMenuVisibility.Raise(this, EMenuId.None);               
             }
         }
 
@@ -105,10 +105,10 @@ namespace Game
                 return;
             }
 
-            if (level == 0) OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
+            if (level == 0) OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
             else
             {
-                OnSetMenuVisibility.Raise(this, MenuId.None);
+                OnSetMenuVisibility.Raise(this, EMenuId.None);
                 InitializeLevel();
                 UnityInputManager.playerPrefab = root;
             }           
@@ -222,9 +222,9 @@ namespace Game
 
         public void PauseGame()
         {
-            if (Time.timeScale > 0) OnSetMenuVisibility.Raise(this, MenuId.PauseMenu);
+            if (Time.timeScale > 0) OnSetMenuVisibility.Raise(this, EMenuId.PauseMenu);
 
-            else OnSetMenuVisibility.Raise(this, MenuId.None);
+            else OnSetMenuVisibility.Raise(this, EMenuId.None);
         }
         
         

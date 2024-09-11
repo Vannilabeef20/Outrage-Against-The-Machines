@@ -12,18 +12,21 @@ namespace Game
     public class CharacterSelectionSwap : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
-        [SerializeField] Button swapButton;
-        [Space]
         [SerializeField] Image selectionImage;
-        [SerializeField] Image defenseArrowImage;
-        [SerializeField] Image speedArrowImage;
         [Space]
-        [SerializeField] GameObject joinTextObject;
+        [SerializeField] GameObject joinedUI;
+        [SerializeField] GameObject joinUI;
         [SerializeField] GameObject readyObject;
+        [SerializeField] GameObject[] speedPoints;
+        [SerializeField] GameObject[] defensePoints;
 
         [field: Header("PARAMETERS"), HorizontalLine(2F, EColor.Orange)]
+
         [field: SerializeField] public bool IsReady { get; private set; }
         [field: SerializeField] public int PlayerIndex { get; private set; }
+
+        [SerializeField] EPlayerInput leftInput;
+        [SerializeField] EPlayerInput rightInput;
 
         public CharacterOption[] characterOptions;
 
@@ -49,24 +52,26 @@ namespace Game
             SelectionIndex = -1;
             GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshJoin);
         }
-        public void Swap()
+        public void Swap(PlayerGameInput playerGameInput)
         {
             if (IsReady) return;
 
+            if (playerGameInput.Index != PlayerIndex) return;
+
+            if (playerGameInput.Input != leftInput && playerGameInput.Input != rightInput) return;
+
             if (TransitionManager.Instance.IsTransitioning) return;
 
-            SelectionIndex++;
-            if (SelectionIndex >= characterOptions.Length) 
-            {
-                SelectionIndex = 0;
-            }
-            if (SelectionIndex < 0)
-            {
-                SelectionIndex = characterOptions.Length;
-            }
-            selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
-            defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
-            speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
+            if (playerGameInput.Input == leftInput)
+                SelectionIndex--;
+            else if (playerGameInput.Input == rightInput)
+                SelectionIndex++;
+
+            if (SelectionIndex < 0) SelectionIndex = characterOptions.Length - 1;
+
+            if (SelectionIndex > characterOptions.Length - 1) SelectionIndex = 0;
+
+            RefreshSelection();
         }
 
         public void SetSelection(int selectIndex)
@@ -99,30 +104,34 @@ namespace Game
 
             if (SelectionIndex == -1) //Respective player not joined
             {
-                joinTextObject.SetActive(true);
-
-                selectionImage.enabled = false;
-                defenseArrowImage.enabled = false;
-                speedArrowImage.enabled = false;
-                swapButton.image.enabled = false;
-                swapButton.enabled = false;
-
+                joinUI.SetActive(true);
+                joinedUI.SetActive(false);
                 return;
             }
 
             //Respective player joined
 
-            joinTextObject.SetActive(false);
-
-            swapButton.enabled = true;
-            swapButton.image.enabled = true;
+            joinUI.SetActive(false);
+            joinedUI.SetActive(true);
             selectionImage.enabled = true;
-            defenseArrowImage.enabled = true;
-            speedArrowImage.enabled = true;
+
+            for(int i = 0; i < defensePoints.Length; i++)
+            {
+                if (i < characterOptions[SelectionIndex].defenseValue)
+                    defensePoints[i].SetActive(true);
+                else 
+                    defensePoints[i].SetActive(false);                
+            }
+
+            for (int i = 0; i < speedPoints.Length; i++)
+            {
+                if (i < characterOptions[SelectionIndex].speedValue)
+                    speedPoints[i].SetActive(true);
+                else
+                    speedPoints[i].SetActive(false);
+            }
 
             selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
-            defenseArrowImage.sprite = characterOptions[SelectionIndex].defenseSprite;
-            speedArrowImage.sprite = characterOptions[SelectionIndex].speedSprite;
         }
 
         private void OnValidate()
@@ -141,14 +150,14 @@ namespace Game
     {
         [HideInInspector] public string Name;
 
+        [Range(0, 3)] public int defenseValue;
+
+        [Range(0, 3)] public int speedValue;
+
         [ShowAssetPreview] public GameObject prefab;
 
         [ShowAssetPreview] public Sprite characterSprite;
 
         [ShowAssetPreview] public Sprite characterIcon;
-
-        [ShowAssetPreview] public Sprite defenseSprite;
-
-        [ShowAssetPreview] public Sprite speedSprite;
     }
 }

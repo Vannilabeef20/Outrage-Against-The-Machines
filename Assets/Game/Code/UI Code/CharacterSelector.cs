@@ -15,8 +15,28 @@ namespace Game
         [SerializeField] EPlayerInput cancelInput;
         [SerializeField, Scene] int targetScene;
 
+        [SerializeField] InputActionAsset map;
+        [SerializeField] EMenuId startMenuID;
+        [SerializeField] MenuIdEvent menuIdEvent;
+
         [SerializeField] CharacterSelectionSwap[] selectionSwaps;
 
+        private void Awake()
+        {
+            map.Enable();
+            map.FindAction("Cancel").performed += ReturnToMenu;
+        }
+
+        void ReturnToMenu(InputAction.CallbackContext context)
+        {
+            if (!gameObject.activeInHierarchy) return;
+
+            if (!context.performed) return;
+
+            if (GameManager.Instance.UnityInputManager.playerCount != 0) return;
+
+            menuIdEvent.Raise(this, startMenuID);
+        }
 
         public void ToggleReady(PlayerGameInput playerGameInput)
         {
@@ -59,11 +79,11 @@ namespace Game
 
             TransitionManager.Instance.LoadScene(targetScene);
         }
-        public void ClearAllPlayers(MenuId menuId)
+        public void ClearAllPlayers(EMenuId menuId)
         {
             switch(menuId)
             {
-                case MenuId.StartMenu:
+                case EMenuId.StartMenu:
                     PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
                     foreach (PlayerInput playerInput in playerInputs)
                     {
@@ -77,7 +97,6 @@ namespace Game
         public void ClearPlayer(PlayerGameInput playerGameInput)
         {
             if (playerGameInput.Input != cancelInput) return;
-
 
             if (GameManager.Instance.UnityInputManager.playerCount >= playerGameInput.Index + 1)
             {
@@ -97,7 +116,6 @@ namespace Game
 
             PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
             playerInputs = playerInputs.OrderBy(input => input.user.index).ToArray();
-            Debug.Log(playerInputs[playerGameInput.Index].gameObject.name);
             Destroy(playerInputs[playerGameInput.Index].gameObject);
             if (GameManager.Instance.PlayerCharacterList.Count >= playerGameInput.Index + 1)
                 GameManager.Instance.PlayerCharacterList.RemoveAt(playerGameInput.Index);

@@ -22,7 +22,6 @@ namespace Game
 
 		public void React(PlayerGameInput playerGameInput)
         {
-
 			if (playerInput != playerGameInput.Input) return;
 
 			if (PlayerExclusive && playerIndex != playerGameInput.Index) return;

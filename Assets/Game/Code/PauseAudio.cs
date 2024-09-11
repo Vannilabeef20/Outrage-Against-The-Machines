@@ -27,14 +27,16 @@ namespace Game
             {
 				foreach (StudioEventEmitter emitter in audioEmitters)
 				{
-					emitter.EventInstance.setPaused(!pause);
+					emitter.EventInstance.getPaused(out bool isPaused);
+					if (isPaused != !pause) emitter.EventInstance.setPaused(!pause);
 				}
 			}
 			else
             {
 				foreach (StudioEventEmitter emitter in audioEmitters)
 				{
-					emitter.EventInstance.setPaused(pause);
+					emitter.EventInstance.getPaused(out bool isPaused);
+					if (isPaused != pause) emitter.EventInstance.setPaused(pause);
 				}
 			}
 		}

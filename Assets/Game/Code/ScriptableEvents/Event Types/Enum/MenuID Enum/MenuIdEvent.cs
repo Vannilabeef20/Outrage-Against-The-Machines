@@ -15,7 +15,7 @@ namespace Game
     /// If "MenuId" sent is part of a character selection menu joining will be enabled, else disabled.
     /// </summary>
     [CreateAssetMenu(fileName = "New MenuId Event", menuName = "SO Events/MenuId Event")]
-    public class MenuIdEvent : BaseGameEvent<MenuId>
+    public class MenuIdEvent : BaseGameEvent<EMenuId>
     {
         [Header("EVENT SPECIFIC"), HorizontalLine(2f, EColor.Yellow)]
         [SerializeField] PauseEvent pauseEvent;
@@ -26,10 +26,10 @@ namespace Game
         /// </summary>
         /// <param name="sender">The object which sent the Raise request.</param>
         /// <param name="menuId">The "MenuId" flags to be sent to all listeners on Raise.</param>
-        public override void Raise(object sender, MenuId menuId)
+        public override void Raise(object sender, EMenuId menuId)
         {
             base.Raise(sender, menuId);
-            if (menuId == MenuId.PauseMenu || menuId == MenuId.PauseOptionsMenu)
+            if (menuId == EMenuId.PauseMenu || menuId == EMenuId.PauseOptionsMenu)
             {
                 pauseEvent.Raise(this, true);
             }
@@ -37,7 +37,7 @@ namespace Game
             {
                 pauseEvent.Raise(this, false);
             }
-            if (menuId == MenuId.CharacterSelectionMenu)
+            if (menuId == EMenuId.CharacterSelectionMenu)
             {
                 GameManager.Instance.UnityInputManager.EnableJoining();
             }
@@ -51,7 +51,7 @@ namespace Game
     /// Enum flags for menu logical groups.
     /// </summary>
     [System.Flags]
-    public enum MenuId
+    public enum EMenuId
     {
         None = 0,
         StartMenu = 2,
