@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0261c46c6b47ee4496c7594bb775d59
+guid: 151c89803b33aa141a6d31f6479dcf60
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,190 +107,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_0
+      name: BEAR_WALK_ATTACK_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 166.66666
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76ff167c299c4124dbcb05aefb37373f
-      internalID: -389592137
+      spriteID: f98c972da5f99064a8fc754684779733
+      internalID: 137988091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_1
+      name: BEAR_WALK_ATTACK_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 166.66666
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f05ccff83889941921788ad56ece1c
-      internalID: 1382544459
+      spriteID: 855032b65f5075d4a9e5576261aaf333
+      internalID: -1757889279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_2
+      name: BEAR_WALK_ATTACK_2
       rect:
         serializedVersion: 2
-        x: 132
-        y: 166.66666
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8aa14e53f9de104abbdedb9bdd479bf
-      internalID: 1709112350
+      spriteID: d060d3f72e3e75040ac73cb88476025e
+      internalID: 52513899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 83.666664
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5dfc7d6dfdbfd2246ab631b28742f8a8
-      internalID: 1528248360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_4
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 83.666664
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb068ad7b17850e448d30f36c0b6b26b
-      internalID: -1964143088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_5
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 83.666664
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e10bf7ee17e50354f898cd5d9e24b9e5
-      internalID: 1854130269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_6
+      name: BEAR_WALK_ATTACK_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 0.6666641
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1004cdd202db13549ab020e946956a27
-      internalID: -1114780924
+      spriteID: e875d0406e2b04245b6e740440b8f552
+      internalID: 493781349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_7
+      name: BEAR_WALK_ATTACK_4
       rect:
         serializedVersion: 2
-        x: 66
-        y: 0.6666641
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14906235fcb905f448b8bee425011676
-      internalID: 525091668
+      spriteID: bd4131d986fef1b4bb8c9b045d5e80ed
+      internalID: -814954971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_WALKING_ATTACK_8
+      name: BEAR_WALK_ATTACK_5
       rect:
         serializedVersion: 2
-        x: 132
-        y: 0.6666641
-        width: 66.666664
-        height: 83.333336
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1130b6a618ec42d42860e0ca79b7eeed
-      internalID: 2087807041
+      spriteID: 275bf602564d1da43a7c82418174eacd
+      internalID: -174046248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_WALK_ATTACK_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07cf090a20da1f4f8617fcfb39f12e6
+      internalID: -746564640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_WALK_ATTACK_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868d0be09a166384faf9241141346335
+      internalID: 75241038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAR_WALK_ATTACK_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89735bcaae2c6c045b99e3b685d14dda
+      internalID: 1295463883
       vertices: []
       indices: 
       edges: []
@@ -306,15 +306,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BEAR_WALKING_ATTACK_8: 2087807041
-      BEAR_WALKING_ATTACK_7: 525091668
-      BEAR_WALKING_ATTACK_2: 1709112350
-      BEAR_WALKING_ATTACK_4: -1964143088
-      BEAR_WALKING_ATTACK_6: -1114780924
-      BEAR_WALKING_ATTACK_5: 1854130269
-      BEAR_WALKING_ATTACK_0: -389592137
-      BEAR_WALKING_ATTACK_3: 1528248360
-      BEAR_WALKING_ATTACK_1: 1382544459
+      BEAR_WALK_ATTACK_5: -174046248
+      BEAR_WALK_ATTACK_4: -814954971
+      BEAR_WALK_ATTACK_3: 493781349
+      BEAR_WALK_ATTACK_0: 137988091
+      BEAR_WALK_ATTACK_1: -1757889279
+      BEAR_WALK_ATTACK_7: 75241038
+      BEAR_WALK_ATTACK_6: -746564640
+      BEAR_WALK_ATTACK_2: 52513899
+      BEAR_WALK_ATTACK_8: 1295463883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
