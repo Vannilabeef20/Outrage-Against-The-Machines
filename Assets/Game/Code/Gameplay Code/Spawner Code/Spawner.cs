@@ -48,8 +48,6 @@ namespace Game
 
 #if UNITY_EDITOR
         [Header("GIZMOS (EDITOR ONLY)"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] float encounterPositionGizmosRadius;
-        [SerializeField] Color encounterPositionGizmosColor;
         [SerializeField] float encounterPositionDebugLineLenght;
         [SerializeField] Color encounterPositionLimitDebugColor;
 
@@ -260,44 +258,43 @@ namespace Game
             {
                 return;
             }
-            foreach (Encounter encounter in LevelEncounters.Encounters)
+            for(int i = 0; i < LevelEncounters.Encounters.Length; i++)
             {
-                Gizmos.color = encounterPositionGizmosColor;
                 if(mainCam != null)
                 {
-                    Vector3 tempPos1 = encounter.position; //UP RIGHT
+                    Vector3 tempPos1 = LevelEncounters.Encounters[i].position; //UP RIGHT
                     tempPos1.y += mainCam.orthographicSize; 
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
-                    Vector3 tempPos2 = encounter.position; //UP LEFT 
+                    Vector3 tempPos2 = LevelEncounters.Encounters[i].position; //UP LEFT 
                     tempPos2.y += mainCam.orthographicSize;
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
-                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //UP LINE
+                    Debug.DrawLine(tempPos1, tempPos2, encounterPositionLimitDebugColor); //UP LINE
 
-                    tempPos1 = encounter.position; //DOWN RIGHT
+                    tempPos1 = LevelEncounters.Encounters[i].position; //DOWN RIGHT
                     tempPos1.y -= mainCam.orthographicSize;
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
-                    tempPos2 = encounter.position;  //DOWN LEFT
+                    tempPos2 = LevelEncounters.Encounters[i].position;  //DOWN LEFT
                     tempPos2.y -= mainCam.orthographicSize;
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
-                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //DOWN LINE
+                    Debug.DrawLine(tempPos1, tempPos2, encounterPositionLimitDebugColor); //DOWN LINE
 
-                    tempPos1 = encounter.position;
+                    tempPos1 = LevelEncounters.Encounters[i].position;
                     tempPos1.y += mainCam.orthographicSize;
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
-                    tempPos2 = encounter.position;
+                    tempPos2 = LevelEncounters.Encounters[i].position;
                     tempPos2.y -= mainCam.orthographicSize;
                     tempPos2.x += mainCam.aspect * mainCam.orthographicSize;
-                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //RIGHT LINE
+                    Debug.DrawLine(tempPos1, tempPos2, encounterPositionLimitDebugColor); //RIGHT LINE
 
-                    tempPos1 = encounter.position;
+                    tempPos1 = LevelEncounters.Encounters[i].position;
                     tempPos1.y += mainCam.orthographicSize;
                     tempPos1.x -= mainCam.aspect * mainCam.orthographicSize;
-                    tempPos2 = encounter.position;
+                    tempPos2 = LevelEncounters.Encounters[i].position;
                     tempPos2.y -= mainCam.orthographicSize;
                     tempPos2.x -= mainCam.aspect * mainCam.orthographicSize;
-                    Debug.DrawLine(tempPos1, tempPos2, Color.blue); //LEFT LINE
+                    Debug.DrawLine(tempPos1, tempPos2, encounterPositionLimitDebugColor); //LEFT LINE
                 }
-                Handles.Label(encounter.position, encounter.Name, style);
+                Handles.Label(LevelEncounters.Encounters[i].position, $"Enc: {i}", style);
             }
 
             #endregion

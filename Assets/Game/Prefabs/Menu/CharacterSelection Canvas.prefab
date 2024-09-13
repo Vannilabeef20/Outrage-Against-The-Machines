@@ -2324,7 +2324,7 @@ RectTransform:
   m_Children:
   - {fileID: 4596487124267608207}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2507,13 +2507,13 @@ MonoBehaviour:
     speedValue: 1
     prefab: {fileID: 6756082609593835265, guid: 04359ec8c1a34d14ca4ad4ad32b49fd7, type: 3}
     characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-    characterIcon: {fileID: 689753428, guid: b04af84f2b55d4241897e60de9b39bae, type: 3}
+    characterIcon: {fileID: 21300000, guid: 89b1b1ad94314e9459989e0e9450e854, type: 3}
   - Name: Rooster P2
     defenseValue: 1
     speedValue: 3
     prefab: {fileID: 6838143541679345078, guid: 08d352f9beb28524cb9bde8f487a072d, type: 3}
     characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-    characterIcon: {fileID: -2076087381, guid: b04af84f2b55d4241897e60de9b39bae, type: 3}
+    characterIcon: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &3068953482057734061
 MonoBehaviour:
@@ -2617,13 +2617,13 @@ MonoBehaviour:
     speedValue: 1
     prefab: {fileID: 6756082609593835265, guid: 0ac64eb03afdd4844b1a501d5f839870, type: 3}
     characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-    characterIcon: {fileID: 689753428, guid: b04af84f2b55d4241897e60de9b39bae, type: 3}
+    characterIcon: {fileID: 21300000, guid: 89b1b1ad94314e9459989e0e9450e854, type: 3}
   - Name: Rooster P3
     defenseValue: 1
     speedValue: 3
     prefab: {fileID: 6838143541679345078, guid: 2322a93191cf4fa4485c42d0b5fbce89, type: 3}
     characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-    characterIcon: {fileID: -2076087381, guid: b04af84f2b55d4241897e60de9b39bae, type: 3}
+    characterIcon: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &5523428933038610811
 MonoBehaviour:
@@ -2727,13 +2727,13 @@ MonoBehaviour:
     speedValue: 1
     prefab: {fileID: 6756082609593835265, guid: 539e64dd56f81d049bec0cc3526aea59, type: 3}
     characterSprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-    characterIcon: {fileID: 689753428, guid: b04af84f2b55d4241897e60de9b39bae, type: 3}
+    characterIcon: {fileID: 21300000, guid: 89b1b1ad94314e9459989e0e9450e854, type: 3}
   - Name: Rooster P1
     defenseValue: 1
     speedValue: 3
     prefab: {fileID: 6838143541679345078, guid: a6cfaf2811a024b4caf3ccf66fe8ab4f, type: 3}
     characterSprite: {fileID: -1285727183, guid: c2d2e6349a092dd40b85726be0a86504, type: 3}
-    characterIcon: {fileID: -2076087381, guid: b04af84f2b55d4241897e60de9b39bae, type: 3}
+    characterIcon: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
   <SelectionIndex>k__BackingField: 0
 --- !u!114 &7018574383612315881
 MonoBehaviour:

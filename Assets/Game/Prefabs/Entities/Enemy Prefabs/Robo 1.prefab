@@ -5293,13 +5293,16 @@ MonoBehaviour:
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 6508126985700856569}
   encounterNumber: 0
-  speed: 6
+  speed: 2
+  clearDistance: 0.2
+  waitTime: {x: 0, y: 5}
+  waiting: 0
+  waitTimer: 0
   wanderPoints: []
   currentPointIndex: 0
-  clearDistance: 0.5
   distance: 0
-  arrowHeadColor: {r: 0.100138426, g: 1, b: 0, a: 1}
-  arrowColor: {r: 0, g: 0, b: 0, a: 0}
+  arrowHeadColor: {r: 0, g: 0.402215, b: 1, a: 1}
+  arrowColor: {r: 0, g: 0.12074661, b: 1, a: 1}
 --- !u!114 &4365973715229800980
 MonoBehaviour:
   m_ObjectHideFlags: 0

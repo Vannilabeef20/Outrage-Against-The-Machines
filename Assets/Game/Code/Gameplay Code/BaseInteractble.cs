@@ -28,9 +28,28 @@ namespace Game
             player2NumberRenderer.enabled = false;
             player3NumberRenderer.enabled = false;
         }
-        public abstract void Interact(int playerNumber);
 
-
+        public abstract void OnInteract(int playerNumber);
+        public virtual void Interact(int playerNumber)
+        {
+            if (costsMoney)
+            {
+                //Has money
+                if (GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount >= costAmount)
+                {
+                    GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount -= costAmount;
+                    OnInteract(playerNumber);
+                }
+                else //Does not have money
+                {
+                    OnInteract(playerNumber);
+                }
+            }
+            else 
+            {
+                OnInteract(playerNumber);
+            }
+        }
 
         public void UpdateSelection(int playerNumber, bool enable)
         {

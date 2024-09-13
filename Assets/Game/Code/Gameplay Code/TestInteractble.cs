@@ -16,13 +16,17 @@ namespace Game
                 }
                 else
                 {
-                    this.Log($"Player {playerNumber} does not have enough money to buy {this.GetType().Name}.");
+                    this.Log($"Player {playerNumber} does not have enough money to buy {this.GetType().Name}.", EDebugSubjectFlags.Debug);
                 }
             }
             else
             {
-                this.Log($"Player {playerNumber} has picked {this.GetType().Name}.");
+                this.Log($"Player {playerNumber} has picked {this.GetType().Name}.", EDebugSubjectFlags.Debug);
             }
         }
+
+        public override void OnInteract(int playerNumber)
+        {
+            this.Log($"Player {playerNumber} has triggered {this.GetType().Name}'s interaction.");      }
     }
 }

@@ -76,7 +76,6 @@ namespace Game
             if (other.gameObject.CompareTag(playerTag))
             {
                 pickEmitter.Play();
-                this.Log(scrapValue);
                 int playerIndex = other.GetComponentInChildren
                     <InteractionHandler>().playerInput.playerIndex;
                 GameManager.Instance.PlayerCharacterList[playerIndex].scrapAmount += scrapValue;

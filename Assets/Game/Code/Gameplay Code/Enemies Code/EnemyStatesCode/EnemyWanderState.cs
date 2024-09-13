@@ -13,12 +13,17 @@ namespace Game
         [SerializeField] int encounterNumber;
         [Space]
         [SerializeField] float speed;
-        [Space]
-        [SerializeField] Transform[] wanderPoints;
-        [SerializeField, ReadOnly] int currentPointIndex;
-        [Space]
         [SerializeField] float clearDistance;
+        [SerializeField, MinMaxSlider(0f,5f)] Vector2 waitTime;
+        [SerializeField] Transform[] wanderPoints;
+        [Space]
+        [SerializeField, ReadOnly] int currentPointIndex;
         [SerializeField, ReadOnly] float distance;
+        [Space]
+        [SerializeField, ReadOnly] bool waiting;
+        [SerializeField, ReadOnly] float waitTimer;
+
+
         Rigidbody Body => stateMachine.body;
 
 #if UNITY_EDITOR
@@ -31,6 +36,12 @@ namespace Game
 
         public override void Do() 
         {
+            if(waiting)
+            {
+                waitTimer -= Time.deltaTime;
+                if (waitTimer > 0) return;
+                waiting = false;
+            }
             if (wanderPoints[currentPointIndex].position.x + 0.1f < transform.position.x)
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
@@ -46,9 +57,20 @@ namespace Game
         {
             distance = Vector3.Distance(Body.position, wanderPoints[currentPointIndex].position);
 
-            if (distance <= clearDistance) currentPointIndex++;
+            if (distance <= clearDistance)
+            {
+                currentPointIndex++;
+                waitTimer = UnityEngine.Random.Range(waitTime.x, waitTime.y);
+                waiting = true;
+            }
 
             if (currentPointIndex >= wanderPoints.Length) currentPointIndex = 0;
+
+            if (waiting)
+            {
+                Body.velocity = Vector3.zero;
+                return;
+            }
 
             Body.velocity = (wanderPoints[currentPointIndex].position - Body.position).normalized * speed;
 
