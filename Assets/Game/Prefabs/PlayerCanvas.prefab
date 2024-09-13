@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 267504651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2803019290805992280}
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132.8, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 35.2, y: 4.2}
+  m_SizeDelta: {x: 192.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &267504655
 CanvasRenderer:
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 98.7
+  m_fontSizeBase: 98.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -168,10 +168,10 @@ RectTransform:
   m_Father: {fileID: 6379699964214527346}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.4}
-  m_SizeDelta: {x: 267.7, y: 17.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &510145318
 CanvasRenderer:
@@ -246,11 +246,11 @@ RectTransform:
   m_Father: {fileID: 5609678251712261126}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 676, y: -37}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 107.7, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &687567697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ RectTransform:
   m_GameObject: {fileID: 886789831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6656274889183451411}
@@ -366,8 +366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132.8, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 35.199993, y: 4.199999}
+  m_SizeDelta: {x: 192.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &886789835
 CanvasRenderer:
@@ -424,8 +424,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 98.7
+  m_fontSizeBase: 98.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -493,7 +493,7 @@ RectTransform:
   m_GameObject: {fileID: 949221324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 180814587884286602}
@@ -501,8 +501,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132.8, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 35.199993, y: 4.199999}
+  m_SizeDelta: {x: 192.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &949221328
 CanvasRenderer:
@@ -559,8 +559,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 98.7
+  m_fontSizeBase: 98.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -634,10 +634,10 @@ RectTransform:
   m_Father: {fileID: 483849141243371106}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.4}
-  m_SizeDelta: {x: 267.7, y: 17.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1066721237
 CanvasRenderer:
@@ -712,11 +712,11 @@ RectTransform:
   m_Father: {fileID: 5609678251712261126}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1136, y: -37}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 216, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1247072112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,10 +830,10 @@ RectTransform:
   m_Father: {fileID: 6997573549193444493}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.4}
-  m_SizeDelta: {x: 267.7, y: 17.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1380924645
 CanvasRenderer:
@@ -906,10 +906,10 @@ RectTransform:
   m_Father: {fileID: 483849141243371106}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.4}
-  m_SizeDelta: {x: 267.7, y: 17.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1614420448
 CanvasRenderer:
@@ -982,10 +982,10 @@ RectTransform:
   m_Father: {fileID: 6997573549193444493}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.4}
-  m_SizeDelta: {x: 267.7, y: 17.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653290402
 CanvasRenderer:
@@ -1060,11 +1060,11 @@ RectTransform:
   m_Father: {fileID: 5609678251712261126}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: -37}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1672633638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,10 +1178,10 @@ RectTransform:
   m_Father: {fileID: 6379699964214527346}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.4}
-  m_SizeDelta: {x: 267.7, y: 17.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2118174712
 CanvasRenderer:
@@ -1233,7 +1233,7 @@ GameObject:
   - component: {fileID: 7732404122048434625}
   - component: {fileID: 226825279686053756}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_2
+  m_Name: EnergyForeground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1257,7 +1257,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7732404122048434625
 CanvasRenderer:
@@ -1309,7 +1309,7 @@ GameObject:
   - component: {fileID: 3656042515988853925}
   - component: {fileID: 602990085509986312}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_1
+  m_Name: EnergyForeground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1332,8 +1332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00034332275, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3656042515988853925
 CanvasRenderer:
@@ -1412,8 +1412,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 408.33334, y: 137.5}
+  m_AnchoredPosition: {x: 9.000008, y: -26.600004}
+  m_SizeDelta: {x: 98, y: 33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4135021105689050370
 CanvasRenderer:
@@ -1492,8 +1492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 408.33334, y: 137.5}
+  m_AnchoredPosition: {x: 9.000008, y: -26.600004}
+  m_SizeDelta: {x: 98, y: 33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7400182810765066334
 CanvasRenderer:
@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 3370317555323244368}
   - component: {fileID: 1973461074473370043}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_1
+  m_Name: EnergyForeground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1568,8 +1568,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00034332275, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3370317555323244368
 CanvasRenderer:
@@ -1644,8 +1644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -10}
-  m_SizeDelta: {x: 133.33334, y: 133.33334}
+  m_AnchoredPosition: {x: 0, y: -3.3}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4810165340184889532
 CanvasRenderer:
@@ -1721,8 +1721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -51, y: 9}
-  m_SizeDelta: {x: 147.17, y: 41.66671}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1117204445137427374
 GameObject:
@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 4672399401109076960}
   - component: {fileID: 6319971965036707605}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_2
+  m_Name: EnergyBackground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1760,8 +1760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: -4.4, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4672399401109076960
 CanvasRenderer:
@@ -1813,7 +1813,7 @@ GameObject:
   - component: {fileID: 918929505520821811}
   - component: {fileID: 9022647551929921023}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_3
+  m_Name: EnergyBackground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1837,8 +1837,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: 4.899987, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &918929505520821811
 CanvasRenderer:
@@ -1911,11 +1911,11 @@ RectTransform:
   m_Father: {fileID: 180814587884286602}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 37.5, y: 133.33334}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 17.9, y: -7.3}
+  m_SizeDelta: {x: 9, y: 32}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3516501467822924923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1989,8 +1989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -10}
-  m_SizeDelta: {x: 133.33334, y: 133.33334}
+  m_AnchoredPosition: {x: -0.0000076293945, y: -3.3000016}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6679151572386475709
 CanvasRenderer:
@@ -2107,9 +2107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 24
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 514, y: 300}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -2167,11 +2167,11 @@ RectTransform:
   m_Father: {fileID: 2803019290805992280}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 37.5, y: 133.33334}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 17.899984, y: -7.299991}
+  m_SizeDelta: {x: 9, y: 32}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8740893645311810609
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2222,7 +2222,7 @@ GameObject:
   - component: {fileID: 2660019780871952006}
   - component: {fileID: 544630921443378615}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_1
+  m_Name: EnergyBackground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2246,8 +2246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: -14.000008, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2660019780871952006
 CanvasRenderer:
@@ -2320,11 +2320,11 @@ RectTransform:
   m_Father: {fileID: 6527253309964811743}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -73, y: -16}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &3187789100897839207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,7 +2337,7 @@ GameObject:
   - component: {fileID: 6640600232620924616}
   - component: {fileID: 5173859777169087700}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_1
+  m_Name: EnergyBackground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2361,8 +2361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: -14.000008, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6640600232620924616
 CanvasRenderer:
@@ -2435,11 +2435,11 @@ RectTransform:
   m_Father: {fileID: 4874920812118899882}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -73, y: -16}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &3316145948407276002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2452,7 @@ GameObject:
   - component: {fileID: 4295829510423791885}
   - component: {fileID: 6406249709633071978}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_2
+  m_Name: EnergyForeground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2476,7 +2476,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4295829510423791885
 CanvasRenderer:
@@ -2528,7 +2528,7 @@ GameObject:
   - component: {fileID: 3309590471419958614}
   - component: {fileID: 4423902774942708251}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_2
+  m_Name: EnergyBackground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2552,8 +2552,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: -4.399991, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3309590471419958614
 CanvasRenderer:
@@ -2632,8 +2632,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 408.33334, y: 137.5}
+  m_AnchoredPosition: {x: 9, y: -26.6}
+  m_SizeDelta: {x: 98, y: 33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1017806344046842145
 CanvasRenderer:
@@ -2685,7 +2685,7 @@ GameObject:
   - component: {fileID: 6706551760817638181}
   - component: {fileID: 8332474165598456282}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_3
+  m_Name: EnergyForeground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2708,8 +2708,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00033569336, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6706551760817638181
 CanvasRenderer:
@@ -2785,8 +2785,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -51, y: 9}
-  m_SizeDelta: {x: 147.17, y: 41.66671}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &5173459935173824540
 GameObject:
@@ -2824,8 +2824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -51, y: 9}
-  m_SizeDelta: {x: 147.17, y: 41.66671}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &5285755046024760969
 GameObject:
@@ -2860,11 +2860,11 @@ RectTransform:
   m_Father: {fileID: 4874920812118899882}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.1, y: 2.4}
-  m_SizeDelta: {x: 166.66667, y: 32.82}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 13.999983, y: 17.000021}
+  m_SizeDelta: {x: 62, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &5319035581773671319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2894,7 @@ RectTransform:
   m_GameObject: {fileID: 5319035581773671319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.22228, y: 0.22228, z: 0.22228}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5319035583081761227}
@@ -2902,7 +2902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -4}
+  m_AnchoredPosition: {x: 1, y: -1.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5319035581773671312
@@ -3077,11 +3077,11 @@ RectTransform:
   m_Father: {fileID: 8015928921890502604}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 856, y: 50}
-  m_SizeDelta: {x: 387.5, y: 233.33334}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 93, y: 56}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &5319035583081761225
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3156,8 +3156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -57.177, y: 0}
-  m_SizeDelta: {x: 254.16667, y: 150}
+  m_AnchoredPosition: {x: -35.6, y: 0}
+  m_SizeDelta: {x: 61, y: 36}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5319035583287885614
 CanvasRenderer:
@@ -3238,7 +3238,7 @@ GameObject:
   - component: {fileID: 4073587663524653044}
   - component: {fileID: 5495104618445178291}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_3
+  m_Name: EnergyBackground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3262,8 +3262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: 4.9, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4073587663524653044
 CanvasRenderer:
@@ -3315,7 +3315,7 @@ GameObject:
   - component: {fileID: 1015150293799704339}
   - component: {fileID: 7478030655940960084}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_2
+  m_Name: EnergyForeground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3339,7 +3339,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1015150293799704339
 CanvasRenderer:
@@ -3391,7 +3391,7 @@ GameObject:
   - component: {fileID: 7349958911782581931}
   - component: {fileID: 4375775969729590448}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_3
+  m_Name: EnergyBackground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3415,8 +3415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: 4.899987, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7349958911782581931
 CanvasRenderer:
@@ -3468,7 +3468,7 @@ GameObject:
   - component: {fileID: 2006587956512349161}
   - component: {fileID: 8736261073789671265}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_3
+  m_Name: EnergyForeground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3491,8 +3491,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00033569336, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2006587956512349161
 CanvasRenderer:
@@ -3544,7 +3544,7 @@ GameObject:
   - component: {fileID: 4190324494810736228}
   - component: {fileID: 2091315098632094101}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_1
+  m_Name: EnergyBackground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3568,8 +3568,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: -14, y: 6.8}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4190324494810736228
 CanvasRenderer:
@@ -3633,7 +3633,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649650039468919960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10.892117}
+  m_LocalPosition: {x: 0, y: 0, z: -10.8921175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3646,7 +3646,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &7895028275588649189
 GameObject:
@@ -3681,11 +3681,11 @@ RectTransform:
   m_Father: {fileID: 5652339581462071877}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.1, y: 2.4}
-  m_SizeDelta: {x: 166.66667, y: 32.82}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 13.999983, y: 17.000021}
+  m_SizeDelta: {x: 62, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &7923334533095182144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,7 +3698,7 @@ GameObject:
   - component: {fileID: 16042954615972595}
   - component: {fileID: 5246058086443886023}
   m_Layer: 0
-  m_Name: Rooster_EnergyBackground_2
+  m_Name: EnergyBackground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3722,8 +3722,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: 0}
-  m_SizeDelta: {x: 29.166672, y: 41.666668}
+  m_AnchoredPosition: {x: -4.399991, y: 6.799995}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &16042954615972595
 CanvasRenderer:
@@ -3775,7 +3775,7 @@ GameObject:
   - component: {fileID: 3296428994285611643}
   - component: {fileID: 583411839108827274}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_3
+  m_Name: EnergyForeground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3798,8 +3798,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00033569336, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3296428994285611643
 CanvasRenderer:
@@ -3874,8 +3874,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -10}
-  m_SizeDelta: {x: 133.33334, y: 133.33334}
+  m_AnchoredPosition: {x: -0.0000076293945, y: -3.3000016}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5550215282095009724
 CanvasRenderer:
@@ -3948,11 +3948,11 @@ RectTransform:
   m_Father: {fileID: 6527253309964811743}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.1, y: 2.4}
-  m_SizeDelta: {x: 166.66667, y: 32.82}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 14, y: 17}
+  m_SizeDelta: {x: 62, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &8741991097530335913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,11 +3986,11 @@ RectTransform:
   m_Father: {fileID: 6656274889183451411}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 37.5, y: 133.33334}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 17.899984, y: -7.299991}
+  m_SizeDelta: {x: 9, y: 32}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2930116384476052453
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4062,11 +4062,11 @@ RectTransform:
   m_Father: {fileID: 5652339581462071877}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -73, y: -16}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &9037295057972485878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,7 +4079,7 @@ GameObject:
   - component: {fileID: 6821150993855270397}
   - component: {fileID: 6705339418019855489}
   m_Layer: 0
-  m_Name: Rooster_EnergyForeground_1
+  m_Name: EnergyForeground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4102,8 +4102,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00034332275, y: 0}
-  m_SizeDelta: {x: 29.166668, y: 41.666668}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6821150993855270397
 CanvasRenderer:

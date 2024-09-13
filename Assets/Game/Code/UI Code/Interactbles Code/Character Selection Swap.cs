@@ -132,6 +132,7 @@ namespace Game
             }
 
             selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+            selectionImage.SetNativeSize();
         }
 
         private void OnValidate()

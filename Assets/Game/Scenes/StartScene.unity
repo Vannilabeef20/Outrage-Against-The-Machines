@@ -958,7 +958,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 534, y: 300}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -1395,6 +1395,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7281520080705443558, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281520081150960895, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281520081223751427, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7281520081364548255, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
       propertyPath: m_Name
       value: StartOptionsMenu Canvas
@@ -1481,6 +1493,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7281520081364548260, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281520081961875094, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281520081989586603, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281520082080600890, guid: 1ad84a24e513c1e48af7ffdb0c7f8412, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
