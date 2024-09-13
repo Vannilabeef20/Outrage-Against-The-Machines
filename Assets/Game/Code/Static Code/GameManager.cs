@@ -222,9 +222,16 @@ namespace Game
 
         public void PauseGame()
         {
-            if (Time.timeScale > 0) OnSetMenuVisibility.Raise(this, EMenuId.PauseMenu);
+            if (TransitionManager.Instance.IsTransitioning) return;
 
-            else OnSetMenuVisibility.Raise(this, EMenuId.None);
+            if (Time.timeScale > 0)
+            {
+                OnSetMenuVisibility.Raise(this, EMenuId.PauseMenu);
+            }
+            else
+            {
+                OnSetMenuVisibility.Raise(this, EMenuId.None);
+            }
         }
         
         

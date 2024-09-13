@@ -7317,18 +7317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5021951748397553089, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5545050163789521022, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: followTransform
       value: 
       objectReference: {fileID: 6760657933262326602}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: level
-      value: 
-      objectReference: {fileID: 11400000, guid: 718594e921a97de42b3d4317fa28588a, type: 2}
     - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: goImage
       value: 
@@ -7337,28 +7329,7 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 531873384586224252}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: encounters.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: encounterPositionLimitDebugColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: encounterPositionLimitDebugColor.g
-      value: 0.00000017086666
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: encounterPositionLimitDebugColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7244590003445998877, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: followTransform
-      value: 
-      objectReference: {fileID: 3495165848633513320}
-    m_RemovedComponents:
-    - {fileID: 7244590003445998877, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -4,14 +4,16 @@ namespace Game
 {
     public class CharacterSelectionMenuButton : BaseUIInteractive
     {
-        [SerializeField] private MenuIdEvent OnShowCharacterSelection;
-        [SerializeField] private EMenuId targetMenuIds;
+        [SerializeField] MenuIdEvent OnShowCharacterSelection;
+        [SerializeField] EMenuId targetMenuIds;
+        [SerializeField] LevelTransition transition;
 
         public void CallShowChacterSelection()
         {
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
-            OnShowCharacterSelection?.Raise(this, targetMenuIds);
+
+            TransitionManager.Instance.LoadScreen(targetMenuIds, transition);
         }
     }
 }

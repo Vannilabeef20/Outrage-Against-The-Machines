@@ -11,20 +11,25 @@ namespace Game
 {
     public class CharacterSelector : MonoBehaviour
     {
+        [SerializeField] InputActionAsset map;
         [SerializeField] EPlayerInput readyInput;
         [SerializeField] EPlayerInput cancelInput;
         [SerializeField, Scene] int targetScene;
-
-        [SerializeField] InputActionAsset map;
+        [Space]
         [SerializeField] EMenuId startMenuID;
-        [SerializeField] MenuIdEvent menuIdEvent;
-
+        [SerializeField] LevelTransition transition;
+        [Space]
         [SerializeField] CharacterSelectionSwap[] selectionSwaps;
 
         private void Awake()
         {
             map.Enable();
             map.FindAction("Cancel").performed += ReturnToMenu;
+        }
+
+        private void OnDestroy()
+        {
+            map.FindAction("Cancel").performed -= ReturnToMenu;
         }
 
         void ReturnToMenu(InputAction.CallbackContext context)
@@ -35,7 +40,7 @@ namespace Game
 
             if (GameManager.Instance.UnityInputManager.playerCount != 0) return;
 
-            menuIdEvent.Raise(this, startMenuID);
+            TransitionManager.Instance.LoadScreen(startMenuID, transition);
         }
 
         public void ToggleReady(PlayerGameInput playerGameInput)

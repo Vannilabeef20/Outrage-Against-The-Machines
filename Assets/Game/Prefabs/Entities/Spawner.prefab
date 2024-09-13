@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6937930314702519308
 MonoBehaviour:
@@ -61,10 +61,8 @@ MonoBehaviour:
   currentEncounterIndex: 0
   enemiesToSpawn: []
   enemiesAlive: []
-  encounterPositionGizmosRadius: 0.5
-  encounterPositionGizmosColor: {r: 1, g: 0.60341847, b: 0, a: 1}
   encounterPositionDebugLineLenght: 12
-  encounterPositionLimitDebugColor: {r: 0.9707701, g: 1, b: 0, a: 1}
+  encounterPositionLimitDebugColor: {r: 1, g: 0.00000017086666, b: 0, a: 1}
   style:
     m_Name: 
     m_Normal:
