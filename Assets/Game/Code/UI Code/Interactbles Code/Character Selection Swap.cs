@@ -1,100 +1,164 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using NaughtyAttributes;
 
 namespace Game
 {
     public class CharacterSelectionSwap : MonoBehaviour
     {
+        [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
+        [SerializeField] Image selectionImage;
+        [Space]
+        [SerializeField] GameObject joinedUI;
+        [SerializeField] GameObject joinUI;
+        [SerializeField] GameObject readyObject;
+        [SerializeField] GameObject[] speedPoints;
+        [SerializeField] GameObject[] defensePoints;
+
+        [field: Header("PARAMETERS"), HorizontalLine(2F, EColor.Orange)]
+
+        [field: SerializeField] public bool IsReady { get; private set; }
         [field: SerializeField] public int PlayerIndex { get; private set; }
-        [SerializeField] private Image selectionImage;
-        [SerializeField] private Image defenseArrowImage;
-        [SerializeField] private Image speedArrowImage;
-        [SerializeField] private Button swapButton;
-        [SerializeField] private GameObject joinTextObject;
-        [SerializeField, ShowAssetPreview] private Sprite[] selectionSprites;
-        [SerializeField, ShowAssetPreview] private Sprite[] selectionDefenseSprites;
-        [SerializeField, ShowAssetPreview] private Sprite[] selectionSpeedSprites;
-        [field: SerializeField, ShowAssetPreview] public GameObject[] SelectionPrefabs { get; private set; }
+
+        [SerializeField] EPlayerInput leftInput;
+        [SerializeField] EPlayerInput rightInput;
+
+        public CharacterOption[] characterOptions;
+
         [field: SerializeField, ReadOnly] public int SelectionIndex { get; private set; }
 
+
+        public CharacterOption SelectedCharacter => characterOptions[SelectionIndex];
+
+        private void Start()
+        {
+            if(GameManager.Instance == null) 
+            this.LogError($"Character selection cant be active at the start.", EDebugSubjectFlags.Debug);
+        }
         private void OnEnable()
         {
-            if (GameManager.Instance.UnityInputManager.playerCount - 1 < PlayerIndex)
-            {
-                SelectionIndex = -1;
-                selectionImage.enabled = false;
-                defenseArrowImage.enabled = false;
-                speedArrowImage.enabled = false;
-                joinTextObject.SetActive(true);
-                swapButton.image.enabled = false;
-                swapButton.enabled = false;
-            }
-            else
-            {
-                swapButton.image.enabled = true;
-                swapButton.enabled = true;
-                SelectionIndex = 0;
-                selectionImage.enabled = true;
-                defenseArrowImage.enabled = true;
-                speedArrowImage.enabled = true;
-                joinTextObject.SetActive(false);
-                selectionImage.sprite = selectionSprites[SelectionIndex];
-                defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-                speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
-            }
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshImage);
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshJoin);
+
+            SelectionIndex = -1;
+            RefreshSelection();
         }
         private void OnDisable()
         {
-            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshImage);
+            SelectionIndex = -1;
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshJoin);
         }
-        public void Swap()
+        public void Swap(PlayerGameInput playerGameInput)
         {
-            SelectionIndex++;
-            if (SelectionIndex >= 2) //Hard coded
-            {
-                SelectionIndex = 0;
-            }
-            if (SelectionIndex < 0)
-            {
-                SelectionIndex = 2;
-            }
-            selectionImage.sprite = selectionSprites[SelectionIndex];
-            defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-            speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
+            if (IsReady) return;
+
+            if (playerGameInput.Index != PlayerIndex) return;
+
+            if (playerGameInput.Input != leftInput && playerGameInput.Input != rightInput) return;
+
+            if (TransitionManager.Instance.IsTransitioning) return;
+
+            if (playerGameInput.Input == leftInput)
+                SelectionIndex--;
+            else if (playerGameInput.Input == rightInput)
+                SelectionIndex++;
+
+            if (SelectionIndex < 0) SelectionIndex = characterOptions.Length - 1;
+
+            if (SelectionIndex > characterOptions.Length - 1) SelectionIndex = 0;
+
+            RefreshSelection();
         }
 
-        public void RefreshImage(PlayerInput playerInput)
+        public void SetSelection(int selectIndex)
         {
-            if(playerInput.playerIndex != PlayerIndex)
+            IsReady = false;
+            SelectionIndex = selectIndex;
+
+            RefreshSelection();
+        }
+
+        public void RefreshJoin(PlayerInput playerInput) //Called on join
+        {
+            if (playerInput.user.index != PlayerIndex) return;
+
+            IsReady = false;
+            SelectionIndex = 0;
+            RefreshSelection();
+        }
+
+        public void ToggleReady()
+        {
+            IsReady = !IsReady;
+            readyObject.SetActive(IsReady);
+        }
+
+
+        public void RefreshSelection()
+        {
+            readyObject.SetActive(IsReady);
+
+            if (SelectionIndex == -1) //Respective player not joined
             {
+                joinUI.SetActive(true);
+                joinedUI.SetActive(false);
                 return;
             }
-            if (GameManager.Instance.UnityInputManager.playerCount - 1 < PlayerIndex)
+
+            //Respective player joined
+
+            joinUI.SetActive(false);
+            joinedUI.SetActive(true);
+            selectionImage.enabled = true;
+
+            for(int i = 0; i < defensePoints.Length; i++)
             {
-                SelectionIndex = -1;
-                selectionImage.enabled = false;
-                defenseArrowImage.enabled = false;
-                speedArrowImage.enabled = false;
-                joinTextObject.SetActive(true);
-                swapButton.image.enabled = false;
-                swapButton.enabled = false;
+                if (i < characterOptions[SelectionIndex].defenseValue)
+                    defensePoints[i].SetActive(true);
+                else 
+                    defensePoints[i].SetActive(false);                
             }
-            else
+
+            for (int i = 0; i < speedPoints.Length; i++)
             {
-                swapButton.enabled = true;
-                swapButton.image.enabled = true;
-                SelectionIndex = 0;
-                selectionImage.enabled = true;
-                defenseArrowImage.enabled = true;
-                speedArrowImage.enabled = true;
-                joinTextObject.SetActive(false);
-                selectionImage.sprite = selectionSprites[SelectionIndex];
-                defenseArrowImage.sprite = selectionDefenseSprites[SelectionIndex];
-                speedArrowImage.sprite = selectionSpeedSprites[SelectionIndex];
+                if (i < characterOptions[SelectionIndex].speedValue)
+                    speedPoints[i].SetActive(true);
+                else
+                    speedPoints[i].SetActive(false);
+            }
+
+            selectionImage.sprite = characterOptions[SelectionIndex].characterSprite;
+            selectionImage.SetNativeSize();
+        }
+
+        private void OnValidate()
+        {
+            foreach(var option in characterOptions)
+            {
+                if (option.prefab == null) option.Name = "Null";
+
+                else option.Name = option.prefab.name;
             }
         }
+    }
+
+    [System.Serializable]
+    public class CharacterOption
+    {
+        [HideInInspector] public string Name;
+
+        [Range(0, 3)] public int defenseValue;
+
+        [Range(0, 3)] public int speedValue;
+
+        [ShowAssetPreview] public GameObject prefab;
+
+        [ShowAssetPreview] public Sprite characterSprite;
+
+        [ShowAssetPreview] public Sprite characterIcon;
     }
 }

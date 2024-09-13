@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6643640326699574186}
   - component: {fileID: 5628649476368703307}
-  - component: {fileID: 7812069600975837592}
+  - component: {fileID: 7185033564131998189}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -57,61 +57,159 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8714e2f-c4d9-4427-a5e0-b250b18c303f
+    m_ActionName: Inputs/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20091476-0251-4615-b4bf-b3698933d512
+    m_ActionName: Inputs/Punch[/XInputControllerWindows/buttonWest,/Keyboard/p,/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c615223-f831-4d45-9d7f-c32bcf63ea6b
+    m_ActionName: Inputs/Kick[/Keyboard/o,/XInputControllerWindows/buttonEast,/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d04de752-e0c0-42ac-9711-ba0c0143c150
+    m_ActionName: Inputs/Interact[/XInputControllerWindows/buttonNorth,/Keyboard/u,/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef492ce5-af38-43cc-8ddb-74f6756c441c
+    m_ActionName: Inputs/Special[/XInputControllerWindows/rightShoulder,/Keyboard/i,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23b89897-d25c-459a-8f32-4a94bb7f39a8
+    m_ActionName: Inputs/RunningAttack_L[/XInputControllerWindows/leftStick/left,/Keyboard/a,/Keyboard/leftArrow,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e816a13-ca52-4956-bcd1-16a3b970b52e
+    m_ActionName: Inputs/RunningAttack_R[/XInputControllerWindows/leftStick/right,/Keyboard/d,/Keyboard/rightArrow,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d0352cad-2198-4c59-82e9-97478d988c5a
+    m_ActionName: Inputs/OpenCloseMenu[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1b2fc2b0-4dce-41ff-b9ce-48fd3e71f0b5
+    m_ActionName: Inputs/Join[/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a473a82-8a3c-4485-aee9-60ed15101b8d
+    m_ActionName: Inputs/DebugMode[/XInputControllerWindows/select,/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 71ee069b-fb8d-4d71-a133-d3174a87b13b
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 78fc2eb6-bc23-47b3-985d-e98919290016
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 202af3aa-c9af-445d-9810-4395b64409e2
+    m_ActionName: UI/Navigate_Up[/Keyboard/w,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0088229d-9bb8-46a5-b629-6f5cd590626b
+    m_ActionName: UI/Navigate_Down[/Keyboard/downArrow,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a38f4e8d-0308-4389-8f0f-c8da883350bb
+    m_ActionName: UI/Navigate_Left[/Keyboard/a,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185033564131998189}
+        m_TargetAssemblyTypeName: Game.PlayerRoot, Assembly-CSharp
+        m_MethodName: ListenToInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61467c11-a2d4-42d3-a2ff-48faa02424a3
+    m_ActionName: UI/Navigate_Right[/Keyboard/d,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Inputs
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!212 &7812069600975837592
-SpriteRenderer:
+--- !u!114 &7185033564131998189
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211313260985814815}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ecf07da46c7f2ae47b49d0e98d83cd69, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.6666667, y: 2.6666667}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9814ffd8ca6b56540b912aa145c2a6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5628649476368703307}
+  inputEvent: {fileID: 11400000, guid: d63b1c40ff1f61848b2d63596da48304, type: 2}

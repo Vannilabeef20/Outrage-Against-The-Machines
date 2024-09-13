@@ -30,6 +30,11 @@ namespace Game
         [Tooltip("Enum flag filter, regards the type of debug operation.")]
         [SerializeField] EDebugTypeFlags DebugTypes;
 
+        private void Awake()
+        {
+            RefreshLoggerInfo();
+            RefreshInputKeys();
+        }
         private void OnEnable()
         {
             RefreshInputKeys();
@@ -100,5 +105,27 @@ namespace Game
             CustomLogger.DebugSubjects = DebugSubjects;
             CustomLogger.DebugTypes = DebugTypes;
         }
+    }
+
+    /// <summary>
+    /// EFlags for the subject of the debug operation.
+    /// </summary>
+    [System.Flags]
+    public enum EDebugSubjectFlags
+    {
+        Testing = 1,
+        CustomEvents = 2,
+        Debug = 4,
+    }
+
+    /// <summary>
+    /// EFlags for filtering the type of debug operation.
+    /// </summary>
+    [System.Flags]
+    public enum EDebugTypeFlags
+    {
+        Log = 1,
+        LogWarning = 2,
+        LogError = 4,
     }
 }

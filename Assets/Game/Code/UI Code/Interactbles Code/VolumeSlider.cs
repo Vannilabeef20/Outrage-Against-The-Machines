@@ -7,7 +7,7 @@ using FMOD.Studio;
 
 namespace Game
 {
-    public class VolumeSlider : BaseUIInteractive
+    public class VolumeSlider : MonoBehaviour
     {
         [SerializeField, ReadOnly] Slider slider;
         [SerializeField, Expandable] AudioVolumeCurveSO volumeCurve;

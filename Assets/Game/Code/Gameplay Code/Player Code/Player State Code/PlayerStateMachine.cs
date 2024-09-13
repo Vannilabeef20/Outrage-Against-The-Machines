@@ -40,12 +40,6 @@ namespace Game
 
         [SerializeField] LayerMask conveyorLayer;
 
-        [SerializeField] private TextMeshProUGUI playerNumberLabel;
-        [SerializeField, ReadOnly] Color playerColor;
-        Color player1Color = Color.cyan;
-        Color player2Color = Color.green;
-        Color player3Color = Color.yellow;
-
 
         [Header("Debug"), HorizontalLine(2F, EColor.Green)]
         [SerializeField] TextMeshProUGUI playerStateLabel;
@@ -70,22 +64,6 @@ namespace Game
             //Dont allow Inputs device switch on multiplayer
             if(GameManager.Instance.PlayerCharacterList.Count <= 1)
                 playerInput.neverAutoSwitchControlSchemes = false;
-
-            //Assign player color & number
-            switch (playerInput.playerIndex)
-            {
-                case 0:
-                    playerColor = player1Color;
-                    break;
-                case 1:
-                    playerColor = player2Color;
-                    break;
-                case 2:
-                    playerColor = player3Color;
-                    break;
-            }
-            playerNumberLabel.text = $"P{playerInput.playerIndex + 1}";
-            playerNumberLabel.color = playerColor;
         }
         void Update()
         {
@@ -172,14 +150,19 @@ namespace Game
 
         public void PauseGame(InputAction.CallbackContext context)
         {
-            if(SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                return;
-            }
-            if (!context.performed)
-            {
-                return;
-            }
+            if (!context.performed) return;
+
+            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+
+            GameManager.Instance.PauseGame();
+        }
+
+        public void PauseGame(PlayerInput input)
+        {
+            if (input != playerInput) return;
+
+            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+
             GameManager.Instance.PauseGame();
         }
 

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using JetBrains.Annotations;
+using FMODUnity;
 
 namespace Game
 {
@@ -11,6 +11,8 @@ namespace Game
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [SerializeField] Transform referencePoint;
+        [SerializeField] StudioEventEmitter dropEmitter;
+        [Space]
         [SerializeField, ShowAssetPreview] GameObject scrapUnit;
         [SerializeField, ShowAssetPreview] GameObject scrapTen;
         [SerializeField, ShowAssetPreview] GameObject scrapHundred;
@@ -72,6 +74,8 @@ namespace Game
                     Quaternion.identity).GetComponentInChildren<ScrapDrop>();
                 scrapDrop.ApplyForce(dir);
             }
+
+            dropEmitter.Play();
         }
 
         public void SpawnRandomScrap()
@@ -99,6 +103,8 @@ namespace Game
             scrapDrop.ApplyForce(dir);
 
             scrapList.RemoveAt(randomIndex);
+
+            dropEmitter.Play();
         }
 #if UNITY_EDITOR
         [Button("Test Spawn All")]
