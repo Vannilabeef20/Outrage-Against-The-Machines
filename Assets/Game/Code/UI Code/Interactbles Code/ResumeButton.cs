@@ -5,7 +5,7 @@ namespace Game
     public class ResumeButton : BaseUIInteractive
     {
         [SerializeField] private MenuIdEvent OnSetMenuVisibility;
-        [SerializeField] private EMenuId TargetMenuIds;
+        [SerializeField] private MenuId TargetMenuIds;
         public void CallHidePauseMenu()
         {
             PlayInteractionAnimation();

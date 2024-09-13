@@ -17,14 +17,11 @@ namespace Game
 
         #region Loading & Transitions 
         [Header("LOADING & TRANSITIONS"), HorizontalLine(2f, EColor.Red)]
-
         [SerializeField] Image transitionImage;
 
         Coroutine loadRoutine;
 
         [SerializeField] LevelTransition[] levelTransitions;
-
-        [field: SerializeField, ReadOnly] public bool IsTransitioning { get; private set; }
         #endregion
 
         private void Awake()
@@ -66,8 +63,6 @@ namespace Game
 
         private IEnumerator TransitionOutRoutine(int targetSceneIndex)
         {
-            IsTransitioning = true;
-
             float frameTime;
             TransitionSO transition;
 
@@ -86,8 +81,6 @@ namespace Game
 
         private IEnumerator TransitionInRoutine(int targetSceneIndex)
         {
-            IsTransitioning = true;
-
             float frameTime;
             TransitionSO transition;
 
@@ -102,7 +95,6 @@ namespace Game
                 yield return new WaitForSecondsRealtime(frameTime);
             }
             transitionImage.enabled = false;
-            IsTransitioning = false;
             loadRoutine = null;
         }
         /*

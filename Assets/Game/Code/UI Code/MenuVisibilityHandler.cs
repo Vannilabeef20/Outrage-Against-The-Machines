@@ -1,30 +1,30 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using NaughtyAttributes;
 
 namespace Game
 {
     public class MenuVisibilityHandler : MonoBehaviour
     {
-        [SerializeField] EMenuId menuId;
-        [Space]
-        [SerializeField] bool selection = true;
+        private EventSystem eventSystem;
+        [SerializeField] private MenuId menuId;
+        [SerializeField] private GameObject defaultSelectableObject;
 
-        [SerializeField, ShowIf("selection")] GameObject selectableObject;
-
-        public void SetVisibility(EMenuId eventMenuIds)
+        private void Awake()
         {
-            if (!eventMenuIds.HasAnyFlag(menuId))
+            eventSystem = EventSystem.current;
+        }
+
+        public void SetVisibility(MenuId eventMenuIds)
+        {
+            if (eventMenuIds.HasAnyFlag(menuId))
+            {
+                gameObject.SetActive(true);
+                eventSystem.SetSelectedGameObject(defaultSelectableObject);
+            }
+            else
             {
                 gameObject.SetActive(false);
-                return;
             }
-         
-            gameObject.SetActive(true);
-
-            if (!selection) return;
-
-            EventSystem.current.SetSelectedGameObject(selectableObject);
         }
     }
 }

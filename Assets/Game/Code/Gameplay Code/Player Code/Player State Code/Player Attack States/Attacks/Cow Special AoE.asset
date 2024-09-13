@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc387c887cc23042aeba7c34e262692, type: 3}
   m_Name: Cow Special AoE
   m_EditorClassIdentifier: 
-  preview: {fileID: -349432973, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
+  preview: {fileID: -1552237659, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
   <Animation>k__BackingField: {fileID: 7400000, guid: f62a2056f2ccf5442847dcddc510dd11, type: 2}
   <Damage>k__BackingField: 120
   <Duration>k__BackingField: 1.5
@@ -29,16 +29,16 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.7
+      time: 0.2
       value: 0
       inSlope: Infinity
-      outSlope: 1.9999995
+      outSlope: 1.9999999
       tangentMode: 71
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.8
+      time: 0.3
       value: 0.2
       inSlope: -34.230736
       outSlope: 1.6810406
@@ -47,7 +47,7 @@ MonoBehaviour:
       inWeight: 0.05381256
       outWeight: 0.074762784
     - serializedVersion: 3
-      time: 0.9
+      time: 0.4
       value: 0
       inSlope: -62.265728
       outSlope: 1.0555023

@@ -5,7 +5,7 @@ namespace Game
     public class PauseMenuOptionsButton : BaseUIInteractive
     {
         [SerializeField] private MenuIdEvent OnShowPauseMenuOptions;
-        [SerializeField] private EMenuId targetMenuIds;
+        [SerializeField] private MenuId targetMenuIds;
 
         public void CallShowPauseMenuOptions()
         {

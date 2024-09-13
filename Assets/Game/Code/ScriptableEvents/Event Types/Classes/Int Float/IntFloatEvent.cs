@@ -24,10 +24,5 @@ namespace Game
             Int = newInt;
             Float = newFloat;
         }
-
-        public override string ToString()
-        {
-            return $"Int: {Int}, Float: {Float}.";
-        }
     }
 }

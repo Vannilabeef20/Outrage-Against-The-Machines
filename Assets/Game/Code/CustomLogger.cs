@@ -71,4 +71,26 @@ namespace Game
         }
         #endregion
     }
+
+    /// <summary>
+    /// EFlags for the subject of the debug operation.
+    /// </summary>
+    [System.Flags]
+    public enum EDebugSubjectFlags
+    {
+        Testing = 1,
+        CustomEvents = 2,
+        Debug = 4,
+    }
+
+    /// <summary>
+    /// EFlags for filtering the type of debug operation.
+    /// </summary>
+    [System.Flags]
+    public enum EDebugTypeFlags
+    {
+        Log = 1,
+        LogWarning = 2,
+        LogError = 4,
+    }
 }

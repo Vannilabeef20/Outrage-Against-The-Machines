@@ -72,27 +72,16 @@ namespace Game
 
         private void EventLog(object sender, T data, bool isTest = false)
         {
-            string dataString;
-
-            if(data == null)
-            {
-                dataString = "Null";
-            }
-            else
-            {
-                dataString = data.ToString();
-            }
-
             if (!isTest)
             {
                 this.Log($"<color=#8c53c6>{name} </color><color=white>was raised!</color>" +
-                    $" Data: {dataString}", EDebugSubjectFlags.CustomEvents);
+                    $" Data: {data.ToString()}", EDebugSubjectFlags.CustomEvents);
             }
 
             else
             {
                 this.Log($"<color=#8c53c6>{name} </color><color=white>was raised!</color>" +
-                    $" Data: {dataString}", EDebugSubjectFlags.Testing);
+                    $" Data: {data.ToString()}", EDebugSubjectFlags.Testing);
             }
         }
 
@@ -101,7 +90,7 @@ namespace Game
             return eventListeners.Contains(listener);
         }
 
-        [Button("TEST DEFAULT LOG", EButtonEnableMode.Always)]
+        [Button("TEST LOG", EButtonEnableMode.Always)]
         public void TestDefaultLog()
         {
             EventLog(this, default, true);

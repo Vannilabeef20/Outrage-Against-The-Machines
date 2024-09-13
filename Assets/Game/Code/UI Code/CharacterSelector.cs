@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
 using NaughtyAttributes;
 using System.Linq;
 
@@ -11,79 +8,76 @@ namespace Game
 {
     public class CharacterSelector : MonoBehaviour
     {
-        [SerializeField] EPlayerInput readyInput;
-        [SerializeField] EPlayerInput cancelInput;
-        [SerializeField, Scene] int targetScene;
+        [SerializeField, ReadOnly] private bool wasTutorialCompleted;
+        [SerializeField] private Button confirmButton;
+        [SerializeField] private Button confirmTutorialButton;
+        [SerializeField] private LoadSceneButton tutorialButtonScript;
+        [SerializeField] private CharacterSelectionSwap[] selectionSwaps;
 
-        [SerializeField] InputActionAsset map;
-        [SerializeField] EMenuId startMenuID;
-        [SerializeField] MenuIdEvent menuIdEvent;
-
-        [SerializeField] CharacterSelectionSwap[] selectionSwaps;
-
-        private void Awake()
+        private void OnEnable()
         {
-            map.Enable();
-            map.FindAction("Cancel").performed += ReturnToMenu;
-        }
-
-        void ReturnToMenu(InputAction.CallbackContext context)
-        {
-            if (!gameObject.activeInHierarchy) return;
-
-            if (!context.performed) return;
-
-            if (GameManager.Instance.UnityInputManager.playerCount != 0) return;
-
-            menuIdEvent.Raise(this, startMenuID);
-        }
-
-        public void ToggleReady(PlayerGameInput playerGameInput)
-        {
-            if (readyInput != playerGameInput.Input) return;
-            if (playerGameInput.Index > selectionSwaps.Length) return;
-            if (playerGameInput.Index < 0) return;
-            if (TransitionManager.Instance.IsTransitioning) return;
-
-            selectionSwaps[playerGameInput.Index].ToggleReady();
-
-            int readyCount = 0;
-            foreach (var selection in selectionSwaps)
+            confirmButton.interactable = false;
+            confirmTutorialButton.interactable = false;
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.AddListener(RefreshConfirmButton);
+            GameManager.Instance.UnityInputManager.playerLeftEvent.AddListener(RefreshConfirmButton);
+            if (PlayerPrefs.GetInt("IsTutorialCompleted") == 1)
             {
-                if(selection.SelectionIndex < 0 || selection.IsReady) readyCount++;
+                wasTutorialCompleted = true;
             }
-            if (readyCount == selectionSwaps.Length) ConfirmSelection();
+            else
+            {
+                wasTutorialCompleted = false;
+            }
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.UnityInputManager.playerJoinedEvent.RemoveListener(RefreshConfirmButton);
+            GameManager.Instance.UnityInputManager.playerLeftEvent.RemoveListener(RefreshConfirmButton);
+        }
+
+        public void RefreshConfirmButton(PlayerInput playerInput)
+        {
+            if(GameManager.Instance.UnityInputManager.playerCount < 1)
+            {
+                confirmButton.interactable = false;
+                confirmTutorialButton.interactable = false;
+            }
+            else
+            {
+                confirmTutorialButton.interactable = true;
+                if(wasTutorialCompleted)
+                {
+                    confirmButton.interactable = true;
+                }
+                else
+                {
+                    tutorialButtonScript.AnimateInteractible(0.1f, 10f, true, false);
+                }
+            }
         }
 
         public void ConfirmSelection()
         {
             GameManager.Instance.PlayerCharacterList.Clear();
             PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
-            playerInputs = playerInputs.OrderBy(input => input.user.index).ToArray();
-
-            foreach(var swap in selectionSwaps)
+            playerInputs = playerInputs.OrderBy(input => input.playerIndex).ToArray();
+            for(int i = 0; i < selectionSwaps.Length; i++)
             {
-                if (swap.SelectionIndex < 0)
+                if (selectionSwaps[i].SelectionIndex < 0)
                 {
                     continue;
                 }
-                PlayerCharacter newPlayer = new PlayerCharacter(
-                    swap.SelectedCharacter.prefab,
-                    swap.PlayerIndex,
-                    swap.SelectedCharacter.characterIcon,
-                    playerInputs[swap.PlayerIndex].currentControlScheme,
-                    playerInputs[swap.PlayerIndex].devices.ToArray());
-
-                GameManager.Instance.PlayerCharacterList.Add(newPlayer);
+                GameManager.Instance.PlayerCharacterList.Add(new PlayerCharacter(selectionSwaps[i].SelectionPrefabs[selectionSwaps[i].SelectionIndex],
+                    selectionSwaps[i].PlayerIndex, playerInputs[selectionSwaps[i].PlayerIndex].currentControlScheme,
+                    playerInputs[selectionSwaps[i].PlayerIndex].devices.ToArray()));
             }
-
-            TransitionManager.Instance.LoadScene(targetScene);
         }
-        public void ClearAllPlayers(EMenuId menuId)
+        public void ClearPlayer(MenuId menuId)
         {
             switch(menuId)
             {
-                case EMenuId.StartMenu:
+                case MenuId.StartMenu:
                     PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
                     foreach (PlayerInput playerInput in playerInputs)
                     {
@@ -92,34 +86,6 @@ namespace Game
                     GameManager.Instance.PlayerCharacterList.Clear();
                     break;
             }
-        }
-
-        public void ClearPlayer(PlayerGameInput playerGameInput)
-        {
-            if (playerGameInput.Input != cancelInput) return;
-
-            if (GameManager.Instance.UnityInputManager.playerCount >= playerGameInput.Index + 1)
-            {
-                foreach (var swap in selectionSwaps)
-                {
-
-                    if (swap.PlayerIndex < playerGameInput.Index) continue;                  
-
-                    if(swap.PlayerIndex + 1 == selectionSwaps.Length)
-                    {
-                        swap.SetSelection(-1);
-                        continue;
-                    }
-                    swap.SetSelection(selectionSwaps[swap.PlayerIndex + 1].SelectionIndex);
-                }
-            }
-
-            PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
-            playerInputs = playerInputs.OrderBy(input => input.user.index).ToArray();
-            Destroy(playerInputs[playerGameInput.Index].gameObject);
-            if (GameManager.Instance.PlayerCharacterList.Count >= playerGameInput.Index + 1)
-                GameManager.Instance.PlayerCharacterList.RemoveAt(playerGameInput.Index);
-
         }
 
         [Button("RESET TUTORIAL PREFS")]

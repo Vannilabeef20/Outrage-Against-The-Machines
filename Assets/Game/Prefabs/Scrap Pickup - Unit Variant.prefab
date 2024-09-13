@@ -56,30 +56,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3585850197363024031, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: sprites.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585850197363024031, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 1219622209, guid: 917a913db21055b4fbe45c0ec0152b9d, type: 3}
-    - target: {fileID: 3585850197363024031, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 349663440, guid: 917a913db21055b4fbe45c0ec0152b9d, type: 3}
-    - target: {fileID: 3585850197363024031, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: sprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 570653082, guid: 917a913db21055b4fbe45c0ec0152b9d, type: 3}
-    - target: {fileID: 3585850197363024031, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: sprites.Array.data[3]
-      value: 
-      objectReference: {fileID: 1043302242, guid: 917a913db21055b4fbe45c0ec0152b9d, type: 3}
-    - target: {fileID: 3585850197363024031, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: sprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 791939704, guid: 917a913db21055b4fbe45c0ec0152b9d, type: 3}
     - target: {fileID: 4505198733571588735, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: scrapValue
       value: 1
@@ -99,50 +75,6 @@ PrefabInstance:
     - target: {fileID: 6727501122179452608, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: m_Name
       value: Scrap Pickup - Unit Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111907758493135288, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.48735
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111907758493135288, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.14005221
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111907758493135288, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.48735
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_Size.x
-      value: 0.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_Size.y
-      value: 1.3333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 570653082, guid: 917a913db21055b4fbe45c0ec0152b9d, type: 3}
-    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509273505566647093, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589515128286402395, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589515128286402395, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.322
       objectReference: {fileID: 0}
     - target: {fileID: 8861467702481428731, guid: 5a1cade7d935ad3489b89738372d600b, type: 3}
       propertyPath: m_Color.b

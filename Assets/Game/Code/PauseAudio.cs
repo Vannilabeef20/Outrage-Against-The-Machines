@@ -9,10 +9,7 @@ namespace Game
 	[RequireComponent(typeof(PauseEventListener))]
 	public class PauseAudio : MonoBehaviour
 	{
-		[SerializeField] bool reversed;
-
 		[Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
-
 		[Tooltip("Emitters to be subject to pausing.")]
 		[SerializeField] StudioEventEmitter[] audioEmitters;
 		/// <summary>
@@ -23,21 +20,9 @@ namespace Game
 		/// emmiters should be paused or unpaused.</param>
 		public void SetPaused(bool pause)
 		{
-			if(reversed)
-            {
-				foreach (StudioEventEmitter emitter in audioEmitters)
-				{
-					emitter.EventInstance.getPaused(out bool isPaused);
-					if (isPaused != !pause) emitter.EventInstance.setPaused(!pause);
-				}
-			}
-			else
-            {
-				foreach (StudioEventEmitter emitter in audioEmitters)
-				{
-					emitter.EventInstance.getPaused(out bool isPaused);
-					if (isPaused != pause) emitter.EventInstance.setPaused(pause);
-				}
+			foreach (StudioEventEmitter emitter in audioEmitters)
+			{
+				emitter.EventInstance.setPaused(pause);
 			}
 		}
 

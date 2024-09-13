@@ -5,12 +5,12 @@ namespace Game
     public class ShowPauseMenuButton : BaseUIInteractive
     {
         [SerializeField] private MenuIdEvent OnSetMenuVisibility;
-        [SerializeField] private EMenuId TargetMenuIds;
+        [SerializeField] private MenuId TargetMenuIds;
         public void CallShowPauseMenu()
         {
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
-            OnSetMenuVisibility.Raise(this,TargetMenuIds);
+            OnSetMenuVisibility?.Raise(this,TargetMenuIds);
         } 
     }
 }

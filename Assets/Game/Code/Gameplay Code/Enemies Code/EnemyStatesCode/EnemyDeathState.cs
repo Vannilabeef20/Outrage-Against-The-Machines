@@ -44,24 +44,28 @@ namespace Game
             stateMachine.animator.Play(StateAnimation.name);
         }
 
-        public override void Exit() { }
+        public override void Exit()
+        {
+           
+        }
 
         protected override void ValidateState()
         {
-            if (UpTime <= StateAnimation.length) return;
-
-            IsComplete = true;
-            stateMachine.nextState = stateMachine.intercept;
-            GameObject drop = lootTable.PickRandomDrop();
-            if (drop != null)
+            if(UpTime > StateAnimation.length)
             {
-                Instantiate(drop, stateMachine.transform.position, Quaternion.identity);
+                IsComplete = true;
+                stateMachine.nextState = stateMachine.intercept;
+                GameObject drop = lootTable.PickRandomDrop();
+                if (drop != null)
+                {
+                    Instantiate(drop, stateMachine.transform.position, Quaternion.identity);
+                }
+                foreach (var frame in frameEvents)
+                {
+                    frame.Reset();
+                }
+                Destroy(stateMachine.gameObject);
             }
-            foreach (var frame in frameEvents)
-            {
-                frame.Reset();
-            }
-            Destroy(stateMachine.gameObject);
         }
 
 #if UNITY_EDITOR

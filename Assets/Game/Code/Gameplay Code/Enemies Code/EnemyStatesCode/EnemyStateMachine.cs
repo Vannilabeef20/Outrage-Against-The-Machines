@@ -9,15 +9,13 @@ namespace Game
     [SelectionBase]
     public class EnemyStateMachine : MonoBehaviour
     {
+        public Spawner spawner;
         public SpriteRenderer spriteRenderer;
         public Rigidbody body;
         public Animator animator;
         public BoxCollider hurtBox;
         public BoxCollider attackhitbox;
         public BoxCollider collisionBox;
-        [field: Space]
-        [field: SerializeField] public bool IsFieldEnemy;
-        
 
         #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
@@ -25,19 +23,15 @@ namespace Game
         public EnemyDamageState damage;
         public EnemyAttackingState attack;
         public EnemyDeathState death;
-        public EnemyWanderState wander;
         #endregion
 
         #region State Variables
         [Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Orange)]
+        [SerializeField] private EnemyState currentState;
+        public EnemyState nextState;
         [ReadOnly] public bool overrideStateCompletion;
-        [SerializeField, ReadOnly] private EnemyState currentState;
-        [ReadOnly] public EnemyState nextState;
-        [field: Space]
-        [field: SerializeField, ReadOnly] public bool IsInsidePlayZone { get; private set; }
-        [Space]
-        [SerializeField] private LayerMask conveyorLayer;
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocity;
+        [SerializeField] private LayerMask conveyorLayer;
         #endregion
 
         #region Aligment Check
@@ -49,11 +43,13 @@ namespace Game
         [SerializeField] private Vector3 boxCastDimensions;
         [SerializeField] private float boxCastLenght;
 
+        [field: SerializeField, ReadOnly] public bool IsInsidePlayZone { get; private set; }
+
         #endregion
 
         #region Debug
 
-        [Header("DEBUG (THIS WILL BE STRIPPED ON BUILD)"), HorizontalLine(2F, EColor.Green)]
+        [Header("DEBUG"), HorizontalLine(2F, EColor.Green)]
         [SerializeField] private TextMeshProUGUI stateLabelTmpro;
 #if UNITY_EDITOR
         [SerializeField] private Color boxCastDefaultColor;
@@ -61,17 +57,30 @@ namespace Game
 #endif
         #endregion
 
+        private void Awake()
+        {
+            if (transform.parent == null) return;
+
+            if (transform.parent.TryGetComponent<Spawner>(out Spawner spawn))
+            {
+                spawner = spawn;
+            }
+        }
+
         private void OnEnable()
         {
-            if (IsFieldEnemy == false)
-                Spawner.Instance.enemiesAlive.Add(gameObject);
-
+            if(spawner != null)
+            {
+                spawner.enemiesAlive.Add(gameObject);
+            }
             hurtBox.enabled = true;
         }
         private void OnDisable()
         {
-            if (IsFieldEnemy == false)
-                Spawner.Instance.enemiesAlive.Remove(gameObject);
+            if (spawner != null)
+            {
+                spawner.enemiesAlive.Remove(gameObject);
+            }
         }
         private void Start()
         {
@@ -80,18 +89,8 @@ namespace Game
             {
                 state.Setup(this);
             }
-
-            if(IsFieldEnemy)
-            {
-                currentState = wander;
-                nextState = wander;
-            }
-            else
-            {
-                currentState = intercept;
-                nextState = intercept;
-            }
-
+            currentState = intercept;
+            nextState = intercept;
             currentState.Enter();
             if (currentState != null)
             {

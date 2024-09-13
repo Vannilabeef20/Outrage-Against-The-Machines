@@ -49,13 +49,12 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   virtualCameraFramingTransposer: {fileID: 0}
   goImage: {fileID: 0}
-  encounterEvent: {fileID: 11400000, guid: 88b6af2b3405097429b10b4b9eec9150, type: 2}
   testSpawnEnemy: {fileID: 3354316711582608263, guid: b3ea355dac9064e479646b66c84f0357, type: 3}
   spawnDistance: {x: 13.008181, y: 15.512762}
   spawnHeight: {x: -5.0045877, y: -1.9663203}
   spawnDelay: {x: 1, y: 3.5}
   spawnRegionColor: {r: 0, g: 1, b: 0.8542311, a: 1}
-  <LevelEncounters>k__BackingField: {fileID: 11400000, guid: 718594e921a97de42b3d4317fa28588a, type: 2}
+  encSO: {fileID: 11400000, guid: 718594e921a97de42b3d4317fa28588a, type: 2}
   defaultDeadzoneWidtht: 0
   maxDeadzoneWidtht: 2
   currentEncounterIndex: 0

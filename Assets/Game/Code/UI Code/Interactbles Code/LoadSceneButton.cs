@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using NaughtyAttributes;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +9,6 @@ namespace Game
     /// </summary>
     public class LoadSceneButton : BaseUIInteractive 
     {
-        [SerializeField] Button but;
         [Scene,SerializeField] int targetScene;
 
         public void LoadScene()
@@ -18,12 +16,6 @@ namespace Game
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
             TransitionManager.Instance.LoadScene(targetScene);
-        }
-
-        [Button("Click")]
-        void click()
-        {
-            but.onClick.Invoke();
         }
     }
 }

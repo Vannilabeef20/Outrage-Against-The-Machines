@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833218969128065404
 MonoBehaviour:
@@ -81,10 +81,10 @@ MonoBehaviour:
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 833218969128065404}
-        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 8353600992474620399}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -105,6 +105,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reversed: 1
   audioEmitters:
   - {fileID: 833218969128065404}

@@ -5,7 +5,7 @@ namespace Game
     public class CharacterSelectionMenuButton : BaseUIInteractive
     {
         [SerializeField] private MenuIdEvent OnShowCharacterSelection;
-        [SerializeField] private EMenuId targetMenuIds;
+        [SerializeField] private MenuId targetMenuIds;
 
         public void CallShowChacterSelection()
         {

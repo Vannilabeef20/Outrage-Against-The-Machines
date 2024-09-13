@@ -11,7 +11,6 @@ namespace Game
 {
 	public class PlayerGUI : MonoBehaviour
 	{
-        [SerializeField] Image playerIcon;
         [SerializeField] Image InstantHealthBar;
         [SerializeField] Image LerpHealthBar;
         [SerializeField] TextMeshProUGUI scrapCountText;
@@ -42,9 +41,7 @@ namespace Game
 
                 return;
             }
-            scrapCountText.text = Player.scrapAmount.ToString("D3");
-            playerIcon.sprite = Player.Icon;
-            playerIcon.SetNativeSize();
+            scrapCountText.text = $"${Player.scrapAmount}";
         }
 
         public void UpdateHealthBar(IntFloat playerHealthParams)

@@ -122,7 +122,8 @@ namespace Game
             {
                 stateMachine.nextState = stateMachine.intercept;
                 IsComplete = true;
-            }         
+            }
+            
         }
 
         private void ExecuteFeedbacks()

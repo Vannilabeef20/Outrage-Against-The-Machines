@@ -16,13 +16,9 @@ namespace Game
     public class Spawner : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
-
-        public static Spawner Instance;
-
         [SerializeField] Camera mainCam;
         [SerializeField, ReadOnly] CinemachineFramingTransposer virtualCameraFramingTransposer;
         [SerializeField] Image goImage;
-        [SerializeField] IntEvent encounterEvent;
 #if UNITY_EDITOR
         [SerializeField] private GameObject testSpawnEnemy;
 #endif
@@ -35,14 +31,14 @@ namespace Game
         [Tooltip("The time range between spawns.")]
         [MinMaxSlider(0.5f, 10f), SerializeField] Vector2 spawnDelay;
         [SerializeField] private Color spawnRegionColor;
-        [field: Tooltip("Defines all encounters on this level.")]
-        [field: SerializeField] public LevelEncountersSO LevelEncounters { get; private set; }
+        [Tooltip("Defines all encounters on this level.")]
+        [SerializeField, Expandable] LevelEncountersSO encSO;
 
 
         [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
         [SerializeField, ReadOnly] float defaultDeadzoneWidtht = 0f;
         [SerializeField, ReadOnly] float maxDeadzoneWidtht = 2f;
-        [SerializeField, ReadOnly] int currentEncounterIndex;
+        [SerializeField, ReadOnly] int currentEncounterIndex; 
         [SerializeField, ReadOnly] List<GameObject> enemiesToSpawn;
         [ReadOnly] public List<GameObject> enemiesAlive;
 
@@ -55,22 +51,12 @@ namespace Game
 
         [SerializeField] GUIStyle style;
 
-        int PlayerCount => GameManager.Instance.UnityInputManager.playerCount;
-
-        Coroutine encCoroutine;
-        Vector3 point1Pos;
-        Vector3 point2Pos;
+        private Vector3 point1Pos;
+        private Vector3 point2Pos;
 #endif
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            else Instance = this;
-
             virtualCameraFramingTransposer = FindObjectOfType<CinemachineVirtualCamera>().
                 GetCinemachineComponent<CinemachineFramingTransposer>();
         }
@@ -83,59 +69,41 @@ namespace Game
                 DestroyAll();
             }
 #endif
-            if (LevelEncounters.Encounters.Length == 0)
+            if (encSO.Encounters.Length == 0)
             {
                 return;
             }
-            if (transform.position.x > LevelEncounters.Encounters[currentEncounterIndex].position.x)
+            if (transform.position.x > encSO.Encounters[currentEncounterIndex].position.x)
             {
-                if(encCoroutine == null)
-                encCoroutine = StartCoroutine(EncounterRoutine());
-            }
-        }
-
-        private IEnumerator EncounterRoutine()
-        {
-            //Init
-            goImage.enabled = false;
-            virtualCameraFramingTransposer.m_DeadZoneWidth = maxDeadzoneWidtht;
-            encounterEvent.Raise(this, currentEncounterIndex);
-
-            //Wave loop
-            foreach (var wave in LevelEncounters.Encounters[currentEncounterIndex].waves)
-            {
-                //Wave building
-                foreach (var _enemy in wave.enemies)
+                foreach (SpawnableEnemy _enemy in encSO.Encounters[currentEncounterIndex].enemies)
                 {
-                    if (_enemy.multiplayerOnly && PlayerCount < _enemy.playersRequired) continue;
-
                     for (int i = 0; i < _enemy.amount; i++)
                     {
                         enemiesToSpawn.Add(_enemy.enemy);
                     }
                 }
                 enemiesToSpawn.ShuffleList();
-
-                //Wave spawn loop
-                SpawnEnemy();
-                while (enemiesToSpawn.Count > 0)
-                {
-                    yield return new WaitForSeconds(UnityEngine.Random.Range(spawnDelay.x, spawnDelay.y));
-                    SpawnEnemy();
-                }
-
-                //Wait till all enemies are dead
-                while (enemiesAlive.Count > 0)
-                {
-                    yield return null;
-                }
+                StartCoroutine(EncounterRoutine());
+                currentEncounterIndex = Mathf.Clamp(currentEncounterIndex + 1, 0, encSO.Encounters.Length);
             }
-            
-            //End
-            virtualCameraFramingTransposer.m_DeadZoneWidth = defaultDeadzoneWidtht;
+        }
+
+        private IEnumerator EncounterRoutine()
+        {
+            goImage.enabled = false;
+            virtualCameraFramingTransposer.m_DeadZoneWidth = maxDeadzoneWidtht;
+            SpawnEnemy();
+            while (enemiesToSpawn.Count > 0)
+            {
+                yield return new WaitForSeconds(UnityEngine.Random.Range(spawnDelay.x, spawnDelay.y));
+                SpawnEnemy();
+            }
+            while (enemiesAlive.Count > 0)
+            {
+                yield return null;
+            }
+           virtualCameraFramingTransposer.m_DeadZoneWidth = defaultDeadzoneWidtht;
             goImage.enabled = true;
-            currentEncounterIndex = Mathf.Clamp(currentEncounterIndex + 1, 0, LevelEncounters.Encounters.Length);
-            encCoroutine = null;
         }
 
 
@@ -256,11 +224,11 @@ namespace Game
             #endregion
 
             #region DRAW ENCOUNTER ZONE
-            if (LevelEncounters.Encounters.Length == 0)
+            if (encSO.Encounters.Length == 0)
             {
                 return;
             }
-            foreach (Encounter encounter in LevelEncounters.Encounters)
+            foreach (Encounter encounter in encSO.Encounters)
             {
                 Gizmos.color = encounterPositionGizmosColor;
                 if(mainCam != null)

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
 using FMODUnity;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -18,8 +17,6 @@ namespace Game
     {
         public static GameManager Instance{ get; private set; }
 
-        [SerializeField] GameObject root;
-
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
@@ -29,8 +26,7 @@ namespace Game
 
         public PlayerInputManager UnityInputManager;
 
-        [field: Space]
-        [field: SerializeField] public PlayerCharacter DefaultPlayer { get; private set; }
+        [field: SerializeField] public GameObject DefaultPrefab { get; private set; }
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
 
@@ -79,14 +75,14 @@ namespace Game
             int level = SceneManager.GetActiveScene().buildIndex;
             if (level == 0)
             {
-                OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
+                OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
             }
             else
             {
                 InitializeLevel();
                 CurrentLifeAmount = initialLifeAmout;
                 UpdateLifeCount.Raise(this, CurrentLifeAmount);
-                OnSetMenuVisibility.Raise(this, EMenuId.None);               
+                OnSetMenuVisibility.Raise(this, MenuId.None);               
             }
         }
 
@@ -105,12 +101,11 @@ namespace Game
                 return;
             }
 
-            if (level == 0) OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
+            if (level == 0) OnSetMenuVisibility.Raise(this, MenuId.StartMenu);
             else
             {
-                OnSetMenuVisibility.Raise(this, EMenuId.None);
+                OnSetMenuVisibility.Raise(this, MenuId.None);
                 InitializeLevel();
-                UnityInputManager.playerPrefab = root;
             }           
         }
 
@@ -128,8 +123,8 @@ namespace Game
 
             if (PlayerCharacterList.Count == 0) //Starting the game at a gameplay scene
             {
-                PlayerCharacterList.Add(DefaultPlayer);
-                PlayerCharacterList[0].GameObject = Instantiate(PlayerCharacterList[0].Prefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList.Add(new PlayerCharacter(DefaultPrefab, 0, null, null));
+                PlayerCharacterList[0].GameObject = Instantiate(DefaultPrefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
                 PlayerCharacterList[0].Transform = PlayerCharacterList[0].GameObject.transform;
                 PlayerCharacterList[0].Transform.position = LevelManager.Instance.SpawnCoordinates[0];
                 PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
@@ -139,13 +134,13 @@ namespace Game
             {
                 for (int i = 0; i < PlayerCharacterList.Count; i++) 
                 {
-                    UnityInputManager.playerPrefab = PlayerCharacterList[i].Prefab;
+                    UnityInputManager.playerPrefab = PlayerCharacterList[i].PlayerPrefab;
 
                     PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1,
                         PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
                     PlayerCharacterList[i].Transform = PlayerCharacterList[i].GameObject.transform;
                     Rigidbody rb = PlayerCharacterList[i].GameObject.GetComponent<Rigidbody>();
-                    rb.position = LevelManager.Instance.SpawnCoordinates[PlayerCharacterList[i].Index];
+                    rb.position = LevelManager.Instance.SpawnCoordinates[PlayerCharacterList[i].PlayerIndex];
                     PlayerCharacterList[i].HealthHandler = PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                     PlayerCharacterList[i].isPlayerActive = true;
                 }
@@ -222,9 +217,9 @@ namespace Game
 
         public void PauseGame()
         {
-            if (Time.timeScale > 0) OnSetMenuVisibility.Raise(this, EMenuId.PauseMenu);
+            if (Time.timeScale > 0) OnSetMenuVisibility.Raise(this, MenuId.PauseMenu);
 
-            else OnSetMenuVisibility.Raise(this, EMenuId.None);
+            else OnSetMenuVisibility.Raise(this, MenuId.None);
         }
         
         
@@ -290,26 +285,23 @@ namespace Game
     [Serializable]
     public class PlayerCharacter
     {
-        [field: SerializeField] public GameObject Prefab { get; private set; }
-        [field: SerializeField, ShowAssetPreview] public Sprite Icon { get; private set; }
-        [field: Space]
-        [field: SerializeField, ReadOnly, AllowNesting] public int Index { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public string ControlScheme { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices { get; private set; }
-        [Space]
-        [ReadOnly, AllowNesting] public bool isPlayerActive;
-        [ReadOnly, AllowNesting] public int scrapAmount;
-        [Space]
-        [ReadOnly, AllowNesting] public GameObject GameObject;
-        [ReadOnly, AllowNesting] public Transform Transform;
-        [ReadOnly, AllowNesting] public PlayerHealthHandler HealthHandler;
+        [field: SerializeField] public GameObject PlayerPrefab { get; private set; }
+        [field: SerializeField] public int PlayerIndex { get; private set; }
+        [field: SerializeField] public string ControlScheme { get; private set; }
+        [field: SerializeField] public InputDevice[] Devices { get; private set; }
 
+        public bool isPlayerActive;
 
-        public PlayerCharacter (GameObject playerPrefab, int playerIndex, Sprite playerIcon, string controlScheme, InputDevice[] devices)
+        public GameObject GameObject;
+        public Transform Transform;
+        public PlayerHealthHandler HealthHandler;
+
+        public int scrapAmount;
+
+        public PlayerCharacter (GameObject playerPrefab, int playerIndex, string controlScheme, InputDevice[] devices)
         {
-            Prefab = playerPrefab;
-            Index = playerIndex;
-            Icon = playerIcon;
+            PlayerPrefab = playerPrefab;
+            PlayerIndex = playerIndex;
             ControlScheme = controlScheme;
             Devices = devices;
         }

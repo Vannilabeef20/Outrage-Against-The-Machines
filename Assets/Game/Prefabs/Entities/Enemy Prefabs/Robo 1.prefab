@@ -5183,33 +5183,33 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   lootTable:
-    totalWeight: 100
     itemDrops:
-    - Name: 80% -> Nothing
+    - <Name>k__BackingField: Nothing
       <Item>k__BackingField: {fileID: 0}
       <ProbabilityWeight>k__BackingField: 80
       ProbabilityPercent: 80
       ProbabilityRange: {x: 0, y: 80}
-    - Name: 6% -> Heal Pickup
+    - <Name>k__BackingField: Health
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
       <ProbabilityWeight>k__BackingField: 6
       ProbabilityPercent: 6
       ProbabilityRange: {x: 80, y: 86}
-    - Name: 6% -> Heal & Energy Pickup
+    - <Name>k__BackingField: Heal & Energy
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
       <ProbabilityWeight>k__BackingField: 6
       ProbabilityPercent: 6
       ProbabilityRange: {x: 86, y: 92}
-    - Name: 4,5% -> Energy Pickup
+    - <Name>k__BackingField: Energy
       <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
       <ProbabilityWeight>k__BackingField: 4.5
       ProbabilityPercent: 4.5
       ProbabilityRange: {x: 92, y: 96.5}
-    - Name: 3,5% -> Life Pickup
+    - <Name>k__BackingField: Life
       <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
       <ProbabilityWeight>k__BackingField: 3.5
       ProbabilityPercent: 3.5
       ProbabilityRange: {x: 96.5, y: 100}
+    totalWeight: 100
 --- !u!1 &4733453237061180675
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,92 +5242,6 @@ Transform:
   m_Father: {fileID: 6508126985700856565}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5439810913766805149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 720498907989034281}
-  - component: {fileID: 8604786911510735155}
-  - component: {fileID: 4365973715229800980}
-  m_Layer: 0
-  m_Name: Wander
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &720498907989034281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439810913766805149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6508126986923127504}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8604786911510735155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439810913766805149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aee19cc96f2b254f88f7dd0078f7356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 7755f446f3601994c9215f904f8ede8a, type: 2}
-  startTime: 0
-  progress: 0
-  <IsComplete>k__BackingField: 0
-  stateMachine: {fileID: 6508126985700856569}
-  encounterNumber: 0
-  speed: 6
-  wanderPoints: []
-  currentPointIndex: 0
-  clearDistance: 0.5
-  distance: 0
-  arrowHeadColor: {r: 0.100138426, g: 1, b: 0, a: 1}
-  arrowColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &4365973715229800980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439810913766805149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059d3524124b58c4fb415039e715ce7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 88b6af2b3405097429b10b4b9eec9150, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8604786911510735155}
-        m_TargetAssemblyTypeName: Game.EnemyWanderState, Assembly-CSharp
-        m_MethodName: SetChase
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6508126985612539010
 GameObject:
   m_ObjectHideFlags: 0
@@ -5458,26 +5372,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970765ad22247e64c8199c9f88d6f522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
   spriteRenderer: {fileID: 6508126985700856562}
   body: {fileID: 6508126985700856567}
   animator: {fileID: 6508126985700856563}
   hurtBox: {fileID: 6508126987123622498}
   attackhitbox: {fileID: 6508126987276863438}
   collisionBox: {fileID: 6508126985700856564}
-  IsFieldEnemy: 0
   intercept: {fileID: 6508126985612539012}
   damage: {fileID: 6508126986235999517}
   attack: {fileID: 6508126987276863439}
   death: {fileID: 5666314022147243997}
-  wander: {fileID: 8604786911510735155}
-  overrideStateCompletion: 0
   currentState: {fileID: 6508126985612539012}
   nextState: {fileID: 6508126985612539012}
-  <IsInsidePlayZone>k__BackingField: 0
+  overrideStateCompletion: 0
+  ContextVelocity: {x: 0, y: 0, z: 0}
   conveyorLayer:
     serializedVersion: 2
     m_Bits: 2048
-  ContextVelocity: {x: 0, y: 0, z: 0}
   <IsAligned>k__BackingField: 0
   <Distance>k__BackingField: 0
   boxCastLayerMask:
@@ -5486,6 +5398,8 @@ MonoBehaviour:
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
   boxCastDimensions: {x: 0.1, y: 0.55, z: 0.35}
   boxCastLenght: 10
+  <IsInsidePlayZone>k__BackingField: 0
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -5852,7 +5766,6 @@ Transform:
   - {fileID: 6508126987276863436}
   - {fileID: 6508126986235999514}
   - {fileID: 3276738502215876370}
-  - {fileID: 720498907989034281}
   m_Father: {fileID: 6508126985700856565}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6199,9 +6112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 973568458209641379}
   - component: {fileID: 9208055238730998915}
-  - component: {fileID: 2902151520610335076}
-  - component: {fileID: 2957956312464692528}
-  - component: {fileID: 9199014235785435634}
   m_Layer: 0
   m_Name: ScrapDropper
   m_TagString: Untagged
@@ -6237,91 +6147,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referencePoint: {fileID: 973568458209641379}
-  dropEmitter: {fileID: 2902151520610335076}
   scrapUnit: {fileID: 4225638560684016975, guid: 49fe93000a37d1c408f41c6093e83f86, type: 3}
   scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
   scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
   rotAngle: 45
-  minScapDrop: 3
-  maxScapDrop: 4
+  minScapDrop: 9
+  maxScapDrop: 9
   hasReserveScrap: 1
   reserveAmount: 3
   randomAmount: 0
   scrapList: []
---- !u!114 &2902151520610335076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7449210766056345985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1872307531
-      Data2: 1075664795
-      Data3: -690426948
-      Data4: -263032870
-    Path: event:/SFX/Coins/Coin Drop
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &2957956312464692528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7449210766056345985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9199014235785435634}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &9199014235785435634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7449210766056345985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reversed: 0
-  audioEmitters:
-  - {fileID: 2902151520610335076}
+  debugSO: {fileID: 11400000, guid: 067dd1d02bcd8d742a0891fa481e7574, type: 2}
 --- !u!1 &7764394686929643508
 GameObject:
   m_ObjectHideFlags: 0
