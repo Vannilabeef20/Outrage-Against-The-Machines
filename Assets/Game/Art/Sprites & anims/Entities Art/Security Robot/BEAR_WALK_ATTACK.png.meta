@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36ada5efa756a8e4482bcf92db6bd89f
+guid: 151c89803b33aa141a6d31f6479dcf60
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,206 +103,194 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_0
+      name: BEAR_WALK_ATTACK_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4def9691f08d1ea49a15ed6598918960
-      internalID: 362998439
+      spriteID: f98c972da5f99064a8fc754684779733
+      internalID: 137988091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_1
+      name: BEAR_WALK_ATTACK_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79a5c1005a34bb40b6d9d0a94208741
-      internalID: -1729464258
+      spriteID: 855032b65f5075d4a9e5576261aaf333
+      internalID: -1757889279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_2
+      name: BEAR_WALK_ATTACK_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d97fe470574495e44b32682b7241b085
-      internalID: -1457640145
+      spriteID: d060d3f72e3e75040ac73cb88476025e
+      internalID: 52513899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_3
+      name: BEAR_WALK_ATTACK_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1c7035ed1927494482f41bf6dca4c35
-      internalID: 1186331996
+      spriteID: e875d0406e2b04245b6e740440b8f552
+      internalID: 493781349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_4
+      name: BEAR_WALK_ATTACK_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412cb10879f1df0448d96deeeb4568c1
-      internalID: -440263959
+      spriteID: bd4131d986fef1b4bb8c9b045d5e80ed
+      internalID: -814954971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_5
+      name: BEAR_WALK_ATTACK_5
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2229ff79ac0cc164db89110cac5dd97b
-      internalID: -724085021
+      spriteID: 275bf602564d1da43a7c82418174eacd
+      internalID: -174046248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_6
+      name: BEAR_WALK_ATTACK_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78868f91309233c47aad16ae3f887fb5
-      internalID: -1744069856
+      spriteID: a07cf090a20da1f4f8617fcfb39f12e6
+      internalID: -746564640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_7
+      name: BEAR_WALK_ATTACK_7
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7075325f9e536e04b96fae66664b57fc
-      internalID: -940970693
+      spriteID: 868d0be09a166384faf9241141346335
+      internalID: 75241038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BEAR_IDLE_PASSIVE_8
+      name: BEAR_WALK_ATTACK_8
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 0
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35322a0eef3134c42a98cc18a859a9ef
-      internalID: -1015356511
+      spriteID: 89735bcaae2c6c045b99e3b685d14dda
+      internalID: 1295463883
       vertices: []
       indices: 
       edges: []
@@ -318,15 +306,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BEAR_IDLE_PASSIVE_0: 362998439
-      BEAR_IDLE_PASSIVE_4: -440263959
-      BEAR_IDLE_PASSIVE_6: -1744069856
-      BEAR_IDLE_PASSIVE_7: -940970693
-      BEAR_IDLE_PASSIVE_3: 1186331996
-      BEAR_IDLE_PASSIVE_1: -1729464258
-      BEAR_IDLE_PASSIVE_5: -724085021
-      BEAR_IDLE_PASSIVE_8: -1015356511
-      BEAR_IDLE_PASSIVE_2: -1457640145
+      BEAR_WALK_ATTACK_5: -174046248
+      BEAR_WALK_ATTACK_4: -814954971
+      BEAR_WALK_ATTACK_3: 493781349
+      BEAR_WALK_ATTACK_0: 137988091
+      BEAR_WALK_ATTACK_1: -1757889279
+      BEAR_WALK_ATTACK_7: 75241038
+      BEAR_WALK_ATTACK_6: -746564640
+      BEAR_WALK_ATTACK_2: 52513899
+      BEAR_WALK_ATTACK_8: 1295463883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
