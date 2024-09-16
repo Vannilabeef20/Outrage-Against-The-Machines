@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using FMODUnity;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -8,8 +9,12 @@ namespace Game
 {
     public class EnemyAttackState : EnemyState
     {
+        [Header("ATTACK STATE"), HorizontalLine(2F, EColor.Yellow)]
         [SerializeField] EnemyAttackingState AttackMachine;
+
         [field: SerializeField] public EnemyAttack attack { get; private set; }
+
+        [SerializeField] 
 
         public override void Setup(EnemyStateMachine _enemyStateMachine)
         {
@@ -57,17 +62,13 @@ namespace Game
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            if (stateMachine == null)
-            {
-                return;
-            }
             Gizmos.color = AttackMachine.RangeLineColor;
             Gizmos.DrawLine(stateMachine.transform.position + stateMachine.BoxCastOffset,
                 stateMachine.transform.position + stateMachine.BoxCastOffset +
                 (transform.right * attack.TriggerRange));
 
             Vector3 attackPoint = transform.position + stateMachine.BoxCastOffset + (transform.right * attack.TriggerRange);
-            Handles.Label(attackPoint + AttackMachine.RangeLabelOffest, $" <---{attack.Name} range");
+            Handles.Label(attackPoint + AttackMachine.RangeLabelOffest, $"\n^\n|\n|\n|\n{attack.Name}\nrange", AttackMachine.attackLabelStyle);
             Gizmos.DrawLine(attackPoint + AttackMachine.RangeLineHeight, attackPoint - AttackMachine.RangeLineHeight);
         }
 #endif

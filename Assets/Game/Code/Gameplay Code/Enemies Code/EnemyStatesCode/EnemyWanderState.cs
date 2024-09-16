@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -10,6 +11,9 @@ namespace Game
 	{
 		public override string Name { get => "Wander"; }
 
+        [Header("WANDER STATE"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] StudioEventEmitter movementEmitter;
+        [Space]
         [SerializeField] int encounterNumber;
         [Space]
         [SerializeField] float speed;
@@ -27,7 +31,7 @@ namespace Game
         Rigidbody Body => stateMachine.body;
 
 #if UNITY_EDITOR
-        [Header("DEBUG (THIS WILL BE STRIPPED ON BUILD"), HorizontalLine]
+        [Header("DEBUG (THIS WILL BE STRIPPED ON BUILD"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] Color arrowHeadColor;
         [SerializeField] Color arrowColor;
 #endif
@@ -38,9 +42,11 @@ namespace Game
         {
             if(waiting)
             {
+                movementEmitter.Stop();
                 waitTimer -= Time.deltaTime;
                 if (waitTimer > 0) return;
                 waiting = false;
+                movementEmitter.Play();
             }
             if (wanderPoints[currentPointIndex].position.x + 0.1f < transform.position.x)
             {
@@ -82,6 +88,7 @@ namespace Game
             IsComplete = false;
             startTime = Time.time;
             stateMachine.animator.Play(StateAnimation.name);
+            movementEmitter.Play();
         }
 
         public override void Exit() { }

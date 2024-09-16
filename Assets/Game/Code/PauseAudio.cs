@@ -15,6 +15,8 @@ namespace Game
 
 		[Tooltip("Emitters to be subject to pausing.")]
 		[SerializeField] StudioEventEmitter[] audioEmitters;
+
+		bool first = true;
 		/// <summary>
 		/// Sets all referenced audioEmitters paused or unpaused
 		/// according with the given pause value.  
@@ -28,7 +30,16 @@ namespace Game
 				foreach (StudioEventEmitter emitter in audioEmitters)
 				{
 					emitter.EventInstance.getPaused(out bool isPaused);
-					if (isPaused != !pause) emitter.EventInstance.setPaused(!pause);
+					if (isPaused == false && pause == true) 
+                    {
+						emitter.EventInstance.setPaused(false);
+						if (first)
+                        {
+							first = false;
+							emitter.Play();
+                        }
+                    }
+					else if (isPaused == true && pause == false) emitter.EventInstance.setPaused(true);
 				}
 			}
 			else
@@ -36,7 +47,8 @@ namespace Game
 				foreach (StudioEventEmitter emitter in audioEmitters)
 				{
 					emitter.EventInstance.getPaused(out bool isPaused);
-					if (isPaused != pause) emitter.EventInstance.setPaused(pause);
+					if (isPaused == false && pause == true) emitter.EventInstance.setPaused(true);
+					else if (isPaused == true && pause == false) emitter.EventInstance.setPaused(false);
 				}
 			}
 		}

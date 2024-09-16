@@ -16,46 +16,27 @@ namespace Game
         [SerializeField] ScrapDropper scrapDropper;
 
         [SerializeField] LayerMask enviriomentLayerMask;
+        [Space]
+        [ReadOnly] public float stunDuration;
         #region Enemy Hit Flash
+        [Header("HIT FLASH"), HorizontalLine(2F, EColor.Green)]
         [SerializeField, ReadOnly] Color startingColor;
         [SerializeField] Color hitFlashColor;
         [SerializeField] float hitFlashLenght;
+        [Space]
         [SerializeField, ReadOnly] float hitFlashTimer;
         #endregion
         #region Enemy Knockback
-        [Header("KNOCKBACK"), HorizontalLine(2f, EColor.Green)]
+        [Header("KNOCKBACK"), HorizontalLine(2f, EColor.Blue)]
         [SerializeField] AnimationCurve knockbackCurve;
+        [Space]
+        [ReadOnly] public float knockbackStrenght;
         [ReadOnly] public Vector3 damageDealerPos;
         [ReadOnly] public Vector3 initialPos;
-        [ReadOnly] public float stunDuration;
-        [ReadOnly] public float knockbackStrenght;
-        #endregion
-
-        #region Enemy Poise Params
-        //[Header("ENEMY POISE"), HorizontalLine(2f, EColor.Blue)]
-        //[Tooltip("This enemy's poise points")]
-        //[SerializeField, Range(0f,1f)] private float[] poisePoints;
-
-
-        //[Tooltip("This enemy's max poise points")]
-        //[SerializeField, Min(0f)] private float maxPoise;
-
-        //[Tooltip("This enemy's current poise points")]
-        //[SerializeField, ReadOnly] private float currentPoise;
-
-        //[Tooltip("This enemy's current poise ratio 0-1")]
-        //[SerializeField, ReadOnly] private float poiseRatio;
-
-        //[Tooltip("This enemy's Poise regen per second")]
-        //[SerializeField, Min(0f)] private float poiseRegenValue;
-
-        //[Tooltip("This enemy's poise regen delay in seconds")]
-        //[SerializeField, Min(0f)] private float poiseRegenDelay;
-
         #endregion
 
         #region Enemy Damage Camera Shake
-        [Header("CAMERA SHAKE"), HorizontalLine(2f, EColor.Blue)]
+        [Header("CAMERA SHAKE"), HorizontalLine(2f, EColor.Indigo)]
 
         [SerializeField] private CinemachineImpulseSource impulseSource;
         #endregion
@@ -132,5 +113,28 @@ namespace Game
             impulseSource.GenerateImpulse();
         }
 
+        
+        #region Enemy Poise Params
+        //[Header("ENEMY POISE"), HorizontalLine(2f, EColor.Blue)]
+        //[Tooltip("This enemy's poise points")]
+        //[SerializeField, Range(0f,1f)] private float[] poisePoints;
+
+
+        //[Tooltip("This enemy's max poise points")]
+        //[SerializeField, Min(0f)] private float maxPoise;
+
+        //[Tooltip("This enemy's current poise points")]
+        //[SerializeField, ReadOnly] private float currentPoise;
+
+        //[Tooltip("This enemy's current poise ratio 0-1")]
+        //[SerializeField, ReadOnly] private float poiseRatio;
+
+        //[Tooltip("This enemy's Poise regen per second")]
+        //[SerializeField, Min(0f)] private float poiseRegenValue;
+
+        //[Tooltip("This enemy's poise regen delay in seconds")]
+        //[SerializeField, Min(0f)] private float poiseRegenDelay;
+
+        #endregion
     }
 }

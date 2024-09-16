@@ -1,25 +1,27 @@
 using System.Linq;
 using UnityEngine;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
     public class EnemyInterceptState : EnemyState
     {
-#pragma warning disable
-        [field: Header("INTERCEPT STATE"), HorizontalLine(2f, EColor.Yellow)]
-#pragma warning restore
-        public override string Name {get => "Intercept";}
+        public override string Name { get => "Intercept"; }
+
+        [Header("INTERCEPT STATE"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] StudioEventEmitter movementEmitter;
+
         [Header("TARGETING"), HorizontalLine(2f, EColor.Green)]
         [SerializeReference, SubclassSelector] BaseTargeting targetingBehaviour;
-        [SerializeField, ReadOnly] Transform target;
         [SerializeField, Min(0f)] float targetingRepeatInterval;
+        [SerializeField, ReadOnly] Transform target;
         [SerializeField, ReadOnly] float targetingTimer;
 
         [field: Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
+        [field: SerializeReference, SubclassSelector] public BasePathfinding PathfindingBehaviour { get; private set; }
         [SerializeField, Min(0f)] float pathfindingRepeatInterval;
         [SerializeField, ReadOnly] float pathfindingTimer;
-        [field: SerializeReference, SubclassSelector] public BasePathfinding PathfindingBehaviour { get; private set; }
 
         [Header("MOVEMENT"), HorizontalLine(2f, EColor.Indigo)]
         [SerializeField] Vector3 speed;
@@ -46,6 +48,7 @@ namespace Game
             stateMachine.animator.Play(StateAnimation.name);
             startTime = Time.time;
             target = targetingBehaviour.GetTarget(stateMachine.body.position);
+            movementEmitter.Play();
         }
         public override void Do()
         {
@@ -83,13 +86,14 @@ namespace Game
         public override void Exit()
         {
             targetingTimer = 0;
+            movementEmitter.Stop();
         }
 
         protected override void ValidateState()
         {
             if (!stateMachine.IsInsidePlayZone) return;
 
-            if (!stateMachine.attack.CheckForAttacks()) return;
+            if (!stateMachine.attack.CheckForAndSetAttack()) return;
 
             stateMachine.nextState = stateMachine.attack;
             IsComplete = true;

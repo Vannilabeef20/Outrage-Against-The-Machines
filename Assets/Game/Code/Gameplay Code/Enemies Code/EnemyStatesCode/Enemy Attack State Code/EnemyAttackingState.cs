@@ -18,9 +18,11 @@ namespace Game
         [SerializeField, ReadOnly] private float attackUptime;
 #if UNITY_EDITOR
         [field: Header("DEBUG")]
-        [SerializeField] public Color RangeLineColor { get; private set; }
-        [SerializeField] public Vector3 RangeLineHeight { get; private set; }
-        [SerializeField] public Vector3 RangeLabelOffest { get; private set; }
+
+        public GUIStyle attackLabelStyle;
+        public Color RangeLineColor { get; private set; }
+        public Vector3 RangeLineHeight { get; private set; }
+        public Vector3 RangeLabelOffest { get; private set; }
 #endif
 
         public override void Do()
@@ -73,27 +75,25 @@ namespace Game
 
 
 
-        public bool CheckForAttacks()
+        public bool CheckForAndSetAttack()
         {
-            bool ret = false;
-            if (stateMachine.Distance <= -1)
-            {
-                return ret;
-            }
+            if (stateMachine.Distance <= -1) return false;
+
             int atkIndex = -1;
+            bool hasAvailableAttack = false;
             for (int i = 0; i < Attacks.Length; i++)
             {
                 if (Attacks[i].attack.TriggerRange >= stateMachine.Distance)
                 {
                     atkIndex = i;
-                    ret = true;
+                    hasAvailableAttack = true;
                     break;
                 }
             }
             
             if(atkIndex != -1) currentAttack = Attacks[atkIndex].attack;
 
-            return ret;
+            return hasAvailableAttack;
         }
 
         public void SpawnProjectile()

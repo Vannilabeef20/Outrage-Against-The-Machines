@@ -5296,11 +5296,11 @@ MonoBehaviour:
   speed: 2
   clearDistance: 0.2
   waitTime: {x: 0, y: 5}
-  waiting: 0
-  waitTimer: 0
   wanderPoints: []
   currentPointIndex: 0
   distance: 0
+  waiting: 0
+  waitTimer: 0
   arrowHeadColor: {r: 0, g: 0.402215, b: 1, a: 1}
   arrowColor: {r: 0, g: 0.12074661, b: 1, a: 1}
 --- !u!114 &4365973715229800980
@@ -5925,7 +5925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ce4df9ac0dec4ebc0f960fa92d0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 6508126985700856569}
   DEBUGHealthImage: {fileID: 1343746180273577799}
   maxHeathPoints: 100
   <CurrentHealthPercent>k__BackingField: 0

@@ -9,7 +9,7 @@ namespace Game
     /// </summary>
     public class EnemyHealthHandler : MonoBehaviour, IDamageble
     {
-        [SerializeField, ReadOnly] EnemyStateMachine stateMachine;
+        [SerializeField] EnemyStateMachine stateMachine;
         [SerializeField] Image DEBUGHealthImage;
 
         #region Enemy Health Params
@@ -27,7 +27,6 @@ namespace Game
 
         private void Awake()
         {
-            stateMachine = transform.parent.GetComponent<EnemyStateMachine>();
             CurrentHealthPoints = maxHeathPoints;
             CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
         }
