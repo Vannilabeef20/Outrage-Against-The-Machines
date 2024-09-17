@@ -560,7 +560,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_text_main_menu
+      name: UI_text_mainmenu
       rect:
         serializedVersion: 2
         x: 796
@@ -791,7 +791,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_swipe_orange_button_1
+      name: UI_slider_handle_orange_button_1
       rect:
         serializedVersion: 2
         x: 569
@@ -917,7 +917,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_swipe_orange_button_3
+      name: UI_slider_handle_orange_button_3
       rect:
         serializedVersion: 2
         x: 955
@@ -980,7 +980,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_swipe_orange_button_2
+      name: UI_slider_handle_orange_button_2
       rect:
         serializedVersion: 2
         x: 587
@@ -1189,6 +1189,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_text_newgame
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 969
+        width: 73
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1ae8061b65c0c4290e24c43be00eca
+      internalID: 832946257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_start
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 943
+        width: 48
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac55228da796ef441bda9cd305f792b0
+      internalID: -373805691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1201,9 +1243,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       UI_button_orange_2: 279974917
+      UI_slider_handle_orange_button_3: 1815900720
       UI_select_player_1: 774126624
       UI_text_audio: 2093728863
       UI_swipe_1: 1973130707
+      UI_text_newgame: 832946257
       UI_select_character_8: 603895107
       UI_select_character_0: -1723150965
       UI_select_character_65: -921457664
@@ -1215,8 +1259,10 @@ TextureImporter:
       UI_select_character_29: -289030642
       UI_select_character_50: 27650030
       UI_stats_player_3: -1701749794
+      UI_select_character_3: 1703681999
       UI_select_character_1: 1337957247
       UI_select_character_42: -560452778
+      UI_text_mainmenu: 40582790
       UI_select_character_39: -1345831389
       UI_select_character_43: 511532438
       UI_join_player_1: 1910175850
@@ -1227,17 +1273,16 @@ TextureImporter:
       UI_text_options: 528038781
       UI_select_character_64: -120318426
       UI_select_character_67: 1388863745
-      UI_select_character_41: -1266775166
-      UI_button_yellow_2: -1762476359
       UI_text_rumble: -1884951620
-      UI_select_character_27: 1828764748
+      UI_select_character_41: -1266775166
+      UI_text_master_volume: -1815896777
+      UI_button_yellow_2: -1762476359
       UI_options_box: -2034234679
       UI_text_fullscreen: -1795554335
       UI_select_character_53: -450602060
+      UI_select_character_27: 1828764748
       UI_select_character_23: 1626515970
       UI_text_back: -1388692283
-      UI_swipe_orange_button_2: 1901978747
-      UI_text_master_volume: -1815896777
       UI_swipe_2: -288854559
       UI_stats_player_2: 1043075323
       UI_arrow_L: -1065004502
@@ -1248,6 +1293,7 @@ TextureImporter:
       UI_text_options_2: 1690103703
       UI_select_character_38: -622209018
       UI_select_character_44: 446600178
+      UI_text_start: -373805691
       UI_select_character_51: 1287738820
       UI_text_pause: 40908124
       UI_select_character_26: 856963018
@@ -1261,8 +1307,6 @@ TextureImporter:
       UI_pause_box: 415721775
       UI_button_red: -1031967889
       UI_button_yellow: -161279473
-      UI_text_main_menu: 40582790
-      UI_swipe_orange_button_3: 1815900720
       UI_button_green: -485112699
       UI_select_character_30: 284953595
       UI_select_character_24: 2063669031
@@ -1275,12 +1319,12 @@ TextureImporter:
       UI_join_player_3: -2123557095
       UI_select_character_18: 2147179958
       UI_text_resume: -355206927
+      UI_slider_handle_orange_button_1: -2017620000
       UI_text_quit: 1776937766
       UI_button_grey: -2029612801
       UI_stats_player_1: 213354074
       UI_select_character_19: -1435955472
       UI_button_orange: -1631405551
-      UI_swipe_orange_button_1: -2017620000
       UI_button_orange_3: 829753592
       UI_arrow_R: 192657988
       UI_text_screen_shake: 1737514141
@@ -1292,6 +1336,7 @@ TextureImporter:
       UI_select_character_69: 1031972107
       UI_button_back_orange: -498867081
       UI_select_character_49: 1063344253
+      UI_slider_handle_orange_button_2: 1901978747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HUD up v2_0
+      name: HUD_cow_icon
       rect:
         serializedVersion: 2
         x: 122
@@ -115,7 +115,7 @@ TextureImporter:
         width: 21
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,7 +128,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_1
+      name: HUD _roster_icon
       rect:
         serializedVersion: 2
         x: 127
@@ -136,7 +136,7 @@ TextureImporter:
         width: 15
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,7 +149,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_2
+      name: HUD_money_icon
       rect:
         serializedVersion: 2
         x: 124
@@ -157,7 +157,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,7 +170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_3
+      name: HUD_money_number
       rect:
         serializedVersion: 2
         x: 138
@@ -178,7 +178,7 @@ TextureImporter:
         width: 13
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_4
+      name: HUD_energy_yellow_1
       rect:
         serializedVersion: 2
         x: 124
@@ -199,7 +199,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_5
+      name: HUD_energy_yellow_2
       rect:
         serializedVersion: 2
         x: 133
@@ -220,7 +220,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_6
+      name: HUD_energy_yellow_3
       rect:
         serializedVersion: 2
         x: 142
@@ -241,7 +241,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,7 +254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_7
+      name: HUD_energy_yellow_4
       rect:
         serializedVersion: 2
         x: 151
@@ -262,7 +262,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_8
+      name: HUD_energy_grey_1
       rect:
         serializedVersion: 2
         x: 123
@@ -283,7 +283,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,7 +296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_9
+      name: HUD_energy_grey_2
       rect:
         serializedVersion: 2
         x: 132
@@ -304,7 +304,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_10
+      name: HUD_energy_grey_3
       rect:
         serializedVersion: 2
         x: 141
@@ -325,7 +325,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,7 +338,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD up v2_11
+      name: HUD_energy_grey_4
       rect:
         serializedVersion: 2
         x: 150
@@ -346,7 +346,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,7 +367,7 @@ TextureImporter:
         width: 98
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -384,11 +384,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 80
+        y: 79
         width: 98
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -409,7 +409,7 @@ TextureImporter:
         width: 98
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,6 +417,237 @@ TextureImporter:
       bones: []
       spriteID: 657911b2b62494c478d16772bf01206b
       internalID: -773179451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_life
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 205
+        width: 92
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0bf32b4a843e2848b3789399e98e521
+      internalID: 2031712391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_health_up_v0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 157
+        width: 66
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f724b6f7672d434392c25b80650a7bd
+      internalID: 251114215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p1_v1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 120
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cd8c0414928c94487c597a312d852d
+      internalID: -120590340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p1_v2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 121
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a040d6b5c7e7f499a4f662be2f7912
+      internalID: -656426554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p1_v3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 121
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281fa407d66c40949aae39a019b0047e
+      internalID: 1003210667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p2_v1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 80
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5df60e3df7dd6489a9663ef352c6be
+      internalID: 2145842317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p2_v2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 80
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1725f34c36469d442b4eb5f7c289f7b1
+      internalID: 1375941064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p2_v3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 80
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca605eda456db1144baebc2f0b000f14
+      internalID: -8958980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p3_v1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 43
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda50c38bc101db4f807ee165d7d769c
+      internalID: 251591921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p3_v2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 44
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57db71d03b5999741b9ab9014dd57c49
+      internalID: 68174395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_slot_p3_v3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 44
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7aa2b0f344e9f45a99e82396533397
+      internalID: 99299490
       vertices: []
       indices: 
       edges: []
@@ -432,20 +663,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HUD up v2_4: 621528783
-      HUD up v2_9: -1527400434
+      HUD_money_icon: 1651919258
+      HUD_health_up_v0: 251114215
+      HUD_energy_grey_3: 1524051101
+      HUD_slot_p2_v3: -8958980
+      HUD_slot_p1_v2: -656426554
+      HUD_energy_yellow_1: 621528783
       HUD_player_2: 743685460
-      HUD up v2_5: -600687917
-      HUD up v2_3: 905827798
-      HUD up v2_6: 1020779058
-      HUD up v2_8: 226980132
+      HUD_slot_p2_v2: 1375941064
+      HUD_slot_p2_v1: 2145842317
+      HUD_energy_yellow_4: -755294826
+      HUD _roster_icon: -1258828583
+      HUD_energy_yellow_3: 1020779058
+      HUD_slot_p3_v3: 99299490
       HUD_player_1: -560969667
-      HUD up v2_0: -269324856
-      HUD up v2_11: -1369200709
-      HUD up v2_2: 1651919258
-      HUD up v2_1: -1258828583
-      HUD up v2_7: -755294826
-      HUD up v2_10: 1524051101
+      HUD_slot_p3_v2: 68174395
+      HUD_cow_icon: -269324856
+      HUD_energy_yellow_2: -600687917
+      HUD_energy_grey_2: -1527400434
+      HUD_money_number: 905827798
+      GUI_life: 2031712391
+      HUD_slot_p1_v1: -120590340
+      HUD_energy_grey_4: -1369200709
+      HUD_slot_p3_v1: 251591921
+      HUD_slot_p1_v3: 1003210667
+      HUD_energy_grey_1: 226980132
       HUD_player_3: -773179451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
