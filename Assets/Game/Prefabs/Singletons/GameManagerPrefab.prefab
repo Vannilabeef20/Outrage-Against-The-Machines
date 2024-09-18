@@ -131,7 +131,7 @@ MonoBehaviour:
     HealthHandler: {fileID: 0}
   <PlayerCharacterList>k__BackingField: []
   followGroupPrefab: {fileID: 8956597100830334376, guid: 258c40db9e49b4b4080e801aa4450356, type: 3}
-  spawnViewportPostion: {x: 0.49999997, y: 0.15}
+  spawnViewportPostion: {x: 0.5, y: 0.18}
   UpdateLifeCount: {fileID: 11400000, guid: d4584a82d403ab2469f6d59d6047907a, type: 2}
   <CurrentLifeAmount>k__BackingField: 0
   initialLifeAmout: 3
@@ -192,7 +192,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 12800000, guid: b2acfb73667aff5489321b3c26f9132f, type: 3}
-    m_FontSize: 23
+    m_FontSize: 26
     m_FontStyle: 0
     m_Alignment: 4
     m_WordWrap: 0

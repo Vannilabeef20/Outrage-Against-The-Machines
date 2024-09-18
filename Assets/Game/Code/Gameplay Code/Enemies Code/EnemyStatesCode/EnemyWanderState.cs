@@ -91,7 +91,10 @@ namespace Game
             movementEmitter.Play();
         }
 
-        public override void Exit() { }
+        public override void Exit() 
+        {
+            movementEmitter.Stop();
+        }
         protected override void ValidateState() { }
 
         public void SetChase(int encounter)
@@ -99,6 +102,7 @@ namespace Game
             if (encounter != encounterNumber) return;
 
             stateMachine.nextState = stateMachine.intercept;
+            Spawner.Instance.enemiesAlive.Add(stateMachine.Parent);
             IsComplete = true;
         }
 

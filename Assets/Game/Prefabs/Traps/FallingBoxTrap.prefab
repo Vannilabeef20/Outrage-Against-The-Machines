@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1456419365028409629
 MonoBehaviour:
@@ -44,11 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4450cd981af03fb4e83170cdb1c1d45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnZoneDimensions: {x: 10.57, y: 2.3}
-  fallingBoxObject: {fileID: 5976830373177192143, guid: 8e8841b0d15e08d45b5429ead6945b73, type: 3}
-  spawnInterval: 1
-  spawnTimer: 0
-  activationRange: 18.7
+  mainCam: {fileID: 0}
   boxFallingSpeed: {fileID: 11400000, guid: 104c92e905e234140b1418f648d5cc72, type: 2}
-  fallTime: 0
+  fallingBoxObject: {fileID: 5976830373177192143, guid: 8e8841b0d15e08d45b5429ead6945b73, type: 3}
+  activationRange: 18.7
+  spawnZoneDimensions: {x: 10.57, y: 2.3}
+  spawnInterval: 1.5
   targetFallTime: 2
+  fallTime: 2
+  spawnTimer: 0

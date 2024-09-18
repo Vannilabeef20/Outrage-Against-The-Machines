@@ -6,10 +6,12 @@ namespace Game
     public class EnemyDeathState : EnemyState
     {
         public override string Name { get => "Death"; }
+
         [field: Header("DEATH STATE"), HorizontalLine(2f, EColor.Yellow)]
-        [SerializeField] private float duration;
-        [SerializeField] private AnimationFrameEvent[] frameEvents;
-        [SerializeField] private LootTable lootTable;
+
+        [SerializeField] float duration;
+        [SerializeField] AnimationFrameEvent[] frameEvents;
+        [SerializeField] LootTable lootTable;
 
         private void Start()
         {
@@ -61,7 +63,8 @@ namespace Game
             {
                 frame.Reset();
             }
-            Destroy(stateMachine.gameObject);
+            if (stateMachine.Parent == null) this.LogError($"{stateMachine.name}'s parent object is null");
+            Destroy(stateMachine.Parent);
         }
 
 #if UNITY_EDITOR

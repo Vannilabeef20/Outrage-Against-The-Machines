@@ -15,6 +15,7 @@ namespace Game
         public BoxCollider hurtBox;
         public BoxCollider attackhitbox;
         public BoxCollider collisionBox;
+        [field: SerializeField] public GameObject Parent { get; private set; }
         [field: Space]
         [field: SerializeField] public bool IsFieldEnemy;
         

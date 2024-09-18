@@ -4990,6 +4990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9075262819996586183}
   - component: {fileID: 1254378393903530994}
+  - component: {fileID: 8007668038013536351}
   m_Layer: 0
   m_Name: Wander
   m_TagString: Untagged
@@ -5029,14 +5030,49 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 6508126985700856569}
+  movementEmitter: {fileID: 8007668038013536351}
   encounterNumber: 0
   speed: 2
+  clearDistance: 0.5
+  waitTime: {x: 0, y: 0}
   wanderPoints: []
   currentPointIndex: 0
-  clearDistance: 0.5
   distance: 0
+  waiting: 0
+  waitTimer: 0
   arrowHeadColor: {r: 1, g: 0, b: 0, a: 1}
   arrowColor: {r: 0.066278934, g: 1, b: 0, a: 1}
+--- !u!114 &8007668038013536351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404611908491756769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -991307606
+      Data2: 1166171048
+      Data3: -1510623334
+      Data4: -1840118588
+    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3648327314913495207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,6 +5511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6508126985612539013}
   - component: {fileID: 6508126985612539012}
+  - component: {fileID: 3254957323972745098}
   m_Layer: 0
   m_Name: Intercept
   m_TagString: Untagged
@@ -5514,15 +5551,16 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 6508126985700856569}
+  movementEmitter: {fileID: 3254957323972745098}
   targetingBehaviour:
     rid: 3689197334475046919
-  target: {fileID: 0}
   targetingRepeatInterval: 0.25
+  target: {fileID: 0}
   targetingTimer: 0
-  pathfindingRepeatInterval: 0.25
-  pathfindingTimer: 0
   <PathfindingBehaviour>k__BackingField:
     rid: 3689197334475046915
+  pathfindingRepeatInterval: 0.25
+  pathfindingTimer: 0
   speed: {x: 2, y: 1.5, z: 1.5}
   movementDirection: {x: 0, y: 0, z: 0}
   references:
@@ -5547,6 +5585,37 @@ MonoBehaviour:
         normal: {x: 0, y: 1, z: -1}
     - rid: 3689197334475046919
       type: {class: TargetClosest, ns: Game, asm: Assembly-CSharp}
+--- !u!114 &3254957323972745098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508126985612539010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -991307606
+      Data2: 1166171048
+      Data3: -1510623334
+      Data4: -1840118588
+    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6508126985700856560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5606,6 +5675,7 @@ MonoBehaviour:
   hurtBox: {fileID: 6508126987123622498}
   attackhitbox: {fileID: 6508126987276863438}
   collisionBox: {fileID: 6508126985700856564}
+  <Parent>k__BackingField: {fileID: 6508126985700856560}
   IsFieldEnemy: 0
   intercept: {fileID: 6508126985612539012}
   damage: {fileID: 6508126986235999517}
@@ -5811,6 +5881,7 @@ MonoBehaviour:
   enviriomentLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  stunDuration: 0
   startingColor: {r: 0, g: 0, b: 0, a: 0}
   hitFlashColor: {r: 0.7169812, g: 0.3551086, b: 0.3551086, a: 1}
   hitFlashLenght: 0.08
@@ -5839,10 +5910,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  knockbackStrenght: 0
   damageDealerPos: {x: 0, y: 0, z: 0}
   initialPos: {x: 0, y: 0, z: 0}
-  stunDuration: 0
-  knockbackStrenght: 0
   impulseSource: {fileID: 6508126986235999516}
 --- !u!114 &6508126986235999516
 MonoBehaviour:
@@ -6109,7 +6179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ce4df9ac0dec4ebc0f960fa92d0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 6508126985700856569}
   DEBUGHealthImage: {fileID: 1343746180273577799}
   maxHeathPoints: 100
   <CurrentHealthPercent>k__BackingField: 0
@@ -6190,6 +6260,73 @@ MonoBehaviour:
     <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
     <FrameEvents>k__BackingField: []
   attackUptime: 0
+  attackLabelStyle:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
 --- !u!65 &6508126987276863438
 BoxCollider:
   m_ObjectHideFlags: 0

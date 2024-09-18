@@ -45,6 +45,7 @@ namespace Game
 #endif
         public override void Enter()
         {
+            IsComplete = false;
             stateMachine.animator.Play(StateAnimation.name);
             startTime = Time.time;
             target = targetingBehaviour.GetTarget(stateMachine.body.position);

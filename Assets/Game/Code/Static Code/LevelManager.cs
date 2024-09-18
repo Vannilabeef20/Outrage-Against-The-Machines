@@ -31,10 +31,12 @@ namespace Game
         [field: Header("SPAWN"), HorizontalLine(2f, EColor.Yellow)]
         [field: SerializeField] public Vector3[] SpawnCoordinates { private set; get; }
 #if UNITY_EDITOR
+        [SerializeField] float playZoneLineScale;
         [SerializeField] GUIStyle SpawnLabelStyle;
-#endif
+
         Vector3 point1Pos;
         Vector3 point2Pos;
+#endif
 
         private void Awake()
         {
@@ -90,33 +92,34 @@ namespace Game
         {
             if (mainCamera == null) mainCamera = Camera.main;
             #region Draw debug playzone box
+            Handles.color = playZoneColor;
             //Bottom Line
             point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
             point1Pos.y = playZoneHeight.x;
             point2Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
             point2Pos.y = playZoneHeight.x;
-            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneColor);
+            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
 
             //Upper Line
             point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
             point1Pos.y = playZoneHeight.y;
             point2Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
             point2Pos.y = playZoneHeight.y;
-            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneColor);
+            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
 
             //Left Line
             point1Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
             point1Pos.y = playZoneHeight.x;
             point2Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
             point2Pos.y = playZoneHeight.y;
-            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneColor);
+            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
 
             //Right Line
             point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
             point1Pos.y = playZoneHeight.x;
             point2Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
             point2Pos.y = playZoneHeight.y;
-            Debug.DrawLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneColor);
+            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
             #endregion
 
             Gizmos.color = Color.yellow;

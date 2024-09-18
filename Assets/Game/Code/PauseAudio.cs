@@ -16,45 +16,29 @@ namespace Game
 		[Tooltip("Emitters to be subject to pausing.")]
 		[SerializeField] StudioEventEmitter[] audioEmitters;
 
-		bool first = true;
 		/// <summary>
 		/// Sets all referenced audioEmitters paused or unpaused
 		/// according with the given pause value.  
 		/// </summary>
-		/// <param name="pause">bool value tha defines whether the
+		/// <param name="pauseEvent">bool value tha defines whether the
 		/// emmiters should be paused or unpaused.</param>
-		public void SetPaused(bool pause)
+		public void SetPaused(bool pauseEvent)
 		{
-			if(reversed)
+			foreach (StudioEventEmitter emitter in audioEmitters)
             {
-				foreach (StudioEventEmitter emitter in audioEmitters)
+				if (emitter == null)
 				{
-					emitter.EventInstance.getPaused(out bool isPaused);
-					if (isPaused == false && pause == true) 
-                    {
-						emitter.EventInstance.setPaused(false);
-						if (first)
-                        {
-							first = false;
-							emitter.Play();
-                        }
-                    }
-					else if (isPaused == true && pause == false) emitter.EventInstance.setPaused(true);
+					this.LogError($"{gameObject.name} has a null emitter in pause");
+					continue;
 				}
-			}
-			else
-            {
-				foreach (StudioEventEmitter emitter in audioEmitters)
-				{
-					emitter.EventInstance.getPaused(out bool isPaused);
-					if (isPaused == false && pause == true) emitter.EventInstance.setPaused(true);
-					else if (isPaused == true && pause == false) emitter.EventInstance.setPaused(false);
-				}
-			}
+
+				bool pause = pauseEvent ^ reversed;
+				emitter.EventInstance.setPaused(pause);
+			}		
 		}
 
 		#region BUTTONS
-
+#pragma warning disable
 		/// <summary>
 		/// Pauses all referenced audioEmitters.
 		/// </summary>
@@ -71,6 +55,7 @@ namespace Game
 		{
 			SetPaused(false);
 		}
+#pragma warning restore
 		#endregion
 	}
 }

@@ -69,7 +69,9 @@ namespace Game
         {
             SelectState();
             CurrentState.Do();
+#if UNITY_EDITOR
             RunDebug();
+#endif
         }
 
         void FixedUpdate()
@@ -179,6 +181,7 @@ namespace Game
             InputDirection = context.ReadValue<Vector2>();
         }
 
+#if UNITY_EDITOR
         void RunDebug()
         {
             if (CustomLogger.IsDebugModeEnabled)
@@ -198,5 +201,6 @@ namespace Game
                 }
             }
         }
+#endif
     }
 }

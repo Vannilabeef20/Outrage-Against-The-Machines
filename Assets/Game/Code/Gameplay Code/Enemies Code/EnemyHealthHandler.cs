@@ -37,8 +37,8 @@ namespace Game
             {
                 return;
             }
-            CurrentHealthPoints -= damage;
-            CurrentHealthPercent =  CurrentHealthPoints / maxHeathPoints;
+            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0, maxHeathPoints);
+            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
             DEBUGHealthImage.fillAmount = CurrentHealthPercent;
             stateMachine.TakeDamage(damageDealerPos, stunDuration, knockbackStrenght);
         }
