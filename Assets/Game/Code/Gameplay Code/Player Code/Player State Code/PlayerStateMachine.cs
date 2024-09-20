@@ -136,18 +136,31 @@ namespace Game
         #endregion
         public void ValidateAttack(InputAction.CallbackContext context)
         {
-            if(Time.deltaTime <= 0)
-            {
-                return;
-            }
-            if(!context.performed)
-            {
-                return;
-            }
-            if (CurrentState != Stunned && CurrentState != Death)
-            {
-                Attacking.ValidateAttack(context);
-            }
+            if (Time.deltaTime <= 0) return;
+
+            if (!context.performed) return;
+
+            if (CurrentState == Stunned || CurrentState == Death) return;
+
+            Attacking.ValidateAttack(context);
+
+        }
+
+        public void UseItem(InputAction.CallbackContext context)
+        {
+            if (Time.deltaTime <= 0) return;
+
+            if (!context.performed) return;
+
+            if (CurrentState == Stunned || CurrentState == Death) return;
+
+            GameObject storedItem = GameManager.Instance.PlayerCharacterList[playerInput.playerIndex].StoredItem;
+
+            if (storedItem == null) return;
+
+            if (!storedItem.TryGetComponent<ItemDrop>(out ItemDrop item)) return;
+
+            item.Use(playerInput.playerIndex);
         }
 
         public void PauseGame(InputAction.CallbackContext context)

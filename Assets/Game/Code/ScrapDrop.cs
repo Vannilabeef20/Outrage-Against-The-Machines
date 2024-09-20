@@ -24,8 +24,6 @@ namespace Game
 
         [SerializeField, Min(0)] int scrapValue;
 
-        [SerializeField, Tag] string[] playerTags;
-
         [SerializeField] float gravity = -0.1f;
 
         [SerializeField, Range(0, 360)] float gravRot;
@@ -73,9 +71,9 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            for(int i = 0; i < playerTags.Length; i++)
+            for(int i = 0; i < GameManager.Instance.PlayerTags.Length; i++)
             {
-                if (other.gameObject.CompareTag(playerTags[i]))
+                if (other.gameObject.CompareTag(GameManager.Instance.PlayerTags[i]))
                 {
                     pickEmitter.Play();
                     GameManager.Instance.PlayerCharacterList[i].scrapAmount += scrapValue;

@@ -489,7 +489,19 @@ MonoBehaviour:
     m_ActionId: 23b89897-d25c-459a-8f32-4a94bb7f39a8
     m_ActionName: Inputs/Running Attack[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 588689491332936778}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5a473a82-8a3c-4485-aee9-60ed15101b8d
     m_ActionName: Inputs/DebugMode[/Keyboard/tab]
   - m_PersistentCalls:
@@ -520,6 +532,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 61467c11-a2d4-42d3-a2ff-48faa02424a3
     m_ActionName: UI/Navigate_Right[/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/right,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 588689491332936778}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd3c438d-1326-4b07-8d90-f526596c5fcb
+    m_ActionName: Inputs/UseItem[/Keyboard/enter,/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Inputs
@@ -1612,6 +1640,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 187eb8c99133dd142bea2a2acd0bdbb9, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
@@ -1740,6 +1771,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 7bb44ef7693db514a8a1c30c2eccc45b, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
@@ -1871,6 +1905,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 98a06d34c2648b04aa5961a18ca3f910, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 4
     <Actions>k__BackingField:
@@ -1939,6 +1976,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 56ffa50c653b6af448700f5e9b0bff32, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
@@ -11927,6 +11967,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 16436e303fb1fc646b670a7c5296b2be, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 3
     <Actions>k__BackingField:
@@ -12061,6 +12104,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 4dfa6b8b5743cf44b8ed3f6a04b172d0, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
@@ -12129,6 +12175,9 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 9835081fdc1c2814ea111b1a4611e17e, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
   FrameEvents:
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:

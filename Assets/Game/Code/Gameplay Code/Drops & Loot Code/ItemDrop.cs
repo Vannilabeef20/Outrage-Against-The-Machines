@@ -14,18 +14,19 @@ namespace Game
     {
         #region REFERENCES
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
-        [field: SerializeField] public GameObject Prefab { get; private set; }
+        [field: SerializeField, ShowAssetPreview()] public Sprite Icon { get; private set; }
 
         [Tooltip("The item drop visual transform.\n" +
             "Used for making the item float.")]
         [SerializeField] Transform itemSpriteTransform;
+
+        [SerializeField] IntEvent itemEvent;
 
         [SerializeField] StudioEventEmitter pickupEmitter;
         #endregion
 
         #region PARAMETERS & VARIABLES
         [Header("PARAMETERS & VARIABLES"), HorizontalLine(2f, EColor.Orange)]
-        [SerializeField, Tag] string[] playerTags;
 
         [Tooltip("Which pickup effects will be applied on pickup.")]
         [SerializeReference, SubclassSelector] BaseItemDropEffect[] pickupEffects;
@@ -49,21 +50,35 @@ namespace Game
 
         void OnTriggerEnter(Collider other)
         {
-            for (int i = 0; i < playerTags.Length; i++)
+            PickUp(other.gameObject);
+        }
+
+        void PickUp(GameObject targetPlayer)
+        {
+            for (int i = 0; i < GameManager.Instance.PlayerTags.Length; i++)
             {
-                if (other.gameObject.CompareTag(playerTags[i]))
+                if (targetPlayer.CompareTag(GameManager.Instance.PlayerTags[i]))
                 {
-                    pickupEmitter.Play();
-                    foreach(var effect in pickupEffects)
-                    {
-                        effect.ApplyEffect(other.gameObject);
-                    }
-                    GameManager.Instance.PlayerCharacterList[i].StoreItem(Prefab);
-                    DOTween.Kill(gameObject.transform);
-                    Destroy(gameObject);
+                    GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
+                    gameObject.SetActive(false);
+                    itemEvent.Raise(this, i);
                     break;
                 }
-            }        
+            }
+        }
+
+        public void Use(int playerIndex)
+        {
+            pickupEmitter.Play();
+            foreach (var effect in pickupEffects)
+            {
+                effect.ApplyEffect(GameManager.Instance.
+                    PlayerCharacterList[playerIndex].GameObject);
+            }
+            DOTween.Kill(gameObject.transform);
+            GameManager.Instance.PlayerCharacterList[playerIndex].RemoveItem();
+            itemEvent.Raise(this, playerIndex);
+            Destroy(gameObject);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Game
 	public class PlayerGUI : MonoBehaviour
 	{
         [SerializeField] Image playerIcon;
+        [SerializeField] Image itemIcon;
         [SerializeField] Image InstantHealthBar;
         [SerializeField] Image LerpHealthBar;
         [SerializeField] TextMeshProUGUI scrapCountText;
@@ -45,6 +46,21 @@ namespace Game
             scrapCountText.text = Player.scrapAmount.ToString("D3");
             playerIcon.sprite = Player.Icon;
             playerIcon.SetNativeSize();
+        }
+
+        public void UpdateStoredItem(int playerIndex)
+        {
+            if (playerIndex + 1 != playerNumber) return;
+
+            Sprite newIcon = GameManager.Instance.PlayerCharacterList[playerNumber - 1].ItemIcon;
+
+            itemIcon.sprite = newIcon;
+
+            if (newIcon != null) itemIcon.enabled = true;
+            else itemIcon.enabled = false;
+
+
+            itemIcon.SetNativeSize();
         }
 
         public void UpdateHealthBar(IntFloat playerHealthParams)

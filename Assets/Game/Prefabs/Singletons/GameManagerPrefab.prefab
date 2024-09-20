@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7018751217004657233
 MonoBehaviour:
@@ -119,11 +119,16 @@ MonoBehaviour:
   <MainCamera>k__BackingField: {fileID: 0}
   OnSetMenuVisibility: {fileID: 11400000, guid: 1f4faa85e6affaf4b8776147ea1e6f13, type: 2}
   UnityInputManager: {fileID: 7018751217004657233}
+  <PlayerTags>k__BackingField:
+  - P1
+  - P2
+  - P3
   <DefaultPlayer>k__BackingField:
     <Prefab>k__BackingField: {fileID: 6838143541679345078, guid: a6cfaf2811a024b4caf3ccf66fe8ab4f, type: 3}
     <Icon>k__BackingField: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
     <Index>k__BackingField: 0
     <ControlScheme>k__BackingField: 
+    <StoredItem>k__BackingField: {fileID: 0}
     isPlayerActive: 0
     scrapAmount: 0
     GameObject: {fileID: 0}

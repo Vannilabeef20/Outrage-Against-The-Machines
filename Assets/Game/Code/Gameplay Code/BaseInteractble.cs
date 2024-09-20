@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
+using TMPro;
 
 namespace Game
 {
@@ -10,23 +11,26 @@ namespace Game
 	{
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
-        [SerializeField] SpriteRenderer interactionPromptRenderer;
+        [SerializeField] GameObject interactionPrompt;
 
         [SerializeField] SpriteRenderer player1NumberRenderer;
         [SerializeField] SpriteRenderer player2NumberRenderer;
         [SerializeField] SpriteRenderer player3NumberRenderer;
 
-        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
+        [Header("COST"), HorizontalLine(2f, EColor.Orange)]
 
         [SerializeField] protected bool costsMoney;
+        [SerializeField, ShowIf("costsMoney")] TextMeshPro costTMP;
         [SerializeField, Min(1), ShowIf("costsMoney")] protected int costAmount;
 
         private void Awake()
         {
-            interactionPromptRenderer.enabled = false;
+            interactionPrompt.SetActive(false);
             player1NumberRenderer.enabled = false;
             player2NumberRenderer.enabled = false;
             player3NumberRenderer.enabled = false;
+            if (costsMoney) costTMP.text = $"${costAmount}";
+            else costTMP.text = "";
         }
 
         public abstract void OnInteract(int playerNumber);
@@ -62,11 +66,10 @@ namespace Game
 
             switch(player1NumberRenderer.enabled, player2NumberRenderer.enabled, player3NumberRenderer.enabled)
             {
-                case (false, false, false): interactionPromptRenderer.enabled = false; break;
+                case (false, false, false): interactionPrompt.SetActive(false); break;
 
-                default : interactionPromptRenderer.enabled = true; break;
+                default: interactionPrompt.SetActive(true); break;
             }
         }
-
     }
 }

@@ -29,6 +29,7 @@ namespace Game
         public PlayerInputManager UnityInputManager;
 
         [field: Space]
+        [field: SerializeField, Tag] public string[] PlayerTags { get; private set; }
         [field: SerializeField] public PlayerCharacter DefaultPlayer { get; private set; }
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
@@ -269,6 +270,7 @@ namespace Game
                 TransitionManager.Instance.LoadScene(0);
             }
         }
+
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
@@ -304,6 +306,7 @@ namespace Game
         [field: SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices { get; private set; }
 
         [field: SerializeField, ReadOnly, AllowNesting] public GameObject StoredItem { get; private set; }
+        [field: SerializeField, ReadOnly, ShowAssetPreview, AllowNesting] public Sprite ItemIcon { get; private set; }
         [Space]
         [ReadOnly, AllowNesting] public bool isPlayerActive;
         [ReadOnly, AllowNesting] public int scrapAmount;
@@ -322,15 +325,22 @@ namespace Game
             ControlScheme = controlScheme;
             Devices = devices;
             StoredItem = null;
+            ItemIcon = null;
         }
 
-        public void StoreItem(GameObject item)
+        public void StoreItem(GameObject item, Sprite icon)
         {
             if(StoredItem == null)
             {
                 StoredItem = item;
-                Debug.Log(StoredItem.name);
+                ItemIcon = icon;
             }
+        }
+
+        public void RemoveItem()
+        {
+            StoredItem = null;
+            ItemIcon = null;
         }
     }
 }

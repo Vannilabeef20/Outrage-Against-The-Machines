@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2fb1dd690e50a4094bb42d8c3eb1fb, type: 3}
   m_Name: DebugSO
   m_EditorClassIdentifier: 
-  <IsDebugModeEnabled>k__BackingField: 0
+  <IsDebugModeEnabled>k__BackingField: 1
   reference: {fileID: 8559135795675283584, guid: 53098dac0c1b19649a75b996edc8e5af, type: 3}
-  input_keys: Select [Xbox Controller],Tab [Keyboard].
+  input_keys: Select [Gamepad],Tab [Keyboard].
   DebugSubjects: -1
   DebugTypes: -1

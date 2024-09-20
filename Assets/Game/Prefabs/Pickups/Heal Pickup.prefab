@@ -48,13 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a36d2616cca3244b0aee8dcf4518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Prefab>k__BackingField: {fileID: 4423908612461963053}
+  <Icon>k__BackingField: {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   itemSpriteTransform: {fileID: 7852721743779963668}
+  itemEvent: {fileID: 11400000, guid: 4221e71d770a8cd4d83cc4f72221266a, type: 2}
   pickupEmitter: {fileID: 328812730188778333}
-  playerTags:
-  - P1
-  - P2
-  - P3
   pickupEffects:
   - rid: 3689197286202802180
   floatRange: {x: 0, y: 0.2, z: 0}
