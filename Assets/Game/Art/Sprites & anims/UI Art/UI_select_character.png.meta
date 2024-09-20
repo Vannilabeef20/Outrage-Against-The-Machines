@@ -165,7 +165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 209
-        y: 751
+        y: 752
         width: 129
         height: 183
       alignment: 0
@@ -333,7 +333,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 366
-        y: 510
+        y: 511
         width: 131
         height: 179
       alignment: 0
@@ -350,7 +350,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_select_character_1
+      name: UI_select_character_ready
       rect:
         serializedVersion: 2
         x: 47
@@ -1260,7 +1260,6 @@ TextureImporter:
       UI_select_character_50: 27650030
       UI_stats_player_3: -1701749794
       UI_select_character_3: 1703681999
-      UI_select_character_1: 1337957247
       UI_select_character_42: -560452778
       UI_text_mainmenu: 40582790
       UI_select_character_39: -1345831389
@@ -1273,15 +1272,15 @@ TextureImporter:
       UI_text_options: 528038781
       UI_select_character_64: -120318426
       UI_select_character_67: 1388863745
-      UI_text_rumble: -1884951620
       UI_select_character_41: -1266775166
-      UI_text_master_volume: -1815896777
       UI_button_yellow_2: -1762476359
+      UI_text_rumble: -1884951620
+      UI_select_character_27: 1828764748
       UI_options_box: -2034234679
       UI_text_fullscreen: -1795554335
       UI_select_character_53: -450602060
-      UI_select_character_27: 1828764748
       UI_select_character_23: 1626515970
+      UI_text_master_volume: -1815896777
       UI_text_back: -1388692283
       UI_swipe_2: -288854559
       UI_stats_player_2: 1043075323
@@ -1306,6 +1305,7 @@ TextureImporter:
       UI_text_on: 235031227
       UI_pause_box: 415721775
       UI_button_red: -1031967889
+      UI_select_character_ready: 1337957247
       UI_button_yellow: -161279473
       UI_button_green: -485112699
       UI_select_character_30: 284953595
