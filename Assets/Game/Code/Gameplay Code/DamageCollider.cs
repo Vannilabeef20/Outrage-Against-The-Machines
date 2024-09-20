@@ -20,13 +20,15 @@ namespace Game
         [Tooltip("How strong the force applied to the entity will be.")]
         [SerializeField] float knockbackStrenght;
 
-        [Tooltip("Value to be multiplied to damage value if an enemy is damaged instead of a player.")]
-        [SerializeField] float enemyMultiplier;
-
 
         private void OnTriggerEnter(Collider other)
         {
-            
+            if (!playerMask.ContainsLayer(other.gameObject.layer) &&
+                !enemyMask.ContainsLayer(other.gameObject.layer)) return;
+
+            if (!other.TryGetComponent<IDamageble>(out IDamageble damageble)) return;
+
+            damageble.TakeDamage(transform.position, damage, stunDuration, knockbackStrenght);
         }
     }
 }

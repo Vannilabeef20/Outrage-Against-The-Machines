@@ -52,7 +52,10 @@ MonoBehaviour:
   rb: {fileID: 574349411182037776}
   pickEmitter: {fileID: 8847909780515325543}
   scrapValue: 0
-  playerTag: Player
+  playerTags:
+  - P1
+  - P2
+  - P3
   gravity: -0.1
   gravRot: 345
   bounces: 0
@@ -359,7 +362,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites: []
   timer: 0
   currentSpriteIndex: 0
-  pause: 0

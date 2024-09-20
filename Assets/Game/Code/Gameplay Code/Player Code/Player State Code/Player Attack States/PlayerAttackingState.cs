@@ -158,7 +158,7 @@ namespace Game
 
                     //From this point on the attack is validated
 
-
+                    if(PlayerCombos[i].ComboAttacks[attackList.Count].Attack.IsSpecial)
                     AddSpecialCharges(-PlayerCombos[i].ComboAttacks[attackList.Count].Attack.SpecialCost);                   
                     if(stateMachine.CurrentState != this) //Check if the state machine is already in the attacking state
                     {

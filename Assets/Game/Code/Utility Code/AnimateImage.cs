@@ -19,10 +19,11 @@ namespace Game
         [SerializeField] private bool loop = true;
         [SerializeField, Min(0f)] private float animationDuration;
         [SerializeField] private bool DestroyOnFinish;
+        public bool pause;
         [SerializeField, ShowAssetPreview] private Sprite[] sprites;
+        [Space]
         [SerializeField, ReadOnly] private float timer;
         [SerializeField, ReadOnly] private int currentSpriteIndex;
-        public bool pause;
 
         private void Update()
         {

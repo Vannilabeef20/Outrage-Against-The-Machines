@@ -19,7 +19,6 @@ namespace Game
         public static GameManager Instance{ get; private set; }
 
         [SerializeField] GameObject root;
-
         [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
@@ -303,9 +302,12 @@ namespace Game
         [field: SerializeField, ReadOnly, AllowNesting] public int Index { get; private set; }
         [field: SerializeField, ReadOnly, AllowNesting] public string ControlScheme { get; private set; }
         [field: SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices { get; private set; }
+
+        [field: SerializeField, ReadOnly, AllowNesting] public GameObject StoredItem { get; private set; }
         [Space]
         [ReadOnly, AllowNesting] public bool isPlayerActive;
         [ReadOnly, AllowNesting] public int scrapAmount;
+
         [Space]
         [ReadOnly, AllowNesting] public GameObject GameObject;
         [ReadOnly, AllowNesting] public Transform Transform;
@@ -319,6 +321,16 @@ namespace Game
             Icon = playerIcon;
             ControlScheme = controlScheme;
             Devices = devices;
+            StoredItem = null;
+        }
+
+        public void StoreItem(GameObject item)
+        {
+            if(StoredItem == null)
+            {
+                StoredItem = item;
+                Debug.Log(StoredItem.name);
+            }
         }
     }
 }

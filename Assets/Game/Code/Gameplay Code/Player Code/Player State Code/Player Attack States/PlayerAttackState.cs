@@ -6,17 +6,22 @@ namespace Game
 {
     public class PlayerAttackState : PlayerState
     {
-        [field: Header("PLAYER ATTACK INHERITED"), HorizontalLine(2f, EColor.Yellow)]
+        [field: Header("PLAYER ATTACK"), HorizontalLine(2f, EColor.Yellow)]
 
         [SerializeField, ReadOnly] PlayerAttackingState AttackMachine;
-
         [field: SerializeField, Expandable] public PlayerAttackSO PlayerAttack { get; private set; }
+
+        [Header("PROJECTILE"), HorizontalLine(2F, EColor.Green)]
+
+        [SerializeField] public bool hasProjectile;
+        [SerializeField, ShowIf("hasProjectile")] public GameObject projectile;
+        [SerializeField, ShowIf("hasProjectile")] Transform projectileSpawnTransform;
 
         [SerializeField] AnimationFrameEvent[] FrameEvents;
 
         public float TimeLeft  => PlayerAttack.Duration - UpTime;
 
-        [SerializeField] StudioEventEmitter eventEmitter => AttackMachine.attackEmitter;
+        StudioEventEmitter EventEmitter => AttackMachine.attackEmitter;
 
         private void Awake()
         {
@@ -75,10 +80,19 @@ namespace Game
 
         public void PlayPitchedAttackSound(int attackIndex)
         {
-            eventEmitter.Play();
-            eventEmitter.EventInstance.setPitch(PlayerAttack.AudioPitches[attackIndex]);
-            eventEmitter.EventInstance.setParameterByNameWithLabel(
+            EventEmitter.Play();
+            EventEmitter.EventInstance.setPitch(PlayerAttack.AudioPitches[attackIndex]);
+            EventEmitter.EventInstance.setParameterByNameWithLabel(
             PlayerAttack.EventParameter, PlayerAttack.EventLabel);
+        }
+
+        public void SpawnProjectile()
+        {
+            if (!hasProjectile) return;
+
+            GameObject projectileInstance = Instantiate(projectile, projectileSpawnTransform.position, Quaternion.identity);
+
+            Destroy(projectileInstance, 5f);
         }
 
     }

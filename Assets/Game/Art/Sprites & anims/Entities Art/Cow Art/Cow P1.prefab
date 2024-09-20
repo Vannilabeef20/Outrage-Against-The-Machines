@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow P1
       objectReference: {fileID: 0}
+    - target: {fileID: 1164585177367800634, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+      propertyPath: m_TagString
+      value: P1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164585177420930285, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d9b356201c7af7c47b55d8685ce3d87f, type: 2}
+    - target: {fileID: 5457059440745166116, guid: 46d04599db881074d8898c6dd7e84459, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 3915003707477459028, guid: 7727b904a19b0074a93240bdcd6eb5b8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

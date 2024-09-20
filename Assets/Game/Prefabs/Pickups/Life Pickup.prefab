@@ -48,9 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a36d2616cca3244b0aee8dcf4518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Prefab>k__BackingField: {fileID: 2934445200580362204}
   itemSpriteTransform: {fileID: 2183815718027779629}
   pickupEmitter: {fileID: 898268237691745521}
-  playerTag: Player
+  playerTags:
+  - P1
+  - P2
+  - P3
   pickupEffects:
   - rid: 3689197286202802176
   floatRange: {x: 0, y: 0.2, z: 0}
@@ -270,6 +274,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 143103275, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   - {fileID: -206092523, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
@@ -300,4 +305,3 @@ MonoBehaviour:
   - {fileID: -1715732249, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0

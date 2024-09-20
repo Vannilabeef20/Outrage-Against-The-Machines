@@ -149,14 +149,14 @@ namespace Game
             CurrentHealthPoints += (maxHeathPoints * healPercent/100) + healFlat;
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints, 0f, maxHeathPoints);
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            //UpdateHealthBar(newHealthPercent);
+            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
         }
 
         public void Revive()
         {
             CurrentHealthPoints = maxHeathPoints;
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            //UpdateHealthBar(newHealthPercent);
+            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
             playerHitbox.enabled = true;
             reviveEmitter.Play();
             foreach (var device in playerStateMachine.playerInput.devices)

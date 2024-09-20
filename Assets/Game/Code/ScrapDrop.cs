@@ -24,7 +24,7 @@ namespace Game
 
         [SerializeField, Min(0)] int scrapValue;
 
-        [SerializeField, Tag] string playerTag;
+        [SerializeField, Tag] string[] playerTags;
 
         [SerializeField] float gravity = -0.1f;
 
@@ -73,14 +73,16 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag(playerTag))
+            for(int i = 0; i < playerTags.Length; i++)
             {
-                pickEmitter.Play();
-                int playerIndex = other.GetComponentInChildren
-                    <InteractionHandler>().playerInput.playerIndex;
-                GameManager.Instance.PlayerCharacterList[playerIndex].scrapAmount += scrapValue;
-                Destroy(transform.parent.gameObject);
-            }
+                if (other.gameObject.CompareTag(playerTags[i]))
+                {
+                    pickEmitter.Play();
+                    GameManager.Instance.PlayerCharacterList[i].scrapAmount += scrapValue;
+                    Destroy(transform.parent.gameObject);
+                    break;
+                }
+            }           
         }
 
         public void ApplyForce(Vector3 dir)

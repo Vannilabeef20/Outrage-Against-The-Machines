@@ -2065,7 +2065,7 @@ RectTransform:
   - {fileID: 5319035583081761227}
   - {fileID: 5609678251712261126}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3185,6 +3185,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -943450867, guid: 5b243ac75d565a64f881b0ca8b9598b3, type: 3}
   - {fileID: 1405288097, guid: 5b243ac75d565a64f881b0ca8b9598b3, type: 3}
@@ -3195,7 +3196,6 @@ MonoBehaviour:
   - {fileID: -957711612, guid: 5b243ac75d565a64f881b0ca8b9598b3, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!114 &5319035583287885601
 MonoBehaviour:
   m_ObjectHideFlags: 0

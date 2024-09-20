@@ -16,8 +16,7 @@ namespace Game
         Bus bus;
 
         private void Awake()
-        {
-            
+        {     
             if(busGroup == busNames[0])
             {
                 bus = RuntimeManager.GetBus("bus:/");

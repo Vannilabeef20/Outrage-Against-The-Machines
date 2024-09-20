@@ -66,7 +66,7 @@ namespace Game
         #region UNITY METHODS
         private void Awake()
         {
-            fadeTimer = -fadeDelay;
+            fadeTimer = - fadeDelay;
             defaultBoxColor = boxRenderer.color;
             highlightRenderer.color = highlightColor1;
             startPos = boxTransform.position;

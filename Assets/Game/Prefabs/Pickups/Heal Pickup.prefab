@@ -48,9 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a36d2616cca3244b0aee8dcf4518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Prefab>k__BackingField: {fileID: 4423908612461963053}
   itemSpriteTransform: {fileID: 7852721743779963668}
   pickupEmitter: {fileID: 328812730188778333}
-  playerTag: Player
+  playerTags:
+  - P1
+  - P2
+  - P3
   pickupEffects:
   - rid: 3689197286202802180
   floatRange: {x: 0, y: 0.2, z: 0}

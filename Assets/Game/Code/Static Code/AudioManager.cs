@@ -21,7 +21,7 @@ namespace Game
 
         [Header("VOLUME INIT"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] AudioVolumeCurveSO volumeCurve;
-        [SerializeField, ReadOnly] string[] busNames = new string[] { "Master", "Music", "SFX" }; //Place Master first
+        [SerializeField, ReadOnly] string[] busNames = new string[] {"Master","Music","SFX"}; //Place Master first
 
         private void Awake()
         {
@@ -41,7 +41,7 @@ namespace Game
             {
                 if (busName == busNames[0])
                 {
-                    tempBus = RuntimeManager.GetBus($"bus:/{busName}");
+                    tempBus = RuntimeManager.GetBus($"bus:/");
                 }
                 else
                 {

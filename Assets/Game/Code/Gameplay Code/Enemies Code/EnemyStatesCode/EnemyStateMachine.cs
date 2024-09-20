@@ -65,14 +65,13 @@ namespace Game
         private void OnEnable()
         {
             if (IsFieldEnemy == false)
-                Spawner.Instance.enemiesAlive.Add(gameObject);
+                Spawner.Instance.enemiesAlive.Add(Parent);
 
             hurtBox.enabled = true;
         }
         private void OnDisable()
         {
-            if (IsFieldEnemy == false)
-                Spawner.Instance.enemiesAlive.Remove(gameObject);
+            Spawner.Instance.enemiesAlive.Remove(Parent);
         }
         private void Start()
         {

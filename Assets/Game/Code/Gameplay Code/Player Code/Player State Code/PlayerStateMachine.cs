@@ -39,10 +39,10 @@ namespace Game
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocity { get; private set; }
 
         [SerializeField] LayerMask conveyorLayer;
-
-
+        /*
         [Header("Debug"), HorizontalLine(2F, EColor.Green)]
         [SerializeField] TextMeshProUGUI playerStateLabel;
+        */
 
         void Awake()
         {
@@ -56,7 +56,7 @@ namespace Game
             CurrentState = Idle;
             nextState = Idle;
             CurrentState.Enter();
-            playerStateLabel.text = CurrentState.Name;
+            //playerStateLabel.text = CurrentState.Name;
         }
 
         void Start()
@@ -181,9 +181,10 @@ namespace Game
             InputDirection = context.ReadValue<Vector2>();
         }
 
-#if UNITY_EDITOR
+
         void RunDebug()
         {
+            /*
             if (CustomLogger.IsDebugModeEnabled)
             {
                 if (playerStateLabel.gameObject.activeInHierarchy == false)
@@ -200,7 +201,7 @@ namespace Game
                     playerStateLabel.gameObject.SetActive(false);
                 }
             }
+            */
         }
-#endif
     }
 }

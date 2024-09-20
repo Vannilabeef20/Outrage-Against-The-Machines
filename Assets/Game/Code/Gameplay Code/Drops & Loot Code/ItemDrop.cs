@@ -13,7 +13,9 @@ namespace Game
     public class ItemDrop : MonoBehaviour
     {
         #region REFERENCES
-        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+        [field: SerializeField] public GameObject Prefab { get; private set; }
+
         [Tooltip("The item drop visual transform.\n" +
             "Used for making the item float.")]
         [SerializeField] Transform itemSpriteTransform;
@@ -23,7 +25,7 @@ namespace Game
 
         #region PARAMETERS & VARIABLES
         [Header("PARAMETERS & VARIABLES"), HorizontalLine(2f, EColor.Orange)]
-        [SerializeField, Tag] string playerTag;
+        [SerializeField, Tag] string[] playerTags;
 
         [Tooltip("Which pickup effects will be applied on pickup.")]
         [SerializeReference, SubclassSelector] BaseItemDropEffect[] pickupEffects;
@@ -38,26 +40,30 @@ namespace Game
         [SerializeField] Ease floatEase = Ease.InOutSine;
         #endregion
 
-        private void Start()
+        void Start()
         {
             //Makes the "itemSpriteTransform" float up and down
             itemSpriteTransform.DOMove(floatRange + itemSpriteTransform.position,
                 floatDuration * 0.5f).SetEase(floatEase).SetLoops(-1, LoopType.Yoyo);
         }
 
-        private void OnTriggerEnter(Collider other)
+        void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag(playerTag))
+            for (int i = 0; i < playerTags.Length; i++)
             {
-
-                pickupEmitter.Play();
-                for (int i = 0; i < pickupEffects.Length; i++)
+                if (other.gameObject.CompareTag(playerTags[i]))
                 {
-                    pickupEffects[i].ApplyEffect(other.gameObject);
+                    pickupEmitter.Play();
+                    foreach(var effect in pickupEffects)
+                    {
+                        effect.ApplyEffect(other.gameObject);
+                    }
+                    GameManager.Instance.PlayerCharacterList[i].StoreItem(Prefab);
+                    DOTween.Kill(gameObject.transform);
+                    Destroy(gameObject);
+                    break;
                 }
-                DOTween.Kill(gameObject.transform);
-                Destroy(gameObject);
-            }
+            }        
         }
     }
 }

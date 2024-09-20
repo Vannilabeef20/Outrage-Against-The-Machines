@@ -43,13 +43,13 @@ namespace Game
         [field: SerializeField, ShowIf("IsSpecial")] public float SpecialCost { get; private set; }
 
 
-        [field: Header("AUDIO"), HorizontalLine(2f, EColor.Yellow)]
+        [field: Header("AUDIO"), HorizontalLine(2f, EColor.Green)]
         [field: SerializeField] public float[] AudioPitches { get; private set; } = { 1 };
         [field: SerializeField] public string EventParameter { get; private set; }
         [field: SerializeField] public string EventLabel { get; private set; }
 
 
-        [field: Header("RUMBLE"), HorizontalLine(2f, EColor.Green)]
+        [field: Header("RUMBLE"), HorizontalLine(2f, EColor.Blue)]
         [field: SerializeField, Range(0f, 1f)] public float RumbleLowFrequency { get; private set; }
         [field: SerializeField, Range(0f, 1f)] public float RumbleHighFrequency { get; private set; }
         [field: SerializeField, Min(0)] public float RumbleDuration { get; private set; }

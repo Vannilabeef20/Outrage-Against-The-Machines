@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 5976830372341641370}
   - component: {fileID: 5976830372341641371}
   - component: {fileID: 5976830372341641374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FallingBox_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,6 +287,7 @@ MonoBehaviour:
   loop: 0
   animationDuration: 0.3
   DestroyOnFinish: 0
+  pause: 1
   sprites:
   - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
@@ -294,7 +295,6 @@ MonoBehaviour:
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 1
 --- !u!212 &5976830372341641370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reversed: 0
   audioEmitters:
   - {fileID: 6911375306902518787}
   - {fileID: 2643639614410144134}
