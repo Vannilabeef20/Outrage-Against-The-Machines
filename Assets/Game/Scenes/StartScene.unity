@@ -1437,6 +1437,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Press<color=green> Enter</color> or<color=green> A/X</color> to confirm
       objectReference: {fileID: 0}
+    - target: {fileID: 1269155494, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269155494, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fe265694abf2d0f449f440b050f290d2, type: 2}
+    - target: {fileID: 1269155494, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269155494, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4596487124894682127, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
       propertyPath: m_Name
       value: CharacterSelection Canvas
