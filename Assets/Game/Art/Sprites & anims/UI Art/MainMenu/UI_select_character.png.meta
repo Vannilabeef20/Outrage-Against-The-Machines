@@ -165,7 +165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 209
-        y: 752
+        y: 750
         width: 129
         height: 183
       alignment: 0
@@ -1231,6 +1231,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_button_green_2
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 987
+        width: 88
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7748e2e7d4d8d934d9e07124756847bc
+      internalID: 1070317472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1294,9 +1315,10 @@ TextureImporter:
       UI_select_character_44: 446600178
       UI_text_start: -373805691
       UI_select_character_51: 1287738820
-      UI_text_pause: 40908124
+      UI_button_green_2: 1070317472
       UI_select_character_26: 856963018
       UI_select_character_34: -1553212124
+      UI_text_pause: 40908124
       UI_select_character_28: 360088416
       UI_switch_button_off: -83634356
       UI_select_character_22: -953298186
