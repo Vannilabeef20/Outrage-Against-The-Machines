@@ -14,14 +14,12 @@ namespace Game
 
         [Header("TARGETING"), HorizontalLine(2f, EColor.Green)]
         [SerializeReference, SubclassSelector] BaseTargeting targetingBehaviour;
-        [Space]
         [SerializeField, Min(0f)] float targetingRepeatInterval;
         [SerializeField, ReadOnly] Transform target;
         [SerializeField, ReadOnly] float targetingTimer;
 
         [field: Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
         [field: SerializeReference, SubclassSelector] public BasePathfinding PathfindingBehaviour { get; private set; }
-        [Space]
         [SerializeField, Min(0f)] float pathfindingRepeatInterval;
         [SerializeField, ReadOnly] float pathfindingTimer;
 
@@ -63,15 +61,12 @@ namespace Game
         public override void FixedDo()
         {
             if (target == null) return;
-            
-            //Refresh Target
+
             if (targetingTimer > targetingRepeatInterval)
             {
                 target = targetingBehaviour.GetTarget(stateMachine.body.position);
                 targetingTimer = 0;
             }
-
-            //Flip
             if (target.transform.position.x + 0.1f < transform.position.x)
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
@@ -80,21 +75,13 @@ namespace Game
             {
                 stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
-
-            //Refresh Path
             if(pathfindingTimer >= pathfindingRepeatInterval)
             {
-                movementDirection = PathfindingBehaviour.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayzone);
+                movementDirection = PathfindingBehaviour.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayZone);
             }
-
-            //Set Speed
             stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
                 movementDirection.y * speed.y, movementDirection.z * speed.z) + stateMachine.ContextVelocity;
-
-#if UNITY_EDITOR
-            //Draw velocity line
             Debug.DrawLine(stateMachine.body.position, stateMachine.body.position + (stateMachine.body.velocity.normalized * 2), Color.yellow);
-#endif
         }
 
         public override void Exit()
@@ -105,7 +92,7 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (!stateMachine.IsInsidePlayzone) return;
+            if (!stateMachine.IsInsidePlayZone) return;
 
             if (!stateMachine.attack.CheckForAndSetAttack()) return;
 

@@ -17,9 +17,9 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance{ get; private set; }
-        [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         [SerializeField] GameObject root;
+        [field: SerializeField, ReadOnly] public Camera MainCamera { private set; get; }
 
         [SerializeField] MenuIdEvent OnSetMenuVisibility;
 
@@ -316,7 +316,6 @@ namespace Game
         [ReadOnly, AllowNesting] public Transform Transform;
         [ReadOnly, AllowNesting] public PlayerHealthHandler HealthHandler;
 
-        public bool HasItemStored => StoredItem != null;
 
         public PlayerCharacter (GameObject playerPrefab, int playerIndex, Sprite playerIcon, string controlScheme, InputDevice[] devices)
         {
@@ -331,9 +330,11 @@ namespace Game
 
         public void StoreItem(GameObject item, Sprite icon)
         {
-            item.SetActive(false);
-            StoredItem = item;
-            ItemIcon = icon;
+            if(StoredItem == null)
+            {
+                StoredItem = item;
+                ItemIcon = icon;
+            }
         }
 
         public void RemoveItem()

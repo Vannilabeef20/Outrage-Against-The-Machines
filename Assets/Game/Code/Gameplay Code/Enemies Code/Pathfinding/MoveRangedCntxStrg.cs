@@ -69,7 +69,7 @@ namespace Game
         public Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             distance = Vector3.Distance(body.position, targetPosition);
-            if (distance > distanceToKeep || !stateMachine.IsInsidePlayzone)
+            if (distance > distanceToKeep || !stateMachine.IsInsidePlayZone)
             {
                 //Moving towards
                 direction = targetPosition - body.position;
