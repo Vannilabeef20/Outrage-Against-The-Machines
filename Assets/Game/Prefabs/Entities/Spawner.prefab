@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6937930314702519308
 MonoBehaviour:
@@ -60,8 +60,7 @@ MonoBehaviour:
   currentEncounterIndex: 0
   enemiesToSpawn: []
   enemiesAlive: []
-  handlesEncounterLineColor: {r: 0, g: 0.89161634, b: 1, a: 1}
-  handlesSpawnLineColor: {r: 1, g: 0.76081014, b: 0, a: 1}
+  handlesLineColor: {r: 0, g: 0.6077366, b: 1, a: 1}
   handlesLineScale: 9
   style:
     m_Name: 

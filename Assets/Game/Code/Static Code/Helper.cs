@@ -98,6 +98,7 @@ namespace Game
 			return true;
 		}
 
+
 		/// <summary>
 		/// Checks if this Vector2 has its values between a "min" and a "max" Vector2.
 		/// </summary>
@@ -152,22 +153,6 @@ namespace Game
 			Math.Abs(vector2.x);
 			Math.Abs(vector2.y);
 			return vector2;
-		}
-
-		public static Vector3 Clamp(this Vector3 vector, Vector3 min, Vector3 max)
-		{
-			Vector3 clampedVector;
-			clampedVector.x = Mathf.Clamp(vector.x, min.x, max.x);
-			clampedVector.y = Mathf.Clamp(vector.y, min.y, max.y);
-			clampedVector.z = Mathf.Clamp(vector.z, min.z, max.z);
-			return clampedVector;
-		}
-		public static Vector2 Clamp(this Vector2 vector, Vector2 min, Vector2 max)
-		{
-			Vector2 clampedVector;
-			clampedVector.x = Mathf.Clamp(vector.x, min.x, max.x);
-			clampedVector.y = Mathf.Clamp(vector.y, min.y, max.y);
-			return clampedVector;
 		}
 
 		/// <summary>

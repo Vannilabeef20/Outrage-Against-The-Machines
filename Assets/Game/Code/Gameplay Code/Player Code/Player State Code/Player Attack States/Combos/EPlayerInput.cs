@@ -8,17 +8,18 @@ namespace Game
     public enum EPlayerInput
     {
 
-        Punch = 0,
-        Kick = 1,
-        Grab = 2,
-        Special = 3,
-        RunningAttack = 4,
+        Punch,
+        Kick,
+        Grab,
+        Special,
+        RunningAttack_L,
+        RunningAttack_R,
 
-        Navigate_Up = 6,
-        Navigate_Down = 7,
-        Navigate_Left = 8,
-        Navigate_Right = 9,
-        Confirm = 10,
-        Cancel = 11,        
+        Navigate_Up,
+        Navigate_Down,
+        Navigate_Left,
+        Navigate_Right,
+        Confirm,
+        Cancel        
     }
 }
