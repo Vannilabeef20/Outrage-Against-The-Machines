@@ -103,6 +103,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -663,14 +675,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HUD_money_icon: 1651919258
       HUD_health_up_v0: 251114215
-      HUD_energy_grey_3: 1524051101
+      HUD_player_3: -773179451
       HUD_slot_p2_v3: -8958980
       HUD_slot_p1_v2: -656426554
       HUD_energy_yellow_1: 621528783
       HUD_player_2: 743685460
       HUD_slot_p2_v2: 1375941064
+      HUD_money_icon: 1651919258
       HUD_slot_p2_v1: 2145842317
       HUD_energy_yellow_4: -755294826
       HUD _roster_icon: -1258828583
@@ -688,7 +700,7 @@ TextureImporter:
       HUD_slot_p3_v1: 251591921
       HUD_slot_p1_v3: 1003210667
       HUD_energy_grey_1: 226980132
-      HUD_player_3: -773179451
+      HUD_energy_grey_3: 1524051101
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
