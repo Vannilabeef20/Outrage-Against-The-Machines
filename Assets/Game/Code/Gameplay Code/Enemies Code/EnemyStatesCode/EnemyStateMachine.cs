@@ -34,8 +34,6 @@ namespace Game
         [ReadOnly] public bool overrideStateCompletion;
         [SerializeField, ReadOnly] private EnemyState currentState;
         [ReadOnly] public EnemyState nextState;
-        [field: Space]
-        [field: SerializeField, ReadOnly] public bool IsInsidePlayZone { get; private set; }
         [Space]
         [SerializeField] private LayerMask conveyorLayer;
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocity;
@@ -49,7 +47,7 @@ namespace Game
         [field: SerializeField] public Vector3 BoxCastOffset { get; private set; }
         [SerializeField] private Vector3 boxCastDimensions;
         [SerializeField] private float boxCastLenght;
-
+        public bool IsInsidePlayzone => LevelManager.Instance.IsInsidePlayzone(body.position);
         #endregion
 
         #region Debug
@@ -101,7 +99,6 @@ namespace Game
 
         private void Update()
         {
-            IsInsidePlayZone = LevelManager.Instance.IsInsidePlayZone(body.position);
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);

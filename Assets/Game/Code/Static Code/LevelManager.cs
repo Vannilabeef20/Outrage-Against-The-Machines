@@ -56,7 +56,7 @@ namespace Game
         /// </summary>
         /// <param name="position">The position to be checked.</param>
         /// <returns>False if any of the values are higher or lower than the "Play Zone" range.</returns>
-        public bool IsInsidePlayZone(Vector3 position)
+        public bool IsInsidePlayzone(Vector3 position)
         {
             position.x -= mainCamera.transform.position.x;
             
@@ -85,6 +85,39 @@ namespace Game
                 return false; //Too far
             }
             return true;
+        }
+
+        public Vector3 ClampInsidePlayzone(Vector3 position)
+        {
+            position.x -= mainCamera.transform.position.x;
+
+            if (position.x < -playZoneHalfWidth)
+            {
+                position.x = -playZoneHalfWidth;
+            }
+            if (position.x > playZoneHalfWidth)
+            {
+                position.x = playZoneHalfWidth;
+            }
+            if (position.y < playZoneHeight.x)
+            {
+                position.y = playZoneHeight.x;
+            }
+            if (position.y > playZoneHeight.y)
+            {
+                position.y = playZoneHeight.y;
+            }
+            if (position.z < playZoneHeight.x)
+            {
+                position.z = playZoneHeight.x;
+            }
+            if (position.z > playZoneHeight.y)
+            {
+                position.z = playZoneHeight.y;
+            }
+            
+            position.x += mainCamera.transform.position.x;
+            return position;
         }
 
 #if UNITY_EDITOR      

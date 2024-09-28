@@ -30,7 +30,9 @@ namespace Game
         {
             Vector3 targetDirection = targetPosition - body.position;
             targetDirection.Normalize();
+#if UNITY_EDITOR
             Helper.DrawDirArrow(body.position, targetDirection, Color.yellow, Color.green);
+#endif
             return targetDirection;
         }
 
@@ -45,15 +47,8 @@ namespace Game
                 {
                     if (Physics.Raycast(body.position, rayDirections[i], out RaycastHit info, obstacleDetectionRadius, ObstacleLayerMask))
                     {
-                        if (Vector3.Dot(targetDirection, rayDirections[i]) <= 0)
-                        {
-                            obstacleValues[i] = 0f;
-                        }
-                        else
-                        {
-                            float temp = Vector3.Distance(info.point, body.position);
-                            obstacleValues[i] = 1 - temp.Map(maxAvoidanceRadius, obstacleDetectionRadius);
-                        }
+                         float distance = Vector3.Distance(info.point, body.position);
+                         obstacleValues[i] = 1 - distance.Map(maxAvoidanceRadius, obstacleDetectionRadius);
                     }
                     else
                     {
@@ -69,6 +64,7 @@ namespace Game
                     (rayDirections[i] * interestValues[i]), Color.green);
 #endif
             }
+
             Vector3 finalDirection = Vector3.zero;
             for (int i = 0; i < rayDirections.Length; i++)
             {
@@ -77,8 +73,9 @@ namespace Game
             }
             finalDirection /= rayDirections.Length;
             finalDirection.Normalize();
+
 #if UNITY_EDITOR
-            Helper.DrawDirArrow(body.position, finalDirection * 2, Color.blue, Color.magenta, 0.5f);
+                Debug.DrawLine(body.position, body.position + finalDirection * 3, Color.magenta);
 #endif
             return finalDirection;
         }
