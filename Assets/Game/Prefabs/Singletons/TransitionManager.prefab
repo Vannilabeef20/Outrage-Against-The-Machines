@@ -133,7 +133,7 @@ Transform:
   m_Children:
   - {fileID: 5641720258451027944}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5641720259278619053
 MonoBehaviour:
@@ -152,13 +152,13 @@ MonoBehaviour:
   levelTransitions:
   - Name: Level 0
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
-    TransitionOut: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
+    TransitionOut: {fileID: 11400000, guid: 89e544c7141fb2e4dbe1bacf3f5a0525, type: 2}
   - Name: Level 1
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
-    TransitionOut: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
+    TransitionOut: {fileID: 11400000, guid: 89e544c7141fb2e4dbe1bacf3f5a0525, type: 2}
   - Name: Level 2
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
-    TransitionOut: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
+    TransitionOut: {fileID: 11400000, guid: 89e544c7141fb2e4dbe1bacf3f5a0525, type: 2}
   <IsTransitioning>k__BackingField: 0
 --- !u!1 &5641720259738580653
 GameObject:
@@ -187,7 +187,7 @@ RectTransform:
   m_GameObject: {fileID: 5641720259738580653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7778, y: 1.7778, z: 1.7778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5641720258451027944}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25189167, g: 0.11480955, b: 0.5660378, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

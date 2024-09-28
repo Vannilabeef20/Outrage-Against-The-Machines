@@ -11,8 +11,6 @@ namespace Game
 	{
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
-        [SerializeField] GameObject interactionPrompt;
-
         [SerializeField] SpriteRenderer player1NumberRenderer;
         [SerializeField] SpriteRenderer player2NumberRenderer;
         [SerializeField] SpriteRenderer player3NumberRenderer;
@@ -25,7 +23,6 @@ namespace Game
 
         private void Awake()
         {
-            interactionPrompt.SetActive(false);
             player1NumberRenderer.enabled = false;
             player2NumberRenderer.enabled = false;
             player3NumberRenderer.enabled = false;
@@ -62,13 +59,6 @@ namespace Game
                 case 0: player1NumberRenderer.enabled = enable; break;
                 case 1: player2NumberRenderer.enabled = enable; break;
                 case 2: player3NumberRenderer.enabled = enable; break;
-            }
-
-            switch(player1NumberRenderer.enabled, player2NumberRenderer.enabled, player3NumberRenderer.enabled)
-            {
-                case (false, false, false): interactionPrompt.SetActive(false); break;
-
-                default: interactionPrompt.SetActive(true); break;
             }
         }
     }
