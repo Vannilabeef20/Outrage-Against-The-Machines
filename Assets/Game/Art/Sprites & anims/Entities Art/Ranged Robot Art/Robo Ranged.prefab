@@ -5292,31 +5292,31 @@ MonoBehaviour:
   lootTable:
     totalWeight: 100
     itemDrops:
-    - Name: 70% -> Nothing
+    - Name: 80% -> Nothing
       <Item>k__BackingField: {fileID: 0}
-      <ProbabilityWeight>k__BackingField: 70
-      ProbabilityPercent: 70
-      ProbabilityRange: {x: 0, y: 70}
-    - Name: 9% -> Heal Pickup
+      <ProbabilityWeight>k__BackingField: 80
+      ProbabilityPercent: 80
+      ProbabilityRange: {x: 0, y: 80}
+    - Name: 6% -> Heal Pickup
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 9
-      ProbabilityPercent: 9
-      ProbabilityRange: {x: 70, y: 79}
-    - Name: 9% -> Heal & Energy Pickup
+      <ProbabilityWeight>k__BackingField: 6
+      ProbabilityPercent: 6
+      ProbabilityRange: {x: 80, y: 86}
+    - Name: 7,5% -> Heal & Energy Pickup
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
-      <ProbabilityWeight>k__BackingField: 9
-      ProbabilityPercent: 9
-      ProbabilityRange: {x: 79, y: 88}
-    - Name: 8% -> Energy Pickup
+      <ProbabilityWeight>k__BackingField: 7.5
+      ProbabilityPercent: 7.5
+      ProbabilityRange: {x: 86, y: 93.5}
+    - Name: 4% -> Energy Pickup
       <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
-      <ProbabilityWeight>k__BackingField: 8
-      ProbabilityPercent: 8
-      ProbabilityRange: {x: 88, y: 96}
-    - Name: 4% -> Life Pickup
-      <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
       <ProbabilityWeight>k__BackingField: 4
       ProbabilityPercent: 4
-      ProbabilityRange: {x: 96, y: 100}
+      ProbabilityRange: {x: 93.5, y: 97.5}
+    - Name: 2,5% -> Life Pickup
+      <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
+      <ProbabilityWeight>k__BackingField: 2.5
+      ProbabilityPercent: 2.5
+      ProbabilityRange: {x: 97.5, y: 100}
 --- !u!1 &4733453237061180675
 GameObject:
   m_ObjectHideFlags: 0

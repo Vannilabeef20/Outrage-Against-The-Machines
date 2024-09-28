@@ -52,6 +52,7 @@ MonoBehaviour:
   itemSpriteTransform: {fileID: 2257146963060982452}
   itemEvent: {fileID: 11400000, guid: 4221e71d770a8cd4d83cc4f72221266a, type: 2}
   pickupEmitter: {fileID: 7194169049714867281}
+  useImmediatly: 0
   pickupEffects:
   - rid: 3689197286202802177
   floatRange: {x: 0, y: 0.2, z: 0}
@@ -114,7 +115,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7, y: 7.344983, z: 0.7}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 3.1724916, z: 0}
 --- !u!212 &6276525043216198364
 SpriteRenderer:

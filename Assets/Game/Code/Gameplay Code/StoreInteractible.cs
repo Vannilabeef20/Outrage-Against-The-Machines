@@ -12,9 +12,6 @@ namespace Game
         [SerializeField] GameObject item;
         public override void OnInteract(int playerNumber)
         {
-            if (costsMoney && GameManager.Instance.PlayerCharacterList[playerNumber].
-                scrapAmount < costAmount) return;
-
             Instantiate(item, transform.position.ToXYY(), Quaternion.identity);
         }
     }

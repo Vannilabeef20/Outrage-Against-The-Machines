@@ -52,10 +52,6 @@ MonoBehaviour:
   rb: {fileID: 574349411182037776}
   pickEmitter: {fileID: 8847909780515325543}
   scrapValue: 0
-  playerTags:
-  - P1
-  - P2
-  - P3
   gravity: -0.1
   gravRot: 345
   bounces: 0
@@ -140,8 +136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6, y: 0.9274833, z: 0.28225052}
-  m_Center: {x: 0, y: 0.27774012, z: -0.26075578}
+  m_Size: {x: 0.75, y: 1.37, z: 0.58197963}
+  m_Center: {x: 0, y: 0.27774012, z: -0.21976595}
 --- !u!1 &6147500841506922477
 GameObject:
   m_ObjectHideFlags: 0

@@ -115,7 +115,18 @@ namespace Game
                     enemies[j].Name = "None";
                     continue;
                 }
-                enemies[j].Name = $"{enemies[j].enemy.name} | {enemies[j].amount} Units";
+
+                string playerReq;
+                if (enemies[j].multiplayerOnly)
+                {
+                    playerReq = enemies[j].playersRequired.ToString();
+                }
+                else
+                {
+                    playerReq = "Any";
+                }
+
+                enemies[j].Name = $"{enemies[j].enemy.name} | {enemies[j].amount} Units| {playerReq}-P";
             }
         }
     }

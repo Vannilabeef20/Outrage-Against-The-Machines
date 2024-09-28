@@ -33,7 +33,7 @@ namespace Game
         [SerializeReference, SubclassSelector] BaseItemDropEffect[] pickupEffects;
 
         [Tooltip("How far up and down the itemDrop will float.")]
-        [SerializeField] Vector3 floatRange = new Vector3 (0f,0.2f,0f);
+        [SerializeField] Vector3 floatRange = new Vector3(0f, 0.2f, 0f);
 
         [Tooltip("How long(seconds) does a float cycle takes.")]
         [SerializeField] float floatDuration = 1.5f;
@@ -70,7 +70,10 @@ namespace Game
                     if (GameManager.Instance.PlayerCharacterList[i].HasItemStored) break;
 
                     GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
-                    itemEvent.Raise(this, i);                   
+                    gameObject.SetActive(false);
+                    itemEvent.Raise(this, i);
+                    break;
+                    itemEvent.Raise(this, i);
                     return;
                 }
             }
@@ -91,3 +94,4 @@ namespace Game
         }
     }
 }
+

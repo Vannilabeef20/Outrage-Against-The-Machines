@@ -9,7 +9,12 @@ namespace Game
             AudioManager.instance.PlayUiClickSfx();
             PlayInteractionAnimation();
             Time.timeScale = 1;
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+#else
             Application.Quit();
+#endif
+
         }
     }
 }
