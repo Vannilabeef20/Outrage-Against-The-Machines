@@ -39,10 +39,6 @@ namespace Game
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocity { get; private set; }
 
         [SerializeField] LayerMask conveyorLayer;
-        /*
-        [Header("Debug"), HorizontalLine(2F, EColor.Green)]
-        [SerializeField] TextMeshProUGUI playerStateLabel;
-        */
 
         void Awake()
         {
@@ -56,7 +52,6 @@ namespace Game
             CurrentState = Idle;
             nextState = Idle;
             CurrentState.Enter();
-            //playerStateLabel.text = CurrentState.Name;
         }
 
         void Start()
@@ -69,9 +64,6 @@ namespace Game
         {
             SelectState();
             CurrentState.Do();
-#if UNITY_EDITOR
-            RunDebug();
-#endif
         }
 
         void FixedUpdate()
@@ -192,29 +184,6 @@ namespace Game
                 return;
             }
             InputDirection = context.ReadValue<Vector2>();
-        }
-
-
-        void RunDebug()
-        {
-            /*
-            if (CustomLogger.IsDebugModeEnabled)
-            {
-                if (playerStateLabel.gameObject.activeInHierarchy == false)
-                {
-                    playerStateLabel.gameObject.SetActive(true);
-                }
-                playerStateLabel.transform.rotation = Quaternion.identity;
-                playerStateLabel.text = CurrentState.Name;
-            }
-            else
-            {
-                if (playerStateLabel.gameObject.activeInHierarchy == true)
-                {
-                    playerStateLabel.gameObject.SetActive(false);
-                }
-            }
-            */
         }
     }
 }

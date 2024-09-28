@@ -5685,7 +5685,6 @@ MonoBehaviour:
   overrideStateCompletion: 0
   currentState: {fileID: 6508126985612539012}
   nextState: {fileID: 6508126985612539012}
-  <IsInsidePlayZone>k__BackingField: 0
   conveyorLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -6086,6 +6085,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6508126986923127504}
+  - component: {fileID: 3003140657424948288}
+  - component: {fileID: 5026643496860140553}
   m_Layer: 0
   m_Name: States_Group
   m_TagString: Untagged
@@ -6113,6 +6114,55 @@ Transform:
   m_Father: {fileID: 6508126985700856565}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3003140657424948288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508126986923127086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5026643496860140553}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5026643496860140553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508126986923127086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reversed: 0
+  audioEmitters:
+  - {fileID: 3254957323972745098}
+  - {fileID: 203993633665008939}
+  - {fileID: 5365647295470403560}
+  - {fileID: 6309578431116359177}
+  - {fileID: 412156143871746986}
+  - {fileID: 8007668038013536351}
+  - {fileID: 515047077951596177}
 --- !u!1 &6508126987123622496
 GameObject:
   m_ObjectHideFlags: 0
@@ -6600,8 +6650,6 @@ GameObject:
   - component: {fileID: 3071208308496549039}
   - component: {fileID: 3662556871071707376}
   - component: {fileID: 515047077951596177}
-  - component: {fileID: 4987983623775299464}
-  - component: {fileID: 2182777182792017122}
   m_Layer: 0
   m_Name: ScrapDropper
   m_TagString: Untagged
@@ -6679,49 +6727,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &4987983623775299464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7796759670987910319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reversed: 0
-  audioEmitters:
-  - {fileID: 515047077951596177}
---- !u!114 &2182777182792017122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7796759670987910319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 0}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4987983623775299464}
-        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &9039604454823931490
 GameObject:
   m_ObjectHideFlags: 0

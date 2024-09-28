@@ -27,6 +27,7 @@ namespace Game
 
         #region PARAMETERS & VARIABLES
         [Header("PARAMETERS & VARIABLES"), HorizontalLine(2f, EColor.Orange)]
+        [SerializeField] bool useImmediatly;
 
         [Tooltip("Which pickup effects will be applied on pickup.")]
         [SerializeReference, SubclassSelector] BaseItemDropEffect[] pickupEffects;
@@ -55,14 +56,22 @@ namespace Game
 
         void PickUp(GameObject targetPlayer)
         {
+            //Search player per tag
             for (int i = 0; i < GameManager.Instance.PlayerTags.Length; i++)
             {
                 if (targetPlayer.CompareTag(GameManager.Instance.PlayerTags[i]))
                 {
+                    if (useImmediatly)
+                    {
+                        Use(i);
+                        return;
+                    }
+
+                    if (GameManager.Instance.PlayerCharacterList[i].HasItemStored) break;
+
                     GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
-                    gameObject.SetActive(false);
-                    itemEvent.Raise(this, i);
-                    break;
+                    itemEvent.Raise(this, i);                   
+                    return;
                 }
             }
         }

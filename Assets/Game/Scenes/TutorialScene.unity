@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &36525110 stripped
 Transform:
@@ -312,6 +312,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 67071906, guid: b294cf12994e5b24babec9016384b945, type: 3}
   - {fileID: -593518221, guid: b294cf12994e5b24babec9016384b945, type: 3}
@@ -332,7 +333,6 @@ MonoBehaviour:
   - {fileID: -1674098441, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &89029353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -529,6 +529,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -563,7 +564,6 @@ MonoBehaviour:
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &108241983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -676,6 +676,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.7
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -185883889, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1422422754, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -683,7 +684,6 @@ MonoBehaviour:
   - {fileID: -1422422754, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &121579586
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8015928921890502604, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8015928921890502604, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -902,6 +902,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -936,7 +937,6 @@ MonoBehaviour:
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &150128329
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1133,6 +1133,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -1141,7 +1142,6 @@ MonoBehaviour:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &166581666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1330,6 +1330,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -1363,7 +1364,6 @@ MonoBehaviour:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!222 &225177643
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1573,6 +1573,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 37452311, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -593386762, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
@@ -1582,7 +1583,6 @@ MonoBehaviour:
   - {fileID: -593386762, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &235402939
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1797,6 +1797,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -1813,7 +1814,6 @@ MonoBehaviour:
   - {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &258015373
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2078,67 +2078,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
---- !u!1001 &292409535
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6508126985700856560, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_Name
-      value: Dummy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_RootOrder
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -108.177605
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.3396118
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.339612
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
 --- !u!1 &296440850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,6 +2609,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   - {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
@@ -2690,7 +2630,6 @@ MonoBehaviour:
   - {fileID: 2046906829, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &392059584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,6 +2690,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 606569698, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -271458922, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -2762,7 +2702,6 @@ MonoBehaviour:
   - {fileID: -51659355, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &392059588
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2871,6 +2810,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 311539194, guid: 02a6ac57486c8f2489493a94df8a354c, type: 3}
   - {fileID: -1411554068, guid: 02a6ac57486c8f2489493a94df8a354c, type: 3}
@@ -2887,7 +2827,6 @@ MonoBehaviour:
   - {fileID: -120289962, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &394127110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3073,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471917214709005346, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 471917214709005346, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3193,6 +3132,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1.2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -322555891, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   - {fileID: 2092761784, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
@@ -3204,7 +3144,6 @@ MonoBehaviour:
   - {fileID: -2046792758, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &456471762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3441,6 +3380,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -3457,7 +3397,6 @@ MonoBehaviour:
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &480109015
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4228,6 +4167,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 412653329, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -689011474, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
@@ -4237,7 +4177,6 @@ MonoBehaviour:
   - {fileID: -689011474, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &623312781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4393,6 +4332,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -4427,7 +4367,6 @@ MonoBehaviour:
   - {fileID: 0}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &644787756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,7 +4451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050968111071795927, guid: 815a99025a5044d4ab152592e3db72d9, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5050968111071795927, guid: 815a99025a5044d4ab152592e3db72d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4573,7 +4512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9096132990795520413, guid: 92dbe24d99f44cb40bab831720f3f799, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9096132990795520413, guid: 92dbe24d99f44cb40bab831720f3f799, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4784,6 +4723,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -4818,7 +4758,6 @@ MonoBehaviour:
   - {fileID: 0}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &734087561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5002,6 +4941,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -5022,7 +4962,6 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &751346235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,6 +5094,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1135213703, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -220013143, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -5171,7 +5111,6 @@ MonoBehaviour:
   - {fileID: -1648594634, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &775699911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5280,6 +5219,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 67071906, guid: b294cf12994e5b24babec9016384b945, type: 3}
   - {fileID: -593518221, guid: b294cf12994e5b24babec9016384b945, type: 3}
@@ -5300,7 +5240,6 @@ MonoBehaviour:
   - {fileID: -1674098441, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &786151411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5561,6 +5500,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -5595,7 +5535,6 @@ MonoBehaviour:
   - {fileID: -850761730, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &808899326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5783,67 +5722,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824845330}
   m_CullTransparentMesh: 1
---- !u!1001 &829648550
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6508126985700856560, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_Name
-      value: Dummy_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -87.71921
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.339612
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.339612
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508126985700856565, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 099969c25bbd1fd489b14536781d319d, type: 3}
 --- !u!1 &872398266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6044,6 +5922,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.7
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1367530764, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: 149407963, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
@@ -6053,7 +5932,6 @@ MonoBehaviour:
   - {fileID: 149407963, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &909951492
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6166,6 +6044,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1262260887, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1475089834, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -6173,7 +6052,6 @@ MonoBehaviour:
   - {fileID: -1475089834, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &913425332
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6559,6 +6437,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1057477559, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -2048964551, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -6566,7 +6445,6 @@ MonoBehaviour:
   - {fileID: -2048964551, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &950615704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6720,6 +6598,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1700590228, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 911797389, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -6727,7 +6606,6 @@ MonoBehaviour:
   - {fileID: 911797389, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &971093227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6993,7 +6871,7 @@ RectTransform:
   - {fileID: 1994757308}
   - {fileID: 593547332}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7395,6 +7273,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -7415,7 +7294,6 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &1084538532
 GameObject:
   m_ObjectHideFlags: 0
@@ -7472,6 +7350,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 369268701, guid: 96dad8e684aff234ca1795cfd79a009a, type: 3}
   - {fileID: -44561122, guid: 96dad8e684aff234ca1795cfd79a009a, type: 3}
@@ -7487,7 +7366,6 @@ MonoBehaviour:
   - {fileID: -1053149886, guid: ec2c53ead96aace4bbd0d9d19344dc3c, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1084538535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7702,7 +7580,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136353431
 GameObject:
@@ -7733,7 +7611,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1138575413
 GameObject:
@@ -7855,87 +7733,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 43373661428710594, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
   m_PrefabInstance: {fileID: 1079285970}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1159734891
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 833218969128065404, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: EventReference.Path
-      value: event:/Music/Tutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 833218969128065404, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: EventReference.Guid.Data1
-      value: -1088438787
-      objectReference: {fileID: 0}
-    - target: {fileID: 833218969128065404, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: EventReference.Guid.Data2
-      value: 1135504625
-      objectReference: {fileID: 0}
-    - target: {fileID: 833218969128065404, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: EventReference.Guid.Data3
-      value: 355194768
-      objectReference: {fileID: 0}
-    - target: {fileID: 833218969128065404, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: EventReference.Guid.Data4
-      value: 871967725
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 51.436924
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 21.794794
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.38794
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543424795399159495, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043145135901743053, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
-      propertyPath: m_Name
-      value: MusicEmitter
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11db67c9688cfdb48a72ca8fe1abfef9, type: 3}
 --- !u!1 &1182985189
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,6 +7921,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -8157,7 +7955,6 @@ MonoBehaviour:
   - {fileID: 0}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1001 &1195103105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8279,6 +8076,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -8312,7 +8110,6 @@ MonoBehaviour:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1197053356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8798,6 +8595,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1183176919, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1472615998, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -8807,7 +8605,6 @@ MonoBehaviour:
   - {fileID: 1472615998, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1252175387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8936,7 +8733,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1287981861 stripped
 Transform:
@@ -9146,7 +8943,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1363955076
 GameObject:
@@ -9404,6 +9201,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -9422,7 +9220,6 @@ MonoBehaviour:
   - {fileID: 767648687, guid: 27a94abc28b32714d8c0208270bdfe81, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1404990811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9575,6 +9372,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -9608,7 +9406,6 @@ MonoBehaviour:
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1489063745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10022,6 +9819,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -10056,7 +9854,6 @@ MonoBehaviour:
   - {fileID: 0}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &1578151232
 GameObject:
   m_ObjectHideFlags: 0
@@ -10206,6 +10003,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -10222,7 +10020,6 @@ MonoBehaviour:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1580350896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10335,6 +10132,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1089791291, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -833016315, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -10344,7 +10142,6 @@ MonoBehaviour:
   - {fileID: -833016315, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1580984932
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10759,6 +10556,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -10793,7 +10591,6 @@ MonoBehaviour:
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1678917195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10958,6 +10755,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -10991,7 +10789,6 @@ MonoBehaviour:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &1689804705
 GameObject:
   m_ObjectHideFlags: 0
@@ -11174,83 +10971,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1706574145
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.076313
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 11.022066
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 214.69896
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -132.51
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6532815
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.27059805
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6532815
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.27059805
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -45
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_Name
-      value: PlanePivot
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11ca3a8e0d81bc841b226db155e3d36c, type: 3}
 --- !u!1001 &1709975877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11372,6 +11092,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -11388,7 +11109,6 @@ MonoBehaviour:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1750655453
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11789,6 +11509,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -11822,7 +11543,6 @@ MonoBehaviour:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &1876620545
 GameObject:
   m_ObjectHideFlags: 0
@@ -11879,6 +11599,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
@@ -11895,7 +11616,6 @@ MonoBehaviour:
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1876620548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12008,6 +11728,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -12041,7 +11762,6 @@ MonoBehaviour:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1887506429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12154,6 +11874,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -12162,7 +11883,6 @@ MonoBehaviour:
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1903885730
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12364,6 +12084,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.7
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1905591536, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -930084285, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -12373,7 +12094,6 @@ MonoBehaviour:
   - {fileID: -930084285, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1923649337
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12486,6 +12206,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1931844148, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -12494,7 +12215,6 @@ MonoBehaviour:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1935952018
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12645,6 +12365,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -12661,7 +12382,6 @@ MonoBehaviour:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1939288779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12774,6 +12494,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -12790,7 +12511,6 @@ MonoBehaviour:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &1948766229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13025,6 +12745,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 2
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -13045,7 +12766,6 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!1 &1962117673
 GameObject:
   m_ObjectHideFlags: 0
@@ -13213,6 +12933,7 @@ MonoBehaviour:
   - {x: -122.78, y: 1, z: 1}
   - {x: -123.7, y: 2, z: 2}
   - {x: -124.7, y: 3, z: 3}
+  playZoneLineScale: 0
   SpawnLabelStyle:
     m_Name: 
     m_Normal:
@@ -13293,7 +13014,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2006885915
 GameObject:
@@ -13440,6 +13161,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 4
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -13473,7 +13195,6 @@ MonoBehaviour:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &2028263432
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13620,7 +13341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2604145635891042443, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2604145635891042443, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13675,10 +13396,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585919202}
     - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: encSO
-      value: 
-      objectReference: {fileID: 11400000, guid: c7b9742886514294eb94b1a5ede2e927, type: 2}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: goImage
       value: 
       objectReference: {fileID: 0}
@@ -13686,10 +13403,6 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1316229217}
-    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: encounters.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
       propertyPath: style.m_Normal.m_TextColor.b
       value: 1
@@ -13714,10 +13427,10 @@ PrefabInstance:
       propertyPath: style.m_Focused.m_TextColor.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7244590003445998877, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
-      propertyPath: followTransform
+    - target: {fileID: 6937930314702519308, guid: 050862f97df78e842b7edce9acb71a0a, type: 3}
+      propertyPath: <LevelEncounters>k__BackingField
       value: 
-      objectReference: {fileID: 1316229218}
+      objectReference: {fileID: 11400000, guid: c7b9742886514294eb94b1a5ede2e927, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13844,6 +13557,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1120057541, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -13852,7 +13566,6 @@ MonoBehaviour:
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &2073489729
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13965,6 +13678,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 0.5
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1239402278, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1869755765, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -13972,7 +13686,6 @@ MonoBehaviour:
   - {fileID: -1869755765, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &2088247918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14039,7 +13752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5641720259278619054, guid: b420ade5177498448894af9666e3e95e, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5641720259278619054, guid: b420ade5177498448894af9666e3e95e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14146,6 +13859,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -14162,7 +13876,6 @@ MonoBehaviour:
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!212 &2123245674
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14267,6 +13980,7 @@ MonoBehaviour:
   loop: 1
   animationDuration: 1
   DestroyOnFinish: 0
+  pause: 0
   sprites:
   - {fileID: -1072151476, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1205953023, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -14283,7 +13997,6 @@ MonoBehaviour:
   - {fileID: -575172135, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   timer: 0
   currentSpriteIndex: 0
-  pause: 0
 --- !u!222 &2125892422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14384,6 +14097,80 @@ RectTransform:
   m_AnchoredPosition: {x: -130.43, y: 7.05}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &833218968136122135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043145136889508262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1088438787
+      Data2: 1135504625
+      Data3: 355194768
+      Data4: 871967725
+    Path: event:/Music/Tutorial
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1543424796525320364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043145136889508262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.436924, y: 21.794794, z: 3.38794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3287438301616016238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043145136889508262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 833218968136122135}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4978445009982461445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14716,3 +14503,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3603328aceca588429c34457a5709e83, type: 3}
+--- !u!114 &8353600991319082884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043145136889508262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reversed: 1
+  audioEmitters:
+  - {fileID: 833218968136122135}
+--- !u!1 &9043145136889508262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543424796525320364}
+  - component: {fileID: 833218968136122135}
+  - component: {fileID: 3287438301616016238}
+  - component: {fileID: 8353600991319082884}
+  m_Layer: 0
+  m_Name: MusicEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
