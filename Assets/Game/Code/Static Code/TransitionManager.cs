@@ -25,7 +25,7 @@ namespace Game
 
         Coroutine trasitionRoutine;
 
-        [SerializeField] LevelTransition[] levelTransitions;
+        [SerializeField] Transition[] levelTransitions;
 
         [field: SerializeField, ReadOnly] public bool IsTransitioning { get; private set; }
         #endregion
@@ -43,14 +43,6 @@ namespace Game
                 Destroy(gameObject);
             }
         }
-        private void OnLevelWasLoaded(int level)
-        {
-            if (trasitionRoutine != null)
-            {
-                trasitionRoutine = null;
-                trasitionRoutine = StartCoroutine(TransitionInRoutine(level));
-            }
-        }
 
         private void OnValidate()
         {
@@ -64,18 +56,19 @@ namespace Game
         {
             if (trasitionRoutine != null) return;
 
-            trasitionRoutine = StartCoroutine(TransitionOutRoutine(targetSceneIndex));
+            trasitionRoutine = StartCoroutine(LoadRoutine(targetSceneIndex));
         }
 
-        public void LoadScreen(EMenuId targetScreen, LevelTransition transition)
+        public void LoadScreen(EMenuId targetScreen, Transition transition)
         {
             if (trasitionRoutine != null) return;
 
             trasitionRoutine = StartCoroutine(ScreenTransitionRoutine(targetScreen, transition));
         }
 
-        private IEnumerator TransitionOutRoutine(int targetSceneIndex)
+        IEnumerator LoadRoutine(int targetSceneIndex)
         {
+            //Out
             IsTransitioning = true;
 
             EventSystem currentEventSystem = EventSystem.current;
@@ -94,36 +87,47 @@ namespace Game
                 transitionImage.sprite = transition.Sprites[i];
                 yield return new WaitForSecondsRealtime(frameTime);
             }
-            SceneManager.LoadScene(targetSceneIndex);
-        }
 
-        private IEnumerator TransitionInRoutine(int targetSceneIndex)
-        {
-            IsTransitioning = true;
+            //Load
+            AsyncOperation loading = SceneManager.LoadSceneAsync(targetSceneIndex);
+            transition = levelTransitions[targetSceneIndex].TransitionLoad;
 
-            EventSystem currentEventSystem = EventSystem.current;
-            currentEventSystem.sendNavigationEvents = false;
+            frameTime = transition.Duration / transition.Sprites.Length;
+            float loopTime = Time.time;
+            int spriteIndex = default;
 
-            float frameTime;
-            TransitionSO transition;
+            while(!loading.isDone)            
+            //float startTime = Time.time; while (Time.time - startTime < 10)
+            {
+                if (Time.time - loopTime >= frameTime)
+                {
+                    spriteIndex++;
+                    loopTime = Time.time;
+                }
+                if(spriteIndex >= transition.Sprites.Length) spriteIndex = 0;
 
+                transitionImage.sprite = transition.Sprites[spriteIndex];
+                yield return null;
+            }
+
+            //In
             transition = levelTransitions[targetSceneIndex].TransitionOut;
 
             frameTime = transition.Duration / transition.Sprites.Length;
 
-            transitionImage.enabled = true;
             for (int i = transition.Sprites.Length - 1; i > 0; i--)
             {
                 transitionImage.sprite = transition.Sprites[i];
                 yield return new WaitForSecondsRealtime(frameTime);
             }
+
             transitionImage.enabled = false;
             currentEventSystem.sendNavigationEvents = true;
             IsTransitioning = false;
             trasitionRoutine = null;
         }
 
-        IEnumerator ScreenTransitionRoutine(EMenuId targetScreen, LevelTransition transition)
+        IEnumerator ScreenTransitionRoutine(EMenuId targetScreen, Transition transition)
         {
             //Out
             IsTransitioning = true;
@@ -158,29 +162,14 @@ namespace Game
             IsTransitioning = false;
             trasitionRoutine = null;
         }
-
-        /*
-        #region Testing Methods
-        [Button("Test start transition", EButtonEnableMode.Playmode)]
-        public void TestRegularTransition()
-        {
-
-        }
-
-        [Button("Test load transition", EButtonEnableMode.Playmode)]
-        public void TestReverseTransition()
-        {
-
-        }
-        #endregion
-        */
     }
 
     [Serializable]
-    public class LevelTransition
+    public class Transition
     {
         [HideInInspector] public string Name;
         [field: SerializeField, Expandable] public TransitionSO TransitionIn;
         [field: SerializeField, Expandable] public TransitionSO TransitionOut;
+        [field: SerializeField, Expandable] public TransitionSO TransitionLoad;
     }
 }

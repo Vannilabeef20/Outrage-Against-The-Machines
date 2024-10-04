@@ -7,26 +7,32 @@ namespace Game
     {
         public override void Interact(int playerNumber)
         {
-            if(costsMoney)
+            string status;
+            string costString;
+
+            if (costsMoney)
             {
+                costString = $"${costAmount}";
+                //Has money
                 if (GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount >= costAmount)
                 {
-                    GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount -= costAmount;
-                    this.Log($"Player {playerNumber} has bought {this.GetType().Name}.");
+                    status = "Sucessful purchase";
+                    GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount -= costAmount; 
                 }
-                else
+                else //Does not have money
                 {
-                    this.Log($"Player {playerNumber} does not have enough money to buy {this.GetType().Name}.", EDebugSubjectFlags.Debug);
+                    status = "Failed purchase";
                 }
             }
             else
             {
-                this.Log($"Player {playerNumber} has picked {this.GetType().Name}.", EDebugSubjectFlags.Debug);
+                status = "Sucessful interaction";
+                costString = "No cost";
             }
+
+            this.Log($"Interaction to Base Interactible {name} {status} {costString}");
         }
 
-        public override void OnInteract(int playerNumber)
-        {
-            this.Log($"Player {playerNumber} has triggered {this.GetType().Name}'s interaction.");      }
+        public override void OnInteract(int playerNumber) { }
     }
 }

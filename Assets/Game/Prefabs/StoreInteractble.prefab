@@ -37,7 +37,7 @@ Transform:
   - {fileID: 1048389829260612275}
   - {fileID: 1138128722804138955}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-1164855901228695549
 MonoBehaviour:
@@ -51,13 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca7acb7eb219ae4193317182de2f6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1NumberRenderer: {fileID: 1958743525645656992}
-  player2NumberRenderer: {fileID: 1958743526075266442}
-  player3NumberRenderer: {fileID: 1958743524870358710}
+  playerProximityRenderers:
+  - {fileID: 1958743525645656992}
+  - {fileID: 1958743526075266442}
+  - {fileID: 1958743524870358710}
   costsMoney: 1
   costTMP: {fileID: 4003874743069192805}
-  costAmount: 2
-  item: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
+  costAmount: 40
+  item: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
+  coopPurchaseTime: 10
+  coopPurchaseColor: {r: 1, g: 0.9027058, b: 0, a: 1}
 --- !u!212 &1958743524589919515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -456,7 +459,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ff85a452b581ac498d6469a5a477691, type: 3}
+  m_Sprite: {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -140,7 +140,7 @@ namespace Game
     {
         [HideInInspector] public string Name;
         [ShowAssetPreview] public GameObject enemy;
-        public int amount;
+        public int amount = 1;
         [Space]
         public bool multiplayerOnly;
         [AllowNesting, ShowIf("multiplayerOnly"), Range(2, 3)] public int playersRequired = 2;

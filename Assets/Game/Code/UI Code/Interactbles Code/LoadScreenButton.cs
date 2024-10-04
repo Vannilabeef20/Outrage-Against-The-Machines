@@ -12,7 +12,7 @@ namespace Game
         [SerializeField] EMenuId targetMenuIds;
         [Space]
         [SerializeField] bool hasTransition;
-        [SerializeField, ShowIf("hasTransition")] LevelTransition transition;
+        [SerializeField, ShowIf("hasTransition")] Transition transition;
 
         public void LoadScreen()
         {

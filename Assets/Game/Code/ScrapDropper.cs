@@ -24,6 +24,10 @@ namespace Game
         [SerializeField] bool hasReserveScrap;
         [SerializeField, ShowIf("hasReserveScrap")] int reserveAmount;
 
+        public const int scrapTier1Value = 1;
+        public const int scrapTier2Value = 5;
+        public const int scrapTier3Value = 10;
+
 
         [Header("VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
         [SerializeField, ReadOnly] int randomAmount;

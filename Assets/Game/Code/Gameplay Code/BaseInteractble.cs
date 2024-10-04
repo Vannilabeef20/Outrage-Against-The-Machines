@@ -11,55 +11,51 @@ namespace Game
 	{
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
-        [SerializeField] SpriteRenderer player1NumberRenderer;
-        [SerializeField] SpriteRenderer player2NumberRenderer;
-        [SerializeField] SpriteRenderer player3NumberRenderer;
+        [SerializeField] protected SpriteRenderer[] playerProximityRenderers;
 
         [Header("COST"), HorizontalLine(2f, EColor.Orange)]
 
         [SerializeField] protected bool costsMoney;
-        [SerializeField, ShowIf("costsMoney")] TextMeshPro costTMP;
+        [SerializeField, ShowIf("costsMoney")] protected TextMeshPro costTMP;
         [SerializeField, Min(1), ShowIf("costsMoney")] protected int costAmount;
 
-        private void Awake()
+        void Awake()
         {
-            player1NumberRenderer.enabled = false;
-            player2NumberRenderer.enabled = false;
-            player3NumberRenderer.enabled = false;
-            if (costsMoney) costTMP.text = $"${costAmount}";
+            foreach(var render in playerProximityRenderers)
+            {
+                render.enabled = false;
+            }
+            if (costsMoney) UpdateCost();
             else costTMP.text = "";
         }
 
         public abstract void OnInteract(int playerNumber);
         public virtual void Interact(int playerNumber)
         {
-            if (costsMoney)
-            {
-                //Has money
-                if (GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount >= costAmount)
-                {
-                    GameManager.Instance.PlayerCharacterList[playerNumber].scrapAmount -= costAmount;
-                    OnInteract(playerNumber);
-                }
-                else //Does not have money
-                {
-                    OnInteract(playerNumber);
-                }
-            }
-            else 
+            if (!costsMoney)
             {
                 OnInteract(playerNumber);
+                return;
             }
+
+            PlayerCharacter player = GameManager.Instance.PlayerCharacterList[playerNumber];
+
+            if (player.scrapAmount >= costAmount)
+            {
+                player.scrapAmount -= costAmount;
+                OnInteract(playerNumber);
+                return;
+            }
+        }
+
+        protected void UpdateCost()
+        {
+            costTMP.text = $"${costAmount}";
         }
 
         public void UpdateSelection(int playerNumber, bool enable)
         {
-            switch(playerNumber)
-            {
-                case 0: player1NumberRenderer.enabled = enable; break;
-                case 1: player2NumberRenderer.enabled = enable; break;
-                case 2: player3NumberRenderer.enabled = enable; break;
-            }
+            playerProximityRenderers[playerNumber].enabled = enable;
         }
     }
 }

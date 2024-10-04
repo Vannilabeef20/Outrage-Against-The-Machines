@@ -6,7 +6,7 @@ namespace Game
     {
         [SerializeField] MenuIdEvent OnShowCharacterSelection;
         [SerializeField] EMenuId targetMenuIds;
-        [SerializeField] LevelTransition transition;
+        [SerializeField] Transition transition;
 
         public void CallShowChacterSelection()
         {

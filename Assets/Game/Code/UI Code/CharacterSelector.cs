@@ -17,7 +17,7 @@ namespace Game
         [SerializeField, Scene] int targetScene;
         [Space]
         [SerializeField] EMenuId startMenuID;
-        [SerializeField] LevelTransition transition;
+        [SerializeField] Transition transition;
         [Space]
         [SerializeField] CharacterSelectionSwap[] selectionSwaps;
 

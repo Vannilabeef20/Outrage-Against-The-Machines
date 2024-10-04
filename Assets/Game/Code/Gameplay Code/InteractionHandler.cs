@@ -23,6 +23,11 @@ namespace Game
 
         private void FixedUpdate()
         {
+            InteractionDetection();
+        }
+
+        void InteractionDetection() 
+        {
             //Detect and Sort all available interactbles in range by distance
             interactblesCollidersInRange = Physics.OverlapBox(detectionShape.bounds.center,
                 detectionShape.size * 0.5f, Quaternion.identity, interactionMask).OrderBy

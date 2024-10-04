@@ -272,6 +272,18 @@ namespace Game
         }
 
 #if UNITY_EDITOR
+#if UNITY_EDITOR
+        [SerializeField] int addMoney;
+
+        [Button("ADD MONEY ALL", EButtonEnableMode.Playmode)]
+        void AddMoney()
+        {
+            foreach(PlayerCharacter player in PlayerCharacterList)
+            {
+                player.scrapAmount += addMoney;
+            }
+        }
+#endif
         private void OnDrawGizmosSelected()
         {
             if (MainCamera == null) return;

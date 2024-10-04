@@ -72,8 +72,6 @@ namespace Game
                     GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
                     gameObject.SetActive(false);
                     itemEvent.Raise(this, i);
-                    break;
-                    itemEvent.Raise(this, i);
                     return;
                 }
             }

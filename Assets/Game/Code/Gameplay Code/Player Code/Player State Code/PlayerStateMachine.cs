@@ -40,6 +40,8 @@ namespace Game
 
         [SerializeField] LayerMask conveyorLayer;
 
+        PlayerCharacter Player => GameManager.Instance.PlayerCharacterList[playerInput.playerIndex];
+
         void Awake()
         {
             //Setup all states
@@ -175,15 +177,11 @@ namespace Game
 
         public void GetInputDirection(InputAction.CallbackContext context)
         {
-            if (!context.performed)
-            {
-                return;
-            }
-            if (Time.deltaTime <= 0)
-            {
-                return;
-            }
+            if (!context.performed) return;
+
+            if (Time.deltaTime <= 0) return;
+
             InputDirection = context.ReadValue<Vector2>();
-        }
+        }        
     }
 }

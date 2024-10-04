@@ -153,12 +153,15 @@ MonoBehaviour:
   - Name: Level 0
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
     TransitionOut: {fileID: 11400000, guid: 89e544c7141fb2e4dbe1bacf3f5a0525, type: 2}
+    TransitionLoad: {fileID: 11400000, guid: f396b56790f1f794f93c69ec8cca9757, type: 2}
   - Name: Level 1
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
     TransitionOut: {fileID: 11400000, guid: 89e544c7141fb2e4dbe1bacf3f5a0525, type: 2}
+    TransitionLoad: {fileID: 11400000, guid: f396b56790f1f794f93c69ec8cca9757, type: 2}
   - Name: Level 2
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
     TransitionOut: {fileID: 11400000, guid: 89e544c7141fb2e4dbe1bacf3f5a0525, type: 2}
+    TransitionLoad: {fileID: 11400000, guid: f396b56790f1f794f93c69ec8cca9757, type: 2}
   <IsTransitioning>k__BackingField: 0
 --- !u!1 &5641720259738580653
 GameObject:

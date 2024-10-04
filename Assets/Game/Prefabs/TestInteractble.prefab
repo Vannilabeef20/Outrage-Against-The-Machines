@@ -50,9 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990b045d2baa9d34a81ad76730b1005f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1NumberRenderer: {fileID: 1958743525645656992}
-  player2NumberRenderer: {fileID: 1958743526075266442}
-  player3NumberRenderer: {fileID: 1958743524870358710}
+  playerProximityRenderers:
+  - {fileID: 1958743525645656992}
+  - {fileID: 1958743526075266442}
+  - {fileID: 1958743524870358710}
   costsMoney: 1
   costTMP: {fileID: 4003874743069192805}
   costAmount: 1
