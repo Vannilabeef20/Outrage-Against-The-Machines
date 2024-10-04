@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 824b3dffa852d424a80c92093d2c50a9
-      internalID: 1430662659
+      spriteID: eaa24fa8c3f0ee74ebe1bba334b56b50
+      internalID: 1565116911
       vertices: []
       indices: 
       edges: []
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0601568b32c45e449efdb749f0b8e13
-      internalID: -347236123
+      spriteID: 7cce6de3f060fc9408fb126fe2e4a3d9
+      internalID: 924072986
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2ce52628a3e1e64a8aa114b61422906
-      internalID: -1822856598
+      spriteID: 1eb6e59e66ad1d74bab82c4c5f44d79b
+      internalID: 918138401
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       name: TURTLE_ATTACK_IDLE_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 384
+        y: 160
         width: 128
         height: 80
       alignment: 7
@@ -196,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b780c0b98b5160146afa104bf6e1e293
-      internalID: -597825098
+      spriteID: ef441303ee5a0f04a906601393b9318b
+      internalID: -855142285
       vertices: []
       indices: 
       edges: []
@@ -206,6 +206,27 @@ TextureImporter:
       name: TURTLE_ATTACK_IDLE_4
       rect:
         serializedVersion: 2
+        x: 0
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccfc57c2b7fa7c48aa7055fe64cd085
+      internalID: -1380492708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_ATTACK_IDLE_5
+      rect:
+        serializedVersion: 2
         x: 128
         y: 80
         width: 128
@@ -217,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a6601be77b35c7449ddb732a79cc84a
-      internalID: 1878510226
+      spriteID: 61ad25fe562832c4196abf30855498f6
+      internalID: 1654692878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_IDLE_5
+      name: TURTLE_ATTACK_IDLE_6
       rect:
         serializedVersion: 2
         x: 256
@@ -238,14 +259,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1006f007fbcde4844b2d4597cfc8bb1b
-      internalID: -2048423718
+      spriteID: 5176af1ea2e0b2043af959a3f848c2b2
+      internalID: 1561629475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_IDLE_6
+      name: TURTLE_ATTACK_IDLE_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d42e94fe0eaae4eafc55b2d7bd71c6
+      internalID: 1955662754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_ATTACK_IDLE_8
       rect:
         serializedVersion: 2
         x: 0
@@ -259,50 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a54f5736d71a20848b8bb045a67997f4
-      internalID: 676277941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_IDLE_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20ae0c2cf6f12634a9b0a2235b480ab2
-      internalID: -648647462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_IDLE_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e997e91cedff6143a00edbaefa3273e
-      internalID: 144743425
+      spriteID: a76ea24a0b3fd634d88c43b1926f8006
+      internalID: 522956418
       vertices: []
       indices: 
       edges: []
@@ -318,15 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TURTLE_ATTACK_IDLE_6: 676277941
-      TURTLE_ATTACK_IDLE_0: 1430662659
-      TURTLE_ATTACK_IDLE_1: -347236123
-      TURTLE_ATTACK_IDLE_3: -597825098
-      TURTLE_ATTACK_IDLE_7: -648647462
-      TURTLE_ATTACK_IDLE_4: 1878510226
-      TURTLE_ATTACK_IDLE_2: -1822856598
-      TURTLE_ATTACK_IDLE_5: -2048423718
-      TURTLE_ATTACK_IDLE_8: 144743425
+      TURTLE_ATTACK_IDLE_6: 1561629475
+      TURTLE_ATTACK_IDLE_0: 1565116911
+      TURTLE_ATTACK_IDLE_1: 924072986
+      TURTLE_ATTACK_IDLE_3: -855142285
+      TURTLE_ATTACK_IDLE_7: 1955662754
+      TURTLE_ATTACK_IDLE_4: -1380492708
+      TURTLE_ATTACK_IDLE_2: 918138401
+      TURTLE_ATTACK_IDLE_5: 1654692878
+      TURTLE_ATTACK_IDLE_8: 522956418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0226202a5396be49828f2bda50bbfeb
+guid: 40ab312d19db5c8418cf104e2c287fae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_0
+      name: TURTLE_WATER_SHOOT_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 128
-        height: 80
+        y: 665
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,83 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 203ffc234cf8e33489f65a783a4de358
-      internalID: -829803803
+      spriteID: ebb43163af713ee4ca8f92608717d5fb
+      internalID: 1923793272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 240
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b581aa1ecf461a4bba644e8237f3555
-      internalID: 712586941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 240
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5b3a30bb85b69649bda8d848568f942
-      internalID: -561859128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 240
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4e858a4d551b2d4f8f1f37f5864c9a8
-      internalID: 1465794591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_4
+      name: TURTLE_WATER_SHOOT_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 128
-        height: 80
+        y: 630
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,83 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ded6818541cca54893c110df0bc7d9b
-      internalID: -316471110
+      spriteID: b70f568246aa9cb4ea70137d1f8b5168
+      internalID: 2133897996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 160
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ea2958ea5a40234f8327f8d68af8609
-      internalID: -341529126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_6
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 160
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3f8456cf7a5d9a4da9c33f2cfad70ce
-      internalID: -225023884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 160
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c280ba7a44aac44a91bfec70b75bdd4
-      internalID: -2009692699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_8
+      name: TURTLE_WATER_SHOOT_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
-        width: 128
-        height: 80
+        y: 595
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6aaa9e829a41344a8c17080237c54af
-      internalID: 327318336
+      spriteID: db4cfa72c10988b4085fa3173856038d
+      internalID: -281625522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_9
+      name: TURTLE_WATER_SHOOT_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 80
-        width: 128
-        height: 80
+        x: 0
+        y: 560
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5da4f3394f48a2c4393bc10278cdcd16
-      internalID: -46258099
+      spriteID: 61c933a12bba9a8488dfced5e022b14b
+      internalID: -1100657494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_10
+      name: TURTLE_WATER_SHOOT_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 80
-        width: 128
-        height: 80
+        x: 0
+        y: 525
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37f170e888ae6104dad0a1a4de56b6cb
-      internalID: 104506763
+      spriteID: 5897c0e8e4586c74ead64fcbcb1679d6
+      internalID: -409311691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_11
+      name: TURTLE_WATER_SHOOT_5
       rect:
         serializedVersion: 2
-        x: 384
-        y: 80
-        width: 128
-        height: 80
+        x: 0
+        y: 490
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +238,293 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb50b9bcc0a165841a5c27cb1475686f
-      internalID: 1609715903
+      spriteID: f172716de0dc2704681b1e48068372c6
+      internalID: -2042360941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_01_12
+      name: TURTLE_WATER_SHOOT_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948f707d32e68fb49af944ccab6bb2fe
+      internalID: -988167311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1fe44926293af4a9736da1767940f0
+      internalID: 1578155818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 385
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801f1048df284724eaff65535f5ea02a
+      internalID: 294860998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8337222ad9b1862478fbafd8bf117dce
+      internalID: -1131283403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10030bb46707e84abfd89659ad7f71a
+      internalID: 1630014723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732b990596d60bb4697bd1c6ef270fce
+      internalID: -894350398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045f07db261ebf2419f5f2448eff19ba
+      internalID: -1538438329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71ee2529f06b164a8fb9ab01179ba3d
+      internalID: -1575948749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ef41ffe56deaa4f9497aecf3af6eca
+      internalID: 105290361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1dbad11d39d5914898b209ec26354fa
+      internalID: -522507946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562f48ea49977c946a91ea145f20824f
+      internalID: 974894302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7b5ca579927c34cb6ea711af00c987
+      internalID: -1335502417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 521
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15fd6f024fe763438718c7aa13b89bb
+      internalID: 494130065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_SHOOT_19
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 80
+        width: 521
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,29 +532,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04a1ced2cf441f43a1885a901d6ad51
-      internalID: 1629292364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_ATTACK_01_13
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5662ac75ab9e6024095fb103d282236c
-      internalID: -413117522
+      spriteID: 5bf51835d4852f3499c8b389bbcda9e5
+      internalID: -1329841046
       vertices: []
       indices: 
       edges: []
@@ -423,20 +549,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TURTLE_ATTACK_01_1: 712586941
-      TURTLE_ATTACK_01_12: 1629292364
-      TURTLE_ATTACK_01_6: -225023884
-      TURTLE_ATTACK_01_2: -561859128
-      TURTLE_ATTACK_01_0: -829803803
-      TURTLE_ATTACK_01_11: 1609715903
-      TURTLE_ATTACK_01_8: 327318336
-      TURTLE_ATTACK_01_4: -316471110
-      TURTLE_ATTACK_01_13: -413117522
-      TURTLE_ATTACK_01_3: 1465794591
-      TURTLE_ATTACK_01_5: -341529126
-      TURTLE_ATTACK_01_7: -2009692699
-      TURTLE_ATTACK_01_10: 104506763
-      TURTLE_ATTACK_01_9: -46258099
+      TURTLE_WATER_SHOOT_8: 294860998
+      TURTLE_WATER_SHOOT_15: -522507946
+      TURTLE_WATER_SHOOT_3: -1100657494
+      TURTLE_WATER_SHOOT_19: -1329841046
+      TURTLE_WATER_SHOOT_2: -281625522
+      TURTLE_WATER_SHOOT_11: -894350398
+      TURTLE_WATER_SHOOT_16: 974894302
+      TURTLE_WATER_SHOOT_6: -988167311
+      TURTLE_WATER_SHOOT_1: 2133897996
+      TURTLE_WATER_SHOOT_0: 1923793272
+      TURTLE_WATER_SHOOT_10: 1630014723
+      TURTLE_WATER_SHOOT_9: -1131283403
+      TURTLE_WATER_SHOOT_5: -2042360941
+      TURTLE_WATER_SHOOT_12: -1538438329
+      TURTLE_WATER_SHOOT_18: 494130065
+      TURTLE_WATER_SHOOT_14: 105290361
+      TURTLE_WATER_SHOOT_13: -1575948749
+      TURTLE_WATER_SHOOT_4: -409311691
+      TURTLE_WATER_SHOOT_7: 1578155818
+      TURTLE_WATER_SHOOT_17: -1335502417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

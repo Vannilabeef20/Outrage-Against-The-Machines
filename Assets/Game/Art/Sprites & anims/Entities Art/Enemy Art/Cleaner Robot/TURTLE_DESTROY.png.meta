@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff077da928e068e409663508115148fa
-      internalID: -1088286504
+      spriteID: fcd25d5c1b83ad942bd12643d0eab9ec
+      internalID: 278260309
       vertices: []
       indices: 
       edges: []
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36a06d0f2c33e134fb155e74ad6f922b
-      internalID: 1424823932
+      spriteID: 6f4e72a3c8186334fba66b3e5846efa2
+      internalID: 544055412
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d5bb27a755983b4fa11b31ac2bae263
-      internalID: -768303381
+      spriteID: ee610d3ac42eb384f9ee4b0739730dcb
+      internalID: 1993241018
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       name: TURTLE_DESTROY_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 384
+        y: 160
         width: 128
         height: 80
       alignment: 7
@@ -196,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20255f36315326d41a1ee5f9e0f46bc3
-      internalID: 455973194
+      spriteID: 555b5b39d0b056e46b417b5d3f90e7e3
+      internalID: -1860742367
       vertices: []
       indices: 
       edges: []
@@ -206,6 +206,27 @@ TextureImporter:
       name: TURTLE_DESTROY_4
       rect:
         serializedVersion: 2
+        x: 0
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d719a6004abef5c4a8565d875cc3173d
+      internalID: 2011387762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_DESTROY_5
+      rect:
+        serializedVersion: 2
         x: 128
         y: 80
         width: 128
@@ -217,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26eb749abf78b2142b670d9e67dbb956
-      internalID: 1207082949
+      spriteID: 6c4003b4acffdcb4290e516e573ffad8
+      internalID: -1326085541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_DESTROY_5
+      name: TURTLE_DESTROY_6
       rect:
         serializedVersion: 2
         x: 256
@@ -238,14 +259,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bfa6d9181c2fa64882121a77a8790b9
-      internalID: -1033972806
+      spriteID: f6aeacea21cfcc441a33375ce2277296
+      internalID: 1180896898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_DESTROY_6
+      name: TURTLE_DESTROY_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4b434609b0fd247a49c129b3dd6206
+      internalID: 975605377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_DESTROY_8
       rect:
         serializedVersion: 2
         x: 0
@@ -259,50 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b750fa6808ac45d41a735d5d748cd01d
-      internalID: 821277869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_DESTROY_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6ca1d053a19e54499d70910045fd2b8
-      internalID: -517255806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_DESTROY_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfa9b664578cc8b42bbd897147877678
-      internalID: 1534168004
+      spriteID: b9b742785367a41469213fea2fe340d3
+      internalID: 934922134
       vertices: []
       indices: 
       edges: []
@@ -318,15 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TURTLE_DESTROY_1: 1424823932
-      TURTLE_DESTROY_7: -517255806
-      TURTLE_DESTROY_4: 1207082949
-      TURTLE_DESTROY_6: 821277869
-      TURTLE_DESTROY_0: -1088286504
-      TURTLE_DESTROY_3: 455973194
-      TURTLE_DESTROY_2: -768303381
-      TURTLE_DESTROY_8: 1534168004
-      TURTLE_DESTROY_5: -1033972806
+      TURTLE_DESTROY_1: 544055412
+      TURTLE_DESTROY_7: 975605377
+      TURTLE_DESTROY_4: 2011387762
+      TURTLE_DESTROY_6: 1180896898
+      TURTLE_DESTROY_0: 278260309
+      TURTLE_DESTROY_3: -1860742367
+      TURTLE_DESTROY_2: 1993241018
+      TURTLE_DESTROY_8: 934922134
+      TURTLE_DESTROY_5: -1326085541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

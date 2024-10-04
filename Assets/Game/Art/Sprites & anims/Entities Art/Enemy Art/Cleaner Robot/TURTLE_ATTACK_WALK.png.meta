@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88e1c96246a66ed44848bddc09d2d791
-      internalID: 885918504
+      spriteID: 2d694059888c72d45ab258c143265826
+      internalID: 1010186791
       vertices: []
       indices: 
       edges: []
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 431b7b5daeaf4bc4ba8c60c9d7e9d0c3
-      internalID: 473956676
+      spriteID: 83a96edac2416f043a330d23ba32884d
+      internalID: -31799760
       vertices: []
       indices: 
       edges: []
@@ -175,14 +175,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f36f56c2d27331f4bb720834ae671069
-      internalID: 709722611
+      spriteID: 3881c1fe4fea931498de6b350e5dd7cc
+      internalID: 280570438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: TURTLE_ATTACK_WALK_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3c4225e6b227348877e193c6a493d8
+      internalID: 719069124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_ATTACK_WALK_4
       rect:
         serializedVersion: 2
         x: 0
@@ -196,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5feb9b714e8a613429155139e2455488
-      internalID: -2015843191
+      spriteID: 2e7eb9c7433995b419d8b0af6e0dfa87
+      internalID: -1000211875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_WALK_4
+      name: TURTLE_ATTACK_WALK_5
       rect:
         serializedVersion: 2
         x: 128
@@ -217,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c925027fb699e741865ec97fadcad68
-      internalID: 1334543119
+      spriteID: af69c3dada0232246b10bfb5661c325b
+      internalID: -48608633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_WALK_5
+      name: TURTLE_ATTACK_WALK_6
       rect:
         serializedVersion: 2
         x: 256
@@ -238,14 +259,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c82c6b75ffaf92747bfc972cc0618ec6
-      internalID: -1160399620
+      spriteID: 912a55cd75a6f7248b43654bf381a2a6
+      internalID: -1894756971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_ATTACK_WALK_6
+      name: TURTLE_ATTACK_WALK_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bfdab76e7100f429f791aea3d137c2
+      internalID: -453042060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_ATTACK_WALK_8
       rect:
         serializedVersion: 2
         x: 0
@@ -259,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c581e5ae07bf77e4cad35f023fa66c2d
-      internalID: -2077517965
+      spriteID: c6b373bba6de3fe4ea2c3bfb7975117f
+      internalID: 1462268007
       vertices: []
       indices: 
       edges: []
@@ -276,13 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TURTLE_ATTACK_WALK_3: -2015843191
-      TURTLE_ATTACK_WALK_4: 1334543119
-      TURTLE_ATTACK_WALK_6: -2077517965
-      TURTLE_ATTACK_WALK_1: 473956676
-      TURTLE_ATTACK_WALK_2: 709722611
-      TURTLE_ATTACK_WALK_5: -1160399620
-      TURTLE_ATTACK_WALK_0: 885918504
+      TURTLE_ATTACK_WALK_3: 719069124
+      TURTLE_ATTACK_WALK_4: -1000211875
+      TURTLE_ATTACK_WALK_6: -1894756971
+      TURTLE_ATTACK_WALK_7: -453042060
+      TURTLE_ATTACK_WALK_1: -31799760
+      TURTLE_ATTACK_WALK_2: 280570438
+      TURTLE_ATTACK_WALK_5: -48608633
+      TURTLE_ATTACK_WALK_0: 1010186791
+      TURTLE_ATTACK_WALK_8: 1462268007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

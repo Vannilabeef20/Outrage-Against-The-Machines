@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e1fea88c7537504b8a8ab76b4e99730
-      internalID: -1057377509
+      spriteID: 73df6ad6f66630940a78304bfc93ae14
+      internalID: -2117496277
       vertices: []
       indices: 
       edges: []
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238bea3ecd1cb184e97abe32da1bc651
-      internalID: 2015755885
+      spriteID: 318aa9feee115864b93df1ba78534df5
+      internalID: 107612097
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b48c7054555da7a41b205b8394cece5f
-      internalID: -1710661810
+      spriteID: 814870075776b164c93f2d78c1214233
+      internalID: 2063303661
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       name: TURTLE_WATER_RETRACT_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 384
+        y: 160
         width: 128
         height: 80
       alignment: 7
@@ -196,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42dca5a29dd19fd4d89e2caabde9fb2f
-      internalID: -1160188785
+      spriteID: 4ae3148659f604045a1f2c89d9566650
+      internalID: -236219563
       vertices: []
       indices: 
       edges: []
@@ -206,6 +206,27 @@ TextureImporter:
       name: TURTLE_WATER_RETRACT_4
       rect:
         serializedVersion: 2
+        x: 0
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc469f008e2f214ca4aa217502e4fbb
+      internalID: 19628231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_RETRACT_5
+      rect:
+        serializedVersion: 2
         x: 128
         y: 80
         width: 128
@@ -217,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 203eca5fe841d304caa0c9f1c0f1feff
-      internalID: 515486724
+      spriteID: 4f9973eefb9ff734997f71454bea2d72
+      internalID: 1791789562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_WATER_RETRACT_5
+      name: TURTLE_WATER_RETRACT_6
       rect:
         serializedVersion: 2
         x: 256
@@ -238,14 +259,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fec0ee0255db774409933b03091c9560
-      internalID: -1944585338
+      spriteID: daaf08a2cfa947e43b8c0e71681b020f
+      internalID: -624990564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_WATER_RETRACT_6
+      name: TURTLE_WATER_RETRACT_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f028bc9f28d0cb40999ac0d1e9b05b8
+      internalID: -1590656961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_WATER_RETRACT_8
       rect:
         serializedVersion: 2
         x: 0
@@ -259,50 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 024d0ab612bcd224e831ebdbf7eb6b5b
-      internalID: -18179496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_WATER_RETRACT_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcc54b1458fcf5a40b4ca6102d52ad6c
-      internalID: 1096233496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_WATER_RETRACT_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af5e72bd26a021e43bf8ab1a0d408f95
-      internalID: 96232855
+      spriteID: 62614cca61f40e148b364d97c383074c
+      internalID: 797630876
       vertices: []
       indices: 
       edges: []
@@ -318,15 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TURTLE_WATER_RETRACT_0: -1057377509
-      TURTLE_WATER_RETRACT_3: -1160188785
-      TURTLE_WATER_RETRACT_6: -18179496
-      TURTLE_WATER_RETRACT_8: 96232855
-      TURTLE_WATER_RETRACT_4: 515486724
-      TURTLE_WATER_RETRACT_7: 1096233496
-      TURTLE_WATER_RETRACT_5: -1944585338
-      TURTLE_WATER_RETRACT_2: -1710661810
-      TURTLE_WATER_RETRACT_1: 2015755885
+      TURTLE_WATER_RETRACT_0: -2117496277
+      TURTLE_WATER_RETRACT_3: -236219563
+      TURTLE_WATER_RETRACT_6: -624990564
+      TURTLE_WATER_RETRACT_8: 797630876
+      TURTLE_WATER_RETRACT_4: 19628231
+      TURTLE_WATER_RETRACT_7: -1590656961
+      TURTLE_WATER_RETRACT_5: 1791789562
+      TURTLE_WATER_RETRACT_2: 2063303661
+      TURTLE_WATER_RETRACT_1: 107612097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

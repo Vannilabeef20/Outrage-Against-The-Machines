@@ -4940,6 +4940,7 @@ MonoBehaviour:
   - {fileID: 8457461244685802978, guid: 234c9c33456f2a440b640182713f3024, type: 3}
   trailPixelLenght: 16
   minLenght: 5
+  placeInterval: 0.1
   testDistance: 3.4
 --- !u!1 &1702680308892565086
 GameObject:
@@ -5080,12 +5081,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1518056026, guid: ad7bcf928ff15684583b94e9ee2a65a2, type: 3}
+  m_Sprite: {fileID: 1215383983, guid: ad7bcf928ff15684583b94e9ee2a65a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.3333335, y: 5.3333335}
+  m_Size: {x: 5.3333335, y: 3.3333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5597,7 +5598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d444f022deeb78f41b43e724c3984855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 90717c78b56165e40a5e9024310562b3, type: 2}
+  StateAnimation: {fileID: 7400000, guid: 46db956d558c012458d3a635a6d4d16c, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -5900,8 +5901,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0926008, y: 3.1474798, z: 1}
-  m_Center: {x: 0.06189263, y: 1.4174992, z: 0}
+  m_Size: {x: 2.705027, y: 1.7936952, z: 1}
+  m_Center: {x: 0.23917389, y: 2.6423516, z: 0}
 --- !u!114 &6508126987123622501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5965,7 +5966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114425a82f155254d8a22df705b0289d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
+  StateAnimation: {fileID: 7400000, guid: d8cfd43b1c5512f40b193a73de5e3307, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -6096,7 +6097,7 @@ GameObject:
   - component: {fileID: 5006283131533275794}
   - component: {fileID: 1945614779056283836}
   m_Layer: 8
-  m_Name: Tortoise
+  m_Name: Turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6754,7 +6755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 2b567cb1ab21fcf458d83d01791bc603, type: 2}
+  StateAnimation: {fileID: 7400000, guid: d8cfd43b1c5512f40b193a73de5e3307, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -6762,7 +6763,7 @@ MonoBehaviour:
   AttackMachine: {fileID: 6508126987276863439}
   <attack>k__BackingField:
     <Name>k__BackingField: SLIDE
-    <Animation>k__BackingField: {fileID: 7400000, guid: 2b567cb1ab21fcf458d83d01791bc603, type: 2}
+    <Animation>k__BackingField: {fileID: 7400000, guid: d8cfd43b1c5512f40b193a73de5e3307, type: 2}
     <TriggerRange>k__BackingField: 11
     <VelocityCurve>k__BackingField:
       serializedVersion: 2
@@ -6777,7 +6778,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.15057984
+        time: 0.65
         value: 0
         inSlope: Infinity
         outSlope: -859.7272
@@ -6786,37 +6787,28 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.0072022527
       - serializedVersion: 3
-        time: 0.25
+        time: 0.75
         value: 0
         inSlope: -0.0036302826
-        outSlope: 2497.0886
+        outSlope: 847.02203
         tangentMode: 1
         weightedMode: 3
         inWeight: 1
-        outWeight: 0.0013636168
-      - serializedVersion: 3
-        time: 0.9
-        value: 0
-        inSlope: -0.0036087872
-        outSlope: -0.81002456
-        tangentMode: 1
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0.2940668
+        outWeight: 0.010610819
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0.0040974817
-        outSlope: 0.0040974817
+        inSlope: -0.0011949127
+        outSlope: -0.0011949127
         tangentMode: 0
         weightedMode: 3
-        inWeight: 0.37420505
+        inWeight: 1
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    <Velocity>k__BackingField: 8
-    <Duration>k__BackingField: 1.5
+    <Velocity>k__BackingField: 30
+    <Duration>k__BackingField: 3
     <Damage>k__BackingField: 20
     <StunDuration>k__BackingField: 0.6
     <KnockbackStrenght>k__BackingField: 11

@@ -123,6 +123,90 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 160
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6dcf85f0e16a84183d6571d1a1b1e4
+      internalID: 1561371991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_PASSIVE_WALK_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e517855a493b4764986ee682a8cc801c
+      internalID: -187011507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_PASSIVE_WALK_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2303c282a4f5046afe032dc7a2d258
+      internalID: -535615516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_PASSIVE_WALK_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5baae380530095941a0b013127fc349c
+      internalID: -1892967965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_PASSIVE_WALK_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 80
         width: 128
         height: 80
@@ -133,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 535d6b6044341024884d6fdb86fc1813
-      internalID: -1826226099
+      spriteID: 89de3be974352b84294b94771a44895d
+      internalID: -585424308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_PASSIVE_WALK_1
+      name: TURTLE_PASSIVE_WALK_5
       rect:
         serializedVersion: 2
         x: 128
@@ -154,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5e03496c55600d4db4d73d71aa68f68
-      internalID: -245525886
+      spriteID: 954eb191ead5dd247b5d213ccc36778f
+      internalID: -406900876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_PASSIVE_WALK_2
+      name: TURTLE_PASSIVE_WALK_6
       rect:
         serializedVersion: 2
         x: 256
@@ -175,14 +259,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30f7ba990a1e16b4d8b88b0b62ddf771
-      internalID: -539061896
+      spriteID: 1379c671f3c0310449f549434ec30e3f
+      internalID: 350304530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TURTLE_PASSIVE_WALK_3
+      name: TURTLE_PASSIVE_WALK_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 128
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44af893404404b2459b23c9764463454
+      internalID: -112355397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TURTLE_PASSIVE_WALK_8
       rect:
         serializedVersion: 2
         x: 0
@@ -196,50 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42ac434211272ae439529dca4c3a8697
-      internalID: -190832850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_PASSIVE_WALK_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b76089a016e49cd4bbf28f995d1e477e
-      internalID: 39837836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TURTLE_PASSIVE_WALK_5
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 80
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f0e3db9a832d4c409940bd0ae35c465
-      internalID: -72328643
+      spriteID: 574fefe6135c7c7489865c1d90fa3913
+      internalID: -970578191
       vertices: []
       indices: 
       edges: []
@@ -255,12 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TURTLE_PASSIVE_WALK_5: -72328643
-      TURTLE_PASSIVE_WALK_3: -190832850
-      TURTLE_PASSIVE_WALK_0: -1826226099
-      TURTLE_PASSIVE_WALK_1: -245525886
-      TURTLE_PASSIVE_WALK_2: -539061896
-      TURTLE_PASSIVE_WALK_4: 39837836
+      TURTLE_PASSIVE_WALK_5: -406900876
+      TURTLE_PASSIVE_WALK_3: -1892967965
+      TURTLE_PASSIVE_WALK_8: -970578191
+      TURTLE_PASSIVE_WALK_7: -112355397
+      TURTLE_PASSIVE_WALK_6: 350304530
+      TURTLE_PASSIVE_WALK_0: 1561371991
+      TURTLE_PASSIVE_WALK_1: -187011507
+      TURTLE_PASSIVE_WALK_2: -535615516
+      TURTLE_PASSIVE_WALK_4: -585424308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
