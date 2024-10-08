@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 using FMODUnity;
 #if UNITY_EDITOR
@@ -12,22 +13,22 @@ namespace Game
         [Header("ATTACK STATE"), HorizontalLine(2F, EColor.Yellow)]
         [SerializeField] EnemyAttackingState AttackMachine;
 
-        [field: SerializeField] public EnemyAttack attack { get; private set; }
+        [SerializeField] UnityEvent OnExitEvent;
+        [field: SerializeField] public EnemyAttack Attack { get; private set; }
 
-        [SerializeField] 
 
         public override void Setup(EnemyStateMachine _enemyStateMachine)
         {
             base.Setup(_enemyStateMachine);
             AttackMachine = stateMachine.attack;
-            attack.SetupFrameEvents(StateAnimation);
+            Attack.SetupFrameEvents(StateAnimation);
         }
 
         public override void Enter()
         {
             IsComplete = false;
             startTime = Time.time;
-            foreach (var frameEvent in attack.FrameEvents)
+            foreach (var frameEvent in Attack.FrameEvents)
             {
                 frameEvent.Reset();
             }
@@ -35,25 +36,23 @@ namespace Game
 
         public override void Exit()
         {
+            OnExitEvent.Invoke();
             IsComplete = false;
         }
         public override void Do()
         {
-            foreach (var frameEvent in attack.FrameEvents)
+            foreach (var frameEvent in Attack.FrameEvents)
             {
                 frameEvent.Update(UpTime);
             }
             ValidateState();
         }
 
-        public override void FixedDo()
-        {
-
-        }
+        public override void FixedDo() { }
 
         protected override void ValidateState()
         {
-            if (UpTime >= attack.Duration)
+            if (UpTime >= Attack.Config.Duration)
             {
                 IsComplete = true;
             }
@@ -65,10 +64,10 @@ namespace Game
             Gizmos.color = AttackMachine.RangeLineColor;
             Gizmos.DrawLine(stateMachine.transform.position + stateMachine.BoxCastOffset,
                 stateMachine.transform.position + stateMachine.BoxCastOffset +
-                (transform.right * attack.TriggerRange));
+                (transform.right * Attack.Config.TriggerRange));
 
-            Vector3 attackPoint = transform.position + stateMachine.BoxCastOffset + (transform.right * attack.TriggerRange);
-            Handles.Label(attackPoint + AttackMachine.RangeLabelOffest, $"\n^\n|\n|\n|\n{attack.Name}\nrange", AttackMachine.attackLabelStyle);
+            Vector3 attackPoint = transform.position + stateMachine.BoxCastOffset + (transform.right * Attack.Config.TriggerRange);
+            Handles.Label(attackPoint + AttackMachine.RangeLabelOffest, $"\n^\n|\n|\n|\n{Attack.Config.Name}\nrange", AttackMachine.attackLabelStyle);
             Gizmos.DrawLine(attackPoint + AttackMachine.RangeLineHeight, attackPoint - AttackMachine.RangeLineHeight);
         }
 #endif

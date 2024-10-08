@@ -4930,7 +4930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be092badc42e1b4ea3533965d9c79ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStateMachine: {fileID: 7858963316317794402}
   startTrail: {fileID: 559092356059934727, guid: 38042c146274ab9439f2deeefef3c5ab, type: 3}
   endTrail: {fileID: 5294608151494651953, guid: 28e2ac31bc89b174bbca5b8fff4242cd, type: 3}
   middleTrail:
@@ -4939,9 +4938,10 @@ MonoBehaviour:
   - {fileID: 691619434547247062, guid: 2105a81e93aad1e48b8157cb682b6793, type: 3}
   - {fileID: 8457461244685802978, guid: 234c9c33456f2a440b640182713f3024, type: 3}
   trailPixelLenght: 16
-  minLenght: 5
-  placeInterval: 0.1
-  testDistance: 3.4
+  trailLenght: 11
+  placeInterval: 0.08
+  offset: {x: 0, y: -0.2, z: 0}
+  destroyTime: 3
 --- !u!1 &1702680308892565086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,7 +5081,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1215383983, guid: ad7bcf928ff15684583b94e9ee2a65a2, type: 3}
+  m_Sprite: {fileID: -2117496277, guid: b1c08da6b73787d4ca6b630203c292bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -5112,6 +5112,164 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &2948480255046646352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7107209744019520472}
+  - component: {fileID: 4087020782235349634}
+  - component: {fileID: 4001005681879114987}
+  m_Layer: 0
+  m_Name: JetAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7107209744019520472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948480255046646352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4409800472308447067}
+  - {fileID: 6316683888552108649}
+  m_Father: {fileID: 6508126987276863436}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4087020782235349634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948480255046646352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: d8cfd43b1c5512f40b193a73de5e3307, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 7858963316317794402}
+  AttackMachine: {fileID: 6508126987276863439}
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3432621244555676624}
+        m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+        m_MethodName: StopTrail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4050946216236544597}
+        m_TargetAssemblyTypeName: Game.WaterJet, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: e7508ae5df9657c4b8047d2f491d72f0, type: 2}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 4
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2241045627075507742}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - <TriggerFrame>k__BackingField: 6
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4050946216236544597}
+            m_TargetAssemblyTypeName: Game.WaterJet, Assembly-CSharp
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 3432621244555676624}
+            m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+            m_MethodName: CreateTrail
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+--- !u!114 &4001005681879114987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948480255046646352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 487971096
+      Data2: 1287558925
+      Data3: 1597943218
+      Data4: -276101485
+    Path: event:/SFX/Enemy/Bear/Enemy Attack SFX - Bear
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3648327314913495207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,7 +5457,7 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 7858963316317794402}
-  duration: 1
+  duration: 2.5
   frameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
@@ -5405,6 +5563,62 @@ Transform:
   m_Father: {fileID: 5903887308712262840}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6081054907570030036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4409800472308447067}
+  - component: {fileID: 3432621244555676624}
+  m_Layer: 0
+  m_Name: Water_Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4409800472308447067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081054907570030036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7107209744019520472}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3432621244555676624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081054907570030036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be092badc42e1b4ea3533965d9c79ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTrail: {fileID: 559092356059934727, guid: 38042c146274ab9439f2deeefef3c5ab, type: 3}
+  endTrail: {fileID: 5294608151494651953, guid: 28e2ac31bc89b174bbca5b8fff4242cd, type: 3}
+  middleTrail:
+  - {fileID: 3228690641420425411, guid: 4fbc148ee88a1f547ba95b996c16fcfa, type: 3}
+  - {fileID: 6063384796361074495, guid: 078c0a3b94dc5b9488fe43a8da639b48, type: 3}
+  - {fileID: 691619434547247062, guid: 2105a81e93aad1e48b8157cb682b6793, type: 3}
+  - {fileID: 8457461244685802978, guid: 234c9c33456f2a440b640182713f3024, type: 3}
+  trailPixelLenght: 16
+  trailLenght: 22
+  placeInterval: 0.02
+  offset: {x: 0, y: -0.2, z: 0}
+  destroyTime: 3
 --- !u!1 &6508126985612539010
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,7 +5676,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetingTimer: 0
   <PathfindingBehaviour>k__BackingField:
-    rid: 3453055934752620545
+    rid: 3453056034331426816
   pathfindingRepeatInterval: 0.25
   pathfindingTimer: 0
   speed: {x: 2, y: 1.5, z: 1.5}
@@ -5470,22 +5684,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3453055934752620545
-      type: {class: MoveRangedCntxStrg, ns: Game, asm: Assembly-CSharp}
+    - rid: 3453056034331426816
+      type: {class: MoveContextSteering, ns: Game, asm: Assembly-CSharp}
       data:
         body: {fileID: 1945614779056283836}
         targetPosition: {x: 0, y: 0, z: 0}
-        stateMachine: {fileID: 7858963316317794402}
-        numberOfRays: 16
-        distanceToKeep: 11
-        distanceRange: 4
         <ObstacleLayerMask>k__BackingField:
           serializedVersion: 2
           m_Bits: 1280
+        numberOfRays: 16
         obstacleDetectionRadius: 2
         maxAvoidanceRadius: 0.75
-        distance: 0
-        direction: {x: 0, y: 0, z: 0}
         normal: {x: 0, y: 1, z: -1}
     - rid: 3689197334475046918
       type: {class: TargetClosest, ns: Game, asm: Assembly-CSharp}
@@ -5530,7 +5739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6508126985700856565}
   m_Layer: 0
-  m_Name: Cleaner Tortoise Robot
+  m_Name: Cleaner Turtle Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5917,7 +6126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 7858963316317794402}
   DEBUGHealthImage: {fileID: 1343746180273577799}
-  maxHeathPoints: 80
+  maxHeathPoints: 125
   <CurrentHealthPercent>k__BackingField: 0
   <CurrentHealthPoints>k__BackingField: 0
 --- !u!1 &6508126987276863437
@@ -5950,6 +6159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7107209744019520472}
   - {fileID: 8872166234325332231}
   m_Father: {fileID: 6508126986923127504}
   m_RootOrder: -1
@@ -5975,26 +6185,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <Attacks>k__BackingField:
+  - {fileID: 4087020782235349634}
   - {fileID: 3898736811605107368}
-  currentAttack:
-    <Name>k__BackingField: 
-    <Animation>k__BackingField: {fileID: 0}
-    <TriggerRange>k__BackingField: 0
-    <VelocityCurve>k__BackingField:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    <Velocity>k__BackingField: 0
-    <Duration>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <StunDuration>k__BackingField: 0
-    <KnockbackStrenght>k__BackingField: 0
-    <HasProjectile>k__BackingField: 0
-    <ProjectilePrefab>k__BackingField: {fileID: 0}
-    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
-    <FrameEvents>k__BackingField: []
+  <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
   attackLabelStyle:
     m_Name: 
@@ -6161,7 +6354,7 @@ MonoBehaviour:
     m_Bits: 64
   <BoxCastOffset>k__BackingField: {x: -1, y: 1.9, z: 0}
   boxCastDimensions: {x: 0.1, y: 0.55, z: 0.35}
-  boxCastLenght: 10
+  boxCastLenght: 12
   stateLabelTmpro: {fileID: 8756836406728866656}
   boxCastDefaultColor: {r: 1, g: 0, b: 0, a: 1}
   boxCastAlignedColor: {r: 0, g: 1, b: 0.09925556, a: 1}
@@ -6276,6 +6469,206 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!1 &7006443435784380925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6316683888552108649}
+  - component: {fileID: 4050946216236544597}
+  - component: {fileID: 21856686771515683}
+  - component: {fileID: 838889049109923157}
+  - component: {fileID: 2241045627075507742}
+  - component: {fileID: 2839421977228806712}
+  - component: {fileID: 8870755968586464416}
+  m_Layer: 0
+  m_Name: Water_Jet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6316683888552108649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.682, y: 0.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7107209744019520472}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4050946216236544597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c73b284ba7fd44aa5fdcc1203b3f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 838889049109923157}
+  jetClip: {fileID: 7400000, guid: ceaa279dd24fd844aae710e865e4d972, type: 2}
+  duration: 0.9
+  playing: 0
+  timer: 0
+  completion: 0
+--- !u!212 &21856686771515683
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 21.708334, y: 1.4583334}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &838889049109923157
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 429bed6e611ce074a99f43344bbe1007, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2241045627075507742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -457379800
+      Data2: 1294105341
+      Data3: 2006519999
+      Data4: 913433116
+    Path: event:/SFX/Enemy/Turtle/Enemy Water Jet
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!65 &2839421977228806712
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8870755968586464416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006443435784380925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894c6bc6f3a4614478a6dcf3ef5bf3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 10
+  stunDuration: 1
+  knockbackStrenght: 10
 --- !u!1 &7145437615092115823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6755,83 +7148,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: d8cfd43b1c5512f40b193a73de5e3307, type: 2}
+  StateAnimation: {fileID: 7400000, guid: 0bc1d71f8ffa718489dfcae033ed953e, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 7858963316317794402}
   AttackMachine: {fileID: 6508126987276863439}
-  <attack>k__BackingField:
-    <Name>k__BackingField: SLIDE
-    <Animation>k__BackingField: {fileID: 7400000, guid: d8cfd43b1c5512f40b193a73de5e3307, type: 2}
-    <TriggerRange>k__BackingField: 11
-    <VelocityCurve>k__BackingField:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.65
-        value: 0
-        inSlope: Infinity
-        outSlope: -859.7272
-        tangentMode: 7
-        weightedMode: 2
-        inWeight: 0.33333334
-        outWeight: 0.0072022527
-      - serializedVersion: 3
-        time: 0.75
-        value: 0
-        inSlope: -0.0036302826
-        outSlope: 847.02203
-        tangentMode: 1
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0.010610819
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -0.0011949127
-        outSlope: -0.0011949127
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 1
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    <Velocity>k__BackingField: 30
-    <Duration>k__BackingField: 3
-    <Damage>k__BackingField: 20
-    <StunDuration>k__BackingField: 0.6
-    <KnockbackStrenght>k__BackingField: 11
-    <HasProjectile>k__BackingField: 0
-    <ProjectilePrefab>k__BackingField: {fileID: 0}
-    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2177887728833581964}
+        m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+        m_MethodName: StopTrail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: 9af7de98ce9866c4ab253494ef5cb8cb, type: 2}
     <FrameEvents>k__BackingField:
-    - <TriggerFrame>k__BackingField: 3
+    - <TriggerFrame>k__BackingField: 6
       <Actions>k__BackingField:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 3344898223652118149}
-            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-            m_MethodName: Play
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
           - m_Target: {fileID: 2177887728833581964}
             m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
             m_MethodName: CreateTrail

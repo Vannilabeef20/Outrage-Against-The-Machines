@@ -72,7 +72,7 @@ namespace Game
             startPos = boxTransform.position;
             finalPos = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
             shadowTransform.position = finalPos;
-            animateImage.pause = true;
+            animateImage.Pause();
         }
         private void Update()
         {
@@ -145,7 +145,7 @@ namespace Game
             if (boxTransform.position.y < boxTransform.position.z && fell == false)
             {
                 boxCollider.enabled = false;
-                animateImage.pause = false;
+                animateImage.Unpause();
                 boxTransform.position = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
                 fallEmitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 impactEmitter.Play();

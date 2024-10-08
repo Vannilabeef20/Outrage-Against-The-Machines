@@ -76,8 +76,10 @@ namespace Game
     {
         [HideInInspector] public string Name;
 
-        [SerializeField] public Vector3 position;
-        [SerializeField] public EnemyWave[] waves;
+        [Tooltip("The time range between spawns.")]
+        public Vector3 position;
+        [MinMaxSlider(0.1f, 5f)] public Vector2 spawnDelay;
+        public EnemyWave[] waves;
 
         public void UpdateNames()
         {

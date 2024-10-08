@@ -4958,8 +4958,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427946075056308811}
+  - component: {fileID: 1424574661666922024}
   m_Layer: 0
-  m_Name: Projectile SpawnPoint
+  m_Name: Projectile Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4980,6 +4981,20 @@ Transform:
   m_Father: {fileID: 4483290455034505136}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424574661666922024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983444488673148728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67c65c35bd6671408bf5ea4856c40e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 427946075056308811}
+  spawnObject: {fileID: 4642329591781492597, guid: ac5b0c83a8896644c9037d038e0a648d, type: 3}
 --- !u!1 &3404611908491756769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5402,60 +5417,8 @@ MonoBehaviour:
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 6508126985700856569}
   AttackMachine: {fileID: 6508126987276863439}
-  <attack>k__BackingField:
-    <Name>k__BackingField: Shoot
-    <Animation>k__BackingField: {fileID: 7400000, guid: 668cea85d3540f446b5c4eff959ebd80, type: 2}
-    <TriggerRange>k__BackingField: 11
-    <VelocityCurve>k__BackingField:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 2.2222223
-        outSlope: 2.2222223
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.45
-        value: 1
-        inSlope: Infinity
-        outSlope: -15.041986
-        tangentMode: 7
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.06331482
-      - serializedVersion: 3
-        time: 0.6
-        value: 0
-        inSlope: -0.1365995
-        outSlope: 0
-        tangentMode: 1
-        weightedMode: 0
-        inWeight: 0.8715083
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    <Velocity>k__BackingField: -10
-    <Duration>k__BackingField: 2
-    <Damage>k__BackingField: 20
-    <StunDuration>k__BackingField: 0.7
-    <KnockbackStrenght>k__BackingField: 10
-    <HasProjectile>k__BackingField: 1
-    <ProjectilePrefab>k__BackingField: {fileID: 4642329591781492597, guid: ac5b0c83a8896644c9037d038e0a648d, type: 3}
-    <ProjectileSpawnTransform>k__BackingField: {fileID: 427946075056308811}
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: 039bda296a9c50f44bae0a7a7b30f727, type: 2}
     <FrameEvents>k__BackingField:
     - <TriggerFrame>k__BackingField: 0
       <Actions>k__BackingField:
@@ -5489,9 +5452,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 6508126987276863439}
-            m_TargetAssemblyTypeName: Game.EnemyAttackingState, Assembly-CSharp
-            m_MethodName: SpawnProjectile
+          - m_Target: {fileID: 1424574661666922024}
+            m_TargetAssemblyTypeName: SpawnObject, Assembly-CSharp
+            m_MethodName: Spawn
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -5501,6 +5464,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6508126985612539010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6290,25 +6256,7 @@ MonoBehaviour:
     m_Bits: 64
   <Attacks>k__BackingField:
   - {fileID: 4865190315941957882}
-  currentAttack:
-    <Name>k__BackingField: 
-    <Animation>k__BackingField: {fileID: 0}
-    <TriggerRange>k__BackingField: 0
-    <VelocityCurve>k__BackingField:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    <Velocity>k__BackingField: 0
-    <Duration>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <StunDuration>k__BackingField: 0
-    <KnockbackStrenght>k__BackingField: 0
-    <HasProjectile>k__BackingField: 0
-    <ProjectilePrefab>k__BackingField: {fileID: 0}
-    <ProjectileSpawnTransform>k__BackingField: {fileID: 0}
-    <FrameEvents>k__BackingField: []
+  <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
   attackLabelStyle:
     m_Name: 

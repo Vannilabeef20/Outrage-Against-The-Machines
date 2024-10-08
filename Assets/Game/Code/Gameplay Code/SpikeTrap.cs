@@ -59,13 +59,12 @@ namespace Game
                 }
                 return;
             }
-            else
+
+            foreach (var animator in animators)
             {
-                foreach (var animator in animators)
-                {
-                    animator.speed = 1;
-                }
+                animator.speed = 1;
             }
+
             timer += Time.deltaTime;
             if (timer > animationDuration)
             {

@@ -31,14 +31,10 @@ namespace Game
 
         public void Update(float elapsedTime)
         {
-            if (HasBeenTriggered)
-            {
-                return;
-            }
-            if (elapsedTime < TriggerTime)
-            {
-                return;
-            }
+            if (HasBeenTriggered) return;
+
+            if (elapsedTime < TriggerTime) return;
+
             HasBeenTriggered = true;
             Actions.Invoke();
         }

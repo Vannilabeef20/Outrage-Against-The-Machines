@@ -32,8 +32,6 @@ namespace Game
         [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnDistance;
         [Tooltip("The absolute height range the enemy can spawn.")]
         [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnHeight;
-        [Tooltip("The time range between spawns.")]
-        [MinMaxSlider(0.5f, 10f), SerializeField] Vector2 spawnDelay;
         [field: Tooltip("Defines all encounters on this level.")]
         [field: SerializeField] public LevelEncountersSO LevelEncounters { get; private set; }
 
@@ -47,7 +45,8 @@ namespace Game
 
         Coroutine encCoroutine;
         int PlayerCount => GameManager.Instance.UnityInputManager.playerCount;
-
+        float MinSpawnDelay => LevelEncounters.Encounters[currentEncounterIndex].spawnDelay.x;
+        float MaxSpawnDelay => LevelEncounters.Encounters[currentEncounterIndex].spawnDelay.y;
 #if UNITY_EDITOR
         [Header("GIZMOS (EDITOR ONLY)"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] Color handlesEncounterLineColor;
@@ -116,7 +115,7 @@ namespace Game
                 SpawnEnemy();
                 while (enemiesToSpawn.Count > 0)
                 {
-                    yield return new WaitForSeconds(UnityEngine.Random.Range(spawnDelay.x, spawnDelay.y));
+                    yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
                     SpawnEnemy();
                 }
 

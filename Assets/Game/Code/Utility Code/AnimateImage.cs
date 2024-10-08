@@ -13,50 +13,53 @@ namespace Game
             Image
         }
 
-        [SerializeField, ShowIf("targetType", EAnimationTarget.SpriteRenderer)] private SpriteRenderer spriteRenderer;
-        [SerializeField, ShowIf("targetType", EAnimationTarget.Image)] private Image image;
-        [SerializeField] private EAnimationTarget targetType;
-        [SerializeField] private bool loop = true;
-        [SerializeField, Min(0f)] private float animationDuration;
-        [SerializeField] private bool DestroyOnFinish;
-        public bool pause;
-        [SerializeField, ShowAssetPreview] private Sprite[] sprites;
-        [Space]
-        [SerializeField, ReadOnly] private float timer;
-        [SerializeField, ReadOnly] private int currentSpriteIndex;
+        [SerializeField, ShowIf("targetType", EAnimationTarget.SpriteRenderer)] SpriteRenderer spriteRenderer;
+        [SerializeField, ShowIf("targetType", EAnimationTarget.Image)] Image image;
+        [SerializeField] EAnimationTarget targetType;
 
+        [SerializeField] bool playOnAwake = true;
+        [SerializeField] bool loop = true;
+        [SerializeField] bool DestroyOnFinish;
+        [SerializeField, Min(0f)] float animationDuration;
+
+        [SerializeField, ShowAssetPreview] Sprite[] sprites;
+        [Space]
+        [SerializeField, ReadOnly] bool playing;
+        [SerializeField ,ReadOnly] bool pause;
+        [SerializeField, ReadOnly] float timer;
+        [SerializeField, ReadOnly] int currentSpriteIndex;
+        float FrameDuration => animationDuration / sprites.Length;
+        private void Awake()
+        {
+            if (playOnAwake) playing = true;
+        }
         private void Update()
         {
-            if(pause)
-            {
-                return;
-            }
+            if (!playing) return;
+            if (pause) return;
+
             timer += Time.deltaTime;
-            float frameDuration = animationDuration / sprites.Length;
-            if(timer < frameDuration)
-            {
-                return;
-            }
+
+            if (timer < FrameDuration) return;
+
             timer = 0;
             currentSpriteIndex++;
-            if(currentSpriteIndex >= sprites.Length)
+            if (currentSpriteIndex >= sprites.Length)
             {
-                if(DestroyOnFinish)
+                if (DestroyOnFinish)
                 {
                     Destroy(gameObject);
                     return;
                 }
+                if (loop)
+                {
+                    currentSpriteIndex = 0;
+                }
                 else
                 {
-                    if(loop)
-                    {
-                        currentSpriteIndex = 0;
-                    }
-                    else
-                    {
-                        currentSpriteIndex = sprites.Length - 1; 
-                        pause = true;
-                    }
+                    currentSpriteIndex = sprites.Length - 1;
+                    Stop();
+                    return;
                 }
             }
             if (targetType == EAnimationTarget.Image)
@@ -68,6 +71,50 @@ namespace Game
                 spriteRenderer.sprite = sprites[currentSpriteIndex];
             }
 
+        }
+
+        [Button("PLAY", EButtonEnableMode.Playmode)]
+        public void Play()
+        {
+            playing = true;
+        }
+
+        [Button("STOP", EButtonEnableMode.Playmode)]
+        public void Stop()
+        {
+            switch(targetType)
+            {
+                case EAnimationTarget.Image: image.sprite = null; break;
+                case EAnimationTarget.SpriteRenderer: spriteRenderer.sprite = null; break;
+            }
+            timer = 0;
+            currentSpriteIndex = 0;
+            playing = false;
+        }
+
+        [Button("RESTART", EButtonEnableMode.Playmode)]
+        public void Restart()
+        {
+            timer = 0;
+            currentSpriteIndex = 0;
+            switch (targetType)
+            {
+                case EAnimationTarget.Image: image.sprite = null; break;
+                case EAnimationTarget.SpriteRenderer: spriteRenderer.sprite = null; break;
+            }
+            playing = true;
+        }
+
+        [Button("PAUSE", EButtonEnableMode.Playmode)]
+        public void Pause()
+        {
+            pause = true;
+        }
+
+        [Button("UNPAUSE", EButtonEnableMode.Playmode)]
+        public void Unpause()
+        {
+            pause = false;
         }
     }
 }

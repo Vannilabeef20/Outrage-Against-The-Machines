@@ -11,10 +11,13 @@ namespace Game
 {
     public class EnemyAttackingState : EnemyState
     {
-        public override string Name { get => currentAttack.Name; }
+        public override string Name { get => CurrentAttack.Config.Name; }
         [SerializeField] private LayerMask playerMask;
         [field: SerializeField] public EnemyAttackState[] Attacks { get; private set; }
-        [ReadOnly] public EnemyAttack currentAttack;
+
+        [field: SerializeField, ReadOnly] public EnemyAttackState CurrentAttackState { get; private set; }
+        EnemyAttack CurrentAttack => CurrentAttackState.Attack;
+
         [SerializeField, ReadOnly] private float attackUptime;
 #if UNITY_EDITOR
         [field: Header("DEBUG")]
@@ -24,33 +27,42 @@ namespace Game
         public Vector3 RangeLineHeight { get; private set; }
         public Vector3 RangeLabelOffest { get; private set; }
 #endif
+        [Button("Sort Attacks")]
+        void SortAttacks()
+        {
+            Attacks = Attacks.OrderBy(attacks => attacks.Attack.Config.TriggerRange).ToArray();
+        }
+
+
+        private void Start()
+        {
+            SortAttacks();
+        }
 
         public override void Do()
         {           
             attackUptime += Time.deltaTime;
-            foreach(AnimationFrameEvent timedEvent in currentAttack.FrameEvents)
+            foreach(AnimationFrameEvent timedEvent in CurrentAttack.FrameEvents)
             {
                 timedEvent.Update(attackUptime);
             }
-            progress = UpTime.Map(0, currentAttack.Duration);
-            stateMachine.animator.Play(currentAttack.Animation.name, 0, progress);
+            progress = UpTime.Map(0, CurrentAttack.Config.Duration);
+            stateMachine.animator.Play(CurrentAttack.Config.Animation.name, 0, progress);
             ValidateState();
         }
 
         public override void FixedDo()
         {
-            if(currentAttack == null)
-            {
-                return;
-            }
-            stateMachine.body.velocity = currentAttack.VelocityCurve.Evaluate(progress) *
-                currentAttack.Velocity * transform.right + stateMachine.ContextVelocity;
+            if (CurrentAttackState == null) return;
+
+            stateMachine.body.velocity = CurrentAttack.Config.VelocityCurve.Evaluate(progress) *
+                CurrentAttack.Config.Velocity * transform.right + stateMachine.ContextVelocity;
         }
 
         public override void Enter()
         {
             attackUptime = 0;
-            foreach (AnimationFrameEvent frameEvent in currentAttack.FrameEvents)
+            foreach (AnimationFrameEvent frameEvent in CurrentAttack.FrameEvents)
             {
                 frameEvent.Reset();
             }
@@ -60,15 +72,16 @@ namespace Game
 
         public override void Exit()
         {
+            CurrentAttackState.Exit();
             IsComplete = false;
         }
 
         protected override void ValidateState()
         {
-            if(UpTime >= currentAttack.Duration)
+            if(UpTime >= CurrentAttack.Config.Duration)
             {
                 stateMachine.nextState = stateMachine.intercept;
-                currentAttack = null;
+                //CurrentAttackState = null;
                 IsComplete = true;
             }
         }
@@ -83,7 +96,7 @@ namespace Game
             bool hasAvailableAttack = false;
             for (int i = 0; i < Attacks.Length; i++)
             {
-                if (Attacks[i].attack.TriggerRange >= stateMachine.Distance)
+                if (stateMachine.Distance <= Attacks[i].Attack.Config.TriggerRange)
                 {
                     atkIndex = i;
                     hasAvailableAttack = true;
@@ -91,14 +104,9 @@ namespace Game
                 }
             }
             
-            if(atkIndex != -1) currentAttack = Attacks[atkIndex].attack;
+            if(atkIndex != -1) CurrentAttackState = Attacks[atkIndex];
 
             return hasAvailableAttack;
-        }
-
-        public void SpawnProjectile()
-        {
-            Instantiate(currentAttack.ProjectilePrefab, currentAttack.ProjectileSpawnTransform.position, transform.rotation);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -109,8 +117,8 @@ namespace Game
             }
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
-                damageble.TakeDamage(stateMachine.transform.position, currentAttack.Damage,
-                    currentAttack.StunDuration, currentAttack.KnockbackStrenght);
+                damageble.TakeDamage(stateMachine.transform.position, CurrentAttack.Config.Damage,
+                    CurrentAttack.Config.StunDuration, CurrentAttack.Config.KnockbackStrenght);
             }
         }
     }

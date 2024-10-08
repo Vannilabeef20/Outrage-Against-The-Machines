@@ -8,59 +8,63 @@ namespace Game
 {
 	public class WaterTrail : MonoBehaviour
 	{
-        [SerializeField] EnemyStateMachine enemyStateMachine;
         [SerializeField] GameObject startTrail;
         [SerializeField] GameObject endTrail;
         [SerializeField] GameObject[] middleTrail;
         [SerializeField] int trailPixelLenght;
-        [SerializeField] int minLenght = 5;
+        [SerializeField] int trailLenght;
         [SerializeField] float placeInterval = 0.1f;
+        [SerializeField] Vector3 offset;
+        [SerializeField] float destroyTime = 2;
 
         const int PPU = 24;
         int TrailSpriteLenght => PPU / trailPixelLenght;
 
         public void CreateTrail()
         {
-            StartCoroutine(BuildTrail((int)enemyStateMachine.Distance));
+            StartCoroutine(BuildTrail());
         }
-        IEnumerator BuildTrail(int targetDistance)
+        public void StopTrail()
         {
-            if(targetDistance < minLenght) targetDistance = minLenght;
-
-
-            int trailSpriteNumber = Mathf.Abs(targetDistance) / TrailSpriteLenght;
-
+            StopCoroutine(BuildTrail());
+        }
+        IEnumerator BuildTrail()
+        {
             GameObject toBeSpawned;
-            Vector3 localPoint = Vector3.zero;
-            for (int i = 0; i < trailSpriteNumber; i++)
+            Vector3 initialPos = transform.position;
+            Vector3 spawnPos = transform.position;
+            Quaternion initialRot = transform.rotation;
+
+            int dirMultiplier = 1;
+            if (transform.rotation.eulerAngles.y >= 180) dirMultiplier = -1;
+
+            for (int i = 0; i < trailLenght; i++)
             {
                 if (i == 0) toBeSpawned = startTrail;
-                else if (i == trailSpriteNumber - 1) toBeSpawned = endTrail;
+                else if (i == trailLenght - 1) toBeSpawned = endTrail;
                 else toBeSpawned = middleTrail[UnityEngine.Random.Range(0, middleTrail.Length)];
 
-                localPoint.x += TrailSpriteLenght;
+                spawnPos = initialPos;
+                spawnPos.x += dirMultiplier * (offset.x + (i * TrailSpriteLenght));
+                spawnPos.y += offset.y;
+                spawnPos.z += offset.z;
 
-                Destroy(Instantiate(toBeSpawned, transform.TransformPoint(localPoint), transform.rotation), 5f);
+                GameObject spawnedPiece = Instantiate(toBeSpawned, spawnPos, initialRot);
+                Destroy(spawnedPiece, destroyTime);
                 yield return new WaitForSeconds(placeInterval);
             }
         }
 
 #if UNITY_EDITOR
-        [SerializeField] float testDistance = 5f;
 
         [Button]
         void TestTrail()
         {
-            StartCoroutine(BuildTrail((int)transform.TransformPoint(testDistance * Vector3.right).x));
+            StartCoroutine(BuildTrail());
         }
         private void OnDrawGizmos()
         {
-            Vector3 finalPos;
-            if (testDistance < minLenght)
-                finalPos = transform.TransformPoint(minLenght * Vector3.right);
-            else
-                finalPos = transform.TransformPoint(testDistance * Vector3.right);
-
+            Vector3 finalPos = offset + (Vector3.right * (trailLenght * TrailSpriteLenght));
             Helper.DrawPointArrow(transform.position, finalPos, Color.yellow, Color.red);
             Debug.DrawLine(transform.position, finalPos, Color.gray);
         }
