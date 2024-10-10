@@ -19,6 +19,9 @@ namespace Game
 
         [SerializeField] AnimationFrameEvent[] FrameEvents;
 
+        Rigidbody Body => stateMachine.body;
+        Vector3 AttackVelocity => PlayerAttack.VelocityCurve.
+            Evaluate(progress) * PlayerAttack.MaxVelocity * transform.right;
         public float TimeLeft  => PlayerAttack.Duration - UpTime;
 
         StudioEventEmitter EventEmitter => AttackMachine.attackEmitter;
@@ -60,8 +63,8 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = (PlayerAttack.VelocityCurve.Evaluate(progress) *
-                PlayerAttack.MaxVelocity * transform.right) + stateMachine.ContextVelocity;
+            stateMachine.body.velocity = stateMachine.ContextVelocityMultiplier * 
+                (AttackVelocity + stateMachine.ContextVelocityAdditive);
         }
 
         protected override void ValidateState()

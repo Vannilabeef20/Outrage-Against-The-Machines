@@ -95,15 +95,18 @@ namespace Game
         {
             movementEmitter.Stop();
         }
-        protected override void ValidateState() { }
+        protected override void ValidateState() 
+        {
+            stateMachine.nextState = stateMachine.change;
+            Spawner.Instance.enemiesAlive.Add(stateMachine.Parent);
+            IsComplete = true;
+        }
 
         public void SetChase(int encounter)
         {
             if (encounter != encounterNumber) return;
 
-            stateMachine.nextState = stateMachine.intercept;
-            Spawner.Instance.enemiesAlive.Add(stateMachine.Parent);
-            IsComplete = true;
+            ValidateState();
         }
 
 #if UNITY_EDITOR

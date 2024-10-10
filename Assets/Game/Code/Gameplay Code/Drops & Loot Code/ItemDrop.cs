@@ -22,6 +22,7 @@ namespace Game
 
         [SerializeField] IntEvent itemEvent;
 
+        [SerializeField] StudioEventEmitter pickEmitter;
         [SerializeField] StudioEventEmitter pickupEmitter;
         #endregion
 
@@ -70,6 +71,7 @@ namespace Game
                     if (GameManager.Instance.PlayerCharacterList[i].HasItemStored) break;
 
                     GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
+                    pickEmitter.Play();
                     gameObject.SetActive(false);
                     itemEvent.Raise(this, i);
                     return;

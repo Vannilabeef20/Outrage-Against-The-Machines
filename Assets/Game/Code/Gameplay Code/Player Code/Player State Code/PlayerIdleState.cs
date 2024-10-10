@@ -26,13 +26,13 @@ namespace Game
         }
         public override void FixedDo()
         {
-            if(stateMachine.ContextVelocity == Vector3.zero)
+            if(stateMachine.ContextVelocityAdditive == Vector3.zero)
             {
                 stateMachine.body.velocity *= (1 - dragIntensity) * Time.deltaTime;
             }
             else
             {
-                stateMachine.body.velocity = stateMachine.ContextVelocity;
+                stateMachine.body.velocity = stateMachine.ContextVelocityAdditive * stateMachine.ContextVelocityMultiplier;
             }
 
         }

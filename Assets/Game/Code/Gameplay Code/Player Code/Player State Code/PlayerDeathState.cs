@@ -19,6 +19,7 @@ namespace Game
         [SerializeField] CinemachineImpulseSource impulseSource;
         [SerializeField] AnimationCurve knockBackCurve;
         [ReadOnly] public Vector2 knockBackIntensity;
+        Vector3 KnockbackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
 
         [Header("Gamepad Shake"), HorizontalLine]
         [SerializeField, Range(0f, 1f)] float hitGamepadShakeLowFrequency;
@@ -34,7 +35,8 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = (Vector3)(knockBackCurve.Evaluate(progress) * knockBackIntensity) + stateMachine.ContextVelocity;
+            stateMachine.body.velocity = stateMachine.ContextVelocityMultiplier *
+                (KnockbackVelocity + stateMachine.ContextVelocityAdditive);
         }
 
         public override void Enter()

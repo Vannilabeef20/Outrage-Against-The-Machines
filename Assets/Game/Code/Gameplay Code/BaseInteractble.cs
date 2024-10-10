@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
 using TMPro;
+using FMODUnity;
 
 namespace Game
 {
@@ -12,6 +13,7 @@ namespace Game
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
         [SerializeField] protected SpriteRenderer[] playerProximityRenderers;
+        [SerializeField] protected StudioEventEmitter interactionEmitter;
 
         [Header("COST"), HorizontalLine(2f, EColor.Orange)]
 

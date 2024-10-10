@@ -1,52 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using NaughtyAttributes;
 using DG.Tweening;
 
 namespace Game
 {
     public class BaseUIInteractive : MonoBehaviour, ISelectHandler, IPointerEnterHandler
     {
-        [SerializeField] protected float selectScalePercentage = 0.15f;
-        [SerializeField] protected float selectActivateDelay = 0.3f;
 
-        [SerializeField] private float clickScalePercentage = 0.25f;
-        [SerializeField] private float clickActivateDelay = 0.25f;
-
-        public void AnimateInteractible(float changePercentage, float totalDuration, bool Loop = false, bool ScaleUp = true)
+        [SerializeField] UIAnimationSO animationSO;
+        Coroutine animationRoutine;
+        public void AnimateInteractible(AnimationCurve curve, float duration, bool loop = false)
         {
-            switch (Loop, ScaleUp)
+            if (animationRoutine != null) StopCoroutine(animationRoutine);
+            animationRoutine = StartCoroutine(AnimationRoutine(curve, duration, loop));
+        }
+
+        public IEnumerator AnimationRoutine(AnimationCurve curve, float duration, bool loop = false)
+        {
+            float timer = 0f;
+            while(timer <= duration)
             {
-                case (false, false):
-                    transform.DOScale(1f - changePercentage, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true).OnComplete(() => {
-                        transform.DOScale(1f, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true);
-                    });
-                    break;
-                case (false, true):
-                    transform.DOScale(1f + changePercentage, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true).OnComplete(() => {
-                        transform.DOScale(1f, totalDuration * 0.5f).SetEase(Ease.InOutBounce).SetUpdate(true);
-                    });
-                    break;
-                default:
-
-
-                    break;
+                timer += Time.unscaledDeltaTime;
+                transform.localScale = curve.Evaluate(timer.Map(0, duration)) * Vector3.one;
+                yield return null;
             }
+
+            if (loop) StartCoroutine(AnimationRoutine(curve, duration, loop));
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            AnimateInteractible(0.15f, 0.3f);
+            AnimateInteractible(animationSO.SelectCurve, animationSO.SelectDuration);
         }
 
         public void OnSelect(BaseEventData eventData)
         {
             AudioManager.instance.PlayUiSelectSfx();
-            AnimateInteractible(0.15f, 0.3f);
+            AnimateInteractible(animationSO.SelectCurve, animationSO.SelectDuration);
         }
-
-        protected void PlayInteractionAnimation()
+        public void PlayInteractionAnimation()
         {
-            AnimateInteractible(clickScalePercentage, clickActivateDelay, ScaleUp: false);
+            AnimateInteractible(animationSO.ClickCurve, animationSO.ClickDuration);
         }
     }
 }

@@ -52,10 +52,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9e4ab83cb98f147a582bb35ff0fbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectScalePercentage: 0.05
-  selectActivateDelay: 0.3
-  clickScalePercentage: 0.1
-  clickActivateDelay: 0.1
+  selectCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  selectDuration_S: 1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickDuration_S: 1
   toggleImage: {fileID: 2700098530088419315}
   rumbleToggleEvent: {fileID: 11400000, guid: 503eb9c1977daff4586a51bc4a9c175b, type: 2}
   active: 0

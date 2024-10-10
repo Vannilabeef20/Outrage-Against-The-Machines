@@ -4886,6 +4886,56 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &101398410626631566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6406826580870350964}
+  - component: {fileID: 1380890072602036766}
+  m_Layer: 0
+  m_Name: Change_Mode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6406826580870350964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101398410626631566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6508126986923127504}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1380890072602036766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101398410626631566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630422cdad9f60e45bb8104c464bbea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 4f5e646948929a446b851fab5585be7f, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 7858963316317794402}
+  duration: 1
 --- !u!1 &1702680308892565086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5107,6 +5157,9 @@ MonoBehaviour:
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 7858963316317794402}
   AttackMachine: {fileID: 6508126987276863439}
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: 5fbf6b549604a3f4a9223989765433df, type: 2}
     <FrameEvents>k__BackingField:
@@ -5126,9 +5179,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  OnExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4104246255760966692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5837,6 +5887,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2963472740695996110}
+  - {fileID: 6406826580870350964}
   - {fileID: 6508126985612539013}
   - {fileID: 6508126986235999514}
   - {fileID: 6508126987276863436}
@@ -6170,11 +6221,12 @@ MonoBehaviour:
   collisionBox: {fileID: 5006283131533275794}
   <Parent>k__BackingField: {fileID: 6508126985700856560}
   IsFieldEnemy: 0
+  wander: {fileID: 7503959903073221412}
+  change: {fileID: 1380890072602036766}
   intercept: {fileID: 6508126985612539012}
   damage: {fileID: 6508126986235999517}
   attack: {fileID: 6508126987276863439}
   death: {fileID: 5666314022147243997}
-  wander: {fileID: 7503959903073221412}
   overrideStateCompletion: 0
   currentState: {fileID: 6508126985612539012}
   nextState: {fileID: 6508126985612539012}
@@ -6788,6 +6840,9 @@ MonoBehaviour:
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 7858963316317794402}
   AttackMachine: {fileID: 6508126987276863439}
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: e49395c7fd3a2624e8df2d985093d8ab, type: 2}
     <FrameEvents>k__BackingField:
@@ -6807,9 +6862,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  OnExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3344898223652118149
 MonoBehaviour:
   m_ObjectHideFlags: 0

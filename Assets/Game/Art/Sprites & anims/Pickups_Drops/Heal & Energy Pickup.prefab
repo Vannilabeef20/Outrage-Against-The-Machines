@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 43373661428710594}
   - component: {fileID: 108294379906421073}
   - component: {fileID: 7453150791189753331}
+  - component: {fileID: -6674367758830104159}
   - component: {fileID: 9165002813277017913}
   - component: {fileID: 6804923369240344583}
   m_Layer: 0
@@ -51,6 +52,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: 6d4940f3f3f30924b9ceb37e5213debc, type: 3}
   itemSpriteTransform: {fileID: 7852721743779963668}
   itemEvent: {fileID: 11400000, guid: 4221e71d770a8cd4d83cc4f72221266a, type: 2}
+  pickEmitter: {fileID: -8405688279234451475, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
   pickupEmitter: {fileID: 7453150791189753331}
   useImmediatly: 0
   pickupEffects:
@@ -93,6 +95,37 @@ MonoBehaviour:
       Data3: -2034606207
       Data4: -2036735423
     Path: event:/SFX/Player/Common Sounds/Player Heal_Get SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-6674367758830104159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423908612461963053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1824254565
+      Data2: 1159361093
+      Data3: 1046968453
+      Data4: 1288310235
+    Path: event:/SFX/Player/Common Sounds/Player Item Collect SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0

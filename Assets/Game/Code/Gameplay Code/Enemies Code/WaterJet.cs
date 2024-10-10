@@ -23,8 +23,6 @@ namespace Game
             completion = timer.Map(0, duration);
             animator.Play(jetClip.name, 0, completion);
         }
-
-        [Button("a")]
         public void Play()
         {
             playing = true;

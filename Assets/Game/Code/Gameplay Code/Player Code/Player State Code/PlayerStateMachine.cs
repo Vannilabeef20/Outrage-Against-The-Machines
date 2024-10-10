@@ -36,10 +36,11 @@ namespace Game
 
         [field: SerializeField ,ReadOnly] public Vector2 InputDirection { get; private set; } = Vector2.zero;
 
-        [field: SerializeField, ReadOnly] public Vector3 ContextVelocity { get; private set; }
+        [field: SerializeField, ReadOnly] public Vector3 ContextVelocityAdditive { get; private set; }
+        [field: SerializeField, ReadOnly] public float ContextVelocityMultiplier { get; private set; }
 
         [SerializeField] LayerMask conveyorLayer;
-
+        [SerializeField] LayerMask speedMultiplierLayer;
         PlayerCharacter Player => GameManager.Instance.PlayerCharacterList[playerInput.playerIndex];
 
         void Awake()
@@ -80,15 +81,29 @@ namespace Game
         void GetContextSpeed()
         {
             Vector3 tempContextSpeed = Vector3.zero;
+            float tempSpeedMultiplier = 1f;
             Collider[] cntxSpdColliders = Physics.OverlapBox(transform.position, footCollider.size/2);
+
+            //Additive context velocity
             foreach(Collider collider in cntxSpdColliders)
             {
                 if (!conveyorLayer.ContainsLayer(collider.gameObject.layer)) continue;
                 if (!collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt)) continue;                   
                 tempContextSpeed += belt.ContextSpeed;          
             }
-            ContextVelocity = tempContextSpeed;
+            ContextVelocityAdditive = tempContextSpeed;
+
+            //Multiplicative context velocity
+            foreach (Collider collider in cntxSpdColliders)
+            {
+                if (!speedMultiplierLayer.ContainsLayer(collider.gameObject.layer)) continue;
+                if (!collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt)) continue;
+                tempSpeedMultiplier *= 1;
+            }
+            ContextVelocityMultiplier = tempSpeedMultiplier;
+
         }
+
         void SelectState()
         {
             if (CurrentState.IsComplete)

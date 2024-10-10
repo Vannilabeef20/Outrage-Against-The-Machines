@@ -16,17 +16,19 @@ namespace Game
         public BoxCollider attackhitbox;
         public BoxCollider collisionBox;
         [field: SerializeField] public GameObject Parent { get; private set; }
-        [field: Space]
-        [field: SerializeField] public bool IsFieldEnemy;
+        [Space]
+        public bool IsFieldEnemy;
         
 
         #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
+        public EnemyWanderState wander;
+        public EnemyChageModeState change;
         public EnemyInterceptState intercept;
         public EnemyDamageState damage;
         public EnemyAttackingState attack;
         public EnemyDeathState death;
-        public EnemyWanderState wander;
+
         #endregion
 
         #region State Variables

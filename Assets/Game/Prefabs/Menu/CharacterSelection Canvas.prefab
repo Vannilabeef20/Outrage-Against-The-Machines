@@ -570,10 +570,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   image: {fileID: 4485589179398787464}
   targetType: 1
+  playOnAwake: 1
   loop: 1
-  animationDuration: 0.6
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.6
   sprites:
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -582,6 +582,8 @@ MonoBehaviour:
   - {fileID: -1506704497, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: 199831320, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -1883860108, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &492642921438559581
@@ -1178,16 +1180,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   image: {fileID: 2475788743276132308}
   targetType: 1
+  playOnAwake: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 1884212633, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1221002242, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1928484432, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1748341184, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -120289962, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &2921480554010793504
@@ -1785,6 +1789,7 @@ GameObject:
   - component: {fileID: 4773247232925885689}
   - component: {fileID: 7408331789168625025}
   - component: {fileID: 6663935433297569681}
+  - component: {fileID: 8465113836510349750}
   m_Layer: 0
   m_Name: Player_1 Selection Arrow Left
   m_TagString: Untagged
@@ -1906,6 +1911,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8465113836510349750}
+        m_TargetAssemblyTypeName: Game.BaseUIInteractive, Assembly-CSharp
+        m_MethodName: PlayInteractionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8465113836510349750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4240220038284330721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb45fbcc2ee1f4f91972aa334eaf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
 --- !u!1 &4596487123630691327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2024,7 @@ GameObject:
   - component: {fileID: 4596487123794322429}
   - component: {fileID: 4596487123794322419}
   - component: {fileID: 4912579362089369956}
+  - component: {fileID: 5330747499264815672}
   m_Layer: 0
   m_Name: Player_2 Selection Arrow Right
   m_TagString: Untagged
@@ -2115,6 +2146,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5330747499264815672}
+        m_TargetAssemblyTypeName: Game.BaseUIInteractive, Assembly-CSharp
+        m_MethodName: PlayInteractionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5330747499264815672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487123794322416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb45fbcc2ee1f4f91972aa334eaf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
 --- !u!1 &4596487124267608206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2252,7 @@ MonoBehaviour:
     Name: 
     TransitionIn: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
     TransitionOut: {fileID: 11400000, guid: c3c520874de2040498b5227c2b5b8440, type: 2}
+    TransitionLoad: {fileID: 0}
   selectionSwaps:
   - {fileID: 5089989175024057430}
   - {fileID: 472487198091316339}
@@ -2252,6 +2309,7 @@ GameObject:
   - component: {fileID: 4596487124575117020}
   - component: {fileID: 4596487124575117010}
   - component: {fileID: 4883015600146482796}
+  - component: {fileID: 1287843588453223450}
   m_Layer: 0
   m_Name: Player_3 Selection Arrow Right
   m_TagString: Untagged
@@ -2373,6 +2431,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1287843588453223450}
+        m_TargetAssemblyTypeName: Game.BaseUIInteractive, Assembly-CSharp
+        m_MethodName: PlayInteractionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1287843588453223450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124575117015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb45fbcc2ee1f4f91972aa334eaf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
 --- !u!1 &4596487124793945170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,10 +2548,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   image: {fileID: 4596487124793945171}
   targetType: 1
+  playOnAwake: 1
   loop: 1
-  animationDuration: 0.6
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.6
   sprites:
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -2477,6 +2560,8 @@ MonoBehaviour:
   - {fileID: -1506704497, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: 199831320, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -1883860108, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &4596487124850303752
@@ -2491,6 +2576,7 @@ GameObject:
   - component: {fileID: 4596487124850303861}
   - component: {fileID: 4596487124850303755}
   - component: {fileID: 5951192370734267690}
+  - component: {fileID: 5974871541526846857}
   m_Layer: 0
   m_Name: Player_1 Selection Arrow Right
   m_TagString: Untagged
@@ -2612,6 +2698,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5974871541526846857}
+        m_TargetAssemblyTypeName: Game.BaseUIInteractive, Assembly-CSharp
+        m_MethodName: PlayInteractionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5974871541526846857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596487124850303752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb45fbcc2ee1f4f91972aa334eaf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
 --- !u!1 &4596487124894682127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2757,7 @@ RectTransform:
   m_Children:
   - {fileID: 4596487124267608207}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3177,16 +3288,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   image: {fileID: 1036156833589598153}
   targetType: 1
+  playOnAwake: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 1884212633, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1221002242, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1928484432, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1748341184, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -120289962, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &5620854242703816634
@@ -3548,10 +3661,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   image: {fileID: 643776533415170706}
   targetType: 1
+  playOnAwake: 1
   loop: 1
-  animationDuration: 0.6
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.6
   sprites:
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -3560,6 +3673,8 @@ MonoBehaviour:
   - {fileID: -1506704497, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: 199831320, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -1883860108, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &6678401615612032537
@@ -3993,6 +4108,7 @@ GameObject:
   - component: {fileID: 4203083772820045346}
   - component: {fileID: 7740552909816788341}
   - component: {fileID: 5069041616928112622}
+  - component: {fileID: 1486406052995669935}
   m_Layer: 0
   m_Name: Player_3 Selection Arrow Left
   m_TagString: Untagged
@@ -4114,6 +4230,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1486406052995669935}
+        m_TargetAssemblyTypeName: Game.BaseUIInteractive, Assembly-CSharp
+        m_MethodName: PlayInteractionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1486406052995669935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624228081416515604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb45fbcc2ee1f4f91972aa334eaf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
 --- !u!1 &8235022587231579097
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,16 +4423,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   image: {fileID: 1044863426827037215}
   targetType: 1
+  playOnAwake: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 1884212633, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1221002242, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1928484432, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1748341184, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -120289962, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &8376422825235281577
@@ -4382,6 +4525,7 @@ GameObject:
   - component: {fileID: 6064716689862061679}
   - component: {fileID: 2445881439727716893}
   - component: {fileID: 3148475647912894627}
+  - component: {fileID: 7427393010323390458}
   m_Layer: 0
   m_Name: Player_2 Selection Arrow Left
   m_TagString: Untagged
@@ -4503,6 +4647,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7427393010323390458}
+        m_TargetAssemblyTypeName: Game.BaseUIInteractive, Assembly-CSharp
+        m_MethodName: PlayInteractionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7427393010323390458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399683752898356999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb45fbcc2ee1f4f91972aa334eaf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
 --- !u!1 &8627336224063582763
 GameObject:
   m_ObjectHideFlags: 0

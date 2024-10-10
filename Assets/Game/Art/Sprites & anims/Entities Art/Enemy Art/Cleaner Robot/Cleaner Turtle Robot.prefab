@@ -4886,6 +4886,56 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &171900434855007622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135678998459971966}
+  - component: {fileID: 4480021981998580871}
+  m_Layer: 0
+  m_Name: Change_Mode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2135678998459971966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171900434855007622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6508126986923127504}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4480021981998580871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171900434855007622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630422cdad9f60e45bb8104c464bbea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: d4d54ab8de4ebf343ad0637e179a8260, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 7858963316317794402}
+  duration: 1
 --- !u!1 &405814237814021623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,11 +5039,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1864464792
-      Data2: 1234312530
-      Data3: 987117228
-      Data4: 1407165510
-    Path: event:/SFX/Enemy/Robo 1/Enemy Explosion_Multiple SFX
+      Data1: -2062641856
+      Data2: 1227742613
+      Data3: -2017940094
+      Data4: -2129450670
+    Path: event:/SFX/Enemy/Turtle/Enemy Death - Turtle
   Event: 
   PlayEvent: 0
   StopEvent: 2
@@ -5182,6 +5232,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4050946216236544597}
         m_TargetAssemblyTypeName: Game.WaterJet, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2241045627075507742}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
         m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
@@ -5457,7 +5519,7 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 7858963316317794402}
-  duration: 2.5
+  duration: 10
   frameEvents:
   - <TriggerFrame>k__BackingField: 0
     <Actions>k__BackingField:
@@ -5713,11 +5775,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -991307606
-      Data2: 1166171048
-      Data3: -1510623334
-      Data4: -1840118588
-    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+      Data1: 1893326671
+      Data2: 1126963138
+      Data3: -519715410
+      Data4: 1873458280
+    Path: event:/SFX/Enemy/Turtle/Enemy Walking - Turtle
   Event: 
   PlayEvent: 0
   StopEvent: 2
@@ -5726,9 +5788,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 20
-  OverrideMaxDistance: 30
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6508126985700856560
 GameObject:
   m_ObjectHideFlags: 0
@@ -6003,6 +6065,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2963472740695996110}
+  - {fileID: 2135678998459971966}
   - {fileID: 6508126985612539013}
   - {fileID: 6508126986235999514}
   - {fileID: 6508126987276863436}
@@ -6335,11 +6398,12 @@ MonoBehaviour:
   collisionBox: {fileID: 5006283131533275794}
   <Parent>k__BackingField: {fileID: 6508126985700856560}
   IsFieldEnemy: 0
+  wander: {fileID: 7503959903073221412}
+  change: {fileID: 4480021981998580871}
   intercept: {fileID: 6508126985612539012}
   damage: {fileID: 6508126986235999517}
   attack: {fileID: 6508126987276863439}
   death: {fileID: 5666314022147243997}
-  wander: {fileID: 7503959903073221412}
   overrideStateCompletion: 0
   currentState: {fileID: 6508126985612539012}
   nextState: {fileID: 6508126985612539012}
@@ -6615,7 +6679,7 @@ MonoBehaviour:
       Data2: 1294105341
       Data3: 2006519999
       Data4: 913433116
-    Path: event:/SFX/Enemy/Turtle/Enemy Water Jet
+    Path: event:/SFX/Enemy/Turtle/Enemy Water Jet - Turtle
   Event: 
   PlayEvent: 0
   StopEvent: 2
@@ -6667,8 +6731,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   damage: 10
-  stunDuration: 1
-  knockbackStrenght: 10
+  mode: 2
+  playerAttackSO: {fileID: 0}
+  enemyAttackSO: {fileID: 11400000, guid: 9af7de98ce9866c4ab253494ef5cb8cb, type: 2}
+  stunDuration: 0.6
+  knockbackStrenght: 30
 --- !u!1 &7145437615092115823
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,11 +7077,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -991307606
-      Data2: 1166171048
-      Data3: -1510623334
-      Data4: -1840118588
-    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+      Data1: 1893326671
+      Data2: 1126963138
+      Data3: -519715410
+      Data4: 1873458280
+    Path: event:/SFX/Enemy/Turtle/Enemy Walking - Turtle
   Event: 
   PlayEvent: 0
   StopEvent: 2
@@ -7023,8 +7090,8 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 15
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!1 &7764394686929643508
 GameObject:
@@ -7188,6 +7255,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 3344898223652118149}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!114 &3344898223652118149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7203,11 +7282,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 487971096
-      Data2: 1287558925
-      Data3: 1597943218
-      Data4: -276101485
-    Path: event:/SFX/Enemy/Bear/Enemy Attack SFX - Bear
+      Data1: 350685067
+      Data2: 1301158160
+      Data3: -997246335
+      Data4: 782630645
+    Path: event:/SFX/Enemy/Turtle/Enemy Dash - Turtle
   Event: 
   PlayEvent: 0
   StopEvent: 2

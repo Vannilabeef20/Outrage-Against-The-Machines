@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7408936161416407087}
   - component: {fileID: 7769482995465523671}
   - component: {fileID: 898268237691745521}
+  - component: {fileID: -556753139696112383}
   - component: {fileID: 2653733460075298157}
   - component: {fileID: 6198700910182495813}
   m_Layer: 0
@@ -51,6 +52,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 143103275, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   itemSpriteTransform: {fileID: 2183815718027779629}
   itemEvent: {fileID: 11400000, guid: 4221e71d770a8cd4d83cc4f72221266a, type: 2}
+  pickEmitter: {fileID: -8405688279234451475, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
   pickupEmitter: {fileID: 898268237691745521}
   useImmediatly: 1
   pickupEffects:
@@ -85,6 +87,37 @@ MonoBehaviour:
       Data3: -390738499
       Data4: 1360849410
     Path: event:/SFX/Player/Common Sounds/Player Life_Get SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-556753139696112383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934445200580362204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1824254565
+      Data2: 1159361093
+      Data3: 1046968453
+      Data4: 1288310235
+    Path: event:/SFX/Player/Common Sounds/Player Item Collect SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -269,10 +302,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7566147657915830309}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 143103275, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   - {fileID: -206092523, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
@@ -301,5 +334,7 @@ MonoBehaviour:
   - {fileID: 2139955114, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   - {fileID: -2140478518, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
   - {fileID: -1715732249, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0

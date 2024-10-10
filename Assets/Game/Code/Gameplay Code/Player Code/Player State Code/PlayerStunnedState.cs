@@ -23,6 +23,8 @@ namespace Game
         [ReadOnly] public Vector2 knockBackIntensity;
         [Header("PARAMS"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] private AnimationCurve knockBackCurve;
+        Vector3 KnockBackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
+
         #region CAMERA SHAKE
 
         //Camera Shake
@@ -52,7 +54,8 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = (Vector3)(knockBackCurve.Evaluate(progress) * knockBackIntensity) + stateMachine.ContextVelocity;
+            stateMachine.body.velocity = stateMachine.ContextVelocityMultiplier * 
+                (KnockBackVelocity + stateMachine.ContextVelocityAdditive);
         }
 
         public override void Enter()

@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a60f8eb5ad1f64a8b3b417deafc5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: 1d495fb2c24235443bd17ad76805c139, type: 2}
   slider: {fileID: 0}
   volumeCurve: {fileID: 11400000, guid: 38b7c2868b2e9d84b8de04da9c6a32b8, type: 2}
   busGroup: Master
@@ -391,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a60f8eb5ad1f64a8b3b417deafc5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: 1d495fb2c24235443bd17ad76805c139, type: 2}
   slider: {fileID: 0}
   volumeCurve: {fileID: 11400000, guid: 38b7c2868b2e9d84b8de04da9c6a32b8, type: 2}
   busGroup: Music
@@ -894,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a60f8eb5ad1f64a8b3b417deafc5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationSO: {fileID: 11400000, guid: 1d495fb2c24235443bd17ad76805c139, type: 2}
   slider: {fileID: 0}
   volumeCurve: {fileID: 11400000, guid: 38b7c2868b2e9d84b8de04da9c6a32b8, type: 2}
   busGroup: SFX
@@ -1645,10 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0881de1aaa433d748a8f112da3a5d125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectScalePercentage: 0.15
-  selectActivateDelay: 0.3
-  clickScalePercentage: 0.25
-  clickActivateDelay: 0.25
+  animationSO: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
   OnSetMenuVisibility: {fileID: 11400000, guid: 1f4faa85e6affaf4b8776147ea1e6f13, type: 2}
   TargetMenuIds: 8
 --- !u!114 &8085580427710845321
@@ -2166,6 +2166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenShakeToggle
       objectReference: {fileID: 0}
+    - target: {fileID: 4105949336600371313, guid: 140b56c6fad39a146b74d1fecca0d34f, type: 3}
+      propertyPath: animationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2299,6 +2303,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: RumbleToggle
       objectReference: {fileID: 0}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: animationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234230141978042598, guid: b0c217a02f36e3449a8670ecdc99a385, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2344,6 +2376,58 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
       objectReference: {fileID: 3138369796455839128}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: animationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f4b45b65d7e706e43bb6372a6e10c56c, type: 2}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: clickCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: clickCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: clickCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: clickCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: clickCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: clickCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700098530088419317, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
+      propertyPath: selectCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 2700098530835364134, guid: 912bd0cb0e9f9e64ea2803caa881e5e4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
