@@ -49,7 +49,14 @@ namespace Game
         [field: SerializeField] public string EventLabel { get; private set; }
 
 
-        [field: Header("RUMBLE"), HorizontalLine(2f, EColor.Blue)]
+        [field: Header("RUMBLE - ATTACK"), HorizontalLine(2f, EColor.Blue)]
+
+        [field: SerializeField, Range(0f, 1f)] public float RLowFrequency { get; private set; }
+        [field: SerializeField, Range(0f, 1f)] public float RHighFrequency { get; private set; }
+        [field: SerializeField, Min(0)] public float RDuration { get; private set; }
+
+        [field: Header("RUMBLE - HIT"), HorizontalLine(2f, EColor.Blue)]
+
         [field: SerializeField, Range(0f, 1f)] public float RumbleLowFrequency { get; private set; }
         [field: SerializeField, Range(0f, 1f)] public float RumbleHighFrequency { get; private set; }
         [field: SerializeField, Min(0)] public float RumbleDuration { get; private set; }

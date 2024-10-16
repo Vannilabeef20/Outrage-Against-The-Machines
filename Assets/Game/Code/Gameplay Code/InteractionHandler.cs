@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
+using FMODUnity;
 
 namespace Game
 {
@@ -11,6 +12,7 @@ namespace Game
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [field: SerializeField] public PlayerInput playerInput { get; private set; }
         [SerializeField] BoxCollider detectionShape;
+        [SerializeField] StudioEventEmitter sucessfullEmitter;
         #endregion
 
         #region PARAMETERS & VARIABLES

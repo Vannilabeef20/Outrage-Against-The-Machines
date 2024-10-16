@@ -51,6 +51,7 @@ namespace Game
         [Header("RUMBLE"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] bool isRumbleEnabled;
 
+
         #region Debug
         [Header("DEBUG"), HorizontalLine(2f, EColor.Blue)]
         [SerializeField] GUIStyle RespawnLabelStyle;
@@ -134,6 +135,7 @@ namespace Game
                 PlayerCharacterList[0].Transform.position = LevelManager.Instance.SpawnCoordinates[0];
                 PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                 PlayerCharacterList[0].isPlayerActive = true;
+                PlayerCharacterList[0].Devices = PlayerCharacterList[0].GameObject.GetComponent<PlayerInput>().devices.ToArray();
             }
             else //Starting the game via main menu like normal
             {
@@ -158,17 +160,9 @@ namespace Game
         {
             if (!isRumbleEnabled) return;
 
-            Gamepad gamepad;
-            try
-            {
-                gamepad = (Gamepad)device;
-            }
-            catch
-            {
-                return;
-            }
+            if(device.GetType() == typeof(Gamepad))
 
-            StartCoroutine(PulseRumble(gamepad, lowFrequency, highFrequency, duration));
+            StartCoroutine(PulseRumble((Gamepad)device, lowFrequency, highFrequency, duration));
         }
         public void Rumble(float lowFrequency, float highFrequency, float duration)
         {
@@ -217,7 +211,7 @@ namespace Game
                 PlayerPrefs.GetInt("Rumble", 0);
             }
             isRumbleEnabled = enabled;
-        }
+        }     
         #endregion
 
         public void PauseGame()
@@ -315,7 +309,8 @@ namespace Game
         [field: Space]
         [field: SerializeField, ReadOnly, AllowNesting] public int Index { get; private set; }
         [field: SerializeField, ReadOnly, AllowNesting] public string ControlScheme { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices { get; private set; }
+
+        [SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices;
 
         [field: SerializeField, ReadOnly, AllowNesting] public GameObject StoredItem { get; private set; }
         [field: SerializeField, ReadOnly, ShowAssetPreview, AllowNesting] public Sprite ItemIcon { get; private set; }

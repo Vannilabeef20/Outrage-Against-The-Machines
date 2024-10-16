@@ -25,6 +25,7 @@ using UnityEngine.Events;
 /// </summary>
 public class AspectRatioController : MonoBehaviour
 {
+#pragma warning disable
     public static AspectRatioController instance;
     /// <summary>
     /// This event gets triggered every time the window resolution changes or the user toggles fullscreen.
@@ -163,7 +164,10 @@ public class AspectRatioController : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+#if UNITY_WEBGL
+        //return;
+#endif
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -179,6 +183,9 @@ public class AspectRatioController : MonoBehaviour
     /// </summary>
     void Start()
     {
+#if UNITY_WEBGL
+        //return;
+#endif
         // Don't register WindowProc callback in Unity editor, because it would refer to the
         // Unity editor window, not the actual game window.
         if (Application.isEditor)
@@ -229,6 +236,9 @@ public class AspectRatioController : MonoBehaviour
     /// aspect ratio. If false, this is only done the next time the window is resized manually.</param>
     public void SetAspectRatio(float newAspectWidth, float newAspectHeight, bool apply)
     {
+#if PLATFORM_WEBGL
+        return;
+#endif
         // Calculate new aspect ratio.
         aspectRatioWidth = newAspectWidth;
         aspectRatioHeight = newAspectHeight;
@@ -340,6 +350,9 @@ public class AspectRatioController : MonoBehaviour
     /// </summary>
     void Update()
     {
+#if UNITY_WEBGL
+        //return;
+#endif
         // Block switching to fullscreen if fullscreen is disallowed.
         if (!allowFullscreen && Screen.fullScreen)
         {
@@ -467,3 +480,4 @@ public class AspectRatioController : MonoBehaviour
         Application.Quit();
     }
 }
+#pragma warning enable

@@ -50,7 +50,7 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (UpTime <= StateAnimation.length) return;
+            if (UpTime <= duration) return;
 
             IsComplete = true;
             stateMachine.nextState = stateMachine.intercept;
