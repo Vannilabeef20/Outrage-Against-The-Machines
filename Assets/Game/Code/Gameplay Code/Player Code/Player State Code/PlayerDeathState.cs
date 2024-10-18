@@ -20,11 +20,11 @@ namespace Game
         [SerializeField] AnimationCurve knockBackCurve;
         [ReadOnly] public Vector2 knockBackIntensity;
         Vector3 KnockbackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
+        int PlayerIndex => stateMachine.playerInput.playerIndex;
+        string RumbleId => $"P{PlayerIndex + 1} {Name}";
 
         [Header("Gamepad Shake"), HorizontalLine]
-        [SerializeField, Range(0f, 1f)] float hitGamepadShakeLowFrequency;
-        [SerializeField, Range(0f, 1f)] float hitGamepadShakeHighFrequency;
-        [SerializeField] float hitGamepadShakeDuration;
+        [SerializeField] RumbleData deathRumble;
 
         public override void Do()
         {
@@ -46,11 +46,7 @@ namespace Game
             startTime = Time.time;
             soundEmitter.Play();
             impulseSource.GenerateImpulse();
-            foreach(var device in stateMachine.playerInput.devices)
-            {
-                GameManager.Instance.Rumble(device, hitGamepadShakeLowFrequency,
-                    hitGamepadShakeHighFrequency, hitGamepadShakeDuration);
-            }
+            RumbleManager.Instance.CreateRumble(RumbleId, deathRumble, PlayerIndex);
         }
 
         public override void Exit()

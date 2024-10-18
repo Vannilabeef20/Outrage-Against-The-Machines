@@ -67,6 +67,141 @@ MonoBehaviour:
   - 1.2
   <EventParameter>k__BackingField: Cow Attack State
   <EventLabel>k__BackingField: Running Attack
-  <RumbleLowFrequency>k__BackingField: 1
-  <RumbleHighFrequency>k__BackingField: 1
-  <RumbleDuration>k__BackingField: 0.3
+  <AtkRumbleData>k__BackingField:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 1.25
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.1035504
+        outSlope: 2.1198382
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.7454289
+      - serializedVersion: 3
+        time: 0.2
+        value: 0.7
+        inSlope: 7.5624337
+        outSlope: Infinity
+        tangentMode: 97
+        weightedMode: 2
+        inWeight: 0.07172994
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.55
+        value: 0.7
+        inSlope: -35.9053
+        outSlope: -3.8736567
+        tangentMode: 1
+        weightedMode: 1
+        inWeight: 0
+        outWeight: 0.051414307
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.024738377
+        outSlope: -0.022382936
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33811316
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.1035504
+        outSlope: 2.1198382
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.7454289
+      - serializedVersion: 3
+        time: 0.2
+        value: 0.7
+        inSlope: 7.5624337
+        outSlope: Infinity
+        tangentMode: 97
+        weightedMode: 2
+        inWeight: 0.07172994
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.55
+        value: 0.7
+        inSlope: -35.9053
+        outSlope: -3.8736567
+        tangentMode: 1
+        weightedMode: 1
+        inWeight: 0
+        outWeight: 0.051414307
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.024738377
+        outSlope: -0.022382936
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33811316
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  <HitRumbleData>k__BackingField:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0.2
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4

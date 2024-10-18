@@ -41,12 +41,11 @@ namespace Game
 
         [Header("REVIVE PARAMS"), HorizontalLine(2f, EColor.Yellow)]
 
-        [SerializeField, Min(0)] float reviveRumbleDuration = 0.5f;
-        [SerializeField, Range(0f, 1f)] float reviveRumble_lowFreq = 0.5f;
-        [SerializeField, Range(0f, 1f)] float reviveRumble_highFreq = 0.5f;
+        [SerializeField] RumbleData reviveRumble;
         #endregion
 
         int PlayerIndex => playerStateMachine.playerInput.playerIndex;
+        string RumbleId => $"P{PlayerIndex + 1} Revive";
 
         private void Awake()
         {
@@ -159,10 +158,7 @@ namespace Game
             healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
             playerHitbox.enabled = true;
             reviveEmitter.Play();
-            foreach (var device in playerStateMachine.playerInput.devices)
-            {
-                GameManager.Instance.Rumble(device, reviveRumble_lowFreq, reviveRumble_highFreq, reviveRumbleDuration);
-            }
+            RumbleManager.Instance.CreateRumble(RumbleId, reviveRumble, PlayerIndex);
         }
         
     }

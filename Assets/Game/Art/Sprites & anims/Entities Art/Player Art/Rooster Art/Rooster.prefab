@@ -222,10 +222,14 @@ MonoBehaviour:
   nextState: {fileID: 0}
   overrideStateCompletion: 0
   <InputDirection>k__BackingField: {x: 0, y: 0}
-  <ContextVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <ContextVelocityAdditive>k__BackingField: {x: 0, y: 0, z: 0}
+  <ContextVelocityMultiplier>k__BackingField: 0
   conveyorLayer:
     serializedVersion: 2
     m_Bits: 2048
+  speedMultiplierLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &588689491332936776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -939,9 +943,57 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   impulseSource: {fileID: 588689491912295410}
-  hitGamepadShakeLowFrequency: 0.5
-  hitGamepadShakeHighFrequency: 0.5
-  hitGamepadShakeDuration: 0.5
+  stunnedRumble:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0.5
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -2.8025813
+        outSlope: -2.8025813
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.03672926
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.05331756
+        outSlope: -0.05331756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10369998
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -2.8025813
+        outSlope: -2.8025813
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.03672926
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.05331756
+        outSlope: -0.05331756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10369998
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &475060844669776045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,9 +1315,57 @@ MonoBehaviour:
   staggerGracePeriod: 2
   gracePeriodFlashLenght: 0.15
   gracePeriodColor: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
-  reviveRumbleDuration: 0.5
-  reviveRumble_lowFreq: 0.5
-  reviveRumble_highFreq: 0.5
+  reviveRumble:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0.5
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &8246436470385335672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,9 +1502,57 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   knockBackIntensity: {x: 0, y: 0}
-  hitGamepadShakeLowFrequency: 1
-  hitGamepadShakeHighFrequency: 1
-  hitGamepadShakeDuration: 1
+  deathRumble:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 1
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -2.8025813
+        outSlope: -2.8025813
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.03672926
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.05331756
+        outSlope: -0.05331756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10369998
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -2.8025813
+        outSlope: -2.8025813
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.03672926
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.05331756
+        outSlope: -0.05331756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10369998
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &5559724615616535654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1668,6 +1816,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - <TriggerFrame>k__BackingField: 1
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6253027374155963840}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -1779,6 +1943,22 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
           m_MethodName: PlayPitchedAttackSound
           m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5813657735323615165}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1921,6 +2101,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8655246225875038677}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1407889463826958549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2176,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
           m_MethodName: PlayPitchedAttackSound
           m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6528778914432810070}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11885,6 +12089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <playerInput>k__BackingField: {fileID: 588689491377177472}
   detectionShape: {fileID: 3042656164699801808}
+  sucessfullEmitter: {fileID: 0}
   interactionMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -11983,6 +12188,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2628900427763117812}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - <TriggerFrame>k__BackingField: 6
     <Actions>k__BackingField:
       m_PersistentCalls:
@@ -12011,6 +12228,34 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2628900427763117812}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 10
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2628900427763117812}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -12120,6 +12365,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2078293247260585088}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7014455374479303066
 GameObject:
   m_ObjectHideFlags: 0
@@ -12175,6 +12432,22 @@ MonoBehaviour:
   projectile: {fileID: 0}
   projectileSpawnTransform: {fileID: 0}
   FrameEvents:
+  - <TriggerFrame>k__BackingField: 1
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 971026363584216981}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - <TriggerFrame>k__BackingField: 2
     <Actions>k__BackingField:
       m_PersistentCalls:

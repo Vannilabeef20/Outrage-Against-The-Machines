@@ -24,6 +24,8 @@ namespace Game
         [Header("PARAMS"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] private AnimationCurve knockBackCurve;
         Vector3 KnockBackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
+        int PlayerIndex => stateMachine.playerInput.playerIndex;
+        string RumbleId => $"P{PlayerIndex + 1} {Name}";
 
         #region CAMERA SHAKE
 
@@ -36,12 +38,7 @@ namespace Game
         #region GAMEPAD SHAKE   
         [Header("GAMEPAD SHAKE"), HorizontalLine(2f, EColor.Violet)]
 
-        [Tooltip("Determines how much the lower part of the gamepad will shake.")]
-        [SerializeField, Range(0f, 1f)] private float hitGamepadShakeLowFrequency;
-        [Tooltip("Determines how much the upper part of the gamepad will shake.")]
-        [SerializeField, Range(0f, 1f)] private float hitGamepadShakeHighFrequency;
-        [Tooltip("Determines for how long the gamepad will shake.")]
-        [SerializeField] private float hitGamepadShakeDuration;
+        [SerializeField] RumbleData stunnedRumble;
 
         #endregion
 
@@ -64,12 +61,7 @@ namespace Game
             stateMachine.animator.speed = 0;
             startTime = Time.time;
             soundEmitter.Play();
-            foreach (var device in stateMachine.playerInput.devices)
-            {
-                GameManager.Instance.Rumble(device, hitGamepadShakeLowFrequency,
-                    hitGamepadShakeHighFrequency, hitGamepadShakeDuration);
-            }
-
+            RumbleManager.Instance.CreateRumble(RumbleId, stunnedRumble, PlayerIndex);
             impulseSource.GenerateImpulse();
         }
 

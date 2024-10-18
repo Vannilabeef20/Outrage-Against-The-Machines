@@ -50,16 +50,11 @@ namespace Game
 
 
         [field: Header("RUMBLE - ATTACK"), HorizontalLine(2f, EColor.Blue)]
+        [field: SerializeField] public RumbleData AtkRumbleData { get; private set; }
 
-        [field: SerializeField, Range(0f, 1f)] public float RLowFrequency { get; private set; }
-        [field: SerializeField, Range(0f, 1f)] public float RHighFrequency { get; private set; }
-        [field: SerializeField, Min(0)] public float RDuration { get; private set; }
 
         [field: Header("RUMBLE - HIT"), HorizontalLine(2f, EColor.Blue)]
-
-        [field: SerializeField, Range(0f, 1f)] public float RumbleLowFrequency { get; private set; }
-        [field: SerializeField, Range(0f, 1f)] public float RumbleHighFrequency { get; private set; }
-        [field: SerializeField, Min(0)] public float RumbleDuration { get; private set; }
+        [field: SerializeField] public RumbleData HitRumbleData { get; private set; }
     }
 }
 

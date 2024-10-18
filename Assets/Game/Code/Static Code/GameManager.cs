@@ -48,10 +48,6 @@ namespace Game
 
         #endregion
 
-        [Header("RUMBLE"), HorizontalLine(2f, EColor.Green)]
-        [SerializeField] bool isRumbleEnabled;
-
-
         #region Debug
         [Header("DEBUG"), HorizontalLine(2f, EColor.Blue)]
         [SerializeField] GUIStyle RespawnLabelStyle;
@@ -70,9 +66,6 @@ namespace Game
                 Destroy(gameObject);
                 return;
             }
-#if UNITY_EDITOR
-            EditorApplication.quitting += StopRumble;
-#endif
         }
         private void Start()
         {
@@ -114,11 +107,6 @@ namespace Game
                 UnityInputManager.playerPrefab = root;
             }           
         }
-
-        private void OnApplicationQuit()
-        {
-            StopRumble();
-        }
         #endregion
 
         private void InitializeLevel()
@@ -135,7 +123,7 @@ namespace Game
                 PlayerCharacterList[0].Transform.position = LevelManager.Instance.SpawnCoordinates[0];
                 PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                 PlayerCharacterList[0].isPlayerActive = true;
-                PlayerCharacterList[0].Devices = PlayerCharacterList[0].GameObject.GetComponent<PlayerInput>().devices.ToArray();
+                PlayerCharacterList[0].Devices = InputSystem.devices.ToArray();
             }
             else //Starting the game via main menu like normal
             {
@@ -154,65 +142,6 @@ namespace Game
             }
             Instantiate(followGroupPrefab);
         }
-
-        #region Rumble Methods
-        public void Rumble(InputDevice device, float lowFrequency, float highFrequency, float duration)
-        {
-            if (!isRumbleEnabled) return;
-
-            if(device.GetType() == typeof(Gamepad))
-
-            StartCoroutine(PulseRumble((Gamepad)device, lowFrequency, highFrequency, duration));
-        }
-        public void Rumble(float lowFrequency, float highFrequency, float duration)
-        {
-            if (!isRumbleEnabled) return;
-            foreach (Gamepad gamepad in Gamepad.all)
-            {
-                StartCoroutine(PulseRumble(gamepad, lowFrequency, highFrequency, duration));
-            }
-        }
-
-        private IEnumerator PulseRumble(Gamepad gamepad, float lowFrequency, float highFrequency, float duration)
-        {
-            gamepad.SetMotorSpeeds(lowFrequency, highFrequency);
-            yield return new WaitForSecondsRealtime(duration);
-            StopRumble(gamepad);
-        }
-        private IEnumerator PulseRumble(Gamepad[] gamepads, float lowFrequency, float highFrequency, float duration)
-        {
-            foreach(Gamepad gamepad in gamepads)
-            {
-                gamepad.SetMotorSpeeds(lowFrequency, highFrequency);
-            }
-            yield return new WaitForSecondsRealtime(duration);
-            StopRumble();
-        }
-        private void StopRumble(Gamepad gamepad)
-        {
-            gamepad.SetMotorSpeeds(0f, 0f);
-        }
-        private void StopRumble()
-        {
-            foreach(var gamepad in Gamepad.all)
-            {
-                gamepad.SetMotorSpeeds(0f, 0f);
-            }
-        }
-
-        public void ToggleRumble(bool enabled)
-        {
-            if (enabled)
-            {
-                PlayerPrefs.GetInt("Rumble", 1);
-            }
-            else
-            {
-                PlayerPrefs.GetInt("Rumble", 0);
-            }
-            isRumbleEnabled = enabled;
-        }     
-        #endregion
 
         public void PauseGame()
         {

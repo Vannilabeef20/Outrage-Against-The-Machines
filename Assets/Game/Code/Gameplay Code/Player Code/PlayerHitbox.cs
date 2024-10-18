@@ -17,13 +17,14 @@ namespace Game
         //[SerializeField, ReadOnly] private List<Collider> prevHitColliders;
 
         #region Shorthand lambdas
-        float AtkRumbleLowFreq => stateMachine.Attacking.CurrentAttackState.PlayerAttack.RumbleLowFrequency;
-        float AtkRumbleHighFreq => stateMachine.Attacking.CurrentAttackState.PlayerAttack.RumbleHighFrequency;
-        float AtkRumbleDuration => stateMachine.Attacking.CurrentAttackState.PlayerAttack.RumbleDuration;
+        RumbleData AtkRumble => stateMachine.Attacking.CurrentAttackState.PlayerAttack.AtkRumbleData;
+
         float AtkDamage => stateMachine.Attacking.CurrentAttackState.PlayerAttack.Damage;
         float AtkStunDuration => stateMachine.Attacking.CurrentAttackState.PlayerAttack.StunDuration;
         float AtkKnockbackStrenght => stateMachine.Attacking.CurrentAttackState.PlayerAttack.KnockbackStrenght;
         bool AtkIsSpecial => stateMachine.Attacking.CurrentAttackState.PlayerAttack.IsSpecial;
+        int PlayerIndex => stateMachine.playerInput.playerIndex;
+        string RumbleId => $"P{PlayerIndex + 1} Hit";
         #endregion
         void OnTriggerEnter(Collider other)
         {
@@ -44,10 +45,7 @@ namespace Game
             emitter.Play();
 
             //Rumble
-            foreach (var device in stateMachine.playerInput.devices)
-            {
-                GameManager.Instance.Rumble(device, AtkRumbleLowFreq, AtkRumbleHighFreq, AtkRumbleDuration);
-            }
+            RumbleManager.Instance.CreateRumble(RumbleId, AtkRumble, PlayerIndex);
         }
 
         void DealDamage(Collider hitObjectCollider)

@@ -91,6 +91,9 @@ namespace Game
 
         public override void Exit()
         {
+            if(!IsComplete)
+            CurrentAttackState.Exit();
+
             DisableAttackHitboxes();
             CurrentAttackState = null;
             queuedAttackState = null;

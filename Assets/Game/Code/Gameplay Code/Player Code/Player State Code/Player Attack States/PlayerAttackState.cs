@@ -6,9 +6,16 @@ namespace Game
 {
     public class PlayerAttackState : PlayerState
     {
-        [field: Header("PLAYER ATTACK"), HorizontalLine(2f, EColor.Yellow)]
+        [Header("PLAYER ATTACK"), HorizontalLine(2f, EColor.Yellow)]
 
         [SerializeField, ReadOnly] PlayerAttackingState AttackMachine;
+        public override string Name
+        {
+            get
+            {
+                return $"{PlayerAttack.name}";
+            }
+        }
         [field: SerializeField, Expandable] public PlayerAttackSO PlayerAttack { get; private set; }
 
         [Header("PROJECTILE"), HorizontalLine(2F, EColor.Green)]
@@ -17,12 +24,16 @@ namespace Game
         [SerializeField, ShowIf("hasProjectile")] public GameObject projectile;
         [SerializeField, ShowIf("hasProjectile")] Transform projectileSpawnTransform;
 
+        [Header("FRAME EVENTS"), HorizontalLine(2F, EColor.Blue)]
         [SerializeField] AnimationFrameEvent[] FrameEvents;
 
         Rigidbody Body => stateMachine.body;
         Vector3 AttackVelocity => PlayerAttack.VelocityCurve.
             Evaluate(progress) * PlayerAttack.MaxVelocity * transform.right;
         public float TimeLeft  => PlayerAttack.Duration - UpTime;
+        int PlayerIndex => stateMachine.playerInput.playerIndex;
+
+        string RumbleId => $"P{PlayerIndex + 1} {Name}";
 
         StudioEventEmitter EventEmitter => AttackMachine.attackEmitter;
 
@@ -48,6 +59,10 @@ namespace Game
         public override void Exit()
         {
             AttackMachine.DisableAttackHitboxes();
+            
+            if(stateMachine.nextState == stateMachine.Stunned ||
+                stateMachine.CurrentState == stateMachine.Stunned)
+            RumbleManager.Instance.CancelRumble(RumbleId);
         }
 
         public override void Do()
@@ -87,6 +102,11 @@ namespace Game
             EventEmitter.EventInstance.setPitch(PlayerAttack.AudioPitches[attackIndex]);
             EventEmitter.EventInstance.setParameterByNameWithLabel(
             PlayerAttack.EventParameter, PlayerAttack.EventLabel);
+        }
+
+        public void PlayAttackRumble()
+        {
+            RumbleManager.Instance.CreateRumble(RumbleId, PlayerAttack.AtkRumbleData, PlayerIndex);
         }
 
         public void SpawnProjectile()
