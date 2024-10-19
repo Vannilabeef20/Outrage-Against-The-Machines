@@ -7479,10 +7479,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1672633637, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2779271344383868973, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4781466091714559106, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1148372699, guid: 379a5db98ec58fe43963671668c24940, type: 3}
     - target: {fileID: 8015928921890502604, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
       propertyPath: m_Pivot.x
       value: 0

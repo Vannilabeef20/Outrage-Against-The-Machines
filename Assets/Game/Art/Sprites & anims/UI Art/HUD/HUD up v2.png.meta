@@ -455,27 +455,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD_health_up_v0
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 157
-        width: 66
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f724b6f7672d434392c25b80650a7bd
-      internalID: 251114215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: HUD_slot_p1_v1
       rect:
         serializedVersion: 2
@@ -664,6 +643,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: HUD_player_1_v2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
+        width: 98
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3984aa2706137104e9c70da6a6e7ec1c
+      internalID: 1148372699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_health_BG
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 22
+        width: 50
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f4175ece9d2d44f928eeef894e0e0d
+      internalID: -1946291190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -676,13 +697,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       HUD_health_up_v0: 251114215
-      HUD_player_3: -773179451
+      HUD_money_icon: 1651919258
       HUD_slot_p2_v3: -8958980
       HUD_slot_p1_v2: -656426554
       HUD_energy_yellow_1: 621528783
       HUD_player_2: 743685460
       HUD_slot_p2_v2: 1375941064
-      HUD_money_icon: 1651919258
+      HUD_energy_grey_3: 1524051101
       HUD_slot_p2_v1: 2145842317
       HUD_energy_yellow_4: -755294826
       HUD _roster_icon: -1258828583
@@ -690,17 +711,19 @@ TextureImporter:
       HUD_slot_p3_v3: 99299490
       HUD_player_1: -560969667
       HUD_slot_p3_v2: 68174395
+      HUD_player_1_v2: 1148372699
       HUD_cow_icon: -269324856
       HUD_energy_yellow_2: -600687917
       HUD_energy_grey_2: -1527400434
       HUD_money_number: 905827798
       GUI_life: 2031712391
       HUD_slot_p1_v1: -120590340
+      HUD_health_BG: -1946291190
       HUD_energy_grey_4: -1369200709
       HUD_slot_p3_v1: 251591921
       HUD_slot_p1_v3: 1003210667
       HUD_energy_grey_1: 226980132
-      HUD_energy_grey_3: 1524051101
+      HUD_player_3: -773179451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
