@@ -269,14 +269,14 @@ MonoBehaviour:
   InstantHealthBar: {fileID: 1614420447}
   LerpHealthBar: {fileID: 1066721236}
   scrapCountText: {fileID: 886789833}
-  playerNumber: 2
-  healthConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
-  specialImageColor: {r: 1, g: 0.66177595, b: 0, a: 1}
-  specialImageFilledColor: {r: 0.9882877, g: 0.84313726, b: 0, a: 1}
   specialImages:
   - {fileID: 1973461074473370043}
   - {fileID: 7478030655940960084}
   - {fileID: 8736261073789671265}
+  playerNumber: 2
+  lerpConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
+  specialImageColor: {r: 1, g: 0.66177595, b: 0, a: 1}
+  specialImageFilledColor: {r: 0.9882877, g: 0.84313726, b: 0, a: 1}
 --- !u!114 &8616982564591827645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,14 +765,14 @@ MonoBehaviour:
   InstantHealthBar: {fileID: 510145317}
   LerpHealthBar: {fileID: 2118174711}
   scrapCountText: {fileID: 949221326}
-  playerNumber: 3
-  healthConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
-  specialImageColor: {r: 1, g: 0.66177595, b: 0, a: 1}
-  specialImageFilledColor: {r: 0.9882877, g: 0.84313726, b: 0, a: 1}
   specialImages:
   - {fileID: 602990085509986312}
   - {fileID: 6406249709633071978}
   - {fileID: 583411839108827274}
+  playerNumber: 3
+  lerpConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
+  specialImageColor: {r: 1, g: 0.66177595, b: 0, a: 1}
+  specialImageFilledColor: {r: 0.9882877, g: 0.84313726, b: 0, a: 1}
 --- !u!114 &55554112631737192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,14 +1143,14 @@ MonoBehaviour:
   InstantHealthBar: {fileID: 1653290401}
   LerpHealthBar: {fileID: 1380924644}
   scrapCountText: {fileID: 267504653}
-  playerNumber: 1
-  healthConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
-  specialImageColor: {r: 1, g: 0.66177595, b: 0, a: 1}
-  specialImageFilledColor: {r: 0.9882877, g: 0.84313726, b: 0, a: 1}
   specialImages:
   - {fileID: 6705339418019855489}
   - {fileID: 226825279686053756}
   - {fileID: 8332474165598456282}
+  playerNumber: 1
+  lerpConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
+  specialImageColor: {r: 1, g: 0.66177595, b: 0, a: 1}
+  specialImageFilledColor: {r: 0.9882877, g: 0.84313726, b: 0, a: 1}
 --- !u!114 &2236778911706055557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,7 +2463,7 @@ RectTransform:
   - {fileID: 5319035583081761227}
   - {fileID: 5609678251712261126}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

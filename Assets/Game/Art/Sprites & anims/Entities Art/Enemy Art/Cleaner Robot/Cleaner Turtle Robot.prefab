@@ -4945,7 +4945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5038199298773203181}
-  - component: {fileID: 2177887728833581964}
+  - component: {fileID: 892609548779498038}
   m_Layer: 0
   m_Name: Water_Trail
   m_TagString: Untagged
@@ -4968,7 +4968,7 @@ Transform:
   m_Father: {fileID: 8872166234325332231}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2177887728833581964
+--- !u!114 &892609548779498038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4977,7 +4977,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 405814237814021623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be092badc42e1b4ea3533965d9c79ff, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e79da37950f1b4ab3f19c0d90eb9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startTrail: {fileID: 559092356059934727, guid: 38042c146274ab9439f2deeefef3c5ab, type: 3}
@@ -4987,11 +4987,10 @@ MonoBehaviour:
   - {fileID: 6063384796361074495, guid: 078c0a3b94dc5b9488fe43a8da639b48, type: 3}
   - {fileID: 691619434547247062, guid: 2105a81e93aad1e48b8157cb682b6793, type: 3}
   - {fileID: 8457461244685802978, guid: 234c9c33456f2a440b640182713f3024, type: 3}
-  trailPixelLenght: 16
-  trailLenght: 11
-  placeInterval: 0.08
-  offset: {x: 0, y: -0.2, z: 0}
-  destroyTime: 3
+  interval: 1.333333
+  trailLenght: 8
+  placeInterval: 0.1
+  offset: {x: 0, y: -0.1, z: 0}
 --- !u!1 &1702680308892565086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,8 +5217,8 @@ MonoBehaviour:
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3432621244555676624}
-        m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+      - m_Target: {fileID: 2080616118789477023}
+        m_TargetAssemblyTypeName: Game.SpawnTrail, Assembly-CSharp
         m_MethodName: StopTrail
         m_Mode: 1
         m_Arguments:
@@ -5289,8 +5288,8 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 3432621244555676624}
-            m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+          - m_Target: {fileID: 2080616118789477023}
+            m_TargetAssemblyTypeName: Game.SpawnTrail, Assembly-CSharp
             m_MethodName: CreateTrail
             m_Mode: 1
             m_Arguments:
@@ -5634,7 +5633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4409800472308447067}
-  - component: {fileID: 3432621244555676624}
+  - component: {fileID: 2080616118789477023}
   m_Layer: 0
   m_Name: Water_Trail
   m_TagString: Untagged
@@ -5657,7 +5656,7 @@ Transform:
   m_Father: {fileID: 7107209744019520472}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3432621244555676624
+--- !u!114 &2080616118789477023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5666,7 +5665,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6081054907570030036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be092badc42e1b4ea3533965d9c79ff, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e79da37950f1b4ab3f19c0d90eb9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startTrail: {fileID: 559092356059934727, guid: 38042c146274ab9439f2deeefef3c5ab, type: 3}
@@ -5676,11 +5675,10 @@ MonoBehaviour:
   - {fileID: 6063384796361074495, guid: 078c0a3b94dc5b9488fe43a8da639b48, type: 3}
   - {fileID: 691619434547247062, guid: 2105a81e93aad1e48b8157cb682b6793, type: 3}
   - {fileID: 8457461244685802978, guid: 234c9c33456f2a440b640182713f3024, type: 3}
-  trailPixelLenght: 16
-  trailLenght: 22
-  placeInterval: 0.02
-  offset: {x: 0, y: -0.2, z: 0}
-  destroyTime: 3
+  interval: 1.333333
+  trailLenght: 18
+  placeInterval: 0.07
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &6508126985612539010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6120,6 +6118,7 @@ MonoBehaviour:
   - {fileID: 2724931672148368358}
   - {fileID: 3344898223652118149}
   - {fileID: 4001005681879114987}
+  - {fileID: 2241045627075507742}
   - {fileID: 4196484976454017962}
   - {fileID: 7053810417088285791}
 --- !u!1 &6508126987123622496
@@ -6174,8 +6173,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.705027, y: 1.7936952, z: 1}
-  m_Center: {x: 0.23917389, y: 2.6423516, z: 0}
+  m_Size: {x: 2.74759, y: 3.032631, z: 1}
+  m_Center: {x: 0.21789241, y: 3.261819, z: 0}
 --- !u!114 &6508126987123622501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7225,8 +7224,8 @@ MonoBehaviour:
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2177887728833581964}
-        m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+      - m_Target: {fileID: 892609548779498038}
+        m_TargetAssemblyTypeName: Game.SpawnTrail, Assembly-CSharp
         m_MethodName: StopTrail
         m_Mode: 1
         m_Arguments:
@@ -7244,8 +7243,8 @@ MonoBehaviour:
       <Actions>k__BackingField:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 2177887728833581964}
-            m_TargetAssemblyTypeName: Game.WaterTrail, Assembly-CSharp
+          - m_Target: {fileID: 892609548779498038}
+            m_TargetAssemblyTypeName: Game.SpawnTrail, Assembly-CSharp
             m_MethodName: CreateTrail
             m_Mode: 1
             m_Arguments:

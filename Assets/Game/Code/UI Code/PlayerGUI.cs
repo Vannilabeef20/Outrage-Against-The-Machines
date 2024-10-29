@@ -11,23 +11,22 @@ namespace Game
 {
 	public class PlayerGUI : MonoBehaviour
 	{
+        [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [SerializeField] Image playerIcon;
         [SerializeField] Image itemIcon;
         [SerializeField] Image InstantHealthBar;
         [SerializeField] Image LerpHealthBar;
         [SerializeField] TextMeshProUGUI scrapCountText;
+        [SerializeField] Image[] specialImages;
+
+        [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] int playerNumber;
-
-        [SerializeField, Expandable] PlayerHealthUIConfigSO healthConfigSO;
-        Tween healthLerpTween;
-        Coroutine healthCoroutine;
-
-
+        [SerializeField, Expandable] LerpConfigSO lerpConfigSO;
         [SerializeField] Color specialImageColor;
         [SerializeField] Color specialImageFilledColor;
 
-        [SerializeField] Image[] specialImages;
-
+        Tween healthLerpTween;
+        Coroutine healthCoroutine;
         PlayerCharacter Player => GameManager.Instance.PlayerCharacterList[playerNumber - 1];
         private void Awake()
         {
@@ -77,9 +76,9 @@ namespace Game
         {
             if (healthLerpTween != null) healthLerpTween.Kill();
             InstantHealthBar.fillAmount = newHealthPercent;
-            yield return new WaitForSeconds(healthConfigSO.HealthLerpDelay);
+            yield return new WaitForSeconds(lerpConfigSO.Delay);
             healthLerpTween = LerpHealthBar.DOFillAmount(newHealthPercent,
-                healthConfigSO.HealthLerpDuration).SetEase(healthConfigSO.HealthLerpEase);
+                lerpConfigSO.Duration).SetEase(lerpConfigSO.Ease);
             healthCoroutine = null;
         }
 

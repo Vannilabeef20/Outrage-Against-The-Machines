@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3a1cb9a42bf2646a4d64fbc249d7dc, type: 3}
   m_Name: PlayerHealthUIConfigSO
   m_EditorClassIdentifier: 
-  <HealthLerpDelay>k__BackingField: 0.25
-  <HealthLerpDuration>k__BackingField: 0.5
-  <HealthLerpEase>k__BackingField: 2
+  <Delay>k__BackingField: 0.25
+  <Duration>k__BackingField: 0.5
+  <Ease>k__BackingField: 2

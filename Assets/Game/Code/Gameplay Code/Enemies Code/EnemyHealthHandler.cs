@@ -42,6 +42,5 @@ namespace Game
             DEBUGHealthImage.fillAmount = CurrentHealthPercent;
             stateMachine.TakeDamage(damageDealerPos, stunDuration, knockbackStrenght);
         }
-
     }
 }

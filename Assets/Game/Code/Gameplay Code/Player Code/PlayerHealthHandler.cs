@@ -21,7 +21,6 @@ namespace Game
 
         #region Player Health Params
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField] LayerMask hostileLayers;
         [SerializeField] float maxHeathPoints;
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
         [SerializeField, ReadOnly] bool isDead;
