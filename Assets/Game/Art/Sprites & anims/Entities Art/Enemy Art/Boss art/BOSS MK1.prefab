@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &800468660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800468661}
+  - component: {fileID: 800468662}
+  m_Layer: 0
+  m_Name: MK1_SpinAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800468661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800468660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 808545684}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800468662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800468660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5f03bc94428834cb158d23f6150fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: e419e7e17e75e404faf14ebd22d38bef, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 4719953291839701837}
+  AttackMachine: {fileID: 808545685}
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: d44ba239871720545a0b6528eab92dd9, type: 2}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 7
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 808545685}
+            m_TargetAssemblyTypeName: Game.MK1AttackingState, Assembly-CSharp
+            m_MethodName: SetDirection
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  <EDirection>k__BackingField: 2
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &808545683
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +84,7 @@ GameObject:
   - component: {fileID: 808545684}
   - component: {fileID: 808545685}
   m_Layer: 0
-  m_Name: MK1_Attacking
+  m_Name: Attacking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +101,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 800468661}
+  - {fileID: 3169495663976317722}
   m_Father: {fileID: 6423577777945764625}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,9 +127,11 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
-  <Attacks>k__BackingField: []
+  <Attacks>k__BackingField:
+  - {fileID: 800468662}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
+  attackDirection: {x: 0, y: 0, z: 0}
   attackLabelStyle:
     m_Name: 
     m_Normal:
@@ -430,12 +507,8 @@ MonoBehaviour:
   targetingRepeatInterval: 0.1
   <Target>k__BackingField: {fileID: 0}
   targetingTimer: 0
-  defaultAngle: 90
-  <IsAligned>k__BackingField: 0
   <Distance>k__BackingField: 0
   stateLabelTmpro: {fileID: 5960603606578825062}
-  debugAngleColor: {r: 1, g: 0, b: 0.7194252, a: 1}
-  debugAngleSize: 2
   references:
     version: 2
     RefIds:
@@ -615,7 +688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 4.600006}
+  m_AnchoredPosition: {x: 0, y: 4.5999756}
   m_SizeDelta: {x: 200, y: 10}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3023444445640862720
@@ -690,7 +763,6 @@ Transform:
   - {fileID: 1598119362565426522}
   - {fileID: 6636535655153216110}
   - {fileID: 6423577777945764625}
-  - {fileID: 3169495663976317722}
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6269,7 +6341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3169495663976317722}
   - component: {fileID: 7384669814123556963}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6283,12 +6355,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7562058237417849678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6930416613683234167}
+  m_Father: {fileID: 808545684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7384669814123556963

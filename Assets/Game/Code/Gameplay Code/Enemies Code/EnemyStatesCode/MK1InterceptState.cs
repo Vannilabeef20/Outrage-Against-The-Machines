@@ -68,7 +68,9 @@ namespace Game
             //Refresh Path
             if(pathfindingTimer >= pathfindingRepeatInterval)
             {
-                movementDirection = PathfindingBehaviour.GetMovementDirection(stateMachine.Target.transform.position, stateMachine.IsInsidePlayzone);
+                movementDirection = PathfindingBehaviour.GetMovementDirection
+                    (stateMachine.Target.transform.position, stateMachine.IsInsidePlayzone);
+                pathfindingTimer = 0;
             }
 
             //Set Speed
@@ -88,7 +90,7 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (!stateMachine.IsInsidePlayzone) return;
+            //if (!stateMachine.IsInsidePlayzone) return;
 
             if (!stateMachine.attack.CheckForAndSetAttack()) return;
 

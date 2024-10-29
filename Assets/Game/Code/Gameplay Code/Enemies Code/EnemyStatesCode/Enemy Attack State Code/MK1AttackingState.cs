@@ -13,12 +13,14 @@ namespace Game
     {
         public override string Name { get => CurrentAttack.Config.Name; }
         [SerializeField] private LayerMask playerMask;
-        [field: SerializeField] public EnemyAttackState[] Attacks { get; private set; }
+        [field: SerializeField] public BossAttackState[] Attacks { get; private set; }
 
-        [field: SerializeField, ReadOnly] public EnemyAttackState CurrentAttackState { get; private set; }
+        [field: SerializeField, ReadOnly] public BossAttackState CurrentAttackState { get; private set; }
         EnemyAttack CurrentAttack => CurrentAttackState.Attack;
 
-        [SerializeField, ReadOnly] private float attackUptime;
+        [SerializeField, ReadOnly] float attackUptime;
+
+        [SerializeField, ReadOnly] Vector3 attackDirection;
 #if UNITY_EDITOR
         [field: Header("DEBUG")]
 
@@ -27,6 +29,20 @@ namespace Game
         public Vector3 RangeLineHeight { get; private set; }
         public Vector3 RangeLabelOffest { get; private set; }
 #endif
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!playerMask.ContainsLayer(other.gameObject.layer))
+            {
+                return;
+            }
+            if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
+            {
+                damageble.TakeDamage(stateMachine.transform.position, CurrentAttack.Config.Damage,
+                    CurrentAttack.Config.StunDuration, CurrentAttack.Config.KnockbackStrenght);
+            }
+        }
+
         [Button("Sort Attacks")]
         void SortAttacks()
         {
@@ -55,8 +71,20 @@ namespace Game
         {
             if (CurrentAttackState == null) return;
 
+            switch(CurrentAttackState.EDirection)
+            {
+                case EAttackDirection.Front:
+                    attackDirection = transform.right;
+                    break;
+                case EAttackDirection.Omni:
+                    SetDirection(); 
+                    break;
+                case EAttackDirection.OmniStatic:
+                    //Calculated on frameEvent
+                    break;
+            }
             stateMachine.body.velocity = CurrentAttack.Config.VelocityCurve.Evaluate(progress) *
-                CurrentAttack.Config.Velocity * transform.right + stateMachine.ContextVelocity;
+CurrentAttack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
         }
 
         public override void Enter()
@@ -73,6 +101,19 @@ namespace Game
         public override void Exit()
         {
             CurrentAttackState.Exit();
+            CurrentAttackState = null;
+
+            //Flip
+            if (stateMachine.Target.transform.position.x + 0.1f < transform.position.x)
+            {
+                stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
+            else if (stateMachine.Target.transform.position.x - 0.1f > transform.position.x)
+            {
+                stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
+
+
             IsComplete = false;
         }
 
@@ -81,17 +122,22 @@ namespace Game
             if(UpTime >= CurrentAttack.Config.Duration)
             {
                 stateMachine.nextState = stateMachine.intercept;
-                //CurrentAttackState = null;
                 IsComplete = true;
             }
         }
 
-
+        public void SetDirection()
+        {
+            attackDirection = (stateMachine.Target.position -
+                stateMachine.transform.position).normalized;
+        }
 
         public bool CheckForAndSetAttack()
         {
+            //Has no target, return
             if (stateMachine.Distance <= -1) return false;
 
+            //Check for available attacks
             int atkIndex = -1;
             bool hasAvailableAttack = false;
             for (int i = 0; i < Attacks.Length; i++)
@@ -104,22 +150,10 @@ namespace Game
                 }
             }
             
+            //Assign most appropriate attack
             if(atkIndex != -1) CurrentAttackState = Attacks[atkIndex];
 
             return hasAvailableAttack;
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (!playerMask.ContainsLayer(other.gameObject.layer))
-            {
-                return;
-            }
-            if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
-            {
-                damageble.TakeDamage(stateMachine.transform.position, CurrentAttack.Config.Damage,
-                    CurrentAttack.Config.StunDuration, CurrentAttack.Config.KnockbackStrenght);
-            }
         }
     }
 }

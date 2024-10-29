@@ -45,9 +45,6 @@ namespace Game
         [SerializeField, Min(0f)] float targetingRepeatInterval;
         [field: SerializeField, ReadOnly] public Transform Target { get; private set; }
         [SerializeField, ReadOnly] float targetingTimer;
-
-        [SerializeField] float defaultAngle;
-        [field: SerializeField, ReadOnly] public bool IsAligned { get; private set; }
         [field: SerializeField, ReadOnly] public float Distance { get; private set; }
        
         public bool IsInsidePlayzone => LevelManager.Instance.IsInsidePlayzone(body.position);
@@ -87,15 +84,9 @@ namespace Game
                 targetingTimer = 0;
             }
 
-            //IsAligned =
-            if (IsAligned)
-            {
-                //Distance = info.distance;
-            }
-            else
-            {
-                Distance = -1;
-            }
+            if (Target != null) Distance = Vector3.Distance(transform.position, Target.position);
+            else Distance = -1;
+
             ChangeState();
             currentState.Do();
 
@@ -177,23 +168,8 @@ namespace Game
         }
 
         #region Debug
-
-        [Header("DEBUG (THIS WILL BE STRIPPED ON BUILD)"), HorizontalLine(2F, EColor.Green)]
+        [Header("DEBUG"), HorizontalLine(2F, EColor.Green)]
         [SerializeField] private TextMeshProUGUI stateLabelTmpro;
-#if UNITY_EDITOR
-        [SerializeField] Color debugAngleColor;
-        [SerializeField] float debugAngleSize = 2f;
-
-        private void OnDrawGizmos()
-        {
-            if (Target == null) return;
-
-            Debug.DrawRay(transform.position, Quaternion.AngleAxis(defaultAngle, Vector3.forward) *
-                transform.right * debugAngleSize, debugAngleColor);
-            Debug.DrawRay(transform.position, Quaternion.AngleAxis(-defaultAngle, Vector3.forward) *
-                transform.right * debugAngleSize, debugAngleColor);
-        }
-#endif
         #endregion
     }
 }
