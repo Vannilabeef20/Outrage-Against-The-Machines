@@ -7,7 +7,7 @@ namespace Game
 {
     public class MK1InterceptState : BossState
     {
-        public override string Name { get => "Intercept"; }
+        public override string Name { get => "MK1 Intercept"; }
 
         [Header("INTERCEPT STATE"), HorizontalLine(2f, EColor.Yellow)]
         [SerializeField] StudioEventEmitter movementEmitter;
@@ -92,9 +92,9 @@ namespace Game
         {
             //if (!stateMachine.IsInsidePlayzone) return;
 
-            if (!stateMachine.attack.CheckForAndSetAttack()) return;
+            if (!stateMachine.mk1Attack.CheckForAndSetAttack()) return;
 
-            stateMachine.nextState = stateMachine.attack;
+            stateMachine.nextState = stateMachine.mk1Attack;
             IsComplete = true;
             return;
         }

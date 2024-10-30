@@ -11,7 +11,7 @@ namespace Game
     public class BossAttackState : BossState
     {
         [Header("ATTACK STATE"), HorizontalLine(2F, EColor.Yellow)]
-        [SerializeField] MK1AttackingState AttackMachine;
+        [SerializeField] MK2AttackingState AttackMachine;
         [field: SerializeField] public EnemyAttack Attack { get; private set; }
 
         [field: SerializeField] public EAttackDirection EDirection { get; private set; }
@@ -23,7 +23,7 @@ namespace Game
         public override void Setup(BossStateMachine bossStateMachine)
         {
             base.Setup(bossStateMachine);
-            AttackMachine = stateMachine.attack;
+            AttackMachine = stateMachine.mk2Attack;
             Attack.SetupFrameEvents(StateAnimation);
         }
 
@@ -66,6 +66,5 @@ namespace Game
     {
         Front,
         Omni,
-        OmniStatic
     }
 }

@@ -13,7 +13,8 @@ namespace Game
         public Rigidbody body;
         public Animator animator;
         public BoxCollider hurtBox;
-        public BoxCollider attackhitbox;
+        public BoxCollider mk1Attackhitbox;
+        public BoxCollider mk2Attackhitbox;
         public BoxCollider collisionBox;
         [field: SerializeField] public GameObject Parent { get; private set; }
         
@@ -21,15 +22,22 @@ namespace Game
         #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
 
-        public MK1InterceptState intercept;
-        public MK1DamageState damage;
-        public MK1AttackingState attack;
-        public MK1DeathState death;
+        public MK1InterceptState mk1Intercept;
+        public MK1DamageState mk1Damage;
+        public MK1AttackingState mk1Attack;
+        public MK1DeathState mk1Death;
+
+        public MK2InterceptState mk2Intercept;
+        public MK2DamageState mk2Damage;
+        public MK2AttackingState mk2Attack;
+        public MK2DeathState mk2Death;
 
         #endregion
 
         #region State Variables
         [Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Orange)]
+
+        [ReadOnly] public bool phase2;
         [ReadOnly] public bool overrideStateCompletion;
         [SerializeField, ReadOnly] private BossState currentState;
         [ReadOnly] public BossState nextState;
@@ -65,8 +73,8 @@ namespace Game
             {
                 state.Setup(this);
             }
-            currentState = intercept;
-            nextState = intercept;
+            currentState = mk1Intercept;
+            nextState = mk1Intercept;
             currentState.Enter();
             if (currentState != null)
             {
@@ -141,11 +149,22 @@ namespace Game
 
         public void TakeDamage(Vector3 _damageDealerPos, float _stunDuration, float _knockbackStrenght)
         {
-            attackhitbox.enabled = false;
-            damage.stunDuration = _stunDuration;
-            damage.damageDealerPos = _damageDealerPos;
-            damage.knockbackStrenght = _knockbackStrenght;
-            nextState = damage;
+            if(!phase2)
+            {
+                mk1Attackhitbox.enabled = false;
+                mk1Damage.stunDuration = _stunDuration;
+                mk1Damage.damageDealerPos = _damageDealerPos;
+                mk1Damage.knockbackStrenght = _knockbackStrenght;
+                nextState = mk1Damage;
+            }
+            else
+            {
+                mk2Attackhitbox.enabled = false;
+                mk2Damage.stunDuration = _stunDuration;
+                mk2Damage.damageDealerPos = _damageDealerPos;
+                mk2Damage.knockbackStrenght = _knockbackStrenght;
+                nextState = mk2Damage;
+            }
             overrideStateCompletion = true;
         }
 

@@ -8,7 +8,7 @@ namespace Game
 {
     public class MK1DamageState : BossState
     {
-        public override string Name { get => "AtkDamage"; }
+        public override string Name { get => "MK1 Damage"; }
         [field: Header("DAMAGE STATE"), HorizontalLine(2f, EColor.Yellow)]
         [field: SerializeField] public BossHealthHandler HealthHandler { get; private set; }
         [SerializeField] StudioEventEmitter damageTakenEmitter;
@@ -94,12 +94,12 @@ namespace Game
             }
             if(HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
             {
-                stateMachine.nextState = stateMachine.death;
+                stateMachine.nextState = stateMachine.mk1Death;
                 IsComplete = true;
             }
             else
             {
-                stateMachine.nextState = stateMachine.intercept;
+                stateMachine.nextState = stateMachine.mk1Intercept;
                 IsComplete = true;
             }         
         }

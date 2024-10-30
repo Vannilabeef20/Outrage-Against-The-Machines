@@ -5,9 +5,11 @@ namespace Game
 {
     public class MK1DeathState : BossState
     {
-        public override string Name { get => "Death"; }
+        public override string Name { get => "MK1 Death"; }
 
         [field: Header("DEATH STATE"), HorizontalLine(2f, EColor.Yellow)]
+
+        [SerializeField] BossHealthHandler healthHandler;
 
         [SerializeField] float duration;
         [SerializeField] AnimationFrameEvent[] frameEvents;
@@ -39,7 +41,7 @@ namespace Game
         {
             IsComplete = false;
             startTime = Time.time;
-            stateMachine.attackhitbox.enabled = false;
+            stateMachine.mk1Attackhitbox.enabled = false;
             stateMachine.hurtBox.enabled = false;
             stateMachine.animator.Play(StateAnimation.name);
         }
@@ -51,13 +53,12 @@ namespace Game
             if (UpTime <= duration) return;
 
             IsComplete = true;
-            stateMachine.nextState = stateMachine.intercept;
+            healthHandler.Phase2();
+            stateMachine.nextState = stateMachine.mk2Intercept;
             foreach (var frame in frameEvents)
             {
                 frame.Reset();
-            }
-            if (stateMachine.Parent == null) this.LogError($"{stateMachine.name}'s parent object is null");
-            Destroy(stateMachine.Parent);
+            }           
         }
     }
 }

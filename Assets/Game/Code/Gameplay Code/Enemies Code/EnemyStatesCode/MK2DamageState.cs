@@ -8,12 +8,11 @@ namespace Game
 {
     public class MK2DamageState : BossState
     {
-        public override string Name { get => "AtkDamage"; }
+        public override string Name { get => "MK2 Damage"; }
         [field: Header("DAMAGE STATE"), HorizontalLine(2f, EColor.Yellow)]
-        [field: SerializeField] public EnemyHealthHandler HealthHandler { get; private set; }
+        [field: SerializeField] public BossHealthHandler HealthHandler { get; private set; }
         [SerializeField] StudioEventEmitter damageTakenEmitter;
         [SerializeField] ParticleSystem damageParticles;
-        [SerializeField] ScrapDropper scrapDropper;
 
         [SerializeField] LayerMask enviriomentLayerMask;
         [Space]
@@ -46,9 +45,9 @@ namespace Game
         {
             progress = UpTime.Map(0, stunDuration);
             hitFlashTimer += Time.deltaTime;
-            if(hitFlashTimer >= hitFlashLenght)
+            if (hitFlashTimer >= hitFlashLenght)
             {
-                if(stateMachine.spriteRenderer.color == startingColor)
+                if (stateMachine.spriteRenderer.color == startingColor)
                 {
                     stateMachine.spriteRenderer.color = hitFlashColor;
                 }
@@ -66,7 +65,7 @@ namespace Game
         {
             stateMachine.body.velocity = knockbackCurve.Evaluate(progress) *
                 knockbackStrenght * Mathf.Sign(initialPos.x - damageDealerPos.x) * Vector3.right + stateMachine.ContextVelocity;
-            if(Physics.Raycast(transform.position, stateMachine.body.velocity.normalized, 0.4f, enviriomentLayerMask))
+            if (Physics.Raycast(transform.position, stateMachine.body.velocity.normalized, 0.4f, enviriomentLayerMask))
             {
                 stateMachine.body.velocity = Vector3.zero + stateMachine.ContextVelocity;
             }
@@ -80,7 +79,6 @@ namespace Game
             hitFlashTimer = 0f;
             initialPos = transform.position;
             ExecuteFeedbacks();
-            scrapDropper.SpawnRandomScrap();
         }
 
         public override void Exit()
@@ -94,16 +92,16 @@ namespace Game
             {
                 return;
             }
-            if(HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
+            if (HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
             {
-                stateMachine.nextState = stateMachine.death;
+                stateMachine.nextState = stateMachine.mk2Death;
                 IsComplete = true;
             }
             else
             {
-                stateMachine.nextState = stateMachine.intercept;
+                stateMachine.nextState = stateMachine.mk2Intercept;
                 IsComplete = true;
-            }         
+            }
         }
 
         private void ExecuteFeedbacks()
@@ -113,7 +111,7 @@ namespace Game
             impulseSource.GenerateImpulse();
         }
 
-        
+
         #region Enemy Poise Params
         //[Header("ENEMY POISE"), HorizontalLine(2f, EColor.Blue)]
         //[Tooltip("This enemy's poise points")]

@@ -54,6 +54,15 @@ namespace Game
             healthCoroutine = StartCoroutine(LerpHealthRoutine(CurrentHealthPercent));
         }
 
+        public void Phase2()
+        {
+            CurrentHealthPoints = maxHeathPoints;
+            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            InstantHealthBar.fillAmount = CurrentHealthPercent;
+            LerpHealthBar.fillAmount = CurrentHealthPercent;
+            stateMachine.phase2 = true;
+        }
+
 
         public IEnumerator LerpHealthRoutine(float newHealthPercent)
         {

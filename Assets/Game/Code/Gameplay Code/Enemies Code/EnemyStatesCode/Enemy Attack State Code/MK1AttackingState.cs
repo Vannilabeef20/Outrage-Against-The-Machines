@@ -21,6 +21,8 @@ namespace Game
         [SerializeField, ReadOnly] float attackUptime;
 
         [SerializeField, ReadOnly] Vector3 attackDirection;
+
+        [SerializeField, ReadOnly] bool stopTracking;
 #if UNITY_EDITOR
         [field: Header("DEBUG")]
 
@@ -77,10 +79,12 @@ namespace Game
                     attackDirection = transform.right;
                     break;
                 case EAttackDirection.Omni:
-                    SetDirection(); 
-                    break;
-                case EAttackDirection.OmniStatic:
-                    //Calculated on frameEvent
+                    if(!stopTracking)
+                    {
+                        Flip();
+                        attackDirection = (stateMachine.Target.position -
+                        stateMachine.transform.position).normalized;
+                    }
                     break;
             }
             stateMachine.body.velocity = CurrentAttack.Config.VelocityCurve.Evaluate(progress) *
@@ -95,6 +99,7 @@ CurrentAttack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
                 frameEvent.Reset();
             }
             startTime = Time.time;
+            Flip();
             IsComplete = false;
         }
 
@@ -103,6 +108,28 @@ CurrentAttack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
             CurrentAttackState.Exit();
             CurrentAttackState = null;
 
+            Flip();
+
+            stopTracking = false;
+            IsComplete = false;
+        }
+
+        protected override void ValidateState()
+        {
+            if(UpTime >= CurrentAttack.Config.Duration)
+            {
+                stateMachine.nextState = stateMachine.mk1Intercept;
+                IsComplete = true;
+            }
+        }
+
+        public void StopTracking()
+        {
+            stopTracking = true;
+        }
+
+        public void Flip()
+        {
             //Flip
             if (stateMachine.Target.transform.position.x + 0.1f < transform.position.x)
             {
@@ -112,24 +139,6 @@ CurrentAttack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
             {
                 stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
-
-
-            IsComplete = false;
-        }
-
-        protected override void ValidateState()
-        {
-            if(UpTime >= CurrentAttack.Config.Duration)
-            {
-                stateMachine.nextState = stateMachine.intercept;
-                IsComplete = true;
-            }
-        }
-
-        public void SetDirection()
-        {
-            attackDirection = (stateMachine.Target.position -
-                stateMachine.transform.position).normalized;
         }
 
         public bool CheckForAndSetAttack()
