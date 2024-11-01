@@ -44,12 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5f03bc94428834cb158d23f6150fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: e419e7e17e75e404faf14ebd22d38bef, type: 2}
+  StateAnimation: {fileID: 7400000, guid: d60fbdb1650f6d64ebbb14ef44d1a6ed, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  AttackMachine: {fileID: 1680220764}
+  <EDirection>k__BackingField: 0
+  <Cooldown>k__BackingField: 4
+  <IsOnCooldown>k__BackingField: 0
+  attackDirection: {x: 0, y: 0, z: 0}
+  stopTracking: 0
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: 286d7d641d6e93945b429622e12e3d39, type: 2}
     <FrameEvents>k__BackingField:
@@ -57,8 +61,8 @@ MonoBehaviour:
       <Actions>k__BackingField:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 1680220764}
-            m_TargetAssemblyTypeName: Game.MK2AttackingState, Assembly-CSharp
+          - m_Target: {fileID: 17104578}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
             m_MethodName: StopTracking
             m_Mode: 1
             m_Arguments:
@@ -69,7 +73,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  <EDirection>k__BackingField: 0
   OnExitEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -225,7 +228,11 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  AttackMachine: {fileID: 0}
+  <EDirection>k__BackingField: 1
+  <Cooldown>k__BackingField: 3
+  <IsOnCooldown>k__BackingField: 0
+  attackDirection: {x: 0, y: 0, z: 0}
+  stopTracking: 0
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: d44ba239871720545a0b6528eab92dd9, type: 2}
     <FrameEvents>k__BackingField:
@@ -233,8 +240,8 @@ MonoBehaviour:
       <Actions>k__BackingField:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 808545685}
-            m_TargetAssemblyTypeName: Game.MK1AttackingState, Assembly-CSharp
+          - m_Target: {fileID: 800468662}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
             m_MethodName: StopTracking
             m_Mode: 1
             m_Arguments:
@@ -245,7 +252,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  <EDirection>k__BackingField: 1
   OnExitEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -307,8 +313,6 @@ MonoBehaviour:
   - {fileID: 800468662}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
-  attackDirection: {x: 0, y: 0, z: 0}
-  stopTracking: 0
   attackLabelStyle:
     m_Name: 
     m_Normal:
@@ -393,7 +397,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
@@ -450,7 +454,6 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  <HealthHandler>k__BackingField: {fileID: 2507473752529445960}
   damageTakenEmitter: {fileID: 855688008}
   damageParticles: {fileID: 855688006}
   enviriomentLayerMask:
@@ -5543,6 +5546,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2898416351792877442}
   - {fileID: 17104577}
   m_Father: {fileID: 6423577777945764625}
   m_RootOrder: -1
@@ -5568,11 +5572,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <Attacks>k__BackingField:
+  - {fileID: 352680973045897693}
   - {fileID: 17104578}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
-  attackDirection: {x: 0, y: 0, z: 0}
-  stopTracking: 0
   attackLabelStyle:
     m_Name: 
     m_Normal:
@@ -5657,7 +5660,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5908,6 +5911,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6423577777945764625}
   - component: {fileID: 4719953291839701837}
+  - component: {fileID: 925940193837890463}
+  - component: {fileID: 5682311857274319069}
+  - component: {fileID: 7712238530453836969}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -5957,6 +5963,7 @@ MonoBehaviour:
   mk1Attackhitbox: {fileID: 9205089817275785498}
   mk2Attackhitbox: {fileID: 2654632792928658169}
   collisionBox: {fileID: 5502065817069991218}
+  toggleLevelMusicEvent: {fileID: 11400000, guid: 63ffa80f8efb1cc42aa997387ddd1110, type: 2}
   <Parent>k__BackingField: {fileID: 3955572703823519736}
   mk1Intercept: {fileID: 9052400536404670090}
   mk1Damage: {fileID: 5419053393971274055}
@@ -5986,6 +5993,80 @@ MonoBehaviour:
     RefIds:
     - rid: 3453056509369647105
       type: {class: TargetClosest, ns: Game, asm: Assembly-CSharp}
+--- !u!114 &925940193837890463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749044463276668869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1088438787
+      Data2: 1135504625
+      Data3: 355194768
+      Data4: 871967725
+    Path: event:/Music/Tutorial
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &5682311857274319069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749044463276668869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e62ed85085f60439b4605494777183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 17ef975c7405ef54e9df02dfc4ce1f82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7712238530453836969}
+        m_TargetAssemblyTypeName: Game.PauseAudio, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7712238530453836969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749044463276668869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c466c0d9ffea5044f801896f6b3740dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reversed: 0
+  audioEmitters:
+  - {fileID: 925940193837890463}
 --- !u!1 &1880758487558636474
 GameObject:
   m_ObjectHideFlags: 0
@@ -6214,7 +6295,7 @@ GameObject:
   - component: {fileID: 2698161277145821645}
   - component: {fileID: 5502065817069991218}
   m_Layer: 0
-  m_Name: BOSS MK1
+  m_Name: BOSS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6236,7 +6317,7 @@ Transform:
   - {fileID: 6636535655153216110}
   - {fileID: 6423577777945764625}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7662463311369258341
 Animator:
@@ -6356,12 +6437,13 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
+  duration: 0.55
   movementEmitter: {fileID: 4654255049411727203}
   <PathfindingBehaviour>k__BackingField:
     rid: 3453056505270501378
   pathfindingRepeatInterval: 0.1
   pathfindingTimer: 0
-  speed: {x: 3, y: 2, z: 2}
+  speed: {x: 2.5, y: 1.5, z: 1.5}
   movementDirection: {x: 0, y: 0, z: 0}
   references:
     version: 2
@@ -6612,7 +6694,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1716783395, guid: f2ec0d28afe59d7499728db3122d5f08, type: 3}
+  m_Sprite: {fileID: 140963953, guid: 48390f8d9bfede64c8ea2d73118e6a31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -6638,10 +6720,16 @@ MonoBehaviour:
   stateMachine: {fileID: 4719953291839701837}
   InstantHealthBar: {fileID: 402455678489647665}
   LerpHealthBar: {fileID: 5166353412338893670}
+  <CurrentHealthPoints>k__BackingField: 0
   maxHeathPoints: 1500
   lerpConfigSO: {fileID: 11400000, guid: 2c27fadacf7de444798d0b8da1988b35, type: 2}
   <CurrentHealthPercent>k__BackingField: 0
-  <CurrentHealthPoints>k__BackingField: 0
+  currentPoise: 0
+  baseMaxPoise: 40
+  poiseRegen: 4
+  poiseGracePeriod: 5
+  canTakePoiseDamage: 1
+  additiveMaxPoise: 0
 --- !u!65 &3613849659546608330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6716,7 +6804,6 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  <HealthHandler>k__BackingField: {fileID: 2507473752529445960}
   damageTakenEmitter: {fileID: 4337674708463947350}
   damageParticles: {fileID: 1154919184}
   enviriomentLayerMask:
@@ -11728,6 +11815,82 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!1 &5557822111722827069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2898416351792877442}
+  - component: {fileID: 352680973045897693}
+  m_Layer: 0
+  m_Name: MK2_Uppercut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2898416351792877442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557822111722827069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1680220763}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352680973045897693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557822111722827069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5f03bc94428834cb158d23f6150fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 49c59a4c8afe4d1419a07d1acabc405b, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 4719953291839701837}
+  <EDirection>k__BackingField: 0
+  <Cooldown>k__BackingField: 3
+  <IsOnCooldown>k__BackingField: 0
+  attackDirection: {x: 0, y: 0, z: 0}
+  stopTracking: 0
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: fc86b51373afff84fa1acba6ec04da6e, type: 2}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 352680973045897693}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
+            m_MethodName: StopTracking
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6497281671321893905
 GameObject:
   m_ObjectHideFlags: 0

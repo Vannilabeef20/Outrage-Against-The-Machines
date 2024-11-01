@@ -19,10 +19,6 @@ namespace Game
         EnemyAttack CurrentAttack => CurrentAttackState.Attack;
 
         [SerializeField, ReadOnly] float attackUptime;
-
-        [SerializeField, ReadOnly] Vector3 attackDirection;
-
-        [SerializeField, ReadOnly] bool stopTracking;
 #if UNITY_EDITOR
         [field: Header("DEBUG")]
 
@@ -58,14 +54,9 @@ namespace Game
         }
 
         public override void Do()
-        {           
-            attackUptime += Time.deltaTime;
-            foreach(AnimationFrameEvent timedEvent in CurrentAttack.FrameEvents)
-            {
-                timedEvent.Update(attackUptime);
-            }
+        {
             progress = UpTime.Map(0, CurrentAttack.Config.Duration);
-            stateMachine.animator.Play(CurrentAttack.Config.Animation.name, 0, progress);
+            CurrentAttackState.Do();
             ValidateState();
         }
 
@@ -73,71 +64,30 @@ namespace Game
         {
             if (CurrentAttackState == null) return;
 
-            switch(CurrentAttackState.EDirection)
-            {
-                case EAttackDirection.Front:
-                    attackDirection = transform.right;
-                    break;
-                case EAttackDirection.Omni:
-                    if(!stopTracking)
-                    {
-                        Flip();
-                        attackDirection = (stateMachine.Target.position -
-                        stateMachine.transform.position).normalized;
-                    }
-                    break;
-            }
-            stateMachine.body.velocity = CurrentAttack.Config.VelocityCurve.Evaluate(progress) *
-CurrentAttack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
+            CurrentAttackState.FixedDo();
         }
 
         public override void Enter()
         {
-            attackUptime = 0;
-            foreach (AnimationFrameEvent frameEvent in CurrentAttack.FrameEvents)
-            {
-                frameEvent.Reset();
-            }
             startTime = Time.time;
-            Flip();
+            stateMachine.Flip();
             IsComplete = false;
+            CurrentAttackState.Enter();
         }
 
         public override void Exit()
         {
             CurrentAttackState.Exit();
             CurrentAttackState = null;
-
-            Flip();
-
-            stopTracking = false;
-            IsComplete = false;
+            stateMachine.Flip();
         }
 
         protected override void ValidateState()
         {
-            if(UpTime >= CurrentAttack.Config.Duration)
+            if(CurrentAttackState.IsComplete)
             {
                 stateMachine.nextState = stateMachine.mk1Intercept;
                 IsComplete = true;
-            }
-        }
-
-        public void StopTracking()
-        {
-            stopTracking = true;
-        }
-
-        public void Flip()
-        {
-            //Flip
-            if (stateMachine.Target.transform.position.x + 0.1f < transform.position.x)
-            {
-                stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
-            else if (stateMachine.Target.transform.position.x - 0.1f > transform.position.x)
-            {
-                stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
         }
 
@@ -151,12 +101,12 @@ CurrentAttack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
             bool hasAvailableAttack = false;
             for (int i = 0; i < Attacks.Length; i++)
             {
-                if (stateMachine.Distance <= Attacks[i].Attack.Config.TriggerRange)
-                {
-                    atkIndex = i;
-                    hasAvailableAttack = true;
-                    break;
-                }
+                if (stateMachine.Distance > Attacks[i].Attack.Config.TriggerRange) continue;
+                if (Attacks[i].IsOnCooldown) continue;
+
+                atkIndex = i;
+                hasAvailableAttack = true;
+                break;
             }
             
             //Assign most appropriate attack

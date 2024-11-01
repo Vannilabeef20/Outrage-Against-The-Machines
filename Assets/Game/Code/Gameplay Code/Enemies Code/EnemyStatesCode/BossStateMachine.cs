@@ -1,6 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
+using FMODUnity;
 #if UNITY_EDITOR
 #endif
 
@@ -16,6 +17,7 @@ namespace Game
         public BoxCollider mk1Attackhitbox;
         public BoxCollider mk2Attackhitbox;
         public BoxCollider collisionBox;
+        [SerializeField] BoolEvent toggleLevelMusicEvent;
         [field: SerializeField] public GameObject Parent { get; private set; }
         
 
@@ -60,14 +62,18 @@ namespace Game
 
         private void OnEnable()
         {
+            toggleLevelMusicEvent.Raise(this, false);
             hurtBox.enabled = true;
         }
         private void OnDisable()
         {
+            toggleLevelMusicEvent.Raise(this, true);
             Spawner.Instance.enemiesAlive.Remove(Parent);
         }
         private void Start()
         {
+
+            Target = targetingBehaviour.GetTarget(body.position);
             BossState[] states = GetComponentsInChildren<BossState>();
             foreach (BossState state in states)
             {
@@ -95,8 +101,9 @@ namespace Game
             if (Target != null) Distance = Vector3.Distance(transform.position, Target.position);
             else Distance = -1;
 
-            ChangeState();
             currentState.Do();
+            ChangeState();
+
 
             if (CustomLogger.IsDebugModeEnabled)
             {
@@ -147,7 +154,7 @@ namespace Game
             }
         }
 
-        public void TakeDamage(Vector3 _damageDealerPos, float _stunDuration, float _knockbackStrenght)
+        public void Stun(Vector3 _damageDealerPos, float _stunDuration, float _knockbackStrenght)
         {
             if(!phase2)
             {
@@ -164,6 +171,20 @@ namespace Game
                 mk2Damage.damageDealerPos = _damageDealerPos;
                 mk2Damage.knockbackStrenght = _knockbackStrenght;
                 nextState = mk2Damage;
+            }
+            overrideStateCompletion = true;
+        }
+        public void Kill()
+        {
+            if (!phase2)
+            {
+                mk1Attackhitbox.enabled = false;
+                nextState = mk1Death;
+            }
+            else
+            {
+                mk2Attackhitbox.enabled = false;
+                nextState = mk2Death;
             }
             overrideStateCompletion = true;
         }
@@ -184,6 +205,20 @@ namespace Game
             }
             ContextVelocity = tempContextSpeed;
 
+        }
+
+        public void Flip()
+        {
+            if (Target == null) return;
+            //Flip
+            if (Target.transform.position.x + 0.1f < transform.position.x)
+            {
+                Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
+            else if (Target.transform.position.x - 0.1f > transform.position.x)
+            {
+                Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
         }
 
         #region Debug

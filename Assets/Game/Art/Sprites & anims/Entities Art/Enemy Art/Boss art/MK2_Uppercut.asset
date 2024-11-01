@@ -10,41 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b8bd8ba01bded241b6bc3cc758b3c92, type: 3}
-  m_Name: MK1_SpinAttack
+  m_Name: MK2_Uppercut
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: MK1_Spin
-  <Animation>k__BackingField: {fileID: 7400000, guid: e419e7e17e75e404faf14ebd22d38bef, type: 2}
-  <TriggerRange>k__BackingField: 4
+  <Name>k__BackingField: MK2 Uppercut
+  <Animation>k__BackingField: {fileID: 7400000, guid: 49c59a4c8afe4d1419a07d1acabc405b, type: 2}
+  <TriggerRange>k__BackingField: 3
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: Infinity
-      outSlope: 0.032451782
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.071889594
-    - serializedVersion: 3
-      time: 0.559
-      value: -0.15
-      inSlope: 0.020852271
-      outSlope: Infinity
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.5118325
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.56
-      value: 1
       inSlope: -2.8025813
       outSlope: -2.8025813
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.03672926
+    - serializedVersion: 3
+      time: 0.25
+      value: 1
+      inSlope: Infinity
+      outSlope: -1.1602391
+      tangentMode: 7
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.45
+      value: 0
+      inSlope: -1.6888565
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 0
+      inSlope: -2.8214371
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
@@ -57,8 +66,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <Velocity>k__BackingField: 30
+  <Velocity>k__BackingField: 15
   <Duration>k__BackingField: 2
-  <Damage>k__BackingField: 20
-  <StunDuration>k__BackingField: 1
+  <Damage>k__BackingField: 10
+  <StunDuration>k__BackingField: 0.5
   <KnockbackStrenght>k__BackingField: 10

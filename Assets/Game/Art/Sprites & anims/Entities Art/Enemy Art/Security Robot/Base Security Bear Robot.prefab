@@ -5115,7 +5115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7778454613225530838}
-  - component: {fileID: 2586915123486701828}
+  - component: {fileID: 205157712380310068}
   - component: {fileID: 4104246255760966692}
   m_Layer: 0
   m_Name: SwingAttack
@@ -5139,7 +5139,7 @@ Transform:
   m_Father: {fileID: 6508126987276863436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2586915123486701828
+--- !u!114 &205157712380310068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5151,7 +5151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
+  StateAnimation: {fileID: 7400000, guid: a34e993643a42fc469b0d51021681221, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -6071,8 +6071,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <Attacks>k__BackingField:
-  - {fileID: 2586915123486701828}
-  - {fileID: 3898736811605107368}
+  - {fileID: 205157712380310068}
+  - {fileID: 6793506028041085347}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
   attackLabelStyle:
@@ -6798,7 +6798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872166234325332231}
-  - component: {fileID: 3898736811605107368}
+  - component: {fileID: 6793506028041085347}
   - component: {fileID: 3344898223652118149}
   m_Layer: 0
   m_Name: LungeAttack
@@ -6822,7 +6822,7 @@ Transform:
   m_Father: {fileID: 6508126987276863436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3898736811605107368
+--- !u!114 &6793506028041085347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6834,7 +6834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368bad09ebd2a449b35ef6d196a2dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 4af0d8d2a05e3964988682f7ec0dc821, type: 2}
+  StateAnimation: {fileID: 7400000, guid: 60db5eb83ea7e474791623486c2a430e, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0

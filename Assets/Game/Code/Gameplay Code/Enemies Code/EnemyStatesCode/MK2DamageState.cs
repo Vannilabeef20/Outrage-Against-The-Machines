@@ -10,7 +10,7 @@ namespace Game
     {
         public override string Name { get => "MK2 Damage"; }
         [field: Header("DAMAGE STATE"), HorizontalLine(2f, EColor.Yellow)]
-        [field: SerializeField] public BossHealthHandler HealthHandler { get; private set; }
+
         [SerializeField] StudioEventEmitter damageTakenEmitter;
         [SerializeField] ParticleSystem damageParticles;
 
@@ -92,16 +92,9 @@ namespace Game
             {
                 return;
             }
-            if (HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
-            {
-                stateMachine.nextState = stateMachine.mk2Death;
-                IsComplete = true;
-            }
-            else
-            {
-                stateMachine.nextState = stateMachine.mk2Intercept;
-                IsComplete = true;
-            }
+            stateMachine.nextState = stateMachine.mk2Intercept;
+            IsComplete = true;
+
         }
 
         private void ExecuteFeedbacks()

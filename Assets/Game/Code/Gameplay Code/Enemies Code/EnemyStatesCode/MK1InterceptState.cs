@@ -10,6 +10,8 @@ namespace Game
         public override string Name { get => "MK1 Intercept"; }
 
         [Header("INTERCEPT STATE"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] float duration = 1;
+
         [SerializeField] StudioEventEmitter movementEmitter;
 
         [field: Header("PATHFINDING"), HorizontalLine(2f, EColor.Blue)]
@@ -41,29 +43,22 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
-            stateMachine.animator.Play(StateAnimation.name);
             startTime = Time.time;
             movementEmitter.Play();
         }
         public override void Do()
         {
-            ValidateState();
             pathfindingTimer += Time.deltaTime;
+            progress = UpTime.Map(0, duration);
+            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            ValidateState();
         }
 
         public override void FixedDo()
         {
             if (stateMachine.Target == null) return;
 
-            //Flip
-            if (stateMachine.Target.transform.position.x + 0.1f < transform.position.x)
-            {
-                stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
-            else if (stateMachine.Target.transform.position.x - 0.1f > transform.position.x)
-            {
-                stateMachine.Parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            }
+            stateMachine.Flip();
 
             //Refresh Path
             if(pathfindingTimer >= pathfindingRepeatInterval)
@@ -90,13 +85,16 @@ namespace Game
 
         protected override void ValidateState()
         {
-            //if (!stateMachine.IsInsidePlayzone) return;
-
-            if (!stateMachine.mk1Attack.CheckForAndSetAttack()) return;
-
-            stateMachine.nextState = stateMachine.mk1Attack;
-            IsComplete = true;
-            return;
+            if (stateMachine.mk1Attack.CheckForAndSetAttack())
+            {
+                stateMachine.nextState = stateMachine.mk1Attack;
+                IsComplete = true;
+            }
+            else if (UpTime >= duration)
+            {
+                stateMachine.nextState = stateMachine.mk1Intercept;
+                IsComplete = true;
+            }
         }
     }
 }

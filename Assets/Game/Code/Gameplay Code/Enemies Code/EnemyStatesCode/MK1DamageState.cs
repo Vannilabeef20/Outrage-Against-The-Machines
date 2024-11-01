@@ -10,7 +10,7 @@ namespace Game
     {
         public override string Name { get => "MK1 Damage"; }
         [field: Header("DAMAGE STATE"), HorizontalLine(2f, EColor.Yellow)]
-        [field: SerializeField] public BossHealthHandler HealthHandler { get; private set; }
+
         [SerializeField] StudioEventEmitter damageTakenEmitter;
         [SerializeField] ParticleSystem damageParticles;
 
@@ -74,7 +74,6 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
-            startingColor = stateMachine.spriteRenderer.color;
             startTime = Time.time;
             hitFlashTimer = 0f;
             initialPos = transform.position;
@@ -88,20 +87,10 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (UpTime < stunDuration)
-            {
-                return;
-            }
-            if(HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
-            {
-                stateMachine.nextState = stateMachine.mk1Death;
-                IsComplete = true;
-            }
-            else
-            {
-                stateMachine.nextState = stateMachine.mk1Intercept;
-                IsComplete = true;
-            }         
+            if (UpTime < stunDuration) return;
+
+            stateMachine.nextState = stateMachine.mk1Intercept;
+            IsComplete = true;        
         }
 
         private void ExecuteFeedbacks()
@@ -110,29 +99,5 @@ namespace Game
             damageTakenEmitter.Play();
             impulseSource.GenerateImpulse();
         }
-
-        
-        #region Enemy Poise Params
-        //[Header("ENEMY POISE"), HorizontalLine(2f, EColor.Blue)]
-        //[Tooltip("This enemy's poise points")]
-        //[SerializeField, Range(0f,1f)] private float[] poisePoints;
-
-
-        //[Tooltip("This enemy's max poise points")]
-        //[SerializeField, Min(0f)] private float maxPoise;
-
-        //[Tooltip("This enemy's current poise points")]
-        //[SerializeField, ReadOnly] private float currentPoise;
-
-        //[Tooltip("This enemy's current poise ratio 0-1")]
-        //[SerializeField, ReadOnly] private float poiseRatio;
-
-        //[Tooltip("This enemy's Poise regen per second")]
-        //[SerializeField, Min(0f)] private float poiseRegenValue;
-
-        //[Tooltip("This enemy's poise regen delay in seconds")]
-        //[SerializeField, Min(0f)] private float poiseRegenDelay;
-
-        #endregion
     }
 }
