@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17104577}
   - component: {fileID: 17104578}
+  - component: {fileID: 7476746437159692266}
   m_Layer: 0
   m_Name: MK2_Punch
   m_TagString: Untagged
@@ -61,6 +62,22 @@ MonoBehaviour:
       <Actions>k__BackingField:
         m_PersistentCalls:
           m_Calls:
+          - m_Target: {fileID: 7476746437159692266}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
           - m_Target: {fileID: 17104578}
             m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
             m_MethodName: StopTracking
@@ -75,7 +92,50 @@ MonoBehaviour:
             m_CallState: 2
   OnExitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7476746437159692266}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7476746437159692266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17104576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1897315433
+      Data2: 1293140483
+      Data3: -4045935
+      Data4: -1167414128
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Attack 2 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &366270749
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,11 +223,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -991307606
-      Data2: 1166171048
-      Data3: -1510623334
-      Data4: -1840118588
-    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+      Data1: -501550859
+      Data2: 1338430596
+      Data3: 1475974838
+      Data4: -2141950395
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Walking SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -189,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 800468661}
   - component: {fileID: 800468662}
+  - component: {fileID: 7429357257108876973}
   m_Layer: 0
   m_Name: MK1_SpinAttack
   m_TagString: Untagged
@@ -236,6 +297,22 @@ MonoBehaviour:
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: d44ba239871720545a0b6528eab92dd9, type: 2}
     <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 1
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7429357257108876973}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - <TriggerFrame>k__BackingField: 7
       <Actions>k__BackingField:
         m_PersistentCalls:
@@ -254,7 +331,50 @@ MonoBehaviour:
             m_CallState: 2
   OnExitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7429357257108876973}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7429357257108876973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800468660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -162983012
+      Data2: 1297641597
+      Data3: 1559646848
+      Data4: 2119262256
+    Path: event:/SFX/Boss/Boss 1/Boss 1 Attack SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &808545683
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,11 +627,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 55191140
-      Data2: 1251106514
-      Data3: 1682737835
-      Data4: 696157684
-    Path: event:/SFX/Enemy/Common Sounds/Enemy Damage SFX
+      Data1: 669305994
+      Data2: 1156829500
+      Data3: -1261990482
+      Data4: 1446096963
+    Path: event:/SFX/Boss/Common Sounds/Boss Damage SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -5475,6 +5595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660645470}
   - component: {fileID: 1660645471}
+  - component: {fileID: 4804950279624965546}
   m_Layer: 0
   m_Name: MK2_Death
   m_TagString: Untagged
@@ -5515,7 +5636,54 @@ MonoBehaviour:
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
   duration: 3
-  frameEvents: []
+  frameEvents:
+  - <TriggerFrame>k__BackingField: 0
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4804950279624965546}
+          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &4804950279624965546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660645469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 690105558
+      Data2: 1327945193
+      Data3: 1664873351
+      Data4: -165905805
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Death SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1680220762
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,6 +6235,15 @@ MonoBehaviour:
   reversed: 0
   audioEmitters:
   - {fileID: 925940193837890463}
+  - {fileID: 4654255049411727203}
+  - {fileID: 4337674708463947350}
+  - {fileID: 183750888967946584}
+  - {fileID: 7429357257108876973}
+  - {fileID: 366270751}
+  - {fileID: 855688008}
+  - {fileID: 4804950279624965546}
+  - {fileID: 3386149610497167492}
+  - {fileID: 7476746437159692266}
 --- !u!1 &1880758487558636474
 GameObject:
   m_ObjectHideFlags: 0
@@ -6317,7 +6494,7 @@ Transform:
   - {fileID: 6636535655153216110}
   - {fileID: 6423577777945764625}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7662463311369258341
 Animator:
@@ -6475,11 +6652,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -991307606
-      Data2: 1166171048
-      Data3: -1510623334
-      Data4: -1840118588
-    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+      Data1: 76365774
+      Data2: 1250878044
+      Data3: 615743153
+      Data4: 683089780
+    Path: event:/SFX/Boss/Boss 1/Boss 1 Walking SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -6577,6 +6754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7821155707108366361}
   - component: {fileID: 5756563272266863707}
+  - component: {fileID: 183750888967946584}
   m_Layer: 0
   m_Name: MK1_Death
   m_TagString: Untagged
@@ -6618,7 +6796,54 @@ MonoBehaviour:
   stateMachine: {fileID: 4719953291839701837}
   healthHandler: {fileID: 2507473752529445960}
   duration: 3
-  frameEvents: []
+  frameEvents:
+  - <TriggerFrame>k__BackingField: 0
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 183750888967946584}
+          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &183750888967946584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435580213582907897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1293980289
+      Data2: 1081108602
+      Data3: -501406279
+      Data4: -451667962
+    Path: event:/SFX/Boss/Boss 1/Boss 1 Death SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5497470490558292235
 GameObject:
   m_ObjectHideFlags: 0
@@ -6694,7 +6919,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 140963953, guid: 48390f8d9bfede64c8ea2d73118e6a31, type: 3}
+  m_Sprite: {fileID: -1245977898, guid: ee45c8358b4e2944e88377aecf925c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -6857,11 +7082,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 55191140
-      Data2: 1251106514
-      Data3: 1682737835
-      Data4: 696157684
-    Path: event:/SFX/Enemy/Common Sounds/Enemy Damage SFX
+      Data1: 669305994
+      Data2: 1156829500
+      Data3: -1261990482
+      Data4: 1446096963
+    Path: event:/SFX/Boss/Common Sounds/Boss Damage SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -11825,6 +12050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2898416351792877442}
   - component: {fileID: 352680973045897693}
+  - component: {fileID: 3386149610497167492}
   m_Layer: 0
   m_Name: MK2_Uppercut
   m_TagString: Untagged
@@ -11872,6 +12098,22 @@ MonoBehaviour:
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: fc86b51373afff84fa1acba6ec04da6e, type: 2}
     <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 1
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 3386149610497167492}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - <TriggerFrame>k__BackingField: 3
       <Actions>k__BackingField:
         m_PersistentCalls:
@@ -11890,7 +12132,50 @@ MonoBehaviour:
             m_CallState: 2
   OnExitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3386149610497167492}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3386149610497167492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557822111722827069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2034865820
+      Data2: 1206237796
+      Data3: 334737813
+      Data4: -1980400896
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Attack 1 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6497281671321893905
 GameObject:
   m_ObjectHideFlags: 0

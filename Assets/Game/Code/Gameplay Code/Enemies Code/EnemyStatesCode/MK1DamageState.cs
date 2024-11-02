@@ -75,6 +75,7 @@ namespace Game
         {
             IsComplete = false;
             startTime = Time.time;
+            startingColor = Color.white;
             hitFlashTimer = 0f;
             initialPos = transform.position;
             ExecuteFeedbacks();

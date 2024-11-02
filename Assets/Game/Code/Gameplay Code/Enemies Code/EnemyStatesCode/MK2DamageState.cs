@@ -74,7 +74,7 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
-            startingColor = stateMachine.spriteRenderer.color;
+            startingColor = Color.white;
             startTime = Time.time;
             hitFlashTimer = 0f;
             initialPos = transform.position;
