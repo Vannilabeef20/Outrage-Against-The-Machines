@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67225f22dd92f7d4ca7d7d25b0259cc6
+guid: 302855c276c63064aa08cc8c68ad51ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,253 +107,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PUNCH_BALLOON_0
+      name: INTERACT_BUTTON_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
-        width: 160
-        height: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa1827e6295b2bb48abca3dbe8dd4dc1
-      internalID: 63844383
+      spriteID: 5713e1155409d5448a7e8b951f78bf7b
+      internalID: 1045699693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_1
+      name: INTERACT_BUTTON_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 288
-        width: 160
-        height: 96
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4deee03bca3bb64cb34344669c309a3
-      internalID: -932940142
+      spriteID: c2d78defe2ec79b459c77bbd4964c9f3
+      internalID: 1054825575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_2
+      name: INTERACT_BUTTON_2
       rect:
         serializedVersion: 2
-        x: 320
-        y: 288
-        width: 160
-        height: 96
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46c8db8056542c646b4e7436802c57ad
-      internalID: 1194857095
+      spriteID: 8430f0d0693572d45a5d2670d31e670e
+      internalID: -110817766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_3
+      name: INTERACT_BUTTON_3
       rect:
         serializedVersion: 2
-        x: 480
-        y: 288
-        width: 160
-        height: 96
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4aadf0908f0ad64794a6af8b64d2b63
-      internalID: 629066011
+      spriteID: f626c7706db2e2443a35ab6266a144e7
+      internalID: -800518068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 160
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e91c3999c443d8498db219d081aa4f3
-      internalID: 818826604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PUNCH_BALLOON_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 192
-        width: 160
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41cfbdb6de3314f4fad8d90aac3a5494
-      internalID: -607003528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PUNCH_BALLOON_6
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 192
-        width: 160
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c628fa345b2e2ac4c85970db70789bf5
-      internalID: 1257816162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PUNCH_BALLOON_7
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 192
-        width: 160
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19bebb8167396a046aa973313b2bbf3e
-      internalID: 1904772550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PUNCH_BALLOON_8
+      name: INTERACT_BUTTON_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 160
-        height: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33371ea682199a0458f2d478659f80ad
-      internalID: 144278504
+      spriteID: db9c138fa0841c747837c03e96d4a0a5
+      internalID: -2009623207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_9
+      name: INTERACT_BUTTON_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 96
-        width: 160
-        height: 96
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9999d2404843164394bdf2f823e1a87
-      internalID: -7020597
+      spriteID: b4f2139d49a0ddd42b03759a5d847bcf
+      internalID: -1985373924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_10
+      name: INTERACT_BUTTON_6
       rect:
         serializedVersion: 2
-        x: 320
-        y: 96
-        width: 160
-        height: 96
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 477763b8ce8ceed468c77b89544cf78e
-      internalID: -1970263213
+      spriteID: c70c9847ee452cb408b3949aa98c30ec
+      internalID: -878764824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PUNCH_BALLOON_11
+      name: INTERACT_BUTTON_7
       rect:
         serializedVersion: 2
-        x: 480
-        y: 96
-        width: 160
-        height: 96
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64eaa5461a04d9046a47ecb054b4bdae
-      internalID: -627588540
+      spriteID: 8c891ad1f107d2440894e5fefcbe8479
+      internalID: -1653551360
       vertices: []
       indices: 
       edges: []
@@ -369,22 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PUNCH_BALLOON_4: 818826604
-      PUNCH_BALLOON_12: -335057412
-      PUNCH_BALLOON_6: 1257816162
-      PUNCH_BALLOON_8: 144278504
-      PUNCH_BALLOON_11: -627588540
-      PUNCH_BALLOON_9: -7020597
-      PUNCH_BALLOON_15: -1098017607
-      PUNCH_BALLOON_1: -932940142
-      PUNCH_BALLOON_5: -607003528
-      PUNCH_BALLOON_0: 63844383
-      PUNCH_BALLOON_14: 1802960229
-      PUNCH_BALLOON_2: 1194857095
-      PUNCH_BALLOON_13: 2010104574
-      PUNCH_BALLOON_10: -1970263213
-      PUNCH_BALLOON_7: 1904772550
-      PUNCH_BALLOON_3: 629066011
+      INTERACT_BUTTON_1: 1054825575
+      INTERACT_BUTTON_6: -878764824
+      INTERACT_BUTTON_5: -1985373924
+      INTERACT_BUTTON_0: 1045699693
+      INTERACT_BUTTON_2: -110817766
+      INTERACT_BUTTON_7: -1653551360
+      INTERACT_BUTTON_3: -800518068
+      INTERACT_BUTTON_4: -2009623207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
