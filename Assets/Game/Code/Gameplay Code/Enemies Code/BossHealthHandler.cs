@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using NaughtyAttributes;
 using DG.Tweening;
+using FMODUnity;
 
 namespace Game
 {
@@ -16,16 +17,19 @@ namespace Game
         [SerializeField] BossStateMachine stateMachine;
         [SerializeField] Image InstantHealthBar;
         [SerializeField] Image LerpHealthBar;
+        [SerializeField] StudioEventEmitter poiseHitEmitter;
 
         #region Enemy Health Params
-        [field: Header("ENEMY HEALTH"), HorizontalLine(2f, EColor.Red)]
+        [Header("ENEMY HEALTH"), HorizontalLine(2f, EColor.Red)]
 
-        [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)]
-        public float CurrentHealthPoints { get; private set; }
+        [SerializeField] float[] perPlayerMaxHealth;
 
-        [SerializeField] float maxHeathPoints;
         [SerializeField, Expandable] LerpConfigSO lerpConfigSO;
+        [field: SerializeField] public float CurrentHealthPoints { get; private set; }
         [field: SerializeField, ReadOnly] public float CurrentHealthPercent { get; private set; }
+
+        int PlayerCount => GameManager.Instance.PlayerCharacterList.Count;
+        float MaxHeathPoints => perPlayerMaxHealth[PlayerCount - 1];
 
         Tween healthLerpTween;
         Coroutine healthCoroutine;
@@ -37,13 +41,21 @@ namespace Game
 
         [SerializeField, ProgressBar("Poise", "MaxPoise", EColor.Yellow)] float currentPoise;
 
+        [SerializeField] Color poiseFlickerColor;
+
+        [SerializeField] Color poiseHitColor;
+
         [SerializeField, Min(0f)] float baseMaxPoise;
 
         [SerializeField, Min(0f)] float poiseRegen;
 
         [SerializeField, Min(0f)] float poiseGracePeriod;
 
+        [SerializeField] float poiseFlickerLenght;
+
         [SerializeField, ReadOnly] bool canTakePoiseDamage = true;
+
+        [SerializeField, ReadOnly] float poiseFlickerTimer;
 
         [SerializeField, ReadOnly] float additiveMaxPoise;
         float MaxPoise => baseMaxPoise + additiveMaxPoise;
@@ -51,35 +63,37 @@ namespace Game
 
         #endregion
 
-        private void Awake()
+        private void Start()
         {
             currentPoise = MaxPoise;
             InstantHealthBar.fillAmount = 1f;
             LerpHealthBar.fillAmount = 1f;
-            CurrentHealthPoints = maxHeathPoints;
-            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            CurrentHealthPoints = MaxHeathPoints;
+            CurrentHealthPercent = CurrentHealthPoints / MaxHeathPoints;
         }
 
         private void Update()
         {
             if(canTakePoiseDamage)
-            currentPoise = Mathf.Clamp(currentPoise + PoiseRegenPoints, 0, MaxPoise);
-            
-            /*
-            hitFlashTimer += Time.deltaTime;
-            if (hitFlashTimer >= hitFlashLenght)
             {
-                if (stateMachine.spriteRenderer.color == startingColor)
+                currentPoise = Mathf.Clamp(currentPoise + PoiseRegenPoints, 0, MaxPoise);
+                stateMachine.spriteRenderer.color = Color.white;
+                return;
+            }
+                        
+            poiseFlickerTimer += Time.deltaTime;
+            if (poiseFlickerTimer >= poiseFlickerLenght)
+            {
+                poiseFlickerTimer = 0f;
+                if (stateMachine.spriteRenderer.color == poiseFlickerColor)
                 {
-                    stateMachine.spriteRenderer.color = hitFlashColor;
+                    stateMachine.spriteRenderer.color = Color.white;
                 }
                 else
                 {
-                    stateMachine.spriteRenderer.color = startingColor;
+                    stateMachine.spriteRenderer.color = poiseFlickerColor;
                 }
-                hitFlashTimer = 0f;
-            }
-            */
+            }                              
         }
 
         public virtual void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
@@ -92,12 +106,13 @@ namespace Game
             currentPoise = Mathf.Clamp(currentPoise - damage, 0, MaxPoise);
             if (currentPoise <= 0)
             {
+                poiseHitEmitter.Play();
                 canTakePoiseDamage = false;
                 StartCoroutine(PoiseGracePeriodRoutine());
             }
 
-            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0, maxHeathPoints);
-            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0, MaxHeathPoints);
+            CurrentHealthPercent = CurrentHealthPoints / MaxHeathPoints;
             InstantHealthBar.fillAmount = CurrentHealthPercent;
 
             if(CurrentHealthPoints <= 0)
@@ -111,17 +126,18 @@ namespace Game
                 StopCoroutine(healthCoroutine);
             }
             healthCoroutine = StartCoroutine(LerpHealthRoutine(CurrentHealthPercent));
+
+            stateMachine.spriteRenderer.color = poiseHitColor;
         }
 
         public void Phase2()
         {
-            CurrentHealthPoints = maxHeathPoints;
-            CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            CurrentHealthPoints = MaxHeathPoints;
+            CurrentHealthPercent = CurrentHealthPoints / MaxHeathPoints;
             InstantHealthBar.fillAmount = CurrentHealthPercent;
             LerpHealthBar.fillAmount = CurrentHealthPercent;
             stateMachine.phase2 = true;
         }
-
 
         public IEnumerator LerpHealthRoutine(float newHealthPercent)
         {

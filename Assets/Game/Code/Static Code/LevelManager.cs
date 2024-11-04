@@ -28,11 +28,8 @@ namespace Game
         [SerializeField, Min(0)] private float playZoneHalfWidth = 10.64f;
         [SerializeField] private Color playZoneColor;
 
-        [field: Header("SPAWN"), HorizontalLine(2f, EColor.Yellow)]
-        [field: SerializeField] public Vector3[] SpawnCoordinates { private set; get; }
 #if UNITY_EDITOR
         [SerializeField] float playZoneLineScale;
-        [SerializeField] GUIStyle SpawnLabelStyle;
 
         Vector3 point1Pos;
         Vector3 point2Pos;
@@ -154,13 +151,6 @@ namespace Game
             point2Pos.y = playZoneHeight.y;
             Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
             #endregion
-
-            Gizmos.color = Color.yellow;
-            for (int i = 0; i < SpawnCoordinates.Length; i++)
-            {
-                Gizmos.DrawSphere(SpawnCoordinates[i], 0.1f);
-                Handles.Label(SpawnCoordinates[i], $"Spawn P{i + 1}", SpawnLabelStyle);
-            }
         }
 #endif
     }

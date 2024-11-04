@@ -2563,78 +2563,7 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0648555, y: 4.782351}
   playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0.1493411, a: 0.9019608}
-  <SpawnCoordinates>k__BackingField:
-  - {x: -122.78, y: 1, z: 1}
-  - {x: -123.7, y: 2, z: 2}
-  - {x: -124.7, y: 3, z: 3}
   playZoneLineScale: 7.67
-  SpawnLabelStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 1, g: 0.34991667, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 12800000, guid: b2acfb73667aff5489321b3c26f9132f, type: 3}
-    m_FontSize: 23
-    m_FontStyle: 0
-    m_Alignment: 4
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: -23.6}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
 --- !u!4 &1520381731
 Transform:
   m_ObjectHideFlags: 0
@@ -3945,8 +3874,7 @@ PrefabInstance:
       propertyPath: <MainCamera>k__BackingField
       value: 
       objectReference: {fileID: 531873384586224252}
-    m_RemovedComponents:
-    - {fileID: 3840617235644226617, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7352,15 +7280,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6930416613683234167, guid: edf11d8601ac53a43a98f7458aaa73b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -117.9
+      value: -102.07
       objectReference: {fileID: 0}
     - target: {fileID: 6930416613683234167, guid: edf11d8601ac53a43a98f7458aaa73b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7098108
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 6930416613683234167, guid: edf11d8601ac53a43a98f7458aaa73b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7098108
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 6930416613683234167, guid: edf11d8601ac53a43a98f7458aaa73b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8337,8 +8265,8 @@ MonoBehaviour:
       Data4: 421636348
     Path: event:/Music/Level 1
   Event: 
-  PlayEvent: 1
-  StopEvent: 2
+  PlayEvent: 11
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

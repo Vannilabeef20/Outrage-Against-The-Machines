@@ -35,6 +35,7 @@ namespace Game
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
 
         [SerializeField] GameObject followGroupPrefab;
+        [field: SerializeField] public Vector3[] SpawnCoordinates { private set; get; }
         #endregion
 
         #region Lifes Params
@@ -60,6 +61,7 @@ namespace Game
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+                InitializeLevel();
             }
             else if (Instance != this)
             {
@@ -77,7 +79,6 @@ namespace Game
             }
             else
             {
-                InitializeLevel();
                 CurrentLifeAmount = initialLifeAmout;
                 UpdateLifeCount.Raise(this, CurrentLifeAmount);
                 OnSetMenuVisibility.Raise(this, EMenuId.None);               
@@ -118,9 +119,9 @@ namespace Game
             if (PlayerCharacterList.Count == 0) //Starting the game at a gameplay scene
             {
                 PlayerCharacterList.Add(DefaultPlayer);
-                PlayerCharacterList[0].GameObject = Instantiate(PlayerCharacterList[0].Prefab, LevelManager.Instance.SpawnCoordinates[0], Quaternion.identity);
+                PlayerCharacterList[0].GameObject = Instantiate(PlayerCharacterList[0].Prefab, SpawnCoordinates[0], Quaternion.identity);
                 PlayerCharacterList[0].Transform = PlayerCharacterList[0].GameObject.transform;
-                PlayerCharacterList[0].Transform.position = LevelManager.Instance.SpawnCoordinates[0];
+                PlayerCharacterList[0].Transform.position = SpawnCoordinates[0];
                 PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                 PlayerCharacterList[0].isPlayerActive = true;
                 PlayerCharacterList[0].Devices = InputSystem.devices.ToArray();
@@ -135,7 +136,7 @@ namespace Game
                         PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
                     PlayerCharacterList[i].Transform = PlayerCharacterList[i].GameObject.transform;
                     Rigidbody rb = PlayerCharacterList[i].GameObject.GetComponent<Rigidbody>();
-                    rb.position = LevelManager.Instance.SpawnCoordinates[PlayerCharacterList[i].Index];
+                    rb.position = SpawnCoordinates[PlayerCharacterList[i].Index];
                     PlayerCharacterList[i].HealthHandler = PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>();
                     PlayerCharacterList[i].isPlayerActive = true;
                 }
@@ -195,9 +196,8 @@ namespace Game
         }
 
 #if UNITY_EDITOR
-#if UNITY_EDITOR
         [SerializeField] int addMoney;
-
+        [SerializeField] GUIStyle SpawnLabelStyle;
         [Button("ADD MONEY ALL", EButtonEnableMode.Playmode)]
         void AddMoney()
         {
@@ -206,7 +206,7 @@ namespace Game
                 player.scrapAmount += addMoney;
             }
         }
-#endif
+
         private void OnDrawGizmosSelected()
         {
             if (MainCamera == null) return;
@@ -226,6 +226,13 @@ namespace Game
             Handles.DrawDottedLine(new Vector3(respawnPos.x, respawnPos.y, centerPos.z), yPos, 0.2f);
             yPos.x -= 0.3f;
             Handles.Label(yPos, "Y");
+
+            Gizmos.color = Color.yellow;
+            for (int i = 0; i < SpawnCoordinates.Length; i++)
+            {
+                Gizmos.DrawSphere(SpawnCoordinates[i], 0.1f);
+                Handles.Label(SpawnCoordinates[i], $"Spawn P{i + 1}", SpawnLabelStyle);
+            }
         }
 #endif
     }

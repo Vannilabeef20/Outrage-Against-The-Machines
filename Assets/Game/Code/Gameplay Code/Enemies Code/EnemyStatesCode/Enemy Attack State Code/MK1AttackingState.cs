@@ -101,8 +101,9 @@ namespace Game
             bool hasAvailableAttack = false;
             for (int i = 0; i < Attacks.Length; i++)
             {
-                if (stateMachine.Distance > Attacks[i].Attack.Config.TriggerRange) continue;
                 if (Attacks[i].IsOnCooldown) continue;
+                if (stateMachine.Distance > Attacks[i].Attack.Config.TriggerRange) continue;
+                if (!Attacks[i].IsAligned()) continue;
 
                 atkIndex = i;
                 hasAvailableAttack = true;

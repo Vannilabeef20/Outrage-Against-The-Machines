@@ -93,6 +93,16 @@ namespace Game
             stopTracking = true;
         }
 
+        public bool IsAligned()
+        {
+            switch (EDirection)
+            {
+                case EAttackDirection.Front: return true;
+                case EAttackDirection.Omni: return true;
+                default: return false;
+            }
+        }
+
         IEnumerator CooldownRoutine()
         {
             yield return new WaitForSeconds(Cooldown);

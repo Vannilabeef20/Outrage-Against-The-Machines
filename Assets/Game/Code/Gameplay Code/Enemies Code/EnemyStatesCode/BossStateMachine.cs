@@ -18,8 +18,11 @@ namespace Game
         public BoxCollider mk2Attackhitbox;
         public BoxCollider collisionBox;
         [SerializeField] BoolEvent toggleLevelMusicEvent;
+        [SerializeField] StudioEventEmitter bossMusicEmitter;
         [field: SerializeField] public GameObject Parent { get; private set; }
-        
+
+        [SerializeField] GameObject uiObject;
+        [SerializeField] int encounterIndex;
 
         #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
@@ -38,6 +41,7 @@ namespace Game
 
         #region State Variables
         [Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Orange)]
+
 
         [ReadOnly] public bool phase2;
         [ReadOnly] public bool overrideStateCompletion;
@@ -60,36 +64,16 @@ namespace Game
         public bool IsInsidePlayzone => LevelManager.Instance.IsInsidePlayzone(body.position);
         #endregion
 
-        private void OnEnable()
-        {
-            toggleLevelMusicEvent.Raise(this, false);
-            hurtBox.enabled = true;
-        }
         private void OnDisable()
         {
             toggleLevelMusicEvent.Raise(this, true);
             Spawner.Instance.enemiesAlive.Remove(Parent);
         }
-        private void Start()
-        {
-
-            Target = targetingBehaviour.GetTarget(body.position);
-            BossState[] states = GetComponentsInChildren<BossState>();
-            foreach (BossState state in states)
-            {
-                state.Setup(this);
-            }
-            currentState = mk1Intercept;
-            nextState = mk1Intercept;
-            currentState.Enter();
-            if (currentState != null)
-            {
-                stateLabelTmpro.text = currentState.Name;
-            }
-        }
 
         private void Update()
         {
+            if (currentState == null) return;
+
             targetingTimer += Time.deltaTime;
             //Refresh Target
             if (targetingTimer > targetingRepeatInterval)
@@ -124,9 +108,35 @@ namespace Game
 
         private void FixedUpdate()
         {
+            if (currentState == null) return;
+
             GetContextSpeed();
             currentState.FixedDo();
-            body.position = body.position.ToXYY();
+            body.position = body.position.ToXZZ();
+        }
+
+        public void Init(int index)
+        {
+            if (index != encounterIndex) return;
+
+            uiObject.SetActive(true);
+            toggleLevelMusicEvent.Raise(this, false);
+            bossMusicEmitter.Play();
+            hurtBox.enabled = true;
+            Spawner.Instance.enemiesAlive.Add(Parent);
+            Target = targetingBehaviour.GetTarget(body.position);
+            BossState[] states = GetComponentsInChildren<BossState>();
+            foreach (BossState state in states)
+            {
+                state.Setup(this);
+            }
+            currentState = mk1Intercept;
+            nextState = mk1Intercept;
+            currentState.Enter();
+            if (currentState != null)
+            {
+                stateLabelTmpro.text = currentState.Name;
+            }
         }
 
         private void ChangeState()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preview: {fileID: 385890281, guid: 02a6ac57486c8f2489493a94df8a354c, type: 3}
   <Animation>k__BackingField: {fileID: 7400000, guid: 8f3a7a313c41eae41bd45ace91190fcf, type: 2}
-  <Damage>k__BackingField: 1500
+  <Damage>k__BackingField: 15
   <Duration>k__BackingField: 0.4
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
@@ -78,27 +78,27 @@ MonoBehaviour:
   <EventLabel>k__BackingField: Punch 1
   <AtkRumbleData>k__BackingField:
     <Realtime>k__BackingField: 0
-    <Duration>k__BackingField: 0.2
+    <Duration>k__BackingField: 0.15
     <LowCurve>k__BackingField:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.15
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0.02
+        inSlope: -0.008412489
+        outSlope: -0.008412489
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0.03486345
       - serializedVersion: 3
         time: 1
-        value: 0.15
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0
+        inSlope: 0.007017078
+        outSlope: 0.007017078
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.04241723
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -108,21 +108,21 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.15
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0.02
+        inSlope: -0.008412489
+        outSlope: -0.008412489
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0.03486345
       - serializedVersion: 3
         time: 1
-        value: 0.15
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0
+        inSlope: 0.007017078
+        outSlope: 0.007017078
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.04241723
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

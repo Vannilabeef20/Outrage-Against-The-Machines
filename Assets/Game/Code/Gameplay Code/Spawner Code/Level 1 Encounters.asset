@@ -13,24 +13,14 @@ MonoBehaviour:
   m_Name: Level 1 Encounters
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
-  - Name: '0 | Waves: 1 || Enemies: 2'
-    position: {x: -102.17, y: 6.02, z: 0}
+  - Name: '0 | Waves: 1 || Enemies: 0'
+    position: {x: -110.17, y: 6.02, z: 0}
     spawnDelay: {x: 1, y: 2}
     waves:
-    - Name: '0 | Enemies: 2'
-      enemies:
-      - Name: Robo Ranged | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
-      - Name: Cleaner Turtle Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
+    - Name: '0 | Enemies: 0'
+      enemies: []
   - Name: '1 | Waves: 1 || Enemies: 5'
-    position: {x: -70.56, y: 6.02, z: 0}
+    position: {x: -102.17, y: 6.02, z: 0}
     spawnDelay: {x: 1, y: 2}
     waves:
     - Name: '0 | Enemies: 5'
@@ -198,7 +188,23 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '6 | Waves: 2 || Enemies: 22'
+  - Name: '6 | Waves: 1 || Enemies: 2'
+    position: {x: 102.17, y: 6.02, z: 0}
+    spawnDelay: {x: 1, y: 2}
+    waves:
+    - Name: '0 | Enemies: 2'
+      enemies:
+      - Name: Robo Ranged | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 0
+      - Name: Cleaner Turtle Robot | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 0
+  - Name: '7 | Waves: 2 || Enemies: 22'
     position: {x: 115.31, y: 6.02, z: 0}
     spawnDelay: {x: 1.25, y: 2}
     waves:
@@ -256,7 +262,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '7 | Waves: 2 || Enemies: 22'
+  - Name: '8 | Waves: 2 || Enemies: 22'
     position: {x: 143.5, y: 6.02, z: 0}
     spawnDelay: {x: 1.25, y: 2}
     waves:
