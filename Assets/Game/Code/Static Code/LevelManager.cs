@@ -118,7 +118,7 @@ namespace Game
         }
 
 #if UNITY_EDITOR      
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             if (mainCamera == null) mainCamera = Camera.main;
             #region Draw debug playzone box

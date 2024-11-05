@@ -50,9 +50,16 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  <EDirection>k__BackingField: 0
   <Cooldown>k__BackingField: 4
   <IsOnCooldown>k__BackingField: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  <EDirection>k__BackingField: 0
+  detectionHeight: 1
+  detectionWidth: 1
+  detectionOffset: {x: 0, y: 1, z: 0}
+  detectedColliders: []
   attackDirection: {x: 0, y: 0, z: 0}
   stopTracking: 0
   <Attack>k__BackingField:
@@ -105,6 +112,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  detectionColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &7476746437159692266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,9 +297,16 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  <EDirection>k__BackingField: 1
   <Cooldown>k__BackingField: 3
   <IsOnCooldown>k__BackingField: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  <EDirection>k__BackingField: 1
+  detectionHeight: 0
+  detectionWidth: 0
+  detectionOffset: {x: 0, y: 0, z: 0}
+  detectedColliders: []
   attackDirection: {x: 0, y: 0, z: 0}
   stopTracking: 0
   <Attack>k__BackingField:
@@ -344,6 +359,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  detectionColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &7429357257108876973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6133,6 +6149,7 @@ MonoBehaviour:
   collisionBox: {fileID: 5502065817069991218}
   toggleLevelMusicEvent: {fileID: 11400000, guid: 63ffa80f8efb1cc42aa997387ddd1110, type: 2}
   bossMusicEmitter: {fileID: 925940193837890463}
+  bossName: {fileID: 1801071472}
   <Parent>k__BackingField: {fileID: 3955572703823519736}
   uiObject: {fileID: 1564453822252932495}
   encounterIndex: 0
@@ -6498,7 +6515,7 @@ Transform:
   - {fileID: 6636535655153216110}
   - {fileID: 6423577777945764625}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7662463311369258341
 Animator:
@@ -6952,7 +6969,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1070471544, guid: 004850c3a92ef4c4ca04765bd865827e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -6960,7 +6977,7 @@ SpriteRenderer:
   m_Size: {x: 7.3333335, y: 7.3333335}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2507473752529445960
@@ -7078,7 +7095,7 @@ MonoBehaviour:
   stunDuration: 0
   startingColor: {r: 0, g: 0, b: 0, a: 0}
   hitFlashColor: {r: 0.62352943, g: 0.36862746, b: 0.36862746, a: 1}
-  hitFlashLenght: 0.1
+  hitFlashLenght: 0.2
   hitFlashTimer: 0
   knockbackCurve:
     serializedVersion: 2
@@ -12131,9 +12148,16 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 4719953291839701837}
-  <EDirection>k__BackingField: 0
   <Cooldown>k__BackingField: 3
   <IsOnCooldown>k__BackingField: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  <EDirection>k__BackingField: 0
+  detectionHeight: 1
+  detectionWidth: 1
+  detectionOffset: {x: 0, y: 1, z: 0.77}
+  detectedColliders: []
   attackDirection: {x: 0, y: 0, z: 0}
   stopTracking: 0
   <Attack>k__BackingField:
@@ -12186,6 +12210,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  detectionColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &3386149610497167492
 MonoBehaviour:
   m_ObjectHideFlags: 0

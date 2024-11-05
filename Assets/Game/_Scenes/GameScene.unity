@@ -509,6 +509,69 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01919ad048dc2e041aee4d2f7f4065e4, type: 3}
+--- !u!1 &317553966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317553967}
+  - component: {fileID: 317553968}
+  m_Layer: 0
+  m_Name: Sound Electricity
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &317553967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317553966}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 121.01, y: 5.79, z: 5.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1651784758}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317553968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317553966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1237901751
+      Data2: 1165167638
+      Data3: 1712340402
+      Data4: 1441550827
+    Path: event:/SFX/Ambience/Sound Electricity
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 21
 --- !u!1 &322557581
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +668,7 @@ GameObject:
   m_Layer: 0
   m_Name: Sound Revolt Crowd
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
@@ -745,7 +808,7 @@ GameObject:
   m_Layer: 0
   m_Name: ReverbZone Industry
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
@@ -1475,7 +1538,7 @@ GameObject:
   m_Layer: 0
   m_Name: Sound Gear Packaging
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
@@ -1522,9 +1585,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 20
-  OverrideMaxDistance: 30
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &944760063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1703,7 @@ GameObject:
   m_Layer: 0
   m_Name: Sound Industry Ambience
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
@@ -2195,6 +2258,69 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.457325, y: 1.9546525, z: 11.170088}
   m_Center: {x: 4.228673, y: -0.2663008, z: 5.5350437}
+--- !u!1 &1302271495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302271496}
+  - component: {fileID: 1302271497}
+  m_Layer: 0
+  m_Name: Sound Electricity_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1302271496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302271495}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 141.16, y: 5.79, z: 5.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1651784758}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1302271497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302271495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1237901751
+      Data2: 1165167638
+      Data3: 1712340402
+      Data4: 1441550827
+    Path: event:/SFX/Ambience/Sound Electricity
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 21
 --- !u!1 &1329355745
 GameObject:
   m_ObjectHideFlags: 8
@@ -2716,11 +2842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8085580426997786834, guid: 3603328aceca588429c34457a5709e83, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.28
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 8085580426997786834, guid: 3603328aceca588429c34457a5709e83, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.28
+      value: -1.76
       objectReference: {fileID: 0}
     - target: {fileID: 8085580426997786834, guid: 3603328aceca588429c34457a5709e83, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2854,6 +2980,8 @@ Transform:
   - {fileID: 874066634}
   - {fileID: 955067350}
   - {fileID: 506251438}
+  - {fileID: 317553967}
+  - {fileID: 1302271496}
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2876,6 +3004,8 @@ MonoBehaviour:
   - {fileID: 874066637}
   - {fileID: 955067353}
   - {fileID: 506251439}
+  - {fileID: 317553968}
+  - {fileID: 1302271497}
 --- !u!114 &1651784760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3414,7 +3544,7 @@ GameObject:
   m_Layer: 0
   m_Name: Sound Street Ambience
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1

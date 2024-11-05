@@ -72,6 +72,10 @@ namespace Game
             startTime = Time.time;
             stateMachine.Flip();
             IsComplete = false;
+
+            if (CurrentAttackState == null)
+                CheckForAndSetAttack();
+
             CurrentAttackState.Enter();
         }
 

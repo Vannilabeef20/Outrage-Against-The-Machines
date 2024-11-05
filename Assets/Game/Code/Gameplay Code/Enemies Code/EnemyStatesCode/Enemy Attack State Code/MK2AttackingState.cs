@@ -63,7 +63,6 @@ namespace Game
         public override void FixedDo()
         {
             if (CurrentAttackState == null) return;
-
             CurrentAttackState.FixedDo();
         }
 
@@ -72,6 +71,8 @@ namespace Game
             startTime = Time.time;
             stateMachine.Flip();
             IsComplete = false;
+            if (CurrentAttackState == null)
+                CheckForAndSetAttack();
             CurrentAttackState.Enter();
         }
 
@@ -101,8 +102,9 @@ namespace Game
             bool hasAvailableAttack = false;
             for (int i = 0; i < Attacks.Length; i++)
             {
-                if (stateMachine.Distance > Attacks[i].Attack.Config.TriggerRange) continue;
                 if (Attacks[i].IsOnCooldown) continue;
+                if (stateMachine.Distance > Attacks[i].Attack.Config.TriggerRange) continue;
+                if (!Attacks[i].IsAligned()) continue;
 
                 atkIndex = i;
                 hasAvailableAttack = true;

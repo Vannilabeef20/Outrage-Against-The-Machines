@@ -37,7 +37,7 @@ namespace Game
             }
         }
 #if UNITY_EDITOR
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             if (PathfindingBehaviour != null)
             {

@@ -314,6 +314,28 @@ namespace Game
 			Debug.DrawLine(box.FrontBottomLeft, box.BackBottomLeft, color);
 		}
 
+		public static void DrawBox(Vector3 center, Vector3 HalfExtents, Quaternion orientation, Color color)
+		{
+			Box box = new Box(center, HalfExtents, orientation);
+
+			Debug.DrawLine(box.FrontTopLeft, box.FrontTopRight, color);
+			Debug.DrawLine(box.FrontTopRight, box.FrontBottomRight, color);
+			Debug.DrawLine(box.FrontBottomRight, box.FrontBottomLeft, color);
+			Debug.DrawLine(box.FrontBottomLeft, box.FrontTopLeft, color);
+
+			Debug.DrawLine(box.BackTopLeft, box.BackTopRight, color);
+			Debug.DrawLine(box.BackTopRight, box.BackBottomRight, color);
+			Debug.DrawLine(box.BackBottomRight, box.BackBottomLeft, color);
+			Debug.DrawLine(box.BackBottomLeft, box.BackTopLeft, color);
+
+			Debug.DrawLine(box.FrontTopLeft, box.BackTopLeft, color);
+			Debug.DrawLine(box.FrontTopRight, box.BackTopRight, color);
+			Debug.DrawLine(box.FrontBottomRight, box.BackBottomRight, color);
+			Debug.DrawLine(box.FrontBottomLeft, box.BackBottomLeft, color);
+		}
+
+
+
 		/// <summary>
 		/// Represents a wireframe box for easier debugging.
 		/// </summary>

@@ -193,7 +193,7 @@ namespace Game
             enemiesToSpawn.Clear();
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             #region DRAW SPAWN BOXES
             Handles.color = handlesSpawnLineColor;
@@ -252,7 +252,9 @@ namespace Game
 
             Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
             #endregion
-
+        }
+        private void OnDrawGizmos()
+        {
             #region DRAW ENCOUNTER ZONE
             Handles.color = handlesEncounterLineColor;
             if (LevelEncounters.Encounters.Length == 0)
@@ -262,10 +264,10 @@ namespace Game
 
             for (int i = 0; i < LevelEncounters.Encounters.Length; i++)
             {
-                if(mainCam != null)
+                if (mainCam != null)
                 {
                     Vector3 tempPos1 = LevelEncounters.Encounters[i].position; //UP RIGHT
-                    tempPos1.y += mainCam.orthographicSize; 
+                    tempPos1.y += mainCam.orthographicSize;
                     tempPos1.x += mainCam.aspect * mainCam.orthographicSize;
                     Vector3 tempPos2 = LevelEncounters.Encounters[i].position; //UP LEFT 
                     tempPos2.y += mainCam.orthographicSize;
@@ -298,7 +300,6 @@ namespace Game
                 }
                 Handles.Label(LevelEncounters.Encounters[i].position, $"Enc: {i}", style);
             }
-
             #endregion
         }
         #endregion

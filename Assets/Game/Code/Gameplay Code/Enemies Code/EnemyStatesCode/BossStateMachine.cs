@@ -19,6 +19,7 @@ namespace Game
         public BoxCollider collisionBox;
         [SerializeField] BoolEvent toggleLevelMusicEvent;
         [SerializeField] StudioEventEmitter bossMusicEmitter;
+        [SerializeField] TextMeshProUGUI bossName;
         [field: SerializeField] public GameObject Parent { get; private set; }
 
         [SerializeField] GameObject uiObject;
@@ -43,7 +44,7 @@ namespace Game
         [Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Orange)]
 
 
-        [ReadOnly] public bool phase2;
+        [SerializeField, ReadOnly] bool phase2;
         [ReadOnly] public bool overrideStateCompletion;
         [SerializeField, ReadOnly] private BossState currentState;
         [ReadOnly] public BossState nextState;
@@ -87,23 +88,6 @@ namespace Game
 
             currentState.Do();
             ChangeState();
-
-
-            if (CustomLogger.IsDebugModeEnabled)
-            {
-                if (stateLabelTmpro.gameObject.activeInHierarchy == false)
-                {
-                    stateLabelTmpro.gameObject.SetActive(true);
-                }
-                stateLabelTmpro.transform.rotation = Quaternion.identity;
-            }
-            else
-            {
-                if (stateLabelTmpro.gameObject.activeInHierarchy == true)
-                {
-                    stateLabelTmpro.gameObject.SetActive(false);
-                }
-            }
         }
 
         private void FixedUpdate()
@@ -197,6 +181,12 @@ namespace Game
                 nextState = mk2Death;
             }
             overrideStateCompletion = true;
+        }
+
+        public void SetPhase2()
+        {
+            phase2 = true;
+            bossName.text = "RAT MK2";
         }
 
         private void GetContextSpeed()

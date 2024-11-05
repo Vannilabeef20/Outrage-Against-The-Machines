@@ -1,11 +1,9 @@
-using System;
+using DG.Tweening;
+using FMODUnity;
+using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using NaughtyAttributes;
-using DG.Tweening;
-using FMODUnity;
 
 namespace Game
 {
@@ -76,7 +74,7 @@ namespace Game
         {
             if(canTakePoiseDamage)
             {
-                currentPoise = Mathf.Clamp(currentPoise + PoiseRegenPoints, 0, MaxPoise);
+                currentPoise = Mathf.Clamp(currentPoise + PoiseRegenPoints, float.MinValue, MaxPoise);
                 stateMachine.spriteRenderer.color = Color.white;
                 return;
             }
@@ -103,13 +101,13 @@ namespace Game
                 return;
             }
 
-            currentPoise = Mathf.Clamp(currentPoise - damage, 0, MaxPoise);
-            if (currentPoise <= 0)
+            if (currentPoise < 0)
             {
                 poiseHitEmitter.Play();
                 canTakePoiseDamage = false;
                 StartCoroutine(PoiseGracePeriodRoutine());
             }
+            currentPoise = Mathf.Clamp(currentPoise - damage, float.MinValue, MaxPoise);
 
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0, MaxHeathPoints);
             CurrentHealthPercent = CurrentHealthPoints / MaxHeathPoints;
@@ -132,11 +130,12 @@ namespace Game
 
         public void Phase2()
         {
+            currentPoise = MaxPoise;
             CurrentHealthPoints = MaxHeathPoints;
             CurrentHealthPercent = CurrentHealthPoints / MaxHeathPoints;
             InstantHealthBar.fillAmount = CurrentHealthPercent;
             LerpHealthBar.fillAmount = CurrentHealthPercent;
-            stateMachine.phase2 = true;
+            stateMachine.SetPhase2();
         }
 
         public IEnumerator LerpHealthRoutine(float newHealthPercent)

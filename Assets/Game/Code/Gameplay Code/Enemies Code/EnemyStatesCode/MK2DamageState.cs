@@ -74,8 +74,8 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
-            startingColor = Color.white;
             startTime = Time.time;
+            startingColor = Color.white;
             hitFlashTimer = 0f;
             initialPos = transform.position;
             ExecuteFeedbacks();
@@ -88,10 +88,8 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (UpTime < stunDuration)
-            {
-                return;
-            }
+            if (UpTime < stunDuration) return;
+
             stateMachine.nextState = stateMachine.mk2Intercept;
             IsComplete = true;
 
@@ -103,29 +101,5 @@ namespace Game
             damageTakenEmitter.Play();
             impulseSource.GenerateImpulse();
         }
-
-
-        #region Enemy Poise Params
-        //[Header("ENEMY POISE"), HorizontalLine(2f, EColor.Blue)]
-        //[Tooltip("This enemy's poise points")]
-        //[SerializeField, Range(0f,1f)] private float[] poisePoints;
-
-
-        //[Tooltip("This enemy's max poise points")]
-        //[SerializeField, Min(0f)] private float maxPoise;
-
-        //[Tooltip("This enemy's current poise points")]
-        //[SerializeField, ReadOnly] private float currentPoise;
-
-        //[Tooltip("This enemy's current poise ratio 0-1")]
-        //[SerializeField, ReadOnly] private float poiseRatio;
-
-        //[Tooltip("This enemy's Poise regen per second")]
-        //[SerializeField, Min(0f)] private float poiseRegenValue;
-
-        //[Tooltip("This enemy's poise regen delay in seconds")]
-        //[SerializeField, Min(0f)] private float poiseRegenDelay;
-
-        #endregion
     }
 }

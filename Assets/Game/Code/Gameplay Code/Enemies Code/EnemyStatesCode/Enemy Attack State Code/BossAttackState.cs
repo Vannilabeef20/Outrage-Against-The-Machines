@@ -14,10 +14,18 @@ namespace Game
     {
         [field: Header("ATTACK STATE"), HorizontalLine(2F, EColor.Yellow)]
 
-        [field: SerializeField] public EAttackDirection EDirection { get; private set; }
         [field: SerializeField] public float Cooldown { get; private set; }
 
         [field: SerializeField, ReadOnly] public bool IsOnCooldown { get; private set; }
+
+        [SerializeField] LayerMask targetLayers;
+        [field: SerializeField] public EDirection EDirection { get; private set; }
+
+        [SerializeField, Min(0), ShowIf("EDirection", EDirection.Front)] float detectionHeight;
+        [SerializeField, Min(0), ShowIf("EDirection", EDirection.Front)] float detectionWidth;
+        [SerializeField, ShowIf("EDirection", EDirection.Front)] Vector3 detectionOffset;
+
+        [SerializeField, ReadOnly] Collider[] detectedColliders;
 
         [SerializeField, ReadOnly] Vector3 attackDirection;
 
@@ -26,6 +34,21 @@ namespace Game
 
         [SerializeField] UnityEvent OnExitEvent;
 
+        Vector3 HalfExtents => new Vector3(Attack.Config.TriggerRange, detectionHeight, detectionWidth) * 0.5f;
+
+        Vector3 Center => (transform.right * Attack.Config.TriggerRange * 0.5f) + stateMachine.transform.position + detectionOffset;
+
+#if UNITY_EDITOR     
+
+        [SerializeField] Color detectionColor;
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = detectionColor;
+            if (EDirection == EDirection.Front) Helper.DrawBox(Center, HalfExtents, transform.rotation, detectionColor);
+
+            else Gizmos.DrawWireSphere(stateMachine.transform.position, Attack.Config.TriggerRange);
+        }
+#endif
         public override void Setup(BossStateMachine bossStateMachine)
         {
             base.Setup(bossStateMachine);
@@ -62,10 +85,10 @@ namespace Game
         {
             switch (EDirection)
             {
-                case EAttackDirection.Front:
+                case EDirection.Front:
                     attackDirection = transform.right;
                     break;
-                case EAttackDirection.Omni:
+                case EDirection.Omni:
                     if (!stopTracking)
                     {
                         stateMachine.Flip();
@@ -97,10 +120,13 @@ namespace Game
         {
             switch (EDirection)
             {
-                case EAttackDirection.Front: return true;
-                case EAttackDirection.Omni: return true;
+                case EDirection.Front:                  
+                    detectedColliders = Physics.OverlapBox(Center, HalfExtents, Quaternion.identity, targetLayers);
+                    return detectedColliders.Length > 0;
+
+                case EDirection.Omni: return true;
                 default: return false;
-            }
+            }         
         }
 
         IEnumerator CooldownRoutine()
@@ -110,7 +136,7 @@ namespace Game
         }
     }
 
-    public enum EAttackDirection
+    public enum EDirection
     {
         Front,
         Omni,
