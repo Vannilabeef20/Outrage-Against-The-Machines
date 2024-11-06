@@ -218,75 +218,7 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0648555, y: 4.782351}
   playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0.1493411, a: 0.9019608}
-  <SpawnCoordinates>k__BackingField: []
   playZoneLineScale: 0
-  SpawnLabelStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 1, g: 0.34991667, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 12800000, guid: b2acfb73667aff5489321b3c26f9132f, type: 3}
-    m_FontSize: 23
-    m_FontStyle: 0
-    m_Alignment: 4
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: -23.6}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
 --- !u!4 &659315165
 Transform:
   m_ObjectHideFlags: 0
@@ -1166,6 +1098,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1269155494, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472487198091316339, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[0].Name
+      value: Cow P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 472487198091316339, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[1].Name
+      value: Rooster P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 472487198091316339, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[2].Name
+      value: Donkey P2
+      objectReference: {fileID: 0}
     - target: {fileID: 4596487124894682127, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
       propertyPath: m_Name
       value: CharacterSelection Canvas
@@ -1253,6 +1201,22 @@ PrefabInstance:
     - target: {fileID: 4596487124894682228, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089989175024057430, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[1].Name
+      value: Rooster P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089989175024057430, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[2].Name
+      value: Donkey P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316593393256351081, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[0].Name
+      value: Cow P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316593393256351081, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: characterOptions.Array.data[2].Name
+      value: Donkey P3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -18,6 +18,7 @@ namespace Game
         [SerializeField] EAnimationTarget targetType;
 
         [SerializeField] bool playOnAwake = true;
+        [SerializeField] bool cull = true;
         [SerializeField] bool loop = true;
         [SerializeField] bool DestroyOnFinish;
         [SerializeField, Min(0f)] float animationDuration;
@@ -37,6 +38,18 @@ namespace Game
         {
             if (!playing) return;
             if (pause) return;
+
+            switch(targetType)
+            { 
+                case EAnimationTarget.SpriteRenderer:
+                    if (!spriteRenderer.isVisible && cull) return;
+                    if(!spriteRenderer.enabled) return;
+                    break;
+
+                case EAnimationTarget.Image:
+                    if (!image.enabled && cull) return;
+                    break;
+            }
 
             timer += Time.deltaTime;
 

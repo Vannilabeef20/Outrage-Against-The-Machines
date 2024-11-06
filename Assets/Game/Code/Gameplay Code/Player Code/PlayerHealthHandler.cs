@@ -8,7 +8,6 @@ namespace Game
 {
     public class PlayerHealthHandler : MonoBehaviour, IDamageble
     {
-        [SerializeField, TextArea] private string Comment;
         [Header("REFERENCES"), HorizontalLine]
         [SerializeField] PlayerStateMachine playerStateMachine;
         [SerializeField] SpriteRenderer spriteRenderer;

@@ -4004,6 +4004,14 @@ PrefabInstance:
       propertyPath: <MainCamera>k__BackingField
       value: 
       objectReference: {fileID: 531873384586224252}
+    - target: {fileID: 4748587671952949679, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
+      propertyPath: <DefaultPlayer>k__BackingField.<Icon>k__BackingField
+      value: 
+      objectReference: {fileID: 905827798, guid: 379a5db98ec58fe43963671668c24940, type: 3}
+    - target: {fileID: 4748587671952949679, guid: dfeeb5f3ad7dd1940a6f2559d0ceb33c, type: 3}
+      propertyPath: <DefaultPlayer>k__BackingField.<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 1164585177367800634, guid: 25cfb8cb39e1dc741938d9cbb8fd416f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5081,6 +5089,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
@@ -5288,6 +5297,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
@@ -6036,6 +6046,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
@@ -6310,6 +6321,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 1
@@ -6348,6 +6360,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 1
@@ -6549,6 +6562,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
@@ -6718,6 +6732,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
@@ -6768,6 +6783,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 3
@@ -7057,6 +7073,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
@@ -7308,6 +7325,7 @@ MonoBehaviour:
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 2
