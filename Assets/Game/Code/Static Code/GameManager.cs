@@ -61,6 +61,8 @@ namespace Game
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+                int level = SceneManager.GetActiveScene().buildIndex;
+                if(level != 0)
                 InitializeLevel();
             }
             else if (Instance != this)

@@ -579,7 +579,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!65 &588689491377177500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1295,8 +1295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73650a09a721bff4ea778f8cb2af7e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comment: 'Handles health realted data & tasks, such as: Taking damage, communicating
-    with the UI elements to display the damage taken'
   playerStateMachine: {fileID: 588689491332936778}
   spriteRenderer: {fileID: 588689491332936776}
   playerHitbox: {fileID: 588689492496491312}
@@ -1304,9 +1302,6 @@ MonoBehaviour:
   healParticle: {fileID: 4312322646744729240}
   damageParticle: {fileID: 7176538989363412186}
   reviveEmitter: {fileID: 8246436470385335672}
-  hostileLayers:
-    serializedVersion: 2
-    m_Bits: 512
   maxHeathPoints: 75
   <CurrentHealthPoints>k__BackingField: 0
   isDead: 0

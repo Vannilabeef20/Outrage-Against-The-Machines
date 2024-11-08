@@ -59,6 +59,8 @@ namespace Game
         float MaxPoise => baseMaxPoise + additiveMaxPoise;
         float PoiseRegenPoints => Time.deltaTime * poiseRegen;
 
+        Coroutine poiseGraceRoutine;
+
         #endregion
 
         private void Start()
@@ -105,7 +107,8 @@ namespace Game
             {
                 poiseHitEmitter.Play();
                 canTakePoiseDamage = false;
-                StartCoroutine(PoiseGracePeriodRoutine());
+
+                if(poiseGraceRoutine == null) poiseGraceRoutine = StartCoroutine(PoiseGracePeriodRoutine());
             }
             currentPoise = Mathf.Clamp(currentPoise - damage, float.MinValue, MaxPoise);
 
@@ -152,6 +155,7 @@ namespace Game
             yield return new WaitForSeconds(poiseGracePeriod);
             currentPoise = MaxPoise;
             canTakePoiseDamage = true;
+            poiseGraceRoutine = null;
         }
     }
 }
