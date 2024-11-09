@@ -70,12 +70,12 @@ MonoBehaviour:
   <MaxVelocity>k__BackingField: 13
   <StunDuration>k__BackingField: 0.7
   <KnockbackStrenght>k__BackingField: 9
-  <IsSpecial>k__BackingField: 0
+  <IsSpecial>k__BackingField: 1
   <SpecialCost>k__BackingField: 300
   <AudioPitches>k__BackingField:
-  - 0.9
-  <EventParameter>k__BackingField: Cow Attack State
-  <EventLabel>k__BackingField: Kick
+  - 1
+  <EventParameter>k__BackingField: Donkey Attack State
+  <EventLabel>k__BackingField: Special
   <AtkRumbleData>k__BackingField:
     <Realtime>k__BackingField: 0
     <Duration>k__BackingField: 1.5

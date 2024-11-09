@@ -13,52 +13,12 @@ MonoBehaviour:
   m_Name: Level 1 Encounters
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
-  - Name: '0 | Waves: 6 || Enemies: 6'
+  - Name: '0 | Waves: 1 || Enemies: 0'
     position: {x: -110.17, y: 6.02, z: 0}
     spawnDelay: {x: 1, y: 2}
     waves:
-    - Name: '0 | Enemies: 1'
-      enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
-    - Name: '1 | Enemies: 1'
-      enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
-    - Name: '2 | Enemies: 1'
-      enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
-    - Name: '3 | Enemies: 1'
-      enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
-    - Name: '4 | Enemies: 1'
-      enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
-    - Name: '5 | Enemies: 1'
-      enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 0
+    - Name: '0 | Enemies: 0'
+      enemies: []
   - Name: '1 | Waves: 1 || Enemies: 5'
     position: {x: -102.17, y: 6.02, z: 0}
     spawnDelay: {x: 1, y: 2}

@@ -71,6 +71,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - <TriggerFrame>k__BackingField: 15
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6926427790244436336}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &831993814377848944
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +150,22 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
           m_MethodName: PlayAttackRumble
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 15
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4798831838336931059}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1305,11 +1337,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1088261616
-      Data2: 1207779979
-      Data3: -1285207914
-      Data4: 1124042816
-    Path: event:/SFX/Player/Cow/Cow Attack
+      Data1: -1974801775
+      Data2: 1152725285
+      Data3: 1468291248
+      Data4: -916354810
+    Path: event:/SFX/Player/Donkey/Donkey Attack
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1984,6 +2016,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5236634259104585496}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2461191302754293950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2091,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
           m_MethodName: PlayAttackRumble
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5121934551644627643}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7040,6 +7096,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
           m_MethodName: PlayAttackRumble
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4357719688462648913}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16948,7 +17016,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   projectileSpawnTransform: {fileID: 0}
   FrameEvents:
-  - <TriggerFrame>k__BackingField: 0
+  - <TriggerFrame>k__BackingField: 5
     <Actions>k__BackingField:
       m_PersistentCalls:
         m_Calls:
@@ -16956,6 +17024,22 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
           m_MethodName: PlayAttackRumble
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 5
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1786877352615061114}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
