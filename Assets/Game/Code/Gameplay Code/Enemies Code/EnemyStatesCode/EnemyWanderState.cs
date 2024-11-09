@@ -27,9 +27,6 @@ namespace Game
         [SerializeField, ReadOnly] bool waiting;
         [SerializeField, ReadOnly] float waitTimer;
 
-
-        Rigidbody Body => stateMachine.body;
-
 #if UNITY_EDITOR
         [Header("DEBUG (THIS WILL BE STRIPPED ON BUILD"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] Color arrowHeadColor;
@@ -50,18 +47,18 @@ namespace Game
             }
             if (wanderPoints[currentPointIndex].position.x + 0.1f < transform.position.x)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                MachineRotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
             else if (wanderPoints[currentPointIndex].position.x - 0.1f > transform.position.x)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                MachineRotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
         }
 
 
         public override void FixedDo()
         {
-            distance = Vector3.Distance(Body.position, wanderPoints[currentPointIndex].position);
+            distance = Vector3.Distance(BodyPosition, wanderPoints[currentPointIndex].position);
 
             if (distance <= clearDistance)
             {
@@ -74,20 +71,20 @@ namespace Game
 
             if (waiting)
             {
-                Body.velocity = Vector3.zero;
+                Velocity = Vector3.zero;
                 return;
             }
 
-            Body.velocity = (wanderPoints[currentPointIndex].position - Body.position).normalized * speed;
+            Velocity = (wanderPoints[currentPointIndex].position - BodyPosition).normalized * speed;
 
-            Body.position = Body.position.ToXYY();
+            BodyPosition = BodyPosition.ToXYY();
         }
 
         public override void Enter()
         {
             IsComplete = false;
             startTime = Time.time;
-            stateMachine.animator.Play(StateAnimation.name);
+            MachineAnimator.Play(StateAnimation.name);
             movementEmitter.Play();
         }
 
@@ -97,8 +94,8 @@ namespace Game
         }
         protected override void ValidateState() 
         {
-            stateMachine.nextState = stateMachine.change;
-            Spawner.Instance.enemiesAlive.Add(stateMachine.Parent);
+            NextState = stateMachine.change;
+            Spawner.Instance.enemiesAlive.Add(Parent);
             IsComplete = true;
         }
 

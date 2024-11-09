@@ -13,7 +13,7 @@ namespace Game
         public override void Do()
         {
             progress = UpTime.Map(0, duration);
-            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            MachineAnimator.Play(StateAnimation.name, 0, progress);
             ValidateState();
         }
 
@@ -23,7 +23,7 @@ namespace Game
         {
             IsComplete = false;
             startTime = Time.time;
-            stateMachine.body.velocity = Vector3.zero;
+            Velocity = Vector3.zero;
         }
 
         public override void Exit()
@@ -35,7 +35,7 @@ namespace Game
         {
             if (progress < 1) return;
 
-            stateMachine.nextState = stateMachine.intercept;
+            NextState = stateMachine.intercept;
             IsComplete = true;
         }
     }

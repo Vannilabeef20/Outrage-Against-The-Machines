@@ -62,24 +62,19 @@ namespace Game
 
         public override void Do()
         {
-            if(ValidateStateBool())
-            {
-                return;
-            }
+            if (ValidateStateBool()) return;
+
             TransitionState();
-            if(CurrentAttackState == null)
-            {
-                return;
-            }
+
+            if (CurrentAttackState == null) return;
+
             CurrentAttackState.Do();
         }
 
         public override void FixedDo()
         {
-            if (CurrentAttackState == null)
-            {
-                return;
-            }
+            if (CurrentAttackState == null) return;
+
             CurrentAttackState.FixedDo();
         }
 
@@ -91,7 +86,7 @@ namespace Game
 
         public override void Exit()
         {
-            if(!IsComplete)
+            if(CurrentAttackState != null)
             CurrentAttackState.Exit();
 
             DisableAttackHitboxes();
@@ -188,7 +183,8 @@ namespace Game
                 CurrentAttackState.Exit();
                 CurrentAttackState = queuedAttackState;
                 queuedAttackState = null;
-                if(CurrentAttackState != null)
+
+                if (CurrentAttackState != null)
                 {
                     FlipCharacter();
                     CurrentAttackState.Enter();

@@ -47,7 +47,7 @@ namespace Game
                 timedEvent.Update(attackUptime);
             }
             progress = UpTime.Map(0, CurrentAttack.Config.Duration);
-            stateMachine.animator.Play(CurrentAttack.Config.Animation.name, 0, progress);
+            MachineAnimator.Play(CurrentAttack.Config.Animation.name, 0, progress);
             ValidateState();
         }
 
@@ -55,7 +55,7 @@ namespace Game
         {
             if (CurrentAttackState == null) return;
 
-            stateMachine.body.velocity = CurrentAttack.Config.VelocityCurve.Evaluate(progress) *
+            Velocity = CurrentAttack.Config.VelocityCurve.Evaluate(progress) *
                 CurrentAttack.Config.Velocity * transform.right + stateMachine.ContextVelocity;
         }
 
@@ -80,7 +80,7 @@ namespace Game
         {
             if(UpTime >= CurrentAttack.Config.Duration)
             {
-                stateMachine.nextState = stateMachine.intercept;
+                NextState = stateMachine.intercept;
                 //CurrentAttackState = null;
                 IsComplete = true;
             }
@@ -117,7 +117,7 @@ namespace Game
             }
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
-                damageble.TakeDamage(stateMachine.transform.position, CurrentAttack.Config.Damage,
+                damageble.TakeDamage(MachinePosition, CurrentAttack.Config.Damage,
                     CurrentAttack.Config.StunDuration, CurrentAttack.Config.KnockbackStrenght);
             }
         }

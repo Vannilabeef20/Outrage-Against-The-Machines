@@ -48,34 +48,34 @@ namespace Game
             hitFlashTimer += Time.deltaTime;
             if(hitFlashTimer >= hitFlashLenght)
             {
-                if(stateMachine.spriteRenderer.color == startingColor)
+                if(SpriteColor == startingColor)
                 {
-                    stateMachine.spriteRenderer.color = hitFlashColor;
+                    SpriteColor = hitFlashColor;
                 }
                 else
                 {
-                    stateMachine.spriteRenderer.color = startingColor;
+                    SpriteColor = startingColor;
                 }
                 hitFlashTimer = 0f;
             }
-            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            MachineAnimator.Play(StateAnimation.name, 0, progress);
             ValidateState();
         }
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = knockbackCurve.Evaluate(progress) *
+            Velocity = knockbackCurve.Evaluate(progress) *
                 knockbackStrenght * Mathf.Sign(initialPos.x - damageDealerPos.x) * Vector3.right + stateMachine.ContextVelocity;
-            if(Physics.Raycast(transform.position, stateMachine.body.velocity.normalized, 0.4f, enviriomentLayerMask))
+            if(Physics.Raycast(transform.position, Velocity.normalized, 0.4f, enviriomentLayerMask))
             {
-                stateMachine.body.velocity = Vector3.zero + stateMachine.ContextVelocity;
+                Velocity = Vector3.zero + stateMachine.ContextVelocity;
             }
         }
 
         public override void Enter()
         {
             IsComplete = false;
-            startingColor = stateMachine.spriteRenderer.color;
+            startingColor = SpriteColor;
             startTime = Time.time;
             hitFlashTimer = 0f;
             initialPos = transform.position;
@@ -85,7 +85,7 @@ namespace Game
 
         public override void Exit()
         {
-            stateMachine.spriteRenderer.color = startingColor;
+            SpriteColor = startingColor;
         }
 
         protected override void ValidateState()
@@ -96,12 +96,12 @@ namespace Game
             }
             if(HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
             {
-                stateMachine.nextState = stateMachine.death;
+                NextState = stateMachine.death;
                 IsComplete = true;
             }
             else
             {
-                stateMachine.nextState = stateMachine.intercept;
+                NextState = stateMachine.intercept;
                 IsComplete = true;
             }         
         }

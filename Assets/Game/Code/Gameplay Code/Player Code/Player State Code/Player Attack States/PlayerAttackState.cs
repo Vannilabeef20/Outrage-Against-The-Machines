@@ -27,10 +27,8 @@ namespace Game
         [Header("FRAME EVENTS"), HorizontalLine(2F, EColor.Blue)]
         [SerializeField] AnimationFrameEvent[] FrameEvents;
 
-        Rigidbody Body => stateMachine.body;
         Vector3 AttackVelocity => PlayerAttack.VelocityCurve.
             Evaluate(progress) * PlayerAttack.MaxVelocity * transform.right;
-        public float TimeLeft  => PlayerAttack.Duration - UpTime;
         int PlayerIndex => stateMachine.playerInput.playerIndex;
 
         string RumbleId => $"P{PlayerIndex + 1} {Name}";

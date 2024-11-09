@@ -62,8 +62,8 @@ namespace Game
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = AttackMachine.RangeLineColor;
-            Gizmos.DrawLine(stateMachine.transform.position + stateMachine.BoxCastOffset,
-                stateMachine.transform.position + stateMachine.BoxCastOffset +
+            Gizmos.DrawLine(MachinePosition + stateMachine.BoxCastOffset,
+                MachinePosition + stateMachine.BoxCastOffset +
                 (transform.right * Attack.Config.TriggerRange));
 
             Vector3 attackPoint = transform.position + stateMachine.BoxCastOffset + (transform.right * Attack.Config.TriggerRange);

@@ -24,7 +24,7 @@ namespace Game
         public override void Do()
         {
             progress = UpTime.Map(0, duration);
-            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            MachineAnimator.Play(StateAnimation.name, 0, progress);
             foreach (var frame in frameEvents)
             {
                 frame.Update(UpTime);
@@ -34,7 +34,7 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = stateMachine.ContextVelocity;
+            Velocity = stateMachine.ContextVelocity;
         }
 
         public override void Enter()
@@ -53,18 +53,18 @@ namespace Game
             if (UpTime <= duration) return;
 
             IsComplete = true;
-            stateMachine.nextState = stateMachine.intercept;
+            NextState = stateMachine.intercept;
             GameObject drop = lootTable.PickRandomDrop();
             if (drop != null)
             {
-                Instantiate(drop, stateMachine.transform.position, Quaternion.identity);
+                Instantiate(drop, MachinePosition, Quaternion.identity);
             }
             foreach (var frame in frameEvents)
             {
                 frame.Reset();
             }
-            if (stateMachine.Parent == null) this.LogError($"{stateMachine.name}'s parent object is null");
-            Destroy(stateMachine.Parent);
+            if (Parent == null) this.LogError($"{stateMachine.name}'s parent object is null");
+            Destroy(Parent);
         }
 
 #if UNITY_EDITOR

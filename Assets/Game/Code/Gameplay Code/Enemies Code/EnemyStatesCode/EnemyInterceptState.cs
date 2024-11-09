@@ -48,9 +48,9 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
-            stateMachine.animator.Play(StateAnimation.name);
+            MachineAnimator.Play(StateAnimation.name);
             startTime = Time.time;
-            target = targetingBehaviour.GetTarget(stateMachine.body.position);
+            target = targetingBehaviour.GetTarget(BodyPosition);
             movementEmitter.Play();
         }
         public override void Do()
@@ -67,18 +67,18 @@ namespace Game
             //Refresh Target
             if (targetingTimer > targetingRepeatInterval)
             {
-                target = targetingBehaviour.GetTarget(stateMachine.body.position);
+                target = targetingBehaviour.GetTarget(BodyPosition);
                 targetingTimer = 0;
             }
 
             //Flip
             if (target.transform.position.x + 0.1f < transform.position.x)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                MachineRotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
             else if (target.transform.position.x - 0.1f > transform.position.x)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                MachineRotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
 
             //Refresh Path
@@ -88,12 +88,12 @@ namespace Game
             }
 
             //Set Speed
-            stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
+            Velocity = new Vector3(movementDirection.x * speed.x,
                 movementDirection.y * speed.y, movementDirection.z * speed.z) + stateMachine.ContextVelocity;
 
 #if UNITY_EDITOR
             //Draw velocity line
-            Debug.DrawLine(stateMachine.body.position, stateMachine.body.position + (stateMachine.body.velocity.normalized * 2), Color.yellow);
+            Debug.DrawLine(BodyPosition, BodyPosition + (Velocity.normalized * 2), Color.yellow);
 #endif
         }
 
@@ -109,7 +109,7 @@ namespace Game
 
             if (!stateMachine.attack.CheckForAndSetAttack()) return;
 
-            stateMachine.nextState = stateMachine.attack;
+            NextState = stateMachine.attack;
             IsComplete = true;
             return;
         }

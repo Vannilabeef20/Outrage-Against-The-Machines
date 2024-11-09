@@ -250,7 +250,7 @@ SpriteRenderer:
   m_Size: {x: 0.7083333, y: 0.41666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &89029350
@@ -309,10 +309,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 89029353}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 67071906, guid: b294cf12994e5b24babec9016384b945, type: 3}
   - {fileID: -593518221, guid: b294cf12994e5b24babec9016384b945, type: 3}
@@ -331,6 +332,8 @@ MonoBehaviour:
   - {fileID: 1430707780, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   - {fileID: -487618328, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   - {fileID: -1674098441, guid: 13986008a7514114a8708e6cedcab065, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &89029353
@@ -526,10 +529,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 108241983}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -562,6 +566,8 @@ MonoBehaviour:
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1389600591, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &108241983
@@ -673,15 +679,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 121579586}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.7
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.7
   sprites:
   - {fileID: -185883889, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1422422754, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1632947123, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1422422754, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &121579586
@@ -899,10 +908,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 150128329}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -935,6 +945,8 @@ MonoBehaviour:
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1734879039, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &150128329
@@ -986,7 +998,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &157321273
@@ -1070,7 +1082,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &166581662
@@ -1130,16 +1142,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 166581666}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 2109474921, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &166581666
@@ -1191,7 +1206,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &191625657
@@ -1275,7 +1290,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &225177640
@@ -1327,10 +1342,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 225177644}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -1362,6 +1378,8 @@ MonoBehaviour:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!222 &225177643
@@ -1510,7 +1528,7 @@ SpriteRenderer:
   m_Size: {x: 0.7083333, y: 0.41666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &235402935
@@ -1570,10 +1588,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 235402939}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 37452311, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -593386762, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
@@ -1581,6 +1600,8 @@ MonoBehaviour:
   - {fileID: 1339879742, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: 1198637488, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -593386762, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &235402939
@@ -1794,10 +1815,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 258015373}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -1812,6 +1834,8 @@ MonoBehaviour:
   - {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   - {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
   - {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &258015373
@@ -2414,7 +2438,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &368526823
@@ -2588,7 +2612,7 @@ SpriteRenderer:
   m_Size: {x: 0.29166666, y: 0.41666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &370293834
@@ -2606,10 +2630,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 370293833}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   - {fileID: 812250666, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
@@ -2628,6 +2653,8 @@ MonoBehaviour:
   - {fileID: 2046906829, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   - {fileID: -1246178574, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
   - {fileID: 2046906829, guid: 734d3e7cc80c89747be81a95436bd7ca, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &392059584
@@ -2687,10 +2714,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 392059588}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 606569698, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -271458922, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -2700,6 +2728,8 @@ MonoBehaviour:
   - {fileID: 1835220035, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 840750341, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -51659355, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &392059588
@@ -2751,7 +2781,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &394127107
@@ -2807,10 +2837,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 394127110}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 311539194, guid: 02a6ac57486c8f2489493a94df8a354c, type: 3}
   - {fileID: -1411554068, guid: 02a6ac57486c8f2489493a94df8a354c, type: 3}
@@ -2825,6 +2856,8 @@ MonoBehaviour:
   - {fileID: -1928484432, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -1748341184, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
   - {fileID: -120289962, guid: 4348504e4dbe7a347815b715aca06bad, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &394127110
@@ -3129,10 +3162,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 456471762}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1.2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1.2
   sprites:
   - {fileID: -322555891, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   - {fileID: 2092761784, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
@@ -3142,6 +3176,8 @@ MonoBehaviour:
   - {fileID: 982275222, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   - {fileID: 145039634, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
   - {fileID: -2046792758, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &456471762
@@ -3377,10 +3413,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 480109015}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -3395,6 +3432,8 @@ MonoBehaviour:
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -549419998, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &480109015
@@ -3860,7 +3899,7 @@ SpriteRenderer:
   m_Size: {x: 0.7083333, y: 0.41666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &585919198
@@ -4164,10 +4203,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 623312781}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 412653329, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -689011474, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
@@ -4175,6 +4215,8 @@ MonoBehaviour:
   - {fileID: 1454271348, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: 1299744703, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -689011474, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &623312781
@@ -4329,10 +4371,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 638762241}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -4365,6 +4408,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &644787756
@@ -4720,10 +4765,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 708032169}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -4756,6 +4802,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &734087561
@@ -4938,10 +4986,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 741176550}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -4960,6 +5009,8 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &751346235
@@ -5091,10 +5142,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 775699911}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 1135213703, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -220013143, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -5109,6 +5161,8 @@ MonoBehaviour:
   - {fileID: -1648594634, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1648594634, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1648594634, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &775699911
@@ -5216,10 +5270,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 786151411}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 67071906, guid: b294cf12994e5b24babec9016384b945, type: 3}
   - {fileID: -593518221, guid: b294cf12994e5b24babec9016384b945, type: 3}
@@ -5238,6 +5293,8 @@ MonoBehaviour:
   - {fileID: 1430707780, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   - {fileID: -487618328, guid: 13986008a7514114a8708e6cedcab065, type: 3}
   - {fileID: -1674098441, guid: 13986008a7514114a8708e6cedcab065, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &786151411
@@ -5438,7 +5495,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &808899323
@@ -5497,10 +5554,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 808899326}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -5533,6 +5591,8 @@ MonoBehaviour:
   - {fileID: 1979011523, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
   - {fileID: 1354300532, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
   - {fileID: -850761730, guid: c86fd9133b14d5a41af20dc22c8c0f22, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &808899326
@@ -5919,10 +5979,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 909951492}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.7
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.7
   sprites:
   - {fileID: 1367530764, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: 149407963, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
@@ -5930,6 +5991,8 @@ MonoBehaviour:
   - {fileID: 794397268, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: -1889795296, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
   - {fileID: 149407963, guid: 0a9df089f1340734e891af2494b5d8e4, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &909951492
@@ -6041,15 +6104,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 913425332}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 1262260887, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1475089834, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1104097780, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1475089834, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &913425332
@@ -6281,7 +6347,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &950063127
@@ -6434,15 +6500,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 950615704}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: -1057477559, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -2048964551, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 615984872, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -2048964551, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &950615704
@@ -6595,15 +6664,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 971093227}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: -1700590228, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 911797389, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -293182326, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 911797389, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &971093227
@@ -7270,10 +7342,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1082170301}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -7292,6 +7365,8 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &1084538532
@@ -7347,10 +7422,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1084538535}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 369268701, guid: 96dad8e684aff234ca1795cfd79a009a, type: 3}
   - {fileID: -44561122, guid: 96dad8e684aff234ca1795cfd79a009a, type: 3}
@@ -7364,6 +7440,8 @@ MonoBehaviour:
   - {fileID: -632690525, guid: ec2c53ead96aace4bbd0d9d19344dc3c, type: 3}
   - {fileID: -1582427895, guid: ec2c53ead96aace4bbd0d9d19344dc3c, type: 3}
   - {fileID: -1053149886, guid: ec2c53ead96aace4bbd0d9d19344dc3c, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1084538535
@@ -7725,7 +7803,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1157986622 stripped
@@ -7918,10 +7996,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1194727339}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -7953,6 +8032,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1001 &1195103105
@@ -8073,10 +8154,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1197053356}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -8108,6 +8190,8 @@ MonoBehaviour:
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 1622321694, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1197053356
@@ -8159,7 +8243,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1198468536
@@ -8592,10 +8676,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1252175387}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: -1183176919, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1472615998, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -8603,6 +8688,8 @@ MonoBehaviour:
   - {fileID: -1197431874, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -1168005865, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: 1472615998, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1252175387
@@ -8654,7 +8741,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1270500077
@@ -8819,7 +8906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316229216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -121.92433, y: 5.6188097, z: -18.74}
+  m_LocalPosition: {x: -121.923134, y: 5.6188097, z: -18.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9198,10 +9285,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1404990811}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -23095730, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
   - {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
@@ -9218,6 +9306,8 @@ MonoBehaviour:
   - {fileID: -1193606340, guid: 27a94abc28b32714d8c0208270bdfe81, type: 3}
   - {fileID: 1767241300, guid: 27a94abc28b32714d8c0208270bdfe81, type: 3}
   - {fileID: 767648687, guid: 27a94abc28b32714d8c0208270bdfe81, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1404990811
@@ -9369,10 +9459,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1489063745}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -9404,6 +9495,8 @@ MonoBehaviour:
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 420346930, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1489063745
@@ -9455,7 +9548,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1490358017
@@ -9539,7 +9632,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1515133060
@@ -9816,10 +9909,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1572054337}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
@@ -9852,6 +9946,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &1578151232
@@ -9920,7 +10016,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1578151234
@@ -10000,10 +10096,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1580350896}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -10018,6 +10115,8 @@ MonoBehaviour:
   - {fileID: -389642502, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 342084925, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1580350896
@@ -10129,10 +10228,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1580984932}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: -1089791291, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -833016315, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -10140,6 +10240,8 @@ MonoBehaviour:
   - {fileID: -1308740639, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -315825960, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -833016315, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1580984932
@@ -10191,7 +10293,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1583699811 stripped
@@ -10553,10 +10655,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1678917195}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -10589,6 +10692,8 @@ MonoBehaviour:
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1315854436, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1678917195
@@ -10734,7 +10839,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1689247137
@@ -10752,10 +10857,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1689247136}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
@@ -10787,6 +10893,8 @@ MonoBehaviour:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &1689804705
@@ -10870,7 +10978,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1697140735 stripped
@@ -11089,10 +11197,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1750655453}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -11107,6 +11216,8 @@ MonoBehaviour:
   - {fileID: -205918206, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1262041605, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1750655453
@@ -11506,10 +11617,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1865445252}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -11541,6 +11653,8 @@ MonoBehaviour:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &1876620545
@@ -11596,10 +11710,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1876620548}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
@@ -11614,6 +11729,8 @@ MonoBehaviour:
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
   - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1876620548
@@ -11725,10 +11842,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1887506429}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -11760,6 +11878,8 @@ MonoBehaviour:
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -793466029, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1887506429
@@ -11871,16 +11991,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1903885730}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -813992663, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1730300071, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1903885730
@@ -11932,7 +12055,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1916454687
@@ -12081,10 +12204,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1923649337}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.7
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.7
   sprites:
   - {fileID: 1905591536, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -930084285, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
@@ -12092,6 +12216,8 @@ MonoBehaviour:
   - {fileID: 23779214, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -284597231, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
   - {fileID: -930084285, guid: 1f0eda7b79b35d9419c19a6570dab574, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1923649337
@@ -12143,7 +12269,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1935952014
@@ -12203,16 +12329,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1935952018}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: -1931844148, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 729228543, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1935952018
@@ -12264,7 +12393,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1936481259
@@ -12362,10 +12491,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1939288779}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -12380,6 +12510,8 @@ MonoBehaviour:
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 18783731, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1939288779
@@ -12491,10 +12623,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1948766229}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -12509,6 +12642,8 @@ MonoBehaviour:
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1749695901, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &1948766229
@@ -12742,10 +12877,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1961093706}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -12764,6 +12900,8 @@ MonoBehaviour:
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
   - {fileID: -1026183678, guid: 70491969a8505ee46a451ee7815993ce, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &1962117673
@@ -12929,78 +13067,7 @@ MonoBehaviour:
   playZoneHeight: {x: 0.0996323, y: 3.7860274}
   playZoneHalfWidth: 10.64
   playZoneColor: {r: 0, g: 1, b: 0, a: 0.9019608}
-  <SpawnCoordinates>k__BackingField:
-  - {x: -122.78, y: 1, z: 1}
-  - {x: -123.7, y: 2, z: 2}
-  - {x: -124.7, y: 3, z: 3}
   playZoneLineScale: 0
-  SpawnLabelStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 1, g: 0.34991667, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 12800000, guid: b2acfb73667aff5489321b3c26f9132f, type: 3}
-    m_FontSize: 23
-    m_FontStyle: 0
-    m_Alignment: 4
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: -23.6}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
 --- !u!4 &1996890125
 Transform:
   m_ObjectHideFlags: 0
@@ -13158,10 +13225,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2028263432}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 4
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 4
   sprites:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -13193,6 +13261,8 @@ MonoBehaviour:
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1401815128, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &2028263432
@@ -13554,16 +13624,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2073489729}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 1120057541, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
   - {fileID: 5665631, guid: e933c050df623f44c808148eb6092656, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &2073489729
@@ -13615,7 +13688,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2088247914
@@ -13675,15 +13748,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2088247918}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 0.5
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 0.5
   sprites:
   - {fileID: 1239402278, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1869755765, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 2035820263, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -1869755765, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &2088247918
@@ -13856,10 +13932,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2123245674}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -13874,6 +13951,8 @@ MonoBehaviour:
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1884865904, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!212 &2123245674
@@ -13977,10 +14056,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2125892423}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 1
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 1
   sprites:
   - {fileID: -1072151476, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: 1205953023, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
@@ -13995,6 +14075,8 @@ MonoBehaviour:
   - {fileID: -575172135, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -575172135, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
   - {fileID: -575172135, guid: 7ad8eb59e635dba459adaf57fafaa1f1, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!222 &2125892422
