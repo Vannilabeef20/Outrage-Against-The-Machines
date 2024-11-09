@@ -111,11 +111,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 672
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,11 +132,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 384
+        y: 672
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,11 +153,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 384
+        y: 672
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,11 +174,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 384
+        y: 672
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: WALK_BALLOON_4
       rect:
         serializedVersion: 2
-        x: 640
-        y: 384
+        x: 0
+        y: 576
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,12 +215,12 @@ TextureImporter:
       name: WALK_BALLOON_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
+        x: 160
+        y: 576
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,12 +236,12 @@ TextureImporter:
       name: WALK_BALLOON_6
       rect:
         serializedVersion: 2
-        x: 160
-        y: 288
+        x: 320
+        y: 576
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,12 +257,12 @@ TextureImporter:
       name: WALK_BALLOON_7
       rect:
         serializedVersion: 2
-        x: 320
-        y: 288
+        x: 480
+        y: 576
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: WALK_BALLOON_8
       rect:
         serializedVersion: 2
-        x: 480
-        y: 288
+        x: 0
+        y: 480
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: WALK_BALLOON_9
       rect:
         serializedVersion: 2
-        x: 640
-        y: 288
+        x: 160
+        y: 480
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,12 +320,12 @@ TextureImporter:
       name: WALK_BALLOON_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 320
+        y: 480
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,12 +341,12 @@ TextureImporter:
       name: WALK_BALLOON_11
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
+        x: 480
+        y: 480
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,12 +362,12 @@ TextureImporter:
       name: WALK_BALLOON_12
       rect:
         serializedVersion: 2
-        x: 320
-        y: 192
+        x: 0
+        y: 384
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,12 +383,12 @@ TextureImporter:
       name: WALK_BALLOON_13
       rect:
         serializedVersion: 2
-        x: 480
-        y: 192
+        x: 160
+        y: 384
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,12 +404,12 @@ TextureImporter:
       name: WALK_BALLOON_14
       rect:
         serializedVersion: 2
-        x: 640
-        y: 192
+        x: 320
+        y: 384
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,12 +425,12 @@ TextureImporter:
       name: WALK_BALLOON_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 480
+        y: 384
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,12 +446,12 @@ TextureImporter:
       name: WALK_BALLOON_16
       rect:
         serializedVersion: 2
-        x: 160
-        y: 96
+        x: 0
+        y: 288
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,12 +467,12 @@ TextureImporter:
       name: WALK_BALLOON_17
       rect:
         serializedVersion: 2
-        x: 320
-        y: 96
+        x: 160
+        y: 288
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,12 +488,12 @@ TextureImporter:
       name: WALK_BALLOON_18
       rect:
         serializedVersion: 2
-        x: 480
-        y: 96
+        x: 320
+        y: 288
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,12 +509,12 @@ TextureImporter:
       name: WALK_BALLOON_19
       rect:
         serializedVersion: 2
-        x: 640
-        y: 96
+        x: 480
+        y: 288
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -531,11 +531,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 192
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -552,11 +552,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 0
+        y: 192
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -573,11 +573,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 192
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -594,11 +594,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 0
+        y: 192
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,12 +614,12 @@ TextureImporter:
       name: WALK_BALLOON_24
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
+        x: 0
+        y: 96
         width: 160
         height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -627,6 +627,132 @@ TextureImporter:
       bones: []
       spriteID: a181e3e19c5a00a4abccbe7fadab8620
       internalID: -1310669061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_BALLOON_30
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3ac06c93741334a99b1b423020b0d1
+      internalID: -334753528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_BALLOON_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 160
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a282967244a5aa419474dd73248cceb
+      internalID: 1916500315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_BALLOON_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 160
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51effcd87767d0d4cb65da27739ee443
+      internalID: 799606953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_BALLOON_27
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 160
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cf6ac18011d1d49900fda154510818
+      internalID: 1251343437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_BALLOON_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2c0d265bc49a946a863ba6783ce45e
+      internalID: 463573158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_BALLOON_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e554e9367893d894c8cc096aecb6122f
+      internalID: 502454438
       vertices: []
       indices: 
       edges: []
@@ -642,6 +768,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      WALK_BALLOON_28: 463573158
+      WALK_BALLOON_26: 799606953
       WALK_BALLOON_1: 2039230420
       WALK_BALLOON_6: 486907947
       WALK_BALLOON_13: 1098959704
@@ -659,9 +787,13 @@ TextureImporter:
       WALK_BALLOON_16: -1281550233
       WALK_BALLOON_19: -410119998
       WALK_BALLOON_21: -619675935
+      WALK_BALLOON_30: -334753528
+      WALK_BALLOON_27: 1251343437
+      WALK_BALLOON_29: 502454438
       WALK_BALLOON_15: -1821384386
       WALK_BALLOON_7: 1027994919
       WALK_BALLOON_5: -1152981313
+      WALK_BALLOON_25: 1916500315
       WALK_BALLOON_11: 785204755
       WALK_BALLOON_4: -2048601462
       WALK_BALLOON_3: 768901014

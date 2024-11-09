@@ -647,10 +647,10 @@ TextureImporter:
       name: UI_pause_box
       rect:
         serializedVersion: 2
-        x: 529
-        y: 747
+        x: 723
+        y: 729
         width: 189
-        height: 146
+        height: 176
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1252,6 +1252,888 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ENTER_button_UP
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 418
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66312b8314f29643a4e0786d20a22d8
+      internalID: 116763179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENTER_button_DOWN
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 404
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88da88fcb4f88f4eb7baaaac1c21348
+      internalID: -2125494519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPACEBAR_button_UP
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 417
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863d13bdc459d984b80e9550935c3173
+      internalID: -1699992054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPACEBAR_button_DOWN
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 405
+        width: 44
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5758f570cffb908439ca85e72b35dc4c
+      internalID: 343569216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENTER_button_2_DOWN
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 363
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6537584da45c4bb45b457ccc2f0d0012
+      internalID: -1562324337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENTER_button_2_UP
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 363
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f82d8f156bd1a440b71c35c6c8099a5
+      internalID: 917130469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: START_button_UP
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 373
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0c5aea6e49675408c898930c0af289
+      internalID: -765698506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: START_button_DOWN
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 373
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc350af1ac82fc42be5ba43234e1d79
+      internalID: 106505965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: press_JOIN_0
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 377
+        width: 86
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff1575ef01b3af4dbdac6de13b70bf2
+      internalID: 704357626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: press_JOIN_1
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 457
+        width: 97
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c8a0386fe17a34585486761f644837
+      internalID: 51364671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_controls
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 993
+        width: 74
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c6f75e4fc6d99498f472a86ae047f8
+      internalID: -2028823799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_controls_box
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 228
+        width: 281
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a77d92458402245ae2c660edd0785f
+      internalID: 195175219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_walk
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 216
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4923354fbe653e40b457b5b767881d8
+      internalID: -356053722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_punch
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 216
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31b8fe60fffaff4ebc30170c5b4e116
+      internalID: 172759304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_kick
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 216
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d98dcc339b90742aa94d31d48da9bf
+      internalID: -402292124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_interact
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 216
+        width: 38
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd7eabe6339be541a37aad7ad7fbe44
+      internalID: -261426672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_dash
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 216
+        width: 20
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bfd45e2c5ee1146b8a51f92c7d3e3f
+      internalID: -953298186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_energy_dash
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 199
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c528a71f044d36b4981cfa2d28b5853d
+      internalID: 1828764748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_walk
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 185
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0987cb1d7ab594e8f807d940703015
+      internalID: -184532170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_punch
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 185
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db86d13d5bbbc734c8dfad464f696851
+      internalID: 1272925572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_kick
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 185
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276ea6e5d8d381a4f8ff4d5f37742086
+      internalID: -1888870153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_interact
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 185
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ed4327aa63859459b0a9c57f315687
+      internalID: -533419183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_shift
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 185
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdbdb6798fc24d43aeedd9157dc247a
+      internalID: 2079569817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_walk_joystick
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dfee704140b9274e8a9f9cfb5bfe1a1
+      internalID: 544653537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_dash_joystick
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 161
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c781301a7997eee4fa6af815b374a15d
+      internalID: -304799925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_punch_joystick
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 158
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92594e85b39288b4898898dc556dc0f4
+      internalID: -928990045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_kick_joystick
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 158
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61481d22268cc474c832b15405d9b181
+      internalID: -1216787492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_interact_joystick
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 158
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce59b48a84ae2f459a7f3d2ab260c87
+      internalID: 407337079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_special
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 135
+        width: 33
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c4a4221b03226479ba7b44e8979e9d
+      internalID: 1063344253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_use_item
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 135
+        width: 37
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7558cd09cc70dc74da21fea6f50ec7d1
+      internalID: -828589307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_text_items
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 136
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3bfc87b804a2444a2c53e65776cdd8
+      internalID: -479842223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_energy_special
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 118
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6566427ce12e8654ca4f39c9ae174c76
+      internalID: -921457664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_special
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 102
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5755a6545f88ce74682654e09c95c565
+      internalID: 1478623229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_usa_item
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 102
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef06c9c9a8d0a44c861b2e8d8205820
+      internalID: 1031972107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_energy_energetic
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 106
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806b555dbb3b6dd43ac7bdd1316b9c31
+      internalID: -428014697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_energy_donut
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 106
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbd86b132a1c4c4a846607ee93c41d2
+      internalID: 806206943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_health_milk
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 107
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a33a2e377af7df43845e7bee8d58cbe
+      internalID: 922961693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_special_joystick
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 81
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c90eaadfb714c4e8e0b9663e19af62
+      internalID: 743265209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_energetic
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 77
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2c32e1648d80a498433b661ed003e5
+      internalID: 454362532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_donut
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 77
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c74e4fdd43422a408025d447ae3506b
+      internalID: -1368552153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_icon_milk
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 77
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c5078b6489d054daed71b71d400f9d
+      internalID: -1362797714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_button_use_item_joystick
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 77
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0e85e2b809b1d4f92c7f63a61c607f
+      internalID: 1894127645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1264,49 +2146,85 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       UI_button_orange_2: 279974917
+      UI_icon_milk: -1362797714
       UI_slider_handle_orange_button_3: 1815900720
       UI_select_player_1: 774126624
+      UI_select_character_11: 1217726117
+      UI_select_character_4: 1676250806
       UI_text_audio: 2093728863
       UI_swipe_1: 1973130707
       UI_text_newgame: 832946257
+      UI_select_character_81: -1603609342
+      UI_icon_health_milk: 922961693
       UI_select_character_8: 603895107
+      UI_slider_handle_orange_button_2: 1901978747
       UI_select_character_0: -1723150965
-      UI_select_character_65: -921457664
+      ENTER_button_2_UP: 917130469
       UI_select_character_66: -439963029
+      ENTER_button_DOWN: -2125494519
       UI_switch_button_small: -804538917
       UI_swipe_3: -1738547889
+      UI_text_controls: -1836591436
+      UI_button_punch: -1544553525
+      UI_select_character_78: 401616350
       UI_select_character_57: 1422333685
       UI_switch_button_on_small: 1108276824
-      UI_select_character_29: -289030642
       UI_select_character_50: 27650030
+      UI_select_character_36: -5705464
+      UI_select_character_79: 1205511146
+      UI_select_character_9: 1208617000
+      UI_icon_energetic: 454362532
+      UI_select_character_5: 732445872
+      UI_text_dash: -953298186
       UI_stats_player_3: -1701749794
-      UI_select_character_3: 1703681999
+      UI_select_character_25: 744750141
       UI_select_character_42: -560452778
+      UI_select_character_80: 737124809
+      UI_select_character_37: -403380848
+      UI_button_walk_joystick: 544653537
       UI_text_mainmenu: 40582790
       UI_select_character_39: -1345831389
+      UI_controls_box: -1776041937
       UI_select_character_43: 511532438
+      START_button_UP: -765698506
+      UI_text_special: 1063344253
+      UI_select_character_16: 1023586559
       UI_join_player_1: 1910175850
       UI_select_character_63: -632238306
+      UI_select_character_6: -1275498660
       UI_select_character_56: 1529061921
+      UI_icon_energy_special: -921457664
+      UI_text_punch: 172759304
       UI_select_player_2: -1846608607
       UI_select_character_62: -361574417
+      SPACEBAR_button_DOWN: 343569216
+      UI_select_character_76: -1029859157
       UI_text_options: 528038781
+      SPACEBAR_button_UP: -1699992054
+      UI_text_walk: -356053722
+      ENTER_button_2_DOWN: -1562324337
       UI_select_character_64: -120318426
+      UI_text_interact: -261426672
       UI_select_character_67: 1388863745
       UI_select_character_41: -1266775166
       UI_button_yellow_2: -1762476359
       UI_text_rumble: -1884951620
-      UI_select_character_27: 1828764748
       UI_options_box: -2034234679
       UI_text_fullscreen: -1795554335
       UI_select_character_53: -450602060
+      UI_select_character_17: 1050569624
       UI_select_character_23: 1626515970
       UI_text_master_volume: -1815896777
+      UI_select_character_60: -450822449
       UI_text_back: -1388692283
+      UI_button_kick: 172759304
+      press_JOIN_0: 704357626
+      ENTER_button_UP: 116763179
       UI_swipe_2: -288854559
       UI_stats_player_2: 1043075323
       UI_arrow_L: -1065004502
-      UI_select_character_48: 407337079
+      UI_button_interact: 195175219
+      UI_button_kick_joystick: -1216787492
       UI_select_character_20: -509159170
       UI_select_character_40: 2021618024
       UI_text_music_volume: 1279364415
@@ -1317,48 +2235,66 @@ TextureImporter:
       UI_select_character_51: 1287738820
       UI_button_green_2: 1070317472
       UI_select_character_26: 856963018
-      UI_select_character_34: -1553212124
       UI_text_pause: 40908124
       UI_select_character_28: 360088416
       UI_switch_button_off: -83634356
-      UI_select_character_22: -953298186
+      UI_select_character_74: 1834787322
       UI_switch_button_on: -5326381
-      UI_select_character_68: 1478623229
+      UI_icon_energy_donut: 806206943
       UI_text_on: 235031227
+      UI_icon_energy_energetic: -428014697
       UI_pause_box: 415721775
+      UI_select_character_59: -1900044723
+      UI_button_walk: 1224033527
+      UI_select_character_71: 2086020141
       UI_button_red: -1031967889
+      UI_button_special: 1478623229
+      UI_select_character_72: 60090382
+      UI_select_character_85: -308179349
       UI_select_character_ready: 1337957247
       UI_button_yellow: -161279473
+      UI_button_interact_joystick: 407337079
       UI_button_green: -485112699
       UI_select_character_30: 284953595
+      UI_select_character_54: 1954498318
       UI_select_character_24: 2063669031
-      UI_select_character_47: -1216787492
-      UI_select_character_55: -828589307
       UI_select_character_21: -1481519946
+      UI_button_punch_joystick: -928990045
       UI_text_sfx_volume: -1659798050
       UI_text_graphics: 1337102757
-      UI_select_character_61: -479842223
+      UI_select_character_13: -1116130683
       UI_join_player_3: -2123557095
       UI_select_character_18: 2147179958
       UI_text_resume: -355206927
       UI_slider_handle_orange_button_1: -2017620000
+      UI_button_usa_item: 1031972107
+      UI_text_use_item: -828589307
       UI_text_quit: 1776937766
       UI_button_grey: -2029612801
       UI_stats_player_1: 213354074
       UI_select_character_19: -1435955472
       UI_button_orange: -1631405551
+      UI_button_dash_joystick: -304799925
       UI_button_orange_3: 829753592
       UI_arrow_R: 192657988
       UI_text_screen_shake: 1737514141
+      UI_button_shift: 550595695
+      UI_button_special_joystick: 743265209
+      START_button_DOWN: 106505965
       UI_text_off: -1806817425
       UI_select_player_3: 2049633862
       UI_select_character_58: 434648957
       UI_select_character_52: 1029050407
       UI_join_player_2: 1744764160
-      UI_select_character_69: 1031972107
+      UI_text_kick: -402292124
+      press_JOIN_1: 51364671
+      UI_icon_donut: -1368552153
+      UI_text_items: -479842223
+      UI_button_use_item_joystick: 1894127645
+      UI_select_character_14: 1250927873
+      UI_icon_energy_dash: 1828764748
       UI_button_back_orange: -498867081
-      UI_select_character_49: 1063344253
-      UI_slider_handle_orange_button_2: 1901978747
+      UI_select_character_10: -1687913857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
