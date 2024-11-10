@@ -2463,7 +2463,7 @@ RectTransform:
   - {fileID: 5319035583081761227}
   - {fileID: 5609678251712261126}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3375,15 +3375,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
-  m_sharedMaterial: {fileID: -2103876767430310799, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe265694abf2d0f449f440b050f290d2, type: 2}
+  m_sharedMaterial: {fileID: 1430215558844945394, guid: fe265694abf2d0f449f440b050f290d2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278243779
-  m_fontColor: {r: 0.76470673, g: 0.8207547, b: 0, a: 1}
+    rgba: 4278248959
+  m_fontColor: {r: 1, g: 0.89851844, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3400,8 +3400,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.8
-  m_fontSizeBase: 46.8
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3582,6 +3582,7 @@ MonoBehaviour:
   image: {fileID: 5319035583287885601}
   targetType: 1
   playOnAwake: 1
+  cull: 1
   loop: 1
   DestroyOnFinish: 0
   animationDuration: 1
