@@ -2134,6 +2134,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_text_exit
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 918
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c6583393fdf1542b526dc02bbe6b8b
+      internalID: 321331086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2149,7 +2170,7 @@ TextureImporter:
       UI_icon_milk: -1362797714
       UI_slider_handle_orange_button_3: 1815900720
       UI_select_player_1: 774126624
-      UI_select_character_11: 1217726117
+      UI_select_character_10: -1687913857
       UI_select_character_4: 1676250806
       UI_text_audio: 2093728863
       UI_swipe_1: 1973130707
@@ -2157,7 +2178,7 @@ TextureImporter:
       UI_select_character_81: -1603609342
       UI_icon_health_milk: 922961693
       UI_select_character_8: 603895107
-      UI_slider_handle_orange_button_2: 1901978747
+      UI_select_character_11: 1217726117
       UI_select_character_0: -1723150965
       ENTER_button_2_UP: 917130469
       UI_select_character_66: -439963029
@@ -2258,6 +2279,7 @@ TextureImporter:
       UI_select_character_30: 284953595
       UI_select_character_54: 1954498318
       UI_select_character_24: 2063669031
+      UI_text_exit: 321331086
       UI_select_character_21: -1481519946
       UI_button_punch_joystick: -928990045
       UI_text_sfx_volume: -1659798050
@@ -2294,7 +2316,7 @@ TextureImporter:
       UI_select_character_14: 1250927873
       UI_icon_energy_dash: 1828764748
       UI_button_back_orange: -498867081
-      UI_select_character_10: -1687913857
+      UI_slider_handle_orange_button_2: 1901978747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
