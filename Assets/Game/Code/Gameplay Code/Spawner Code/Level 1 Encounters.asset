@@ -13,21 +13,15 @@ MonoBehaviour:
   m_Name: Level 1 Encounters
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
-  - Name: '0 | Waves: 1 || Enemies: 0'
-    position: {x: -110.17, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 2}
-    waves:
-    - Name: '0 | Enemies: 0'
-      enemies: []
-  - Name: '1 | Waves: 1 || Enemies: 5'
+  - Name: '0 | Waves: 1 || Enemies: 3'
     position: {x: -102.17, y: 6.02, z: 0}
     spawnDelay: {x: 1, y: 2}
     waves:
-    - Name: '0 | Enemies: 5'
+    - Name: '0 | Enemies: 3'
       enemies:
-      - Name: Base Security Bear Robot | 3 Units| Any-P
+      - Name: Base Security Bear Robot | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 3
+        amount: 1
         multiplayerOnly: 0
         playersRequired: 2
       - Name: Base Security Bear Robot | 1 Units| 2-P
@@ -38,6 +32,27 @@ MonoBehaviour:
       - Name: Base Security Bear Robot | 1 Units| 3-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
         amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+  - Name: '1 | Waves: 1 || Enemies: 5'
+    position: {x: -67.1, y: 6.02, z: 0}
+    spawnDelay: {x: 1, y: 2}
+    waves:
+    - Name: '0 | Enemies: 5'
+      enemies:
+      - Name: Base Security Bear Robot | 2 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 2
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 2 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 2
         multiplayerOnly: 1
         playersRequired: 3
   - Name: '2 | Waves: 1 || Enemies: 6'
@@ -320,3 +335,9 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
+  - Name: '9 | Waves: 1 || Enemies: 0'
+    position: {x: 205, y: 6.02, z: 0}
+    spawnDelay: {x: 1, y: 2}
+    waves:
+    - Name: '0 | Enemies: 0'
+      enemies: []

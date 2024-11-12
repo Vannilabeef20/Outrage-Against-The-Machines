@@ -29,7 +29,7 @@ namespace Game
         public override void Raise(object sender, EMenuId menuId)
         {
             base.Raise(sender, menuId);
-            if (menuId == EMenuId.PauseMenu || menuId == EMenuId.PauseOptionsMenu)
+            if (menuId == EMenuId.PauseMenu || menuId == EMenuId.PauseOptionsMenu || menuId == EMenuId.PauseControlsMenu)
             {
                 pauseEvent.Raise(this, true);
             }
@@ -59,5 +59,6 @@ namespace Game
         PauseMenu = 8,
         PauseOptionsMenu = 16,
         CharacterSelectionMenu = 32,
+        PauseControlsMenu = 64,
     }
 }

@@ -118,29 +118,37 @@ namespace Game
             CurrentLifeAmount = initialLifeAmout;
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
 
+            PlayerCharacter player;
+
             if (PlayerCharacterList.Count == 0) //Starting the game at a gameplay scene
             {
-                PlayerCharacterList.Add(DefaultPlayer);
-                PlayerCharacterList[0].GameObject = Instantiate(PlayerCharacterList[0].Prefab, SpawnCoordinates[0], Quaternion.identity);
-                PlayerCharacterList[0].Transform = PlayerCharacterList[0].GameObject.transform;
-                PlayerCharacterList[0].Transform.position = SpawnCoordinates[0];
-                PlayerCharacterList[0].HealthHandler = PlayerCharacterList[0].GameObject.GetComponentInChildren<PlayerHealthHandler>();
-                PlayerCharacterList[0].isPlayerActive = true;
-                PlayerCharacterList[0].Devices = InputSystem.devices.ToArray();
+                player = DefaultPlayer;
+
+                PlayerCharacterList.Add(player);
+                player.GameObject = Instantiate(player.Prefab, SpawnCoordinates[0], Quaternion.identity);
+                player.Transform = player.GameObject.transform;
+                player.Transform.position = SpawnCoordinates[0];
+                player.HealthHandler = player.GameObject.GetComponentInChildren<PlayerHealthHandler>();
+                player.isPlayerActive = true;
+                player.InitialDevices = InputSystem.devices.ToArray();
+                player.Input = player.GameObject.GetComponent<PlayerInput>();
             }
             else //Starting the game via main menu like normal
             {
                 for (int i = 0; i < PlayerCharacterList.Count; i++) 
                 {
-                    UnityInputManager.playerPrefab = PlayerCharacterList[i].Prefab;
+                    player = PlayerCharacterList[i];
 
-                    PlayerCharacterList[i].GameObject = UnityInputManager.JoinPlayer(i, -1,
-                        PlayerCharacterList[i].ControlScheme, PlayerCharacterList[i].Devices).gameObject;
-                    PlayerCharacterList[i].Transform = PlayerCharacterList[i].GameObject.transform;
-                    Rigidbody rb = PlayerCharacterList[i].GameObject.GetComponent<Rigidbody>();
-                    rb.position = SpawnCoordinates[PlayerCharacterList[i].Index];
-                    PlayerCharacterList[i].HealthHandler = PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>();
-                    PlayerCharacterList[i].isPlayerActive = true;
+                    UnityInputManager.playerPrefab = player.Prefab;
+
+                    player.GameObject = UnityInputManager.JoinPlayer(i, -1,
+                        player.InitialControlScheme, player.InitialDevices).gameObject;
+                    player.Transform = player.GameObject.transform;
+                    Rigidbody rb = player.GameObject.GetComponent<Rigidbody>();
+                    rb.position = SpawnCoordinates[player.Index];
+                    player.HealthHandler = player.GameObject.GetComponentInChildren<PlayerHealthHandler>();
+                    player.isPlayerActive = true;
+                    player.Input = player.GameObject.GetComponent<PlayerInput>();
                 }
             }
             Instantiate(followGroupPrefab);
@@ -246,9 +254,9 @@ namespace Game
         [field: SerializeField, ShowAssetPreview] public Sprite Icon { get; private set; }
         [field: Space]
         [field: SerializeField, ReadOnly, AllowNesting] public int Index { get; private set; }
-        [field: SerializeField, ReadOnly, AllowNesting] public string ControlScheme { get; private set; }
+        [field: SerializeField, ReadOnly, AllowNesting] public string InitialControlScheme { get; private set; }
 
-        [SerializeField, ReadOnly, AllowNesting] public InputDevice[] Devices;
+        [SerializeField, ReadOnly, AllowNesting] public InputDevice[] InitialDevices;
 
         [field: SerializeField, ReadOnly, AllowNesting] public GameObject StoredItem { get; private set; }
         [field: SerializeField, ReadOnly, ShowAssetPreview, AllowNesting] public Sprite ItemIcon { get; private set; }
@@ -257,6 +265,7 @@ namespace Game
         [ReadOnly, AllowNesting] public int scrapAmount;
 
         [Space]
+        [ReadOnly, AllowNesting] public PlayerInput Input;
         [ReadOnly, AllowNesting] public GameObject GameObject;
         [ReadOnly, AllowNesting] public Transform Transform;
         [ReadOnly, AllowNesting] public PlayerHealthHandler HealthHandler;
@@ -268,8 +277,8 @@ namespace Game
             Prefab = playerPrefab;
             Index = playerIndex;
             Icon = playerIcon;
-            ControlScheme = controlScheme;
-            Devices = devices;
+            InitialControlScheme = controlScheme;
+            InitialDevices = devices;
             StoredItem = null;
             ItemIcon = null;
         }

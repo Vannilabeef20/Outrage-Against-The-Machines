@@ -56,24 +56,24 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (UpTime < Duration + Delay)
-            {
-                return;
-            }
-            if(Despawning)
-            {
-                return;
-            }
+            if (UpTime < Duration + Delay) return;
+
+            if (Despawning) return;
+
             Despawning = true;
-            IsComplete = true;
-            GameManager.Instance.TakeAddLife(-1);
             stateMachine.Attacking.SetSpecialCharges(0f);
-            stateMachine.nextState = stateMachine.Idle;
-            if (GameManager.Instance.CurrentLifeAmount <= 0)
+
+            if (GameManager.Instance.CurrentLifeAmount == 0)
             {
                 playerDeathEvent.Raise(this, new PlayerDeathParams(stateMachine.playerInput.playerIndex, true));
                 stateMachine.transform.parent.gameObject.SetActive(false);
-            }            
+            }
+            else
+            {
+                stateMachine.nextState = stateMachine.Idle;
+                IsComplete = true;
+                GameManager.Instance.TakeAddLife(-1);
+            }
         }
     }
 }

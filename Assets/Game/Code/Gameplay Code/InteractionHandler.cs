@@ -10,6 +10,9 @@ namespace Game
 	{
         #region REFERENCES
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+
+        [SerializeField] GameObject interactPromptController;
+        [SerializeField] GameObject interactPromptKeyboard;
         [field: SerializeField] public PlayerInput playerInput { get; private set; }
         [SerializeField] BoxCollider detectionShape;
         [SerializeField] StudioEventEmitter sucessfullEmitter;
@@ -21,10 +24,13 @@ namespace Game
         [SerializeField, ReadOnly] Collider[] interactblesCollidersInRange;
         [SerializeField, ReadOnly] Collider closestInteractbleCollider;
         [SerializeField, ReadOnly] BaseInteractble closestInteractble;
+        [field: SerializeField, ReadOnly] public bool InRange { get; private set; }
         #endregion
 
         private void FixedUpdate()
         {
+            interactPromptController.SetActive(InRange && playerInput.currentControlScheme == "Gamepad");
+            interactPromptKeyboard.SetActive(InRange && playerInput.currentControlScheme == "Keyboard");
             InteractionDetection();
         }
 
@@ -35,8 +41,10 @@ namespace Game
                 detectionShape.size * 0.5f, Quaternion.identity, interactionMask).OrderBy
                 (interactible => (detectionShape.bounds.center - interactible.bounds.center).magnitude).ToArray();
 
+            InRange = interactblesCollidersInRange.Length > 0;
+
             //No interactbles available
-            if (interactblesCollidersInRange.Length == 0)
+            if (!InRange)
             {
                 closestInteractbleCollider = null;
                 if (closestInteractble != null)

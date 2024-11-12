@@ -41,7 +41,6 @@ namespace Game
 
         [SerializeField] LayerMask conveyorLayer;
         [SerializeField] LayerMask speedMultiplierLayer;
-        PlayerCharacter Player => GameManager.Instance.PlayerCharacterList[playerInput.playerIndex];
 
         void Awake()
         {

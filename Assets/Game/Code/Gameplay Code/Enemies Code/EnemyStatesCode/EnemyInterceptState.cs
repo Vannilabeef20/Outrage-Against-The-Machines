@@ -61,9 +61,7 @@ namespace Game
         }
 
         public override void FixedDo()
-        {
-            if (target == null) return;
-            
+        {          
             //Refresh Target
             if (targetingTimer > targetingRepeatInterval)
             {
@@ -71,20 +69,27 @@ namespace Game
                 targetingTimer = 0;
             }
 
-            //Flip
-            if (target.transform.position.x + 0.1f < transform.position.x)
+            if(target != null)
             {
-                MachineRotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
-            else if (target.transform.position.x - 0.1f > transform.position.x)
-            {
-                MachineRotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            }
+                //Flip
+                if (target.transform.position.x + 0.1f < transform.position.x)
+                {
+                    MachineRotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                }
+                else if (target.transform.position.x - 0.1f > transform.position.x)
+                {
+                    MachineRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                }
 
-            //Refresh Path
-            if(pathfindingTimer >= pathfindingRepeatInterval)
+                //Refresh Path
+                if (pathfindingTimer >= pathfindingRepeatInterval)
+                {
+                    movementDirection = PathfindingBehaviour.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayzone);
+                }
+            }
+            else
             {
-                movementDirection = PathfindingBehaviour.GetMovementDirection(target.transform.position, stateMachine.IsInsidePlayzone);
+                movementDirection = Vector3.zero;
             }
 
             //Set Speed

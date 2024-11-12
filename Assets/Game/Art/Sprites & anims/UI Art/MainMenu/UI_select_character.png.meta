@@ -2143,7 +2143,7 @@ TextureImporter:
         width: 36
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2151,6 +2151,27 @@ TextureImporter:
       bones: []
       spriteID: b2c6583393fdf1542b526dc02bbe6b8b
       internalID: 321331086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls_Image
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 70
+        width: 281
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1344a70ea1b304e9cfaa2ae11aaf77
+      internalID: -1403484560
       vertices: []
       indices: 
       edges: []
@@ -2170,7 +2191,7 @@ TextureImporter:
       UI_icon_milk: -1362797714
       UI_slider_handle_orange_button_3: 1815900720
       UI_select_player_1: 774126624
-      UI_select_character_10: -1687913857
+      UI_slider_handle_orange_button_2: 1901978747
       UI_select_character_4: 1676250806
       UI_text_audio: 2093728863
       UI_swipe_1: 1973130707
@@ -2178,7 +2199,7 @@ TextureImporter:
       UI_select_character_81: -1603609342
       UI_icon_health_milk: 922961693
       UI_select_character_8: 603895107
-      UI_select_character_11: 1217726117
+      UI_select_character_10: -1687913857
       UI_select_character_0: -1723150965
       ENTER_button_2_UP: 917130469
       UI_select_character_66: -439963029
@@ -2258,6 +2279,7 @@ TextureImporter:
       UI_select_character_26: 856963018
       UI_text_pause: 40908124
       UI_select_character_28: 360088416
+      Controls_Image: -1403484560
       UI_switch_button_off: -83634356
       UI_select_character_74: 1834787322
       UI_switch_button_on: -5326381
@@ -2316,7 +2338,7 @@ TextureImporter:
       UI_select_character_14: 1250927873
       UI_icon_energy_dash: 1828764748
       UI_button_back_orange: -498867081
-      UI_slider_handle_orange_button_2: 1901978747
+      UI_select_character_11: 1217726117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

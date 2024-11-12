@@ -423,8 +423,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -46, y: -23.5}
+        - {x: -46, y: 23.5}
+        - {x: 46, y: 23.5}
+        - {x: 46, y: -23.5}
+      physicsShape:
+      - - {x: -46, y: 23.5}
+        - {x: -46, y: 5.5}
+        - {x: -46, y: -23.5}
+        - {x: 46, y: -23.5}
+        - {x: 46, y: 2.5}
+        - {x: 46, y: 23.5}
       tessellationDetail: 0
       bones: []
       spriteID: c0bf32b4a843e2848b3789399e98e521
@@ -542,12 +552,12 @@ TextureImporter:
       name: HUD_donkey_icon
       rect:
         serializedVersion: 2
-        x: 87
-        y: 231
-        width: 23
-        height: 22
+        x: 83
+        y: 226
+        width: 27
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -571,14 +581,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       HUD_health_up_v0: 251114215
-      HUD_energy_grey_3: 1524051101
+      HUD_player_3: -773179451
       HUD_slot_p2_v3: -8958980
       HUD_slot_p1_v2: -656426554
       HUD_energy_yellow_1: 621528783
       HUD_player_2: 743685460
       HUD up v2_3: -598104809
       HUD_slot_p2_v2: 1375941064
-      HUD_player_3: -773179451
+      HUD_money_icon: 1651919258
       HUD_slot_p2_v1: 2145842317
       HUD_energy_yellow_4: -755294826
       HUD _roster_icon: -1258828583
@@ -601,7 +611,7 @@ TextureImporter:
       HUD_slot_p3_v1: 251591921
       HUD_slot_p1_v3: 1003210667
       HUD_energy_grey_1: 226980132
-      HUD_money_icon: 1651919258
+      HUD_energy_grey_3: 1524051101
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

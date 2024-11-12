@@ -117,17 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d19692ad5e22c4aba484b26d2f3837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuId: 24
+  menuId: 88
   selection: 0
-  allowMultipleSelection: 0
-  singlePlayerSelectableObject: {fileID: 0}
-  P1_SelectableObject: {fileID: 0}
-  P2_SelectableObject: {fileID: 0}
-  P3_SelectableObject: {fileID: 0}
-  singlePlayerRoot: {fileID: 0}
-  P1_root: {fileID: 0}
-  P2_root: {fileID: 0}
-  P3_root: {fileID: 0}
+  selectableObject: {fileID: 0}
 --- !u!114 &8054634034197757242
 MonoBehaviour:
   m_ObjectHideFlags: 0

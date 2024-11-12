@@ -224,7 +224,7 @@ namespace Game
             //Take out player devices from nonPlayerDevices
             for (int i = 0; i < GameManager.Instance.PlayerCharacterList.Count; i++)
             {
-                foreach (InputDevice device in GameManager.Instance.PlayerCharacterList[i].Devices)
+                foreach (InputDevice device in GameManager.Instance.PlayerCharacterList[i].Input.devices)
                 {
                     nonPlayerInputDevices.Remove(device);
                 }
@@ -245,7 +245,7 @@ namespace Game
                     if (targetIndex >= GameManager.Instance.
                         PlayerCharacterList.Count) continue;
                     playerRumble.SetMotorSpeeds(GameManager.Instance.
-                        PlayerCharacterList[targetIndex].Devices);
+                        PlayerCharacterList[targetIndex].InitialDevices);
                 }
             }
 

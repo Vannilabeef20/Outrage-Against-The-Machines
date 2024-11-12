@@ -83,6 +83,8 @@ namespace Game
 
         public override void FixedDo() 
         {
+            if (stateMachine.Target == null) return;
+
             switch (EDirection)
             {
                 case EDirection.Front:

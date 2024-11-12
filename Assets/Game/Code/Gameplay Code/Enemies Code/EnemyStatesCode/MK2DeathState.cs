@@ -56,6 +56,7 @@ namespace Game
             {
                 frame.Reset();
             }
+            TransitionManager.Instance.LoadScene(0);
             Destroy(stateMachine.Parent);
         }
     }

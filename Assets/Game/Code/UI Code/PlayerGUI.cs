@@ -18,6 +18,8 @@ namespace Game
         [SerializeField] Image LerpHealthBar;
         [SerializeField] TextMeshProUGUI scrapCountText;
         [SerializeField] Image[] specialImages;
+        [SerializeField] GameObject useIconController;
+        [SerializeField] GameObject useIconKeyboard;
 
         [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] int playerNumber;
@@ -42,6 +44,10 @@ namespace Game
 
                 return;
             }
+
+            useIconController.SetActive(Player.HasItemStored && Player.Input.currentControlScheme == "Gamepad");
+            useIconKeyboard.SetActive(Player.HasItemStored && Player.Input.currentControlScheme == "Keyboard");
+
             scrapCountText.text = Player.scrapAmount.ToString("D3");
             playerIcon.sprite = Player.Icon;
             playerIcon.SetNativeSize();
@@ -51,13 +57,12 @@ namespace Game
         {
             if (playerIndex + 1 != playerNumber) return;
 
-            Sprite newIcon = GameManager.Instance.PlayerCharacterList[playerNumber - 1].ItemIcon;
+            Sprite newIcon = Player.ItemIcon;
 
             itemIcon.sprite = newIcon;
 
             if (newIcon != null) itemIcon.enabled = true;
             else itemIcon.enabled = false;
-
 
             itemIcon.SetNativeSize();
         }
