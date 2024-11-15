@@ -1,6 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 using FMODUnity;
+using Cinemachine;
 
 namespace Game
 {
@@ -20,6 +21,7 @@ namespace Game
         [SerializeField] Transform shadowTransform;
         [SerializeField] StudioEventEmitter impactEmitter;
         [SerializeField] StudioEventEmitter fallEmitter;
+        [SerializeField] CinemachineImpulseSource impulseSource;
 
         #endregion
 
@@ -149,6 +151,7 @@ namespace Game
                 boxTransform.position = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
                 fallEmitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 impactEmitter.Play();
+                impulseSource.GenerateImpulse();
                 shadowTransform.localScale = Vector3.zero;
                 boxRenderer.sortingOrder = postImpactSortOrder;
                 fell = true;

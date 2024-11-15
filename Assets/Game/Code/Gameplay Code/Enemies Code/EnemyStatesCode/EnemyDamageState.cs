@@ -35,12 +35,6 @@ namespace Game
         [ReadOnly] public Vector3 initialPos;
         #endregion
 
-        #region Enemy Damage Camera Shake
-        [Header("CAMERA SHAKE"), HorizontalLine(2f, EColor.Indigo)]
-
-        [SerializeField] private CinemachineImpulseSource impulseSource;
-        #endregion
-
 
         public override void Do()
         {
@@ -79,7 +73,8 @@ namespace Game
             startTime = Time.time;
             hitFlashTimer = 0f;
             initialPos = transform.position;
-            ExecuteFeedbacks();
+            damageParticles.Play();
+            damageTakenEmitter.Play();
             scrapDropper.SpawnRandomScrap();
         }
 
@@ -106,11 +101,5 @@ namespace Game
             }         
         }
 
-        private void ExecuteFeedbacks()
-        {
-            damageParticles.Play();
-            damageTakenEmitter.Play();
-            impulseSource.GenerateImpulse();
-        }
     }
 }

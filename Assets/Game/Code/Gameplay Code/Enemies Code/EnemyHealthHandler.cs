@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using NaughtyAttributes;
+using Cinemachine;
 
 namespace Game
 {
@@ -33,10 +34,8 @@ namespace Game
 
         public virtual void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
-            if(CurrentHealthPoints <= 0)
-            {
-                return;
-            }
+            if (CurrentHealthPoints <= 0) return;
+
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0, maxHeathPoints);
             CurrentHealthPercent = CurrentHealthPoints / maxHeathPoints;
             DEBUGHealthImage.fillAmount = CurrentHealthPercent;

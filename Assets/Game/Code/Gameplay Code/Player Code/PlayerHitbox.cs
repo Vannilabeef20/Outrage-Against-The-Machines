@@ -1,6 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 using FMODUnity;
+using Cinemachine;
 
 namespace Game 
 {
@@ -14,7 +15,7 @@ namespace Game
         [SerializeField] LayerMask collisionMask;
         [SerializeField] GameObject hitEffect;
         [SerializeField] StudioEventEmitter emitter;
-        //[SerializeField, ReadOnly] private List<Collider> prevHitColliders;
+        [SerializeField] CinemachineImpulseSource impulseSource;
 
         #region Shorthand lambdas
         RumbleData AtkRumble => stateMachine.Attacking.CurrentAttackState.PlayerAttack.AtkRumbleData;
@@ -29,7 +30,6 @@ namespace Game
         void OnTriggerEnter(Collider other)
         {
             if (!collisionMask.ContainsLayer(other.gameObject.layer)) return;
-            //if (prevHitColliders.Contains(other)) return;
 
             if (stateMachine.Attacking.CurrentAttackState == null) return;
 
@@ -46,22 +46,19 @@ namespace Game
 
             //Rumble
             RumbleManager.Instance.CreateRumble(RumbleId, AtkRumble, PlayerIndex);
+
+            //ScreenShake
+            impulseSource.GenerateImpulse();
         }
 
         void DealDamage(Collider hitObjectCollider)
         {
             if (hitObjectCollider.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
-                //prevHitColliders.Add(hitObjectCollider);
                 if (!AtkIsSpecial) stateMachine.Attacking.AddSpecialCharges(AtkDamage);
 
                 damageble.TakeDamage(transform.position, AtkDamage, AtkStunDuration, AtkKnockbackStrenght);
             }
-        }
-
-        public void ClearHitColliders()
-        {
-            //prevHitColliders.Clear();
         }
     }
 }

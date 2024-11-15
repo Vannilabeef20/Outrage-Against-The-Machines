@@ -126,11 +126,12 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 6838143541679345078, guid: a6cfaf2811a024b4caf3ccf66fe8ab4f, type: 3}
     <Icon>k__BackingField: {fileID: 21300000, guid: a64784389cc47664794eca9a04f6f771, type: 3}
     <Index>k__BackingField: 0
-    <ControlScheme>k__BackingField: 
+    <InitialControlScheme>k__BackingField: 
     <StoredItem>k__BackingField: {fileID: 0}
     <ItemIcon>k__BackingField: {fileID: 0}
     isPlayerActive: 0
     scrapAmount: 0
+    Input: {fileID: 0}
     GameObject: {fileID: 0}
     Transform: {fileID: 0}
     HealthHandler: {fileID: 0}
@@ -144,7 +145,7 @@ MonoBehaviour:
   UpdateLifeCount: {fileID: 11400000, guid: d4584a82d403ab2469f6d59d6047907a, type: 2}
   <CurrentLifeAmount>k__BackingField: 0
   initialLifeAmout: 3
-  maxLifeAmount: 9
+  maxLifeAmount: 5
   RespawnLabelStyle:
     m_Name: 
     m_Normal:

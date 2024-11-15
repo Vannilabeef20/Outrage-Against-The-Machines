@@ -100,10 +100,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6333848671685486935}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -170000706, guid: f4dbe7c4a497b9f49b7cce0be1049e97, type: 3}
   - {fileID: 389648443, guid: f4dbe7c4a497b9f49b7cce0be1049e97, type: 3}
@@ -134,5 +135,7 @@ MonoBehaviour:
   - {fileID: -331212287, guid: f4dbe7c4a497b9f49b7cce0be1049e97, type: 3}
   - {fileID: -1562070139, guid: f4dbe7c4a497b9f49b7cce0be1049e97, type: 3}
   - {fileID: 1375330425, guid: f4dbe7c4a497b9f49b7cce0be1049e97, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0

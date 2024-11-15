@@ -5612,6 +5612,7 @@ GameObject:
   - component: {fileID: 1660645470}
   - component: {fileID: 1660645471}
   - component: {fileID: 4804950279624965546}
+  - component: {fileID: 2229722314277119491}
   m_Layer: 0
   m_Name: MK2_Death
   m_TagString: Untagged
@@ -5669,6 +5670,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2229722314277119491}
+          m_TargetAssemblyTypeName: Cinemachine.CinemachineImpulseSource, Cinemachine
+          m_MethodName: GenerateImpulse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4804950279624965546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5700,6 +5713,95 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &2229722314277119491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660645469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2.5
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 2.5
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &1680220762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,8 +5832,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7661904117412163383}
   - {fileID: 2898416351792877442}
   - {fileID: 17104577}
+  - {fileID: 4691503843378725139}
   m_Father: {fileID: 6423577777945764625}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5756,8 +5860,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <Attacks>k__BackingField:
+  - {fileID: 1511591044622370413}
   - {fileID: 352680973045897693}
   - {fileID: 17104578}
+  - {fileID: 7008735140170407124}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
   attackLabelStyle:
@@ -5884,7 +5990,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 30.7}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 215.93, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1801071473
 CanvasRenderer:
@@ -5916,8 +6022,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: RAT MK1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
-  m_sharedMaterial: {fileID: -2103876767430310799, guid: aa42f3d074f524745b1b747cbdf1a73f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe265694abf2d0f449f440b050f290d2, type: 2}
+  m_sharedMaterial: {fileID: 1430215558844945394, guid: fe265694abf2d0f449f440b050f290d2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5941,8 +6047,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 22.1
+  m_fontSizeBase: 22.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5983,6 +6089,150 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1159721891500900031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7661904117412163383}
+  - component: {fileID: 1511591044622370413}
+  - component: {fileID: 1302654954249928037}
+  m_Layer: 0
+  m_Name: MK2_Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7661904117412163383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159721891500900031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1680220763}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511591044622370413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159721891500900031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5f03bc94428834cb158d23f6150fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 91321be1fc62784428c4cf5d78fd11c1, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 4719953291839701837}
+  <Cooldown>k__BackingField: 4
+  <IsOnCooldown>k__BackingField: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  <EDirection>k__BackingField: 0
+  detectionHeight: 1
+  detectionWidth: 1
+  detectionOffset: {x: 0, y: 1, z: 0}
+  detectedColliders: []
+  attackDirection: {x: 0, y: 0, z: 0}
+  stopTracking: 0
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: 1de5c3203d4b7424b90e15f2dfce5eef, type: 2}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 0
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1511591044622370413}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
+            m_MethodName: StopTracking
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1302654954249928037}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1302654954249928037}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  detectionColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1302654954249928037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159721891500900031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1897315433
+      Data2: 1293140483
+      Data3: -4045935
+      Data4: -1167414128
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Attack 2 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1564453822252932495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6001,7 +6251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6636535655153216110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6152,7 +6402,7 @@ MonoBehaviour:
   bossName: {fileID: 1801071472}
   <Parent>k__BackingField: {fileID: 3955572703823519736}
   uiObject: {fileID: 1564453822252932495}
-  encounterIndex: 9
+  encounterIndex: 8
   mk1Intercept: {fileID: 9052400536404670090}
   mk1Damage: {fileID: 5419053393971274055}
   mk1Attack: {fileID: 808545685}
@@ -6281,7 +6531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8258816405261905059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6416,7 +6666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2420983162238566846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6804,6 +7054,7 @@ GameObject:
   - component: {fileID: 7821155707108366361}
   - component: {fileID: 5756563272266863707}
   - component: {fileID: 183750888967946584}
+  - component: {fileID: 6469367483847312815}
   m_Layer: 0
   m_Name: MK1_Death
   m_TagString: Untagged
@@ -6862,6 +7113,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 6469367483847312815}
+          m_TargetAssemblyTypeName: Cinemachine.CinemachineImpulseSource, Cinemachine
+          m_MethodName: GenerateImpulse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &183750888967946584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6882,6 +7145,239 @@ MonoBehaviour:
       Data3: -501406279
       Data4: -451667962
     Path: event:/SFX/Boss/Boss 1/Boss 1 Death SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6469367483847312815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435580213582907897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 2.5
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!1 &5275066400499263346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4691503843378725139}
+  - component: {fileID: 7008735140170407124}
+  - component: {fileID: 9164435923072510853}
+  m_Layer: 0
+  m_Name: MK2_Chain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4691503843378725139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5275066400499263346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1680220763}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7008735140170407124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5275066400499263346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5f03bc94428834cb158d23f6150fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: e7e875f5a6b8f28409684c25765007e6, type: 2}
+  startTime: 0
+  progress: 0
+  <IsComplete>k__BackingField: 0
+  stateMachine: {fileID: 4719953291839701837}
+  <Cooldown>k__BackingField: 4
+  <IsOnCooldown>k__BackingField: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  <EDirection>k__BackingField: 0
+  detectionHeight: 1
+  detectionWidth: 1
+  detectionOffset: {x: 0, y: 1, z: 0}
+  detectedColliders: []
+  attackDirection: {x: 0, y: 0, z: 0}
+  stopTracking: 0
+  <Attack>k__BackingField:
+    <Config>k__BackingField: {fileID: 11400000, guid: dca2135e8dd6103409b7549b304dcd4f, type: 2}
+    <FrameEvents>k__BackingField:
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9164435923072510853}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - <TriggerFrame>k__BackingField: 3
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7008735140170407124}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
+            m_MethodName: StopTracking
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9164435923072510853}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  detectionColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &9164435923072510853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5275066400499263346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1897315433
+      Data2: 1293140483
+      Data3: -4045935
+      Data4: -1167414128
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Attack 2 SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -6969,7 +7465,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1070471544, guid: 004850c3a92ef4c4ca04765bd865827e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -6977,7 +7473,7 @@ SpriteRenderer:
   m_Size: {x: 7.3333335, y: 7.3333335}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2507473752529445960

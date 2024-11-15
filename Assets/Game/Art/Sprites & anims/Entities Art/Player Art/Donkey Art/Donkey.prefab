@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6764394574500624099}
   - component: {fileID: 4798831838336931059}
+  - component: {fileID: 847405502720762934}
   m_Layer: 0
   m_Name: Donkey_Special_AttackState
   m_TagString: Untagged
@@ -174,6 +175,111 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - <TriggerFrame>k__BackingField: 20
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 847405502720762934}
+          m_TargetAssemblyTypeName: Cinemachine.CinemachineImpulseSource, Cinemachine
+          m_MethodName: GenerateImpulse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &847405502720762934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831993814377848944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 3
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.5
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &1164585175635907945
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +739,7 @@ MonoBehaviour:
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
   emitter: {fileID: 3611961179346149728}
+  impulseSource: {fileID: 5271010747204261243}
 --- !u!114 &3611961179346149728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,7 +1098,7 @@ GameObject:
   - component: {fileID: 1164585176240065429}
   m_Layer: 6
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1187,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041abd177dfc0d5448f8175e3eae08dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateAnimation: {fileID: 7400000, guid: 637b23f542eda4648a721e025bd9f463, type: 2}
+  StateAnimation: {fileID: 7400000, guid: acfb3a9c75696634aaa4714d4f6c50c0, type: 2}
   startTime: 0
   progress: 0
   <IsComplete>k__BackingField: 0
@@ -1246,7 +1353,7 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   EmitterFootstep_0: {fileID: 6965143477049175930}
   EmitterFootstep_1: {fileID: 3302186660440243489}
-  movementSpeed: {x: 4.8, y: 2.8}
+  movementSpeed: {x: 4.8, y: 3}
   currentFootstepSoundIndex: 0
   velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1164585177213015456
@@ -1260,6 +1367,7 @@ GameObject:
   - component: {fileID: 1164585177213015471}
   - component: {fileID: 1164585177213015470}
   - component: {fileID: 6012565050126121000}
+  - component: {fileID: 5271010747204261243}
   m_Layer: 0
   m_Name: AttackState
   m_TagString: Untagged
@@ -1353,6 +1461,95 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &5271010747204261243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164585177213015456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2.5
+    m_FrequencyGain: 1.75
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &1164585177367800634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,8 +1837,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4334737, y: 0.48933256, z: 0.4}
-  m_Center: {x: -0.16329485, y: 0.28502375, z: 0}
+  m_Size: {x: 1.4334737, y: 1.2593201, z: 0.4}
+  m_Center: {x: -0.16329485, y: 0.67001754, z: 0}
 --- !u!114 &3359556994554866377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,7 +2011,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.6666665, y: 3.625}
+  m_Size: {x: 8, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1914,6 +2111,7 @@ MonoBehaviour:
     m_Bits: 256
   hitEffect: {fileID: 4229650732507882577, guid: 4e17965b81e30e74fa75ccd89f76382f, type: 3}
   emitter: {fileID: 718159735169308942}
+  impulseSource: {fileID: 5271010747204261243}
 --- !u!114 &718159735169308942
 MonoBehaviour:
   m_ObjectHideFlags: 0

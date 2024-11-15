@@ -185,8 +185,8 @@ TextureImporter:
       name: Boss_MK2_Walk_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 176
+        x: 528
+        y: 352
         width: 176
         height: 176
       alignment: 7
@@ -206,7 +206,7 @@ TextureImporter:
       name: Boss_MK2_Walk_4
       rect:
         serializedVersion: 2
-        x: 176
+        x: 0
         y: 176
         width: 176
         height: 176
@@ -227,7 +227,7 @@ TextureImporter:
       name: Boss_MK2_Walk_5
       rect:
         serializedVersion: 2
-        x: 352
+        x: 176
         y: 176
         width: 176
         height: 176
@@ -248,8 +248,8 @@ TextureImporter:
       name: Boss_MK2_Walk_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 352
+        y: 176
         width: 176
         height: 176
       alignment: 7
@@ -269,8 +269,8 @@ TextureImporter:
       name: Boss_MK2_Walk_7
       rect:
         serializedVersion: 2
-        x: 176
-        y: 0
+        x: 528
+        y: 176
         width: 176
         height: 176
       alignment: 7
@@ -290,7 +290,7 @@ TextureImporter:
       name: Boss_MK2_Walk_8
       rect:
         serializedVersion: 2
-        x: 352
+        x: 0
         y: 0
         width: 176
         height: 176
@@ -303,6 +303,27 @@ TextureImporter:
       bones: []
       spriteID: 79bf8fffe24b17847973ab3dd795c8af
       internalID: 1716783395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK2_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 176
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a756c1124b1264f9c3df362ec7b20a
+      internalID: -1292946817
       vertices: []
       indices: 
       edges: []
@@ -322,6 +343,7 @@ TextureImporter:
       Boss_MK2_Walk_0: -1799761434
       Boss_MK2_Walk_6: -1044829355
       Boss_MK2_Walk_3: 116308057
+      Boss_MK2_Walk_9: -1292946817
       Boss_MK2_Walk_2: -104854315
       Boss_MK2_Walk_8: 1716783395
       Boss_MK2_Walk_4: -647822786

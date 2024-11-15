@@ -60,6 +60,8 @@ namespace Game
             //Search player per tag
             for (int i = 0; i < GameManager.Instance.PlayerTags.Length; i++)
             {
+                if (!targetPlayer.activeInHierarchy) continue;
+
                 if (targetPlayer.CompareTag(GameManager.Instance.PlayerTags[i]))
                 {
                     if (useImmediatly)

@@ -202,7 +202,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: -773160965, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -229,10 +229,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7628682227843195695}
   image: {fileID: 0}
   targetType: 0
+  playOnAwake: 1
+  cull: 1
   loop: 1
-  animationDuration: 2
   DestroyOnFinish: 0
-  pause: 0
+  animationDuration: 2
   sprites:
   - {fileID: -773160965, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
   - {fileID: -1808854437, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
@@ -242,6 +243,8 @@ MonoBehaviour:
   - {fileID: 1773893463, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
   - {fileID: 1744875702, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
   - {fileID: -1617572974, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
+  playing: 0
+  pause: 0
   timer: 0
   currentSpriteIndex: 0
 --- !u!1 &9037711449805424230
