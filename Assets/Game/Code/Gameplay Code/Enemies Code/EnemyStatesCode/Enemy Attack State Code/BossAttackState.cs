@@ -118,6 +118,11 @@ namespace Game
             stopTracking = true;
         }
 
+        public void StartTracking()
+        {
+            stopTracking = false;
+        }
+
         public bool IsAligned()
         {
             switch (EDirection)

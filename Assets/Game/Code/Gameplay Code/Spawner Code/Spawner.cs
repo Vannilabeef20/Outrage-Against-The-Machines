@@ -112,7 +112,6 @@ namespace Game
                 enemiesToSpawn.ShuffleList();
 
                 //Wave spawn loop
-                SpawnEnemy();
                 while (enemiesToSpawn.Count > 0)
                 {
                     yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
@@ -120,12 +119,28 @@ namespace Game
                 }
 
                 //Wait till all enemies are dead
-                while (enemiesAlive.Count > 0)
+                if (currentEncounterIndex == LevelEncounters.Encounters.Length - 1)
                 {
-                    yield return null;
+                    while (enemiesAlive.Count > 1)
+                    {
+                        yield return null;
+                    }
+                }
+                else
+                {
+                    while (enemiesAlive.Count > 0)
+                    {
+                        yield return null;
+                    }
                 }
             }
-            
+
+            if(currentEncounterIndex == LevelEncounters.Encounters.Length - 1)
+            {
+                encCoroutine = StartCoroutine (EncounterRoutine());
+                yield break;
+            }
+
             //End
             virtualCameraFramingTransposer.m_DeadZoneWidth = defaultDeadzoneWidtht;
             goImage.enabled = true;

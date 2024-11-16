@@ -319,9 +319,75 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '8 | Waves: 1 || Enemies: 0'
-    position: {x: 205, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 2}
+  - Name: '8 | Waves: 4 || Enemies: 12'
+    position: {x: 204.43, y: 6.02, z: 0}
+    spawnDelay: {x: 7.5, y: 10}
     waves:
-    - Name: '0 | Enemies: 0'
-      enemies: []
+    - Name: '0 | Enemies: 3'
+      enemies:
+      - Name: Base Security Bear Robot | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 0
+      - Name: Base Security Bear Robot | 1 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+    - Name: '1 | Enemies: 3'
+      enemies:
+      - Name: Cleaner Turtle Robot | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 0
+      - Name: Base Security Bear Robot | 1 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+    - Name: '2 | Enemies: 3'
+      enemies:
+      - Name: Robo Ranged | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 0
+      - Name: Base Security Bear Robot | 1 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+    - Name: '3 | Enemies: 3'
+      enemies:
+      - Name: Robo Ranged | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 0
+      - Name: Cleaner Turtle Robot | 1 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3

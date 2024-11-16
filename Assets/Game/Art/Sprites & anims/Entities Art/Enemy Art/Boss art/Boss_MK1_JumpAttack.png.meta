@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f69436a71b472344b9c433b7b5c5d5d
+guid: 3e27ada85cc67fd4b8ead1ced4afc3dc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,679 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6877c6d3b27e1d6488df3fe52d50b0db
+      internalID: 1173690055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 880
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367f86734e4453d4c93a893d3fa52b3e
+      internalID: 1301733676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 880
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f736c5046a264384badc41eb38aee9b3
+      internalID: 38790321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 880
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d26164973abcb4281db9e192b96300
+      internalID: -1961383877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 880
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e15f18a2bf0d94b8b45e30440426a7
+      internalID: 21900556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_5
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 880
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f41edc57d63bb344bf316573f8636e1
+      internalID: -121815880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513d55c90bef29b44bc095123002dde4
+      internalID: 148521286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 704
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7c0dbd894a24b43b82ece73aa4de0f
+      internalID: -1403382459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 704
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bb5bb4cb74c6a4382564c50feba285
+      internalID: -635057378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_9
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 704
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbad624a1a98b114eacc5a76bb28afb9
+      internalID: 981353157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 704
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7857465b1f26445992667a113c17e0
+      internalID: -859382116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_11
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 704
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dad98e8db50074fa67bb98f1c1f4fb
+      internalID: 442037768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5cd5c25a79e6d4bab416abfed13ad2
+      internalID: 1433736799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 528
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633f01b81305e0947bd59e34dcee0597
+      internalID: -1967181015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 528
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc04dccb9642c1a4c9d4e688b71cc2fb
+      internalID: -954044259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 528
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e286c7051db8a43af5c98c0beaf174
+      internalID: 1729945312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 528
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6636ce96d0cadb409820cd451f0e1f5
+      internalID: -2048800648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_17
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 528
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d971b5553e371e4280efab10bd91d79
+      internalID: -1737753298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5acacdedc09cd04db00e6c25e82057c
+      internalID: 1592592501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 352
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f4f8e770c47da4f928411c2b8d5c44
+      internalID: 991821947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 352
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fce20bb264b5ea42988f0419f8d169d
+      internalID: 1781302433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_21
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 352
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fcca6829d31284989b652074d71a71
+      internalID: 422066795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_22
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 352
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04f757d036edee4284c2e2fdd9048c3
+      internalID: -618797940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_23
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 352
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2945ab4df37aea643bb91c2bbfd4126d
+      internalID: 2111761153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254e7f9f3af51af4c986f6fba26c6d21
+      internalID: -1044404353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 176
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ee9293cc1087b4cb444d838621623b
+      internalID: 1221543921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 176
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03187ff4c113524c91985f26eddc5db
+      internalID: 1267494263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_27
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 176
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3672f5b9d8ebb144aa70c83b3c7f4a1c
+      internalID: -876049461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_28
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 176
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4af98081231e0a4396b5d7727376c68
+      internalID: -1253914646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_29
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 176
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb29ef483116ca4a94e555a187a56bb
+      internalID: 665665812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45986681c4d579c40a4749b352126882
+      internalID: 250177805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK1_JumpAttack_31
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99e5abd5ec93444ca8b0361e482ac7d
+      internalID: -1797218699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -128,7 +800,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boss_MK1_JumpAttack_13: -1967181015
+      Boss_MK1_JumpAttack_19: 991821947
+      Boss_MK1_JumpAttack_5: -121815880
+      Boss_MK1_JumpAttack_6: 148521286
+      Boss_MK1_JumpAttack_4: 21900556
+      Boss_MK1_JumpAttack_24: -1044404353
+      Boss_MK1_JumpAttack_7: -1403382459
+      Boss_MK1_JumpAttack_15: 1729945312
+      Boss_MK1_JumpAttack_16: -2048800648
+      Boss_MK1_JumpAttack_11: 442037768
+      Boss_MK1_JumpAttack_31: -1797218699
+      Boss_MK1_JumpAttack_20: 1781302433
+      Boss_MK1_JumpAttack_26: 1267494263
+      Boss_MK1_JumpAttack_0: 1173690055
+      Boss_MK1_JumpAttack_25: 1221543921
+      Boss_MK1_JumpAttack_21: 422066795
+      Boss_MK1_JumpAttack_9: 981353157
+      Boss_MK1_JumpAttack_2: 38790321
+      Boss_MK1_JumpAttack_12: 1433736799
+      Boss_MK1_JumpAttack_8: -635057378
+      Boss_MK1_JumpAttack_10: -859382116
+      Boss_MK1_JumpAttack_3: -1961383877
+      Boss_MK1_JumpAttack_27: -876049461
+      Boss_MK1_JumpAttack_17: -1737753298
+      Boss_MK1_JumpAttack_29: 665665812
+      Boss_MK1_JumpAttack_1: 1301733676
+      Boss_MK1_JumpAttack_28: -1253914646
+      Boss_MK1_JumpAttack_23: 2111761153
+      Boss_MK1_JumpAttack_18: 1592592501
+      Boss_MK1_JumpAttack_22: -618797940
+      Boss_MK1_JumpAttack_30: 250177805
+      Boss_MK1_JumpAttack_14: -954044259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

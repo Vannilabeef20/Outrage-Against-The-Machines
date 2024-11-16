@@ -21,6 +21,8 @@ namespace Game
         [SerializeField] bool cull = true;
         [SerializeField] bool loop = true;
         [SerializeField] bool DestroyOnFinish;
+        [SerializeField] bool startOffset;
+        [SerializeField, Range(0,100), ShowIf("startOffset")] float startOffsetPercent;
         [SerializeField, Min(0f)] float animationDuration;
 
         [SerializeField, ShowAssetPreview] Sprite[] sprites;
@@ -33,6 +35,10 @@ namespace Game
         private void Awake()
         {
             if (playOnAwake) playing = true;
+            if(startOffset)
+            {
+                currentSpriteIndex = Mathf.RoundToInt(startOffsetPercent.Map(0, 100, 0, sprites.Length));
+            }
         }
         private void Update()
         {

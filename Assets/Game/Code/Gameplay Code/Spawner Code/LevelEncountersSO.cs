@@ -78,7 +78,7 @@ namespace Game
 
         [Tooltip("The time range between spawns.")]
         public Vector3 position;
-        [MinMaxSlider(0.1f, 5f)] public Vector2 spawnDelay;
+        [MinMaxSlider(0.1f, 10f)] public Vector2 spawnDelay;
         public EnemyWave[] waves;
 
         public void UpdateNames()
