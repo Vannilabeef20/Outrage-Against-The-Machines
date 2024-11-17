@@ -124,10 +124,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 352
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: Boss_MK2_Idle_1
       rect:
         serializedVersion: 2
-        x: 176
+        x: 400
         y: 352
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,12 +164,12 @@ TextureImporter:
       name: Boss_MK2_Idle_2
       rect:
         serializedVersion: 2
-        x: 352
+        x: 800
         y: 352
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,12 +185,12 @@ TextureImporter:
       name: Boss_MK2_Idle_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 176
-        width: 176
+        x: 1200
+        y: 352
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Boss_MK2_Idle_4
       rect:
         serializedVersion: 2
-        x: 176
+        x: 0
         y: 176
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +227,12 @@ TextureImporter:
       name: Boss_MK2_Idle_5
       rect:
         serializedVersion: 2
-        x: 352
+        x: 400
         y: 176
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,12 +248,12 @@ TextureImporter:
       name: Boss_MK2_Idle_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 176
+        x: 800
+        y: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,6 +261,69 @@ TextureImporter:
       bones: []
       spriteID: 6daf621f767e81b4083d3cd2cc3dd63a
       internalID: 885567597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK2_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 176
+        width: 400
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4468d278f530f544c98aac4434ca8de9
+      internalID: 723904852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK2_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed62432ed92303428ff4c712e79d421
+      internalID: -351189342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK2_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be0217030c41f14189d5962b6bf3c9a
+      internalID: 189792126
       vertices: []
       indices: 
       edges: []
@@ -277,8 +340,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Boss_MK2_Idle_1: -1655764994
+      Boss_MK2_Idle_9: 189792126
+      Boss_MK2_Idle_8: -351189342
       Boss_MK2_Idle_6: 885567597
       Boss_MK2_Idle_2: 47080236
+      Boss_MK2_Idle_7: 723904852
       Boss_MK2_Idle_0: -717444903
       Boss_MK2_Idle_4: 854501870
       Boss_MK2_Idle_3: 867354557

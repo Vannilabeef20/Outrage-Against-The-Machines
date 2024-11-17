@@ -124,10 +124,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 352
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: Boss_MK2_Death_1
       rect:
         serializedVersion: 2
-        x: 176
+        x: 400
         y: 352
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,12 +164,12 @@ TextureImporter:
       name: Boss_MK2_Death_2
       rect:
         serializedVersion: 2
-        x: 352
+        x: 800
         y: 352
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,12 +185,12 @@ TextureImporter:
       name: Boss_MK2_Death_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 176
-        width: 176
+        x: 1200
+        y: 352
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Boss_MK2_Death_4
       rect:
         serializedVersion: 2
-        x: 176
+        x: 0
         y: 176
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +227,12 @@ TextureImporter:
       name: Boss_MK2_Death_5
       rect:
         serializedVersion: 2
-        x: 352
+        x: 400
         y: 176
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,12 +248,12 @@ TextureImporter:
       name: Boss_MK2_Death_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 176
+        x: 800
+        y: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: Boss_MK2_Death_7
       rect:
         serializedVersion: 2
-        x: 176
-        y: 0
-        width: 176
+        x: 1200
+        y: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: Boss_MK2_Death_8
       rect:
         serializedVersion: 2
-        x: 352
+        x: 0
         y: 0
-        width: 176
+        width: 400
         height: 176
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -303,6 +303,27 @@ TextureImporter:
       bones: []
       spriteID: 472f4980c77698b47ac88f995a61c5d6
       internalID: -1186645066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MK2_Death_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d59c3cce612474a8d305fd9d329f88
+      internalID: -1940269620
       vertices: []
       indices: 
       edges: []
@@ -327,6 +348,7 @@ TextureImporter:
       Boss_MK2_Death_0: -103093691
       Boss_MK2_Death_8: -1186645066
       Boss_MK2_Death_2: -501369165
+      Boss_MK2_Death_9: -1940269620
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
