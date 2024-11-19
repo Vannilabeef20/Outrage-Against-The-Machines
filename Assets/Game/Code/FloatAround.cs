@@ -11,6 +11,7 @@ namespace Game
 	{
         [SerializeField, ShowIf("isRect")] RectTransform rect;
         [SerializeField] bool isRect;
+        [SerializeField, Range(0, 100)] float startPercent;
         [SerializeField] AnimationCurve curveX;
         [SerializeField] AnimationCurve curveY;
         [SerializeField] float waveXDuration;
@@ -28,6 +29,9 @@ namespace Game
 
         private void Start()
         {
+            timerX = startPercent.Map(0, 100, 0, waveXDuration);
+            timerY = startPercent.Map(0, 100, 0, waveXDuration);
+
             rect = GetComponent<RectTransform>();
             if (isRect)
                 initialPos = rect.anchoredPosition;

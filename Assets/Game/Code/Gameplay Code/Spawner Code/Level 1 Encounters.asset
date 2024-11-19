@@ -19,8 +19,8 @@ MonoBehaviour:
     waves:
     - Name: '0 | Enemies: 3'
       enemies:
-      - Name: Base Security Bear Robot | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+      - Name: Robo Ranged | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
         amount: 1
         multiplayerOnly: 0
         playersRequired: 2
@@ -262,7 +262,7 @@ MonoBehaviour:
         multiplayerOnly: 1
         playersRequired: 3
   - Name: '7 | Waves: 2 || Enemies: 22'
-    position: {x: 143.5, y: 6.02, z: 0}
+    position: {x: 143, y: 6.02, z: 0}
     spawnDelay: {x: 1.25, y: 2}
     waves:
     - Name: '0 | Enemies: 12'

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using NaughtyAttributes;
 using TMPro;
 using FMODUnity;
@@ -19,7 +20,9 @@ namespace Game
         public BoxCollider collisionBox;
         [SerializeField] BoolEvent toggleLevelMusicEvent;
         [SerializeField] StudioEventEmitter bossMusicEmitter;
-        [SerializeField] TextMeshProUGUI bossName;
+        [SerializeField] Image healhbarImage;
+        [SerializeField] Sprite healthBarPhase2Sprite;
+
         [field: SerializeField] public GameObject Parent { get; private set; }
 
         [SerializeField] GameObject uiObject;
@@ -186,7 +189,8 @@ namespace Game
         public void SetPhase2()
         {
             phase2 = true;
-            bossName.text = "RAT MK2";
+            healhbarImage.sprite = healthBarPhase2Sprite;
+            healhbarImage.SetNativeSize();
         }
 
         private void GetContextSpeed()

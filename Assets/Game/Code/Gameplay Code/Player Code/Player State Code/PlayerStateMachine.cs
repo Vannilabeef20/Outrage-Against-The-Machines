@@ -175,7 +175,7 @@ namespace Game
         {
             if (!context.performed) return;
 
-            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+            if (SceneManager.GetActiveScene().buildIndex != 1) return;
 
             GameManager.Instance.PauseGame();
         }
@@ -184,7 +184,7 @@ namespace Game
         {
             if (input != playerInput) return;
 
-            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+            if (SceneManager.GetActiveScene().buildIndex != 1) return;
 
             GameManager.Instance.PauseGame();
         }

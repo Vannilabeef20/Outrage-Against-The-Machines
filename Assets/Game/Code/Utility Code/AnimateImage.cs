@@ -101,13 +101,6 @@ namespace Game
         [Button("STOP", EButtonEnableMode.Playmode)]
         public void Stop()
         {
-            switch(targetType)
-            {
-                case EAnimationTarget.Image: image.sprite = null; break;
-                case EAnimationTarget.SpriteRenderer: spriteRenderer.sprite = null; break;
-            }
-            timer = 0;
-            currentSpriteIndex = 0;
             playing = false;
         }
 

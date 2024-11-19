@@ -17,6 +17,7 @@ namespace Game
         [SerializeField] GameObject joinedUI;
         [SerializeField] GameObject joinUI;
         [SerializeField] GameObject readyObject;
+        [SerializeField] AnimateImage readyCheckmark;
         [SerializeField] GameObject[] speedPoints;
         [SerializeField] GameObject[] defensePoints;
 
@@ -131,6 +132,7 @@ namespace Game
         {
             IsReady = !IsReady;
             readyObject.SetActive(IsReady);
+            if(IsReady) readyCheckmark.Restart();
         }
 
 
@@ -150,10 +152,6 @@ namespace Game
 
             joinUI.SetActive(false);
             joinedUI.SetActive(true);
-            foreach (var imageObject in selectionImageObjects)
-            {
-                
-            }
 
             for(int i = 0; i < defensePoints.Length; i++)
             {

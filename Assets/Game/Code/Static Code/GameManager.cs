@@ -62,7 +62,7 @@ namespace Game
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 int level = SceneManager.GetActiveScene().buildIndex;
-                if(level != 0)
+                if(level == 1)
                 InitializeLevel();
             }
             else if (Instance != this)
@@ -75,7 +75,7 @@ namespace Game
         {
             MainCamera = Camera.main;
             int level = SceneManager.GetActiveScene().buildIndex;
-            if (level == 0)
+            if (level != 1)
             {
                 OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
             }
@@ -102,9 +102,16 @@ namespace Game
                 return;
             }
 
-            if (level == 0) OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
+            if (level != 1)
+            {
+                OnSetMenuVisibility.Raise(this, EMenuId.StartMenu);
+            }
             else
             {
+                foreach (PlayerCharacter player in PlayerCharacterList)
+                {
+                    player.scrapAmount = 0;
+                }
                 OnSetMenuVisibility.Raise(this, EMenuId.None);
                 InitializeLevel();
                 UnityInputManager.playerPrefab = root;
@@ -201,7 +208,7 @@ namespace Game
             }
             if(aliveCount == 0)
             {
-                TransitionManager.Instance.LoadScene(0);
+                TransitionManager.Instance.LoadScene(2);
             }
         }
 
