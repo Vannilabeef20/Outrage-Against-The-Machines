@@ -1734,8 +1734,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.25
-      value: -1
+      time: -0.21875
+      value: -0.8113098
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1743,8 +1743,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.25
-      value: 1
+      time: 0.24375153
+      value: 0.5047188
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1795,7 +1795,6 @@ GameObject:
   - component: {fileID: 8590227686112707156}
   - component: {fileID: 1037860324042905976}
   - component: {fileID: 8590227686112707159}
-  - component: {fileID: 61172813}
   m_Layer: 0
   m_Name: StartMenu Main Title Image
   m_TagString: Untagged
@@ -1861,108 +1860,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &61172813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5622041158147759283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063f0b5a8571a8e41be8419a2a7d2b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rect: {fileID: 8590227686112707156}
-  isRect: 1
-  startPercent: 0
-  curveX:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: -1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  curveY:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.25
-      value: -1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.25
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.75
-      value: -1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.25
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  waveXDuration: 2
-  waveYDuration: 3
-  distanceX: 2
-  distanceY: 2
-  initialPos: {x: 0, y: 0, z: 0}
-  timerX: 0
-  timerY: 0
-  progressX: 0
-  progressY: 0
-  sampleX: 0
-  sampleY: 0
-  displacement: {x: 0, y: 0}
 --- !u!1 &5652782458173254733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,7 +1999,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.25
-      value: 1
+      value: 0.8443413
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -2110,8 +2007,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.75
-      value: -1
+      time: 0.7749939
+      value: -0.84432983
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -3035,13 +2932,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7227880126030403456}
-  - {fileID: 3136818089207338918}
   - {fileID: 5639193386657268028}
+  - {fileID: 3136818089207338918}
   - {fileID: 3091087891063637602}
   - {fileID: 8790087319309683184}
   - {fileID: 3383593818390906231}
-  - {fileID: 3957366819199078326}
   - {fileID: 8303604913797829115}
+  - {fileID: 3957366819199078326}
   - {fileID: 3989906441063504837}
   - {fileID: 8260734361250350896}
   - {fileID: 1918915013426068879}
