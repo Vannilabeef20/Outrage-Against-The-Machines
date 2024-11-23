@@ -32,6 +32,9 @@ namespace Game
         [SerializeField, ReadOnly] bool stopTracking;
         [field: SerializeField] public EnemyAttack Attack { get; private set; }
 
+        [SerializeField] RumbleData rumbleData;
+        [Space]
+
         [SerializeField] UnityEvent OnExitEvent;
 
         Vector3 HalfExtents => new Vector3(Attack.Config.TriggerRange, detectionHeight, detectionWidth) * 0.5f;
@@ -121,6 +124,11 @@ namespace Game
         public void StartTracking()
         {
             stopTracking = false;
+        }
+
+        public void PlayRumble()
+        {
+            RumbleManager.Instance.CreateRumble(this.gameObject.name, rumbleData, EPlayer.All);
         }
 
         public bool IsAligned()

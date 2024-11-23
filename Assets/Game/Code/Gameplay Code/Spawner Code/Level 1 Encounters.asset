@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Level 1 Encounters
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
-  - Name: '0 | Waves: 1 || Enemies: 3'
+  - Name: '0 | Waves: 1 || Enemies: 1P - 1 | 2P - 2 | 3P - 3'
     position: {x: -102.17, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 2}
+    spawnDelay: {x: 3, y: 4}
     waves:
-    - Name: '0 | Enemies: 3'
+    - Name: '0 | Enemies: 1P - 1 | 2P - 2 | 3P - 3'
       enemies:
-      - Name: Robo Ranged | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+      - Name: Base Security Bear Robot | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
         amount: 1
         multiplayerOnly: 0
         playersRequired: 2
@@ -34,20 +34,20 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '1 | Waves: 1 || Enemies: 5'
+  - Name: '1 | Waves: 1 || Enemies: 1P - 2 | 2P - 4 | 3P - 6'
     position: {x: -67.1, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 2}
+    spawnDelay: {x: 3, y: 4}
     waves:
-    - Name: '0 | Enemies: 5'
+    - Name: '0 | Enemies: 1P - 2 | 2P - 4 | 3P - 6'
       enemies:
       - Name: Base Security Bear Robot | 2 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
         amount: 2
         multiplayerOnly: 0
         playersRequired: 2
-      - Name: Base Security Bear Robot | 1 Units| 2-P
+      - Name: Base Security Bear Robot | 2 Units| 2-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
+        amount: 2
         multiplayerOnly: 1
         playersRequired: 2
       - Name: Base Security Bear Robot | 2 Units| 3-P
@@ -55,58 +55,11 @@ MonoBehaviour:
         amount: 2
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '2 | Waves: 1 || Enemies: 6'
+  - Name: '2 | Waves: 1 || Enemies: 1P - 3 | 2P - 5 | 3P - 7'
     position: {x: -38.8, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 1.5}
+    spawnDelay: {x: 1, y: 2}
     waves:
-    - Name: '0 | Enemies: 6'
-      enemies:
-      - Name: Base Security Bear Robot | 3 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 3
-        multiplayerOnly: 0
-        playersRequired: 2
-      - Name: Base Security Bear Robot | 1 Units| 2-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 1
-        playersRequired: 2
-      - Name: Robo Ranged | 1 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-        amount: 1
-        multiplayerOnly: 0
-        playersRequired: 2
-      - Name: Robo Ranged | 1 Units| 3-P
-        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-        amount: 1
-        multiplayerOnly: 1
-        playersRequired: 3
-  - Name: '3 | Waves: 1 || Enemies: 6'
-    position: {x: 6.57, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 1.5}
-    waves:
-    - Name: '0 | Enemies: 6'
-      enemies:
-      - Name: Base Security Bear Robot | 4 Units| Any-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 4
-        multiplayerOnly: 0
-        playersRequired: 2
-      - Name: Base Security Bear Robot | 1 Units| 2-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 1
-        playersRequired: 2
-      - Name: Base Security Bear Robot | 1 Units| 3-P
-        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 1
-        multiplayerOnly: 1
-        playersRequired: 3
-  - Name: '4 | Waves: 2 || Enemies: 12'
-    position: {x: 40.1, y: 6.02, z: 0}
-    spawnDelay: {x: 1, y: 1.5}
-    waves:
-    - Name: '0 | Enemies: 7'
+    - Name: '0 | Enemies: 1P - 3 | 2P - 5 | 3P - 7'
       enemies:
       - Name: Base Security Bear Robot | 3 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
@@ -118,12 +71,69 @@ MonoBehaviour:
         amount: 2
         multiplayerOnly: 1
         playersRequired: 2
-      - Name: Robo Ranged | 2 Units| 3-P
-        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+      - Name: Base Security Bear Robot | 2 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
         amount: 2
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '1 | Enemies: 5'
+  - Name: '3 | Waves: 1 || Enemies: 1P - 4 | 2P - 5 | 3P - 7'
+    position: {x: 6.57, y: 6.02, z: 0}
+    spawnDelay: {x: 3, y: 4}
+    waves:
+    - Name: '0 | Enemies: 1P - 4 | 2P - 5 | 3P - 7'
+      enemies:
+      - Name: Base Security Bear Robot | 3 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 3
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Robo Ranged | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 3
+      - Name: Base Security Bear Robot | 1 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+      - Name: Robo Ranged | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+  - Name: '4 | Waves: 2 || Enemies: 1P - 8 | 2P - 12 | 3P - 16'
+    position: {x: 40.1, y: 6.02, z: 0}
+    spawnDelay: {x: 3, y: 4}
+    waves:
+    - Name: '0 | Enemies: 1P - 4 | 2P - 6 | 3P - 8'
+      enemies:
+      - Name: Base Security Bear Robot | 3 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 3
+        multiplayerOnly: 0
+        playersRequired: 2
+      - Name: Cleaner Turtle Robot | 1 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
+        amount: 1
+        multiplayerOnly: 0
+        playersRequired: 3
+      - Name: Base Security Bear Robot | 2 Units| 2-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 2
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Cleaner Turtle Robot | 2 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
+        amount: 2
+        multiplayerOnly: 1
+        playersRequired: 3
+    - Name: '1 | Enemies: 1P - 4 | 2P - 6 | 3P - 8'
       enemies:
       - Name: Base Security Bear Robot | 2 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
@@ -135,30 +145,45 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 0
         playersRequired: 3
-      - Name: Robo Ranged | 1 Units| 2-P
+      - Name: Robo Ranged | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
         amount: 1
-        multiplayerOnly: 1
-        playersRequired: 2
-      - Name: Cleaner Turtle Robot | 1 Units| 3-P
+        multiplayerOnly: 0
+        playersRequired: 3
+      - Name: Cleaner Turtle Robot | 1 Units| 2-P
         enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
         amount: 1
         multiplayerOnly: 1
-        playersRequired: 3
-  - Name: '5 | Waves: 2 || Enemies: 22'
-    position: {x: 69.69, y: 6.02, z: 0}
-    spawnDelay: {x: 1.25, y: 2}
-    waves:
-    - Name: '0 | Enemies: 12'
-      enemies:
-      - Name: Base Security Bear Robot | 5 Units| Any-P
+        playersRequired: 2
+      - Name: Base Security Bear Robot | 1 Units| 2-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 5
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 2
+      - Name: Robo Ranged | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+      - Name: Base Security Bear Robot | 1 Units| 3-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 1
+        multiplayerOnly: 1
+        playersRequired: 3
+  - Name: '5 | Waves: 2 || Enemies: 1P - 9 | 2P - 13 | 3P - 19'
+    position: {x: 67.97, y: 6.02, z: 0}
+    spawnDelay: {x: 3, y: 4}
+    waves:
+    - Name: '0 | Enemies: 1P - 4 | 2P - 6 | 3P - 9'
+      enemies:
+      - Name: Base Security Bear Robot | 3 Units| Any-P
+        enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
+        amount: 3
         multiplayerOnly: 0
         playersRequired: 2
-      - Name: Robo Ranged | 2 Units| Any-P
+      - Name: Robo Ranged | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
-        amount: 2
+        amount: 1
         multiplayerOnly: 0
         playersRequired: 3
       - Name: Base Security Bear Robot | 2 Units| 2-P
@@ -176,7 +201,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '1 | Enemies: 10'
+    - Name: '1 | Enemies: 1P - 5 | 2P - 7 | 3P - 10'
       enemies:
       - Name: Base Security Bear Robot | 3 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
@@ -203,15 +228,15 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '6 | Waves: 2 || Enemies: 22'
+  - Name: '6 | Waves: 2 || Enemies: 1P - 10 | 2P - 14 | 3P - 20'
     position: {x: 115.31, y: 6.02, z: 0}
-    spawnDelay: {x: 1.25, y: 2}
+    spawnDelay: {x: 3, y: 4}
     waves:
-    - Name: '0 | Enemies: 12'
+    - Name: '0 | Enemies: 1P - 5 | 2P - 7 | 3P - 10'
       enemies:
-      - Name: Base Security Bear Robot | 5 Units| Any-P
+      - Name: Base Security Bear Robot | 3 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 5
+        amount: 3
         multiplayerOnly: 0
         playersRequired: 2
       - Name: Robo Ranged | 2 Units| Any-P
@@ -234,7 +259,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '1 | Enemies: 10'
+    - Name: '1 | Enemies: 1P - 5 | 2P - 7 | 3P - 10'
       enemies:
       - Name: Base Security Bear Robot | 3 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
@@ -261,15 +286,15 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '7 | Waves: 2 || Enemies: 22'
+  - Name: '7 | Waves: 2 || Enemies: 1P - 10 | 2P - 14 | 3P - 20'
     position: {x: 143, y: 6.02, z: 0}
-    spawnDelay: {x: 1.25, y: 2}
+    spawnDelay: {x: 3, y: 5}
     waves:
-    - Name: '0 | Enemies: 12'
+    - Name: '0 | Enemies: 1P - 5 | 2P - 7 | 3P - 10'
       enemies:
-      - Name: Base Security Bear Robot | 5 Units| Any-P
+      - Name: Base Security Bear Robot | 3 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
-        amount: 5
+        amount: 3
         multiplayerOnly: 0
         playersRequired: 2
       - Name: Robo Ranged | 2 Units| Any-P
@@ -292,7 +317,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '1 | Enemies: 10'
+    - Name: '1 | Enemies: 1P - 5 | 2P - 7 | 3P - 10'
       enemies:
       - Name: Base Security Bear Robot | 3 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
@@ -319,11 +344,11 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-  - Name: '8 | Waves: 4 || Enemies: 12'
+  - Name: '8 | Waves: 4 || Enemies: 1P - 4 | 2P - 8 | 3P - 12'
     position: {x: 204.43, y: 6.02, z: 0}
     spawnDelay: {x: 7.5, y: 10}
     waves:
-    - Name: '0 | Enemies: 3'
+    - Name: '0 | Enemies: 1P - 1 | 2P - 2 | 3P - 3'
       enemies:
       - Name: Base Security Bear Robot | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: 6f2f48e73df22224ba91170fbee57782, type: 3}
@@ -340,7 +365,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '1 | Enemies: 3'
+    - Name: '1 | Enemies: 1P - 1 | 2P - 2 | 3P - 3'
       enemies:
       - Name: Cleaner Turtle Robot | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: ded643711d6e5bd4f953e1f471b54124, type: 3}
@@ -357,7 +382,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '2 | Enemies: 3'
+    - Name: '2 | Enemies: 1P - 1 | 2P - 2 | 3P - 3'
       enemies:
       - Name: Robo Ranged | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}
@@ -374,7 +399,7 @@ MonoBehaviour:
         amount: 1
         multiplayerOnly: 1
         playersRequired: 3
-    - Name: '3 | Enemies: 3'
+    - Name: '3 | Enemies: 1P - 1 | 2P - 2 | 3P - 3'
       enemies:
       - Name: Robo Ranged | 1 Units| Any-P
         enemy: {fileID: 6508126985700856560, guid: e210bae290a0180409869b597ec212fd, type: 3}

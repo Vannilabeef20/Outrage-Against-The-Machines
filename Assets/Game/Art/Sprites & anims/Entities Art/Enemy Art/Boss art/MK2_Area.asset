@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MK2 Area
   <Animation>k__BackingField: {fileID: 7400000, guid: 91321be1fc62784428c4cf5d78fd11c1, type: 2}
-  <TriggerRange>k__BackingField: 3.5
+  <TriggerRange>k__BackingField: 3
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -39,8 +39,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <Velocity>k__BackingField: 15
+  <Velocity>k__BackingField: 0
   <Duration>k__BackingField: 2
   <Damage>k__BackingField: 10
   <StunDuration>k__BackingField: 0.5
-  <KnockbackStrenght>k__BackingField: 10
+  <KnockbackStrenght>k__BackingField: 13

@@ -45,9 +45,12 @@ namespace Game
             if (Encounters == null) return;
             for (int i = 0; i < Encounters.Length; i++)
             {
-                int enemyCount = 0;
-                int waveCount = 0;
 
+                int waveCount = 0;
+                int enemy1PCount = 0;
+                int enemy2PCount = 0;
+                int enemy3PCount = 0;
+                
                 foreach (var wave in Encounters[i].waves)
                 {
                     if (wave == null) continue;
@@ -56,11 +59,33 @@ namespace Game
 
                     foreach (var enemy in wave.enemies)
                     {
-                        if (enemy != null) enemyCount += enemy.amount;
+                        if (enemy == null) continue;
+
+                        if (!enemy.multiplayerOnly)
+                        {
+                            enemy1PCount += enemy.amount;
+                            enemy2PCount += enemy.amount;
+                            enemy3PCount += enemy.amount;
+                            continue;
+                        }
+
+                        if (enemy.playersRequired <= 2)
+                        {
+                            enemy2PCount += enemy.amount;
+                            enemy3PCount += enemy.amount;
+                            continue;
+                        }
+
+                        if (enemy.playersRequired >= 3)
+                        {
+                            enemy3PCount += enemy.amount;
+                            continue;
+                        }
                     }
                 }
 
-                Encounters[i].Name = $"{i} | Waves: {waveCount} || Enemies: {enemyCount}";
+                Encounters[i].Name = $"{i} | Waves: {waveCount} || Enemies: 1P -" +
+                    $" {enemy1PCount} | 2P - {enemy2PCount} | 3P - {enemy3PCount}";
 
                 Encounters[i].UpdateNames();
             }
@@ -79,6 +104,7 @@ namespace Game
         [Tooltip("The time range between spawns.")]
         public Vector3 position;
         [MinMaxSlider(0.1f, 10f)] public Vector2 spawnDelay;
+        [Space]
         public EnemyWave[] waves;
 
         public void UpdateNames()
@@ -89,12 +115,36 @@ namespace Game
             {
                 if (waves[i] == null) continue;
 
-                int enemyCount = 0;
+                int enemy1PCount = 0;
+                int enemy2PCount = 0;
+                int enemy3PCount = 0;
                 foreach (var enemy in waves[i].enemies)
                 {
-                    if(enemy != null) enemyCount += enemy.amount;
+                    if (enemy == null) continue;
+
+                    if (!enemy.multiplayerOnly)
+                    {
+                        enemy1PCount += enemy.amount;
+                        enemy2PCount += enemy.amount;
+                        enemy3PCount += enemy.amount;
+                        continue;
+                    }
+
+                    if (enemy.playersRequired == 2)
+                    {
+                        enemy2PCount += enemy.amount;
+                        enemy3PCount += enemy.amount;
+                        continue;
+                    }
+
+                    if (enemy.playersRequired == 3)
+                    {
+                        enemy3PCount += enemy.amount;
+                        continue;
+                    }
                 }
-                waves[i].Name = $"{i} | Enemies: {enemyCount}";
+                waves[i].Name = $"{i} | Enemies: 1P - {enemy1PCount} |" +
+                    $" 2P - {enemy2PCount} | 3P - {enemy3PCount}";
                 waves[i].UpdateNames();
             }
         }

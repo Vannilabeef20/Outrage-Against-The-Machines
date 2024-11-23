@@ -105,6 +105,7 @@ namespace Game
         public void Init(int index)
         {
             if (index != encounterIndex) return;
+            if (phase2) return;
 
             uiObject.SetActive(true);
             toggleLevelMusicEvent.Raise(this, false);

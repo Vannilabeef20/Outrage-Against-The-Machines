@@ -114,8 +114,8 @@ namespace Game
                 //Wave spawn loop
                 while (enemiesToSpawn.Count > 0)
                 {
-                    yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
                     SpawnEnemy();
+                    yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
                 }
 
                 //Wait till all enemies are dead

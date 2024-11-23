@@ -56,7 +56,7 @@ namespace Game
             {
                 frame.Reset();
             }
-            TransitionManager.Instance.LoadScene(0);
+            TransitionManager.Instance.LoadScene(3);
             Destroy(stateMachine.Parent);
         }
     }

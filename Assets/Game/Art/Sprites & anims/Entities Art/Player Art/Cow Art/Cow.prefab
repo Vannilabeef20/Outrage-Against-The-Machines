@@ -1024,6 +1024,7 @@ MonoBehaviour:
   progress: 0
   <IsComplete>k__BackingField: 0
   stateMachine: {fileID: 0}
+  itemEvent: {fileID: 11400000, guid: 4221e71d770a8cd4d83cc4f72221266a, type: 2}
   <Duration>k__BackingField: 1
   <Delay>k__BackingField: 3
   <Despawning>k__BackingField: 0
@@ -18172,6 +18173,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: -2009623207, guid: 302855c276c63064aa08cc8c68ad51ba, type: 3}
@@ -18286,6 +18289,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 1045699693, guid: 302855c276c63064aa08cc8c68ad51ba, type: 3}

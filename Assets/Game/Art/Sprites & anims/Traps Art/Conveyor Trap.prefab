@@ -233,6 +233,8 @@ MonoBehaviour:
   cull: 1
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 2
   sprites:
   - {fileID: -773160965, guid: 2c3bb3adb33d96749895949f90b67221, type: 3}
@@ -315,6 +317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FromPoint: {fileID: 9067714121442633543}
   ToPoint: {fileID: 6395696237332771420}
-  ContextSpeedStrenght: 2
+  ContextSpeedStrenght: 1
   ContextSpeedDirection: {x: -0.5718649, y: 0.58007354, z: 0.5800735}
-  <ContextSpeed>k__BackingField: {x: -1.1437298, y: 1.1601471, z: 1.160147}
+  <ContextSpeed>k__BackingField: {x: -0.5718649, y: 0.58007354, z: 0.5800735}

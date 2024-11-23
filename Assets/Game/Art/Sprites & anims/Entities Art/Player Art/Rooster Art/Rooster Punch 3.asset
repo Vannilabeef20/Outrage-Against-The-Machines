@@ -15,7 +15,7 @@ MonoBehaviour:
   preview: {fileID: -98893384, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
   <Animation>k__BackingField: {fileID: 7400000, guid: 6188c62eed72ab54f9061dd52f2ff8ee, type: 2}
   <Damage>k__BackingField: 15
-  <Duration>k__BackingField: 1
+  <Duration>k__BackingField: 1.05
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -76,7 +76,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <MaxVelocity>k__BackingField: 20
+  <MaxVelocity>k__BackingField: 22
   <StunDuration>k__BackingField: 0.75
   <KnockbackStrenght>k__BackingField: 5
   <IsSpecial>k__BackingField: 0

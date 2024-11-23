@@ -7,7 +7,10 @@ namespace Game
 {
     public class PlayerDeathState : PlayerState
     {
-        [field: Header("STATE"), HorizontalLine(2f, EColor.Yellow)]
+
+        [Header("STATE"), HorizontalLine(2f, EColor.Yellow)]
+
+        [SerializeField] IntEvent itemEvent;
         [field: SerializeField] public float Duration { get; private set; }
         [field: SerializeField] public float Delay { get; private set; }
         [field: SerializeField] public bool Despawning { get; private set; }
@@ -73,6 +76,8 @@ namespace Game
                 stateMachine.nextState = stateMachine.Idle;
                 IsComplete = true;
                 GameManager.Instance.TakeAddLife(-1);
+                GameManager.Instance.PlayerCharacterList[PlayerIndex].RemoveItem();
+                itemEvent.Raise(this, PlayerIndex);
             }
         }
     }

@@ -53,7 +53,7 @@ MonoBehaviour:
   rb: {fileID: 574349411182037776}
   pickEmitter: {fileID: 8847909780515325543}
   scrapValue: 0
-  gravity: -0.1
+  gravity: -0.3
   gravRot: 345
   bounces: 0
   bounceDecay: 1.5
@@ -413,6 +413,8 @@ MonoBehaviour:
   cull: 1
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites: []
   playing: 0

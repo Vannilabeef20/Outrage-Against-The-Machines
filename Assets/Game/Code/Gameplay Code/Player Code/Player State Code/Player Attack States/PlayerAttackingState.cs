@@ -45,7 +45,10 @@ namespace Game
 
         [SerializeField] ParticleSystem specialParticleSystem;
 
-
+        private void Start()
+        {
+            UpdateSpecialBar();
+        }
         public override void Setup(PlayerStateMachine playerStateMachine) // called on awake
         {
             base.Setup(playerStateMachine);
@@ -55,7 +58,6 @@ namespace Game
                 attack.Setup(playerStateMachine);
                 PlayerAttackStatesDictionary.Add(attack.PlayerAttack, attack);
             }
-            UpdateSpecialBar();
             CurrentAttackState = null;
             queuedAttackState = null;
         }

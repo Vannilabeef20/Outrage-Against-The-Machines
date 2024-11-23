@@ -181,7 +181,7 @@ namespace Game
                 rumbleList.Remove(doneRumble);
             }
 
-            //Sample all rumble and add to respective rumble
+            //Sample all rumble and add to respective player total
             foreach (Rumble runningRumble in rumbleList)
             {
                 if (runningRumble.isPaused) continue;
@@ -197,36 +197,20 @@ namespace Game
 
                 int targetIndex = (int)runningRumble.Target;
 
-                if (runningRumble.Target != EPlayer.All)
+                if (runningRumble.Target == EPlayer.All || GameManager.Instance.PlayerCharacterList.Count == 1)
                 {
-                    //Add to specific player
-                    playersRumble[targetIndex].TotalLow += runningRumble.LowFreq;
-                    playersRumble[targetIndex].TotalHigh += runningRumble.HighFreq;
-                }
-                else
-                {
-                    //Add to all rumble
+                    //Add to all devices
                     foreach (TotalPlayerRumble player in playersRumble)
                     {
                         player.TotalLow += runningRumble.LowFreq;
                         player.TotalHigh += runningRumble.HighFreq;
                     }
                 }
-            }
-
-            //Get all devices
-            List<InputDevice> nonPlayerInputDevices = new();
-            foreach (InputDevice device in InputSystem.devices)
-            {
-                nonPlayerInputDevices.Add(device);
-            }
-
-            //Take out player devices from nonPlayerDevices
-            for (int i = 0; i < GameManager.Instance.PlayerCharacterList.Count; i++)
-            {
-                foreach (InputDevice device in GameManager.Instance.PlayerCharacterList[i].Input.devices)
+                else
                 {
-                    nonPlayerInputDevices.Remove(device);
+                    //Add to specific player device
+                    playersRumble[targetIndex].TotalLow += runningRumble.LowFreq;
+                    playersRumble[targetIndex].TotalHigh += runningRumble.HighFreq;
                 }
             }
 
@@ -236,7 +220,7 @@ namespace Game
                 playerRumble.Clamp();
                 if (playerRumble.Target == EPlayer.All)
                 {
-                    playerRumble.SetMotorSpeeds(nonPlayerInputDevices.ToArray());
+                    playerRumble.SetMotorSpeeds(InputSystem.devices.ToArray());
                 }
                 else
                 {

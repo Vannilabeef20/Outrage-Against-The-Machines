@@ -43,7 +43,7 @@ namespace Game
         [SerializeField, ReadOnly] int bounceCount;
 
         #endregion
-        private void Update()
+        private void FixedUpdate()
         {
             shadowTransform.position = transform.position.ToXZZ();
 

@@ -2074,6 +2074,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 1976012091, guid: b6d32221b8ab0af43abd5b283cf7c9f9, type: 3}
@@ -2180,6 +2182,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 1976012091, guid: b6d32221b8ab0af43abd5b283cf7c9f9, type: 3}
@@ -3390,6 +3394,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 974477094, guid: b6d32221b8ab0af43abd5b283cf7c9f9, type: 3}
@@ -3910,9 +3916,11 @@ MonoBehaviour:
   image: {fileID: 5319035583287885601}
   targetType: 1
   playOnAwake: 1
-  cull: 1
+  cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 1982962224, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
@@ -4205,6 +4213,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 1976012091, guid: b6d32221b8ab0af43abd5b283cf7c9f9, type: 3}
@@ -5037,6 +5047,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 974477094, guid: b6d32221b8ab0af43abd5b283cf7c9f9, type: 3}
@@ -5181,6 +5193,8 @@ MonoBehaviour:
   cull: 0
   loop: 1
   DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
   animationDuration: 1
   sprites:
   - {fileID: 974477094, guid: b6d32221b8ab0af43abd5b283cf7c9f9, type: 3}

@@ -97,6 +97,21 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  rumbleData:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -344,6 +359,21 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  rumbleData:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5848,8 +5878,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7661904117412163383}
-  - {fileID: 2898416351792877442}
   - {fileID: 17104577}
+  - {fileID: 2898416351792877442}
   - {fileID: 4691503843378725139}
   m_Father: {fileID: 6423577777945764625}
   m_RootOrder: -1
@@ -5876,8 +5906,8 @@ MonoBehaviour:
     m_Bits: 64
   <Attacks>k__BackingField:
   - {fileID: 1511591044622370413}
-  - {fileID: 352680973045897693}
   - {fileID: 17104578}
+  - {fileID: 352680973045897693}
   - {fileID: 7008735140170407124}
   <CurrentAttackState>k__BackingField: {fileID: 0}
   attackUptime: 0
@@ -6000,7 +6030,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 916584132554598502}
+  - {fileID: 1337897725653814825}
   m_Father: {fileID: 808545684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6068,6 +6100,22 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+    - <TriggerFrame>k__BackingField: 13
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5334819969575302634}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - <TriggerFrame>k__BackingField: 19
       <Actions>k__BackingField:
         m_PersistentCalls:
@@ -6084,6 +6132,85 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 1389110269420340996}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
+            m_MethodName: PlayRumble
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - <TriggerFrame>k__BackingField: 20
+      <Actions>k__BackingField:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7985882467645862386}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  rumbleData:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0.5
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.000579834
+        value: 0.2
+        inSlope: -0.1998841
+        outSlope: -0.1998841
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.1998841
+        outSlope: -0.1998841
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.2
+        inSlope: 0.0359438
+        outSlope: 0.0359438
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.03312028
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.01970009
+        outSlope: -0.01970009
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06042999
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -6115,11 +6242,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -162983012
-      Data2: 1297641597
-      Data3: 1559646848
-      Data4: 2119262256
-    Path: event:/SFX/Boss/Boss 1/Boss 1 Attack SFX
+      Data1: 2126330871
+      Data2: 1312703262
+      Data3: -117279603
+      Data4: 930971392
+    Path: event:/SFX/Boss/Boss 1/Boss 1 Jump Spin SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -6310,7 +6437,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4815806029852236821}
   m_Father: {fileID: 1680220763}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6362,17 +6490,13 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - <TriggerFrame>k__BackingField: 3
-      <Actions>k__BackingField:
-        m_PersistentCalls:
-          m_Calls:
           - m_Target: {fileID: 1302654954249928037}
-            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
             m_MethodName: Play
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_ObjectArgumentAssemblyTypeName: 
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -6394,6 +6518,81 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 6051630262329688298}
+            m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1511591044622370413}
+            m_TargetAssemblyTypeName: Game.BossAttackState, Assembly-CSharp
+            m_MethodName: PlayRumble
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  rumbleData:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0.5
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.2
+        inSlope: -0.00000037992442
+        outSlope: -0.00000037992442
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.07844277
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.00928181
+        outSlope: -0.00928181
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.029052854
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.2
+        inSlope: 0.035090834
+        outSlope: 0.035090834
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.07960488
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.05331756
+        outSlope: -0.05331756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10369998
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -6425,11 +6624,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1897315433
-      Data2: 1293140483
-      Data3: -4045935
-      Data4: -1167414128
-    Path: event:/SFX/Boss/Boss 2/Boss 2 Attack 2 SFX
+      Data1: -829474810
+      Data2: 1134639784
+      Data3: 771740806
+      Data4: -1314126057
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Area Attack SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -7026,6 +7225,132 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2913538426130158217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916584132554598502}
+  - component: {fileID: 5334819969575302634}
+  m_Layer: 0
+  m_Name: Jump Launch Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916584132554598502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913538426130158217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8640339048340718012}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5334819969575302634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913538426130158217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 332175198
+      Data2: 1313380765
+      Data3: -212574789
+      Data4: 45249385
+    Path: event:/SFX/Boss/Boss 1/Boss 1 Jump Explosion 1 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &3275536162947618928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337897725653814825}
+  - component: {fileID: 7985882467645862386}
+  m_Layer: 0
+  m_Name: Jump Impact Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1337897725653814825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275536162947618928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8640339048340718012}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7985882467645862386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275536162947618928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -132950731
+      Data2: 1261345473
+      Data3: 1300553377
+      Data4: -290096471
+    Path: event:/SFX/Boss/Boss 1/Boss 1 Jump Explosion 2 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3955572703823519736
 GameObject:
   m_ObjectHideFlags: 0
@@ -7685,7 +8010,7 @@ MonoBehaviour:
   <Attack>k__BackingField:
     <Config>k__BackingField: {fileID: 11400000, guid: dca2135e8dd6103409b7549b304dcd4f, type: 2}
     <FrameEvents>k__BackingField:
-    - <TriggerFrame>k__BackingField: 3
+    - <TriggerFrame>k__BackingField: 0
       <Actions>k__BackingField:
         m_PersistentCalls:
           m_Calls:
@@ -7717,6 +8042,21 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  rumbleData:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -7748,11 +8088,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1897315433
-      Data2: 1293140483
-      Data3: -4045935
-      Data4: -1167414128
-    Path: event:/SFX/Boss/Boss 2/Boss 2 Attack 2 SFX
+      Data1: -1655910012
+      Data2: 1284462801
+      Data3: -1304114046
+      Data4: -1744956040
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Chain Attack SFX
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -7840,15 +8180,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 134295839, guid: 0845337ac22a2374984f8c702e047933, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.3333335, y: 7.3333335}
+  m_Size: {x: 13.333333, y: 7.3333335}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2507473752529445960
@@ -13066,6 +13406,21 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  rumbleData:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   OnExitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -13189,6 +13544,69 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7033346927143784863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4815806029852236821}
+  - component: {fileID: 6051630262329688298}
+  m_Layer: 0
+  m_Name: Area Impact Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4815806029852236821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033346927143784863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7661904117412163383}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6051630262329688298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033346927143784863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1899406210
+      Data2: 1134848860
+      Data3: -237759079
+      Data4: 508592453
+    Path: event:/SFX/Boss/Boss 2/Boss 2 Area Attack Impact SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8133179389026923884
 GameObject:
   m_ObjectHideFlags: 0

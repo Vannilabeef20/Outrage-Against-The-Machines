@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MK2 Uppercut
   <Animation>k__BackingField: {fileID: 7400000, guid: 49c59a4c8afe4d1419a07d1acabc405b, type: 2}
-  <TriggerRange>k__BackingField: 3.5
+  <TriggerRange>k__BackingField: 4
   <VelocityCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -68,6 +68,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   <Velocity>k__BackingField: 15
   <Duration>k__BackingField: 2
-  <Damage>k__BackingField: 10
+  <Damage>k__BackingField: 15
   <StunDuration>k__BackingField: 0.5
-  <KnockbackStrenght>k__BackingField: 10
+  <KnockbackStrenght>k__BackingField: 13

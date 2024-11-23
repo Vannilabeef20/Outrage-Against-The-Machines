@@ -90,7 +90,10 @@ namespace Game
                     PlayerCharacterList[playerIndex].GameObject);
             }
             DOTween.Kill(gameObject.transform);
-            GameManager.Instance.PlayerCharacterList[playerIndex].RemoveItem();
+            if(!useImmediatly)
+            {
+                GameManager.Instance.PlayerCharacterList[playerIndex].RemoveItem();
+            }
             itemEvent.Raise(this, playerIndex);
             Destroy(gameObject);
         }

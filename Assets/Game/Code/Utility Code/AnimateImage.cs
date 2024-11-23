@@ -48,13 +48,13 @@ namespace Game
             switch(targetType)
             { 
                 case EAnimationTarget.SpriteRenderer:
+                    if (!spriteRenderer.enabled) return;
                     if (!spriteRenderer.isVisible && cull) return;
-                    if(!spriteRenderer.enabled) return;
+                    break;
+                case EAnimationTarget.Image:
+                    if (!image.enabled) return;
                     break;
 
-                case EAnimationTarget.Image:
-                    if (!image.enabled && cull) return;
-                    break;
             }
 
             timer += Time.deltaTime;
