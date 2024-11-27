@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2703576852824283391}
   - component: {fileID: 5338565140335418653}
   - component: {fileID: 4771457876135407537}
+  - component: {fileID: 3773058993671654872}
+  - component: {fileID: 5730547690044498693}
   m_Layer: 0
   m_Name: KICK_BALLOON_0
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5338565140335418653
 SpriteRenderer:
@@ -105,3 +107,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &3773058993671654872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310794014217165360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4d1d903eef18e4fbddeb87d24c626e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectedPlayerColliders: []
+  active: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!65 &5730547690044498693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310794014217165360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11, y: 14, z: 14}
+  m_Center: {x: 0, y: -4.294588, z: 0}
