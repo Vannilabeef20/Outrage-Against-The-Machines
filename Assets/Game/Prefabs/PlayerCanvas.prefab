@@ -3863,8 +3863,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5319035583287885600}
   - component: {fileID: 5319035583287885614}
-  - component: {fileID: 5319035583287885615}
   - component: {fileID: 5319035583287885601}
+  - component: {fileID: 2075588475216787600}
   m_Layer: 0
   m_Name: Go Image
   m_TagString: Untagged
@@ -3900,40 +3900,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5319035583287885603}
   m_CullTransparentMesh: 1
---- !u!114 &5319035583287885615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5319035583287885603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  image: {fileID: 5319035583287885601}
-  targetType: 1
-  playOnAwake: 1
-  cull: 0
-  loop: 1
-  DestroyOnFinish: 0
-  startOffset: 0
-  startOffsetPercent: 0
-  animationDuration: 1
-  sprites:
-  - {fileID: 1982962224, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  - {fileID: -1388656041, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  - {fileID: 1959843425, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  - {fileID: -1163277167, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  - {fileID: 1568692954, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  - {fileID: -478096341, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  - {fileID: 261440114, guid: 668c1afe4d248644f88c10a1e0cda6a4, type: 3}
-  playing: 0
-  pause: 0
-  timer: 0
-  currentSpriteIndex: 0
 --- !u!114 &5319035583287885601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3964,6 +3930,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2075588475216787600
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319035583287885603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96a2801dc72568f438a230c9b3ebde62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5637622675666547563
 GameObject:
   m_ObjectHideFlags: 0
