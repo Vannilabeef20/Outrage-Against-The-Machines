@@ -37,6 +37,8 @@ namespace Game
 
         [SerializeField] UnityEvent OnExitEvent;
 
+        [SerializeField] IntEvent boxEvent;
+
         Vector3 HalfExtents => new Vector3(Attack.Config.TriggerRange, detectionHeight, detectionWidth) * 0.5f;
 
         Vector3 Center => (transform.right * Attack.Config.TriggerRange * 0.5f) + stateMachine.transform.position + detectionOffset;
@@ -129,6 +131,11 @@ namespace Game
         public void PlayRumble()
         {
             RumbleManager.Instance.CreateRumble(this.gameObject.name, rumbleData, EPlayer.All);
+        }
+
+        public void SpawnBoxes(int amount)
+        {
+            boxEvent.Raise(this, amount);
         }
 
         public bool IsAligned()

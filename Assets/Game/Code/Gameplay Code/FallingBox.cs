@@ -44,6 +44,7 @@ namespace Game
         [SerializeField] float fadeLenght;
         [Tooltip("How long the fade effect will take to start.")]
         [SerializeField] float fadeDelay;
+        [SerializeField] LootTable lootTable;
 
         #endregion
 
@@ -68,6 +69,7 @@ namespace Game
         #region UNITY METHODS
         private void Awake()
         {
+            lootTable.ValidateTable();
             fadeTimer = - fadeDelay;
             defaultBoxColor = boxRenderer.color;
             highlightRenderer.color = highlightColor1;
@@ -83,6 +85,13 @@ namespace Game
             ManageShadowSize();
             ManageImpact();
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            lootTable.ValidateTable();
+        }
+#endif
         #endregion
 
         #region METHODS
@@ -154,6 +163,11 @@ namespace Game
                 impulseSource.GenerateImpulse();
                 shadowTransform.localScale = Vector3.zero;
                 boxRenderer.sortingOrder = postImpactSortOrder;
+
+                GameObject drop = lootTable.PickRandomDrop();
+
+                if (drop != null) Instantiate(drop, boxTransform.position, Quaternion.identity); 
+
                 fell = true;
             }
         }

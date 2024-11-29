@@ -60,7 +60,7 @@ namespace Game
         {
             Velocity = knockbackCurve.Evaluate(progress) *
                 knockbackStrenght * Mathf.Sign(initialPos.x - damageDealerPos.x) * Vector3.right + stateMachine.ContextVelocity;
-            if(Physics.Raycast(transform.position, Velocity.normalized, 0.4f, enviriomentLayerMask))
+            if(Physics.Raycast(transform.position, Velocity.normalized, 1f, enviriomentLayerMask))
             {
                 Velocity = Vector3.zero + stateMachine.ContextVelocity;
             }

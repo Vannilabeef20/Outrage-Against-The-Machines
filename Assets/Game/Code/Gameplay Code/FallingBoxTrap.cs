@@ -24,14 +24,18 @@ namespace Game
 
         [field: Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
 
+        [SerializeField] bool continuous = true;
+
         [Tooltip("How close the camera has to spawn boxes.")]
-        [SerializeField] float activationRange;
+        [SerializeField, ShowIf("continuous")] float activationRange;
+
+
+        [Tooltip("How often (seconds) the trap will spawn boxes.")]
+        [SerializeField, Range(0.1f, 5)] float spawnInterval = 0.5f;
 
         [Tooltip("How further in the X and YZ axis the zone extends from the Transform.")]
         [SerializeField] Vector2 spawnZoneDimensions;
 
-        [Tooltip("How often (seconds) the trap will spawn boxes.")]
-        [SerializeField, Range(0.1f, 5)] float spawnInterval = 0.5f;
 
         [Space]
 
@@ -53,6 +57,8 @@ namespace Game
 
         private void Update()
         {
+            if (!continuous) return;
+
             if (Mathf.Abs(mainCam.transform.position.x -
                 transform.position.x) > activationRange) //Return if not within the activation range
             {
@@ -76,6 +82,20 @@ namespace Game
             randomPos.y = transform.position.y + depth;
             randomPos.z = transform.position.z + depth;
             Instantiate(fallingBoxObject, randomPos, Quaternion.identity, transform);
+        }
+
+        public void SpawnMultiple(int amount)
+        {
+            StartCoroutine(SpawnMultipleRoutine(amount));
+        }
+
+        IEnumerator SpawnMultipleRoutine(int amount)
+        {
+            for(int i = 0; i < amount; i++)
+            {
+                Spawn();
+                yield return new WaitForSeconds(spawnInterval);
+            }
         }
 
         /// <summary>
