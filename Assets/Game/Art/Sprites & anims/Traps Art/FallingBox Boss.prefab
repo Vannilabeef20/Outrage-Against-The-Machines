@@ -465,31 +465,31 @@ MonoBehaviour:
   lootTable:
     totalWeight: 100
     itemDrops:
-    - Name: 95% -> Nothing
+    - Name: 90% -> Nothing
       <Item>k__BackingField: {fileID: 0}
-      <ProbabilityWeight>k__BackingField: 95
-      ProbabilityPercent: 95
-      ProbabilityRange: {x: 0, y: 95}
-    - Name: 1,75% -> Heal Pickup
+      <ProbabilityWeight>k__BackingField: 90
+      ProbabilityPercent: 90
+      ProbabilityRange: {x: 0, y: 90}
+    - Name: 3,5% -> Heal Pickup
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
-      <ProbabilityWeight>k__BackingField: 1.75
-      ProbabilityPercent: 1.75
-      ProbabilityRange: {x: 95, y: 96.75}
-    - Name: 1,75% -> Heal & Energy Pickup
+      <ProbabilityWeight>k__BackingField: 3.5
+      ProbabilityPercent: 3.5
+      ProbabilityRange: {x: 90, y: 93.5}
+    - Name: 3,5% -> Heal & Energy Pickup
       <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
-      <ProbabilityWeight>k__BackingField: 1.75
-      ProbabilityPercent: 1.75
-      ProbabilityRange: {x: 96.75, y: 98.5}
-    - Name: 1% -> Energy Pickup
+      <ProbabilityWeight>k__BackingField: 3.5
+      ProbabilityPercent: 3.5
+      ProbabilityRange: {x: 93.5, y: 97}
+    - Name: 2% -> Energy Pickup
       <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
+      <ProbabilityWeight>k__BackingField: 2
+      ProbabilityPercent: 2
+      ProbabilityRange: {x: 97, y: 99}
+    - Name: 1% -> Life Pickup
+      <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
       <ProbabilityWeight>k__BackingField: 1
       ProbabilityPercent: 1
-      ProbabilityRange: {x: 98.5, y: 99.5}
-    - Name: 0,5% -> Life Pickup
-      <Item>k__BackingField: {fileID: 2934445200580362204, guid: a9978bb46fc179b4a8b0938fed2cddcb, type: 3}
-      <ProbabilityWeight>k__BackingField: 0.5
-      ProbabilityPercent: 0.5
-      ProbabilityRange: {x: 99.5, y: 100}
+      ProbabilityRange: {x: 99, y: 100}
   fell: 0
   startPos: {x: 0, y: 0, z: 0}
   finalPos: {x: 0, y: 0, z: 0}

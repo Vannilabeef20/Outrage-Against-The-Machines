@@ -5072,11 +5072,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -991307606
-      Data2: 1166171048
-      Data3: -1510623334
-      Data4: -1840118588
-    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+      Data1: 147395212
+      Data2: 1120114812
+      Data3: 1084575911
+      Data4: -20898899
+    Path: event:/SFX/Enemy/Robo Ranged/Enemy Walking SFX - Ranged
   Event: 
   PlayEvent: 0
   StopEvent: 2
@@ -5566,11 +5566,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -991307606
-      Data2: 1166171048
-      Data3: -1510623334
-      Data4: -1840118588
-    Path: event:/SFX/Enemy/Bear/Enemy Walking - Bear
+      Data1: 147395212
+      Data2: 1120114812
+      Data3: 1084575911
+      Data4: -20898899
+    Path: event:/SFX/Enemy/Robo Ranged/Enemy Walking SFX - Ranged
   Event: 
   PlayEvent: 0
   StopEvent: 2
@@ -6033,12 +6033,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reversed: 0
   audioEmitters:
+  - {fileID: 8007668038013536351}
   - {fileID: 3254957323972745098}
-  - {fileID: 203993633665008939}
   - {fileID: 5365647295470403560}
   - {fileID: 6309578431116359177}
+  - {fileID: 203993633665008939}
   - {fileID: 412156143871746986}
-  - {fileID: 8007668038013536351}
   - {fileID: 515047077951596177}
 --- !u!1 &6508126987123622496
 GameObject:
@@ -6552,7 +6552,7 @@ MonoBehaviour:
   minScapDrop: 6
   maxScapDrop: 8
   hasReserveScrap: 1
-  reserveAmount: 3
+  reserveAmount: 2
   randomAmount: 0
   scrapList: []
 --- !u!114 &515047077951596177
