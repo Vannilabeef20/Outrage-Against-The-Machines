@@ -771,10 +771,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1918915013426068879, guid: 10cef0595e794284798964d3eed034f2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.4
-      objectReference: {fileID: 0}
     - target: {fileID: 2172476574952415373, guid: 10cef0595e794284798964d3eed034f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -862,10 +858,6 @@ PrefabInstance:
     - target: {fileID: 3170806879194045771, guid: 10cef0595e794284798964d3eed034f2, type: 3}
       propertyPath: m_Name
       value: StartMenu Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989906441063504837, guid: 10cef0595e794284798964d3eed034f2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -3.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1005,9 +997,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4596487124267608206, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4596487124894682127, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
       propertyPath: m_Name
       value: CharacterSelection Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596487124894682127, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4596487124894682228, guid: b340962680c334f4c90b9cfec4ad7ee2, type: 3}
       propertyPath: m_Pivot.x
