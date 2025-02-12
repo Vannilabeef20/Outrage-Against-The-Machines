@@ -63,11 +63,11 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = knockbackCurve.Evaluate(progress) *
+            stateMachine.body.linearVelocity = knockbackCurve.Evaluate(progress) *
                 knockbackStrenght * Mathf.Sign(initialPos.x - damageDealerPos.x) * Vector3.right + stateMachine.ContextVelocity;
-            if(Physics.Raycast(transform.position, stateMachine.body.velocity.normalized, 0.4f, enviriomentLayerMask))
+            if(Physics.Raycast(transform.position, stateMachine.body.linearVelocity.normalized, 0.4f, enviriomentLayerMask))
             {
-                stateMachine.body.velocity = Vector3.zero + stateMachine.ContextVelocity;
+                stateMachine.body.linearVelocity = Vector3.zero + stateMachine.ContextVelocity;
             }
         }
 

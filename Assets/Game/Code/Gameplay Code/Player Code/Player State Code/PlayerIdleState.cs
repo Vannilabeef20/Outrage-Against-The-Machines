@@ -28,11 +28,11 @@ namespace Game
         {
             if(stateMachine.ContextVelocityAdditive == Vector3.zero)
             {
-                stateMachine.body.velocity *= (1 - dragIntensity) * Time.deltaTime;
+                stateMachine.body.linearVelocity *= (1 - dragIntensity) * Time.deltaTime;
             }
             else
             {
-                stateMachine.body.velocity = stateMachine.ContextVelocityAdditive * stateMachine.ContextVelocityMultiplier;
+                stateMachine.body.linearVelocity = stateMachine.ContextVelocityAdditive * stateMachine.ContextVelocityMultiplier;
             }
 
         }

@@ -1,4 +1,4 @@
-const cacheName = "Rock Oak Studios-Outrage against the machines-0.4 prot";
+const cacheName = "Rock Oak Studios-Outrage against the machines-1.0";
 const contentToCache = [
     "Build/Webgl Build.loader.js",
     "Build/Webgl Build.framework.js",

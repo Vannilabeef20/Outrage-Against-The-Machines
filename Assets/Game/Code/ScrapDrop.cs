@@ -49,21 +49,21 @@ namespace Game
 
             if (transform.position.y > transform.position.z)
             {
-                rb.velocity += gravity * (Quaternion.AngleAxis(gravRot, Vector3.right) * Vector3.up);
+                rb.linearVelocity += gravity * (Quaternion.AngleAxis(gravRot, Vector3.right) * Vector3.up);
             }
 
             if (transform.position.y < transform.position.z)
             {
                 if (bounceCount >= bounces)
                 {
-                    rb.velocity = Vector3.zero;
+                    rb.linearVelocity = Vector3.zero;
                     transform.position = transform.position.ToXYY();
                 }
                 else
                 {
                     bounceCount++;
                     float aaa = force / ((bounceCount + 1) * bounceDecay);
-                    rb.velocity = Vector3.zero;
+                    rb.linearVelocity = Vector3.zero;
                     rb.AddForce(aaa * Vector3.up, ForceMode.Impulse);
                 }
             }

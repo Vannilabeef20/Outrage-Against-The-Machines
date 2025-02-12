@@ -76,7 +76,7 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = stateMachine.ContextVelocityMultiplier * 
+            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier * 
                 (AttackVelocity + stateMachine.ContextVelocityAdditive);
         }
 

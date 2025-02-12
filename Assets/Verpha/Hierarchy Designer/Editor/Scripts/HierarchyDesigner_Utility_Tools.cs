@@ -145,7 +145,7 @@ namespace Verpha.HierarchyDesigner
 
         [MenuItem(MenuPath + "Counting/Light/Count All Area Lights", false, priorityBase + priorityDivisor + 3)]
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Counting)]
-        public static void CountAllAreaLights() => CountAllOfComponentType<Light>("Area Lights", light => light.type == LightType.Area);
+        public static void CountAllAreaLights() => CountAllOfComponentType<Light>("Area Lights", light => light.type == LightType.Rectangle);
 
         [MenuItem(MenuPath + "Counting/Light/Count All Reflection Probes", false, priorityBase + priorityDivisorTwo + 3)]
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Counting)]
@@ -421,7 +421,7 @@ namespace Verpha.HierarchyDesigner
 
         [MenuItem(MenuPath + "Selecting/Light/Select All Area Lights", false, priorityBase + priorityDivisor + 3)]
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Selecting)]
-        public static void SelectAllAreaLights() => SelectAllOfComponentType<Light>(light => light.type == LightType.Area);
+        public static void SelectAllAreaLights() => SelectAllOfComponentType<Light>(light => light.type == LightType.Rectangle);
 
         [MenuItem(MenuPath + "Selecting/Light/Select All Reflection Probes", false, priorityBase + priorityDivisorTwo + 3)]
         [HierarchyDesigner_Tool(HierarchyDesigner_ToolCategory.Selecting)]

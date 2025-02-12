@@ -104,7 +104,7 @@ namespace Game
                     }
                     break;
             }
-            stateMachine.body.velocity = Attack.Config.VelocityCurve.Evaluate(progress) *
+            stateMachine.body.linearVelocity = Attack.Config.VelocityCurve.Evaluate(progress) *
             Attack.Config.Velocity * attackDirection + stateMachine.ContextVelocity;
         }
 

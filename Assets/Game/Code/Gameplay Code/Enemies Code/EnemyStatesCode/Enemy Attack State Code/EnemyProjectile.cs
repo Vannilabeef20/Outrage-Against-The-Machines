@@ -55,7 +55,7 @@ namespace Game
         private void Awake()
         {
             initialPos = transform.position;
-            body.velocity = velocity * transform.right;
+            body.linearVelocity = velocity * transform.right;
             ShadowObject.transform.position = new Vector3(transform.position.x, transform.position.z, transform.position.z);
             Destroy(gameObject, destroyDelay);
         }
@@ -69,12 +69,12 @@ namespace Game
                     if(initialPos.x - transform.position.x > 0)
                     {
                         transform.right = Vector3.right;
-                        body.velocity = velocity * Vector3.right;
+                        body.linearVelocity = velocity * Vector3.right;
                     }
                     else
                     {
                         transform.right = Vector3.left;
-                        body.velocity = velocity * Vector3.left;
+                        body.linearVelocity = velocity * Vector3.left;
                     }
                     wasReflected = true;
                 }

@@ -69,12 +69,12 @@ namespace Game
             }
 
             //Set Speed
-            stateMachine.body.velocity = new Vector3(movementDirection.x * speed.x,
+            stateMachine.body.linearVelocity = new Vector3(movementDirection.x * speed.x,
                 movementDirection.y * speed.y, movementDirection.z * speed.z) + stateMachine.ContextVelocity;
 
 #if UNITY_EDITOR
             //Draw velocity line
-            Debug.DrawLine(stateMachine.body.position, stateMachine.body.position + (stateMachine.body.velocity.normalized * 2), Color.yellow);
+            Debug.DrawLine(stateMachine.body.position, stateMachine.body.position + (stateMachine.body.linearVelocity.normalized * 2), Color.yellow);
 #endif
         }
 

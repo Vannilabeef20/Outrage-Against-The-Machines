@@ -51,7 +51,7 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.velocity = stateMachine.ContextVelocityMultiplier * 
+            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier * 
                 (KnockBackVelocity + stateMachine.ContextVelocityAdditive);
         }
 
@@ -70,7 +70,7 @@ namespace Game
         {
             IsComplete = false;
             stateMachine.animator.speed = 1;
-            stateMachine.body.velocity = Vector3.zero;
+            stateMachine.body.linearVelocity = Vector3.zero;
         }
 
         protected override void ValidateState()

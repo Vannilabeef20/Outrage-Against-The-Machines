@@ -16,7 +16,7 @@ namespace Game
 
         protected Animator MachineAnimator { get => stateMachine.animator; private set { } }
 
-        protected Vector3 Velocity { get => stateMachine.body.velocity; set { stateMachine.body.velocity = value; } }
+        protected Vector3 Velocity { get => stateMachine.body.linearVelocity; set { stateMachine.body.linearVelocity = value; } }
         protected Vector3 BodyPosition { get => stateMachine.body.position; set { stateMachine.body.position = value; } }
 
         protected EnemyState NextState { get => stateMachine.nextState; set { stateMachine.nextState = value; } }
