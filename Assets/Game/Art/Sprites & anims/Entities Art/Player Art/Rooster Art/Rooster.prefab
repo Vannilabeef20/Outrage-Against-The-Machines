@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ffe859bc4e97548b028ba698d86f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthHandler: {fileID: 588689492496491313}
   playerInput: {fileID: 588689491377177472}
   body: {fileID: 588689491377177501}
   animator: {fileID: 588689491332936779}
@@ -1387,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73650a09a721bff4ea778f8cb2af7e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStateMachine: {fileID: 588689491332936778}
+  playerInput: {fileID: 588689491377177472}
   spriteRenderer: {fileID: 588689491332936776}
   playerHitbox: {fileID: 588689492496491312}
   healthEvent: {fileID: 11400000, guid: 7baa20ffb751ef24594e60e0e6b8e818, type: 2}
@@ -1396,7 +1397,6 @@ MonoBehaviour:
   reviveEmitter: {fileID: 8246436470385335672}
   maxHeathPoints: 75
   <CurrentHealthPoints>k__BackingField: 0
-  isDead: 0
   hitFlashLenght: 0.1
   hitFlashColor: {r: 0.6320754, g: 0.31305623, b: 0.31305623, a: 1}
   staggerGracePeriod: 2
@@ -1563,7 +1563,6 @@ MonoBehaviour:
   <Delay>k__BackingField: 3
   <Despawning>k__BackingField: 0
   soundEmitter: {fileID: 5703471010113306776}
-  playerDeathEvent: {fileID: 11400000, guid: f05b7d0c35aa59341bb5d40d936016a9, type: 2}
   impulseSource: {fileID: 5559724615616535654}
   knockBackCurve:
     serializedVersion: 2

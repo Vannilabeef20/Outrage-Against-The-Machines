@@ -15,13 +15,9 @@ namespace Game
 
         #region Enemy Health Params
         [Header("ENEMY HEALTH"), HorizontalLine(2f, EColor.Red)]
-        [Tooltip("This enemy's max/initial health points.")]
         [SerializeField] float maxHeathPoints;
 
-        [field:Tooltip("This enemy's current health percent, a number <= 0 triggers death.")]
         [field: SerializeField, ReadOnly] public float CurrentHealthPercent { get; private set; }
-
-        [field: Tooltip("This enemy's current health points, a number <= 0 triggers death.")]
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
 
         #endregion

@@ -13,11 +13,10 @@ namespace Game
         [SerializeField] IntEvent itemEvent;
         [field: SerializeField] public float Duration { get; private set; }
         [field: SerializeField] public float Delay { get; private set; }
-        [field: SerializeField] public bool Despawning { get; private set; }
+        [field: SerializeField] public bool Dying { get; private set; }
         public override string Name { get => "Death"; }
 
         [SerializeField] StudioEventEmitter soundEmitter;
-        [SerializeField] PlayerDeathParamsEvent playerDeathEvent;
 
         [SerializeField] CinemachineImpulseSource impulseSource;
         [SerializeField] AnimationCurve knockBackCurve;
@@ -44,40 +43,52 @@ namespace Game
 
         public override void Enter()
         {
-            Despawning = false;
+            Dying = false;
             IsComplete = false;
             startTime = Time.time;
+
             soundEmitter.Play();
             impulseSource.GenerateImpulse();
             RumbleManager.Instance.CreateRumble(RumbleId, deathRumble, PlayerIndex);
+            GameManager.Instance.PlayerCharacterList[PlayerIndex].isDead = true;
+            GameManager.Instance.PlayerCharacterList[PlayerIndex].RemoveItem();
+            itemEvent.Raise(this, PlayerIndex);
         }
 
-        public override void Exit()
+        public override void Exit() 
         {
-
+            GameManager.Instance.PlayerCharacterList[PlayerIndex].isDead = false;
+            stateMachine.Attacking.SetSpecialCharges(0f);
         }
+
 
         protected override void ValidateState()
         {
             if (UpTime < Duration + Delay) return;
 
-            if (Despawning) return;
+            if (Dying) return;
+            Dying = true;
 
-            Despawning = true;
-            stateMachine.Attacking.SetSpecialCharges(0f);
-
-            if (GameManager.Instance.CurrentLifeAmount == 0)
+            if(GameManager.Instance.CurrentLifeAmount > 0)
             {
-                playerDeathEvent.Raise(this, new PlayerDeathParams(stateMachine.playerInput.playerIndex, true));
-                stateMachine.transform.parent.gameObject.SetActive(false);
+                GameManager.Instance.TakeAddLife(-1);
+                stateMachine.healthHandler.Revive();
             }
             else
             {
-                stateMachine.nextState = stateMachine.Idle;
-                IsComplete = true;
-                GameManager.Instance.TakeAddLife(-1);
-                GameManager.Instance.PlayerCharacterList[PlayerIndex].RemoveItem();
-                itemEvent.Raise(this, PlayerIndex);
+                FollowGroup.Instance.RemoveTarget(stateMachine.transform);
+                stateMachine.transform.parent.gameObject.SetActive(false);
+
+                int count = 0;
+                foreach(var player in GameManager.Instance.PlayerCharacterList)
+                {
+                    if (!player.GameObject.activeInHierarchy) count++;
+                }
+
+                if(count == GameManager.Instance.PlayerCharacterList.Count)
+                {
+                    TransitionManager.Instance.LoadScene(0);
+                }
             }
         }
     }

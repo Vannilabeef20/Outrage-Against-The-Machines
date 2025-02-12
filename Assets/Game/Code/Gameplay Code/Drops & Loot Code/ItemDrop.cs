@@ -43,6 +43,8 @@ namespace Game
         [SerializeField] Ease floatEase = Ease.InOutSine;
         #endregion
 
+        bool picked;
+
         void Start()
         {
             //Makes the "itemSpriteTransform" float up and down
@@ -57,27 +59,30 @@ namespace Game
 
         void PickUp(GameObject targetPlayer)
         {
+            if (picked) return;
+
             //Search player per tag
             for (int i = 0; i < GameManager.Instance.PlayerTags.Length; i++)
             {
                 if (!targetPlayer.activeInHierarchy) continue;
 
-                if (targetPlayer.CompareTag(GameManager.Instance.PlayerTags[i]))
+                if (!targetPlayer.CompareTag(GameManager.Instance.PlayerTags[i])) continue;
+                
+                if (useImmediatly)
                 {
-                    if (useImmediatly)
-                    {
-                        Use(i);
-                        return;
-                    }
-
-                    if (GameManager.Instance.PlayerCharacterList[i].HasItemStored) break;
-
-                    GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
-                    pickEmitter.Play();
-                    gameObject.SetActive(false);
-                    itemEvent.Raise(this, i);
+                    picked = true;
+                    Use(i);
                     return;
                 }
+
+                if (GameManager.Instance.PlayerCharacterList[i].HasItemStored) break;
+
+                picked = true;
+                GameManager.Instance.PlayerCharacterList[i].StoreItem(gameObject, Icon);
+                pickEmitter.Play();
+                gameObject.SetActive(false);
+                itemEvent.Raise(this, i);
+                return;                
             }
         }
 

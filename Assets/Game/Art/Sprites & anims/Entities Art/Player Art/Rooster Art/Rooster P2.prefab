@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 588689491137243521, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 112270056591082057, guid: bc252bd464c26f546968644a2b897e27, type: 3}
     - target: {fileID: 588689491332936776, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 588689491655393684, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 112270056591082057, guid: bc252bd464c26f546968644a2b897e27, type: 3}
     - target: {fileID: 588689492496491314, guid: dede5db6700695f4f90cde9690de0b34, type: 3}
       propertyPath: m_TagString
       value: P2

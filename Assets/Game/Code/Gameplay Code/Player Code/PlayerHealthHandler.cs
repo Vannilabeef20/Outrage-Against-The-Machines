@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using DG.Tweening;
 using FMODUnity;
@@ -9,9 +11,9 @@ namespace Game
     public class PlayerHealthHandler : MonoBehaviour, IDamageble
     {
         [Header("REFERENCES"), HorizontalLine]
-        [SerializeField] PlayerStateMachine playerStateMachine;
+        [SerializeField] PlayerInput playerInput;
         [SerializeField] SpriteRenderer spriteRenderer;
-        public CapsuleCollider playerHitbox;
+        [SerializeField] CapsuleCollider playerHitbox;
 
         [SerializeField] IntFloatEvent healthEvent;
         [SerializeField] ParticleSystem healParticle;
@@ -22,7 +24,6 @@ namespace Game
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
         [SerializeField] float maxHeathPoints;
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
-        [SerializeField, ReadOnly] bool isDead;
 
         #endregion
         #region Stagger Params
@@ -42,7 +43,18 @@ namespace Game
         [SerializeField] RumbleData reviveRumble;
         #endregion
 
-        int PlayerIndex => playerStateMachine.playerInput.playerIndex;
+        /// <summary>
+        /// Vector2 = KnockbackForce, float = Stun Duration
+        /// </summary>
+        public event Action<Vector2, float> OnDamageTaken;
+        /// <summary>
+        /// Vector2 = KnockbackForce, float = Stun Duration
+        /// </summary>
+        public event Action<Vector2, float> OnDeath;
+
+        public event Action OnRevive;
+
+        int PlayerIndex => playerInput.playerIndex;
         string RumbleId => $"P{PlayerIndex + 1} Revive";
 
         private void Awake()
@@ -53,48 +65,62 @@ namespace Game
 
         public void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
-            isDead = false;
             playerHitbox.enabled = false;
             damageParticle.Play();
+
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0f, maxHeathPoints);
             float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
             healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
 
-            if (CurrentHealthPoints <= 0f)
-            {
-                isDead = true;
-            }
-            else
-            {
-                isDead = false;
-            }
+            bool dead = CurrentHealthPoints <= 0;
 
-            if (damageDealerPos.x - transform.position.x >= 0)
-            {
-                playerStateMachine.TakeDamage(isDead, -knockbackStrenght * Vector2.right, stunDuration);
-            }
-            else
-            {
-                playerStateMachine.TakeDamage(isDead, knockbackStrenght * Vector2.right, stunDuration);
-            }
+            Vector3 knockbackDir;
+            if (damageDealerPos.x - transform.position.x >= 0) 
+                knockbackDir = Vector2.right;
+            else 
+                knockbackDir = Vector2.left;
 
-            if(isDead == false)
-            {
-                StartCoroutine(StunRoutine(stunDuration));
-            }
-            else
-            {
-                StartCoroutine(StunRoutine(playerStateMachine.Death.Duration + playerStateMachine.Death.Delay));
-            }
+            if (dead) OnDeath.Invoke(knockbackStrenght * knockbackDir, stunDuration);
+            else OnDamageTaken.Invoke(knockbackStrenght * knockbackDir, stunDuration);
+        }
+        
+        public void StartGracePeriod()
+        {
+            StartCoroutine(GracePeriodRoutine());
         }
 
-        public IEnumerator StunRoutine(float stunDuration)
+        public void Stun(float duration)
+        {
+            StartCoroutine(StunRoutine(duration));
+        }
+
+        public void Heal(float healPercent, float healFlat = 0f)
+        {
+            healParticle.Play();
+            CurrentHealthPoints += (maxHeathPoints * healPercent/100) + healFlat;
+            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints, 0f, maxHeathPoints);
+            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
+        }
+
+        public void Revive()
+        {
+            CurrentHealthPoints = maxHeathPoints;
+            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
+            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
+            playerHitbox.enabled = true;
+            reviveEmitter.Play();
+            RumbleManager.Instance.CreateRumble(RumbleId, reviveRumble, PlayerIndex);
+            OnRevive.Invoke();
+            StartCoroutine(GracePeriodRoutine());;
+        }
+        IEnumerator StunRoutine(float stunDuration)
         {
             float UpTime = 0f;
             float flashTime = 0f;
             Color startColor = spriteRenderer.color;
-  
-            while(UpTime < stunDuration)
+
+            while (UpTime < stunDuration)
             {
                 playerHitbox.enabled = false;
                 UpTime += Time.deltaTime;
@@ -113,11 +139,16 @@ namespace Game
                 }
                 yield return null;
             }
-            if (isDead)
-            {
-                Revive();
-            }
-            while (UpTime < stunDuration + staggerGracePeriod)
+            spriteRenderer.color = startColor;
+            StartGracePeriod();
+        }
+
+        IEnumerator GracePeriodRoutine()
+        {
+            float UpTime = 0f;
+            float flashTime = 0f;
+            Color startColor = spriteRenderer.color;
+            while (UpTime < staggerGracePeriod)
             {
                 playerHitbox.enabled = false;
                 UpTime += Time.deltaTime;
@@ -137,27 +168,7 @@ namespace Game
                 yield return null;
             }
             spriteRenderer.color = startColor;
-            playerHitbox.enabled = true; 
-        }       
-
-        public void Heal(float healPercent, float healFlat = 0f)
-        {
-            healParticle.Play();
-            CurrentHealthPoints += (maxHeathPoints * healPercent/100) + healFlat;
-            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints, 0f, maxHeathPoints);
-            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
-        }
-
-        public void Revive()
-        {
-            CurrentHealthPoints = maxHeathPoints;
-            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
             playerHitbox.enabled = true;
-            reviveEmitter.Play();
-            RumbleManager.Instance.CreateRumble(RumbleId, reviveRumble, PlayerIndex);
         }
-        
     }
 }

@@ -1,8 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
-#if UNITY_EDITOR
-#endif
 
 namespace Game
 {
@@ -18,7 +18,10 @@ namespace Game
         [field: SerializeField] public GameObject Parent { get; private set; }
         [Space]
         public bool IsFieldEnemy;
-        
+        [SerializeField, Range(0,1)] float screenPercentage = 0.8f;
+        [Space]
+        [ReadOnly] public bool IsOnScreen;
+
 
         #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
@@ -38,7 +41,7 @@ namespace Game
         [ReadOnly] public EnemyState nextState;
         [Space]
         [SerializeField] private LayerMask conveyorLayer;
-        [field: SerializeField, ReadOnly] public Vector3 ContextVelocity;
+        [SerializeField, ReadOnly] public Vector3 ContextVelocity;
         #endregion
 
         #region Aligment Check
@@ -49,7 +52,7 @@ namespace Game
         [field: SerializeField] public Vector3 BoxCastOffset { get; private set; }
         [SerializeField] private Vector3 boxCastDimensions;
         [SerializeField] private float boxCastLenght;
-        public bool IsInsidePlayzone => LevelManager.Instance.IsInsidePlayzone(body.position);
+
         #endregion
 
         #region Debug
@@ -101,6 +104,8 @@ namespace Game
 
         private void Update()
         {
+            IsOnScreen = GameManager.Instance.OnScreenPercent(screenPercentage, spriteRenderer.GetSpriteCorners());
+
             IsAligned = Physics.BoxCast(transform.position + new Vector3(transform.right.x * BoxCastOffset.x,
                 BoxCastOffset.y, BoxCastOffset.z), boxCastDimensions, transform.right,
                 out RaycastHit info, Quaternion.identity, boxCastLenght, boxCastLayerMask);
@@ -130,6 +135,20 @@ namespace Game
                     stateLabelTmpro.gameObject.SetActive(false);
                 }
             }
+
+            Vector3[] corners = spriteRenderer.GetSpriteCorners();
+            Vector3 nextPoint;
+            Color lineColor;
+            if (IsOnScreen) { lineColor = Color.cyan; }
+            else lineColor = Color.blue;
+
+            for (int i = 0; i < corners.Length; i++)
+            {
+                if(i == corners.Length - 1) { nextPoint = corners[0];}
+                else { nextPoint = corners[i + 1]; }
+
+                Debug.DrawLine(corners[i], nextPoint, lineColor);
+            }
         }
 
         private void FixedUpdate()
@@ -158,7 +177,7 @@ namespace Game
         }
 #endif
 
-        private void ChangeState()
+        void ChangeState()
         {
             if (currentState.IsComplete)
             {

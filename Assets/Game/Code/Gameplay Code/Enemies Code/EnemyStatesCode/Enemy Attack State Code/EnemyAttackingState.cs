@@ -23,9 +23,9 @@ namespace Game
         [field: Header("DEBUG")]
 
         public GUIStyle attackLabelStyle;
-        public Color RangeLineColor { get; private set; }
-        public Vector3 RangeLineHeight { get; private set; }
-        public Vector3 RangeLabelOffest { get; private set; }
+        [field: SerializeField] public Color RangeLineColor { get; private set; }
+        [field: SerializeField] public Vector3 RangeLineHeight { get; private set; }
+        [field: SerializeField] public Vector3 RangeLabelOffest { get; private set; }
 #endif
         [Button("Sort Attacks")]
         void SortAttacks()

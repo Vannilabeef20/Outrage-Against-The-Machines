@@ -58,6 +58,7 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
+            stateMachine.healthHandler.Stun(duration);
             stateMachine.animator.speed = 0;
             startTime = Time.time;
             soundEmitter.Play();

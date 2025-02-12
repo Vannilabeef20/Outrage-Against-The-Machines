@@ -170,6 +170,44 @@ namespace Game
 			return clampedVector;
 		}
 
+
+		public static Vector3[] GetSpriteCorners(this SpriteRenderer spriteRenderer)
+        {
+			int shapeCount = spriteRenderer.sprite.GetPhysicsShapeCount();
+
+			int flipXMultiplier = 1;
+			int flipYMultiplier = 1;
+
+			if (spriteRenderer.flipX) flipXMultiplier = -1;
+			if (spriteRenderer.flipY) flipYMultiplier = -1;
+
+			List<Vector3> pointList = new();
+			List<Vector2> shapePoints = new();
+
+			Vector3 tempPoint;
+			for (int i = 0; i < shapeCount; i++)
+            {
+				spriteRenderer.sprite.GetPhysicsShape(i, shapePoints);
+
+				foreach(var point in shapePoints)
+                {
+					//To vector3
+					tempPoint = point;
+					//FlipX
+					tempPoint.x *= flipXMultiplier;
+					//FlipY
+					tempPoint.y *= flipYMultiplier;
+					//rotate
+					tempPoint = spriteRenderer.transform.rotation * tempPoint;
+					//To world
+					tempPoint += spriteRenderer.transform.position;
+
+					pointList.Add(tempPoint);
+                }
+            }
+			return pointList.ToArray();
+		}
+
 		/// <summary>
 		/// Checks if this enum has a given flag.
 		/// </summary>
@@ -195,14 +233,7 @@ namespace Game
 		/// <returns>True if layer is present.</returns>
 		public static bool ContainsLayer(this LayerMask layerMask, int layer)
 		{
-			if ((layerMask.value & (1 << layer)) > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return (layerMask.value & (1 << layer)) > 0;
 		}
 
 

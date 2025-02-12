@@ -49,11 +49,10 @@ namespace Game
         }
 
 #if UNITY_EDITOR
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
-            Vector3 finalPos = offset + (Vector3.right * (trailLenght * interval));
-            Helper.DrawPointArrow(transform.position, finalPos, Color.yellow, Color.red);
-            Debug.DrawLine(transform.position, finalPos, Color.gray);
+            Vector3 finalPos = transform.position + offset + (Vector3.right * (trailLenght * interval));
+            Helper.DrawPointArrow(transform.position, finalPos, Color.cyan, Color.cyan);
         }
 #endif
     }

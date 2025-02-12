@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 #if UNITY_EDITOR
@@ -26,12 +28,14 @@ namespace Game
         [SerializeField] float maxAvoidanceRadius = 0.75f;
 
         [Header("PATHFINDING VARIABLES"), HorizontalLine(2f, EColor.Green)]
+        [SerializeField,AllowNesting, ReadOnly] string state;
         [SerializeField, AllowNesting, ReadOnly] float distance;
         [SerializeField, AllowNesting, ReadOnly] Vector3 direction;
         [SerializeField, AllowNesting, ReadOnly] Vector3 normal = new Vector3(0, 1, -1);
         Vector3[] rayDirections;
         float[] interestValues;
         float[] obstacleValues;
+        List<Vector3> obstaclePoints = new();
 
         public override void Setup()
         {
@@ -59,6 +63,11 @@ namespace Game
             Handles.DrawWireArc(body.position - (normal * maxAvoidanceRadius / 2), normal, Vector3.up, 360, maxAvoidanceRadius);
             Handles.color = Color.yellow;
             Handles.DrawWireArc(body.position - (normal * obstacleDetectionRadius / 2), normal, Vector3.up, 360, obstacleDetectionRadius);
+            Gizmos.color = Color.red;
+            foreach(var point in obstaclePoints)
+            {
+                Gizmos.DrawSphere(point, 0.1f);
+            }
 #endif
         }
 
@@ -68,27 +77,34 @@ namespace Game
         }
         public Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
-            distance = Vector3.Distance(body.position, targetPosition);
-            if (distance > distanceToKeep || !stateMachine.IsInsidePlayzone)
+            Vector3 targetDirection = (targetPosition - body.position).normalized;
+
+            distance = Vector3.Distance(targetPosition, body.position);
+            if (distance > distanceToKeep || !stateMachine.IsOnScreen)
             {
-                //Moving towards
-                direction = targetPosition - body.position;
+                state = "Moving towards";
+                direction = targetDirection;
+                return direction;
             }
-            else if(distance < distanceToKeep - distanceRange)
+
+            bool obstacleBackward = Physics.Raycast(body.position, -targetDirection, 2f, ObstacleLayerMask);
+
+            if (distance < distanceToKeep - distanceRange && !obstacleBackward)
             {
-                //Moving away
-                direction = -(new Vector3(targetPosition.x, targetPosition.y, targetPosition.z) - body.position);
+                state = "Moving away";
+
+                direction = -targetDirection;
+                return direction;
             }
-            else
-            {
-                //Inside range
-                direction = new Vector3(body.position.x, targetPosition.z, targetPosition.z) - body.position;
-            }
+
+            state = "Lining Up";
+            direction = (new Vector3(body.position.x, targetPosition.z, targetPosition.z) - body.position).normalized;          
             return direction;
         }
 
         private Vector3 CalculateContextSteering(Vector3 targetDirection, bool IsInsidePlayZone)
         {
+            obstaclePoints.Clear();
             for (int i = 0; i < rayDirections.Length; i++)
             {
                 interestValues[i] = 0f;
@@ -98,6 +114,7 @@ namespace Game
                 {
                     if (Physics.Raycast(body.position, rayDirections[i], out RaycastHit info, obstacleDetectionRadius, ObstacleLayerMask))
                     {
+                        obstaclePoints.Add(info.point);
                         if (Vector3.Dot(targetDirection, rayDirections[i]) <= 0)
                         {
                             obstacleValues[i] = 0f;
@@ -135,6 +152,5 @@ namespace Game
 #endif
             return finalDirection;
         }
-
     }
 }

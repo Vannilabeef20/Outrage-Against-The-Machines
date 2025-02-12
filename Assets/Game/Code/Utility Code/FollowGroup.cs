@@ -10,41 +10,58 @@ namespace Game
     /// </summary>
     public class FollowGroup : MonoBehaviour
     {
-        [SerializeField, ReadOnly] List<Transform> playerTransformList;
+        public static FollowGroup Instance;
+        [SerializeField, ReadOnly] List<Transform> targetList;
+        Vector3 sum;
+
         private void Awake()
         {
+            if(Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
             FindObjectOfType<CinemachineVirtualCamera>().Follow = gameObject.transform;
         }
         private void Update()
         {
-            playerTransformList.Clear();
-            Vector3 sum = Vector3.zero;
-            foreach (var player in GameManager.Instance.PlayerCharacterList)
+            sum = Vector3.zero;
+            foreach (var target in targetList)
             {
-                if (player.Transform == null) continue;
-
-                if (!player.isPlayerActive) continue;
-
-                sum += player.Transform.position;
-                playerTransformList.Add(player.Transform);
+                sum += target.transform.position;
             }
 
-            if (sum == Vector3.zero || playerTransformList.Count < 1) return;
+            if (sum == Vector3.zero || targetList.Count < 1) return;
 
-            transform.position = sum / playerTransformList.Count;
+            transform.position = sum / targetList.Count;
+        }
+
+        public void AddTarget(Transform target)
+        {
+            if(targetList.Contains(target)) return;
+            targetList.Add(target);
+        }
+
+        public void RemoveTarget(Transform target)
+        {
+            targetList.Remove(target);
         }
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            if(playerTransformList.Count < 1)
-            {
-                return;
-            }
-            foreach(var player in playerTransformList)
+            if (targetList.Count < 1) return;
+
+            foreach(var player in targetList)
             {
                 Debug.DrawLine(player.position, transform.position);
             }
+
+            Gizmos.DrawSphere(sum / targetList.Count, 0.1f);
         }
 #endif
     }

@@ -5538,12 +5538,13 @@ MonoBehaviour:
         body: {fileID: 6508126985700856567}
         targetPosition: {x: 0, y: 0, z: 0}
         stateMachine: {fileID: 6508126985700856569}
-        numberOfRays: 16
+        byas: 0.1
+        numberOfRays: 32
         distanceToKeep: 11
         distanceRange: 4
         <ObstacleLayerMask>k__BackingField:
           serializedVersion: 2
-          m_Bits: 1280
+          m_Bits: 9472
         obstacleDetectionRadius: 2
         maxAvoidanceRadius: 0.75
         distance: 0

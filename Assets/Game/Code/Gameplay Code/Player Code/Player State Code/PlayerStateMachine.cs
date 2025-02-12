@@ -15,6 +15,8 @@ namespace Game
     public class PlayerStateMachine : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
+
+        public PlayerHealthHandler healthHandler;
         public PlayerInput playerInput;
         public Rigidbody body;
         public Animator animator;
@@ -58,6 +60,10 @@ namespace Game
 
         void Start()
         {
+            FollowGroup.Instance.AddTarget(transform);
+            healthHandler.OnDamageTaken += OnDamageTaken;
+            healthHandler.OnDeath += OnDeath;
+            healthHandler.OnRevive += OnRevive;
             //Dont allow Inputs device switch on multiplayer
             if(GameManager.Instance.PlayerCharacterList.Count <= 1)
                 playerInput.neverAutoSwitchControlSchemes = false;
@@ -119,20 +125,28 @@ namespace Game
                 overrideStateCompletion = false;
             }
         }
-        public void TakeDamage(bool isDead, Vector2 _knockback, float _duration)
+        void OnDamageTaken(Vector2 _knockback, float _duration)
         {
             overrideStateCompletion = true;
-            if (isDead == false)
-            {
-                Stunned.knockBackIntensity = _knockback;
-                Stunned.duration = _duration;
-                nextState = Stunned;
-            }
-            else
-            {
-                Death.knockBackIntensity = _knockback;
-                nextState = Death;
-            }
+            Stunned.knockBackIntensity = _knockback;
+            Stunned.duration = _duration;
+            nextState = Stunned;
+
+        }
+
+        void OnDeath(Vector2 _knockback, float _duration)
+        {
+            Death.knockBackIntensity = _knockback;
+            nextState = Death;
+            overrideStateCompletion = true;
+        }
+
+        void OnRevive()
+        {
+            transform.parent.gameObject.SetActive(true);
+            FollowGroup.Instance.AddTarget(transform);
+            nextState = Idle;
+            overrideStateCompletion = true;
         }
 
         #region Animation Events

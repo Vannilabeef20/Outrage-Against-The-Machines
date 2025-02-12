@@ -17,7 +17,7 @@ namespace Game
             List<Transform> playerTransformList = new();
             foreach(var player in GameManager.Instance.PlayerCharacterList)
             {
-                if (player.isPlayerActive)
+                if (!player.isDead)
                 {
                     playerTransformList.Add(player.Transform);
                 }

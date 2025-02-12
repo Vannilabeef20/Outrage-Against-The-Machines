@@ -33,8 +33,6 @@ namespace Game
         [field: SerializeField] public PlayerCharacter DefaultPlayer { get; private set; }
 
         [field: SerializeField, ReadOnly] public List<PlayerCharacter> PlayerCharacterList { get; private set; }
-
-        [SerializeField] GameObject followGroupPrefab;
         [field: SerializeField] public Vector3[] SpawnCoordinates { private set; get; }
         #endregion
 
@@ -135,8 +133,6 @@ namespace Game
                 player.GameObject = Instantiate(player.Prefab, SpawnCoordinates[0], Quaternion.identity);
                 player.Transform = player.GameObject.transform;
                 player.Transform.position = SpawnCoordinates[0];
-                player.HealthHandler = player.GameObject.GetComponentInChildren<PlayerHealthHandler>();
-                player.isPlayerActive = true;
                 player.InitialDevices = InputSystem.devices.ToArray();
                 player.Input = player.GameObject.GetComponent<PlayerInput>();
             }
@@ -153,12 +149,9 @@ namespace Game
                     player.Transform = player.GameObject.transform;
                     Rigidbody rb = player.GameObject.GetComponent<Rigidbody>();
                     rb.position = SpawnCoordinates[player.Index];
-                    player.HealthHandler = player.GameObject.GetComponentInChildren<PlayerHealthHandler>();
-                    player.isPlayerActive = true;
                     player.Input = player.GameObject.GetComponent<PlayerInput>();
                 }
             }
-            Instantiate(followGroupPrefab);
         }
 
         public void PauseGame()
@@ -178,39 +171,54 @@ namespace Game
         
         public void TakeAddLife(int amount)
         {
+            float Current = CurrentLifeAmount;
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
+            float PostTakeAdd = CurrentLifeAmount;
             for(int i = 0; i < PlayerCharacterList.Count; i++)
             {
-                if (!PlayerCharacterList[i].isPlayerActive && CurrentLifeAmount > 0)
+                if (CurrentLifeAmount == 0) break;
+
+                if (!PlayerCharacterList[i].GameObject.activeInHierarchy && CurrentLifeAmount > 0)
                 {
                     PlayerCharacterList[i].Transform.position = 
                         MainCamera.ViewportToWorldPoint(spawnViewportPostion).ToXYY();
 
-                    CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount--, 0, maxLifeAmount);
-                    PlayerCharacterList[i].GameObject.SetActive(true);
-                    PlayerCharacterList[i].HealthHandler.playerHitbox.enabled = true;
-                    PlayerCharacterList[i].isPlayerActive = true;
+                    PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().Revive();
+                    CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount - 1, 0, maxLifeAmount);
+                    float PostRevive = CurrentLifeAmount;
+                    Debug.Log($"{amount} {Current} {PostTakeAdd} {PostRevive}");
                 }
             }
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
         }
         
-        public void UpdatePlayerDeathStatus(PlayerDeathParams playerDeathParams)
+        public bool OnScreenPercent(float percent, params Vector3[] points)
         {
-            PlayerCharacterList[playerDeathParams.playerIndex].isPlayerActive = !playerDeathParams.isPlayerDead;
-            int aliveCount = 0;
-            foreach(var character in PlayerCharacterList)
+            percent = Mathf.Clamp01(percent);
+            int count = 0;
+            Vector2 viewPortPoint;
+            foreach (var worldPoint in points)
             {
-                if(character.isPlayerActive)
+                viewPortPoint = MainCamera.WorldToViewportPoint(worldPoint);
+                if (viewPortPoint.InsideRange(Vector2.zero, Vector2.one))
                 {
-                    aliveCount++;
+                    count++;
                 }
             }
-            if(aliveCount == 0)
-            {
-                TransitionManager.Instance.LoadScene(2);
-            }
+            return count >= points.Length * percent;
         }
+        public bool OnScreen(params Vector3[] points)
+        {
+            Vector2 viewPortPoint;
+            foreach (var worldPoint in points)
+            {
+                viewPortPoint = MainCamera.WorldToViewportPoint(worldPoint);
+
+                if (viewPortPoint.InsideRange(Vector2.zero, Vector2.one)) return true;
+            }
+            return false;
+        }
+
 
 #if UNITY_EDITOR
         [SerializeField] int addMoney;
@@ -268,14 +276,13 @@ namespace Game
         [field: SerializeField, ReadOnly, AllowNesting] public GameObject StoredItem { get; private set; }
         [field: SerializeField, ReadOnly, ShowAssetPreview, AllowNesting] public Sprite ItemIcon { get; private set; }
         [Space]
-        [ReadOnly, AllowNesting] public bool isPlayerActive;
+        [ReadOnly, AllowNesting] public bool isDead;
         [ReadOnly, AllowNesting] public int scrapAmount;
 
         [Space]
         [ReadOnly, AllowNesting] public PlayerInput Input;
         [ReadOnly, AllowNesting] public GameObject GameObject;
         [ReadOnly, AllowNesting] public Transform Transform;
-        [ReadOnly, AllowNesting] public PlayerHealthHandler HealthHandler;
 
         public bool HasItemStored => StoredItem != null;
 
