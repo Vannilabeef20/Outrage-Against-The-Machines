@@ -113,13 +113,13 @@ namespace Game
                 OnSetMenuVisibility.Raise(this, EMenuId.None);
                 InitializeLevel();
                 UnityInputManager.playerPrefab = root;
-            }           
+            }
         }
         #endregion
 
         private void InitializeLevel()
         {
-            MainCamera = FindObjectOfType<Camera>();
+            MainCamera = FindAnyObjectByType<Camera>();
             CurrentLifeAmount = initialLifeAmout;
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
 

@@ -63,7 +63,7 @@ namespace Game
         public void ConfirmSelection()
         {
             GameManager.Instance.PlayerCharacterList.Clear();
-            PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+            PlayerInput[] playerInputs = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
             playerInputs = playerInputs.OrderBy(input => input.user.index).ToArray();
 
             foreach(var swap in selectionSwaps)
@@ -89,7 +89,7 @@ namespace Game
             switch(menuId)
             {
                 case EMenuId.StartMenu:
-                    PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+                    PlayerInput[] playerInputs = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
                     foreach (PlayerInput playerInput in playerInputs)
                     {
                         Destroy(playerInput.gameObject);
@@ -119,7 +119,7 @@ namespace Game
                 }
             }
 
-            PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+            PlayerInput[] playerInputs = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
             playerInputs = playerInputs.OrderBy(input => input.user.index).ToArray();
             Destroy(playerInputs[playerGameInput.Index].gameObject);
             if (GameManager.Instance.PlayerCharacterList.Count >= playerGameInput.Index + 1)

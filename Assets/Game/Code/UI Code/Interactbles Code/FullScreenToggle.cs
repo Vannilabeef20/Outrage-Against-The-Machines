@@ -44,7 +44,6 @@ namespace Game
         }
         public void SetFullScreen()
         {
-            PlayInteractionAnimation();
             AudioManager.instance.PlayUiClickSfx();
             active = !active;
             Screen.fullScreen = active;

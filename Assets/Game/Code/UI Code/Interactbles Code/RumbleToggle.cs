@@ -47,7 +47,6 @@ namespace Game
         }
         public void _SetRumble()
         {
-            PlayInteractionAnimation();
             AudioManager.instance.PlayUiClickSfx();
             active = !active;
             if (active)

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using NaughtyAttributes;
 using UnityEngine.InputSystem;
 using System.Linq;
@@ -51,7 +52,9 @@ namespace Game
             UpdateRumble();
         }
 
+#pragma warning disable
         private void OnLevelWasLoaded(int level)
+#pragma warning enable
         {
             //Actually should be on transition
             List<Rumble> timescaleRumbles = new();

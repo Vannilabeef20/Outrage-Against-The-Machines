@@ -35,6 +35,7 @@ namespace Game
         [field: SerializeField, ReadOnly] public PlayerState CurrentState { get; private set; }
         [ReadOnly] public PlayerState nextState;
         [ReadOnly] public bool overrideStateCompletion;
+        [ReadOnly] public bool canBeStunned = true;
 
         [field: SerializeField ,ReadOnly] public Vector2 InputDirection { get; private set; } = Vector2.zero;
 
@@ -127,11 +128,14 @@ namespace Game
         }
         void OnDamageTaken(Vector2 _knockback, float _duration)
         {
+            healthHandler.PlayHitEffect(_duration);
+
+            if (!canBeStunned) return;
+
             overrideStateCompletion = true;
             Stunned.knockBackIntensity = _knockback;
             Stunned.duration = _duration;
             nextState = Stunned;
-
         }
 
         void OnDeath(Vector2 _knockback, float _duration)

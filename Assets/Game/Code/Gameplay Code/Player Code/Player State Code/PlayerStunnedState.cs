@@ -24,23 +24,6 @@ namespace Game
         [Header("PARAMS"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] private AnimationCurve knockBackCurve;
         Vector3 KnockBackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
-        int PlayerIndex => stateMachine.playerInput.playerIndex;
-        string RumbleId => $"P{PlayerIndex + 1} {Name}";
-
-        #region CAMERA SHAKE
-
-        //Camera Shake
-        [Header("CAMERA SHAKE"), HorizontalLine(2f, EColor.Blue)]
-
-        [SerializeField] private CinemachineImpulseSource impulseSource;
-
-        #endregion
-        #region GAMEPAD SHAKE   
-        [Header("GAMEPAD SHAKE"), HorizontalLine(2f, EColor.Violet)]
-
-        [SerializeField] RumbleData stunnedRumble;
-
-        #endregion
 
         public override void Do()
         {
@@ -58,12 +41,9 @@ namespace Game
         public override void Enter()
         {
             IsComplete = false;
-            stateMachine.healthHandler.Stun(duration);
             stateMachine.animator.speed = 0;
             startTime = Time.time;
             soundEmitter.Play();
-            RumbleManager.Instance.CreateRumble(RumbleId, stunnedRumble, PlayerIndex);
-            impulseSource.GenerateImpulse();
         }
 
         public override void Exit()

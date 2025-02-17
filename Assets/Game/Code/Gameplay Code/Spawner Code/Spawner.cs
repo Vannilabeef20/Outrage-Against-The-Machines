@@ -68,7 +68,7 @@ namespace Game
             }
             else Instance = this;
 
-            virtualCameraFramingTransposer = FindObjectOfType<CinemachineVirtualCamera>().
+            virtualCameraFramingTransposer = FindAnyObjectByType<CinemachineVirtualCamera>().
                 GetCinemachineComponent<CinemachineFramingTransposer>();
         }
 

@@ -52,15 +52,21 @@ namespace Game
             {
                 frameEvent.Reset();
             }
+            if(PlayerAttack.IsSpecial)
+            {
+                stateMachine.canBeStunned = false;
+            }
         }
 
         public override void Exit()
         {
+            stateMachine.canBeStunned = true;
             AttackMachine.DisableAttackHitboxes();
             
             if(stateMachine.nextState == stateMachine.Stunned ||
                 stateMachine.CurrentState == stateMachine.Stunned)
             RumbleManager.Instance.CancelRumble(RumbleId);
+
         }
 
         public override void Do()

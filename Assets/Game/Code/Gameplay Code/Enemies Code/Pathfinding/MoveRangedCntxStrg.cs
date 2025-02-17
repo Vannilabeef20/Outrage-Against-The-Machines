@@ -28,7 +28,9 @@ namespace Game
         [SerializeField] float maxAvoidanceRadius = 0.75f;
 
         [Header("PATHFINDING VARIABLES"), HorizontalLine(2f, EColor.Green)]
+#pragma warning disable
         [SerializeField,AllowNesting, ReadOnly] string state;
+#pragma warning enable
         [SerializeField, AllowNesting, ReadOnly] float distance;
         [SerializeField, AllowNesting, ReadOnly] Vector3 direction;
         [SerializeField, AllowNesting, ReadOnly] Vector3 normal = new Vector3(0, 1, -1);

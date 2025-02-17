@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 using NaughtyAttributes;
 using DG.Tweening;
 using FMODUnity;
@@ -19,6 +20,7 @@ namespace Game
         [SerializeField] ParticleSystem healParticle;
         [SerializeField] ParticleSystem damageParticle;
         [SerializeField] StudioEventEmitter reviveEmitter;
+        [SerializeField] CinemachineImpulseSource impulseSource;
 
         #region Player Health Params
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
@@ -28,6 +30,9 @@ namespace Game
         #endregion
         #region Stagger Params
         [Header("STAGGER PARAMS"), HorizontalLine(2f, EColor.Orange)]
+
+        [SerializeField] RumbleData hitRumble;
+
 
         [SerializeField] float hitFlashLenght;
         [SerializeField] Color hitFlashColor;
@@ -44,18 +49,18 @@ namespace Game
         #endregion
 
         /// <summary>
-        /// Vector2 = KnockbackForce, float = Stun Duration
+        /// Vector2 = KnockbackForce, float = PlayHitEffect Duration
         /// </summary>
         public event Action<Vector2, float> OnDamageTaken;
         /// <summary>
-        /// Vector2 = KnockbackForce, float = Stun Duration
+        /// Vector2 = KnockbackForce, float = PlayHitEffect Duration
         /// </summary>
         public event Action<Vector2, float> OnDeath;
 
         public event Action OnRevive;
 
         int PlayerIndex => playerInput.playerIndex;
-        string RumbleId => $"P{PlayerIndex + 1} Revive";
+        string RumbleId => $"P{playerInput.playerIndex + 1} {gameObject.name}";
 
         private void Awake()
         {
@@ -80,8 +85,16 @@ namespace Game
             else 
                 knockbackDir = Vector2.left;
 
-            if (dead) OnDeath.Invoke(knockbackStrenght * knockbackDir, stunDuration);
-            else OnDamageTaken.Invoke(knockbackStrenght * knockbackDir, stunDuration);
+            if (dead)
+            {
+                OnDeath.Invoke(knockbackStrenght * knockbackDir, stunDuration);
+            }
+            else
+            {
+                RumbleManager.Instance.CreateRumble(RumbleId + " Damage", hitRumble, playerInput.playerIndex);
+                impulseSource.GenerateImpulse();
+                OnDamageTaken.Invoke(knockbackStrenght * knockbackDir, stunDuration);
+            }
         }
         
         public void StartGracePeriod()
@@ -89,7 +102,7 @@ namespace Game
             StartCoroutine(GracePeriodRoutine());
         }
 
-        public void Stun(float duration)
+        public void PlayHitEffect(float duration)
         {
             StartCoroutine(StunRoutine(duration));
         }
@@ -110,7 +123,7 @@ namespace Game
             healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
             playerHitbox.enabled = true;
             reviveEmitter.Play();
-            RumbleManager.Instance.CreateRumble(RumbleId, reviveRumble, PlayerIndex);
+            RumbleManager.Instance.CreateRumble(RumbleId + " Revive", reviveRumble, PlayerIndex);
             OnRevive.Invoke();
             StartCoroutine(GracePeriodRoutine());;
         }
