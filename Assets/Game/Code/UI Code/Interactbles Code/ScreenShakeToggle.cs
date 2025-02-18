@@ -15,7 +15,7 @@ namespace Game
 
         private void Awake()
         {
-            if (PlayerPrefs.GetInt(PlayerPrefsScreenShake) == 1) // 1 means true, 0 false
+            if (PlayerPrefs.GetInt(PlayerPrefsScreenShake, 1) == 1) // 1 means true, 0 false
             {
                 active = true;
                 toggleImage.sprite = toggleSprites[1];
@@ -31,7 +31,7 @@ namespace Game
         }
         private void OnEnable()
         {
-            if (PlayerPrefs.GetInt(PlayerPrefsScreenShake) == 1)
+            if (PlayerPrefs.GetInt(PlayerPrefsScreenShake, 1) == 1)
             {
                 active = true;
                 toggleImage.sprite = toggleSprites[1];
