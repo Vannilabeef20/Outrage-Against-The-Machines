@@ -9,7 +9,7 @@ namespace Game
 	{
         [SerializeField] Image toggleImage;
         [SerializeField] BoolEvent screenShakeToggleEvent;
-        [SerializeField, ReadOnly] const string PlayerPrefsScreenShake = "ScreenShake";
+        const string PlayerPrefsScreenShake = "ScreenShake";
         [SerializeField, ReadOnly] bool active;
         [SerializeField, ShowAssetPreview] Sprite[] toggleSprites;
 

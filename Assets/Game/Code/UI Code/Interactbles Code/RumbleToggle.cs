@@ -9,13 +9,19 @@ namespace Game
     {
         [SerializeField] Image toggleImage;
         [SerializeField] BoolEvent rumbleToggleEvent;
-        [SerializeField, ReadOnly] const string PlayerPrefsScreenShake = "Rumble";
+        const string PlayerPrefsScreenShake = "Rumble";
         [SerializeField, ReadOnly] bool active;
         [SerializeField, ShowAssetPreview] Sprite[] toggleSprites;
 
         private void Awake()
         {
+#if UNITY_WEBGL
+            GetComponent<Button>().interactable = false;
+            return;
+#endif
+#pragma warning disable
             if (PlayerPrefs.GetInt(PlayerPrefsScreenShake, 1) == 1) // 1 means true, 0 false
+#pragma warning enable
             {
                 active = true;
                 toggleImage.sprite = toggleSprites[1];

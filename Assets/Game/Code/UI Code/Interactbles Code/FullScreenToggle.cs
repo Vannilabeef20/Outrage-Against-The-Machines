@@ -8,13 +8,19 @@ namespace Game
     public class FullScreenToggle : BaseUIInteractive
     {
         [SerializeField] Image toggleImage;
-        [SerializeField, ReadOnly] const string PlayerPrefsFullScreen = "FullscreenValue";
+        const string PlayerPrefsFullScreen = "FullscreenValue";
         [SerializeField, ReadOnly] private bool active;
         [SerializeField, ShowAssetPreview] private Sprite[] toggleSprites;
 
         private void Awake()
         {
+#if UNITY_WEBGL
+            GetComponent<Button>().interactable = false;
+            return;
+#endif
+#pragma warning disable
             if (PlayerPrefs.GetInt(PlayerPrefsFullScreen, 0) == 1) // 1 means true, 0 false
+#pragma warning enable
             {
                 active = true;
                 toggleImage.sprite = toggleSprites[1];
