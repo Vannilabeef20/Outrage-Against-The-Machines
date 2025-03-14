@@ -2,7 +2,7 @@
 ### Made in Unity WebGL
 
 ## About 
-- Outrage Against The Machines is a 2D beat'em up with 1-4 Player local coop.
+- Outrage Against The Machines is a 2D beat'em up with 1-3 Player local coop.
 
 - The game is about factory workers who are getting laid-off and replaced by machines, after getting fired they decide to rebel, destroy the machines and take down the factory's boss to restore the jobs.
 
