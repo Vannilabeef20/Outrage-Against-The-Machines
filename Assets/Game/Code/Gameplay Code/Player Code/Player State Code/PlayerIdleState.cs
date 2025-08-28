@@ -17,7 +17,7 @@ namespace Game
 
         public override void Exit()
         {
-            IsComplete = false;
+            CanTransition = false;
         }
 
         public override void Do()
@@ -39,12 +39,7 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (stateMachine.InputDirection != Vector2.zero)
-            {
-                stateMachine.nextState = stateMachine.Walking;
-                IsComplete = true;
-                return;
-            }
+            CanTransition = true;
         }
     }
 }

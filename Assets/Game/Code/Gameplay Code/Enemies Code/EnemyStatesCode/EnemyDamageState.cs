@@ -68,7 +68,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startingColor = SpriteColor;
             startTime = Time.time;
             hitFlashTimer = 0f;
@@ -92,12 +92,12 @@ namespace Game
             if(HealthHandler.CurrentHealthPoints <= 0) //temp, should complete deathState 
             {
                 NextState = stateMachine.death;
-                IsComplete = true;
+                CanTransition = true;
             }
             else
             {
                 NextState = stateMachine.intercept;
-                IsComplete = true;
+                CanTransition = true;
             }         
         }
 

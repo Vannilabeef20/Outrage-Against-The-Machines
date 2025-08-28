@@ -107,6 +107,7 @@ namespace Game
             if (index != encounterIndex) return;
             if (phase2) return;
 
+            spriteRenderer.enabled = true;
             uiObject.SetActive(true);
             toggleLevelMusicEvent.Raise(this, false);
             bossMusicEmitter.Play();
@@ -129,7 +130,7 @@ namespace Game
 
         private void ChangeState()
         {
-            if (currentState.IsComplete)
+            if (currentState.CanTransition)
             {
                 currentState.Exit();
                 currentState = nextState;
@@ -154,6 +155,8 @@ namespace Game
 
         public void Stun(Vector3 _damageDealerPos, float _stunDuration, float _knockbackStrenght)
         {
+            if (currentState == mk1Death || currentState == mk2Death) return;
+
             if(!phase2)
             {
                 mk1Attackhitbox.enabled = false;
@@ -174,6 +177,8 @@ namespace Game
         }
         public void Kill()
         {
+            if (currentState == mk1Death || currentState == mk2Death) return;
+
             if (!phase2)
             {
                 mk1Attackhitbox.enabled = false;

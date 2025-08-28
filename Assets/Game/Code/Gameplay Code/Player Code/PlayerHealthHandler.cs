@@ -15,6 +15,7 @@ namespace Game
         [SerializeField] PlayerInput playerInput;
         [SerializeField] SpriteRenderer spriteRenderer;
         [SerializeField] CapsuleCollider playerHitbox;
+        [SerializeField] BoxCollider enemyCollision;
 
         [SerializeField] IntFloatEvent healthEvent;
         [SerializeField] ParticleSystem healParticle;
@@ -26,14 +27,13 @@ namespace Game
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
         [SerializeField] float maxHeathPoints;
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
+        [ReadOnly] public float damageMultiplier = 1f;
 
         #endregion
         #region Stagger Params
         [Header("STAGGER PARAMS"), HorizontalLine(2f, EColor.Orange)]
 
         [SerializeField] RumbleData hitRumble;
-
-
         [SerializeField] float hitFlashLenght;
         [SerializeField] Color hitFlashColor;
 
@@ -51,7 +51,7 @@ namespace Game
         /// <summary>
         /// Vector2 = KnockbackForce, float = PlayHitEffect Duration
         /// </summary>
-        public event Action<Vector2, float> OnDamageTaken;
+        public event Action<float, Vector3, float> OnDamageTaken;
         /// <summary>
         /// Vector2 = KnockbackForce, float = PlayHitEffect Duration
         /// </summary>
@@ -62,6 +62,19 @@ namespace Game
         int PlayerIndex => playerInput.playerIndex;
         string RumbleId => $"P{playerInput.playerIndex + 1} {gameObject.name}";
 
+
+        [Button]
+        public void UpdateHealthUI()
+        {
+            healthEvent.Raise(this, new IntFloat(PlayerIndex, CurrentHealthPoints / maxHeathPoints));
+        }
+
+        [Button]
+        void Kill()
+        {
+            TakeDamage(transform.position, maxHeathPoints, 0.5f, 0);
+        }
+
         private void Awake()
         {
             spriteRenderer = transform.parent.GetComponentInChildren<SpriteRenderer>();
@@ -70,31 +83,32 @@ namespace Game
 
         public void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
-            playerHitbox.enabled = false;
             damageParticle.Play();
+            damage *= damageMultiplier;
 
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0f, maxHeathPoints);
-            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
+            UpdateHealthUI();
 
-            bool dead = CurrentHealthPoints <= 0;
+            Vector3 knockbackDir = transform.position - damageDealerPos;
+            knockbackDir.y = 0;
+            knockbackDir.z = 0;
+            knockbackDir.Normalize();
+           
 
-            Vector3 knockbackDir;
-            if (damageDealerPos.x - transform.position.x >= 0) 
-                knockbackDir = Vector2.right;
-            else 
-                knockbackDir = Vector2.left;
-
-            if (dead)
+            //if dead
+            if (CurrentHealthPoints <= 0)
             {
+                playerHitbox.enabled = false;
+                enemyCollision.enabled = false;
                 OnDeath.Invoke(knockbackStrenght * knockbackDir, stunDuration);
+                return;
             }
-            else
-            {
-                RumbleManager.Instance.CreateRumble(RumbleId + " Damage", hitRumble, playerInput.playerIndex);
-                impulseSource.GenerateImpulse();
-                OnDamageTaken.Invoke(knockbackStrenght * knockbackDir, stunDuration);
-            }
+            
+            //If alive
+            StartCoroutine(StunRoutine(stunDuration));
+            RumbleManager.Instance.CreateRumble(RumbleId + " Damage", hitRumble, playerInput.playerIndex);
+            impulseSource.GenerateImpulse();
+            OnDamageTaken.Invoke(damage, knockbackStrenght * knockbackDir, stunDuration);           
         }
         
         public void StartGracePeriod()
@@ -102,26 +116,25 @@ namespace Game
             StartCoroutine(GracePeriodRoutine());
         }
 
-        public void PlayHitEffect(float duration)
-        {
-            StartCoroutine(StunRoutine(duration));
-        }
 
         public void Heal(float healPercent, float healFlat = 0f)
         {
             healParticle.Play();
-            CurrentHealthPoints += (maxHeathPoints * healPercent/100) + healFlat;
-            CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints, 0f, maxHeathPoints);
-            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
+            float newHealth = CurrentHealthPoints;
+            newHealth += (maxHeathPoints * healPercent/100) + healFlat;
+            newHealth = Mathf.Clamp(newHealth, 0f, maxHeathPoints);
+            CurrentHealthPoints = newHealth;
+            UpdateHealthUI();
+
+            UpdateHealthUI();
         }
 
         public void Revive()
         {
             CurrentHealthPoints = maxHeathPoints;
-            float newHealthPercent = CurrentHealthPoints / maxHeathPoints;
-            healthEvent.Raise(this, new IntFloat(PlayerIndex, newHealthPercent));
+            UpdateHealthUI();
             playerHitbox.enabled = true;
+            enemyCollision.enabled = true;
             reviveEmitter.Play();
             RumbleManager.Instance.CreateRumble(RumbleId + " Revive", reviveRumble, PlayerIndex);
             OnRevive.Invoke();
@@ -136,6 +149,7 @@ namespace Game
             while (UpTime < stunDuration)
             {
                 playerHitbox.enabled = false;
+                enemyCollision.enabled = false;
                 UpTime += Time.deltaTime;
                 flashTime += Time.deltaTime;
                 if (flashTime > hitFlashLenght)
@@ -161,9 +175,10 @@ namespace Game
             float UpTime = 0f;
             float flashTime = 0f;
             Color startColor = spriteRenderer.color;
+            playerHitbox.enabled = false;
+            enemyCollision.enabled = false;
             while (UpTime < staggerGracePeriod)
             {
-                playerHitbox.enabled = false;
                 UpTime += Time.deltaTime;
                 flashTime += Time.deltaTime;
                 if (flashTime > gracePeriodFlashLenght)
@@ -182,6 +197,7 @@ namespace Game
             }
             spriteRenderer.color = startColor;
             playerHitbox.enabled = true;
+            enemyCollision.enabled = true;
         }
     }
 }

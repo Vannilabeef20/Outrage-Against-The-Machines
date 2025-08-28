@@ -62,7 +62,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             foreach (var frameEvent in Attack.FrameEvents)
             {
@@ -88,7 +88,7 @@ namespace Game
 
         public override void FixedDo() 
         {
-            if (stateMachine.Target == null) return;
+            Vector3 targetPos = stateMachine.Target == null ? stateMachine.transform.position : stateMachine.Target.position;
 
             switch (EDirection)
             {
@@ -99,8 +99,7 @@ namespace Game
                     if (!stopTracking)
                     {
                         stateMachine.Flip();
-                        attackDirection = (stateMachine.Target.position -
-                        stateMachine.transform.position).normalized;
+                        attackDirection = (targetPos - stateMachine.transform.position).normalized;
                     }
                     break;
             }
@@ -114,7 +113,7 @@ namespace Game
             {
                 IsOnCooldown = true;
                 StartCoroutine(CooldownRoutine());
-                IsComplete = true;
+                CanTransition = true;
             }
         }
 

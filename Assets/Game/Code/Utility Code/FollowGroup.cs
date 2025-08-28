@@ -25,7 +25,7 @@ namespace Game
                 Destroy(gameObject);
             }
 
-            FindAnyObjectByType<CinemachineVirtualCamera>().Follow = gameObject.transform;
+            Camera.main.transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().Follow = transform;
         }
         private void Update()
         {

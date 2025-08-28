@@ -39,7 +39,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             stateMachine.attackhitbox.enabled = false;
             stateMachine.hurtBox.enabled = false;
@@ -52,7 +52,7 @@ namespace Game
         {
             if (UpTime <= duration) return;
 
-            IsComplete = true;
+            CanTransition = true;
             NextState = stateMachine.intercept;
             GameObject drop = lootTable.PickRandomDrop();
             if (drop != null)

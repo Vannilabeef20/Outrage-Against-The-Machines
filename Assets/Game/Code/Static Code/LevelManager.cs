@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using NaughtyAttributes;
+using Cinemachine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -18,7 +19,7 @@ namespace Game
     {
         public static LevelManager Instance { get; private set; }
 
-        [SerializeField, ReadOnly] private Camera mainCamera;
+        [SerializeField, ReadOnly] private Transform camTransform;
 
         [Header("PLAYZONE"), HorizontalLine(2f, EColor.Orange)]
         [Tooltip("Absoulte MinMax World Height(Y) coordinates for the *Play Zone*")]
@@ -29,7 +30,7 @@ namespace Game
         [SerializeField] private Color playZoneColor;
 
 #if UNITY_EDITOR
-        [SerializeField] float playZoneLineScale;
+        [SerializeField] float playZoneLineScale = 1f;
 
         Vector3 point1Pos;
         Vector3 point2Pos;
@@ -40,12 +41,20 @@ namespace Game
             if(Instance == null)
             {
                 Instance = this;
-                mainCamera = Camera.main;
+                SetCameraTransform();
             }
             else
             {
                 Destroy(gameObject);
             }
+        }
+
+        void SetCameraTransform()
+        {
+            if (camTransform != null) return;
+
+            if(SceneManager.GetActiveScene().buildIndex != 1) camTransform = Camera.main.transform;
+            else camTransform = Camera.main.transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().transform;
         }
 
         /// <summary>
@@ -55,7 +64,7 @@ namespace Game
         /// <returns>False if any of the values are higher or lower than the "Play Zone" range.</returns>
         public bool IsInsidePlayzone(Vector3 position)
         {
-            position.x -= mainCamera.transform.position.x;
+            position.x -= camTransform.transform.position.x;
             
             if (position.x < -playZoneHalfWidth)
             {
@@ -86,7 +95,7 @@ namespace Game
 
         public Vector3 ClampInsidePlayzone(Vector3 position)
         {
-            position.x -= mainCamera.transform.position.x;
+            position.x -= camTransform.transform.position.x;
 
             if (position.x < -playZoneHalfWidth)
             {
@@ -113,41 +122,41 @@ namespace Game
                 position.z = playZoneHeight.y;
             }
             
-            position.x += mainCamera.transform.position.x;
+            position.x += camTransform.transform.position.x;
             return position;
         }
 
 #if UNITY_EDITOR      
         private void OnDrawGizmosSelected()
         {
-            if (mainCamera == null) mainCamera = Camera.main;
+            SetCameraTransform();
             #region Draw debug playzone box
             Handles.color = playZoneColor;
             //Bottom Line
-            point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
+            point1Pos.x = camTransform.transform.position.x + playZoneHalfWidth;
             point1Pos.y = playZoneHeight.x;
-            point2Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
+            point2Pos.x = camTransform.transform.position.x - playZoneHalfWidth;
             point2Pos.y = playZoneHeight.x;
             Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
 
             //Upper Line
-            point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
+            point1Pos.x = camTransform.transform.position.x + playZoneHalfWidth;
             point1Pos.y = playZoneHeight.y;
-            point2Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
+            point2Pos.x = camTransform.transform.position.x - playZoneHalfWidth;
             point2Pos.y = playZoneHeight.y;
             Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
 
             //Left Line
-            point1Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
+            point1Pos.x = camTransform.transform.position.x - playZoneHalfWidth;
             point1Pos.y = playZoneHeight.x;
-            point2Pos.x = mainCamera.transform.position.x - playZoneHalfWidth;
+            point2Pos.x = camTransform.transform.position.x - playZoneHalfWidth;
             point2Pos.y = playZoneHeight.y;
             Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
 
             //Right Line
-            point1Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
+            point1Pos.x = camTransform.transform.position.x + playZoneHalfWidth;
             point1Pos.y = playZoneHeight.x;
-            point2Pos.x = mainCamera.transform.position.x + playZoneHalfWidth;
+            point2Pos.x = camTransform.transform.position.x + playZoneHalfWidth;
             point2Pos.y = playZoneHeight.y;
             Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), playZoneLineScale);
             #endregion

@@ -22,7 +22,7 @@ namespace Game
         protected float UpTime => Time.time - startTime;
 
         [SerializeField, ReadOnly, Range(0f, 1f)] protected float progress;
-        [field: SerializeField, ReadOnly] public bool IsComplete { get; protected set; }
+        [field: SerializeField, ReadOnly] public bool CanTransition { get; protected set; }
 
         #endregion
 
@@ -31,22 +31,22 @@ namespace Game
         #region ABSTRACT METHODS
 
         /// <summary>
-        /// This method will be run as soon as the state machine transitions to this state.
+        /// This method will be run as soon as the state playerInput transitions to this state.
         /// </summary>
         public abstract void Enter();
 
         /// <summary>
-        /// This method will be run as soon as the state machine transitions out of this state.
+        /// This method will be run as soon as the state playerInput transitions out of this state.
         /// </summary>
         public abstract void Exit();
 
         /// <summary>
-        /// This method will run on each "Update" while it is the current state in the state machine
+        /// This method will run on each "Update" while it is the current state in the state playerInput
         /// </summary>
         public abstract void Do();
 
         /// <summary>
-        /// This method will run on each "FixedUpdate" while it is the current state in the state machine
+        /// This method will run on each "FixedUpdate" while it is the current state in the state playerInput
         /// </summary>
         public abstract void FixedDo();
 

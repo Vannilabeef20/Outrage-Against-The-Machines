@@ -39,7 +39,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             stateMachine.mk1Attackhitbox.enabled = false;
             stateMachine.hurtBox.enabled = false;
@@ -52,7 +52,7 @@ namespace Game
         {
             if (UpTime <= duration) return;
 
-            IsComplete = true;
+            CanTransition = true;
             healthHandler.Phase2();
             stateMachine.nextState = stateMachine.mk2Intercept;
             foreach (var frame in frameEvents)

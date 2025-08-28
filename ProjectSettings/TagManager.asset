@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - P1
   - P2
@@ -23,7 +23,7 @@ TagManager:
   - Interaction
   - PlayerBoundry
   - Pickup
-  - 
+  - PlayerEnemy
   - 
   - 
   - 
@@ -47,3 +47,5 @@ TagManager:
   - name: World UI
     uniqueID: 4252516643
     locked: 0
+  m_RenderingLayers:
+  - Default

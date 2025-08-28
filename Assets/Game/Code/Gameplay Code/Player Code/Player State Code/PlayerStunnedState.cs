@@ -20,7 +20,7 @@ namespace Game
         [SerializeField] StudioEventEmitter soundEmitter;
         [ReadOnly] public float duration;
 
-        [ReadOnly] public Vector2 knockBackIntensity;
+        [ReadOnly] public Vector3 knockBackIntensity;
         [Header("PARAMS"), HorizontalLine(2f, EColor.Green)]
         [SerializeField] private AnimationCurve knockBackCurve;
         Vector3 KnockBackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
@@ -40,7 +40,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             stateMachine.animator.speed = 0;
             startTime = Time.time;
             soundEmitter.Play();
@@ -48,19 +48,16 @@ namespace Game
 
         public override void Exit()
         {
-            IsComplete = false;
+            CanTransition = false;
             stateMachine.animator.speed = 1;
             stateMachine.body.linearVelocity = Vector3.zero;
         }
 
         protected override void ValidateState()
         {
-            if (UpTime < duration)
-            {
-                return;
-            }          
-            stateMachine.nextState = stateMachine.Idle;
-            IsComplete = true;                
+            if (UpTime < duration) return;
+
+            CanTransition = true;                
         }
 
     }

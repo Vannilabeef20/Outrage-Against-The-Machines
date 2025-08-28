@@ -30,6 +30,7 @@ namespace Game
         Tween healthLerpTween;
         Coroutine healthCoroutine;
         PlayerCharacter Player => GameManager.Instance.PlayerCharacterList[playerNumber - 1];
+
         private void Awake()
         {
             InstantHealthBar.fillAmount = 1f;
@@ -82,8 +83,8 @@ namespace Game
             if (healthLerpTween != null) healthLerpTween.Kill();
             InstantHealthBar.fillAmount = newHealthPercent;
             yield return new WaitForSeconds(lerpConfigSO.Delay);
-            healthLerpTween = LerpHealthBar.DOFillAmount(newHealthPercent,
-                lerpConfigSO.Duration).SetEase(lerpConfigSO.Ease);
+            healthLerpTween = DOTween.To(() => LerpHealthBar.fillAmount, x => LerpHealthBar.fillAmount = x,
+                newHealthPercent, lerpConfigSO.Duration).SetEase(lerpConfigSO.Ease);
             healthCoroutine = null;
         }
 

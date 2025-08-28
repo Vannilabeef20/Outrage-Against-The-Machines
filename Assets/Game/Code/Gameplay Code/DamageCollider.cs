@@ -38,7 +38,7 @@ namespace Game
 
             if (!other.TryGetComponent<IDamageble>(out IDamageble damageble)) return;
 
-            switch(mode)
+            switch (mode)
             {
                 case EParameterMode.Player:
                     damageble.TakeDamage(transform.position, playerAttackSO.Damage,

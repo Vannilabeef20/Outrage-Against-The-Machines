@@ -73,7 +73,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             startingColor = Color.white;
             hitFlashTimer = 0f;
@@ -91,7 +91,7 @@ namespace Game
             if (UpTime < stunDuration) return;
 
             stateMachine.nextState = stateMachine.mk2Intercept;
-            IsComplete = true;
+            CanTransition = true;
 
         }
 

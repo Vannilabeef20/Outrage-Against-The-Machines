@@ -26,7 +26,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             foreach (var frameEvent in Attack.FrameEvents)
             {
@@ -37,7 +37,7 @@ namespace Game
         public override void Exit()
         {
             OnExitEvent.Invoke();
-            IsComplete = false;
+            CanTransition = false;
         }
         public override void Do()
         {
@@ -54,7 +54,7 @@ namespace Game
         {
             if (UpTime >= Attack.Config.Duration)
             {
-                IsComplete = true;
+                CanTransition = true;
             }
         }
 

@@ -47,7 +47,7 @@ namespace Game
 #endif
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             MachineAnimator.Play(StateAnimation.name);
             startTime = Time.time;
             target = targetingBehaviour.GetTarget(BodyPosition);
@@ -115,7 +115,7 @@ namespace Game
             if (!stateMachine.attack.CheckForAndSetAttack()) return;
 
             NextState = stateMachine.attack;
-            IsComplete = true;
+            CanTransition = true;
             return;
         }
     }

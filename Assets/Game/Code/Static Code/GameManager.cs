@@ -171,12 +171,10 @@ namespace Game
         
         public void TakeAddLife(int amount)
         {
-            float Current = CurrentLifeAmount;
             CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount + amount, 0, maxLifeAmount);
-            float PostTakeAdd = CurrentLifeAmount;
             for(int i = 0; i < PlayerCharacterList.Count; i++)
             {
-                if (CurrentLifeAmount == 0) break;
+                if (CurrentLifeAmount <= 0) break;
 
                 if (!PlayerCharacterList[i].GameObject.activeInHierarchy && CurrentLifeAmount > 0)
                 {
@@ -185,8 +183,6 @@ namespace Game
 
                     PlayerCharacterList[i].GameObject.GetComponentInChildren<PlayerHealthHandler>().Revive();
                     CurrentLifeAmount = Mathf.Clamp(CurrentLifeAmount - 1, 0, maxLifeAmount);
-                    float PostRevive = CurrentLifeAmount;
-                    Debug.Log($"{amount} {Current} {PostTakeAdd} {PostRevive}");
                 }
             }
             UpdateLifeCount.Raise(this, CurrentLifeAmount);
@@ -230,6 +226,21 @@ namespace Game
             {
                 player.scrapAmount += addMoney;
             }
+        }
+
+        [Button("KILL ALL", EButtonEnableMode.Playmode)]
+        void KillAll()
+        {
+            foreach(var Player in PlayerCharacterList)
+            {
+                Player.GameObject.GetComponentInChildren<IDamageble>().TakeDamage(Vector3.zero, 999F, 0.5F, 0F);
+            }
+        }
+
+        [Button("ADD 1 LIFE", EButtonEnableMode.Playmode)]
+        void AddLife()
+        {
+            TakeAddLife(1);
         }
 
         private void OnDrawGizmosSelected()

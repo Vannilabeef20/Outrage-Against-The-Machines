@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using Cinemachine;
 
 namespace Game
 {
@@ -11,7 +12,7 @@ namespace Game
 
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
-        [SerializeField] Transform mainCamTransform;
+        [SerializeField] Transform followCamTransform;
         [SerializeField] Animator animator;
         [SerializeField] AnimationClip trapAnimation;
 
@@ -28,7 +29,7 @@ namespace Game
 
         private void Awake()
         {
-            mainCamTransform = Camera.main.transform;
+            followCamTransform = Camera.main.transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().transform;
             foreach (var frameEvent in frameEvents)
             {
                 frameEvent.Setup(trapAnimation, animationDuration);
@@ -37,7 +38,7 @@ namespace Game
         private void Update()
         {
             //Return and pause animation if not within the activation range
-            if (Mathf.Abs(mainCamTransform.position.x - transform.position.x) > activationRange)
+            if (Mathf.Abs(followCamTransform.position.x - transform.position.x) > activationRange)
             {
                 animator.speed = 0;
                 return;

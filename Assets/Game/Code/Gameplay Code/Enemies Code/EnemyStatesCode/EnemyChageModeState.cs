@@ -21,14 +21,14 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             Velocity = Vector3.zero;
         }
 
         public override void Exit()
         {
-            IsComplete = false;
+            CanTransition = false;
         }
 
         protected override void ValidateState()
@@ -36,7 +36,7 @@ namespace Game
             if (progress < 1) return;
 
             NextState = stateMachine.intercept;
-            IsComplete = true;
+            CanTransition = true;
         }
     }
 }

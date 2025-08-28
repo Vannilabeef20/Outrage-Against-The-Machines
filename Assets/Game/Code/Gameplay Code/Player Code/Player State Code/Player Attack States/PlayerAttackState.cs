@@ -45,7 +45,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             AttackMachine.attackList.Add(PlayerAttack);
             foreach(var frameEvent in FrameEvents)
@@ -66,7 +66,6 @@ namespace Game
             if(stateMachine.nextState == stateMachine.Stunned ||
                 stateMachine.CurrentState == stateMachine.Stunned)
             RumbleManager.Instance.CancelRumble(RumbleId);
-
         }
 
         public override void Do()
@@ -90,7 +89,7 @@ namespace Game
         {
             if (UpTime >= PlayerAttack.Duration)
             {
-                IsComplete = true;
+                CanTransition = true;
             }
         }
 

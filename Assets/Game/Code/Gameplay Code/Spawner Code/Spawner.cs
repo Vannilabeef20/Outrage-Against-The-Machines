@@ -28,7 +28,7 @@ namespace Game
 #endif
 
         [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
-        [Tooltip("The distance range from the mainCam the enemy can spawn.")]
+        [Tooltip("The distance range from the followCam the enemy can spawn.")]
         [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnDistance;
         [Tooltip("The absolute height range the enemy can spawn.")]
         [MinMaxSlider(-20f, 20f), SerializeField] Vector2 spawnHeight;
@@ -68,14 +68,17 @@ namespace Game
             }
             else Instance = this;
 
-            virtualCameraFramingTransposer = FindAnyObjectByType<CinemachineVirtualCamera>().
+            virtualCameraFramingTransposer = Camera.main.transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().
                 GetCinemachineComponent<CinemachineFramingTransposer>();
         }
 
         private void Update()
         {
 #if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.Backspace)) DestroyAll();
+            if (Input.GetKey(KeyCode.Backspace))
+            {
+                DestroyAll();
+            }
 #endif
             if (LevelEncounters.Encounters.Length == 0) return;
 
@@ -135,7 +138,7 @@ namespace Game
                 }
             }
 
-            if(currentEncounterIndex == LevelEncounters.Encounters.Length - 1)
+            if (currentEncounterIndex == LevelEncounters.Encounters.Length - 1)
             {
                 encCoroutine = StartCoroutine (EncounterRoutine());
                 yield break;
@@ -199,6 +202,14 @@ namespace Game
         [Button("Destroy all enemies")]
         public void DestroyAll()
         {
+            int count = -1;
+            foreach (var encounter in LevelEncounters.Encounters)
+            {
+                count++;
+                encounterEvent.Raise(this, currentEncounterIndex);
+                if (encounter.position.x <= transform.position.x) currentEncounterIndex = count;
+            }
+
             GameObject[] enemyObjects = enemiesAlive.ToArray();
             foreach (var enemy in enemyObjects)
             {

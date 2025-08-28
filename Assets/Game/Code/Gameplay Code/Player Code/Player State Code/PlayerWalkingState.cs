@@ -46,17 +46,12 @@ namespace Game
         public override void Exit()
         {
             stateMachine.animator.speed = 1;
-            IsComplete = false;
+            CanTransition = false;
         }
 
         protected override void ValidateState()
         {
-            if (stateMachine.InputDirection == Vector2.zero)
-            {
-                stateMachine.nextState = stateMachine.Idle;
-                IsComplete = true;
-                return;
-            }
+            CanTransition = true;
         }
 
         public void PlayFootstepSound()

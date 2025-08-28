@@ -82,7 +82,7 @@ namespace Game
 
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             MachineAnimator.Play(StateAnimation.name);
             movementEmitter.Play();
@@ -96,7 +96,7 @@ namespace Game
         {
             NextState = stateMachine.change;
             Spawner.Instance.enemiesAlive.Add(Parent);
-            IsComplete = true;
+            CanTransition = true;
         }
 
         public void SetChase(int encounter)

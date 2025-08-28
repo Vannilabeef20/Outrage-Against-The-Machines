@@ -98,11 +98,6 @@ namespace Game
 
         public virtual void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
-            if (CurrentHealthPoints <= 0)
-            {
-                return;
-            }
-
             if (currentPoise < 0)
             {
                 poiseHitEmitter.Play();
@@ -145,8 +140,8 @@ namespace Game
         {
             if (healthLerpTween != null) healthLerpTween.Kill();
             yield return new WaitForSeconds(lerpConfigSO.Delay);
-            healthLerpTween = LerpHealthBar.DOFillAmount(newHealthPercent,
-                lerpConfigSO.Duration).SetEase(lerpConfigSO.Ease);
+            DOTween.To(() => LerpHealthBar.fillAmount, x => LerpHealthBar.fillAmount = x,
+                newHealthPercent, lerpConfigSO.Duration).SetEase(lerpConfigSO.Ease);
             healthCoroutine = null;
         }
 

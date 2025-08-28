@@ -40,7 +40,7 @@ namespace Game
 #endif
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             stateMachine.animator.Play(StateAnimation.name);
             startTime = Time.time;
             movementEmitter.Play();
@@ -95,7 +95,7 @@ namespace Game
             if (!stateMachine.mk2Attack.CheckForAndSetAttack()) return;
 
             stateMachine.nextState = stateMachine.mk2Attack;
-            IsComplete = true;
+            CanTransition = true;
             return;
         }
     }

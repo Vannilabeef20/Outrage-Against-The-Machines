@@ -44,7 +44,7 @@ namespace Game
         public override void Enter()
         {
             Dying = false;
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
 
             soundEmitter.Play();
@@ -87,7 +87,7 @@ namespace Game
 
                 if(count == GameManager.Instance.PlayerCharacterList.Count)
                 {
-                    TransitionManager.Instance.LoadScene(0);
+                    TransitionManager.Instance.LoadScene(2);
                 }
             }
         }

@@ -234,32 +234,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-5468047341407647488
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Empty
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1107 &-4232858163104102663
 AnimatorStateMachine:
   serializedVersion: 6
@@ -273,9 +247,6 @@ AnimatorStateMachine:
     m_State: {fileID: -8416617961204900604}
     m_Position: {x: -180, y: 210, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -5468047341407647488}
-    m_Position: {x: 30, y: 160, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -6533585815651637530}
     m_Position: {x: -180, y: 260, z: 0}
   - serializedVersion: 1
@@ -286,7 +257,7 @@ AnimatorStateMachine:
     m_Position: {x: -180, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5280910241643134249}
-    m_Position: {x: -180, y: 160, z: 0}
+    m_Position: {x: 30, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9045168425230982791}
     m_Position: {x: 240, y: 160, z: 0}
@@ -313,7 +284,7 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 510, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3242609179761259632}
-    m_Position: {x: 275, y: 575, z: 0}
+    m_Position: {x: 240, y: 560, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -323,7 +294,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 50, y: 80, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -5468047341407647488}
+  m_DefaultState: {fileID: 5280910241643134249}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0

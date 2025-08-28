@@ -9,6 +9,7 @@ namespace Game
     public class StoreInteractible : BaseInteractble
     {
         [Header("PURCHASE"), HorizontalLine(2f, EColor.Yellow)]
+        [SerializeField] GameObject spawnPoint;
         [SerializeField] GameObject item;
         [SerializeField] float coopPurchaseTime = 10f;
         [SerializeField] Color coopPurchaseColor;
@@ -32,6 +33,7 @@ namespace Game
 
             if (player.scrapAmount >= costAmount)
             {
+                GetComponentInParent<Animator>().SetTrigger("Purchase");
                 player.scrapAmount -= costAmount;
                 OnInteract(playerNumber);
                 return;
@@ -63,7 +65,7 @@ namespace Game
             costTMP.color = originalColor;
             costAmount = originalCost;
             UpdateCost();
-            Instantiate(item, transform.position.ToXYY(), Quaternion.identity);
+            Instantiate(item, spawnPoint.transform.position.ToXYY(), Quaternion.identity);
         }
     }
 }

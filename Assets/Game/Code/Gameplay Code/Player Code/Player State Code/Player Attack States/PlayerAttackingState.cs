@@ -83,7 +83,7 @@ namespace Game
         public override void Enter()
         {
             startTime = Time.time;
-            IsComplete = false;
+            CanTransition = false;
         }
 
         public override void Exit()
@@ -95,41 +95,32 @@ namespace Game
             CurrentAttackState = null;
             queuedAttackState = null;
             attackList.Clear();
-            IsComplete = false;
+            CanTransition = false;
         }
 
         protected override void ValidateState()
         {
             if(CurrentAttackState == null && queuedAttackState == null)
             {
-                stateMachine.nextState = stateMachine.Idle;
                 attackList.Clear();
-                IsComplete = true;
+                CanTransition = true;
             }
         }
 
         private bool ValidateStateBool()
         {
-            if (CurrentAttackState == null && queuedAttackState == null)
-            {
-                stateMachine.nextState = stateMachine.Idle;
-                attackList.Clear();
-                IsComplete = true;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            if (CurrentAttackState != null || queuedAttackState != null) return false;
+
+            attackList.Clear();
+            CanTransition = true;
+
+            return true;
         }
 
         public void ValidateAttack(InputAction.CallbackContext context)
         {
+            if (queuedAttackState != null) return; //return if attack already queued
 
-            if (queuedAttackState != null) //return if attack already queued
-            {
-                return;
-            }
             for (int i = 0; i < PlayerCombos.Length; i++) //check if theres available attack in a combo
             {
                 if (PlayerCombos[i].ComboAttacks.Length <= attackList.Count) //Check if attack list is bigger than the [i] combo
@@ -160,11 +151,10 @@ namespace Game
 
                     if(PlayerCombos[i].ComboAttacks[attackList.Count].Attack.IsSpecial)
                     AddSpecialCharges(-PlayerCombos[i].ComboAttacks[attackList.Count].Attack.SpecialCost);                   
-                    if(stateMachine.CurrentState != this) //Check if the state machine is already in the attacking state
+                    if(stateMachine.CurrentState != this) //Check if the state playerInput is already in the attacking state
                     {
                         //Its not, transition pls
                         stateMachine.nextState = this;
-                        stateMachine.overrideStateCompletion = true;
                     }                   
                     queuedAttackState = PlayerAttackStatesDictionary[PlayerCombos[i].ComboAttacks[attackList.Count].Attack];
                     break;
@@ -180,7 +170,7 @@ namespace Game
                 FlipCharacter();
                 CurrentAttackState.Enter();
             }
-            else if (CurrentAttackState.IsComplete)
+            else if (CurrentAttackState.CanTransition)
             {
                 CurrentAttackState.Exit();
                 CurrentAttackState = queuedAttackState;

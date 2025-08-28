@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using Cinemachine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,7 +17,7 @@ namespace Game
     {
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
-        [SerializeField] Camera mainCam;
+        [SerializeField] Transform followCam;
         [Tooltip("How fast the spawned boxes will fall.")]
         [SerializeField, Expandable] FallingBoxSpeedSO boxFallingSpeed;
         [Tooltip("The prefab for the falling box.")]
@@ -52,14 +53,14 @@ namespace Game
 
         private void Awake()
         {
-            mainCam = Camera.main;
+            followCam = Camera.main.transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().transform;
         }
 
         private void Update()
         {
             if (!continuous) return;
 
-            if (Mathf.Abs(mainCam.transform.position.x -
+            if (Mathf.Abs(followCam.transform.position.x -
                 transform.position.x) > activationRange) //Return if not within the activation range
             {
                 return;

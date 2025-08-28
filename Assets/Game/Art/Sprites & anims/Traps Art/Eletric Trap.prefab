@@ -30,6 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820985883583952425}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 115.29, y: 3.22, z: 6.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,7 +38,6 @@ Transform:
   m_Children:
   - {fileID: 2820985884699498580}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2820985883583952427
 SpriteRenderer:
@@ -56,6 +56,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -93,7 +96,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &2820985883583952426
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,10 +110,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2820985883583952422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9557cbf3daacdff4b9780108eab08cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamTransform: {fileID: 0}
+  followCamTransform: {fileID: 0}
   animator: {fileID: 2820985883583952426}
   trapAnimation: {fileID: 7400000, guid: e0fa62f52a4c90b4098aecfa43250b69, type: 2}
   activationRange: 14
@@ -281,7 +286,7 @@ GameObject:
   - component: {fileID: 2820985884699498583}
   - component: {fileID: 2820985884699498582}
   - component: {fileID: 2820985884699498581}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Eletric Trap Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,13 +300,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820985884699498587}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.28139374, y: 0.08853484, z: 0.36276448, w: 0.8839576}
   m_LocalPosition: {x: 0.7900009, y: -0.18000007, z: -4.367363}
   m_LocalScale: {x: 0.61355, y: 12.748414, z: 0.6224585}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2820985883583952420}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 25.674, y: 23.59, z: 50.074}
 --- !u!65 &2820985884699498576
 BoxCollider:
@@ -349,6 +354,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -388,7 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 32832
   enemyMask:
     serializedVersion: 2
     m_Bits: 256

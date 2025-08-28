@@ -179,7 +179,7 @@ namespace Game
 
         void ChangeState()
         {
-            if (currentState.IsComplete)
+            if (currentState.CanTransition)
             {
                 currentState.Exit();
                 currentState = nextState;

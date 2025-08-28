@@ -30,10 +30,8 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!playerMask.ContainsLayer(other.gameObject.layer))
-            {
-                return;
-            }
+            if (!playerMask.ContainsLayer(other.gameObject.layer)) return;
+
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
                 damageble.TakeDamage(stateMachine.transform.position, CurrentAttack.Config.Damage,
@@ -70,7 +68,7 @@ namespace Game
         {
             startTime = Time.time;
             stateMachine.Flip();
-            IsComplete = false;
+            CanTransition = false;
             if (CurrentAttackState == null)
                 CheckForAndSetAttack();
             CurrentAttackState.Enter();
@@ -85,10 +83,10 @@ namespace Game
 
         protected override void ValidateState()
         {
-            if (CurrentAttackState.IsComplete)
+            if (CurrentAttackState.CanTransition)
             {
                 stateMachine.nextState = stateMachine.mk2Intercept;
-                IsComplete = true;
+                CanTransition = true;
             }
         }
 

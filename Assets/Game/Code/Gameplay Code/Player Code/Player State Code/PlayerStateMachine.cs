@@ -29,15 +29,16 @@ namespace Game
         [field: SerializeField] public PlayerStunnedState Stunned { get; private set; }
         [field: SerializeField] public PlayerDeathState Death { get; private set; }
         [field: SerializeField] public PlayerAttackingState Attacking { get; private set; }
+        [field: SerializeField] public PlayerDefendingState Defending { get; private set; }
 
 
         [field: Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Yellow)]
         [field: SerializeField, ReadOnly] public PlayerState CurrentState { get; private set; }
         [ReadOnly] public PlayerState nextState;
-        [ReadOnly] public bool overrideStateCompletion;
+        [ReadOnly] public bool overrideStateTransition;
         [ReadOnly] public bool canBeStunned = true;
-
-        [field: SerializeField ,ReadOnly] public Vector2 InputDirection { get; private set; } = Vector2.zero;
+        [SerializeField, ReadOnly] bool canInput = true;
+        [field: SerializeField, ReadOnly] public Vector2 InputDirection { get; private set; } = Vector2.zero;
 
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocityAdditive { get; private set; }
         [field: SerializeField, ReadOnly] public float ContextVelocityMultiplier { get; private set; }
@@ -71,7 +72,7 @@ namespace Game
         }
         void Update()
         {
-            SelectState();
+            SwitchState();
             CurrentState.Do();
         }
 
@@ -79,7 +80,8 @@ namespace Game
         {
             GetContextSpeed();
             CurrentState.FixedDo();
-            transform.parent.position = transform.parent.position.ToXZZ();
+            transform.parent.position = LevelManager.Instance.ClampInsidePlayzone(transform.parent.position).ToXZZ();
+            //transform.parent.position = transform.parent.position.ToXZZ();
         }
         /// <summary>
         /// Calculates the combined force of all context speed triggers in contact with the player.
@@ -110,47 +112,63 @@ namespace Game
 
         }
 
-        void SelectState()
+        void SwitchState()
         {
-            if (CurrentState.IsComplete)
+            if (overrideStateTransition)
             {
                 CurrentState.Exit();
                 CurrentState = nextState;
+                nextState = null;
                 CurrentState.Enter();
+                overrideStateTransition = false;
+                return;
             }
-            else if (overrideStateCompletion)
+
+            if (CurrentState.CanTransition)
             {
+                if (nextState == null) nextState = ChoseState();
+                if (nextState == null) return;
+
                 CurrentState.Exit();
                 CurrentState = nextState;
+                nextState = null;
                 CurrentState.Enter();
-                overrideStateCompletion = false;
             }
         }
-        void OnDamageTaken(Vector2 _knockback, float _duration)
-        {
-            healthHandler.PlayHitEffect(_duration);
 
+        PlayerState ChoseState()
+        {
+            if (InputDirection.magnitude > 0)
+            {
+                if (CurrentState != Walking) return Walking;
+                else return null;
+            }
+
+            if (CurrentState != Idle) return Idle;
+
+            return null;
+        }
+        void OnDamageTaken(float damage, Vector3 _knockback, float _duration)
+        {
             if (!canBeStunned) return;
 
-            overrideStateCompletion = true;
-            Stunned.knockBackIntensity = _knockback;
-            Stunned.duration = _duration;
-            nextState = Stunned;
+            Stun(_knockback, _duration);
         }
 
         void OnDeath(Vector2 _knockback, float _duration)
         {
             Death.knockBackIntensity = _knockback;
             nextState = Death;
-            overrideStateCompletion = true;
+            overrideStateTransition = true;
         }
 
         void OnRevive()
         {
             transform.parent.gameObject.SetActive(true);
             FollowGroup.Instance.AddTarget(transform);
+            healthHandler.UpdateHealthUI();
             nextState = Idle;
-            overrideStateCompletion = true;
+            overrideStateTransition = true;
         }
 
         #region Animation Events
@@ -160,20 +178,32 @@ namespace Game
         }
 
         #endregion
+
+        public void Stun(Vector3 _knockback, float _duration)
+        {
+            overrideStateTransition = true;
+            Stunned.knockBackIntensity = _knockback;
+            Stunned.duration = _duration;
+            nextState = Stunned;
+        }
+
         public void ValidateAttack(InputAction.CallbackContext context)
         {
-            if (Time.deltaTime <= 0) return;
+            if (!canInput) return;
 
-            if (!context.performed) return;
+            if (Time.deltaTime <= 0) return;
 
             if (CurrentState == Stunned || CurrentState == Death) return;
 
-            Attacking.ValidateAttack(context);
+            if (!context.performed) return;
 
+            Attacking.ValidateAttack(context);
         }
 
         public void UseItem(InputAction.CallbackContext context)
         {
+            if (!canInput) return;
+
             if (Time.deltaTime <= 0) return;
 
             if (!context.performed) return;
@@ -191,6 +221,8 @@ namespace Game
 
         public void PauseGame(InputAction.CallbackContext context)
         {
+            if (!canInput) return;
+
             if (!context.performed) return;
 
             if (SceneManager.GetActiveScene().buildIndex != 1) return;
@@ -200,6 +232,8 @@ namespace Game
 
         public void PauseGame(PlayerInput input)
         {
+            if (!canInput) return;
+
             if (input != playerInput) return;
 
             if (SceneManager.GetActiveScene().buildIndex != 1) return;
@@ -209,11 +243,35 @@ namespace Game
 
         public void GetInputDirection(InputAction.CallbackContext context)
         {
-            if (!context.performed) return;
+            if (!canInput)
+            {
+                InputDirection = Vector2.zero;
+                return;
+            }
 
             if (Time.deltaTime <= 0) return;
 
             InputDirection = context.ReadValue<Vector2>();
-        }        
+        }
+        
+        public void Defend(InputAction.CallbackContext context)
+        {
+            if (!canInput) return;
+
+            if (Time.deltaTime <= 0) return;
+
+            if (CurrentState == Stunned || CurrentState == Death) return;
+
+            if (!context.performed) return;
+
+            Attacking.queuedAttackState = null;
+            nextState = Defending;
+        }
+
+        public void ToggleInput(bool active)
+        {
+            canInput = active;
+            InputDirection = Vector2.zero;
+        }
     }
 }

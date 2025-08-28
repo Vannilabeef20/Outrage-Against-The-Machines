@@ -47,7 +47,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 7fcb6bd0712adbd41b2ee34607a18496, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   dragIntensity: 0.9
 --- !u!1 &588689491137243523
@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 588689491332936778}
   - component: {fileID: 588689491332936776}
   - component: {fileID: 588689491332936779}
+  - component: {fileID: 1122105750749360716}
   m_Layer: 0
   m_Name: Rooster State_Machine & Sprite
   m_TagString: Untagged
@@ -195,6 +196,7 @@ Transform:
   - {fileID: 588689491912295373}
   - {fileID: 588689492625723012}
   - {fileID: 588689491524074762}
+  - {fileID: 8722929896283616037}
   m_Father: {fileID: 588689491377177475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &588689491332936778
@@ -220,10 +222,12 @@ MonoBehaviour:
   <Stunned>k__BackingField: {fileID: 588689491912295372}
   <Death>k__BackingField: {fileID: 588689492625723013}
   <Attacking>k__BackingField: {fileID: 588689491524074763}
+  <Defending>k__BackingField: {fileID: 2031518748150717096}
   <CurrentState>k__BackingField: {fileID: 0}
   nextState: {fileID: 0}
-  overrideStateCompletion: 0
+  overrideStateTransition: 0
   canBeStunned: 1
+  canInput: 1
   <InputDirection>k__BackingField: {x: 0, y: 0}
   <ContextVelocityAdditive>k__BackingField: {x: 0, y: 0, z: 0}
   <ContextVelocityMultiplier>k__BackingField: 0
@@ -310,6 +314,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1122105750749360716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588689491332936773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933abe47ad4e9ec48957dcc881ae19f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: b0e206e71c265d34aab9e07232f8d7c9, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 588689491332936778}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+        m_MethodName: ToggleInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &588689491377177503
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +588,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fd3c438d-1326-4b07-8d90-f526596c5fcb
     m_ActionName: 'Inputs/UseItem[/Keyboard/enter,/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 588689491332936778}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+        m_MethodName: Defend
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 52568a4c-5533-4f64-adcb-c919d349a9d1
+    m_ActionName: 'Inputs/Defend[/XInputControllerWindows/rightTrigger,/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Inputs
@@ -661,7 +709,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 0}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   attackStatesParent: {fileID: 3146435582142340130}
   <PlayerCombos>k__BackingField:
@@ -850,7 +898,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: cdb1f4c55925c9f41a435f6f4c7135e2, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   EmitterFootstep_0: {fileID: 4236045769007033465}
   EmitterFootstep_1: {fileID: 8051900768256601238}
@@ -1011,11 +1059,11 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 9268ecbd0830a56439c87175c11245f7, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   soundEmitter: {fileID: 475060844669776045}
   duration: 0
-  knockBackIntensity: {x: 0, y: 0}
+  knockBackIntensity: {x: 0, y: 0, z: 0}
   knockBackCurve:
     serializedVersion: 2
     m_Curve:
@@ -1239,7 +1287,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8704915689579930158}
   m_Father: {fileID: 588689491332936777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &588689492496491313
@@ -1257,6 +1306,7 @@ MonoBehaviour:
   playerInput: {fileID: 588689491377177472}
   spriteRenderer: {fileID: 588689491332936776}
   playerHitbox: {fileID: 588689492496491312}
+  enemyCollision: {fileID: 128479248458172866}
   healthEvent: {fileID: 11400000, guid: 7baa20ffb751ef24594e60e0e6b8e818, type: 2}
   healParticle: {fileID: 4312322646744729240}
   damageParticle: {fileID: 7176538989363412186}
@@ -1264,6 +1314,7 @@ MonoBehaviour:
   impulseSource: {fileID: 3975053416967299985}
   maxHeathPoints: 75
   <CurrentHealthPoints>k__BackingField: 0
+  damageMultiplier: 1
   hitRumble:
     <Realtime>k__BackingField: 0
     <Duration>k__BackingField: 0.5
@@ -1507,7 +1558,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.43899527
@@ -1563,7 +1614,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 14e4a78e1ff355d41af930a05de09333, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   itemEvent: {fileID: 11400000, guid: 4221e71d770a8cd4d83cc4f72221266a, type: 2}
   <Duration>k__BackingField: 1
@@ -1827,6 +1878,292 @@ Canvas:
   m_SortingLayerID: -42450653
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &732761402825429007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8722929896283616037}
+  - component: {fileID: 2031518748150717096}
+  - component: {fileID: 3675629226083282832}
+  - component: {fileID: 2136637385244840423}
+  - component: {fileID: 8768286647071530290}
+  m_Layer: 0
+  m_Name: DefendState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8722929896283616037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732761402825429007}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588689491332936777}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031518748150717096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732761402825429007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3b3be3b34617545b880107e84c6acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: a41696f566223d74e8e1a68bb1369e87, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  soundEmitter: {fileID: 2136637385244840423}
+  hitEmitter: {fileID: 8768286647071530290}
+  animationDuration: 0.5
+  rumble:
+    <Realtime>k__BackingField: 0
+    <Duration>k__BackingField: 0.5
+    <LowCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.9
+        outSlope: 0.9
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    <HighCurve>k__BackingField:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.9
+        outSlope: 0.9
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  parryDamageMultiplier: 0.2
+  parryWindow: {x: 0, y: 1}
+  knockBackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.04938989
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.060976498
+      outSlope: 0.060976498
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.048808813
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  knockBackDecay: 0.8
+  maxKnockBackIntensity: 10
+  knockBackIntensity: {x: 0, y: 0, z: 0}
+--- !u!114 &3675629226083282832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732761402825429007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 3.5
+    m_FrequencyGain: 3.25
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &2136637385244840423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732761402825429007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1934030261
+      Data2: 1113379652
+      Data3: 819867327
+      Data4: -1219506749
+    Path: event:/SFX/Player/Common Sounds/Player Footstep_1 SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8768286647071530290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732761402825429007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 491571851
+      Data2: 1133097393
+      Data3: -1420818001
+      Data4: -1516925861
+    Path: event:/SFX/Player/Common Sounds/Player Hit SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &782556522972701892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +2211,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 37cb5cdf0cd991440aa79ad32526b959, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 187eb8c99133dd142bea2a2acd0bdbb9, type: 2}
@@ -2021,7 +2358,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: eb3d1303922f6624b84b0283532cd2ad, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 7bb44ef7693db514a8a1c30c2eccc45b, type: 2}
@@ -2171,7 +2508,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 8f3a7a313c41eae41bd45ace91190fcf, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 98a06d34c2648b04aa5961a18ca3f910, type: 2}
@@ -2255,7 +2592,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 5f73b52db4bf18246a4656e87ac55595, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 56ffa50c653b6af448700f5e9b0bff32, type: 2}
@@ -12375,7 +12712,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 6188c62eed72ab54f9061dd52f2ff8ee, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 16436e303fb1fc646b670a7c5296b2be, type: 2}
@@ -12505,6 +12842,59 @@ Transform:
   - {fileID: 762950257162932886}
   m_Father: {fileID: 588689491377177475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5393017849354704380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8704915689579930158}
+  - component: {fileID: 128479248458172866}
+  m_Layer: 15
+  m_Name: EnemyCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8704915689579930158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393017849354704380}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588689492496491315}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &128479248458172866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393017849354704380}
+  m_Material: {fileID: 13400000, guid: 485101b3ede33784788b618e9f14ded9, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4334737, y: 1.2698933, z: 0.4}
+  m_Center: {x: -0.16329485, y: 0.6753041, z: 0}
 --- !u!1 &5716572444195412889
 GameObject:
   m_ObjectHideFlags: 0
@@ -12552,7 +12942,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 4644e20ae15db214ea4c2c9317686e92, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 4dfa6b8b5743cf44b8ed3f6a04b172d0, type: 2}
@@ -12635,7 +13025,7 @@ MonoBehaviour:
   StateAnimation: {fileID: 7400000, guid: 4f58cb63a3779c841908bb9bdb37e1e2, type: 2}
   startTime: 0
   progress: 0
-  <IsComplete>k__BackingField: 0
+  <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
   AttackMachine: {fileID: 0}
   <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 9835081fdc1c2814ea111b1a4611e17e, type: 2}

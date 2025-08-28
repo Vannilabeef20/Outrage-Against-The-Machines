@@ -1,0 +1,513 @@
+fileFormatVersion: 2
+guid: 93e0d8763629fdd42951a1c901d9f911
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -287654049114492124
+    second: SHOP_BUY_ITEM_0
+  - first:
+      213: 1937413449617763640
+    second: SHOP_BUY_ITEM_1
+  - first:
+      213: -3157971863685159046
+    second: SHOP_BUY_ITEM_2
+  - first:
+      213: -7260452147411894116
+    second: SHOP_BUY_ITEM_3
+  - first:
+      213: -2470107721142324500
+    second: SHOP_BUY_ITEM_4
+  - first:
+      213: 1300279717597200332
+    second: SHOP_BUY_ITEM_5
+  - first:
+      213: 8075937247045113584
+    second: SHOP_BUY_ITEM_6
+  - first:
+      213: -8186932076348989264
+    second: SHOP_BUY_ITEM_7
+  - first:
+      213: 9105219158965143446
+    second: SHOP_BUY_ITEM_8
+  - first:
+      213: -7928700615619146507
+    second: SHOP_BUY_ITEM_9
+  - first:
+      213: -5643591823754951111
+    second: SHOP_BUY_ITEM_10
+  - first:
+      213: 2457906425883300005
+    second: SHOP_BUY_ITEM_11
+  - first:
+      213: -5228752452143445354
+    second: SHOP_BUY_ITEM_12
+  - first:
+      213: 3286248630877174429
+    second: SHOP_BUY_ITEM_13
+  - first:
+      213: 4137785234054312369
+    second: SHOP_BUY_ITEM_14
+  - first:
+      213: 4524992499574822051
+    second: SHOP_BUY_ITEM_15
+  - first:
+      213: 2197421250702896885
+    second: SHOP_BUY_ITEM_16
+  - first:
+      213: -3225222814856132376
+    second: SHOP_BUY_ITEM_17
+  - first:
+      213: -468926624122364967
+    second: SHOP_BUY_ITEM_18
+  - first:
+      213: -851573526897559062
+    second: SHOP_BUY_ITEM_19
+  - first:
+      213: 1169450690375841902
+    second: SHOP_BUY_ITEM_20
+  - first:
+      213: 80437818701643601
+    second: SHOP_BUY_ITEM_21
+  - first:
+      213: 1556480341669348455
+    second: SHOP_BUY_ITEM_22
+  - first:
+      213: 7300731751891658061
+    second: SHOP_BUY_ITEM_23
+  - first:
+      213: -6183429952348888015
+    second: SHOP_BUY_ITEM_24
+  - first:
+      213: -1931227284105273147
+    second: SHOP_BUY_ITEM_25
+  - first:
+      213: 3956236146088765210
+    second: SHOP_BUY_ITEM_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10d825c65702dd43be68d91641c0385
+      internalID: 1145154049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693d75b9fd8b0a84ea03b3f647638323
+      internalID: 29461235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583faa6a4aef8b24295130fe9263104b
+      internalID: 1732802238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441f102196310cc45ab8c6f8f714f091
+      internalID: -1768804909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f727c57fd086041897c090653437b4
+      internalID: 960071806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_5
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb7d81a2c7d59d40bfe0813a4c784f2
+      internalID: -455376802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_6
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 96
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c337a619f9df08642a504dc0108bd53f
+      internalID: 1991951568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d3609a6ae961348a1c69b024a74031
+      internalID: -2127963443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9681c66bf99d5fa4c8a46f76db9ceca1
+      internalID: -663034293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac21b75114ed834eb3874ba156d78b7
+      internalID: -1515513332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_10
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f35c67efc892d24c89648d07d3160d7
+      internalID: -342452647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SHOP_BUY_ITEM_11
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 224
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05066ad9b77c9034fb9d750071b996c7
+      internalID: 2101521927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SHOP_BUY_ITEM_0: 1145154049
+      SHOP_BUY_ITEM_1: 29461235
+      SHOP_BUY_ITEM_10: -342452647
+      SHOP_BUY_ITEM_11: 2101521927
+      SHOP_BUY_ITEM_2: 1732802238
+      SHOP_BUY_ITEM_3: -1768804909
+      SHOP_BUY_ITEM_4: 960071806
+      SHOP_BUY_ITEM_5: -455376802
+      SHOP_BUY_ITEM_6: 1991951568
+      SHOP_BUY_ITEM_7: -2127963443
+      SHOP_BUY_ITEM_8: -663034293
+      SHOP_BUY_ITEM_9: -1515513332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -67,13 +67,13 @@ namespace Game
                 frameEvent.Reset();
             }
             startTime = Time.time;
-            IsComplete = false;
+            CanTransition = false;
         }
 
         public override void Exit()
         {
             CurrentAttackState.Exit();
-            IsComplete = false;
+            CanTransition = false;
         }
 
         protected override void ValidateState()
@@ -82,7 +82,7 @@ namespace Game
             {
                 NextState = stateMachine.intercept;
                 //CurrentAttackState = null;
-                IsComplete = true;
+                CanTransition = true;
             }
         }
 
@@ -111,10 +111,8 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!playerMask.ContainsLayer(other.gameObject.layer))
-            {
-                return;
-            }
+            if (!playerMask.ContainsLayer(other.gameObject.layer)) return;
+
             if (other.gameObject.TryGetComponent<IDamageble>(out IDamageble damageble))
             {
                 damageble.TakeDamage(MachinePosition, CurrentAttack.Config.Damage,

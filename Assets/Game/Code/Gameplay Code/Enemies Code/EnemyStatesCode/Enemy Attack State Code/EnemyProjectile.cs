@@ -62,42 +62,36 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (reflectable)
+
+            if (reflectable && reflectionLayers.ContainsLayer(other.gameObject.layer))
             {
-                if (reflectionLayers.ContainsLayer(other.gameObject.layer))
+                if(initialPos.x - transform.position.x > 0)
                 {
-                    if(initialPos.x - transform.position.x > 0)
-                    {
-                        transform.right = Vector3.right;
-                        body.linearVelocity = velocity * Vector3.right;
-                    }
-                    else
-                    {
-                        transform.right = Vector3.left;
-                        body.linearVelocity = velocity * Vector3.left;
-                    }
-                    wasReflected = true;
+                    transform.right = Vector3.right;
+                    body.linearVelocity = velocity * Vector3.right;
+                }
+                else
+                {
+                    transform.right = Vector3.left;
+                    body.linearVelocity = velocity * Vector3.left;
+                }
+                wasReflected = true;
+            }
+
+            if(wasReflected && reflectionDamagebleLayers.ContainsLayer(other.gameObject.layer))
+            {
+                if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
+                {
+                    damageble.TakeDamage(transform.position, damage, stunDuration, knockBackstrength);
                 }
             }
-            if(wasReflected)
-            {
-                if (reflectionDamagebleLayers.ContainsLayer(other.gameObject.layer))
+            
+            if(damagebleLayers.ContainsLayer(other.gameObject.layer))
+            {                           
+                if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
                 {
-                    if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
-                    {
-                        damageble.TakeDamage(transform.position, damage, stunDuration, knockBackstrength);
-                    }
-                }
-            }
-            else
-            {
-                if (damagebleLayers.ContainsLayer(other.gameObject.layer))
-                {
-                    if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
-                    {
-                        damageble.TakeDamage(transform.position, damage, stunDuration, knockBackstrength);
-                    }
-                }
+                    damageble.TakeDamage(transform.position, damage, stunDuration, knockBackstrength);
+                }            
             }   
         }
 

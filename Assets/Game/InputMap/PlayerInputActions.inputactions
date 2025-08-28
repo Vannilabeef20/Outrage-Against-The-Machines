@@ -18,7 +18,7 @@
                     "name": "Punch",
                     "type": "Button",
                     "id": "20091476-0251-4615-b4bf-b3698933d512",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -27,7 +27,7 @@
                     "name": "Kick",
                     "type": "Button",
                     "id": "2c615223-f831-4d45-9d7f-c32bcf63ea6b",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -36,7 +36,16 @@
                     "name": "Special",
                     "type": "Button",
                     "id": "ef492ce5-af38-43cc-8ddb-74f6756c441c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Defend",
+                    "type": "Button",
+                    "id": "52568a4c-5533-4f64-adcb-c919d349a9d1",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -45,7 +54,7 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "d04de752-e0c0-42ac-9711-ba0c0143c150",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -54,7 +63,7 @@
                     "name": "UseItem",
                     "type": "Button",
                     "id": "fd3c438d-1326-4b07-8d90-f526596c5fcb",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -382,6 +391,28 @@
                     "action": "Special",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b21c2216-9167-447f-a8e3-0b56378eab77",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Defend",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e567b2c-c0c5-4e01-be39-5c4dcb9ac42a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Defend",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

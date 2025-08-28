@@ -42,7 +42,7 @@ namespace Game
 #endif
         public override void Enter()
         {
-            IsComplete = false;
+            CanTransition = false;
             startTime = Time.time;
             movementEmitter.Play();
         }
@@ -88,12 +88,12 @@ namespace Game
             if (stateMachine.mk1Attack.CheckForAndSetAttack())
             {
                 stateMachine.nextState = stateMachine.mk1Attack;
-                IsComplete = true;
+                CanTransition = true;
             }
             else if (UpTime >= duration)
             {
                 stateMachine.nextState = stateMachine.mk1Intercept;
-                IsComplete = true;
+                CanTransition = true;
             }
         }
     }
