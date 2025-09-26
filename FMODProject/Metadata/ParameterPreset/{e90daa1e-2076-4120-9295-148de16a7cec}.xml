@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{e90daa1e-2076-4120-9295-148de16a7cec}">
+		<property name="name">
+			<value>Cow Attack State</value>
+		</property>
+		<relationship name="folder">
+			<destination>{512850a6-b759-409c-a35b-188348a37b83}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{678dd405-c378-47f6-b9b3-d5ee7d588510}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{678dd405-c378-47f6-b9b3-d5ee7d588510}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Null</value>
+			<value>Left Punch</value>
+			<value>Right Punch</value>
+			<value>Left Barrage</value>
+			<value>Right Barrage</value>
+			<value>Strong Punch</value>
+			<value>Special Barrage</value>
+			<value>Running Attack</value>
+			<value>Kick</value>
+			<value>Strong Kick</value>
+			<value>Special AoE</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

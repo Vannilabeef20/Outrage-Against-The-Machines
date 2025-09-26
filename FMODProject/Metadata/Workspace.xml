@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{7a154a4d-fbdf-4763-95d7-6a81a5e9f865}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../Desktop/Beat-em-up-3/Assets/Game/Art/Audio/FMODBanks</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{ea7c333e-2a97-4e63-a6e6-32f0a7fadb71}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{2509d914-2052-4569-9e21-6ed5ee0aae20}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{06ad9f77-8430-4a7e-a54c-3d9048090d23}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{512850a6-b759-409c-a35b-188348a37b83}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{cb919507-a0b5-469a-aab3-5846ccc2f2f0}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{151c95c3-d050-4d9d-aa51-48c2777f1e86}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{b7f3a698-21fd-4df7-8a00-c6e1d298b9de}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{13731e89-e652-432d-bec5-095293ea270e}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{5ef4df95-680e-4c60-a8d7-03e26c0813e3}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{72670324-8322-4e15-97cc-2c4a5070e048}</destination>
+		</relationship>
+	</object>
+</objects>

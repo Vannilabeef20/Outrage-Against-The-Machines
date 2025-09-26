@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{257c5d7b-3048-435f-98f9-649a6af887d6}">
+		<property name="name">
+			<value>Footstep Pitch</value>
+		</property>
+		<relationship name="folder">
+			<destination>{512850a6-b759-409c-a35b-188348a37b83}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f365111e-c02b-457e-8bc0-e5aab452bab3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f365111e-c02b-457e-8bc0-e5aab452bab3}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Default</value>
+			<value>Cow</value>
+			<value>Rooster</value>
+			<value>Donkey</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

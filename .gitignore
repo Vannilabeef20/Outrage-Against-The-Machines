@@ -93,3 +93,8 @@ fmod_editor.log
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
 Webgl Build.zip
+
+# Ignore FMOD Studio temporary and user-specific folders
+.user/
+.cache/
+.unsaved/

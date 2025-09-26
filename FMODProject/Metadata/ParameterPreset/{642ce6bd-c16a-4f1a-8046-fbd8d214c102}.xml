@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{642ce6bd-c16a-4f1a-8046-fbd8d214c102}">
+		<property name="name">
+			<value>Donkey Attack State</value>
+		</property>
+		<relationship name="folder">
+			<destination>{512850a6-b759-409c-a35b-188348a37b83}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d6ae1656-988c-4cc5-9104-435e9d67d751}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d6ae1656-988c-4cc5-9104-435e9d67d751}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Null</value>
+			<value>Hook Side</value>
+			<value>Hook Up</value>
+			<value>Kick</value>
+			<value>Kick Back</value>
+			<value>Dash</value>
+			<value>Special</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
