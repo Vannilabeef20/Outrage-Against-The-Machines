@@ -12,19 +12,14 @@ namespace Game
     [DisallowMultipleComponent]
     public class BreakableLootProp : MonoBehaviour
     {
-        #region REFERENCES
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
-        [Tooltip("Transform point which the loot will spawn at.")]
-        [SerializeField] Transform lootSpawnPoint;
-
-        [Tooltip("This BreakableLootProp's hitbox.")]
-        [SerializeField] BoxCollider collisionCollider;
+        [SerializeField, Required] Animator animator;
+        [SerializeField, Required] Transform lootSpawnPoint;
+        [SerializeField, Required] BoxCollider collisionCollider;
 
         [Tooltip("This BreakableLootProp's spriteRenderer.")]
         [SerializeField] SpriteRenderer spriteRenderer;
-        #endregion
 
-        #region PARAMETERS & VARIBALES
         [Header("PARAMETERS & VARIABLES"), HorizontalLine(2f, EColor.Orange)]
 
         [Tooltip("True if the box has been broken already.")]
@@ -43,7 +38,6 @@ namespace Game
         [SerializeField] float fadeFlickerDuration;
         [SerializeField] float fadeFlickerLenght;
 
-
         [Tooltip("The animation frame which loot will spawn.")]
         [SerializeField] int FrameToSpawn;
 
@@ -51,22 +45,17 @@ namespace Game
         [SerializeField] LootTable lootTable;
         [SerializeField] ScrapDropper moneyDrop;
 
-        #endregion
-
         private void Awake()
         {
             lootTable.ValidateTable();
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (hasBeenBroken)
-            {
-                return;
-            }
-            if (hostileLayers.ContainsLayer(other.gameObject.layer))
-            {
-                StartCoroutine(BreakRoutine());
-            }
+            if (hasBeenBroken) return;
+
+            if (!hostileLayers.ContainsLayer(other.gameObject.layer)) return;
+
+            StartCoroutine(BreakRoutine());
         }
 
         private IEnumerator BreakRoutine()

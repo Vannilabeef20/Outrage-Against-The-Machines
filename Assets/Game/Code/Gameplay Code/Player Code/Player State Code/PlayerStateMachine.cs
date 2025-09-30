@@ -80,8 +80,6 @@ namespace Game
         {
             GetContextSpeed();
             CurrentState.FixedDo();
-            transform.parent.position = LevelManager.Instance.ClampInsidePlayzone(transform.parent.position).ToXZZ();
-            //transform.parent.position = transform.parent.position.ToXZZ();
         }
         /// <summary>
         /// Calculates the combined force of all context speed triggers in contact with the player.
