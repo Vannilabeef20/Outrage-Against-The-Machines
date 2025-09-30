@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 1488542923154001146}
   - component: {fileID: 1488542923154001141}
   - component: {fileID: 4574465553870493326}
-  - component: {fileID: 1488542923154001140}
   - component: {fileID: 4942430763238729706}
   - component: {fileID: 6852360633322229470}
   - component: {fileID: 4051650251682079433}
@@ -69,6 +68,7 @@ Transform:
   m_Children:
   - {fileID: 1488542922225973092}
   - {fileID: 6113022172650803075}
+  - {fileID: 966135400071081684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1488542923154001141
@@ -85,8 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5330620595121035856}
   lootSpawnPoint: {fileID: 1488542922225973092}
-  collisionCollider: {fileID: 1488542923154001140}
-  spriteRenderer: {fileID: 0}
+  collisionCollider: {fileID: 0}
+  spriteRenderer: {fileID: 2640279932093584478}
   hasBeenBroken: 0
   hostileLayers:
     serializedVersion: 2
@@ -149,27 +149,6 @@ MonoBehaviour:
   reserveAmount: 0
   randomAmount: 0
   scrapList: []
---- !u!65 &1488542923154001140
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488542923154001142}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.8449478, y: 0.72816706, z: 0.989892}
-  m_Center: {x: 0.010684967, y: -0.2038641, z: 0.28779197}
 --- !u!114 &4942430763238729706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +245,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6645963290816905057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966135400071081684}
+  - component: {fileID: 7252810990226690645}
+  m_Layer: 0
+  m_Name: BreakableBox_Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &966135400071081684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645963290816905057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.063995, y: -0.24201803, z: -0.0140065355, w: 0.96805775}
+  m_LocalPosition: {x: -0.578, y: 0.689, z: -0.298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1488542923154001146}
+  m_LocalEulerAnglesHint: {x: 6.726, y: -28.27, z: -3.354}
+--- !u!65 &7252810990226690645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645963290816905057}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03946954, y: 1.45, z: 1.0792385}
+  m_Center: {x: -0.00000009624793, y: 8.009615e-11, z: 0.097127594}
 --- !u!1 &7860133794755571027
 GameObject:
   m_ObjectHideFlags: 0
