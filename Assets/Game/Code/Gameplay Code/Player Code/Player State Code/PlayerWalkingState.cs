@@ -20,32 +20,35 @@ namespace Game
             ValidateState();
             if (stateMachine.InputDirection.x > 0)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0)); //Flip Right
+                stateMachine.Parent.transform.localScale = Vector3.one; //Flip Right
             }
             else if (stateMachine.InputDirection.x < 0)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0)); //Flip left
+                stateMachine.Parent.transform.localScale = new Vector3(-1, 1, 1); //Flip left
             }
-            stateMachine.animator.speed = stateMachine.InputDirection.magnitude;
-            velocity = new Vector3(stateMachine.InputDirection.x *
-                movementSpeed.x, stateMachine.InputDirection.y * movementSpeed.y, stateMachine.InputDirection.y * movementSpeed.y);
+            stateMachine.Animator.speed = stateMachine.InputDirection.magnitude;
+
+            velocity.x = stateMachine.InputDirection.x * movementSpeed.x;
+            velocity.y = 0;
+            velocity.z = stateMachine.InputDirection.y * movementSpeed.y;
+
             Helper.DrawDirArrow(transform.position, velocity, Color.yellow, Color.green);
         }
 
         public override void FixedDo()
         {
-            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier *
+            stateMachine.Body.linearVelocity = stateMachine.ContextVelocityMultiplier *
                 (velocity + stateMachine.ContextVelocityAdditive);
         }
 
         public override void Enter()
         {
-            stateMachine.animator.Play(StateAnimation.name);
+            stateMachine.Animator.Play(StateAnimation.name);
         }
 
         public override void Exit()
         {
-            stateMachine.animator.speed = 1;
+            stateMachine.Animator.speed = 1;
             CanTransition = false;
         }
 

@@ -12,7 +12,7 @@ namespace Game
         [SerializeField, Range(0f, 1f)] private float dragIntensity;
         public override void Enter()
         {
-            stateMachine.animator.Play(StateAnimation.name);
+            stateMachine.Animator.Play(StateAnimation.name);
         }
 
         public override void Exit()
@@ -28,13 +28,12 @@ namespace Game
         {
             if(stateMachine.ContextVelocityAdditive == Vector3.zero)
             {
-                stateMachine.body.linearVelocity *= (1 - dragIntensity) * Time.deltaTime;
+                stateMachine.Body.linearVelocity *= (1 - dragIntensity) * Time.deltaTime;
             }
             else
             {
-                stateMachine.body.linearVelocity = stateMachine.ContextVelocityAdditive * stateMachine.ContextVelocityMultiplier;
+                stateMachine.Body.linearVelocity = stateMachine.ContextVelocityAdditive * stateMachine.ContextVelocityMultiplier;
             }
-
         }
 
         protected override void ValidateState()

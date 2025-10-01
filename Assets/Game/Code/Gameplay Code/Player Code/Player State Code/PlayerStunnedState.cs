@@ -29,19 +29,19 @@ namespace Game
         {
             ValidateState();
             progress = UpTime.Map(0, duration);
-            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            stateMachine.Animator.Play(StateAnimation.name, 0, progress);
         }
 
         public override void FixedDo()
         {
-            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier * 
+            stateMachine.Body.linearVelocity = stateMachine.ContextVelocityMultiplier * 
                 (KnockBackVelocity + stateMachine.ContextVelocityAdditive);
         }
 
         public override void Enter()
         {
             CanTransition = false;
-            stateMachine.animator.speed = 0;
+            stateMachine.Animator.speed = 0;
             startTime = Time.time;
             soundEmitter.Play();
         }
@@ -49,8 +49,8 @@ namespace Game
         public override void Exit()
         {
             CanTransition = false;
-            stateMachine.animator.speed = 1;
-            stateMachine.body.linearVelocity = Vector3.zero;
+            stateMachine.Animator.speed = 1;
+            stateMachine.Body.linearVelocity = Vector3.zero;
         }
 
         protected override void ValidateState()
@@ -59,6 +59,5 @@ namespace Game
 
             CanTransition = true;                
         }
-
     }
 }

@@ -87,21 +87,26 @@ namespace Game
 
         public void DealDamage(Collider hitCollider)
         {
+            Debug.Log(0);
             if (hitList.Contains(hitCollider)) return;
-
+            Debug.Log(1);
             hitList.Add(hitCollider);
-
+            Debug.Log(hitCollider.gameObject.layer);
             if (playerMask.ContainsLayer(hitCollider.gameObject.layer))
             {
+                Debug.Log(2);
                 if (hitCollider.TryGetComponent<IDamageble>(out IDamageble damageble))
                 {
+                    Debug.Log(3);
                     damageble.TakeDamage(transform.position, damage, stunDuration, knockbackStrenght);
                 }
             }
             else if (enemyMask.ContainsLayer(hitCollider.gameObject.layer))
             {
+                Debug.Log(4);
                 if (hitCollider.TryGetComponent<IDamageble>(out IDamageble damageble))
                 {
+                    Debug.Log(5);
                     damageble.TakeDamage(transform.position, damage * enemyMultiplier, stunDuration, knockbackStrenght);
                 }
             }

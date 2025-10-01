@@ -8,7 +8,6 @@ namespace Game
 {
 	public class InteractionHandler : MonoBehaviour
 	{
-        #region REFERENCES
         [field: Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
 
         [SerializeField] GameObject interactPromptController;
@@ -16,16 +15,13 @@ namespace Game
         [field: SerializeField] public PlayerInput playerInput { get; private set; }
         [SerializeField] BoxCollider detectionShape;
         [SerializeField] StudioEventEmitter sucessfullEmitter;
-        #endregion
 
-        #region PARAMETERS & VARIABLES
         [Header("PARAMETERS & VARIABLES"), HorizontalLine(2f, EColor.Orange)]
         [SerializeField] LayerMask interactionMask;
         [SerializeField, ReadOnly] Collider[] interactblesCollidersInRange;
         [SerializeField, ReadOnly] Collider closestInteractbleCollider;
         [SerializeField, ReadOnly] BaseInteractble closestInteractble;
         [field: SerializeField, ReadOnly] public bool InRange { get; private set; }
-        #endregion
 
         private void FixedUpdate()
         {

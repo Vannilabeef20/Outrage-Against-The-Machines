@@ -24,7 +24,7 @@ namespace Game
         float AtkStunDuration => stateMachine.Attacking.CurrentAttackState.PlayerAttack.StunDuration;
         float AtkKnockbackStrenght => stateMachine.Attacking.CurrentAttackState.PlayerAttack.KnockbackStrenght;
         bool AtkIsSpecial => stateMachine.Attacking.CurrentAttackState.PlayerAttack.IsSpecial;
-        int PlayerIndex => stateMachine.playerInput.playerIndex;
+        int PlayerIndex => stateMachine.PlayerInput.playerIndex;
         string RumbleId => $"P{PlayerIndex + 1} Hit";
         #endregion
         void OnTriggerEnter(Collider other)

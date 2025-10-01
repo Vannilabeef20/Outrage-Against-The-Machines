@@ -29,7 +29,7 @@ namespace Game
 
         Vector3 AttackVelocity => PlayerAttack.VelocityCurve.
             Evaluate(progress) * PlayerAttack.MaxVelocity * transform.right;
-        int PlayerIndex => stateMachine.playerInput.playerIndex;
+        int PlayerIndex => stateMachine.PlayerInput.playerIndex;
 
         string RumbleId => $"P{PlayerIndex + 1} {Name}";
 
@@ -71,7 +71,7 @@ namespace Game
         public override void Do()
         {
             progress = UpTime.Map(0, PlayerAttack.Duration);
-            stateMachine.animator.Play(PlayerAttack.Animation.name, 0, progress);
+            stateMachine.Animator.Play(PlayerAttack.Animation.name, 0, progress);
             foreach (var frameEvent in FrameEvents)
             {
                 frameEvent.Update(UpTime);
@@ -81,7 +81,7 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier * 
+            stateMachine.Body.linearVelocity = stateMachine.ContextVelocityMultiplier * 
                 (AttackVelocity + stateMachine.ContextVelocityAdditive);
         }
 

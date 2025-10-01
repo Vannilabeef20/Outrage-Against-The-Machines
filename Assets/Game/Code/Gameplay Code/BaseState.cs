@@ -10,25 +10,16 @@ namespace Game
     /// </summary>
     public abstract class BaseState : MonoBehaviour
     {
-        #region BASE STATE ATTRIBUTES
-
         [Header("#BASE STATE# INHERITED"), HorizontalLine(2f, EColor.Red)]
 
         [SerializeField] protected AnimationClip StateAnimation;
         public virtual string Name { get {return GetType().Name; } private set {value = GetType().Name;} }
-        #region PROGRESS RELATED ATTRIBUTES
 
         [SerializeField, ReadOnly] protected float startTime;
         protected float UpTime => Time.time - startTime;
 
         [SerializeField, ReadOnly, Range(0f, 1f)] protected float progress;
         [field: SerializeField, ReadOnly] public bool CanTransition { get; protected set; }
-
-        #endregion
-
-        #endregion
-
-        #region ABSTRACT METHODS
 
         /// <summary>
         /// This method will be run as soon as the state playerInput transitions to this state.
@@ -54,7 +45,6 @@ namespace Game
         /// This method will check whether the state is complete or not, may run on "Do" or "FixedDo".
         /// </summary>
         protected abstract void ValidateState();
-        #endregion
     }
 
 }

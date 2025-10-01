@@ -34,23 +34,23 @@ namespace Game
         public override void Setup(PlayerStateMachine playerStateMachine)
         {
             base.Setup(playerStateMachine);
-            playerStateMachine.healthHandler.OnDamageTaken += OnDamage;
+            playerStateMachine.HealthHandler.OnDamageTaken += OnDamage;
         }
 
         public override void Do()
         {
             ValidateState();
             progress = UpTime.Map(0, animationDuration);
-            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            stateMachine.Animator.Play(StateAnimation.name, 0, progress);
             if(progress > parryWindow.x && progress < parryWindow.y)
             {
                 stateMachine.canBeStunned = false;
-                stateMachine.healthHandler.damageMultiplier = parryDamageMultiplier;
+                stateMachine.HealthHandler.damageMultiplier = parryDamageMultiplier;
             }
             else
             {
                 stateMachine.canBeStunned = true;
-                stateMachine.healthHandler.damageMultiplier = 1f;
+                stateMachine.HealthHandler.damageMultiplier = 1f;
             }
         }
 
@@ -58,28 +58,28 @@ namespace Game
         {
             knockBackIntensity *= knockBackDecay;
 
-            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier *
+            stateMachine.Body.linearVelocity = stateMachine.ContextVelocityMultiplier *
                 (knockBackIntensity + stateMachine.ContextVelocityAdditive);
         }
 
         public override void Enter()
         {
             CanTransition = false;
-            stateMachine.animator.speed = 0;
+            stateMachine.Animator.speed = 0;
             startTime = Time.time;
             knockBackIntensity = Vector3.zero;
             soundEmitter.Play();
             stateMachine.canBeStunned = false;
-            RumbleManager.Instance.CreateRumble(this.name, rumble, stateMachine.playerInput.playerIndex);
+            RumbleManager.Instance.CreateRumble(this.name, rumble, stateMachine.PlayerInput.playerIndex);
         }
 
         public override void Exit()
         {
             CanTransition = false;
-            stateMachine.healthHandler.damageMultiplier = 1f;
+            stateMachine.HealthHandler.damageMultiplier = 1f;
             stateMachine.canBeStunned = true;
-            stateMachine.animator.speed = 1;
-            stateMachine.body.linearVelocity = Vector3.zero;
+            stateMachine.Animator.speed = 1;
+            stateMachine.Body.linearVelocity = Vector3.zero;
             knockBackIntensity = Vector3.zero;
         }
 

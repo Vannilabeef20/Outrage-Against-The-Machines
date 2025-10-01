@@ -16,7 +16,7 @@ namespace Game
 
         private void Awake()
         {
-            balloonAnimator = GetComponent<Animator>();
+            balloonAnimator = GetComponentInChildren<Animator>();
             detectionZone = GetComponent<BoxCollider>();
         }
 

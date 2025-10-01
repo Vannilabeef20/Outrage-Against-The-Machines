@@ -12,25 +12,21 @@ namespace Game
     public class PlayerHealthHandler : MonoBehaviour, IDamageble
     {
         [Header("REFERENCES"), HorizontalLine]
-        [SerializeField] PlayerInput playerInput;
-        [SerializeField] SpriteRenderer spriteRenderer;
-        [SerializeField] CapsuleCollider playerHitbox;
-        [SerializeField] BoxCollider enemyCollision;
+        [SerializeField, Required] PlayerInput playerInput;
+        [SerializeField, Required] SpriteRenderer spriteRenderer;
 
-        [SerializeField] IntFloatEvent healthEvent;
-        [SerializeField] ParticleSystem healParticle;
-        [SerializeField] ParticleSystem damageParticle;
-        [SerializeField] StudioEventEmitter reviveEmitter;
-        [SerializeField] CinemachineImpulseSource impulseSource;
+        [SerializeField, Required] IntFloatEvent healthEvent;
+        [SerializeField, Required] ParticleSystem healParticle;
+        [SerializeField, Required] ParticleSystem damageParticle;
+        [SerializeField, Required] StudioEventEmitter reviveEmitter;
+        [SerializeField, Required] CinemachineImpulseSource impulseSource;
 
-        #region Player Health Params
         [Header("HEALTH PARAMS"), HorizontalLine(2f, EColor.Red)]
         [SerializeField] float maxHeathPoints;
         [field: SerializeField, ProgressBar("HP", "maxHeathPoints", EColor.Red)] public float CurrentHealthPoints { get; private set; }
         [ReadOnly] public float damageMultiplier = 1f;
+        [SerializeField, ReadOnly] bool canBeHit = true;
 
-        #endregion
-        #region Stagger Params
         [Header("STAGGER PARAMS"), HorizontalLine(2f, EColor.Orange)]
 
         [SerializeField] RumbleData hitRumble;
@@ -46,7 +42,6 @@ namespace Game
         [Header("REVIVE PARAMS"), HorizontalLine(2f, EColor.Yellow)]
 
         [SerializeField] RumbleData reviveRumble;
-        #endregion
 
         /// <summary>
         /// Vector2 = KnockbackForce, float = PlayHitEffect Duration
@@ -63,13 +58,13 @@ namespace Game
         string RumbleId => $"P{playerInput.playerIndex + 1} {gameObject.name}";
 
 
-        [Button]
+        [Button(enabledMode: EButtonEnableMode.Playmode)]
         public void UpdateHealthUI()
         {
             healthEvent.Raise(this, new IntFloat(PlayerIndex, CurrentHealthPoints / maxHeathPoints));
         }
 
-        [Button]
+        [Button(enabledMode: EButtonEnableMode.Playmode)]
         void Kill()
         {
             TakeDamage(transform.position, maxHeathPoints, 0.5f, 0);
@@ -79,27 +74,25 @@ namespace Game
         {
             spriteRenderer = transform.parent.GetComponentInChildren<SpriteRenderer>();
             CurrentHealthPoints = maxHeathPoints;
+            canBeHit = true;
         }
 
         public void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
+            if(!canBeHit) return;
+
             damageParticle.Play();
             damage *= damageMultiplier;
 
             CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints - damage, 0f, maxHeathPoints);
             UpdateHealthUI();
 
-            Vector3 knockbackDir = transform.position - damageDealerPos;
-            knockbackDir.y = 0;
-            knockbackDir.z = 0;
-            knockbackDir.Normalize();
-           
+            Vector3 knockbackDir = (transform.position - damageDealerPos).normalized;          
 
             //if dead
             if (CurrentHealthPoints <= 0)
             {
-                playerHitbox.enabled = false;
-                enemyCollision.enabled = false;
+                canBeHit = false;
                 OnDeath.Invoke(knockbackStrenght * knockbackDir, stunDuration);
                 return;
             }
@@ -133,8 +126,7 @@ namespace Game
         {
             CurrentHealthPoints = maxHeathPoints;
             UpdateHealthUI();
-            playerHitbox.enabled = true;
-            enemyCollision.enabled = true;
+            canBeHit = false;
             reviveEmitter.Play();
             RumbleManager.Instance.CreateRumble(RumbleId + " Revive", reviveRumble, PlayerIndex);
             OnRevive.Invoke();
@@ -148,8 +140,7 @@ namespace Game
 
             while (UpTime < stunDuration)
             {
-                playerHitbox.enabled = false;
-                enemyCollision.enabled = false;
+                canBeHit = false;
                 UpTime += Time.deltaTime;
                 flashTime += Time.deltaTime;
                 if (flashTime > hitFlashLenght)
@@ -175,8 +166,7 @@ namespace Game
             float UpTime = 0f;
             float flashTime = 0f;
             Color startColor = spriteRenderer.color;
-            playerHitbox.enabled = false;
-            enemyCollision.enabled = false;
+            canBeHit = false;
             while (UpTime < staggerGracePeriod)
             {
                 UpTime += Time.deltaTime;
@@ -196,8 +186,7 @@ namespace Game
                 yield return null;
             }
             spriteRenderer.color = startColor;
-            playerHitbox.enabled = true;
-            enemyCollision.enabled = true;
+            canBeHit = true;
         }
     }
 }

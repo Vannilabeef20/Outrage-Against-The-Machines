@@ -205,7 +205,7 @@ namespace Game
 
         public void SetSpecialCharges(float newChargeAmount, bool pickUp = false)
         {
-            specialChargeAmount = Mathf.Clamp(newChargeAmount, stateMachine.playerInput.playerIndex, MaxSpecialChargeAmount);
+            specialChargeAmount = Mathf.Clamp(newChargeAmount, stateMachine.PlayerInput.playerIndex, MaxSpecialChargeAmount);
             if (pickUp)
             {
                 specialParticleSystem.Play();
@@ -215,7 +215,7 @@ namespace Game
 
         public void AddSpecialCharges(float chargeAmount, bool pickUp = false)
         {
-            specialChargeAmount = Mathf.Clamp(specialChargeAmount + chargeAmount, stateMachine.playerInput.playerIndex, MaxSpecialChargeAmount);
+            specialChargeAmount = Mathf.Clamp(specialChargeAmount + chargeAmount, stateMachine.PlayerInput.playerIndex, MaxSpecialChargeAmount);
             if(pickUp)
             {
                 specialParticleSystem.Play();
@@ -226,7 +226,7 @@ namespace Game
         public void UpdateSpecialBar()
         {
             float newSpecialPercent = specialChargeAmount / MaxSpecialChargeAmount;
-            specialChargeEvent.Raise(this, new IntFloat(stateMachine.playerInput.playerIndex, newSpecialPercent));
+            specialChargeEvent.Raise(this, new IntFloat(stateMachine.PlayerInput.playerIndex, newSpecialPercent));
         }
 
         //[Button("Generate/Regenerate attack states", EButtonEnableMode.Editor)]

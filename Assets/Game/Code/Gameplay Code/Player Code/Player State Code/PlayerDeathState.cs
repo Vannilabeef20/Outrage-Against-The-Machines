@@ -22,7 +22,7 @@ namespace Game
         [SerializeField] AnimationCurve knockBackCurve;
         [ReadOnly] public Vector2 knockBackIntensity;
         Vector3 KnockbackVelocity => knockBackCurve.Evaluate(progress) * knockBackIntensity;
-        int PlayerIndex => stateMachine.playerInput.playerIndex;
+        int PlayerIndex => stateMachine.PlayerInput.playerIndex;
         string RumbleId => $"P{PlayerIndex + 1} {Name}";
 
         [Header("Gamepad Shake"), HorizontalLine]
@@ -31,13 +31,13 @@ namespace Game
         public override void Do()
         {
             progress = UpTime.Map(0, Duration);
-            stateMachine.animator.Play(StateAnimation.name, 0, progress);
+            stateMachine.Animator.Play(StateAnimation.name, 0, progress);
             ValidateState();
         }
 
         public override void FixedDo()
         {
-            stateMachine.body.linearVelocity = stateMachine.ContextVelocityMultiplier *
+            stateMachine.Body.linearVelocity = stateMachine.ContextVelocityMultiplier *
                 (KnockbackVelocity + stateMachine.ContextVelocityAdditive);
         }
 
@@ -72,7 +72,7 @@ namespace Game
             if(GameManager.Instance.CurrentLifeAmount > 0)
             {
                 GameManager.Instance.TakeAddLife(-1);
-                stateMachine.healthHandler.Revive();
+                stateMachine.HealthHandler.Revive();
             }
             else
             {

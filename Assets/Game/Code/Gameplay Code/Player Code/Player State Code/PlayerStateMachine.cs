@@ -14,14 +14,15 @@ namespace Game
     /// </summary>
     public class PlayerStateMachine : MonoBehaviour
     {
-        [Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
+        [field: Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
 
-        public PlayerHealthHandler healthHandler;
-        public PlayerInput playerInput;
-        public Rigidbody body;
-        public Animator animator;
-        public SpriteRenderer spriteRenderer;
-        public BoxCollider footCollider;
+        [field: SerializeField, Required] public GameObject Parent { get; private set; }
+        [field: SerializeField, Required] public PlayerHealthHandler HealthHandler { get; private set; }
+        [field: SerializeField, Required] public PlayerInput PlayerInput { get; private set; }
+        [field: SerializeField, Required] public Rigidbody Body { get; private set; }
+        [field: SerializeField, Required] public Animator Animator { get; private set; }
+        [field: SerializeField, Required] public SpriteRenderer SpriteRenderer { get; private set; }
+        [field: SerializeField, Required] public BoxCollider ContextSpeedBounds { get; private set; }
 
         [field: Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Orange)]
         [field:SerializeField] public PlayerIdleState Idle { get; private set; }
@@ -40,6 +41,7 @@ namespace Game
         [SerializeField, ReadOnly] bool canInput = true;
         [field: SerializeField, ReadOnly] public Vector2 InputDirection { get; private set; } = Vector2.zero;
 
+        [SerializeField, ReadOnly] Collider[] contextVelocityColliders;
         [field: SerializeField, ReadOnly] public Vector3 ContextVelocityAdditive { get; private set; }
         [field: SerializeField, ReadOnly] public float ContextVelocityMultiplier { get; private set; }
 
@@ -63,12 +65,16 @@ namespace Game
         void Start()
         {
             FollowGroup.Instance.AddTarget(transform);
-            healthHandler.OnDamageTaken += OnDamageTaken;
-            healthHandler.OnDeath += OnDeath;
-            healthHandler.OnRevive += OnRevive;
+            HealthHandler.OnDamageTaken += OnDamageTaken;
+            HealthHandler.OnDeath += OnDeath;
+            HealthHandler.OnRevive += OnRevive;
+
             //Dont allow Inputs device switch on multiplayer
             if(GameManager.Instance.PlayerCharacterList.Count <= 1)
-                playerInput.neverAutoSwitchControlSchemes = false;
+            {
+                PlayerInput.neverAutoSwitchControlSchemes = false;
+            }
+
         }
         void Update()
         {
@@ -88,10 +94,10 @@ namespace Game
         {
             Vector3 tempContextSpeed = Vector3.zero;
             float tempSpeedMultiplier = 1f;
-            Collider[] cntxSpdColliders = Physics.OverlapBox(transform.position, footCollider.size/2);
+            Physics.OverlapBoxNonAlloc(transform.position, ContextSpeedBounds.size/2, contextVelocityColliders);
 
             //Additive context velocity
-            foreach(Collider collider in cntxSpdColliders)
+            foreach(Collider collider in contextVelocityColliders)
             {
                 if (!conveyorLayer.ContainsLayer(collider.gameObject.layer)) continue;
                 if (!collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt)) continue;                   
@@ -100,7 +106,7 @@ namespace Game
             ContextVelocityAdditive = tempContextSpeed;
 
             //Multiplicative context velocity
-            foreach (Collider collider in cntxSpdColliders)
+            foreach (Collider collider in contextVelocityColliders)
             {
                 if (!speedMultiplierLayer.ContainsLayer(collider.gameObject.layer)) continue;
                 if (!collider.transform.TryGetComponent<ConveyorBelt>(out ConveyorBelt belt)) continue;
@@ -164,7 +170,7 @@ namespace Game
         {
             transform.parent.gameObject.SetActive(true);
             FollowGroup.Instance.AddTarget(transform);
-            healthHandler.UpdateHealthUI();
+            HealthHandler.UpdateHealthUI();
             nextState = Idle;
             overrideStateTransition = true;
         }
@@ -208,13 +214,13 @@ namespace Game
 
             if (CurrentState == Stunned || CurrentState == Death) return;
 
-            GameObject storedItem = GameManager.Instance.PlayerCharacterList[playerInput.playerIndex].StoredItem;
+            GameObject storedItem = GameManager.Instance.PlayerCharacterList[PlayerInput.playerIndex].StoredItem;
 
             if (storedItem == null) return;
 
             if (!storedItem.TryGetComponent<ItemDrop>(out ItemDrop item)) return;
 
-            item.Use(playerInput.playerIndex);
+            item.Use(PlayerInput.playerIndex);
         }
 
         public void PauseGame(InputAction.CallbackContext context)
@@ -232,7 +238,7 @@ namespace Game
         {
             if (!canInput) return;
 
-            if (input != playerInput) return;
+            if (input != PlayerInput) return;
 
             if (SceneManager.GetActiveScene().buildIndex != 1) return;
 
