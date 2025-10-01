@@ -10,7 +10,7 @@ namespace Game
     /// </summary>
     [SelectionBase]
     [DisallowMultipleComponent]
-    public class BreakableLootProp : MonoBehaviour
+    public class BreakableLootProp : MonoBehaviour, IDamageble
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [SerializeField, Required] Animator animator;
@@ -24,9 +24,6 @@ namespace Game
 
         [Tooltip("True if the box has been broken already.")]
         [SerializeField, ReadOnly] bool hasBeenBroken;
-
-        [Tooltip("All layers that can damage/break this.")]
-        [SerializeField] LayerMask hostileLayers;
 
         [Tooltip("This BreakableLootProp's break animation sprites.")]
         [SerializeField, ShowAssetPreview] Sprite[] animationSprites;
@@ -49,11 +46,10 @@ namespace Game
         {
             lootTable.ValidateTable();
         }
-        private void OnTriggerEnter(Collider other)
+
+        public void TakeDamage(Vector3 damageDealerPos, float damage, float stunDuration, float knockbackStrenght)
         {
             if (hasBeenBroken) return;
-
-            if (!hostileLayers.ContainsLayer(other.gameObject.layer)) return;
 
             StartCoroutine(BreakRoutine());
         }
@@ -97,6 +93,7 @@ namespace Game
         {
             lootTable.ValidateTable();
         }
+
 #endif
     }
 }

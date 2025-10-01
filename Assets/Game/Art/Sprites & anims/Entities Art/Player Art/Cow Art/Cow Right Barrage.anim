@@ -52,7 +52,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -91,7 +91,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -148,7 +148,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -205,7 +205,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -262,7 +262,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -301,7 +301,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -340,7 +340,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -388,7 +388,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -436,7 +436,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -484,7 +484,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -504,7 +504,7 @@ AnimationClip:
     - time: 0.41666666
       value: {fileID: -1036984891, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Visual/Sprite
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -516,7 +516,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1676024674
+      path: 3929444601
       attribute: 605858901
       script: {fileID: 0}
       typeID: 65
@@ -525,7 +525,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1676024674
+      path: 3929444601
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 65
@@ -534,7 +534,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1676024674
+      path: 3929444601
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -543,7 +543,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1676024674
+      path: 3929444601
       attribute: 4197328169
       script: {fileID: 0}
       typeID: 65
@@ -552,7 +552,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1676024674
+      path: 3929444601
       attribute: 2368279999
       script: {fileID: 0}
       typeID: 65
@@ -561,7 +561,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4209986264
+      path: 1933558083
       attribute: 605858901
       script: {fileID: 0}
       typeID: 65
@@ -570,7 +570,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4209986264
+      path: 1933558083
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 65
@@ -579,7 +579,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4209986264
+      path: 1933558083
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -588,7 +588,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4209986264
+      path: 1933558083
       attribute: 4197328169
       script: {fileID: 0}
       typeID: 65
@@ -597,7 +597,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4209986264
+      path: 1933558083
       attribute: 2368279999
       script: {fileID: 0}
       typeID: 65
@@ -606,7 +606,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 312131828
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -677,7 +677,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -716,7 +716,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -773,7 +773,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -830,7 +830,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -887,7 +887,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: Cow_AttackState/Cow_Hitbox_1
+    path: State_Machine/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -926,7 +926,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -965,7 +965,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -1013,7 +1013,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -1061,7 +1061,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -1109,7 +1109,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: Cow_AttackState/Cow_Hitbox_2
+    path: State_Machine/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
