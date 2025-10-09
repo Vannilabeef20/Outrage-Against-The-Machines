@@ -1,0 +1,1622 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1384098567652922046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4441296200208070985}
+  - component: {fileID: 5354549753324438772}
+  m_Layer: 0
+  m_Name: Cow_Kick_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4441296200208070985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384098567652922046}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5354549753324438772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384098567652922046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 153e54e046feab440bcc6d04a784b9a2, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 62cd11d3f5d820f47b0db7ce5069fdbd, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5354549753324438772}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5354549753324438772}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2539971427658515537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7940782315430007527}
+  - component: {fileID: 4638162734356745464}
+  m_Layer: 0
+  m_Name: Cow_Strong_Kick_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7940782315430007527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539971427658515537}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4638162734356745464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539971427658515537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 28dc35369fc4056479dd157ab85c1d1c, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: af7c7b8ba246bd5449f92b0bd4673d76, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4638162734356745464}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4638162734356745464}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2859595302162645156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4885758077075797605}
+  - component: {fileID: 1116179755822699577}
+  m_Layer: 0
+  m_Name: Cow_Special_Barrage_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4885758077075797605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859595302162645156}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1116179755822699577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859595302162645156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 49ad6f2a2fd5e1541bc1ef2a593580bc, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 3217c383ee0838845bf5f8df7cdb03a5, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 4
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 5
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 6
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 7
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 8
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 9
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 7
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 10
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 8
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 11
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 9
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1116179755822699577}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &4293521076898575572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5790667996530949411}
+  - component: {fileID: 5135644369734038256}
+  - component: {fileID: 1944975110296263895}
+  m_Layer: 0
+  m_Name: Cow_Special_AoE_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5790667996530949411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293521076898575572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4474688813456188212}
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5135644369734038256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293521076898575572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: f62a2056f2ccf5442847dcddc510dd11, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: a29a03c082eda604495e5abd815e0159, type: 2}
+  hasProjectile: 1
+  projectile: {fileID: 2577175125317148984, guid: fb3521d37de7eb242b8b9a90180e960c, type: 3}
+  projectileSpawnTransform: {fileID: 4474688813456188212}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 0
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5135644369734038256}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5135644369734038256}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 9
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5470420408116510284}
+          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 10
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5135644369734038256}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: SpawnProjectile
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1944975110296263895}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: GenerateImpulse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1944975110296263895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293521076898575572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 3
+    m_FrequencyGain: 2.5
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.3
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!1 &4525115366083770792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4474688813456188212}
+  - component: {fileID: 5470420408116510284}
+  m_Layer: 0
+  m_Name: Impact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4474688813456188212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525115366083770792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.19, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5790667996530949411}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5470420408116510284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525115366083770792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 31400210
+      Data2: 1228090953
+      Data3: 125518506
+      Data4: -883929559
+    Path: event:/SFX/Player/Cow/Player Cow_Aoe_Impact SFX
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &4931159877752795669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5544416967532135298}
+  - component: {fileID: 1136573388772211982}
+  m_Layer: 0
+  m_Name: Cow_Right_Barrage_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5544416967532135298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931159877752795669}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136573388772211982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931159877752795669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: decd9afb495080e47b8367f3852755e2, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: e390239f71bcec5449d94b5f9a92c3b7, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 4
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 5
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1136573388772211982}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &6174440991727106963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3072603068134553543}
+  - component: {fileID: 6818477399223237877}
+  m_Layer: 0
+  m_Name: Cow_Running_Attack_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3072603068134553543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174440991727106963}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6818477399223237877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174440991727106963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 5a933a82b996f93468c6d2a975e5e086, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 200fe47429a40464b820d92dc02eb56f, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 0
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6818477399223237877}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+          m_MethodName: PlayFootstepSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6818477399223237877}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6818477399223237877}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+          m_MethodName: PlayFootstepSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 6
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+          m_MethodName: PlayFootstepSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &7715711700093309658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4746129543664575252}
+  - component: {fileID: 8236918242158006481}
+  m_Layer: 0
+  m_Name: Cow_Strong_Punch_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4746129543664575252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715711700093309658}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8236918242158006481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715711700093309658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 77ac1eb0f6dbe0a4f886b12f7031ae0d, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: cfc5e7f31ee9e8c4e98a48f9efa9aa17, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 1
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8236918242158006481}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8236918242158006481}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &8368056412139469491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7054402036618139068}
+  - component: {fileID: 4125953835388679582}
+  m_Layer: 0
+  m_Name: Cow_Right_Punch_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7054402036618139068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8368056412139469491}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4125953835388679582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8368056412139469491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: c29d3a102836b62438c9e0d0daa77c3e, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 6c871f21dbe7a0341b956fdc27888ae0, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125953835388679582}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125953835388679582}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &9051964143800398871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5011151256208330478}
+  - component: {fileID: 7736469629073427539}
+  m_Layer: 0
+  m_Name: Cow_Left_Barrage_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5011151256208330478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051964143800398871}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7736469629073427539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051964143800398871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 6763cf3ae5e16bd429f01fa52204d601, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 6b4644573292c0b4790c16857c3b78c2, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 1
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 4
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7736469629073427539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &9152011741816955230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3050200285040913906}
+  - component: {fileID: 5735211312973837872}
+  m_Layer: 0
+  m_Name: Cow_Left_Punch_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3050200285040913906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9152011741816955230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91262613572107320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5735211312973837872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9152011741816955230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: e1b6d9d8bfc3cd149bb6f8be3f28e495, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 03fa910405505234985027a159ca2b0f, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 2
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5735211312973837872}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 3
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5735211312973837872}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1001 &6361749196893453303
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515991989579779421, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Name
+      value: Cow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3050200285040913906}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7054402036618139068}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5011151256208330478}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5544416967532135298}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4746129543664575252}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4885758077075797605}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3072603068134553543}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4441296200208070985}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7940782315430007527}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5790667996530949411}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+--- !u!4 &91262613572107320 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+  m_PrefabInstance: {fileID: 6361749196893453303}
+  m_PrefabAsset: {fileID: 0}

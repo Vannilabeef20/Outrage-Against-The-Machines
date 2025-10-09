@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using Cinemachine;
+using FMODUnity;
 
 namespace Game
 {
@@ -10,15 +11,14 @@ namespace Game
     public class SpikeTrap : MonoBehaviour
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
-        [SerializeField] Transform followCamTransform;
-        [SerializeField] Animator[] animators;
+        [SerializeField] Animator animator;
         [SerializeField] AnimationClip spikeAnimation;
-
+        [SerializeField, ReadOnly] Transform followCamTransform;
 
         [Header("PARAMETERS"), HorizontalLine(2f, EColor.Orange)]
 
         [SerializeField] float activationRange;
-        [SerializeField] float animationDuration;
+        [SerializeField, Min(0.01f)] float animationDuration = 1;
         [SerializeField] AnimationFrameEvent[] frameEvents;
 
         [Header("DAMAGE")]
@@ -54,59 +54,33 @@ namespace Game
             //Return and pause animation if not within the activation range
             if (Mathf.Abs(followCamTransform.position.x - transform.position.x) > activationRange)
             {
-                foreach (var animator in animators)
-                {
-                    animator.speed = 0;
-                }
+                animator.speed = 0;
                 return;
             }
 
-            foreach (var animator in animators)
-            {
-                animator.speed = 1;
-            }
+            animator.speed = spikeAnimation.length/animationDuration;
 
             timer += Time.deltaTime;
-            if (timer > animationDuration)
-            {
-                timer = 0;
-                foreach (var frameEvent in frameEvents)
-                {
-                    frameEvent.Reset();
-                }
-            }
-            foreach (var frameEvent in frameEvents)
-            {
-                frameEvent.Update(timer);
-            }
-            foreach (var animator in animators)
-            {
-                animator.Play(spikeAnimation.name, 0, timer.Map(0, animationDuration));
-            }
+            if (timer > animationDuration) timer -= animationDuration;
+
+            animator.Play(spikeAnimation.name, 0, timer.Map(0, animationDuration));
         }
 
-        public void DealDamage(Collider hitCollider)
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(0);
-            if (hitList.Contains(hitCollider)) return;
-            Debug.Log(1);
-            hitList.Add(hitCollider);
-            Debug.Log(hitCollider.gameObject.layer);
-            if (playerMask.ContainsLayer(hitCollider.gameObject.layer))
+            if (hitList.Contains(other)) return;
+            hitList.Add(other);
+            if (playerMask.ContainsLayer(other.gameObject.layer))
             {
-                Debug.Log(2);
-                if (hitCollider.TryGetComponent<IDamageble>(out IDamageble damageble))
+                if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
                 {
-                    Debug.Log(3);
                     damageble.TakeDamage(transform.position, damage, stunDuration, knockbackStrenght);
                 }
             }
-            else if (enemyMask.ContainsLayer(hitCollider.gameObject.layer))
+            else if (enemyMask.ContainsLayer(other.gameObject.layer))
             {
-                Debug.Log(4);
-                if (hitCollider.TryGetComponent<IDamageble>(out IDamageble damageble))
+                if (other.TryGetComponent<IDamageble>(out IDamageble damageble))
                 {
-                    Debug.Log(5);
                     damageble.TakeDamage(transform.position, damage * enemyMultiplier, stunDuration, knockbackStrenght);
                 }
             }

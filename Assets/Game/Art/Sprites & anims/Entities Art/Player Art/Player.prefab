@@ -15315,7 +15315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 4989701672261852633}
-  stateMachine: {fileID: 6809339873928523449}
+  stateMachine: {fileID: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
@@ -15410,14 +15410,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2236099311205957959}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2399658802846444230}
   - {fileID: 8812361544007127939}
-  m_Father: {fileID: 5039965167385144628}
+  m_Father: {fileID: 4666246274584589346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1610565124579556487
 MonoBehaviour:
@@ -15566,7 +15566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 4250759280437507803}
-  stateMachine: {fileID: 6809339873928523449}
+  stateMachine: {fileID: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
@@ -15629,12 +15629,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3011588218661650330}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5039965167385144628}
+  m_Father: {fileID: 4666246274584589346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8699702873034687945
 BoxCollider:
@@ -15727,14 +15727,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4666246274584589346}
   - component: {fileID: 5899277108273352005}
-  - component: {fileID: 8649081785514632841}
+  - component: {fileID: 2808820949207031971}
   - component: {fileID: 40734513078649504}
+  - component: {fileID: 8649081785514632841}
   - component: {fileID: 2581872816522629048}
   - component: {fileID: 3583335676040013722}
   - component: {fileID: 7473193186981192346}
   - component: {fileID: 4196208341530458155}
   - component: {fileID: 5150329598877215228}
   - component: {fileID: 7851195204289811621}
+  - component: {fileID: 1168480540285578269}
   m_Layer: 6
   m_Name: Player
   m_TagString: P1
@@ -15755,7 +15757,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8802056932383738932}
   - {fileID: 1725351195036747618}
+  - {fileID: 8160881473613517538}
   - {fileID: 5039965167385144628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15777,7 +15781,7 @@ MonoBehaviour:
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 0
@@ -15798,8 +15802,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
-        m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
+      - m_Target: {fileID: 2808820949207031971}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
         m_MethodName: GetInputDirection
         m_Mode: 0
         m_Arguments:
@@ -15814,7 +15818,7 @@ MonoBehaviour:
     m_ActionName: 'Inputs/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
         m_MethodName: ValidateAttack
         m_Mode: 0
@@ -15830,7 +15834,7 @@ MonoBehaviour:
     m_ActionName: 'Inputs/Punch[/Keyboard/p]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
         m_MethodName: ValidateAttack
         m_Mode: 0
@@ -15862,7 +15866,7 @@ MonoBehaviour:
     m_ActionName: 'Inputs/Grab[/Keyboard/i]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
         m_MethodName: ValidateAttack
         m_Mode: 0
@@ -15878,7 +15882,7 @@ MonoBehaviour:
     m_ActionName: 'Inputs/Special[/Keyboard/u]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.StateMachine.PlayerStateMachine, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 0
@@ -15898,7 +15902,7 @@ MonoBehaviour:
     m_ActionName: 'Inputs/Join[/Keyboard/anyKey]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
         m_MethodName: ValidateAttack
         m_Mode: 0
@@ -15942,7 +15946,7 @@ MonoBehaviour:
     m_ActionName: 'UI/Navigate_Right[/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/right,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 0
@@ -15958,7 +15962,7 @@ MonoBehaviour:
     m_ActionName: 'Inputs/UseItem[/Keyboard/enter,/Keyboard/tab]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
+      - m_Target: {fileID: 2808820949207031971}
         m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
         m_MethodName: Defend
         m_Mode: 0
@@ -15977,28 +15981,45 @@ MonoBehaviour:
   m_DefaultActionMap: Inputs
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &8649081785514632841
-Animator:
-  serializedVersion: 7
+--- !u!114 &2808820949207031971
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515991989579779421}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0361914783db2824e87c83e1f019a102, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ffe859bc4e97548b028ba698d86f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <HealthHandler>k__BackingField: {fileID: 40734513078649504}
+  <PlayerInput>k__BackingField: {fileID: 5899277108273352005}
+  <Body>k__BackingField: {fileID: 2581872816522629048}
+  <Animator>k__BackingField: {fileID: 8649081785514632841}
+  <SpriteRenderer>k__BackingField: {fileID: 1813037070272515745}
+  <ContextSpeedBounds>k__BackingField: {fileID: 8699702873034687945}
+  <Idle>k__BackingField: {fileID: 9126867838815848117}
+  <Walking>k__BackingField: {fileID: 3333887464617991422}
+  <Stunned>k__BackingField: {fileID: 5022439074262777319}
+  <Death>k__BackingField: {fileID: 842576697805230650}
+  <Attacking>k__BackingField: {fileID: 473606604381027411}
+  <Defending>k__BackingField: {fileID: 862404895556340941}
+  <CurrentState>k__BackingField: {fileID: 0}
+  nextState: {fileID: 0}
+  overrideStateTransition: 0
+  canBeStunned: 1
+  canInput: 1
+  <InputDirection>k__BackingField: {x: 0, y: 0}
+  contextVelocityColliders: []
+  <ContextVelocityAdditive>k__BackingField: {x: 0, y: 0, z: 0}
+  <ContextVelocityMultiplier>k__BackingField: 0
+  conveyorLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  speedMultiplierLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &40734513078649504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16129,6 +16150,28 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!95 &8649081785514632841
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515991989579779421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0361914783db2824e87c83e1f019a102, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &2581872816522629048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16138,7 +16181,7 @@ Rigidbody:
   m_GameObject: {fileID: 4515991989579779421}
   serializedVersion: 4
   m_Mass: 2
-  m_Drag: 0
+  m_Drag: 15
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -16175,10 +16218,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.48327646
-  m_Height: 4.2644897
+  m_Radius: 0.38212466
+  m_Height: 4.4
   m_Direction: 1
-  m_Center: {x: -0.06808463, y: 2.2411664, z: 0}
+  m_Center: {x: -0.06808466, y: 2.2, z: 0.5303366}
 --- !u!114 &7473193186981192346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16349,6 +16392,34 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &1168480540285578269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515991989579779421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933abe47ad4e9ec48957dcc881ae19f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: b0e206e71c265d34aab9e07232f8d7c9, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2808820949207031971}
+        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
+        m_MethodName: ToggleInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4609316274215958225
 GameObject:
   m_ObjectHideFlags: 0
@@ -16534,7 +16605,7 @@ MonoBehaviour:
   progress: 0
   <CanTransition>k__BackingField: 0
   stateMachine: {fileID: 0}
-  dragIntensity: 0.9
+  dragIntensity: 0
 --- !u!1 &5350325332092609630
 GameObject:
   m_ObjectHideFlags: 0
@@ -16600,10 +16671,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5039965167385144628}
-  - component: {fileID: 6809339873928523449}
-  - component: {fileID: 9024440474248724114}
   m_Layer: 0
-  m_Name: State_Machine
+  m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16622,8 +16691,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8160881473613517538}
-  - {fileID: 8802056932383738932}
   - {fileID: 1177063184968485044}
   - {fileID: 7139988294962187455}
   - {fileID: 1592748920287473991}
@@ -16632,74 +16699,6 @@ Transform:
   - {fileID: 967010777019336839}
   m_Father: {fileID: 4666246274584589346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6809339873928523449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5530161112883973012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28ffe859bc4e97548b028ba698d86f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Parent>k__BackingField: {fileID: 4515991989579779421}
-  <HealthHandler>k__BackingField: {fileID: 40734513078649504}
-  <PlayerInput>k__BackingField: {fileID: 5899277108273352005}
-  <Body>k__BackingField: {fileID: 2581872816522629048}
-  <Animator>k__BackingField: {fileID: 8649081785514632841}
-  <SpriteRenderer>k__BackingField: {fileID: 1813037070272515745}
-  <ContextSpeedBounds>k__BackingField: {fileID: 8699702873034687945}
-  <Idle>k__BackingField: {fileID: 9126867838815848117}
-  <Walking>k__BackingField: {fileID: 3333887464617991422}
-  <Stunned>k__BackingField: {fileID: 5022439074262777319}
-  <Death>k__BackingField: {fileID: 842576697805230650}
-  <Attacking>k__BackingField: {fileID: 473606604381027411}
-  <Defending>k__BackingField: {fileID: 862404895556340941}
-  <CurrentState>k__BackingField: {fileID: 0}
-  nextState: {fileID: 0}
-  overrideStateTransition: 0
-  canBeStunned: 1
-  canInput: 1
-  <InputDirection>k__BackingField: {x: 0, y: 0}
-  contextVelocityColliders: []
-  <ContextVelocityAdditive>k__BackingField: {x: 0, y: 0, z: 0}
-  <ContextVelocityMultiplier>k__BackingField: 0
-  conveyorLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  speedMultiplierLayer:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &9024440474248724114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5530161112883973012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 933abe47ad4e9ec48957dcc881ae19f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: b0e206e71c265d34aab9e07232f8d7c9, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6809339873928523449}
-        m_TargetAssemblyTypeName: Game.PlayerStateMachine, Assembly-CSharp
-        m_MethodName: ToggleInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6280797574054260045
 GameObject:
   m_ObjectHideFlags: 0
@@ -16875,7 +16874,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1412188433, guid: 8c7197b2fed7454428fbe8241b68f5b5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

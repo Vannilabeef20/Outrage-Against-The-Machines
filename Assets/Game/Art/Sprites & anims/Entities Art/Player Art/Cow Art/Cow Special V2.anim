@@ -70,7 +70,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -127,7 +127,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -184,7 +184,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -241,7 +241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -298,7 +298,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -346,7 +346,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: State_Machine/AttackState/Hitbox_2
+    path: States/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -394,7 +394,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: State_Machine/AttackState/Hitbox_2
+    path: States/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -442,7 +442,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: State_Machine/AttackState/Hitbox_2
+    path: States/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -486,7 +486,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3929444601
+      path: 1686440701
       attribute: 605858901
       script: {fileID: 0}
       typeID: 65
@@ -495,7 +495,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3929444601
+      path: 1686440701
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 65
@@ -504,7 +504,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3929444601
+      path: 1686440701
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -513,7 +513,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3929444601
+      path: 1686440701
       attribute: 4197328169
       script: {fileID: 0}
       typeID: 65
@@ -522,7 +522,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3929444601
+      path: 1686440701
       attribute: 2368279999
       script: {fileID: 0}
       typeID: 65
@@ -531,7 +531,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1933558083
+      path: 4253834055
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -540,7 +540,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1933558083
+      path: 4253834055
       attribute: 4197328169
       script: {fileID: 0}
       typeID: 65
@@ -549,7 +549,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1933558083
+      path: 4253834055
       attribute: 2368279999
       script: {fileID: 0}
       typeID: 65
@@ -653,7 +653,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -710,7 +710,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -767,7 +767,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -824,7 +824,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -881,7 +881,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: State_Machine/AttackState/Hitbox_1
+    path: States/AttackState/Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -929,7 +929,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: State_Machine/AttackState/Hitbox_2
+    path: States/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -977,7 +977,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: State_Machine/AttackState/Hitbox_2
+    path: States/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -1025,7 +1025,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: State_Machine/AttackState/Hitbox_2
+    path: States/AttackState/Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0

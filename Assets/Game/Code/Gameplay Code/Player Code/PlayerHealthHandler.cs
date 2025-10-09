@@ -72,7 +72,6 @@ namespace Game
 
         private void Awake()
         {
-            spriteRenderer = transform.parent.GetComponentInChildren<SpriteRenderer>();
             CurrentHealthPoints = maxHeathPoints;
             canBeHit = true;
         }

@@ -1,0 +1,714 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &429218770519274703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984025524498876308}
+  - component: {fileID: 5181385257499800335}
+  m_Layer: 0
+  m_Name: Donkey_Kick_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1984025524498876308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429218770519274703}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 166180451394273158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5181385257499800335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429218770519274703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 6763cf3ae5e16bd429f01fa52204d601, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: ac77a05af894f5e4386fd203acadd395, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 16
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5181385257499800335}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5181385257499800335}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2174137066036903643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5541074461998907505}
+  - component: {fileID: 8902697059463599874}
+  m_Layer: 0
+  m_Name: Donkey_Dash_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5541074461998907505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174137066036903643}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 166180451394273158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8902697059463599874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174137066036903643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 77ac1eb0f6dbe0a4f886b12f7031ae0d, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: ca40abb1b208e5541a8dd372c993f71b, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 5
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8902697059463599874}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 5
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8902697059463599874}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &6560471696355142189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4939590824345997562}
+  - component: {fileID: 339538924078533539}
+  m_Layer: 0
+  m_Name: Donkey_KickBack_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4939590824345997562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560471696355142189}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 166180451394273158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339538924078533539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560471696355142189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: decd9afb495080e47b8367f3852755e2, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 2664a5ee0cc682d459cac1e84b48b624, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 7
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 339538924078533539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 339538924078533539}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &6964123092333441805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7395410173826310211}
+  - component: {fileID: 1664977070733217638}
+  m_Layer: 0
+  m_Name: Donkey_Hook_Side_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7395410173826310211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964123092333441805}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 166180451394273158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1664977070733217638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964123092333441805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: c29d3a102836b62438c9e0d0daa77c3e, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 064717eab12f15147891146537d3ee43, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 7
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1664977070733217638}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1664977070733217638}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &7224595729899124602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2367548498982666706}
+  - component: {fileID: 1563488163636203224}
+  m_Layer: 0
+  m_Name: Donkey_Hook_Up_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2367548498982666706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224595729899124602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 166180451394273158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1563488163636203224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224595729899124602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: e1b6d9d8bfc3cd149bb6f8be3f28e495, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: 7b6a25af847f0bd44acd95e024810699, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 12
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1563488163636203224}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 15
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1563488163636203224}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &9112785807393351006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101628687123279495}
+  - component: {fileID: 3963768557404876075}
+  - component: {fileID: 5620336443680168409}
+  m_Layer: 0
+  m_Name: Donkey_Special_AttackState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101628687123279495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112785807393351006}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -124.15, y: 1.26, z: 1.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 166180451394273158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3963768557404876075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112785807393351006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae063291d17dc14180e54ae7263bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateAnimation: {fileID: 7400000, guid: 49ad6f2a2fd5e1541bc1ef2a593580bc, type: 2}
+  startTime: 0
+  progress: 0
+  <CanTransition>k__BackingField: 0
+  stateMachine: {fileID: 0}
+  AttackMachine: {fileID: 0}
+  <PlayerAttack>k__BackingField: {fileID: 11400000, guid: b56d9c19b030f6d40ac6b29911383e09, type: 2}
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 0}
+  FrameEvents:
+  - <TriggerFrame>k__BackingField: 0
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3963768557404876075}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayAttackRumble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 15
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3963768557404876075}
+          m_TargetAssemblyTypeName: Game.PlayerAttackState, Assembly-CSharp
+          m_MethodName: PlayPitchedAttackSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - <TriggerFrame>k__BackingField: 20
+    <Actions>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5620336443680168409}
+          m_TargetAssemblyTypeName: Cinemachine.CinemachineImpulseSource, Cinemachine
+          m_MethodName: GenerateImpulse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5620336443680168409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112785807393351006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 3
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2.8025813
+          outSlope: -2.8025813
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.03672926
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.05331756
+          outSlope: -0.05331756
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10369998
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.5
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!1001 &6576143656207579209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 206349397, guid: 753e99024640c9d44952937d040446c2, type: 3}
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515991989579779421, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Name
+      value: Donkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7395410173826310211}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2367548498982666706}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1984025524498876308}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4939590824345997562}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5541074461998907505}
+    - targetCorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2101628687123279495}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+--- !u!4 &166180451394273158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6416859730497030095, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+  m_PrefabInstance: {fileID: 6576143656207579209}
+  m_PrefabAsset: {fileID: 0}

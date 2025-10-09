@@ -20,11 +20,11 @@ namespace Game
             ValidateState();
             if (stateMachine.InputDirection.x > 0)
             {
-                stateMachine.Parent.transform.localScale = Vector3.one; //Flip Right
+                stateMachine.transform.localScale = Vector3.one; //Flip Right
             }
             else if (stateMachine.InputDirection.x < 0)
             {
-                stateMachine.Parent.transform.localScale = new Vector3(-1, 1, 1); //Flip left
+                stateMachine.transform.localScale = new Vector3(-1, 1, 1); //Flip left
             }
             stateMachine.Animator.speed = stateMachine.InputDirection.magnitude;
 
@@ -37,8 +37,8 @@ namespace Game
 
         public override void FixedDo()
         {
-            stateMachine.Body.linearVelocity = stateMachine.ContextVelocityMultiplier *
-                (velocity + stateMachine.ContextVelocityAdditive);
+            stateMachine.Body.AddForce(stateMachine.ContextVelocityMultiplier *
+                (velocity + stateMachine.ContextVelocityAdditive), ForceMode.VelocityChange);
         }
 
         public override void Enter()
