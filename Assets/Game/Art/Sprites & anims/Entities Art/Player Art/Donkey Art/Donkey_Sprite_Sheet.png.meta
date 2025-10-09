@@ -3,7 +3,7 @@ guid: fffa9601761f7ba47893db734d5ad650
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 1
@@ -77,9 +77,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -89,9 +90,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -101,9 +103,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
@@ -113,13 +116,14 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: all sprites_0
+      name: Donkey_Walk_Sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,6 +133,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -140,7 +145,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_1
+      name: Donkey_Walk_Sprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -150,6 +155,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -161,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_2
+      name: Donkey_Walk_Sprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -171,6 +177,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -182,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_3
+      name: Donkey_Walk_Sprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -192,6 +199,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -203,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_4
+      name: Donkey_Walk_Sprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -213,6 +221,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -224,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_5
+      name: Donkey_Walk_Sprite_5
       rect:
         serializedVersion: 2
         x: 960
@@ -234,6 +243,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -245,7 +255,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_6
+      name: Donkey_Walk_Sprite_6
       rect:
         serializedVersion: 2
         x: 1152
@@ -255,6 +265,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -266,16 +277,17 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_7
+      name: Donkey_Walk_Sprite_7
       rect:
         serializedVersion: 2
-        x: 1344
+        x: 1345
         y: 672
         width: 192
         height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -287,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_8
+      name: Donkey_Idle_Sprite_0
       rect:
         serializedVersion: 2
         x: 1536
@@ -297,6 +309,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -308,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_9
+      name: Donkey_Idle_Sprite_1
       rect:
         serializedVersion: 2
         x: 0
@@ -318,6 +331,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -329,7 +343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_10
+      name: Donkey_Idle_Sprite_2
       rect:
         serializedVersion: 2
         x: 192
@@ -339,6 +353,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -350,7 +365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_11
+      name: Donkey_Idle_Sprite_3
       rect:
         serializedVersion: 2
         x: 384
@@ -360,6 +375,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -371,7 +387,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_12
+      name: Donkey_Idle_Sprite_4
       rect:
         serializedVersion: 2
         x: 576
@@ -381,6 +397,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -392,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_13
+      name: Donkey_Idle_Sprite_5
       rect:
         serializedVersion: 2
         x: 768
@@ -402,6 +419,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -413,7 +431,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_14
+      name: Donkey_Hook_Up_Sprite_0
       rect:
         serializedVersion: 2
         x: 960
@@ -423,6 +441,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -434,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_15
+      name: Donkey_Hook_Up_Sprite_1
       rect:
         serializedVersion: 2
         x: 1152
@@ -444,6 +463,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -455,7 +475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_16
+      name: Donkey_Hook_Up_Sprite_2
       rect:
         serializedVersion: 2
         x: 1344
@@ -465,6 +485,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -476,7 +497,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_17
+      name: Donkey_Hook_Up_Sprite_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -486,6 +507,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -497,16 +519,17 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_18
+      name: Donkey_Hook_Up_Sprite_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 504
         width: 192
         height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -518,7 +541,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_19
+      name: Donkey_Punch_Sprite_0
       rect:
         serializedVersion: 2
         x: 192
@@ -528,6 +551,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -539,7 +563,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_20
+      name: Donkey_Punch_Sprite_1
       rect:
         serializedVersion: 2
         x: 384
@@ -549,6 +573,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -560,7 +585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_21
+      name: Donkey_Punch_Sprite_2
       rect:
         serializedVersion: 2
         x: 576
@@ -570,6 +595,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -581,7 +607,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_22
+      name: Donkey_Punch_Sprite_3
       rect:
         serializedVersion: 2
         x: 768
@@ -591,6 +617,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -602,7 +629,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_23
+      name: Donkey_Punch_Sprite_4
       rect:
         serializedVersion: 2
         x: 960
@@ -612,6 +639,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -623,7 +651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_24
+      name: Donkey_Punch_Sprite_5
       rect:
         serializedVersion: 2
         x: 1152
@@ -633,6 +661,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -644,7 +673,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_25
+      name: Donkey_Kick_Sprite_0
       rect:
         serializedVersion: 2
         x: 1344
@@ -654,6 +683,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -665,7 +695,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_26
+      name: Donkey_Kick_Sprite_1
       rect:
         serializedVersion: 2
         x: 1536
@@ -675,6 +705,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -686,7 +717,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_27
+      name: Donkey_Kick_Sprite_2
       rect:
         serializedVersion: 2
         x: 0
@@ -696,6 +727,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -707,7 +739,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_28
+      name: Donkey_Kick_Sprite_3
       rect:
         serializedVersion: 2
         x: 192
@@ -717,6 +749,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -728,7 +761,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_29
+      name: Donkey_Kick_Sprite_4
       rect:
         serializedVersion: 2
         x: 384
@@ -738,6 +771,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -749,7 +783,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_30
+      name: Donkey_Kick_Sprite_5
       rect:
         serializedVersion: 2
         x: 576
@@ -759,6 +793,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -770,16 +805,17 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_31
+      name: Donkey_Kick_Sprite_6
       rect:
         serializedVersion: 2
-        x: 768
+        x: 769
         y: 420
         width: 192
         height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -791,7 +827,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_32
+      name: Donkey_Kickback_Sprite_0
       rect:
         serializedVersion: 2
         x: 960
@@ -801,6 +837,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -812,7 +849,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_33
+      name: Donkey_Kickback_Sprite_1
       rect:
         serializedVersion: 2
         x: 1152
@@ -822,6 +859,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -833,7 +871,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_34
+      name: Donkey_Kickback_Sprite_2
       rect:
         serializedVersion: 2
         x: 1344
@@ -843,6 +881,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -854,7 +893,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_35
+      name: Donkey_Kickback_Sprite_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -864,6 +903,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -875,7 +915,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_36
+      name: Donkey_Kickback_Sprite_4
       rect:
         serializedVersion: 2
         x: 0
@@ -885,6 +925,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -896,7 +937,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_37
+      name: Donkey_Kickback_Sprite_5
       rect:
         serializedVersion: 2
         x: 192
@@ -906,6 +947,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -917,7 +959,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_38
+      name: Donkey_Kickback_Sprite_6
       rect:
         serializedVersion: 2
         x: 384
@@ -927,6 +969,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -938,7 +981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_39
+      name: Donkey_Special_Sprite_0
       rect:
         serializedVersion: 2
         x: 576
@@ -948,6 +991,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -959,7 +1003,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_40
+      name: Donkey_Special_Sprite_1
       rect:
         serializedVersion: 2
         x: 768
@@ -969,6 +1013,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -980,7 +1025,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_41
+      name: Donkey_Special_Sprite_2
       rect:
         serializedVersion: 2
         x: 960
@@ -990,6 +1035,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1001,7 +1047,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_42
+      name: Donkey_Special_Sprite_3
       rect:
         serializedVersion: 2
         x: 1152
@@ -1011,6 +1057,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1022,7 +1069,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_43
+      name: Donkey_Special_Sprite_4
       rect:
         serializedVersion: 2
         x: 1344
@@ -1032,6 +1079,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1043,16 +1091,17 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_44
+      name: Donkey_Special_Sprite_5
       rect:
         serializedVersion: 2
         x: 1536
-        y: 336
+        y: 335
         width: 192
         height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1064,7 +1113,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_45
+      name: Donkey_Special_Sprite_6
       rect:
         serializedVersion: 2
         x: 0
@@ -1074,6 +1123,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1085,7 +1135,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_46
+      name: Donkey_Special_Sprite_7
       rect:
         serializedVersion: 2
         x: 192
@@ -1095,6 +1145,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1106,7 +1157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_47
+      name: Donkey_Special_Sprite_8
       rect:
         serializedVersion: 2
         x: 384
@@ -1116,6 +1167,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1127,7 +1179,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_48
+      name: Donkey_Special_Sprite_9
       rect:
         serializedVersion: 2
         x: 576
@@ -1137,6 +1189,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1148,7 +1201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_49
+      name: Donkey_Special_Sprite_10
       rect:
         serializedVersion: 2
         x: 768
@@ -1158,6 +1211,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1169,7 +1223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_50
+      name: Donkey_Special_Sprite_11
       rect:
         serializedVersion: 2
         x: 960
@@ -1179,6 +1233,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1190,7 +1245,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_51
+      name: Donkey_Special_Sprite_12
       rect:
         serializedVersion: 2
         x: 1152
@@ -1200,6 +1255,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1211,7 +1267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_52
+      name: Donkey_Special_Sprite_13
       rect:
         serializedVersion: 2
         x: 1344
@@ -1221,6 +1277,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1232,7 +1289,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_53
+      name: Donkey_Special_Sprite_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -1242,6 +1299,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1253,7 +1311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_54
+      name: Donkey_Hit_Sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1263,6 +1321,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1274,7 +1333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_55
+      name: Donkey_Hit_Sprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -1284,6 +1343,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1295,7 +1355,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_56
+      name: Donkey_Hit_Sprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -1305,6 +1365,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1316,7 +1377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_57
+      name: Donkey_Death_Sprite_0
       rect:
         serializedVersion: 2
         x: 576
@@ -1326,6 +1387,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1337,7 +1399,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_58
+      name: Donkey_Death_Sprite_1
       rect:
         serializedVersion: 2
         x: 768
@@ -1347,6 +1409,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1358,7 +1421,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_59
+      name: Donkey_Death_Sprite_2
       rect:
         serializedVersion: 2
         x: 960
@@ -1368,6 +1431,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1379,7 +1443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_60
+      name: Donkey_Death_Sprite_3
       rect:
         serializedVersion: 2
         x: 1152
@@ -1389,6 +1453,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1400,7 +1465,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_61
+      name: Donkey_Death_Sprite_4
       rect:
         serializedVersion: 2
         x: 1344
@@ -1410,6 +1475,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1421,7 +1487,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all sprites_62
+      name: Donkey_Death_Sprite_5
       rect:
         serializedVersion: 2
         x: 1536
@@ -1431,6 +1497,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1452,6 +1519,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1473,6 +1541,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1494,6 +1563,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1515,6 +1585,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1536,6 +1607,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1557,6 +1629,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1578,6 +1651,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1599,6 +1673,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1620,6 +1695,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1641,6 +1717,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1662,6 +1739,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1673,6 +1751,7 @@ TextureImporter:
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 1f9c0193baa05dd4ab317aa92a660a8e
@@ -1682,81 +1761,83 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      all sprites_41: -858725538
-      all sprites_21: -665318483
-      all sprites_50: -1796363874
-      all sprites_2: 1531554651
-      all sprites_66: -329591366
-      all sprites_13: -862285316
-      all sprites_30: -167456112
-      all sprites_8: -412385181
-      all sprites_18: 940483489
-      all sprites_19: 604102457
-      all sprites_62: -1540842281
-      all sprites_5: -1869407165
-      all sprites_27: -179550022
-      all sprites_16: 515032772
-      all sprites_28: 1076313775
-      all sprites_9: 53553497
-      all sprites_31: -165733434
-      all sprites_71: -219917067
-      all sprites_4: -485340180
-      all sprites_10: -1845750260
-      all sprites_0: -1424612974
-      all sprites_23: -217132052
-      all sprites_26: 526983411
-      all sprites_35: 857122621
-      all sprites_59: 1861854074
-      all sprites_48: 1970586715
-      all sprites_61: -247344182
-      all sprites_42: 1918452497
-      all sprites_69: 118669258
+      Donkey_Death_Sprite_0: 2044930559
+      Donkey_Death_Sprite_1: -1542103751
+      Donkey_Death_Sprite_2: 1861854074
+      Donkey_Death_Sprite_3: 1966297405
+      Donkey_Death_Sprite_4: -247344182
+      Donkey_Death_Sprite_5: -1540842281
+      Donkey_Hit_Sprite_0: -603570199
+      Donkey_Hit_Sprite_1: -261271605
+      Donkey_Hit_Sprite_2: -1745319607
+      Donkey_Hook_Up_Sprite_0: 747095136
+      Donkey_Hook_Up_Sprite_1: -1881572011
+      Donkey_Hook_Up_Sprite_2: 515032772
+      Donkey_Hook_Up_Sprite_3: -1164067899
+      Donkey_Hook_Up_Sprite_4: 940483489
+      Donkey_Idle_Sprite_0: -412385181
+      Donkey_Idle_Sprite_1: 53553497
+      Donkey_Idle_Sprite_2: -1845750260
+      Donkey_Idle_Sprite_3: 954318568
+      Donkey_Idle_Sprite_4: 405414449
+      Donkey_Idle_Sprite_5: -862285316
+      Donkey_Kick_Sprite_0: -1538142079
+      Donkey_Kick_Sprite_1: 526983411
+      Donkey_Kick_Sprite_2: -179550022
+      Donkey_Kick_Sprite_3: 1076313775
+      Donkey_Kick_Sprite_4: -2051401467
+      Donkey_Kick_Sprite_5: -167456112
+      Donkey_Kick_Sprite_6: -165733434
+      Donkey_Kickback_Sprite_0: 1732708251
+      Donkey_Kickback_Sprite_1: 1919254513
+      Donkey_Kickback_Sprite_2: -54563909
+      Donkey_Kickback_Sprite_3: 857122621
+      Donkey_Kickback_Sprite_4: 1068829109
+      Donkey_Kickback_Sprite_5: -793817294
+      Donkey_Kickback_Sprite_6: 1335864516
+      Donkey_Punch_Sprite_0: 604102457
+      Donkey_Punch_Sprite_1: -2052439790
+      Donkey_Punch_Sprite_2: -665318483
+      Donkey_Punch_Sprite_3: 1486258186
+      Donkey_Punch_Sprite_4: -217132052
+      Donkey_Punch_Sprite_5: -212286910
+      Donkey_Special_Sprite_0: -1117763008
+      Donkey_Special_Sprite_1: 1465677368
+      Donkey_Special_Sprite_10: 368442721
+      Donkey_Special_Sprite_11: -1796363874
+      Donkey_Special_Sprite_12: -302535599
+      Donkey_Special_Sprite_13: 1662703086
+      Donkey_Special_Sprite_14: -1168996867
+      Donkey_Special_Sprite_2: -858725538
+      Donkey_Special_Sprite_3: 1918452497
+      Donkey_Special_Sprite_4: -1023951397
+      Donkey_Special_Sprite_5: 1040409061
+      Donkey_Special_Sprite_6: -143839373
+      Donkey_Special_Sprite_7: 1570184879
+      Donkey_Special_Sprite_8: 651410928
+      Donkey_Special_Sprite_9: 1970586715
+      Donkey_Walk_Sprite_0: -1424612974
+      Donkey_Walk_Sprite_1: -1564355312
+      Donkey_Walk_Sprite_2: 1531554651
+      Donkey_Walk_Sprite_3: 1821069935
+      Donkey_Walk_Sprite_4: -485340180
+      Donkey_Walk_Sprite_5: -1869407165
+      Donkey_Walk_Sprite_6: -1256134926
+      Donkey_Walk_Sprite_7: -1129542923
       all sprites_63: -169878840
-      all sprites_3: 1821069935
-      all sprites_44: 1040409061
-      all sprites_67: -532185124
-      all sprites_11: 954318568
-      all sprites_15: -1881572011
-      all sprites_60: 1966297405
-      all sprites_1: -1564355312
-      all sprites_45: -143839373
-      all sprites_46: 1570184879
-      all sprites_54: -603570199
-      all sprites_37: -793817294
-      all sprites_52: 1662703086
-      all sprites_24: -212286910
-      all sprites_70: -521706679
-      all sprites_34: -54563909
-      all sprites_68: -568696076
       all sprites_64: -1909995744
-      all sprites_40: 1465677368
-      all sprites_55: -261271605
-      all sprites_6: -1256134926
-      all sprites_22: 1486258186
-      all sprites_20: -2052439790
-      all sprites_49: 368442721
-      all sprites_56: -1745319607
-      all sprites_43: -1023951397
-      all sprites_57: 2044930559
-      all sprites_51: -302535599
-      all sprites_33: 1919254513
-      all sprites_53: -1168996867
-      all sprites_14: 747095136
-      all sprites_17: -1164067899
-      all sprites_7: -1129542923
-      all sprites_39: -1117763008
-      all sprites_29: -2051401467
-      all sprites_38: 1335864516
-      all sprites_12: 405414449
-      all sprites_25: -1538142079
+      all sprites_65: 734427803
+      all sprites_66: -329591366
+      all sprites_67: -532185124
+      all sprites_68: -568696076
+      all sprites_69: 118669258
+      all sprites_70: -521706679
+      all sprites_71: -219917067
       all sprites_72: -401039195
       all sprites_73: -1578538705
-      all sprites_32: 1732708251
-      all sprites_36: 1068829109
-      all sprites_65: 734427803
-      all sprites_47: 651410928
-      all sprites_58: -1542103751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
