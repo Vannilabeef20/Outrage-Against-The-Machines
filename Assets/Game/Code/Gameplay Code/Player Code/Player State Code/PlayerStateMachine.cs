@@ -15,8 +15,6 @@ namespace Game
     public class PlayerStateMachine : MonoBehaviour
     {
         [field: Header("REFERENCES"), HorizontalLine(2F, EColor.Red)]
-
-        [field: SerializeField, Required] public GameObject Parent { get; private set; }
         [field: SerializeField, Required] public PlayerHealthHandler HealthHandler { get; private set; }
         [field: SerializeField, Required] public PlayerInput PlayerInput { get; private set; }
         [field: SerializeField, Required] public Rigidbody Body { get; private set; }

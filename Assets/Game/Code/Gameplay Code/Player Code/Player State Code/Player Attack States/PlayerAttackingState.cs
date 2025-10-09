@@ -195,11 +195,11 @@ namespace Game
         {
             if (stateMachine.InputDirection.x > 0)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0)); //Flip Right
+                stateMachine.transform.localScale = Vector3.one;
             }
             else if (stateMachine.InputDirection.x < 0)
             {
-                stateMachine.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0)); //Flip left
+                stateMachine.transform.localScale = new Vector3(-1, 1, 1);
             }
         }
 

@@ -10,8 +10,8 @@ namespace Game
 {
 	public class SkipCutscene : MonoBehaviour
 	{
-        bool Lock;
         [SerializeField] PlayableDirector director;
+        bool Lock;
 
         private void Update()
         {
