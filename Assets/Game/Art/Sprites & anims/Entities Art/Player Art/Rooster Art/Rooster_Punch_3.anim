@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow Right Barrage
+  m_Name: Rooster_Punch_3
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -31,8 +31,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 1.5874972
+        time: 0.25
+        value: 1.0010872
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -41,7 +41,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1.6993673
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 0.7709923
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -52,7 +70,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -70,8 +88,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 2.4025543
+        time: 0.25
+        value: 1.6619356
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -80,7 +98,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 2.2800295
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 2.5245314
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -91,7 +127,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -109,17 +145,8 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.16666667
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
         time: 0.25
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -128,6 +155,15 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 0.33333334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -136,7 +172,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.41666666
+        time: 0.75
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -148,7 +184,37 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
+    classID: 65
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsTrigger
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -166,17 +232,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 2.61946
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.25
-        value: 0
+        value: 0.88222504
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -185,7 +242,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 2.6088052
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -193,7 +250,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.41666666
+        time: 0.6666667
+        value: 1.4580154
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -205,7 +271,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -223,17 +289,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 0.7549505
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.25
-        value: 0
+        value: 0.9476557
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -242,7 +299,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1.2876673
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -250,7 +307,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.41666666
+        time: 0.6666667
+        value: 1.5365305
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -262,7 +328,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -280,8 +346,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 1.6194603
+        time: 0.33333334
+        value: 0.6205025
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -290,7 +356,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 1.7046952
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0.9149399
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -301,7 +385,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -319,8 +403,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 2.274702
+        time: 0.33333334
+        value: 2.0665178
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -329,7 +413,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 2.3492823
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.6543055
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -340,7 +442,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -358,17 +460,8 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.25
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -377,7 +470,25 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 0.41666666
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
         value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -388,7 +499,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -406,17 +517,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 2.555534
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: 1.0523453
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -425,7 +527,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 2.662078
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.1701202
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -436,7 +556,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -454,17 +574,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 1.0532718
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: 3.2638965
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -473,7 +584,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 1.5753345
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.7851663
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -484,7 +613,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -492,19 +621,37 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -940543985, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+      value: {fileID: 1370969372, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
     - time: 0.083333336
-      value: {fileID: 10635122, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+      value: {fileID: 419429410, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
     - time: 0.16666667
-      value: {fileID: -541317826, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+      value: {fileID: -786539809, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
     - time: 0.25
-      value: {fileID: 2073110255, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+      value: {fileID: -1085937611, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
     - time: 0.33333334
-      value: {fileID: -1996302381, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+      value: {fileID: 1337302008, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
     - time: 0.41666666
-      value: {fileID: -1036984891, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+      value: {fileID: 131222367, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 0.5
+      value: {fileID: -1537108608, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 0.5833333
+      value: {fileID: 1811751492, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 0.6666667
+      value: {fileID: -98893384, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 0.75
+      value: {fileID: 1065411999, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 0.8333333
+      value: {fileID: -1655409515, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 0.9166667
+      value: {fileID: 1548844545, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 1
+      value: {fileID: 1378034077, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 1.0833334
+      value: {fileID: 1293683405, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - time: 1.1666666
+      value: {fileID: 837222102, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
     attribute: m_Sprite
-    path: Visual/Sprite
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -516,7 +663,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1686440701
+      path: 3877003184
       attribute: 605858901
       script: {fileID: 0}
       typeID: 65
@@ -525,7 +672,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1686440701
+      path: 3877003184
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 65
@@ -534,7 +681,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1686440701
+      path: 3877003184
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -543,7 +690,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1686440701
+      path: 3877003184
+      attribute: 2693561734
+      script: {fileID: 0}
+      typeID: 65
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3877003184
       attribute: 4197328169
       script: {fileID: 0}
       typeID: 65
@@ -552,7 +708,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1686440701
+      path: 3877003184
       attribute: 2368279999
       script: {fileID: 0}
       typeID: 65
@@ -561,7 +717,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4253834055
+      path: 2115964426
       attribute: 605858901
       script: {fileID: 0}
       typeID: 65
@@ -570,7 +726,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4253834055
+      path: 2115964426
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 65
@@ -579,7 +735,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4253834055
+      path: 2115964426
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -588,7 +744,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4253834055
+      path: 2115964426
       attribute: 4197328169
       script: {fileID: 0}
       typeID: 65
@@ -597,7 +753,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4253834055
+      path: 2115964426
       attribute: 2368279999
       script: {fileID: 0}
       typeID: 65
@@ -606,7 +762,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 312131828
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -615,18 +771,27 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -940543985, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
-    - {fileID: 10635122, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
-    - {fileID: -541317826, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
-    - {fileID: 2073110255, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
-    - {fileID: -1996302381, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
-    - {fileID: -1036984891, guid: 462ba285e570fc14780772f0a67b614c, type: 3}
+    - {fileID: 1370969372, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 419429410, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: -786539809, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: -1085937611, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 1337302008, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 131222367, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: -1537108608, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 1811751492, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: -98893384, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 1065411999, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: -1655409515, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 1548844545, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 1378034077, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 1293683405, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
+    - {fileID: 837222102, guid: af68591a1b0bf164aa38e0e5b8338c93, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 1.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -656,8 +821,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 1.5874972
+        time: 0.25
+        value: 1.0010872
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -666,7 +831,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1.6993673
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 0.7709923
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -677,7 +860,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -695,8 +878,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 2.4025543
+        time: 0.25
+        value: 1.6619356
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -705,7 +888,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 2.2800295
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 2.5245314
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -716,7 +917,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -734,17 +935,8 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.16666667
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
         time: 0.25
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -753,6 +945,15 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 0.33333334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -761,7 +962,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.41666666
+        time: 0.75
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -773,7 +974,37 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
+    classID: 65
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsTrigger
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -791,17 +1022,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 2.61946
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.25
-        value: 0
+        value: 0.88222504
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -810,7 +1032,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 2.6088052
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -818,7 +1040,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.41666666
+        time: 0.6666667
+        value: 1.4580154
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -830,7 +1061,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -848,17 +1079,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.16666667
-        value: 0.7549505
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.25
-        value: 0
+        value: 0.9476557
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -867,7 +1089,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1.2876673
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -875,7 +1097,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.41666666
+        time: 0.6666667
+        value: 1.5365305
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -887,7 +1118,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: States/AttackState/Hitbox_1
+    path: Rooster_AttackState/Rooster Hitbox_1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -905,8 +1136,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 1.6194603
+        time: 0.33333334
+        value: 0.6205025
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -915,7 +1146,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 1.7046952
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0.9149399
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -926,7 +1175,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -944,8 +1193,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 2.274702
+        time: 0.33333334
+        value: 2.0665178
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -954,7 +1203,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 2.3492823
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.6543055
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -965,7 +1232,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -983,17 +1250,8 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.25
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -1002,7 +1260,25 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 0.41666666
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
         value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -1013,7 +1289,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -1031,17 +1307,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 2.555534
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: 1.0523453
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -1050,7 +1317,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 2.662078
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.1701202
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -1061,7 +1346,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -1079,17 +1364,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
-        value: 1.0532718
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: 3.2638965
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -1098,7 +1374,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.41666666
-        value: 1.5753345
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.7851663
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -1109,7 +1403,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: States/AttackState/Hitbox_2
+    path: Rooster_AttackState/Rooster Hitbox_2
     classID: 65
     script: {fileID: 0}
     flags: 0

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rooster Run
+  m_Name: Cow_Walk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,23 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -322555891, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: 1095934634, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.083333336
-      value: {fileID: 2092761784, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: 886041271, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.16666667
-      value: {fileID: 1527945142, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: 1544558143, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.25
-      value: {fileID: 206655062, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: 1408373726, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.33333334
-      value: {fileID: 404474620, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: 1221624877, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.41666666
-      value: {fileID: 982275222, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: 437343015, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.5
-      value: {fileID: 145039634, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: -1793428372, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     - time: 0.5833333
-      value: {fileID: -2046792758, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+      value: {fileID: -1559550797, guid: c9abf178542740642a37112e2c9017f8, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Visual/Sprite
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -49,7 +49,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 312131828
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -58,14 +58,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -322555891, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: 2092761784, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: 1527945142, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: 206655062, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: 404474620, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: 982275222, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: 145039634, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
-    - {fileID: -2046792758, guid: 8398388690e3c9041a4620a5dfc21a70, type: 3}
+    - {fileID: 1095934634, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: 886041271, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: 1544558143, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: 1408373726, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: 1221624877, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: 437343015, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: -1793428372, guid: c9abf178542740642a37112e2c9017f8, type: 3}
+    - {fileID: -1559550797, guid: c9abf178542740642a37112e2c9017f8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -92,6 +92,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.083333336
     functionName: PlayFootstepSound
     data: 
     objectReferenceParameter: {fileID: 0}
