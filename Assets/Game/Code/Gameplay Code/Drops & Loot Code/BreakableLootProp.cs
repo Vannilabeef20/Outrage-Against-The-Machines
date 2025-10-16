@@ -9,13 +9,12 @@ namespace Game
     /// Creates a prop that can be broken to gather loot.
     /// </summary>
     [SelectionBase]
-    [DisallowMultipleComponent]
     public class BreakableLootProp : MonoBehaviour, IDamageble
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
         [SerializeField, Required] Animator animator;
         [SerializeField, Required] Transform lootSpawnPoint;
-        [SerializeField, Required] BoxCollider collisionCollider;
+        [SerializeField, Required] GameObject collisionCollider;
 
         [Tooltip("This BreakableLootProp's spriteRenderer.")]
         [SerializeField] SpriteRenderer spriteRenderer;
@@ -57,7 +56,7 @@ namespace Game
         private IEnumerator BreakRoutine()
         {
             hasBeenBroken = true;
-            collisionCollider.enabled = false;
+            collisionCollider.SetActive(false);
             float frameTime = animationDuration / animationSprites.Length;
             for (int i = 1; i < animationSprites.Length; i++) //Play break animation
             {

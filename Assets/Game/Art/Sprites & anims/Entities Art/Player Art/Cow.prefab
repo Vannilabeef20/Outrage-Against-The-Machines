@@ -1536,6 +1536,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3333887464617991422, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: movementSpeed.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333887464617991422, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: movementSpeed.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4515991989579779421, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_Name
       value: Cow

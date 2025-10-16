@@ -823,6 +823,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 842576697805230650, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: StateAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 14e4a78e1ff355d41af930a05de09333, type: 2}
+    - target: {fileID: 862404895556340941, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: StateAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: a41696f566223d74e8e1a68bb1369e87, type: 2}
     - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -838,6 +846,18 @@ PrefabInstance:
     - target: {fileID: 1813037070272515745, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333887464617991422, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: StateAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: cdb1f4c55925c9f41a435f6f4c7135e2, type: 2}
+    - target: {fileID: 3333887464617991422, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: movementSpeed.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333887464617991422, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: movementSpeed.y
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4515991989579779421, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_Name
@@ -883,6 +903,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5022439074262777319, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: StateAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 9268ecbd0830a56439c87175c11245f7, type: 2}
+    - target: {fileID: 9126867838815848117, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: StateAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 7fcb6bd0712adbd41b2ee34607a18496, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

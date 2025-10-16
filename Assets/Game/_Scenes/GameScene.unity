@@ -2494,8 +2494,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 100.267624, y: 7.7317066, z: 3.114296}
-  m_Center: {x: -0.032592773, y: 3.3658528, z: 1.8377686}
+  m_Size: {x: 100.267624, y: 7.7317066, z: 3.3472557}
+  m_Center: {x: -0.032592773, y: 3.3658528, z: 1.7212887}
 --- !u!4 &870660653
 Transform:
   m_ObjectHideFlags: 0
@@ -3418,8 +3418,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.09618, y: 1.9546525, z: 3.1875255}
-  m_Center: {x: 1.548098, y: -0.2663008, z: 1.5437628}
+  m_Size: {x: 4.09618, y: 1.593011, z: 3.1875255}
+  m_Center: {x: 1.548098, y: -0.08547935, z: 1.5437628}
 --- !u!114 &1223165239 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5319035583287885601, guid: 71f99e8d6a1b2c94095db1cc17a88cc5, type: 3}
@@ -3935,7 +3935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347210300}
   - component: {fileID: 1347210301}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Up_boundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4465,7 +4465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499558726}
   - component: {fileID: 1499558727}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Inner_boundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4500,14 +4500,14 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 12.884495, y: 2.8719895, z: 1}
-  m_Center: {x: 5.942246, y: 0.17924282, z: 0}
+  m_Size: {x: 12.884495, y: 2.476145, z: 1.0819423}
+  m_Center: {x: 5.942246, y: 0.3771595, z: 0.040970054}
 --- !u!1001 &1504777826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5606,10 +5606,6 @@ PrefabInstance:
     - target: {fileID: 1488542923154001142, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_Name
       value: BreakableBox_5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1488542923154001146, guid: e565d5acf41caed468d27fdac93e6d17, type: 3}
       propertyPath: m_LocalPosition.x
