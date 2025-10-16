@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: e8d50f3391b398a49b3098d4df329342
+guid: b2e73e8129042dd4686985c7de07f2da
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -9050087031375138951
+    second: Django Guarda-Sheet_0
+  - first:
+      213: -5590067056057084054
+    second: Django Guarda-Sheet_1
+  - first:
+      213: 4060869966018286399
+    second: Django Guarda-Sheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -107,6 +116,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 16384
     resizeAlgorithm: 0
@@ -123,89 +145,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CaixaLoot_0
+      name: Donkey_Guard_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        width: 48
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba04e00cc8518d942a5ae7fdcd1cc295
-      internalID: 1871905917
+      spriteID: b7c32d276b3b5b4479adfc2d39f9b58f
+      internalID: -361217943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaixaLoot_1
+      name: Donkey_Guard_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 48
         y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        width: 48
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1fb8cff93440684a8e7935fc351101f
-      internalID: 166749694
+      spriteID: 165e21fcd0cbe164690bf6d573768a50
+      internalID: -542029111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaixaLoot_2
+      name: Donkey_Guard_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 96
         y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        width: 48
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a07771a2d358ea54e9a8095f89d2940c
-      internalID: 1734124753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaixaLoot_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9ed2329a1e0a6f45a4fbd0f58b0be58
-      internalID: -1969572816
+      spriteID: 7d0e644ed8e6a4542b83a780259dcb53
+      internalID: -1055466690
       vertices: []
       indices: 
       edges: []
@@ -224,10 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CaixaLoot_0: 1871905917
-      CaixaLoot_1: 166749694
-      CaixaLoot_2: 1734124753
-      CaixaLoot_3: -1969572816
+      Donkey_Guard_0: -361217943
+      Donkey_Guard_1: -542029111
+      Donkey_Guard_2: -1055466690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
