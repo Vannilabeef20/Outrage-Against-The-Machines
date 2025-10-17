@@ -907,6 +907,10 @@ PrefabInstance:
       propertyPath: StateAnimation
       value: 
       objectReference: {fileID: 7400000, guid: 9268ecbd0830a56439c87175c11245f7, type: 2}
+    - target: {fileID: 8649081785514632841, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d70419ec89c4eef4fac3f37250069e00, type: 2}
     - target: {fileID: 9126867838815848117, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: StateAnimation
       value: 
