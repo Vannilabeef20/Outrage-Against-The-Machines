@@ -823,6 +823,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 473606604381027411, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: <PlayerCombos>k__BackingField.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 473606604381027411, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: '<PlayerCombos>k__BackingField.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: abacec3f0b032ae4595ec89953663d0b, type: 2}
+    - target: {fileID: 473606604381027411, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: '<PlayerCombos>k__BackingField.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 99acf27903f483f41b2d01282461e337, type: 2}
+    - target: {fileID: 473606604381027411, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: '<PlayerCombos>k__BackingField.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7450651712cb9ca4a872a3baf51c09c5, type: 2}
+    - target: {fileID: 473606604381027411, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: '<PlayerCombos>k__BackingField.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c0eec58d101bd845ac0490ea1ec49f9, type: 2}
+    - target: {fileID: 473606604381027411, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: '<PlayerCombos>k__BackingField.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 35b243a72390a3e49b7b2d1ca9be3f7e, type: 2}
     - target: {fileID: 842576697805230650, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: StateAnimation
       value: 
