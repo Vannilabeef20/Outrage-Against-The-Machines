@@ -61,6 +61,24 @@ namespace Game
 		}
         #endregion
 
+		public static int Wrap(this int value, int max, int min = 0)
+		{
+            int range = max - min + 1;
+            value = (value - min) % range;
+            if (value < 0) value += range;
+
+            return value + min;
+        }
+
+        public static float Wrap(this float value, float max, float min = 0)
+        {
+            float range = max - min + 1;
+            value = (value - min) % range;
+            if (value < 0) value += range;
+
+            return value + min;
+        }
+
         /// <summary>
         /// Checks if this Vector3 has its values between a "min" and a "max" Vector3.
         /// </summary>
@@ -71,32 +89,10 @@ namespace Game
         /// below its counterpart in "min", or higher than "max".</returns>
         public static bool InsideRange(this Vector3 vector, Vector3 min, Vector3 max)
         {
-			if(vector.x < min.x)
-            {
-				return false;
-            }
-			if(vector.y < min.y)
-            {
-				return false;
-            }
-			if(vector.z < min.z)
-            {
-				return false;
-			}
-			if (vector.x > max.x)
-			{
-				return false;
-			}
-			if (vector.y > max.y)
-			{
-				return false;
-			}
-			if (vector.z > max.z)
-			{
-				return false;
-			}
-			return true;
-		}
+            return vector.x >= min.x && vector.x <= max.x &&
+				   vector.y >= min.y && vector.y <= max.y &&
+				   vector.z >= min.z && vector.z <= max.z;
+        }
 
 		/// <summary>
 		/// Checks if this Vector2 has its values between a "min" and a "max" Vector2.
@@ -108,24 +104,9 @@ namespace Game
 		/// below its counterpart in "min", or higher than "max".</returns>
 		public static bool InsideRange(this Vector2 vector, Vector2 min, Vector2 max)
 		{
-			if (vector.x < min.x)
-			{
-				return false;
-			}
-			if (vector.y < min.y)
-			{
-				return false;
-			}
-			if (vector.x > max.x)
-			{
-				return false;
-			}
-			if (vector.y > max.y)
-			{
-				return false;
-			}
-			return true;
-		}
+			return vector.x >= min.x && vector.x <= max.x &&
+				   vector.y >= min.y && vector.y <= max.y;
+        }
 
 		/// <summary>
 		/// Absolutes all values in this Vector3.
@@ -306,8 +287,8 @@ namespace Game
 		public static void DrawBoxCastBox(Vector3 origin, Vector3 halfExtents, Quaternion orientation, Vector3 direction, float distance, Color color)
 		{
 			direction.Normalize();
-			Box bottomBox = new Box(origin, halfExtents, orientation);
-			Box topBox = new Box(origin + (direction * distance), halfExtents, orientation);
+			Box bottomBox = new(origin, halfExtents, orientation);
+			Box topBox = new(origin + (direction * distance), halfExtents, orientation);
 
 			Debug.DrawLine(bottomBox.BackBottomLeft, topBox.BackBottomLeft, color);
 			Debug.DrawLine(bottomBox.BackBottomRight, topBox.BackBottomRight, color);
@@ -347,7 +328,7 @@ namespace Game
 
 		public static void DrawBox(Vector3 center, Vector3 HalfExtents, Quaternion orientation, Color color)
 		{
-			Box box = new Box(center, HalfExtents, orientation);
+			Box box = new(center, HalfExtents, orientation);
 
 			Debug.DrawLine(box.FrontTopLeft, box.FrontTopRight, color);
 			Debug.DrawLine(box.FrontTopRight, box.FrontBottomRight, color);

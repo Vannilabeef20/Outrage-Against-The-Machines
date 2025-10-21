@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488542922225973093}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0.139, y: 0, z: -0.28}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.021, y: 0.64, z: 0.692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1488542923154001146}
-  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488542923154001142
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,10 +42,10 @@ GameObject:
   - component: {fileID: 1488542923154001146}
   - component: {fileID: 1488542923154001141}
   - component: {fileID: 4574465553870493326}
+  - component: {fileID: 5330620595121035856}
   - component: {fileID: 4942430763238729706}
   - component: {fileID: 6852360633322229470}
   - component: {fileID: 4051650251682079433}
-  - component: {fileID: 5330620595121035856}
   m_Layer: 8
   m_Name: BreakableBox
   m_TagString: Untagged
@@ -84,20 +84,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5330620595121035856}
-  lootSpawnPoint: {fileID: 1488542922225973092}
-  collisionCollider: {fileID: 2579454797233906409}
   spriteRenderer: {fileID: 2640279932093584478}
-  hasBeenBroken: 0
-  animationSprites:
-  - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  lootSpawnPoint: {fileID: 1488542922225973092}
+  breakTrigger: -843218978
   animationDuration: 1
-  fadeFlickerColor: {r: 1, g: 1, b: 1, a: 0.4}
-  fadeFlickerDuration: 1.5
-  fadeFlickerLenght: 0.1
-  FrameToSpawn: 2
   lootTable:
     totalWeight: 100
     itemDrops:
@@ -122,6 +112,7 @@ MonoBehaviour:
       ProbabilityPercent: 19
       ProbabilityRange: {x: 81, y: 100}
   moneyDrop: {fileID: 4574465553870493326}
+  hasBeenBroken: 0
 --- !u!114 &4574465553870493326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,13 +130,36 @@ MonoBehaviour:
   scrapUnit: {fileID: 4225638560684016975, guid: 49fe93000a37d1c408f41c6093e83f86, type: 3}
   scrapTen: {fileID: 4225638560684016975, guid: 99c0893dcdfad0041873fd3144452b56, type: 3}
   scrapHundred: {fileID: 4225638560684016975, guid: af9e965560cea234dbf2aa4559ca5cc9, type: 3}
-  rotAngle: 45
+  impulseIntensity: 4
+  angle: 45
   minScapDrop: 10
   maxScapDrop: 15
   hasReserveScrap: 0
   reserveAmount: 0
   randomAmount: 0
   scrapList: []
+--- !u!95 &5330620595121035856
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488542923154001142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3eb36934720fe494f81473aa74b94334, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4942430763238729706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,28 +234,6 @@ MonoBehaviour:
   reversed: 0
   audioEmitters:
   - {fileID: 4942430763238729706}
---- !u!95 &5330620595121035856
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488542923154001142}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3eb36934720fe494f81473aa74b94334, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2579454797233906409
 GameObject:
   m_ObjectHideFlags: 0

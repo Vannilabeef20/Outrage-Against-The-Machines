@@ -12,34 +12,18 @@ namespace Game
     public class BreakableLootProp : MonoBehaviour, IDamageble
     {
         [Header("REFERENCES"), HorizontalLine(2f, EColor.Red)]
+
         [SerializeField, Required] Animator animator;
         [SerializeField, Required] Transform lootSpawnPoint;
-        [SerializeField, Required] GameObject collisionCollider;
-
-        [Tooltip("This BreakableLootProp's spriteRenderer.")]
-        [SerializeField] SpriteRenderer spriteRenderer;
 
         [Header("PARAMETERS & VARIABLES"), HorizontalLine(2f, EColor.Orange)]
 
-        [Tooltip("True if the box has been broken already.")]
-        [SerializeField, ReadOnly] bool hasBeenBroken;
+        [SerializeField, AnimatorParam("animator", AnimatorControllerParameterType.Trigger)] int breakTrigger;
 
-        [Tooltip("This BreakableLootProp's break animation sprites.")]
-        [SerializeField, ShowAssetPreview] Sprite[] animationSprites;
-
-        [Tooltip("How long will the break animation last for.")]
-        [SerializeField] float animationDuration;
-
-        [SerializeField] Color fadeFlickerColor;
-        [SerializeField] float fadeFlickerDuration;
-        [SerializeField] float fadeFlickerLenght;
-
-        [Tooltip("The animation frame which loot will spawn.")]
-        [SerializeField] int FrameToSpawn;
-
-        [Tooltip("Manages the chances for loot drops.")]
         [SerializeField] LootTable lootTable;
         [SerializeField] ScrapDropper moneyDrop;
+
+        [SerializeField, ReadOnly] bool hasBeenBroken;
 
         private void Awake()
         {
@@ -50,42 +34,19 @@ namespace Game
         {
             if (hasBeenBroken) return;
 
-            StartCoroutine(BreakRoutine());
+            animator.SetTrigger(breakTrigger);
         }
 
-        private IEnumerator BreakRoutine()
+        public void SpawnLoot()
         {
-            hasBeenBroken = true;
-            collisionCollider.SetActive(false);
-            float frameTime = animationDuration / animationSprites.Length;
-            for (int i = 1; i < animationSprites.Length; i++) //Play break animation
-            {
-                yield return new WaitForSeconds(frameTime);
-                spriteRenderer.sprite = animationSprites[i];
-                if (i == FrameToSpawn) //Spawn loot at the right frame
-                {
-                    Instantiate(lootTable.PickRandomDrop(), lootSpawnPoint.position, Quaternion.identity);
-                    moneyDrop.SpawnAllScrap();
-                }
-            }
-            float time = Time.time;
-            float startTime = Time.time;
-            Color originalColor = spriteRenderer.color;
-            while (time - startTime < fadeFlickerDuration) //Flicker fade
-            {
-                yield return new WaitForSeconds(fadeFlickerLenght);
-                if (spriteRenderer.color == originalColor)
-                {
-                    spriteRenderer.color = fadeFlickerColor;
-                }
-                else
-                {
-                    spriteRenderer.color = originalColor;
-                }
-                time = Time.time;
-            }
-            Destroy(gameObject);
+            Instantiate(lootTable.PickRandomDrop(), lootSpawnPoint.position, Quaternion.identity);
+            moneyDrop.SpawnAllScrap();
         }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }     
 
 #if UNITY_EDITOR
         private void OnValidate()
