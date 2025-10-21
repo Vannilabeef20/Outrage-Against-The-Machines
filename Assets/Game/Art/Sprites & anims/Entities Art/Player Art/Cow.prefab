@@ -1544,6 +1544,14 @@ PrefabInstance:
       propertyPath: movementSpeed.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4250759280437507803, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.393785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250759280437507803, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Center.z
+      value: 0.19689266
+      objectReference: {fileID: 0}
     - target: {fileID: 4515991989579779421, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_Name
       value: Cow
@@ -1587,6 +1595,14 @@ PrefabInstance:
     - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989701672261852633, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.393785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989701672261852633, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Center.z
+      value: 0.19689266
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

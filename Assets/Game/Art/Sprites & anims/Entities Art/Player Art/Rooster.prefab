@@ -883,6 +883,14 @@ PrefabInstance:
       propertyPath: movementSpeed.y
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4250759280437507803, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4659892
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250759280437507803, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Center.z
+      value: 0.2329945
+      objectReference: {fileID: 0}
     - target: {fileID: 4515991989579779421, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_Name
       value: Rooster
@@ -926,6 +934,14 @@ PrefabInstance:
     - target: {fileID: 4666246274584589346, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989701672261852633, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4659889
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989701672261852633, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
+      propertyPath: m_Center.z
+      value: 0.23299451
       objectReference: {fileID: 0}
     - target: {fileID: 5022439074262777319, guid: aa7d2077180dc7b43937a681328dd82a, type: 3}
       propertyPath: StateAnimation
