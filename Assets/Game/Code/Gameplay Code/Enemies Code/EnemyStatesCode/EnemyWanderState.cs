@@ -47,11 +47,11 @@ namespace Game
             }
             if (wanderPoints[currentPointIndex].position.x + 0.1f < transform.position.x)
             {
-                MachineRotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                stateMachine.transform.localScale = new Vector3(-1, 1, 1);
             }
             else if (wanderPoints[currentPointIndex].position.x - 0.1f > transform.position.x)
             {
-                MachineRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                stateMachine.transform.localScale = new Vector3(1, 1, 1);
             }
         }
 
@@ -76,8 +76,6 @@ namespace Game
             }
 
             Velocity = (wanderPoints[currentPointIndex].position - BodyPosition).normalized * speed;
-
-            BodyPosition = BodyPosition.ToXYY();
         }
 
         public override void Enter()
