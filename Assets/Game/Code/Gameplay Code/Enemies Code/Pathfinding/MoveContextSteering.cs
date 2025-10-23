@@ -17,15 +17,43 @@ namespace Game
 
 
         [Header("PATHFINDING VARIABLES"), HorizontalLine(2f, EColor.Yellow)]
-        [SerializeField, AllowNesting, ReadOnly] Vector3 normal = new Vector3(0, 1, -1);
         Vector3[] rayDirections;
         float[] interestValues;
         float[] obstacleValues;
+
+        public override void Setup()
+        {
+            rayDirections = new Vector3[numberOfRays];
+            interestValues = new float[numberOfRays];
+            obstacleValues = new float[numberOfRays];
+
+
+            for (int i = 0; i < numberOfRays; i++)
+            {
+                float angle = 2 * Mathf.PI / numberOfRays * i;
+                rayDirections[i] = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
+            }
+        }
+
+        public override void OnGizmo()
+        {
+#if UNITY_EDITOR
+            if (body == null)
+            {
+                return;
+            }
+            Handles.color = Color.red;
+            Handles.DrawWireArc(body.position, Vector3.up, Vector3.up, 360, maxAvoidanceRadius);
+            Handles.color = Color.yellow;
+            Handles.DrawWireArc(body.position, Vector3.up, Vector3.up, 360, obstacleDetectionRadius);
+#endif
+        }
 
         public override Vector3 GetMovementDirection(Vector3 targetPosition, bool IsInsidePlayZone)
         { 
             return CalculateContextSteering(CalculateTargetDirection(targetPosition), IsInsidePlayZone);
         }
+
         public virtual Vector3 CalculateTargetDirection(Vector3 targetPosition)
         {
             Vector3 targetDirection = targetPosition - body.position;
@@ -38,16 +66,22 @@ namespace Game
 
         private Vector3 CalculateContextSteering(Vector3 targetDirection, bool IsInsidePlayZone)
         {
+
+            //Create rays and compute obstacle value
             for (int i = 0; i < rayDirections.Length; i++)
             {
                 interestValues[i] = 0f;
                 obstacleValues[i] = 0f;
+
                 interestValues[i] = Mathf.Clamp01(Vector3.Dot(targetDirection, rayDirections[i]));
+
                 if (IsInsidePlayZone)
                 {
                     if (Physics.Raycast(body.position, rayDirections[i], out RaycastHit info, obstacleDetectionRadius, ObstacleLayerMask))
                     {
                          float distance = Vector3.Distance(info.point, body.position);
+
+                         //Make obstacle value proportional to distance to obstacle
                          obstacleValues[i] = 1 - distance.Map(maxAvoidanceRadius, obstacleDetectionRadius);
                     }
                     else
@@ -79,35 +113,5 @@ namespace Game
 #endif
             return finalDirection;
         }
-
-        public override void Setup()
-        {
-            rayDirections = new Vector3[numberOfRays];
-            interestValues = new float[numberOfRays];
-            obstacleValues = new float[numberOfRays];
-            for (int i = 0; i < numberOfRays; i++)
-            {
-                float angle = 2 * Mathf.PI / numberOfRays * i;
-                angle *= 180 / Mathf.PI;
-                rayDirections[i] = Quaternion.Euler(0, 0, angle) * Vector3.up;
-                rayDirections[i] = new Vector3(rayDirections[i].x, rayDirections[i].y, rayDirections[i].y);
-                rayDirections[i].Normalize();
-            }
-        }
-
-        public override void OnGizmo()
-        {
-#if UNITY_EDITOR
-            if(body == null)
-            {
-                return;
-            }
-            Handles.color = Color.red;
-            Handles.DrawWireArc(body.position - (normal * maxAvoidanceRadius / 2), normal, Vector3.up, 360, maxAvoidanceRadius);
-            Handles.color = Color.yellow;
-            Handles.DrawWireArc(body.position - (normal * obstacleDetectionRadius / 2), normal, Vector3.up, 360, obstacleDetectionRadius);
-#endif
-        }
-
     }
 }
