@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 2821621923241712306}
   image: {fileID: 0}
   targetType: 0
   playOnAwake: 1
@@ -381,8 +381,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4936705, y: 0.27291107, z: 13.66593}
-  m_Center: {x: -0.000011555083, y: -0.00006723404, z: -0.87454516}
+  m_Size: {x: 1.4936705, y: 0.44691944, z: 13.66593}
+  m_Center: {x: -0.000011555083, y: 0.08693695, z: -0.87454516}
 --- !u!114 &8725545586810928569
 MonoBehaviour:
   m_ObjectHideFlags: 0
