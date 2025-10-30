@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4013578973896280534
+--- !u!1001 &3736145445523698405
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2257146963060982452, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.203
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257146963060982452, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.353
+      objectReference: {fileID: 0}
     - target: {fileID: 3001008943106286405, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_Name
-      value: Life Pickup 1
+      value: Chocolate Milk Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 7479726675734475958, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53,6 +61,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7502113874478746812, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1524194900, guid: 3a98c205dfc9c99468cbaa25a12d68f6, type: 3}
+    - target: {fileID: 7502113874478746812, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -62,18 +74,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502113874478746812, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
-      propertyPath: 'pickupEffects.Array.data[0]'
-      value: 1155612705589035076
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
-      propertyPath: 'managedReferences[1155612705589035076]'
-      value: Assembly-CSharp Game.LifeDropEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
-      propertyPath: managedReferences[1155612705589035076].lifeAmount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

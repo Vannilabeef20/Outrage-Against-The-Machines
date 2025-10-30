@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4013578973896280534
+--- !u!1001 &2300284793051585188
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2257146963060982452, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3001008943106286405, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_Name
-      value: Life Pickup 1
+      value: Energy Drink Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 7479726675734475958, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7502113874478746812, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ff85a452b581ac498d6469a5a477691, type: 3}
+    - target: {fileID: 7502113874478746812, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -66,15 +74,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: 'pickupEffects.Array.data[0]'
-      value: 1155612705589035076
+      value: 1155612705589035078
       objectReference: {fileID: 0}
     - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
-      propertyPath: 'managedReferences[1155612705589035076]'
-      value: Assembly-CSharp Game.LifeDropEffect
+      propertyPath: 'managedReferences[1155612705589035078]'
+      value: Assembly-CSharp Game.HealDropEffect
       objectReference: {fileID: 0}
     - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
-      propertyPath: managedReferences[1155612705589035076].lifeAmount
+      propertyPath: managedReferences[1155612705589035078].flat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: managedReferences[1155612705589035078].percent
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: managedReferences[1155612705589035078].healFlat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: managedReferences[1155612705589035078].healPercent
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
