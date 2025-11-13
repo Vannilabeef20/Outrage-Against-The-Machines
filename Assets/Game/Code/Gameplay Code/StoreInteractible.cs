@@ -65,7 +65,7 @@ namespace Game
             costTMP.color = originalColor;
             costAmount = originalCost;
             UpdateCost();
-            Instantiate(item, spawnPoint.transform.position.ToXYY(), Quaternion.identity);
+            Instantiate(item, spawnPoint.transform.position, Quaternion.identity);
         }
     }
 }

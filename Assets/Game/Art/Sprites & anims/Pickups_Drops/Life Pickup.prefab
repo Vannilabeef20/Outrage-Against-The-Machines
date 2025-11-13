@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3001008943106286405, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_Name
-      value: Life Pickup 1
+      value: Life Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 7479726675734475958, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,15 +65,39 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: useImmediatly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: <Icon>k__BackingField
+      value: 
+      objectReference: {fileID: 143103275, guid: 884af2497d63a0b409b16efd115494d6, type: 3}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: pickupEffects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: 'pickupEffects.Array.data[0]'
-      value: 1155612705589035076
+      value: 5261352407330193486
       objectReference: {fileID: 0}
     - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: 'managedReferences[1155612705589035076]'
       value: Assembly-CSharp Game.LifeDropEffect
       objectReference: {fileID: 0}
     - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: 'managedReferences[5261352407330193486]'
+      value: Assembly-CSharp Game.LifeDropEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
       propertyPath: managedReferences[1155612705589035076].lifeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696150908614659406, guid: d5f9202dd67fa6a45a5c7a2ad8d5cb3f, type: 3}
+      propertyPath: managedReferences[5261352407330193486].lifeAmount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

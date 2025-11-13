@@ -144,18 +144,13 @@ MonoBehaviour:
   pickEmitter: {fileID: -8405688279234451475}
   pickupEmitter: {fileID: 7194169049714867281}
   useImmediatly: 0
-  pickupEffects:
-  - rid: 3689197286202802177
+  pickupEffects: []
   floatRange: {x: 0, y: 0.2, z: 0}
   floatDuration: 1.5
   floatEase: 4
   references:
     version: 2
-    RefIds:
-    - rid: 3689197286202802177
-      type: {class: EnergyDropEffect, ns: Game, asm: Assembly-CSharp}
-      data:
-        specialCharge: 300
+    RefIds: []
 --- !u!114 &7194169049714867281
 MonoBehaviour:
   m_ObjectHideFlags: 0

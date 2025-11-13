@@ -124,17 +124,11 @@ namespace Game
                 //Wait till all enemies are dead
                 if (currentEncounterIndex == LevelEncounters.Encounters.Length - 1)
                 {
-                    while (enemiesAlive.Count > 1)
-                    {
-                        yield return null;
-                    }
+                    while (enemiesAlive.Count > 1) yield return null;
                 }
                 else
                 {
-                    while (enemiesAlive.Count > 0)
-                    {
-                        yield return null;
-                    }
+                    while (enemiesAlive.Count > 0) yield return null;
                 }
             }
 
@@ -154,24 +148,18 @@ namespace Game
 
         public void SpawnEnemy()
         {
-            if(enemiesToSpawn.Count < 1)
-            {
-                return;
-            }
-            Vector3 tempPosition = transform.position.ToXYY();
-            float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
-            if (UnityEngine.Random.Range(0, 2) == 0)
-            {
-                Instantiate(enemiesToSpawn[0], tempPosition + new Vector3(UnityEngine.Random.Range(spawnDistance.x, spawnDistance.y),
-                   tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
-                enemiesToSpawn.RemoveAt(0);
-            }
-            else
-            {
-                Instantiate(enemiesToSpawn[0], tempPosition + new Vector3(UnityEngine.Random.Range(-spawnDistance.x, -spawnDistance.y),
-                   tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
-                enemiesToSpawn.RemoveAt(0);
-            }
+            if(enemiesToSpawn.Count < 1) return;
+
+            Vector3 tempPosition = transform.position;
+
+            int dirX;
+            dirX = Random.Range(0, 2) == 0 ? 1 : -1;
+            float randomX = Random.Range(spawnDistance.x, spawnDistance.y) * dirX;
+
+            float randomZ = Random.Range(spawnHeight.x, spawnHeight.y);
+
+            Instantiate(enemiesToSpawn[0], tempPosition + new Vector3(randomX, 0, randomZ), Quaternion.identity, transform);
+            enemiesToSpawn.RemoveAt(0);
         }
 
 #if UNITY_EDITOR
@@ -182,18 +170,15 @@ namespace Game
         [Button("Spawn testValue enemy cube")]
         public void SpawnTest()
         {
-            Vector3 tempPosition = transform.position.ToXYY();
-            float tempSpawnHeight = UnityEngine.Random.Range(spawnHeight.x, spawnHeight.y);
-            if (UnityEngine.Random.Range(0, 2) == 0)
-            {
-                Instantiate(testSpawnEnemy, tempPosition + new Vector3(UnityEngine.Random.Range(spawnDistance.x, spawnDistance.y),
-                   tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
-            }
-            else
-            {
-                Instantiate(testSpawnEnemy, tempPosition + new Vector3(UnityEngine.Random.Range(-spawnDistance.x, -spawnDistance.y),
-                   tempSpawnHeight, tempSpawnHeight), Quaternion.identity, transform);
-            }
+            Vector3 tempPosition = transform.position;
+
+            int dirX;
+            dirX = Random.Range(0, 2) == 0 ? 1 : -1;
+            float randomX = Random.Range(spawnDistance.x, spawnDistance.y) * dirX;
+
+            float randomZ = Random.Range(spawnHeight.x, spawnHeight.y);
+
+            Instantiate(testSpawnEnemy, tempPosition + new Vector3(randomX, 0, randomZ), Quaternion.identity, transform);
         }
 
         /// <summary>
@@ -224,60 +209,38 @@ namespace Game
             #region DRAW SPAWN BOXES
             Handles.color = handlesSpawnLineColor;
 
-            //Furthest = Max distance .y, Closest = Min distance .x, Upper = MaxHeight .y, Lower = MinHeight .x, Left Blue, Right Magenta                                           
-            //Furtherst upper right 
-            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y,0);
+            // Compute the 8 corner points of the box
+            Vector3 center = transform.position;
 
-            //Furtherst lower right                                                                              
-            point2Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x,0);
+            Vector3[] corners = new Vector3[8];
 
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //In betweem furthest and closest upper right upper                                                  
-            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.x,0);
+            // Right side
+            //corners[0] = new Vector3(center.x + spawnDistance.x, center.y + spawnHeight.x, center.z + spawnDepth.x); // right lower close
+            //corners[1] = new Vector3(center.x + spawnDistance.x, center.y + spawnHeight.y, center.z + spawnDepth.x); // right upper close
+            //corners[2] = new Vector3(center.x + spawnDistance.x, center.y + spawnHeight.x, center.z + spawnDepth.y); // right lower far
+            //corners[3] = new Vector3(center.x + spawnDistance.x, center.y + spawnHeight.y, center.z + spawnDepth.y); // right upper far
 
-            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x,0);
+            // Left side
+            //corners[4] = new Vector3(center.x - spawnDistance.y, center.y + spawnHeight.x, center.z + spawnDepth.x); // left lower close
+            //corners[5] = new Vector3(center.x - spawnDistance.y, center.y + spawnHeight.y, center.z + spawnDepth.x); // left upper close
+            //corners[6] = new Vector3(center.x - spawnDistance.y, center.y + spawnHeight.x, center.z + spawnDepth.y); // left lower far
+            //corners[7] = new Vector3(center.x - spawnDistance.y, center.y + spawnHeight.y, center.z + spawnDepth.y); // left upper far
 
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //In betweem furthest and closest lower right lower                                                  
-            point1Pos = new Vector3(transform.position.x + spawnDistance.y, transform.position.y + spawnHeight.y,0);
+            float s = handlesLineScale;
 
-            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y,0);
+            // Connect edges (12 lines)
+            void Line(int a, int b) => Handles.DrawDottedLine(corners[a], corners[b], s);
 
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //Closest upper right                                                                                
-            point1Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.y,0);
+            // Vertical edges
+            Line(0, 1); Line(2, 3); Line(4, 5); Line(6, 7);
 
-            //Closest lower right                                                                                
-            point2Pos = new Vector3(transform.position.x + spawnDistance.x, transform.position.y + spawnHeight.x,0);
+            // Depth edges
+            Line(0, 2); Line(1, 3); Line(4, 6); Line(5, 7);
 
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //Furtherst upper left                                                                               
-            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y,0);
-
-            //Furtherst lower left                                                                               
-            point2Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x,0);
-
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //Closest upper left                                                                                 
-            point1Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y,0);
-
-            //Closest lower left,                                                                                
-            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x,0);
-
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //In betweem furthest and closest Left upper
-            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.y,0);
-
-            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.y,0);
-
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
-            //In betweem furthest and closest Left lower
-            point1Pos = new Vector3(transform.position.x - spawnDistance.y, transform.position.y + spawnHeight.x,0);
-
-            point2Pos = new Vector3(transform.position.x - spawnDistance.x, transform.position.y + spawnHeight.x,0);
-
-            Handles.DrawDottedLine(point1Pos.ToXYY(), point2Pos.ToXYY(), handlesLineScale);
+            // Width edges
+            Line(0, 4); Line(1, 5); Line(2, 6); Line(3, 7);
             #endregion
+
         }
         private void OnDrawGizmos()
         {
