@@ -45,6 +45,7 @@ namespace Game
         [Tooltip("How long the fade effect will take to start.")]
         [SerializeField] float fadeDelay;
         [SerializeField] LootTable lootTable;
+        [SerializeField] LayerMask floorMask;
 
         #endregion
 
@@ -63,6 +64,7 @@ namespace Game
         [SerializeField, ReadOnly] float highlightTimer;
         [Tooltip("How many seconds ago the fade process has started.")]
         [SerializeField, ReadOnly] float fadeTimer;
+        [SerializeField, ReadOnly] bool collided;
 
         #endregion
 
@@ -84,6 +86,14 @@ namespace Game
             ManageBoxFade();
             ManageShadowSize();
             ManageImpact();
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(floorMask.ContainsLayer(collision.gameObject.layer))
+            {
+                collided = true;
+            }
         }
 
 #if UNITY_EDITOR
@@ -144,7 +154,7 @@ namespace Game
             if (!fell)
             {
                 shadowTransform.localScale = boxTransform.position.magnitude.Map(startPos.magnitude, finalPos.magnitude) * Vector3.one;
-                boxTransform.position += fallingSpeedSO.FallingSpeed * Time.deltaTime * Vector3.down;
+                //boxTransform.position += fallingSpeedSO.FallingSpeed * Time.deltaTime * Vector3.down;
             }
         }
 
@@ -153,11 +163,11 @@ namespace Game
         /// </summary>
         private void ManageImpact()
         {
-            if (boxTransform.position.y < boxTransform.position.z && fell == false)
+            if (fell == false && collided == true)
             {
-                boxCollider.enabled = false;
+                boxCollider.enabled = true;
                 animateImage.Unpause();
-                boxTransform.position = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
+                //boxTransform.position = new Vector3(boxTransform.position.x, boxTransform.position.z, boxTransform.position.z);
                 fallEmitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 impactEmitter.Play();
                 impulseSource.GenerateImpulse();
