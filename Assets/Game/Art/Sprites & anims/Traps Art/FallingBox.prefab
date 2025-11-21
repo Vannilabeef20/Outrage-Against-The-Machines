@@ -247,8 +247,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5976830372341641375}
-  - component: {fileID: 5976830372341641369}
-  - component: {fileID: 5976830372341641370}
   - component: {fileID: 5976830372341641371}
   - component: {fileID: 5976830372341641374}
   m_Layer: 9
@@ -273,94 +271,9 @@ Transform:
   m_Children:
   - {fileID: 2261120977035917308}
   - {fileID: 7382684045571054588}
+  - {fileID: 6910606525013921984}
   m_Father: {fileID: 5976830373177192142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5976830372341641369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976830372341641364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 5976830372341641370}
-  image: {fileID: 0}
-  targetType: 0
-  playOnAwake: 1
-  cull: 0
-  loop: 0
-  DestroyOnFinish: 0
-  startOffset: 0
-  startOffsetPercent: 0
-  animationDuration: 0.3
-  sprites:
-  - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  playing: 0
-  pause: 1
-  timer: 0
-  currentSpriteIndex: 0
---- !u!212 &5976830372341641370
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976830372341641364}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.3333335, y: 5.3333335}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!65 &5976830372341641371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -456,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea50de6dadcc404da30be49af1df8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animateImage: {fileID: 5976830372341641369}
-  boxRenderer: {fileID: 5976830372341641370}
+  animateImage: {fileID: 1330771490265943530}
+  boxRenderer: {fileID: 8117260378808409807}
   highlightRenderer: {fileID: 1833337162083229631}
   boxCollider: {fileID: 5976830372341641371}
   boxTransform: {fileID: 5976830372341641375}
@@ -480,18 +393,18 @@ MonoBehaviour:
       <ProbabilityWeight>k__BackingField: 97.5
       ProbabilityPercent: 97.5
       ProbabilityRange: {x: 0, y: 97.5}
-    - Name: 0,875% -> Nothing
-      <Item>k__BackingField: {fileID: 4423908612461963053, guid: 018c437a8db308648b6c5b9f958c3e9e, type: 3}
+    - Name: 0,875% -> Chocolate Milk Pickup
+      <Item>k__BackingField: {fileID: 1908626596818637216, guid: e601ab56f2a74b2459ba088f5365940d, type: 3}
       <ProbabilityWeight>k__BackingField: 0.875
       ProbabilityPercent: 0.875
       ProbabilityRange: {x: 97.5, y: 98.375}
-    - Name: 0,875% -> Nothing
-      <Item>k__BackingField: {fileID: 4423908612461963053, guid: d9eb87e71d6e08240b75387756dbee66, type: 3}
+    - Name: 0,875% -> Donut Pickup
+      <Item>k__BackingField: {fileID: 2968522319268270004, guid: 579b7ac41e8d0f947a01e504e0e6bd72, type: 3}
       <ProbabilityWeight>k__BackingField: 0.875
       ProbabilityPercent: 0.875
       ProbabilityRange: {x: 98.375, y: 99.25}
-    - Name: 0,5% -> Nothing
-      <Item>k__BackingField: {fileID: 3001008943106286405, guid: d0c12442c53f0384ea17240444fff9b7, type: 3}
+    - Name: 0,5% -> Energy Drink Pickup
+      <Item>k__BackingField: {fileID: 3911932007047526881, guid: 4dbc001221c80fc4fae68eb43a51727b, type: 3}
       <ProbabilityWeight>k__BackingField: 0.5
       ProbabilityPercent: 0.5
       ProbabilityRange: {x: 99.25, y: 99.75}
@@ -670,6 +583,125 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 122
   m_CollisionDetection: 2
+--- !u!1 &7311617388923783955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6910606525013921984}
+  - component: {fileID: 8117260378808409807}
+  - component: {fileID: 1330771490265943530}
+  m_Layer: 9
+  m_Name: FallingBox_Renderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6910606525013921984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311617388923783955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5976830372341641375}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!212 &8117260378808409807
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311617388923783955}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.3333335, y: 5.3333335}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1330771490265943530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311617388923783955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3191a4b2739ef4143b7a652755fe398c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8117260378808409807}
+  image: {fileID: 0}
+  targetType: 0
+  playOnAwake: 1
+  cull: 0
+  loop: 0
+  DestroyOnFinish: 0
+  startOffset: 0
+  startOffsetPercent: 0
+  animationDuration: 0.3
+  sprites:
+  - {fileID: 1871905917, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: 166749694, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: 1734124753, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  - {fileID: -1969572816, guid: e8d50f3391b398a49b3098d4df329342, type: 3}
+  playing: 0
+  pause: 1
+  timer: 0
+  currentSpriteIndex: 0
 --- !u!1 &7566582990820352031
 GameObject:
   m_ObjectHideFlags: 0
