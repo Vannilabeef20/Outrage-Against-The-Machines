@@ -74,11 +74,11 @@ namespace Game
                 //Flip
                 if (target.transform.position.x + 0.1f < transform.position.x)
                 {
-                    MachineRotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                    stateMachine.transform.localScale = new Vector3(-1, 1, 1);
                 }
                 else if (target.transform.position.x - 0.1f > transform.position.x)
                 {
-                    MachineRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                    stateMachine.transform.localScale = new Vector3(1, 1, 1);
                 }
 
                 //Refresh Path

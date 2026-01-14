@@ -15315,7 +15315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 4989701672261852633}
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 2808820949207031971}
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
@@ -15566,7 +15566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 4250759280437507803}
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 2808820949207031971}
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
@@ -16206,7 +16206,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515991989579779421}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 485101b3ede33784788b618e9f14ded9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -16793,7 +16793,7 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
+  OverrideAttenuation: 1
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!1 &6685363752579115513
@@ -16806,7 +16806,6 @@ GameObject:
   m_Component:
   - component: {fileID: 631948577211218572}
   - component: {fileID: 1813037070272515745}
-  - component: {fileID: 3433666355830547893}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -16884,22 +16883,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3433666355830547893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6685363752579115513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a9f9770392926b48bfae69f0f41b00e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  x: 1
-  y: 0
-  z: 0
 --- !u!1 &7319931314263663802
 GameObject:
   m_ObjectHideFlags: 0

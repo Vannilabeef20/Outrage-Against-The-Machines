@@ -64,7 +64,7 @@ namespace Game
                 frame.Reset();
             }
             if (Parent == null) this.LogError($"{stateMachine.name}'s parent object is null");
-            Destroy(Parent);
+            else Destroy(Parent);
         }
 
 #if UNITY_EDITOR

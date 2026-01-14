@@ -47,20 +47,15 @@ namespace Game
             for (int i = 0; i < numberOfRays; i++)
             {
                 float angle = 2 * Mathf.PI / numberOfRays * i;
-                angle *= 180 / Mathf.PI;
-                rayDirections[i] = Quaternion.Euler(0, 0, angle) * Vector3.up;
-                rayDirections[i] = new Vector3(rayDirections[i].x, rayDirections[i].y, rayDirections[i].y);
-                rayDirections[i].Normalize();
+                rayDirections[i] = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
             }
         }
 
         public override void OnGizmo()
         {
 #if UNITY_EDITOR
-            if (body == null)
-            {
-                return;
-            }
+            if (body == null) return;
+
             Handles.color = Color.red;
             Handles.DrawWireArc(body.position - (normal * maxAvoidanceRadius / 2), normal, Vector3.up, 360, maxAvoidanceRadius);
             Handles.color = Color.yellow;

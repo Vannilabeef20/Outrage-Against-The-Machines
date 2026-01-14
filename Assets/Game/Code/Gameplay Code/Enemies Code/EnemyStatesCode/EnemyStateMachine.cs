@@ -22,8 +22,6 @@ namespace Game
         [Space]
         [ReadOnly] public bool IsOnScreen;
 
-
-        #region State References
         [Header("STATE REFERENCES"), HorizontalLine(2F, EColor.Red)]
         public EnemyWanderState wander;
         public EnemyChageModeState change;
@@ -32,9 +30,6 @@ namespace Game
         public EnemyAttackingState attack;
         public EnemyDeathState death;
 
-        #endregion
-
-        #region State Variables
         [Header("STATE VARIABLES"), HorizontalLine(2F, EColor.Orange)]
         [ReadOnly] public bool overrideStateCompletion;
         [SerializeField, ReadOnly] private EnemyState currentState;
@@ -42,9 +37,7 @@ namespace Game
         [Space]
         [SerializeField] private LayerMask conveyorLayer;
         [SerializeField, ReadOnly] public Vector3 ContextVelocity;
-        #endregion
 
-        #region Aligment Check
         [field: Header("ALIGMENT CHECK")]
         [field: SerializeField, ReadOnly] public bool IsAligned { get; private set; }
         [field: SerializeField, ReadOnly] public float Distance { get; private set; }
@@ -53,17 +46,12 @@ namespace Game
         [SerializeField] private Vector3 boxCastDimensions;
         [SerializeField] private float boxCastLenght;
 
-        #endregion
-
-        #region Debug
-
         [Header("DEBUG (THIS WILL BE STRIPPED ON BUILD)"), HorizontalLine(2F, EColor.Green)]
         [SerializeField] private TextMeshProUGUI stateLabelTmpro;
 #if UNITY_EDITOR
         [SerializeField] private Color boxCastDefaultColor;
         [SerializeField] private Color boxCastAlignedColor;
 #endif
-        #endregion
 
         private void OnEnable()
         {
@@ -155,7 +143,6 @@ namespace Game
         {
             GetContextSpeed();
             currentState.FixedDo();
-            body.position = body.position.ToXYY();
         }
 
 

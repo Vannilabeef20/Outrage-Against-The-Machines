@@ -80,7 +80,7 @@ namespace Game
             float depth = Random.Range(-spawnZoneDimensions.y, spawnZoneDimensions.y);
             Vector3 randomPos = Vector3.zero;
             randomPos.x = transform.position.x + Random.Range(-spawnZoneDimensions.x, spawnZoneDimensions.x);
-            randomPos.y = transform.position.y + depth;
+            randomPos.y = transform.position.y;
             randomPos.z = transform.position.z + depth;
             Instantiate(fallingBoxObject, randomPos, Quaternion.identity, transform);
         }

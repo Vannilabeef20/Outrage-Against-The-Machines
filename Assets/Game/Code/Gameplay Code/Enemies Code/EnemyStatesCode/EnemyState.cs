@@ -12,7 +12,6 @@ namespace Game
         protected GameObject Parent { get => stateMachine.Parent; }
 
         protected Vector3 MachinePosition { get => stateMachine.transform.position; set { stateMachine.transform.position = value; } }
-        protected Quaternion MachineRotation { get => stateMachine.transform.rotation; set { stateMachine.transform.rotation = value; } }
 
         protected Animator MachineAnimator { get => stateMachine.animator; private set { } }
 
